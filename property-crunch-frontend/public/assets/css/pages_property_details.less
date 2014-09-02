@@ -1,0 +1,336 @@
+/*===================================================================
+  Pages > Property Details
+====================================================================*/
+/*===================================================================
+  Pages > Property Details > Property Heading
+====================================================================*/
+.property-heading {
+	margin-bottom: 20px;
+	
+	.property-title {
+		margin-bottom: 15px;
+	}
+	
+	.property-sub {
+		.clearfix();
+		
+		.property-address,
+		.first-listed {
+			margin: 0;
+			float: left;
+		}
+		
+		.property-address {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		
+		.first-listed {
+			span {
+				font-weight: 400;
+			}
+		}
+		
+	}
+}
+
+@media (min-width: 480px) {
+	.property-heading {
+		
+		.property-title {
+			margin-bottom: 13px;
+		}
+		
+		.property-sub {
+			
+			.property-address {
+				width: auto;
+				margin-bottom: 0;
+			}
+			
+			.first-listed {
+				float: right;
+			}
+			
+		}
+	}
+}
+
+@media (min-width: 640px) {
+	.property-detail-img {
+		width: 720px;
+	}
+}
+
+/*===================================================================
+  Pages > Property Details > Property Links Panel
+====================================================================*/
+.property-links {
+	margin-top: 20px; 
+		
+	.panel-heading {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
+	ul {
+	
+		li {
+			width: 100%;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			
+			&.last {
+				margin-bottom: 0;
+			}
+		}
+		
+		i {
+			font-size: 20px;
+			line-height: 1;
+			position: relative;
+			top: 3px;
+			margin-right: 10px;
+		}
+	}
+	
+}
+
+@media (min-width: 480px) {
+	.property-links {
+			
+		ul {
+		
+			li {
+				width: auto;
+				margin-bottom: 0;
+			}
+			
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+@media (min-width: 640px) {
+	.property-links {
+			
+		ul {
+		
+			li {
+				width: 33.33%;
+				margin-right: 0;
+				
+				a {
+					display: block;
+					text-align: center;
+				}
+			}
+			
+			i {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 992px) {
+	.property-links {
+		margin-top: 0; 
+			
+		ul {
+		
+			li {
+				width: auto;
+				margin-right: 20px;
+				font-size: @font-size-h6;
+			}
+			
+			i {
+				margin-right: 7px; //5px
+			}
+		}
+	}
+}
+
+/*===================================================================
+  Pages > Property Details > Investment Details Panel
+====================================================================*/
+.property-data {
+	li {
+		margin-bottom: 26px;
+		.clearfix();
+	}
+	h5 {
+		margin: 0;
+	}
+	.data-label {
+		float: left;
+	}
+	.data-value {
+		float: right;
+	}
+	i.icon-help {
+		top: 1px;
+	}
+}
+
+.get-details {
+	p {
+		margin: 20px 0 20px;
+		text-align: center;
+	}
+	.btn {
+		width: 100%;
+	}
+}
+
+@media (min-width: 640px) {
+	.get-details {
+		.clearfix();
+		p {
+			float: left;
+			text-align: left;
+			margin: 0;
+		}
+		.btn {
+			float: right;
+			width: auto;
+		}
+	}
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.get-details {
+		p {
+			margin: 12px 0 20px;
+			width: 100%;
+			text-align: center;
+		}
+		.btn {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.get-details {
+		margin-top: 14px;
+		
+		p {
+			margin: 13px 0;
+		}
+	}
+}
+
+
+/*===================================================================
+  Pages > Property Details > Comparables
+====================================================================*/
+.comparables {
+	margin-top: 10px;
+	padding-bottom: 30px;
+	.clearfix();
+	
+	.panel-heading {
+		h5 {
+			span {
+				font-size: @font-size-h6;
+			}
+		}
+	}
+}
+
+.comparables-listing {
+	.right-section-group {
+		margin-top: 20px;
+	
+		.right-section-label, 
+		.right-section-value {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.more-button-wrap {
+	width: 180px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+#more-properties,
+#no-more-properties {
+	display: none;
+}
+
+@media (min-width: 360px) {
+	.comparables .panel-heading h5 span {
+		font-size: @font-size-base; 
+	}
+}
+
+@media (min-width: 992px) {
+	.comparables-listing {
+		
+		p,
+		.property-title-group{ 
+			margin-bottom: 31px;
+		}
+		
+		.right-section-group {
+			margin-top: 5px;
+		 	
+			.right-section-label,
+			.right-section-value {
+				width: 100%;
+				text-align: center;
+			}
+			.right-section-value {
+				float: left;
+				margin-top: 31px;
+			}
+		}
+	}
+	
+}
+
+@media (min-width: 1200px) {
+	.comparables-listing {
+		
+		p,
+		.property-title-group{ 
+			margin-bottom: 16px;
+		}
+		
+		.right-section-group {
+			margin-top: 5px;
+		 	
+			.right-section-label,
+			.right-section-value {
+				width: 100%;
+				text-align: center;
+			}
+			.right-section-value {
+				float: left;
+				margin-top: 31px;
+			}
+		}
+	}
+
+	.more-button-wrap {
+		padding: 10px 0 0;
+	}
+}
+
+/*===================================================================
+  Pages > Property Details > Other Properties
+====================================================================*/
+.other-properties {
+	position: relative;
+	padding-bottom: 30px;
+}
+

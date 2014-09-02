@@ -1,0 +1,63 @@
+/*===================================================================
+  Components > Footer
+====================================================================*/
+footer {
+	background: url(../images/footer-bg.jpg) repeat scroll 0 0;
+	height: 75px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 1;
+	color: @white;
+	
+	.clearfix();
+	
+	h6 {
+		padding: 15px 0;
+	}
+	
+	h6, ul {
+		margin: 0 auto;
+	}
+	
+	ul {
+		list-style-type: none;
+		padding: 0;
+		display: table;
+		
+		li {
+			float: left;
+			padding: 0 10px;
+			border-right: 1px solid @white;
+			
+			&:first-child {
+				padding-left: 0;
+			}
+			
+			&.last-link  {
+				border: none;
+				padding-right: 0;
+			}
+			
+		}
+	}
+}
+@media (min-width: 768px) {
+	footer {
+		font-size: 14px;
+		
+		h6, ul {
+			margin: 0;
+		}
+		
+		h6 {
+			padding: 27px 0;
+			float: left;
+		}
+		
+		ul {
+			padding: 30px 0;
+			float: right;
+		}
+	}
+}

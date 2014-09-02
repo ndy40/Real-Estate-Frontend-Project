@@ -1,0 +1,42 @@
+/*===================================================================
+  Components > Custom Checkboxes
+====================================================================*/
+input[type=checkbox]:not(old) {
+	width     : 0;
+	opacity   : 0;
+	cursor: pointer;
+}
+
+input[type=checkbox]:not(old) + label {
+	display      : inline-block;
+	line-height  : 24px;
+	cursor: pointer;
+}
+
+input[type=checkbox]:not(old) + label > span {
+    background: none repeat scroll 0 0 @white;
+    border: 1px solid @gray;
+    display: inline-block;
+    height: 18px;
+    margin: 3px 7px 3px 0;
+    vertical-align: bottom;
+    width: 18px;
+}
+
+label {
+	font-weight: @headings-font-weight;
+	font-size: @font-size-h6;
+}
+
+// Icon Family defined in Icons.LESS
+input[type=checkbox]:not(old):checked + label > span:before{
+	content: "\e614";
+	font-size: 18px;
+	color: @checkbox-color;
+	margin-left: -1px;
+}
+input[type=checkbox]:not(old) + label {
+	margin-left: -16px;
+}
+
+

@@ -1,0 +1,60 @@
+/*===================================================================
+  Components > Buttons
+====================================================================*/
+.btn {
+	font-size: 16px;
+	line-height: 1;
+    min-width: 170px;
+    padding: 17px 30px;
+	outline: none;
+	position: relative;
+	background: @brand-primary;
+	color: @white;
+	box-shadow: 0 3px darken(@brand-primary, 12%);
+	
+	.transition(all 0.3s);
+	
+	&:hover,
+	&:focus {
+		background: @gray-darker;
+		box-shadow: 0 2px  darken(@gray-darker, 12%);
+		outline: none;
+		.transition(all 0.3s);
+	}
+	
+	&:active {
+		box-shadow: 0;
+	}
+}
+.btn-fullwidth {
+	font-size: 18px;
+    min-width: 100%;
+    padding: 15px 0;
+	margin-top: 20px;
+}
+
+header {
+	.btn {
+		box-shadow: 0 0;
+		
+		&:hover,
+		&:focus,
+		&:active {
+			box-shadow: 0 0;
+			//background: darken(@brand-primary, 5%);
+		}
+		&:active {
+			left: -1px;
+		}
+	}
+}
+
+
+@media (min-width: 768px) {
+	.btn {
+		font-size: 18px;
+		padding: 16px 30px;
+	}
+}
+
+

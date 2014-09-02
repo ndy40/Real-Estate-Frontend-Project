@@ -1,0 +1,74 @@
+/*===================================================================
+  Components > Tabs
+====================================================================*/
+.nav-tabs {
+	li {
+		width: 50%;
+		
+		> a {
+			color: @gray-dark;
+			font-size: @font-size-h5;
+			font-weight: 300;
+			background: @gray-light;
+			border-color: @gray;
+			margin-right: 0;
+			
+			&:hover,
+			&:focus {
+				background: @gray;
+			}
+		}	
+			
+		span {
+			cursor: pointer;
+		}
+		
+		&.active {
+			> a,
+			> a:hover,
+			> a:focus {
+				color: @white;
+			}
+			
+			span {
+				cursor: default;
+			}			
+		}
+	}
+}
+
+.tab-content {
+	padding: 30px 20px;
+	background: @gray-lighter;
+	border: 1px solid @gray;
+	border-top: none;
+	
+	p {
+		margin-bottom: 40px;
+	}
+	
+}
+
+@media (min-width: 768px) {
+	.nav-tabs {
+		li {
+			> a {
+				padding: 11px 25px;
+				text-align: left;
+				
+				> i:before {
+					font-size: @font-size-h4;
+					position: relative;
+					top: 2px;
+					padding-right: 10px;
+				}
+			}
+			
+				
+		}
+	}
+	.tab-content {
+		padding: 30px 25px;
+	}
+}
+

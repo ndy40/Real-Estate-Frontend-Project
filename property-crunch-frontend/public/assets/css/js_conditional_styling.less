@@ -1,0 +1,62 @@
+/*===================================================================
+  JS Conditional Template Styling 
+====================================================================*/
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+.property-tags  {
+	li {
+		.hide();
+	}
+	
+	&.repossessed {
+		.irepossessed {
+			.show();
+		}
+	}
+	
+	&.modernising {
+		.imodernising {
+			.show();
+		}
+	}
+	
+	&.auction {
+		.iauction {
+			.show();
+		}
+	}
+	
+	&.dtv {
+		.idtv {
+			.show();
+		}
+	}
+	
+	&.reduced {
+		.ireduced {
+			.show();
+		}
+	}
+	
+}
+
+.filter-left {
+	.label {
+		.hide();
+	}
+}
+
+.dtv-overlay {
+	.hide();
+}
+
+.dtv {
+	.dtv-overlay {
+		.show();
+	}
+}

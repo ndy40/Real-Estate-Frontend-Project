@@ -1,0 +1,77 @@
+/*===================================================================
+  Components > Charts
+====================================================================*/
+.chart-wrapper {
+	.clearfix();
+}
+.chart-labels,
+.chart-bars {
+	float: left;
+}
+.chart-labels {
+	text-align: right;
+	width: auto;
+	margin-right: 0;
+	
+	p {
+		line-height: 58px;
+		margin-bottom: 14px;
+	}
+	.last-label {
+		margin-bottom: 0;
+	}
+}
+.chart-bars {
+	border-left: 1px solid @gray-dark;
+    padding: 5px 0;
+	width: 57%;
+	float: right;
+	
+	.last-bar {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 360px) {
+	.chart-bars {
+		width: 62%;
+	}
+}
+@media (min-width: 480px) {
+	.chart-bars {
+		width: 73%;
+	}
+}
+@media (min-width: 640px) {
+	.chart-bars {
+		width: 80%;
+	}
+}
+@media (min-width: 768px) {
+	.chart-bars {
+		width: 82.8333%;
+	}
+}
+
+@media (min-width: 992px) {
+	.chart-labels {
+		
+		p {
+			line-height: 38px;
+		}
+	}
+	
+	.chart-bars {
+		width: 88%;
+	}
+	
+
+}
+
+@media (min-width: 1199px) {
+	.chart-bars {
+		width: 73%;
+	}
+	
+}
+

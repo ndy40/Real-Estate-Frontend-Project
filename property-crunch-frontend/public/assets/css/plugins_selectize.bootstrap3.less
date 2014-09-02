@@ -1,0 +1,84 @@
+/**
+ * selectize.bootstrap3.css (v0.10.1) - Bootstrap 3 Theme
+ * Copyright (c) 2013 Brian Reavis & contributors
+ * @author Brian Reavis <brian@thirdroute.com>
+ */
+
+@import "plugins_selectize.variables.less";
+
+.selectize-dropdown, .selectize-dropdown.form-control {
+	height: auto;
+	padding: 0;
+	margin: -1px 0 0 0;
+	z-index: @zindex-dropdown;
+	background: @selectize-color-dropdown;
+	border: 1px solid @gray;
+//	width: 196px !important;
+//	border: 1px solid @dropdown-border;
+//	.selectize-border-radius(@border-radius-base);
+//	.selectize-box-shadow(0 6px 12px rgba(0,0,0,.175));
+}
+
+.selectize-dropdown {
+	.optgroup-header {
+		font-size: @font-size-small;
+		line-height: @line-height-base;
+	}
+	.optgroup:first-child:before {
+		display: none;
+	}
+	.optgroup:before {
+		content: ' ';
+		display: block;
+		.nav-divider();
+		margin-left: @selectize-padding-dropdown-item-x * -1;
+		margin-right: @selectize-padding-dropdown-item-x * -1;
+	}
+}
+
+.selectize-dropdown-content {
+	padding: 5px 0;
+}
+
+.selectize-dropdown-header {
+	padding: @selectize-padding-dropdown-item-y * 2 @selectize-padding-dropdown-item-x;
+}
+
+.selectize-input {
+	min-height: @input-height-base;
+
+	&.dropdown-active {
+		.selectize-border-radius(@selectize-border-radius);
+	}
+	&.dropdown-active::before {
+		display: none;
+	}
+	&.focus {
+		@color: @input-border-focus;
+		@color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+		border-color: @color;
+		outline: 0;
+		//.selectize-box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+	}
+}
+
+.selectize-control {
+	&.multi {
+		.selectize-input.has-items {
+			padding-left: @selectize-padding-x - @selectize-padding-item-x;
+			padding-right: @selectize-padding-x - @selectize-padding-item-x;
+		}
+		.selectize-input > div {
+			.selectize-border-radius(@selectize-border-radius);
+		}
+	}
+}
+
+.form-control.selectize-control {
+	padding: 0;
+	height: auto;
+	border: none;
+	background: none;
+	.selectize-box-shadow(none);
+	.selectize-border-radius(0);
+}

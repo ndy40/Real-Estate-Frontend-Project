@@ -1,0 +1,510 @@
+/*===================================================================
+  Browser Fixes
+====================================================================*/
+/*===================================================================
+  Browser Fixes > IE10 & +
+====================================================================*/
+.no-flexboxlegacy {
+	input[type="checkbox"]:not(old) + label {
+		margin-left: -2px;
+	}
+}
+
+/*===================================================================
+  Browser Fixes > IE9
+====================================================================*/
+.no-cssgradients {
+	#testimonials {
+		background: url(../images/test-bg-alt.jpg) scroll center 0;
+	}
+	
+	.navbar-default {
+		background: #333;
+	}
+	.md-slider {
+		display: none;
+	}
+	.devices-sc-ie {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.dtv-overlay > a {
+		position: absolute;
+		top: 30%;
+	}
+}
+
+/*===================================================================
+  Browser Fixes > IE8
+====================================================================*/
+.no-multiplebgs {
+	header {
+		background: url(../images/header-bg-ie.jpg) fixed center 0;
+	}
+	
+	// Input Vertical Spacing Fix
+	.form-control {
+		line-height: 34px;
+	}
+	
+	.search-content {
+		.input-group {
+			background: @white;
+			
+			.form-control {
+				padding: 0;
+				line-height: 48px;
+				border: none;
+				width: 90%;
+				float: right;
+			}
+		}
+		.searchbar-bottom a {
+			i {
+				top: -2px;
+			}
+			
+			&:hover i { 
+				background-position: -42px -19px;
+			}
+		}
+	}
+	
+	.navbar-nav.login {
+		
+		> li { 
+			
+			> a {
+				
+				i.icon-star,
+				i.icon16-login  {
+					top: -2px;
+				}
+				
+				&:hover {
+					i {
+						cursor: pointer;
+						
+						&.icon16-login {
+							background-position: -16px -33px;
+						}
+						&.icon20-star-nav {
+							background-position: -100px -67px;
+						}
+					}
+				}
+			}
+		}
+	}
+	 
+	.badge {
+		font-size: 10px;
+		width: 14px;
+		height: 14px;
+		padding: 1px;
+		top: 11px;
+		left: 12px;
+	}
+	
+	label {
+		line-height: 1.43;
+	}
+	
+	.dropdown-label {
+		padding-left: 0;
+	}
+	.filter-row {
+		.clearfix();
+	}
+	.filter-checkbox {
+		position: relative;
+		
+		INPUT[type='checkbox'] {
+			position: absolute;
+			top: 4px;
+		}
+	}
+	
+	#select-results {
+		margin-top: 3px;
+	}
+	
+	.list-arrows {
+		
+		li {
+			padding: 0 0 10px 14px;
+			
+			// Icon Family defined in ie_spritesheet.LESS
+			&:before {
+				display: inline-block;
+				cursor:pointer;
+				vertical-align: middle;
+				background-image: url(../images/spritesheet.png);
+				background-repeat: no-repeat;
+				
+				width: 14px;
+				height: 14px;
+				line-height: 14px;
+				
+				background-position: 0px -19px;
+				
+				position: relative;
+				top: -2px;
+				left: -7px;
+			}
+		}
+	}
+	
+	.nav-tabs {
+		
+		li {
+			
+			> a {
+				i {
+					margin-right: 10px;
+					
+					&.icon22-login,
+					&.icon22-plus {
+						top: -2px;
+					}
+				}
+			}	
+				
+			&.active {
+				> a {
+					i {
+						&.icon22-login {
+							background-position: -66px -87px;	
+						}
+						
+						&.icon22-plus {
+							background-position: -22px -87px;
+						}
+					}
+				}		
+			}
+		}
+	}
+	
+	.secure .icon14-lock-secure {
+		top: -1px;
+	}
+	
+	
+	
+	.info-filters .label {
+		padding: 5px;
+		
+		i {
+			top: 0;
+			margin-right: 3px;
+		}
+	}
+	
+	.info-tags .panel-heading i {
+		top: -1px;
+	}
+	
+	.property-title-group .add-to-fav {
+		i {
+			top: -1px;
+			cursor: pointer;
+		}
+		
+		&:hover i {
+			background-position: -54px -49px;
+		}
+	}
+	
+	i.icon-help.icon16-help {
+		top: -2px;
+		margin: 0;
+	}
+	
+	.filter-checkbox {
+		label {
+			margin: 0 0 0 15px;
+			cursor: pointer;
+		}
+
+		i {
+			top: 3px;
+			margin-right: 10px;
+			
+			&.icon-help.icon16-help {
+				top: -7px;
+			}
+			
+			&.icon16-tools {
+				left: -2px;
+			}
+			
+			&.icon16-auction {
+				left: 1px;
+				margin-right: 11px;
+			}
+			
+			&.icon16-chart {
+				left: 2px;
+			}
+		}
+	}
+	.property-listing:hover {
+		.property-img a {
+			background: @gray-darker;
+			.opacity(0.8);
+		}
+	}
+	
+	
+	.dtv-overlay {
+		background: @white;
+		.opacity(0.9);
+	}
+	
+	#property-carousel .item .item-overlay {
+		background: @gray-darker;
+		.opacity(0.8);
+	}
+	
+	.property-details-group .property-tags i {
+		top: 0;
+		
+		&.icon12-library {
+			top: 0;
+		}
+		&.icon12-tools {
+			top: 0;
+		}
+		&.icon12-auction {
+			top: 0;
+		}
+		&.icon12-users {
+			top: 0;
+		}
+		&.icon12-chart {
+			top: 0;
+		}
+
+	}
+	
+	.alert i {
+		top: -2px;
+		margin-left: 5px;
+	}
+	
+	
+	.property-links {
+		ul i {
+			top: -3px;
+		}
+		
+		.add-to-favourites:hover i {
+			background-position: -180px -49px;
+		}
+		
+		.street-view:hover i {
+			background-position: -200px -67px;
+		}
+		
+		.email-friend:hover i {
+			background-position: -160px -67px;
+		}
+		
+	}
+	
+	.carousel-nav {
+		&.icon44-left,
+		&.icon44-right {
+			position: absolute;
+			cursor: pointer;
+			top: 30%;
+		}
+	}
+	
+	[class^="icon-"], [class*=" icon-"] {
+		&:before {
+			display: none;	
+		}
+	}
+	
+	
+	ul.list-arrows li:before {
+		content: "";
+	}
+	
+	.property-listing {
+		.property-img {
+			img {
+				max-height: 166px;
+			}
+		}
+	}
+	.form-control.form-control-icon {
+		line-height: 36px;
+		min-height: 36px;
+	}
+	
+	#upload_proof .btn {
+		font-size: @font-size-base;
+		min-width: 100px;
+	}
+}
+
+@media (min-width: 360px) {
+	.no-multiplebgs {
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 192px;
+				}
+			}
+		}
+	}
+}
+	
+@media (min-width: 480px) {
+	.no-multiplebgs {
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 272px;
+				}
+			}
+		}	
+	}
+}
+
+@media (min-width: 640px) {
+	.no-multiplebgs {
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 379px;
+				}
+			}
+		}	
+	}
+}
+	
+@media (min-width: 768px) {
+	.no-multiplebgs {
+		.btn-fullwidth {
+			min-width: 91%;
+		}
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 217px;
+				}
+			}
+		}	
+	}
+}
+	
+@media (min-width: 992px) {	
+	.no-multiplebgs {
+		.btn-fullwidth {
+			min-width: 93.5%;
+		}
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 289px;
+				}
+			}
+		}
+		.property-detail-img {
+			max-height: 304px;
+		}
+		.comparables-listing {
+			.property-img {
+				img {
+					max-height: 135px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {	
+	.no-multiplebgs {
+		
+		.btn-fullwidth {
+			min-width: 80%;
+		}
+		
+		.property-listing {
+			.property-img {
+				img {
+					max-height: 103px;
+				}
+			}
+		}
+		.property-detail-img {
+			max-height: 435px;
+		}
+		
+		.comparables-listing {
+			.property-img {
+				img {
+					max-height: 105px;
+				}
+			}
+		}
+		
+		.get-details {
+			p {
+				font-size: @font-size-h6;
+			}
+			
+			.btn {
+				min-width: 90px;
+			}
+		}
+	}
+}
+
+/*===================================================================
+  Browser Fixes > Safari
+====================================================================*/
+.no-flexbox.csstransforms3d {
+	
+	#testimonials {
+		background: url(../images/test-bg-alt.jpg) fixed center 0;
+	}
+	
+	.username {
+		top: 0;
+	}
+	
+	.form-field-row {
+		.input-group {
+			margin: 0;
+		}
+	}
+	
+	input[type="checkbox"]:not(old) + label {
+		margin-left: -2px;
+	}
+	
+	.chart-labels {
+		margin-right: 0;
+	}
+	
+	
+}
+input {
+	-webkit-appearance: none;
+}
+
+
+
+/*===================================================================
+  Browser Fixes > Chrome
+====================================================================*/
+.chrome {
+	input[type="checkbox"]:not(old) + label {
+		margin-left: 0;
+	}
+}

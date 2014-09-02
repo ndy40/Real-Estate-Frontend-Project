@@ -1,0 +1,94 @@
+/*===================================================================
+  Components > Forms
+====================================================================*/
+/*===================================================================
+  Components > Forms > Form Field Rows
+====================================================================*/
+.form-field-row {
+	.bottom-30();
+	.clearfix();
+	
+	h5 {
+		float: left;
+		margin: 15px 0;	
+	}
+	
+	.input-group {
+		float: right;	
+	}
+	
+	&.last-row {
+		.bottom-50();
+	}
+}
+
+/*===================================================================
+  Components > Forms > Inputs
+====================================================================*/
+.input-group {
+	margin: 0 auto;
+	position: relative;
+
+	.btn {
+		min-width: 100%;
+		padding: 17px 11px;
+	}
+}
+.input-group-btn:last-child > .btn, 
+.input-group-btn:last-child > .btn-group {
+	margin-left: 0;
+}
+
+.form-control {
+	font-size: 18px;
+	min-height: 50px;
+}
+@media (min-width: 768px) {
+	.input-group {
+		.btn {
+			padding: 16px 11px;
+		}
+	}
+}
+
+
+/*===================================================================
+  Components > Forms > Inputs > Inputs with Icon
+====================================================================*/
+
+.form-control-icon {
+	padding-left: 40px;
+}
+
+.icon-container {
+	left: 10px;
+	position: absolute;		
+	z-index: 3;
+	
+	i {
+		color: @brand-primary;
+		font-size: 22px;
+		line-height: 50px;
+	}
+}
+
+/*===================================================================
+  Components > Forms > Inputs > Form Feedback
+====================================================================*/
+.form-control:focus {
+	border-color: @brand-primary;
+}
+
+.has-success .form-control:focus,
+.has-error .form-control:focus {
+	box-shadow: none;
+}
+.has-feedback .form-control-feedback {
+	height: 50px;
+	line-height: 48px;
+	font-size: @font-size-h5;
+	
+}
+.help-block {
+	margin-top: 55px;
+}

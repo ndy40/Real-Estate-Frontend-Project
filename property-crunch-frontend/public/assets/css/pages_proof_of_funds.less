@@ -1,0 +1,75 @@
+/*===================================================================
+  Pages > Proof of Funds
+====================================================================*/
+/*===================================================================
+  Pages > Proof of Funds > Modal
+====================================================================*/
+.modal-actions {
+	.top-30();
+	.clearfix();
+	
+	.or-seperator, 
+	> a, 
+	.fileinput {
+		float: none;
+	}
+	
+	.btn-file,
+	.btn-primary {
+		width: 100%;
+	}
+	
+	.fileinput {
+		display: block;
+	}
+	
+	.or-seperator {
+		text-align: center;
+	}
+}
+
+.secure {
+	margin: 5px 0 0;
+	
+	.icon-lock {
+		font-size: 16px;
+		color: @gray-dark;
+		position: relative;
+		top: 2px;
+		right: 2px;
+		
+	}
+}
+
+#submitFile {
+	display: none;
+	float: right;
+}
+
+.skip {
+	.top-20();
+}
+
+@media (min-width: 640px) {
+	.modal-actions {	
+	
+		.or-seperator, 
+		> a, 
+		.fileinput {
+			float: left;
+		}
+		
+		.btn-file,
+		.btn-primary {
+			width: auto;
+		}
+		
+		.or-seperator {
+			line-height: 48px;
+			margin: 0;
+			padding: 0 20px;
+			text-align: center;
+		}
+		
+	}
+}

@@ -1,0 +1,35 @@
+/*===================================================================
+  Components > Modals
+====================================================================*/
+.modal-content {
+	box-shadow: none;
+}
+.modal-body {
+	padding: 0 20px 50px;
+}
+.close {
+	color: @gray-dark;
+	opacity: 1;
+	
+	&:hover {
+		color: @gray-darker;
+	}
+	
+	.icon-cross {
+		font-size: 28px;
+	}
+}
+.skip {
+	.clearfix();
+	
+	a {
+		float: right;
+		margin-right: 6px;
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-body {
+		padding: 10px 50px 50px;
+	}
+}
