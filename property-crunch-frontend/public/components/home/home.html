@@ -9,15 +9,9 @@
     <div class="container">
       <h1>Invest in Property like a <span>Pro</span></h1>
       <p>Find investment properties in your area</p>
-      <div class="input-group col-md-6 col-sm-9">
-        <div class="icon-container">
-          <i class="icon-search icon18-search"></i>
-        </div>
-        <input type="text" id="search_box" class="form-control form-control-icon searchbar" placeholder="e.g. Oxford, NW3 or Waterloo Station">
-        <span class="input-group-btn">
-          <button id="search" class="btn btn-default" type="button">Start Your Search</button>
-        </span>
-      </div><!-- /input-group -->
+      <!-- Search form here --> 
+      <ng-include src="'components/search/searchform.html'"></ng-include>
+      <!-- /input-group --><!-- end of search form -->
     </div>
   </div>
 
