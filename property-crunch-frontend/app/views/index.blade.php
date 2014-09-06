@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org/" ng-app="PC">
+<html xmlns:ng="http://angularjs.org/">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{asset('assets/css/bootstrap/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-        <link rel="shortcut icon" href="{{asset('assets/ico/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
         <title>Property Crunch</title>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,33 +21,6 @@
     <body data-spy="scroll"  data-target=".navbar-collapse" ng-view>
         <!-- contents go in here. -->
 
-        <script src="{{asset('assets/js/jquery.js')}}"></script>
-        <script src="{{asset('assets/angular/angular.js')}}"></script>
-        <script src="{{asset('assets/js/jquery.cookie.js')}}"></script>
-        <script src="{{asset('assets/js/bootstrap.js')}}"></script>
-        <script src="{{asset('assets/js/jasny-bootstrap.js')}}"></script>
-        <script src="{{asset('assets/js/selectize.js')}}"></script>
-        <script src="{{asset('assets/js/bootstrapValidator.min.js')}}"></script>
-        <script src="{{asset('assets/angular-route/angular-route.js')}}"></script>
-
-        <!-- Load Angular JS -->
-        <!-- load module files -->
-        <script src="{{asset('main.js')}}"></script>
-        <script src="{{asset('components/search/module.js')}}"></script>
-        <script src="{{asset('components/home/module.js')}}"></script>
-        
-        
-        <!-- load factories -->
-
-        <!-- load services --> 
-        <script src="{{asset('components/search/search-service.js')}}"></script>
-
-        <!-- load directives --> 
-
-
-        <!-- load controllers -->
-        <script src="{{asset('components/search/searchform-controller.js')}}"></script>
-        <script src="{{asset('components/home/home-controller.js')}}"></script> 
-
+        <script src="{{asset('assets/requirejs/require.js')}}" data-main="{{asset('modules/main.js')}}"></script>
 	</body>
 </html>
