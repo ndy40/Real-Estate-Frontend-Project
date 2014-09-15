@@ -3,10 +3,11 @@
  * Search Controller
  */
 
-define(["./module", "../search/index"], function (app) {
+define(["./module", "../search/index", "../shared/index"], function (app) {
     'use strict';
-    app.controller("HomeCtrl", ["$scope", "SearchService", function ($scope, SearchService) {
-
+    app.controller("HomeCtrl", ["$scope", "SearchService", "navService", function ($scope, SearchService, navService) {
+		
+		  
     }]);
 });
 

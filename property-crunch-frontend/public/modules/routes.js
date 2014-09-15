@@ -11,7 +11,7 @@
                 templateUrl : "modules/home/home.html",
                 controller  : "HomeCtrl"
             });
-
+			
             $routeProvider.otherwise({
                 redirectTo : "/"
             });

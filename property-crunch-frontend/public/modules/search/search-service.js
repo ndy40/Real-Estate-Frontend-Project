@@ -19,6 +19,12 @@ define(["./module"], function (service) {
 
         SearchService.prototype.getSearchResult = function (onComplete, onFailure) {
             //perform some search here.
+			var data = {
+				"id" : 1, 
+				"name" : "Rented house"
+			};
+			
+			onComplete(data);
         };
 
         return new SearchService();

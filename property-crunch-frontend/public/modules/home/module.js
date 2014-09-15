@@ -4,8 +4,9 @@
  */
 
 define([
-    "angular"
+    "angular",
+	"../shared/index"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPHOME", []);
+    return ng.module("PCAPPHOME",  ["PCSHARED"]);
 });

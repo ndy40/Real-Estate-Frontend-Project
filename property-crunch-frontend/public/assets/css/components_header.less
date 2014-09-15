@@ -13,6 +13,21 @@ header {
 }
 
 .navbar-default {
+	.nav  {
+		a {
+			margin: 0 20px;
+			padding: 10px 0;
+			.transition(all 0.3s);
+		}
+		
+		li {
+			&:hover, &:focus, &.active {
+				background: @brand-primary;
+				.transition(all 0.3s);
+			}
+		}
+	}
+	
 	.navbar-toggle {
 		.icon-bar {
 			background-color: #ddd;
@@ -31,14 +46,23 @@ header {
 		}
 	}
 }
-/*===================================================================
-   Components > Header > Home Header
-====================================================================*/
-.home-header {
-	#search {
-		margin-top: -1px;
+
+@media (min-width: 768px) {
+	.navbar-default {
+		.nav  {
+			li {
+				&:hover, &:focus, &.active {
+					background: transparent;
+				}
+			}
+			
+			a {		
+				padding: 25px 0 5px;
+			}
+		}
 	}
 }
+
 /*===================================================================
    Components > Header > Search Results Header
 ====================================================================*/
@@ -172,10 +196,6 @@ header {
 	cursor: default;
 	.transition(color 0.3s);
 	
-	//&:hover {
-//		color: @brand-primary;
-//		.transition(color 0.3s);
-//	}
 }
 
 .verified .username {
