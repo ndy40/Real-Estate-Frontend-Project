@@ -5,7 +5,7 @@
 (function (define) {
     'use strict';
 
-    define(["./searchform-controller", "./search-service"], function () {
+    define(["./searchform-controller", "./search-service", "./search-factory"], function () {
 
     });
 

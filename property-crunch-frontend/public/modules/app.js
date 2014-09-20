@@ -8,7 +8,12 @@ define([
     "ngRoute",
     "./home/index",
     "./search/index",
-	"./shared/index"
+	"./shared/index",
+	"./learn-more/index",
+	"./list-property/index",
+	"./login/index",
+	"./investor-dashboard/index",
+	"./nav/index"
 	
 ], function (angular) {
     'use strict';
@@ -17,7 +22,12 @@ define([
 		"ui.bootstrap", 
 		"PCAPPHOME", 
 		"PCAPPSEARCH",
-		"PCSHARED"
+		"PCSHARED",
+		"PCAPPLEARNMORE",
+		"PCAPPLISTPROPERTY",
+		"PCAPPLOGIN",
+		"PCAPPINVESTORDASHBOARD",
+		"PCAPPNAV"
 	]);
 });
 

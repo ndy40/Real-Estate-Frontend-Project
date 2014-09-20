@@ -1,25 +1,27 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default">
   <div class="container">
+  
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-nav">
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#top">
+      <a class="navbar-brand" href="./">
         <img src="assets/images/logo.png" alt="Property Crunch Logo" />
       </a>
     </div>
 
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="header-nav">
+    <div collapse="!isCollapsed" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right login">
-        <li><a href="#">LEARN MORE</a></li>
-        <li><a href="#">LIST A PROPERTY</a></li>
+        <li><a active-link="active" href="#/learn-more">LEARN MORE</a></li>
+        <li><a active-link="active" href="#/list-property">LIST A PROPERTY</a></li>
         <li>
-            <a href="login.html">
+            <a active-link="active" href="#/login">
                 <i class="icon-login icon16-login"></i>
                 <span class="link-text">Log In</span>
             </a>
