@@ -5,7 +5,7 @@
 (function (define) {
     'use strict';
 
-    define(["./nav-service", "./shared-directive"], function () {
+    define(["./auth-service", "./login-factory", "./shared-directive"], function () {
 
     });
 

@@ -12,9 +12,40 @@
                 controller  : "HomeCtrl"
             });
 			
+			$routeProvider.when("/search", {
+                templateUrl : "modules/search/searchresult.html",
+                controller  : "SearchFormCtrl"
+            });
+			
+			$routeProvider.when("/learn-more", {
+                templateUrl : "modules/learn-more/learn-more.html",
+                controller  : "LearnMoreCtrl"
+            });
+			
+			$routeProvider.when("/list-property", {
+                templateUrl : "modules/list-property/list-property.html",
+                controller  : "ListPropertyCtrl"
+            });
+			
+			$routeProvider.when("/login", {
+                templateUrl : "modules/login/login.html",
+                controller  : "LoginCtrl"
+            });
+			
+			$routeProvider.when("/investor-dashboard", {
+                templateUrl : "modules/investor-dashboard/investor-dashboard.html",
+                controller  : "InvestorDashboardCtrl"
+            });
+			
             $routeProvider.otherwise({
                 redirectTo : "/"
             });
         }]);
+		
+		
+		 return app.config(["$locationProvider", function ($locationProvider) {
+            $locationProvider.html5Mode(true).hashPrefix('!');
+        }]);
+		
     });
 }(define));

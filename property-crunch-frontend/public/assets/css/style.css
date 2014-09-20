@@ -1600,6 +1600,9 @@ header {
   .navbar-default .nav a {
     padding: 25px 0 5px;
   }
+  .navbar-default .nav a.active {
+    color: #f6af00;
+  }
 }
 /*===================================================================
    Components > Header > Search Results Header
@@ -1832,7 +1835,6 @@ footer ul li.last-link {
   Pages > Home > Header
 ====================================================================*/
 .home-header {
-  padding: 76px 0;
   background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
 }
 .home-header #search {
@@ -1852,9 +1854,6 @@ footer ul li.last-link {
   margin-bottom: 30px;
 }
 @media (min-width: 768px) {
-  .home-header {
-    padding: 76px 0;
-  }
   .jumbotron {
     padding: 108px 0;
   }

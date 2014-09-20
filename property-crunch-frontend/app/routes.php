@@ -12,3 +12,15 @@
 */
 
 Route::get('/', "HomeController@index");
+
+/* Generate New Pages - Letting AngularJS Handle it*/
+App::missing(function($exception) {
+ 	return View::make('index');
+});
+
+/* create prefixed group for login and logout */
+Route::group(array('prefix'=>'/api'),function(){
+	Route::post('login/auth','AuthController@Login');
+	Route::get('login/destroy','AuthController@Logout');
+});
+

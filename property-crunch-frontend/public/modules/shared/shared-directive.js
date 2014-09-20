@@ -1,10 +1,26 @@
 /* 
- * A Search service used for passing in Search keywords and sending Location search results to the database.
+ * Shared Directive 
  */
 
-define(["./module", "owl.carousel"], function (service) {
-    'use strict';
-    return service.directive('sharedDirective', function () {
-      
-    });
+define(["./module", "owl.carousel"], function (shared) {
+   'use strict';
+	
+	shared.directive('activeLink', ['$location', function(location) {
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs, controller) {
+				var clazz = attrs.activeLink;
+				var path = attrs.href;
+				path = path.substring(1); //hack because path does bot return including hashbang
+				scope.location = location;
+				scope.$watch('location.path()', function(newPath) {
+					if (path === newPath) {
+						element.addClass(clazz);
+					} else {
+						element.removeClass(clazz);
+					}
+				});
+			}
+		};
+    }]);
 });
