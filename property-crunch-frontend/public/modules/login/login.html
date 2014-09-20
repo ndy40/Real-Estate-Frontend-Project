@@ -1,0 +1,107 @@
+<!-- nav template --> 
+<ng-include src="'modules/shared/navigation-partial.html'"></ng-include>
+
+
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <ul role="tablist" class="nav nav-tabs login-tabs" id="login_create_tab">
+                    <li class="active">
+                        <a data-toggle="tab" role="tab" href="#login">
+                            <i class="icon-login icon22-login hidden-xs"></i>
+                            <span>Log In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" role="tab" href="#createAccount">
+                            <i class="icon-plus icon22-plus hidden-xs"></i>
+                            <span id="createTab">Create an Account</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content login-tab-content">
+                    <div id="login" class="tab-pane fade active in">
+                        <p>Log In to save searches and track price changes.</p>
+                        
+                        <form class="defaultForm">
+                        
+                            <div class="form-group form-field-row">
+                                <h5 class="control-label">Email:</h5>
+                                <div class="input-group col-sm-10 col-xs-12">
+                                    <div class="icon-container">
+                                        <i class="icon-mail icon20-mail"></i>
+                                    </div>
+                                    <input type="email" name="email" ng-model="loginData.email" class="form-control form-control-icon" placeholder="joe@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group form-field-row">
+                                <h5 class="control-label">Password:</h5>
+                                <div class="input-group col-sm-10 col-xs-12">
+                                    <div class="icon-container">
+                                        <i class="icon-lock icon20-lock"></i>
+                                    </div>
+                                    <input type="password" name="password" ng-model="loginData.password" ng-minlength="5" ng-maxlength="15" class="form-control form-control-icon" placeholder="5 to 15 characters">
+                                </div>
+                                
+                                <div class="terms col-sm-offset-2">
+                                    <input id="remember1" type="checkbox" name="checkbox" ng-model="loginData.remember" class="styled">
+                                    <label for="remember1"><span></span>Remember me on this computer</label>
+                                </div>
+                                
+                                <!--<a class="forgot-password-link" href="#">Forgot Password?</a>-->
+                            </div>
+                            
+                            <div class="col-sm-offset-2">
+                                <button id="loggedIn" ng-click="submitForm()" type="submit" class="btn btn-default btn-large goToLoggedIn">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="createAccount" class="tab-pane fade">
+                        <p>Create a free account to save searches and track price changes. (It only takes a minute)</p>
+                        
+                        <form class="defaultForm">
+                            <div class="form-group form-field-row">
+                                <h5 class="control-label">Email:</h5>
+                                <div class="input-group col-sm-10 col-xs-12">
+                                    <div class="icon-container">
+                                        <i class="icon-mail icon20-mail"></i>
+                                    </div>
+                                    <input type="email" name="email" class="form-control form-control-icon" placeholder="joe@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group form-field-row">
+                                <h5 class="control-label">Password:</h5>
+                                <div class="input-group col-sm-10 col-xs-12">
+                                    <div class="icon-container">
+                                        <i class="icon-lock icon20-lock"></i>
+                                    </div>
+                                    <input type="password" name="password" class="form-control form-control-icon" placeholder="5 to 15 characters">
+                                </div>
+                                
+                                <div class="terms col-sm-offset-2">
+                                    <h6>By registering you accept our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. You may unsubscribe or update your preferences at any time.</h6>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="col-sm-offset-2">
+                                <button type="submit" class="btn btn-default btn-large goToLoggedIn">Create Account</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+
+
+<!-- footer template -->
+<ng-include src="'modules/shared/footer.html'"></ng-include>
