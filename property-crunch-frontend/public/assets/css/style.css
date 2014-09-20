@@ -1562,6 +1562,19 @@ header {
   width: 169px;
   height: 28px;
 }
+.navbar-default .nav a {
+  margin: 0 20px;
+  padding: 10px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.navbar-default .nav li:hover,
+.navbar-default .nav li:focus,
+.navbar-default .nav li.active {
+  background: #f6af00;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ddd;
 }
@@ -1578,11 +1591,15 @@ header {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/*===================================================================
-   Components > Header > Home Header
-====================================================================*/
-.home-header #search {
-  margin-top: -1px;
+@media (min-width: 768px) {
+  .navbar-default .nav li:hover,
+  .navbar-default .nav li:focus,
+  .navbar-default .nav li.active {
+    background: transparent;
+  }
+  .navbar-default .nav a {
+    padding: 25px 0 5px;
+  }
 }
 /*===================================================================
    Components > Header > Search Results Header
@@ -1818,19 +1835,8 @@ footer ul li.last-link {
   padding: 76px 0;
   background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
 }
-.home-header .nav a {
-  font-size: 18px;
-  margin: 0 20px;
-  padding: 10px 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.home-header .nav li:hover,
-.home-header .nav li:focus,
-.home-header .nav li.active {
-  background: #f6af00;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.home-header #search {
+  margin-top: -1px;
 }
 .jumbotron {
   padding: 50px 0 10px;
@@ -1848,30 +1854,6 @@ footer ul li.last-link {
 @media (min-width: 768px) {
   .home-header {
     padding: 76px 0;
-  }
-  .home-header .nav li:hover,
-  .home-header .nav li:focus,
-  .home-header .nav li.active {
-    background: transparent;
-  }
-  .home-header .nav a {
-    padding: 25px 0 5px;
-    border-bottom: 5px solid transparent;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .home-header .nav a:hover,
-  .home-header .nav a:focus,
-  .home-header .nav a.active {
-    border-bottom: 5px solid #fff;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .home-header .nav .active a {
-    border-bottom: 5px solid #fff;
-    background: transparent;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
   .jumbotron {
     padding: 108px 0;

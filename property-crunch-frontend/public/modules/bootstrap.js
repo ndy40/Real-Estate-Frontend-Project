@@ -10,7 +10,10 @@
         "./app",
         "./routes"
     ], function (require, ng) {
-        require(["domReady!"], function (document) {
+        require([
+			"domReady!",
+			"ui.bootstrap",
+			], function (document) {
             ng.bootstrap(document, ["PCAPP"]);
         });
     });
