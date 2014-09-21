@@ -84,8 +84,6 @@
                     </div>
                 </div>
                 
-                
-                
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h5>Filter the Results</h5>
@@ -176,11 +174,11 @@
                 </div>
                 
                 <div id="properties_list">
-                	<article ng-repeat="property in searchObject.properties" class="property-listing">
-						<div class="row">
+                	<article ng-repeat="property in searchObject.properties" class="property-listing" ng-hide="{{!searchObject.status}}">
+    						<div class="row">
 							<div class="col-lg-3 col-sm-6">
 								<div class="property-img">
-									<img class="img-responsive" ng-src="{{property.photo}}" alt="{{property.alt}}">
+									<img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
 									<a ng-href="properties/{{property.id}}.html" class="visible-lg details-page">
 										<span>Click Here for More Details</span>
 									</a>

@@ -8,25 +8,31 @@ define(["./module"], function (app) {
         function ($scope, SearchService) {
 
             $scope.searchObject = {
-				keywords : "",
-				properties : [],
-				status:	""
-			};
-    
-			$scope.getProperties = function() {
-				SearchService.setKeyword($scope.searchObject.keywords);
-				SearchService.getResults()
-					.success(function (results) {
-						$scope.searchObject.properties = results.data;
-					})
-					.error(function (error) {
-						$scope.searchObject.status = 'Unable to load data: ' + error.message;
-					});
-			};
-			
-			$scope.getProperties();
+                keywords: "london",
+                properties: [],
+                status: ""
+            };
 
-           
+            $scope.getProperties = function () {
+                SearchService.setKeyword($scope.searchObject.keywords);
+                SearchService.getResults()
+                    .success($scope.loadPropertyTable)
+                    .error(function (error) {
+                        $scope.searchObject.status = 'Unable to load data: ' + error.message;
+                    });
+            };
+
+            $scope.getProperties();
+            
+            $scope.loadPropertyTable = function (data) {
+                if (data.data.length > 0) {
+                    $scope.searchObject.properties = data.data;
+                    $scope.searchObject.status = true;
+                } else {
+                    $scope.searchObject.status = false;
+                }
+                
+            };
         }]);
 });
 

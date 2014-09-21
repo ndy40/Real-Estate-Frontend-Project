@@ -8,12 +8,12 @@ define([
     "ngRoute",
     "./home/index",
     "./search/index",
-	"./shared/index",
-	"./learn-more/index",
-	"./list-property/index",
-	"./login/index",
-	"./investor-dashboard/index",
-	"./nav/index"
+    "./shared/index",
+    "./learn-more/index",
+    "./list-property/index",
+    "./login/index",
+    "./investor-dashboard/index",
+    "./nav/index"
 	
 ], function (angular) {
     'use strict';
