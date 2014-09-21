@@ -36,5 +36,11 @@
             //location configuration
             $locationProvider.html5Mode(true).hashPrefix('!');
         }]);
+		
+		
+		 return app.config(["$locationProvider", function ($locationProvider) {
+            $locationProvider.html5Mode(true).hashPrefix('!');
+        }]);
+		
     });
 }(define));
