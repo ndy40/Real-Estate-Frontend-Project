@@ -4,23 +4,34 @@
 
 define(["./module"], function (app) {
     'use strict';
-    return app.service('SearchService', ['$http', function($http) {
+    return app.service('SearchService', ['$http', 'APPSRCHURL', function($http, APPSRCHURL) {
         var SearchService = function () {
             this.keywords = "";
+            this.results = {};
         };
             
         SearchService.prototype.setKeyword =  function (keywords) {
             this.keywords = keywords;
+        };
+        
+        SearchService.prototype.cacheResults = function (results) {
+            'use strict';
+            this.results = results;
+        };
+        
+        SearchService.prototype.getCache = function () {
+            'use strict';
+            return this.results;
         };
 
         SearchService.prototype.getKeywords = function () {
             return this.keywords;
         };
 			
-		var urlBase = 'http://app.propertycrunch.co/client/search/search-properties';
         SearchService.prototype.getResults = function () {
-            return $http.get(urlBase + '/' + this.keywords);
-		};
+            var url = APPSRCHURL.search + this.keywords;
+            return $http.get(url);
+        };
 
 		
         return new SearchService();

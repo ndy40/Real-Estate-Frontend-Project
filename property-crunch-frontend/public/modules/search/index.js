@@ -5,8 +5,11 @@
 (function (define) {
     'use strict';
 
-    define(["./searchform-controller", "./search-service", "./search-factory"], function () {
-
+    define([
+        "./searchform-controller", 
+        "./search-service", 
+        "./search-factory", 
+        "./searchbox-directive"], function () {
     });
 
 }(define));

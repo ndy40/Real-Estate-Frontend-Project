@@ -5,9 +5,7 @@
 
 define(["./module", "../nav/index", "../search/index", "../shared/index"], function (app) {
     'use strict';
-    app.controller("HomeCtrl", ["$scope", "SearchService", function ($scope, SearchService) {
-		
-		
+    app.controller("HomeCtrl", ["$scope", function ($scope) {
 		
     }]);
 });
