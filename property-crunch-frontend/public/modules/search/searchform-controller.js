@@ -10,8 +10,9 @@ define(["./module"], function (app, angular) {
             $scope.searchObject = {
                 keywords: "london",
                 properties: [],
-                status: "",
-                filter : {}
+                status: false,
+                filter : {},
+                pager  : {}
             };
             
             /**
@@ -20,12 +21,17 @@ define(["./module"], function (app, angular) {
              * @returns {undefined}
              */
             $scope.loadPropertyTable = function (data) {
-                if (data.data) {
+                if (data.data.length > 0) {
                     $scope.searchObject.status = true;
                 } else {
                     $scope.searchObject.status = false;
                 }
                 $scope.searchObject.properties = data.data;
+                $scope.searchObject.pager = {
+                    count : data.count,
+                    size  : data.size,
+                    page  : data.page
+                };
                 
             };
 
@@ -43,6 +49,12 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
+            
+            $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
+                if (newVal.lenth > 0) {
+                    $scope.searchObject.status = true;
+                }
+            });
            
             $scope.getProperties();
         }]);

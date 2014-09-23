@@ -5,10 +5,10 @@
         <div class="container">
         	<!-- Search form here --> 
       		<search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></search-form>
-            <div class="row">
+            <div class="row" ng-show="searchObject.status">
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
-                        <h5 class="result_count">Showing Properties in Croydon 186 results</h5>
+                        <h5 class="result_count">Showing Properties with {{searchObject.pager.count}} result(s)</h5>
                     </div>
                 </div>
             </div>
