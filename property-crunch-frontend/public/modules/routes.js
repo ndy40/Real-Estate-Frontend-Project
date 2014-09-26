@@ -14,6 +14,10 @@
                 templateUrl : "modules/search/searchresult.html",
                 controller  : "SearchFormCtrl"
             });
+			$routeProvider.when("/property/:propertyId", {
+                templateUrl : "modules/property-details/property.html",
+                controller  : "PropertyCtrl"
+            });
             $routeProvider.when("/learn-more", {
                 templateUrl : "modules/learn-more/learn-more.html",
                 controller  : "LearnMoreCtrl"

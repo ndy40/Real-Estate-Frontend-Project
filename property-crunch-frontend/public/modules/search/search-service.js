@@ -32,7 +32,11 @@ define(["./module"], function (app) {
             var url = APPSRCHURL.search + this.keywords;
             return $http.get(url);
         };
-
+		
+		SearchService.prototype.getPropertyTypes = function () {
+			var url = APPSRCHURL.propertyTypes;
+			return $http.get(url);
+		}
 		
         return new SearchService();
     }]);

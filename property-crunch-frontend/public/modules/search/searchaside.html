@@ -1,0 +1,88 @@
+<aside class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>Refine your Search</h5>
+        </div>
+        <div class="panel-body">
+            <div class="row filter-row">
+            	
+   
+            
+        
+                <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Asking Price:</label>
+                <select id="property_price" class="col-md-7 col-sm-8 col-xs-12">
+                    <option value="-1">ALL</option>
+                    <option value="0-100000">Max £100,000</option>
+                    <option value="0-200000">Max £200,000</option>
+                    <option value="0-300000">Max £300,000</option>
+                    <option value="0-400000">Max £400,000</option>
+                </select>
+            </div>
+            <div class="row filter-row">
+                <label for="property_type" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Type:</label>
+                <selectbox defaults="{option: 'All', value : 'All'}" callback="setCurrentType" options="selectFilters.type" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
+                
+            </div>
+            <div class="row filter-row">
+                <label for="property_beds" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Beds:</label>
+                <spinner default="all" class="col-md-7 col-sm-8 col-xs-12"></spinner>
+            </div>
+            <div class="row filter-row">
+                <label for="property_yield" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Min Yield:</label>
+                <select id="property_yield" class="col-md-7 col-sm-8 col-xs-12">
+                    <option value="0-100">ALL</option>
+                    <option value="4-100">4%</option>
+                    <option value="5-100">5%</option>
+                    <option value="6-100">6%</option>
+                    <option value="7-100">7%</option>
+                    <option value="8-100">8%</option>
+                </select>
+            </div>
+            <!--<a href="#." class="btn btn-default btn-fullwidth">Update Results</a>-->
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>Filter the Results</h5>
+        </div>
+        <div class="panel-body">
+            <ul id="pc_type" class="no-bullets">
+                <li class="filter-checkbox">
+                    <input id="reposessed" value="repossessed" type="checkbox" name="checkbox" class="styled">
+                    <label for="reposessed"><span></span><i class="icon-library icon16-library"></i>Reposessed</label>
+                </li>
+                <li class="filter-checkbox">
+                    <input id="need-modernising" value="modernising" type="checkbox" name="checkbox" class="styled">
+                    <label for="need-modernising"><span></span><i class="icon-tools icon16-tools"></i>Need Modernising</label>
+                </li>
+                <li class="filter-checkbox">
+                    <input id="auction" value="auction" type="checkbox" name="checkbox" class="styled">
+                    <label for="auction"><span></span><i class="icon-auction icon16-auction"></i>Auction</label>
+                </li>
+                <li class="filter-checkbox">
+                    <input id="direct-to-vendor" value="dtv" type="checkbox" name="checkbox" class="styled">
+                    <label for="direct-to-vendor"><span></span><i class="icon-users icon16-users"></i>Direct to Vendor</label>
+                    <i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="To access these types of properties, please upload your proof of funds."></i>
+                </li>
+                <li class="filter-checkbox">
+                    <input id="reduced-in-price" value="reduced" type="checkbox" name="checkbox" class="styled">
+                    <label for="reduced-in-price"><span></span><i class="icon-chart icon16-chart"></i>Reduced in Price</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>Please Note</h5>
+        </div>
+        <div class="panel-body">
+            <p>Estimated Rental Yield is based on:</p>
+            <ul class="list-arrows">
+                <li>75% LTV Mortgages</li>
+                <li>6% Interest Rates</li>
+            </ul>
+        </div>
+    </div>
+</aside>

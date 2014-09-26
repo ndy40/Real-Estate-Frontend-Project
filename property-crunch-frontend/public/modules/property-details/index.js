@@ -3,6 +3,6 @@
 *   Module index file.
 */
 
-define(["./agency-login-controller"], function () {
+define(["./property-controller"], function () {
     'use strict';
 });

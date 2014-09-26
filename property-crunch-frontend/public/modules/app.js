@@ -8,6 +8,7 @@ define([
     "ngRoute",
     "./home/index",
     "./search/index",
+    "./property-details/index",
     "./shared/index",
     "./learn-more/index",
     "./list-property/index",
@@ -19,9 +20,9 @@ define([
     'use strict';
     return angular.module("PCAPP", [
 		"ngRoute",
-		"ui.bootstrap", 
 		"PCAPPHOME", 
 		"PCAPPSEARCH",
+		"PCAPPPROPERTYDETAILS",
 		"PCSHARED",
 		"PCAPPLEARNMORE",
 		"PCAPPLISTPROPERTY",

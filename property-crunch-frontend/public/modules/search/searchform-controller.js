@@ -4,16 +4,17 @@
  */
 define(["./module"], function (app, angular) {
     'use strict';
-    app.controller("SearchFormCtrl", ["$scope", "SearchService",
+    app.controller("SearchFormCtrl", ["$scope", "SearchService", 
         function ($scope, SearchService) {
 
             $scope.searchObject = {
                 keywords: "london",
                 properties: [],
                 status: "",
-                filter : {}
+                filter : {},
+				typeOptions: {},
             };
-            
+			
             /**
              * Loads data onto the results table. 
              * @param Object data
@@ -43,8 +44,65 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
-           
-            $scope.getProperties();
+			
+			
+			
+			/**
+             * Populate SelectBox Filters
+             */
+			$scope.selectFilters = {};
+			
+			// Get Property Types
+			$scope.getPropertiesType = function() {
+				var types = [];
+				
+				SearchService.getPropertyTypes()
+					.success(function(data) {
+						Array.prototype.forEach.call(data.data, function(e){
+							types.push({
+								option : e.name, 
+								value : e.id
+							});
+						});
+					});
+					
+				$scope.selectFilters.type = types;
+			};
+			
+			// Init all functions
+			$scope.init = function() {
+				 $scope.getProperties();
+				 $scope.getPropertiesType();
+			};
+			
+			$scope.init();
+			
+			// Setting Current Type After User selects a Property Type
+			// Use this as a parameter for Search API
+			$scope.setCurrentType = function(type) {
+				$scope.selectFilters.selectedType = type.value;
+				
+				//console.log($scope.selectFilters.selectedType);
+			}
+			
+			$scope.setCurrentBeds = function(type) {
+				$scope.selectFilters.selectedBeds = type.value;
+				
+				//console.log($scope.selectFilters.selectedType);
+			}
+			
+			//$scope.setCurrentBeds = function(option) {
+//				$scope.selectFilters.beds = option.value;
+//			}
+//			
+//			$scope.setCurrentYield = function(option) {
+//				$scope.selectFilters.yield = option.value;
+//			}
+//			
+//			$scope.setCurrentPrice = function(option) {
+//				$scope.selectFilters.price = option.value;
+//			}
+			
         }]);
 });
 

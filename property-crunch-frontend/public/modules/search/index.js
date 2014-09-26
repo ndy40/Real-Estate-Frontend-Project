@@ -8,8 +8,10 @@
     define([
         "./searchform-controller", 
         "./search-service", 
-        "./search-factory", 
-        "./searchbox-directive"], function () {
+        "./currency-filter", 
+        "./searchbox-directive",
+        "./selectbox-directive" ,
+        "./spinner-directive" ], function () {
     });
 
 }(define));

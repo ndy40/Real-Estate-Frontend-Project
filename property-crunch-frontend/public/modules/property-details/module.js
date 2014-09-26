@@ -5,8 +5,8 @@
 
 define([
     "angular",
-	"../agency-login/index"
+	"../property-details/index"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPAGENCYLOGIN",  ["PCSHARED"]);
+    return ng.module("PCAPPPROPERTYDETAILS",  ["PCAPPSEARCH","PCSHARED"]);
 });
