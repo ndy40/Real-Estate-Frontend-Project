@@ -1,0 +1,12 @@
+diff a/property-crunch-frontend/.gitignore b/property-crunch-frontend/.gitignore	(rejected hunks)
+@@ -1,8 +1,9 @@
+ /bootstrap/compiled.php
+-/vendor
++/vendor/
+ composer.phar
+ composer.lock
+ .env.*.php
+ .env.php
+ .DS_Store
+ Thumbs.db
++database.php

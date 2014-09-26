@@ -1,0 +1,9 @@
+diff a/property-crunch-frontend/app/config/auth.php b/property-crunch-frontend/app/config/auth.php	(rejected hunks)
+@@ -67,5 +67,6 @@
+ 		'expire' => 60,
+ 
+ 	),
+-
++        
++        'activate_by_default' => true
+ );
