@@ -79,3 +79,6 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+//custom PHP exception handler
+require app_path() . "/pcexceptions.php";

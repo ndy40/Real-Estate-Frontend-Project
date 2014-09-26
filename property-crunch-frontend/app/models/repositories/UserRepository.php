@@ -16,21 +16,38 @@ use Illuminate\Support\Facades\Log;
  */
 class UserRepository implements UserRepositoryInterface
 {
+    /**
+     * Validation rules.
+     * 
+     * @var array 
+     */
+    protected $USER_VALIDATION_RULES = array (
+        "email"      => "required|email",
+        "first_name" => "required|alpha-dash|size:40",
+        "last_name"  => "required|alpha-dash|size:40"
+    );
+    
     public function login($username, $password, $remember) {
         
     }
-
+    
+    /**
+     * Create a new user. 
+     * 
+     * @param array $user - An associative array of users data (first_name, email etc).
+     * @param type $groupName - The group the user should be assigned to.
+     * @return boolean
+     */
     public function create(array $user, $groupName = "basic") 
     {
-        try {
-            $user = Sentry::createUser($user);
-            //
-            $group = Sentry::findGroupByName(strtolower($groupName));
-            
-        } catch (GroupNotFoundException $ex) {
-            Log::warning("Group not found " . $ex->getMessage());
-        } catch (\Exception $ex) {
-            
+        
+        $newUser = Sentry::createUser($user);
+        //
+        $group = Sentry::findGroupByName(strtolower($groupName));
+        $newUser->addGroup($group);
+        
+        if ($newUser) {
+            return $newUser;
         }
         
         return false;
