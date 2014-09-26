@@ -14,14 +14,21 @@ define(["./module"], function (app) {
                     .success(scope.handleSearchData);
             };
             
+            //Can be use for Auto-complete
+//            scope.$watch(attr.keywords, function (newVal, oldVal) {
+//                if (newVal.length >= 3) {
+//                    SearchService.setKeyword(newVal);
+//                }
+//            });
+
             scope.handleSearchData = function (data) {
                 'use strict';
+                SearchService.cacheResults(data);
                 if (attr.bindResult !== undefined) {
                     scope[attr.bindResult] = data;
                 }
                 
                 if (attr.redirect !== undefined) {
-                    SearchService.cacheResults(data);
                     $location.path(attr.redirect);
                 }
                 
@@ -38,10 +45,10 @@ define(["./module"], function (app) {
             templateUrl : "./modules/search/searchform.html",
             scope : {
                 keywords    : "=",
-                redirect    : "@",  // this is the route to redirect to when result is present. 
-                bindResult  : "=",  //The Controller model to bind results of search to.
-                filters     : "=",  //this is the search filter parameter to be set and used by this module for performing searches. 
-                callback    : "=" // this holds the name of the callback function to call on when a result is present. 
+                redirect    : "@",
+                bindResult  : "=",
+                filters     : "=",
+                callback    : "="
             },
             link : link
         };

@@ -10,15 +10,10 @@ define(["./module"], function (app, angular) {
             $scope.searchObject = {
                 keywords: "london",
                 properties: [],
-<<<<<<< HEAD
-                status: "",
-                filter : {},
 				typeOptions: {},
-=======
                 status: false,
                 filter : {},
                 pager  : {}
->>>>>>> 9fd2dff381b06d2f4abb88ff3a9b1157474d8702
             };
 			
             /**
@@ -27,17 +22,12 @@ define(["./module"], function (app, angular) {
              * @returns {undefined}
              */
             $scope.loadPropertyTable = function (data) {
-                if (data.data.length > 0) {
+                if (data.data) {
                     $scope.searchObject.status = true;
                 } else {
                     $scope.searchObject.status = false;
                 }
                 $scope.searchObject.properties = data.data;
-                $scope.searchObject.pager = {
-                    count : data.count,
-                    size  : data.size,
-                    page  : data.page
-                };
                 
             };
 
@@ -55,7 +45,6 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
-<<<<<<< HEAD
 			
 			
 			
@@ -97,25 +86,6 @@ define(["./module"], function (app, angular) {
 				//console.log($scope.selectFilters.selectedType);
 			}
 			
-			$scope.setCurrentBeds = function(type) {
-				$scope.selectFilters.selectedBeds = type.value;
-				
-				//console.log($scope.selectFilters.selectedType);
-			}
-			
-			//$scope.setCurrentBeds = function(option) {
-//				$scope.selectFilters.beds = option.value;
-//			}
-//			
-//			$scope.setCurrentYield = function(option) {
-//				$scope.selectFilters.yield = option.value;
-//			}
-//			
-//			$scope.setCurrentPrice = function(option) {
-//				$scope.selectFilters.price = option.value;
-//			}
-			
-=======
             
             $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
                 if (newVal.lenth > 0) {
@@ -124,7 +94,6 @@ define(["./module"], function (app, angular) {
             });
            
             $scope.getProperties();
->>>>>>> 9fd2dff381b06d2f4abb88ff3a9b1157474d8702
         }]);
 });
 
