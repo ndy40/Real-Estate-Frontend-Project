@@ -10,15 +10,9 @@ define(["./module"], function (app, angular) {
             $scope.searchObject = {
                 keywords: "london",
                 properties: [],
-<<<<<<< HEAD
-                status: "",
                 filter : {},
-				typeOptions: {},
-=======
                 status: false,
-                filter : {},
                 pager  : {}
->>>>>>> 9fd2dff381b06d2f4abb88ff3a9b1157474d8702
             };
 			
             /**
@@ -38,7 +32,7 @@ define(["./module"], function (app, angular) {
                     size  : data.size,
                     page  : data.page
                 };
-                
+
             };
 
             $scope.getProperties = function () {
@@ -55,7 +49,6 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
-<<<<<<< HEAD
 			
 			
 			
@@ -97,34 +90,14 @@ define(["./module"], function (app, angular) {
 				//console.log($scope.selectFilters.selectedType);
 			}
 			
-			$scope.setCurrentBeds = function(type) {
-				$scope.selectFilters.selectedBeds = type.value;
-				
-				//console.log($scope.selectFilters.selectedType);
-			}
-			
-			//$scope.setCurrentBeds = function(option) {
-//				$scope.selectFilters.beds = option.value;
-//			}
-//			
-//			$scope.setCurrentYield = function(option) {
-//				$scope.selectFilters.yield = option.value;
-//			}
-//			
-//			$scope.setCurrentPrice = function(option) {
-//				$scope.selectFilters.price = option.value;
-//			}
-			
-=======
             
             $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
-                if (newVal.lenth > 0) {
+                if (newVal.length > 0) {
                     $scope.searchObject.status = true;
                 }
             });
            
             $scope.getProperties();
->>>>>>> 9fd2dff381b06d2f4abb88ff3a9b1157474d8702
         }]);
 });
 

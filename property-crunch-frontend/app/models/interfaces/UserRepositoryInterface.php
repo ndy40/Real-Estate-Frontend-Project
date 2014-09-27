@@ -8,7 +8,7 @@ use models\interfaces\BaseRepositoryInterface;
  * @author ndy40
  */
 interface UserRepositoryInterface extends BaseRepositoryInterface {
-    public function login($username, $password, $remember);
+	public function login($username, $password, $remember);
     
     public function update($user);
     
@@ -30,4 +30,5 @@ interface UserRepositoryInterface extends BaseRepositoryInterface {
     
     
     
+
 }

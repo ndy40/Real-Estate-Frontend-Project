@@ -18,23 +18,23 @@ class User extends User {
 	 */
 	protected $hidden = array('password', 'remember_token');
         
-        public function addFavorite($id)
-        {
-            if (!is_array($this->favourites)) {
-                $this->favourites = array();
-            }
-        
-            if (!in_array($id, $this->favourites)) {
-                $this->favourites[] = $id;
-            }
-        }
-        
-        public function removeFavourite($id) 
-        {
-            if (in_array($id, $this->favourites)) {
-                $index = array_search($id, $this->favourites);
-                unset($this->favourites[$index]);
-            }
-        }
+	public function addFavorite($id)
+	{
+		if (!is_array($this->favourites)) {
+			$this->favourites = array();
+		}
+	
+		if (!in_array($id, $this->favourites)) {
+			$this->favourites[] = $id;
+		}
+	}
+	
+	public function removeFavourite($id) 
+	{
+		if (in_array($id, $this->favourites)) {
+			$index = array_search($id, $this->favourites);
+			unset($this->favourites[$index]);
+		}
+	}
 
 }

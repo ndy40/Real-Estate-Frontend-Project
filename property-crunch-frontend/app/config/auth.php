@@ -67,5 +67,7 @@ return array(
 		'expire' => 60,
 
 	),
+        
+    'activate_by_default' => true
 
 );
