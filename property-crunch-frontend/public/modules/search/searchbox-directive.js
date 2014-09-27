@@ -13,7 +13,7 @@ define(["./module"], function (app) {
                 SearchService.getResults()
                     .success(scope.handleSearchData);
             };
-            
+
             scope.handleSearchData = function (data) {
                 'use strict';
                 if (attr.bindResult !== undefined) {
@@ -21,7 +21,7 @@ define(["./module"], function (app) {
                 }
                 
                 if (attr.redirect !== undefined) {
-                    SearchService.cacheResults(data);
+					SearchService.cacheResults(data);
                     $location.path(attr.redirect);
                 }
                 
@@ -37,11 +37,12 @@ define(["./module"], function (app) {
             restrict : "E",
             templateUrl : "./modules/search/searchform.html",
             scope : {
-                keywords    : "=",
+				keywords    : "=",
                 redirect    : "@",  // this is the route to redirect to when result is present. 
                 bindResult  : "=",  //The Controller model to bind results of search to.
                 filters     : "=",  //this is the search filter parameter to be set and used by this module for performing searches. 
                 callback    : "=" // this holds the name of the callback function to call on when a result is present. 
+
             },
             link : link
         };

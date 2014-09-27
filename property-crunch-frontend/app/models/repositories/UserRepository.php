@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Log;
  *
  * @author ndy40
  */
+
 class UserRepository implements UserRepositoryInterface
 {
     /**
