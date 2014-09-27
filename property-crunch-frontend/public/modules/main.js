@@ -19,6 +19,6 @@ require.config({
     },
 
     deps : ["./bootstrap"],
-    priority : ["domReady", "jQuery", "angular", "owl.carousel"]
+    priority : ["domReady", "jQuery", "angular"]
 
 });

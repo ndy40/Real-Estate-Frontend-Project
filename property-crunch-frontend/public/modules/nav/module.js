@@ -4,9 +4,8 @@
  */
 
 define([
-    "angular",
-	"../nav/index"
+    "angular"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPNAV",  ["PCSHARED"]);
+    return ng.module("PCAPPNAV", []);
 });

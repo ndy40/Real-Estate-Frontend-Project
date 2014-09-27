@@ -5,8 +5,7 @@
 
 define([
     "angular",
-	"../learn-more/index"
-], function (ng) {
+    ], function (ng) {
     'use strict';
-    return ng.module("PCAPPLEARNMORE",  ["PCSHARED"]);
+    return ng.module("PCAPPLEARNMORE",  []);
 });

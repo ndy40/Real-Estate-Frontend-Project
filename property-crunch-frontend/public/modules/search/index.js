@@ -10,9 +10,10 @@
         "./search-service", 
         "./currency-filter", 
         "./searchbox-directive",
-        "./selectbox-directive" ,
-        "./spinner-directive" ], function () {
+        "./selectbox-directive" 
+        // "./spinner-directive" 
+        ], function () {
     });
 
-}(define));
+})(define);
 
