@@ -9,12 +9,12 @@ define([
     "./home/index",
     "./search/index",
     "./property-details/index",
-    "./shared/index",
+    // "./shared/index",
     "./learn-more/index",
     "./list-property/index",
     "./login/index",
-    "./investor-dashboard/index",
-    "./nav/index"
+    // "./investor-dashboard/index",
+    // "./nav/index"
 	
 ], function (angular) {
     'use strict';
@@ -23,12 +23,12 @@ define([
 		"PCAPPHOME", 
 		"PCAPPSEARCH",
 		"PCAPPPROPERTYDETAILS",
-		"PCSHARED",
+		// "PCSHARED",
 		"PCAPPLEARNMORE",
 		"PCAPPLISTPROPERTY",
 		"PCAPPLOGIN",
-		"PCAPPINVESTORDASHBOARD",
-		"PCAPPNAV"
+		// "PCAPPINVESTORDASHBOARD",
+		// "PCAPPNAV"
 	]);
 });
 

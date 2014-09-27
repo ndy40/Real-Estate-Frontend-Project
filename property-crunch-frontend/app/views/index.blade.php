@@ -9,6 +9,7 @@
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
         <title>Property Crunch</title>
+        <base href="/">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>

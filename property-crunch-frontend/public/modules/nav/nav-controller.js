@@ -3,7 +3,7 @@
  * Agency Login Controller
  */
 
-define(["./module", "../nav/index"], function (app) {
+define(["./module"], function (app) {
     'use strict';
     app.controller("NavCtrl", ["$scope", function ($scope) {
 		$scope.isCollapsed = false;

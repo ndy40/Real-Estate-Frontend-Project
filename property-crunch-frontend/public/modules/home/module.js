@@ -8,5 +8,5 @@ define([
 	"../shared/index"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPHOME",  ["PCSHARED"]);
+    return ng.module("PCAPPHOME",  []);
 });

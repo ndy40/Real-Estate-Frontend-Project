@@ -4,9 +4,8 @@
  */
 
 define([
-    "angular",
-	"../login/index"
-], function (ng) {
+    "angular"
+	], function (ng) {
     'use strict';
-    return ng.module("PCAPPLOGIN",  ["PCSHARED"]);
+    return ng.module("PCAPPLOGIN",  []);
 });

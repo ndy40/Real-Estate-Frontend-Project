@@ -92,7 +92,7 @@ define(["./module"], function (app, angular) {
 			
             
             $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
-                if (newVal.length > 0) {
+                if (newVal !== undefined && newVal.hasOwnProperty("length")) {
                     $scope.searchObject.status = true;
                 }
             });

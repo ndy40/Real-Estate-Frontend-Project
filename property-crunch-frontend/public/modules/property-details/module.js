@@ -5,8 +5,8 @@
 
 define([
     "angular",
-	"../property-details/index"
+    "ngRoute"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPPROPERTYDETAILS",  ["PCAPPSEARCH","PCSHARED"]);
+    return ng.module("PCAPPPROPERTYDETAILS",  ["ngRoute"]);
 });

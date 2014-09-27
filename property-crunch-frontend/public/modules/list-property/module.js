@@ -4,9 +4,8 @@
  */
 
 define([
-    "angular",
-	"../list-property/index"
+    "angular"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPLISTPROPERTY",  ["PCSHARED"]);
+    return ng.module("PCAPPLISTPROPERTY",  []);
 });
