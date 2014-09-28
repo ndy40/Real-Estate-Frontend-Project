@@ -3,7 +3,7 @@
  * pages. 
  */
 
-define(["./module"], function (app) {
+define(["../module"], function (app) {
     app.directive("searchForm", ["SearchService", "$location", function (SearchService, $location) {
         'use strict';
         var link = function (scope, element, attr) {
@@ -35,7 +35,7 @@ define(["./module"], function (app) {
         
         return {
             restrict : "E",
-            templateUrl : "./modules/search/searchform.html",
+            templateUrl : "./modules/search/directives/searchbox.html",
             scope : {
 				keywords    : "=",
                 redirect    : "@",  // this is the route to redirect to when result is present. 

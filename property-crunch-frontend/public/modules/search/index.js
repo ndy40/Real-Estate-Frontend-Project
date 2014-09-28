@@ -7,11 +7,11 @@
 
     define([
         "./searchform-controller", 
-        "./search-service", 
-        "./currency-filter", 
-        "./searchbox-directive",
-        "./selectbox-directive" 
-        // "./spinner-directive" 
+        "./services/search-service", 
+        "./filters/currency-filter", 
+        "./directives/searchbox-directive",
+        "./directives/selectbox-directive",
+        "./directives/spinner-directive" 
         ], function () {
     });
 

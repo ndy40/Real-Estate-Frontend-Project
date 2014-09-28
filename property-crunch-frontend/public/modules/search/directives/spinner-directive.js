@@ -1,7 +1,7 @@
 /**
  * Custom Spinner Directive
  */
-define(["./module"], function (app) {
+define(["../module"], function (app) {
     app.directive("spinner", function () {
         'use strict';
 		
@@ -11,7 +11,7 @@ define(["./module"], function (app) {
 				defaults	: "=",
 				callback	: "="
             },
-			templateUrl : "./modules/search/spinner.html",
+			templateUrl : "./modules/search/directives/spinner.html",
             link : function (scope, element, attr) {
 			   
 				// Setting Default Options
@@ -31,7 +31,7 @@ define(["./module"], function (app) {
 					} else {
 						scope.inputVal += 1;
 						scope.selectedVal = scope.inputVal;	
-					}
+					}	
 				}
 				
 				//  Decrement Number 
@@ -47,14 +47,17 @@ define(["./module"], function (app) {
 					}
 				}
 			   
-			   	// Test Input & Return Default Value if isNaN
+			   	// Watch for change may it be from input or buttons and update callback
 				scope.$watch('inputVal', function(val) {
-					if (isNaN(val) || val < 1) {
-						scope.inputVal = "All";
-						scope.selectedVal = "-1";
-					} else {
-						scope.inputVal = val;
-						scope.selectedVal = val;
+					if (scope.callback !== undefined) {
+						if (isNaN(val) || val < 1) {
+							scope.inputVal = "All";
+							scope.selectedVal = "-1";
+						} else {
+							scope.inputVal = val;
+							scope.selectedVal = val;
+						}
+						scope.callback(scope.selectedVal);
 					}
 				});
 				

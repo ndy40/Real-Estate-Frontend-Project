@@ -1,7 +1,7 @@
 /**
  * Custom Selectbox Directive
  */
-define(["./module"], function (app) {
+define(["../module"], function (app) {
     app.directive("selectbox", function () {
         'use strict';
 		
@@ -12,11 +12,11 @@ define(["./module"], function (app) {
 				defaults	: "=",
 				callback	: "="
             },
-			templateUrl : "./modules/search/selectbox.html",
+			templateUrl : "./modules/search/directives/selectbox.html",
             link : function (scope, element, attr) {
 			   
 			   //  Toggle Dropdown
-			   var dropOpen = function(event) {					
+			   var dropOpen = function(event, $document) {					
 					event.preventDefault();
 					var dropDownEl = element.find('ul');
 					dropDownEl.toggleClass('show');
@@ -37,9 +37,7 @@ define(["./module"], function (app) {
 					scope.optionSelected = value;
 			   }
 			   
-			   
 			}
-			
 			
 		};
 				

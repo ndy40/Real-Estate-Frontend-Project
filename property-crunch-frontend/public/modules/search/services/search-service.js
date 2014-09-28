@@ -2,7 +2,7 @@
  * A Search service used for passing in Search keywords and sending Location search results to the database.
  */
 
-define(["./module"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.service('SearchService', ['$http', 'APPSRCHURL', function($http, APPSRCHURL) {
         var SearchService = function () {
@@ -71,6 +71,14 @@ define(["./module"], function (app) {
 		
 		SearchService.prototype.getPropertyTypes = function () {
 			var url = APPSRCHURL.propertyTypes;
+			return $http.get(url);
+		}
+		SearchService.prototype.getYieldFilters = function () {
+			var url = APPSRCHURL.yield;
+			return $http.get(url);
+		}
+		SearchService.prototype.getPriceFilters = function () {
+			var url = APPSRCHURL.price;
 			return $http.get(url);
 		}
 		

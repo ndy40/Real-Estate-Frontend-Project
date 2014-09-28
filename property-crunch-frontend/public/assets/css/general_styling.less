@@ -3,6 +3,15 @@
 /*===================================================================
   General Styling > Reset
 ====================================================================*/
+::selection {
+	background: @brand-primary; /* WebKit/Blink Browsers */
+	color: @white;
+}
+::-moz-selection {
+	background: @brand-primary;  /* Gecko Browsers */
+	color: @white;
+}
+
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,

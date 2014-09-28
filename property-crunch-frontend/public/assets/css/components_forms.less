@@ -25,6 +25,10 @@
 /*===================================================================
   Components > Forms > Inputs
 ====================================================================*/
+.input {
+	border: 1px solid @gray;
+}
+
 .input-group {
 	margin: 0 auto;
 	position: relative;
@@ -43,6 +47,12 @@
 	font-size: 18px;
 	min-height: 50px;
 }
+
+
+.form-control:focus {
+	border-color: @brand-primary;
+}
+
 @media (min-width: 768px) {
 	.input-group {
 		.btn {
@@ -75,10 +85,6 @@
 /*===================================================================
   Components > Forms > Inputs > Form Feedback
 ====================================================================*/
-.form-control:focus {
-	border-color: @brand-primary;
-}
-
 .has-success .form-control:focus,
 .has-error .form-control:focus {
 	box-shadow: none;

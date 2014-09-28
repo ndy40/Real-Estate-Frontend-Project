@@ -11,509 +11,6 @@
   Third-Party Plugins
 ====================================================================*/
 /*===================================================================
-  Third-Party Plugins > File Input Button (http://jasny.github.com/bootstrap)
-====================================================================*/
-.btn-labeled {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.btn-label {
-  position: relative;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  padding: 6px 12px;
-  left: -12px;
-  border-radius: 3px 0 0 3px;
-}
-.btn-label.btn-label-right {
-  left: auto;
-  right: -12px;
-  border-radius: 0 3px 3px 0;
-}
-.btn-lg .btn-label {
-  padding: 10px 16px;
-  left: -16px;
-  border-radius: 5px 0 0 5px;
-}
-.btn-lg .btn-label.btn-label-right {
-  left: auto;
-  right: -16px;
-  border-radius: 0 5px 5px 0;
-}
-.btn-sm .btn-label {
-  padding: 5px 10px;
-  left: -10px;
-  border-radius: 2px 0 0 2px;
-}
-.btn-sm .btn-label.btn-label-right {
-  left: auto;
-  right: -10px;
-  border-radius: 0 2px 2px 0;
-}
-.btn-xs .btn-label {
-  padding: 1px 5px;
-  left: -5px;
-  border-radius: 2px 0 0 2px;
-}
-.btn-xs .btn-label.btn-label-right {
-  left: auto;
-  right: -5px;
-  border-radius: 0 2px 2px 0;
-}
-.nav-tabs-bottom {
-  border-bottom: 0;
-  border-top: 1px solid #dddddd;
-}
-.nav-tabs-bottom > li {
-  margin-bottom: 0;
-  margin-top: -1px;
-}
-.nav-tabs-bottom > li > a {
-  border-radius: 0 0 4px 4px;
-}
-.nav-tabs-bottom > li > a:hover,
-.nav-tabs-bottom > li > a:focus,
-.nav-tabs-bottom > li.active > a,
-.nav-tabs-bottom > li.active > a:hover,
-.nav-tabs-bottom > li.active > a:focus {
-  border: 1px solid #dddddd;
-  border-top-color: transparent;
-}
-.nav-tabs-left {
-  border-bottom: 0;
-  border-right: 1px solid #dddddd;
-}
-.nav-tabs-left > li {
-  margin-bottom: 0;
-  margin-right: -1px;
-  float: none;
-}
-.nav-tabs-left > li > a {
-  border-radius: 4px 0 0 4px;
-  margin-right: 0;
-  margin-bottom: 2px;
-}
-.nav-tabs-left > li > a:hover,
-.nav-tabs-left > li > a:focus,
-.nav-tabs-left > li.active > a,
-.nav-tabs-left > li.active > a:hover,
-.nav-tabs-left > li.active > a:focus {
-  border: 1px solid #dddddd;
-  border-right-color: transparent;
-}
-.row > .nav-tabs-left {
-  padding-right: 0;
-  padding-left: 15px;
-  margin-right: -1px;
-  position: relative;
-  z-index: 1;
-}
-.row > .nav-tabs-left + .tab-content {
-  border-left: 1px solid #dddddd;
-}
-.nav-tabs-right {
-  border-bottom: 0;
-  border-left: 1px solid #dddddd;
-}
-.nav-tabs-right > li {
-  margin-bottom: 0;
-  margin-left: -1px;
-  float: none;
-}
-.nav-tabs-right > li > a {
-  border-radius: 0 4px 4px 0;
-  margin-left: 0;
-  margin-bottom: 2px;
-}
-.nav-tabs-right > li > a:hover,
-.nav-tabs-right > li > a:focus,
-.nav-tabs-right > li.active > a,
-.nav-tabs-right > li.active > a:hover,
-.nav-tabs-right > li.active > a:focus {
-  border: 1px solid #dddddd;
-  border-left-color: transparent;
-}
-.row > .nav-tabs-right {
-  padding-left: 0;
-  padding-right: 15px;
-}
-.btn-file {
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-}
-.btn-file > input {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  opacity: 0;
-  font-size: 23px;
-  height: 100%;
-  width: 100%;
-  direction: ltr;
-  cursor: pointer;
-}
-.fileinput {
-  margin-bottom: 9px;
-  display: inline-block;
-}
-.fileinput .form-control {
-  padding-top: 7px;
-  padding-bottom: 5px;
-  display: inline-block;
-  margin-bottom: 0px;
-  vertical-align: middle;
-  cursor: text;
-}
-.fileinput .thumbnail {
-  overflow: hidden;
-  display: inline-block;
-  margin-bottom: 5px;
-  vertical-align: middle;
-  text-align: center;
-}
-.fileinput .thumbnail > img {
-  max-height: 100%;
-}
-.fileinput .btn {
-  vertical-align: middle;
-}
-.fileinput-exists .fileinput-new,
-.fileinput-new .fileinput-exists {
-  display: none;
-}
-.fileinput-inline .fileinput-controls {
-  display: inline;
-}
-.fileinput-filename {
-  font-size: 14px;
-  vertical-align: middle;
-  display: inline-block;
-  overflow: hidden;
-}
-.form-control .fileinput-filename {
-  vertical-align: bottom;
-}
-.fileinput.input-group {
-  display: table;
-}
-.fileinput.input-group > * {
-  position: relative;
-  z-index: 2;
-}
-.fileinput.input-group > .btn-file {
-  z-index: 1;
-}
-.fileinput-new.input-group .btn-file,
-.fileinput-new .input-group .btn-file {
-  border-radius: 0 4px 4px 0;
-}
-.fileinput-new.input-group .btn-file.btn-xs,
-.fileinput-new .input-group .btn-file.btn-xs,
-.fileinput-new.input-group .btn-file.btn-sm,
-.fileinput-new .input-group .btn-file.btn-sm {
-  border-radius: 0 3px 3px 0;
-}
-.fileinput-new.input-group .btn-file.btn-lg,
-.fileinput-new .input-group .btn-file.btn-lg {
-  border-radius: 0 6px 6px 0;
-}
-.form-group.has-warning .fileinput .fileinput-preview {
-  color: #8a6d3b;
-}
-.form-group.has-warning .fileinput .thumbnail {
-  border-color: #faebcc;
-}
-.form-group.has-error .fileinput .fileinput-preview {
-  color: #a94442;
-}
-.form-group.has-error .fileinput .thumbnail {
-  border-color: #ebccd1;
-}
-.form-group.has-success .fileinput .fileinput-preview {
-  color: #3c763d;
-}
-.form-group.has-success .fileinput .thumbnail {
-  border-color: #d6e9c6;
-}
-.input-group-addon:not(:first-child) {
-  border-left: 0;
-}
-/*===================================================================
-  Third-Party Plugins > File Input Button > Custom Code
-====================================================================*/
-.fileinput-filename {
-  margin: 0;
-}
-.btn-file > input.upload-btn {
-  min-width: 230px;
-}
-.close.fileinput-exists {
-  float: none;
-  font-weight: 400;
-  line-height: 16px;
-  position: relative;
-  top: 4px;
-  color: #999999;
-}
-.close.fileinput-exists:hover {
-  color: #191e1d;
-}
-/**
- * selectize.bootstrap3.css (v0.10.1) - Bootstrap 3 Theme
- * Copyright (c) 2013 Brian Reavis & contributors
- * @author Brian Reavis <brian@thirdroute.com>
- */
-.selectize-control {
-  position: relative;
-}
-.selectize-dropdown,
-.selectize-input,
-.selectize-input input {
-  color: #191e1d;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 28px;
-  -webkit-font-smoothing: inherit;
-}
-.selectize-input,
-.selectize-control.single .selectize-input.input-active {
-  background: #ffffff;
-  cursor: text;
-  display: inline-block;
-}
-.selectize-input {
-  border: 1px solid #f2f2f2;
-  padding: 6px 12px;
-  display: inline-block;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.selectize-control.multi .selectize-input.has-items {
-  padding: 4px 12px 2px;
-}
-.selectize-input.full {
-  background-color: #ffffff;
-}
-.selectize-input.disabled,
-.selectize-input.disabled * {
-  cursor: default !important;
-}
-.selectize-input.dropdown-active {
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-}
-.selectize-input > * {
-  vertical-align: baseline;
-  display: -moz-inline-stack;
-  display: inline-block;
-}
-.selectize-control.multi .selectize-input > div {
-  cursor: pointer;
-  margin: 0 3px 2px 0;
-  padding: 2px 3px;
-  background: #f6af00;
-  color: #191e1d;
-  border: 0 solid #f2f2f2;
-}
-.selectize-control.multi .selectize-input > div.active {
-  background: #f6af00;
-  color: #ffffff;
-  border: 0 solid #e9edeb;
-}
-.selectize-control.multi .selectize-input.disabled > div,
-.selectize-control.multi .selectize-input.disabled > div.active {
-  color: #686868;
-  background: #c8c8c8;
-  border: 0 solid #ffffff;
-}
-.selectize-input > input {
-  padding: 0 !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  max-width: 100% !important;
-  margin: 0 2px 0 0 !important;
-  text-indent: 0 !important;
-  border: 0 none !important;
-  background: none !important;
-  line-height: inherit !important;
-  -webkit-user-select: auto !important;
-}
-.selectize-input > input::-ms-clear {
-  display: none;
-}
-.selectize-input > input:focus {
-  outline: none !important;
-}
-.selectize-input::after {
-  content: ' ';
-  display: block;
-  clear: left;
-}
-.selectize-input.dropdown-active::before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  background: #e9edeb;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.selectize-dropdown {
-  position: absolute;
-  z-index: 10;
-  border: 1px solid #f2f2f2;
-  background: #ffffff;
-  margin: -1px 0 0 0;
-  border-top: 0 none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-}
-.selectize-dropdown [data-selectable] {
-  cursor: pointer;
-  overflow: hidden;
-}
-.selectize-dropdown [data-selectable] .highlight {
-  background: none;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-}
-.selectize-dropdown [data-selectable],
-.selectize-dropdown .optgroup-header {
-  padding: 3px 12px;
-}
-.selectize-dropdown .optgroup:first-child .optgroup-header {
-  border-top: 0 none;
-}
-.selectize-dropdown .optgroup-header {
-  color: #f2f2f2;
-  background: #ffffff;
-  cursor: default;
-}
-.selectize-dropdown .active {
-  background-color: #f6af00;
-  color: #ffffff;
-}
-.selectize-dropdown .active.create {
-  color: #f6af00;
-}
-.selectize-dropdown .create {
-  color: rgba(25, 30, 29, 0.5);
-}
-.selectize-dropdown-content {
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 200px;
-}
-.selectize-control.single .selectize-input,
-.selectize-control.single .selectize-input input {
-  cursor: pointer;
-}
-.selectize-control.single .selectize-input.input-active,
-.selectize-control.single .selectize-input.input-active input {
-  cursor: text;
-}
-.selectize-control.single .selectize-input:after {
-  content: "\e622";
-  float: right;
-  font-size: 28px;
-  color: #999999;
-  margin-right: -10px;
-}
-.selectize-control.rtl.single .selectize-input:after {
-  left: 17px;
-  right: auto;
-}
-.selectize-control.rtl .selectize-input > input {
-  margin: 0 4px 0 -2px !important;
-}
-.selectize-control .selectize-input.disabled {
-  opacity: 0.5;
-  background-color: #ffffff;
-}
-.selectize-dropdown,
-.selectize-dropdown.form-control {
-  height: auto;
-  padding: 0;
-  margin: -1px 0 0 0;
-  z-index: 1000;
-  background: #ffffff;
-  border: 1px solid #e9edeb;
-}
-.selectize-dropdown .optgroup-header {
-  font-size: 14px;
-  line-height: 1.428571429;
-}
-.selectize-dropdown .optgroup:first-child:before {
-  display: none;
-}
-.selectize-dropdown .optgroup:before {
-  content: ' ';
-  display: block;
-  height: 1px;
-  margin: 10px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-  margin-left: -12px;
-  margin-right: -12px;
-}
-.selectize-dropdown-content {
-  padding: 5px 0;
-}
-.selectize-dropdown-header {
-  padding: 6px 12px;
-}
-.selectize-input {
-  min-height: 36px;
-}
-.selectize-input.dropdown-active {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.selectize-input.dropdown-active::before {
-  display: none;
-}
-.selectize-input.focus {
-  border-color: #e9edeb;
-  outline: 0;
-}
-.selectize-control.multi .selectize-input.has-items {
-  padding-left: 9px;
-  padding-right: 9px;
-}
-.selectize-control.multi .selectize-input > div {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.form-control.selectize-control {
-  padding: 0;
-  height: auto;
-  border: none;
-  background: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-/*===================================================================
   Plugins > Owl Carousel v1.3.3
   MIT License: http://owlgraphic.com/owlcarousel/#faq
 ====================================================================*/
@@ -598,6 +95,18 @@
 /*===================================================================
   General Styling > Reset
 ====================================================================*/
+::selection {
+  background: #f6af00;
+  /* WebKit/Blink Browsers */
+
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #f6af00;
+  /* Gecko Browsers */
+
+  color: #ffffff;
+}
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
@@ -787,8 +296,7 @@ ul {
 [class^="icon-"],
 [class*=" icon-"],
 input[type=checkbox]:not(old):checked + label > span:before,
-ul.list-arrows li:before,
-.selectize-control.single .selectize-input:after {
+ul.list-arrows li:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -1018,6 +526,9 @@ i.icon-help:hover {
 /*===================================================================
   Components > Forms > Inputs
 ====================================================================*/
+.input {
+  border: 1px solid #e9edeb;
+}
 .input-group {
   margin: 0 auto;
   position: relative;
@@ -1033,6 +544,9 @@ i.icon-help:hover {
 .form-control {
   font-size: 18px;
   min-height: 50px;
+}
+.form-control:focus {
+  border-color: #f6af00;
 }
 @media (min-width: 768px) {
   .input-group .btn {
@@ -1058,9 +572,6 @@ i.icon-help:hover {
 /*===================================================================
   Components > Forms > Inputs > Form Feedback
 ====================================================================*/
-.form-control:focus {
-  border-color: #f6af00;
-}
 .has-success .form-control:focus,
 .has-error .form-control:focus {
   box-shadow: none;
@@ -1111,29 +622,57 @@ input[type=checkbox]:not(old) + label {
 /*===================================================================
   Components > Buttons
 ====================================================================*/
+button {
+  color: #ffffff;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+button:hover,
+button:focus {
+  text-decoration: none;
+}
+button,
 .btn {
   font-size: 16px;
   line-height: 1;
-  min-width: 170px;
-  padding: 17px 30px;
   outline: none;
   position: relative;
   background: #f6af00;
-  color: #ffffff;
-  box-shadow: 0 3px #b98300;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.btn:hover,
-.btn:focus {
+button:hover,
+.btn:hover {
   background: #191e1d;
-  box-shadow: 0 2px #000000;
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+button:focus,
+.btn:focus {
+  outline: none;
+}
+button:active,
 .btn:active {
   box-shadow: 0;
+}
+.btn {
+  color: #ffffff;
+  min-width: 170px;
+  padding: 17px 30px;
+  box-shadow: 0 3px #b98300;
+}
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 2px #000000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .btn-fullwidth {
   font-size: 18px;
@@ -1834,10 +1373,85 @@ footer ul li.last-link {
 .custom-select button {
   height: 40px;
   width: 100%;
+  color: #191e1d;
   background: #ffffff;
   border: 1px solid #e9edeb;
   padding-left: 10px;
   text-align: left;
+}
+.custom-select button:before,
+.custom-select button:after {
+  content: " ";
+  display: table;
+}
+.custom-select button:after {
+  clear: both;
+}
+.custom-select button .option-selected,
+.custom-select button .select-arrow {
+  line-height: 36px;
+}
+.custom-select button .option-selected {
+  float: left;
+}
+.custom-select button .select-arrow {
+  float: right;
+  color: #999999;
+  font-size: 28px;
+}
+.custom-select .dropdown-menu {
+  box-shadow: none;
+  margin: 0;
+  top: 40px;
+  border: 1px solid #e9edeb;
+  border-top: 0;
+  width: 100%;
+  height: 220px;
+  overflow-y: scroll;
+}
+.custom-select .dropdown-menu > li > a {
+  padding: 6px 10px;
+  font-weight: 300;
+  cursor: pointer;
+  color: #191e1d;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+}
+.custom-select .dropdown-menu > li > a:hover {
+  background: #f6af00;
+  color: #ffffff;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+}
+/*===================================================================
+  Components > Spinner
+====================================================================*/
+.spinner {
+  position: relative;
+}
+.spinner:before,
+.spinner:after {
+  content: " ";
+  display: table;
+}
+.spinner:after {
+  clear: both;
+}
+.spinner .form-control,
+.spinner button {
+  float: left;
+  min-height: 40px;
+  padding: 5px 10px;
+  width: 40px;
+}
+.spinner .form-control {
+  font-size: 16px;
+  text-align: center;
+  width: 87px;
+}
+.spinner button {
+  font-size: 24px;
+  font-weight: 600;
 }
 /*===================================================================
   Pages

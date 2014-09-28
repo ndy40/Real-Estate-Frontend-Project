@@ -1,29 +1,57 @@
 /*===================================================================
   Components > Buttons
 ====================================================================*/
+button {
+	color: @white;
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; 
+  border: 1px solid transparent;
+  white-space: nowrap;
+  
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+button,
 .btn {
 	font-size: 16px;
 	line-height: 1;
-    min-width: 170px;
-    padding: 17px 30px;
 	outline: none;
 	position: relative;
 	background: @brand-primary;
-	color: @white;
-	box-shadow: 0 3px darken(@brand-primary, 12%);
-	
 	.transition(all 0.3s);
 	
-	&:hover,
-	&:focus {
+	&:hover {
 		background: @gray-darker;
-		box-shadow: 0 2px  darken(@gray-darker, 12%);
 		outline: none;
 		.transition(all 0.3s);
 	}
 	
+	&:focus {
+		outline: none;
+	}
+	
 	&:active {
 		box-shadow: 0;
+	}
+}
+
+.btn {
+	color: @white;
+    min-width: 170px;
+    padding: 17px 30px;
+	box-shadow: 0 3px darken(@brand-primary, 12%);
+	
+	&:hover,
+	&:focus {
+		box-shadow: 0 2px darken(@gray-darker, 12%);
+		.transition(all 0.3s);
 	}
 }
 .btn-fullwidth {
