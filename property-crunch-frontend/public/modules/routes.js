@@ -20,14 +20,9 @@
                 controller  : "PropertyCtrl"
             });
             
-            $routeProvider.when("/learn-more", {
-                templateUrl : "modules/learn-more/learn-more.html",
-                controller  : "LearnMoreCtrl"
-            });
-
-            $routeProvider.when("/list-property", {
-                templateUrl : "modules/list-property/list-property.html",
-                controller  : "ListPropertyCtrl"
+            $routeProvider.when("/static/:pageName", {
+                templateUrl : "modules/static-pages/static.html",
+                controller  : "StaticCtrl"
             });
 
             $routeProvider.when("/login", {

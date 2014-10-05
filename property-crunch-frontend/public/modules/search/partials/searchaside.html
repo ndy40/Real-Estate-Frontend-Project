@@ -6,35 +6,35 @@
         <div class="panel-body">
             <div class="row filter-row">
                 <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Minimum Price:</label>
-                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMinPrice" options="selectFilters.minPrice" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
+                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMinPrice" options="searchObject.filter.refineSearch.minPriceList" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
             </div>
             <div class="row filter-row">
                 <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Maximum Price:</label>
-                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMaxPrice" options="selectFilters.maxPrice" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
+                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMaxPrice" options="searchObject.filter.refineSearch.maxPriceList" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
             </div>
             <div class="row filter-row">
                 <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Type:</label>
-                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentType" options="selectFilters.type" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
+                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentType" options="searchObject.filter.refineSearch.types" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
                 
             </div>
             <div class="row filter-row">
                 <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Min Yield:</label>
-                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentYield" options="selectFilters.yield" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
+                <selectbox defaults="{option: 'All', value : -1}" callback="setCurrentYield" options="searchObject.filter.refineSearch.yieldList" class="col-md-7 col-sm-8 col-xs-12"></selectbox>
             </div>
             <div class="row filter-row">
                 <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Beds:</label>
                 <spinner defaults="all" callback="setCurrentBeds" class="col-md-7 col-sm-8 col-xs-12"></spinner>
             </div>
-            <button class="btn btn-default btn-fullwidth">Update Results</button>
+            <button class="btn btn-default btn-3d btn-fullwidth">Update Results</button>
         </div>
     </div>
     
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h5>Filter the Results</h5>
+            <h5>Filters</h5>
         </div>
         <div class="panel-body">
-            <ul id="pc_type" class="no-bullets">
+            <ul class="no-bullets filters-list">
                 <li class="filter-checkbox">
                     <input id="reposessed" value="repossessed" type="checkbox" name="checkbox" class="styled">
                     <label for="reposessed"><span></span><i class="icon-library icon16-library"></i>Reposessed</label>
@@ -50,25 +50,15 @@
                 <li class="filter-checkbox">
                     <input id="direct-to-vendor" value="dtv" type="checkbox" name="checkbox" class="styled">
                     <label for="direct-to-vendor"><span></span><i class="icon-users icon16-users"></i>Direct to Vendor</label>
-                    <i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="To access these types of properties, please upload your proof of funds."></i>
                 </li>
                 <li class="filter-checkbox">
                     <input id="reduced-in-price" value="reduced" type="checkbox" name="checkbox" class="styled">
                     <label for="reduced-in-price"><span></span><i class="icon-chart icon16-chart"></i>Reduced in Price</label>
                 </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h5>Please Note</h5>
-        </div>
-        <div class="panel-body">
-            <p>Estimated Rental Yield is based on:</p>
-            <ul class="list-arrows">
-                <li>75% LTV Mortgages</li>
-                <li>6% Interest Rates</li>
+                <li class="filter-checkbox">
+                    <input id="cash-buyer" value="cash" type="checkbox" name="checkbox" class="styled">
+                    <label for="cash-buyer"><span></span><i class="icon-chart icon16-chart"></i>Cash Buyer</label>
+                </li>
             </ul>
         </div>
     </div>

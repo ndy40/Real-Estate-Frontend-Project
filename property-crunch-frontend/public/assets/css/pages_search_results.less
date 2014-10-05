@@ -25,32 +25,23 @@
 	}
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-	
-	.selectize-input {
-		padding: 6px 10px;
-	}
-	
-	.selectize-control.single .selectize-input:after {
-		font-size: 22px;
-		margin-right: -7px;
-		position: relative;
-		top: 5px;
-	}
-}
+
 
 /*===================================================================
-  Pages > Search Results > Filter the Results
+  Pages > Search Results > Filters Panel
 ====================================================================*/
-.filter-checkbox {
-	.bottom-10();
-	
-	input[type="checkbox"]:not(old) + label {
-		margin-left: -7px;
+.filters-list {
+	li {
+		margin-bottom: 15px;
 	}
-
+}
+.filter-checkbox {
 	label {
 		font-size: @font-size-base;
+		
+		i {
+			cursor: pointer;
+		}
 	}
 	
 	span, i {
@@ -60,170 +51,91 @@
 	i {
 		position: relative;
 		color: @gray-dark;
+		line-height: 1;
 		margin: 0 10px 0 7px;
-		top: 4px;
+		font-size: @font-size-base;
 		
 		&.icon-help {
 			float: none;
 			top: 1px;
-		}
-		
-		&.icon-library {
-			font-size: 18px;
-			top: 2px;
-			margin-left: 8px;
-		}
-		
-		&.icon-tools {
-			font-size: 16px;
-			margin-left: 10px;
-		}
-		
-		&.icon-auction {
-			font-size: 22px;
-			top: 1px;
-			margin-right: 8px;
-		}
-		
-		&.icon-users {
-			font-size: 16px;
-			margin-left: 9px;
-			margin-right: 11px;
-		}
-		
-		&.icon-chart {
-			font-size: 18px;
-			margin-right: 11px;
-		}
-	}
-}
-
-@media (min-width: 991px) {
-	.filter-checkbox {
-		input[type="checkbox"]:not(old) + label {
-			margin-left: -20px;
+			left: -5px;
 		}
 	}
 }
 
 /*===================================================================
-  Pages > Search Results > Filters Panel
+  Pages > Search Results > Sort Panel
 ====================================================================*/
-.info-filters {
-	
+.sort-filters {
 	.panel-heading {
-		padding: 9px 10px 4px;
-		min-height: 50px;
-		background: @white;
-		color: @gray-darker;
-		
+		background: @gray-lighter;
+		padding: 10px 26px;
 		.clearfix();
-	}
-	
-	h6 {
-		font-size: @font-size-base;
-		line-height: 20px;
-		margin: 0 10px 0 0;
-		display: inline-block;
-		float: left;
-	}
-	
-	.label	{
-		padding: 5px 5px 5px 2px;
-		margin: 0 10px 10px 0;
-		float: left;
-		font-size: 11px;
 		
-		i {
+		.sort {
+			float: left;
+		}
+		
+		.number-results {
+			float: right;
+		}
+		
+		.sort,
+		.number-results {
+			.clearfix();
+		}
+		
+		h5,
+		.small-select {
+			float: left;
+		}
+		
+		h5 {
+			font-size: @font-size-base;
+			line-height: 30px;
+			margin: 0 15px 0 0;
+		}
+	}
+	.small-select {
+		.custom-select {
 			position: relative;
-    		top: 1px;
-			color: @gray-dark;
-			.transition(color 0.3s);
+			height: auto;
+			width: 66px;
 			
-			&:hover {
-				color: @gray-darker;
-				.transition(color 0.3s);
+			button {
+				height: 30px;
+				
+				.option-selected {
+					line-height: 27px;
+				}
+				.select-arrow {
+					line-height: 30px;
+				}
+				
+				.select-arrow {
+					font-size: 24px;
+				}
+				
 			}
+			
+			.dropdown-menu {
+				top: 30px;
+   				overflow: hidden;
+				height: auto;
+				
+				> li > a {
+					padding: 3px 10px;
+				}
+			}	
+		}
+	}
+	.sort-select {
+		.custom-select {
+			width: 128px;
 		}
 	}
 }
 
-/*===================================================================
-  Pages > Search Results > Filters Panel > Left Section
-====================================================================*/
-.filter-left {	
-	padding: 5px 0;
-	float: left;
-}
-
-/*===================================================================
-  Pages > Search Results > Filters Panel > Right Section
-====================================================================*/
-.filter-right {	
-	float: left;
-}
-
-.results-filter {
-	.clearfix();
-	
-	.dropdown-label {
-		float: left;
-	}
-	
-	.selectize-control {
-		float: right;
-		
-		.selectize-input {
-			font-size: 16px;
-			line-height: 24px;
-			min-height: 30px;
-			width: 76px;
-			padding: 2px 12px;
-			
-			&.not-full {
-				margin-right: 0;
-			
-			}
-			
-			&:after {
-				font-size: 24px;
-				line-height: 1;
-			}
-		}
-	}
-	
-	.dropdown-label {
-		line-height: 20px;
-		padding: 5px 10px 5px 0;
-	}
-}
-
-@media (min-width: 768px) {
-	
-	.filter-right {
-		float: right;
-	}
-	
-}
-
-@media (min-width: 992px) {
-	
-	.info-filters {
-		
-		.label	{
-			margin-bottom: 0;
-		}
-		
-		.results-filter {
-			
-			.dropdown-label {
-				padding: 5px 10px;
-			}
-			
-		}
-	}
-	
-}
 
 /*===================================================================
   Pages > Search Results > Tags Panel
@@ -287,59 +199,6 @@
 	
 	img {
 		width: 694px;
-	}
-}
-/*===================================================================
-  Pages > Search Results > Property Listing > Direct2Vendor Property
-====================================================================*/		
-.dtv-overlay {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: rgba(255,255,255,0.9);
-	top: 0;
-	left: 0;
-	
-	> a {
-		font-size: @font-size-h2;
-		font-weight: 300;
-	    display: inline-block;
-		text-align: center;
-		width: 100%;
-		margin: 240px 0;
-	}
-}
-@media (min-width: 360px) {
-	.dtv-overlay a {
-		
-	}
-}
-@media (min-width: 480px) {
-	.dtv-overlay a {
-		margin: 230px 0;
-	}
-}
-@media (min-width: 640px) {
-	.dtv-overlay a {
-		margin: 327px 0;
-	}
-}
-@media (min-width: 768px) {
-	.dtv-overlay a {
-		margin: 130px 0;
-	}
-}
-
-@media (min-width: 992px) {
-	.dtv-overlay a {
-		margin: 160px 0;
-	}
-}
-
-@media (min-width: 1200px) {
-	.dtv-overlay a {
-		margin: 44px 0;
 	}
 }
 /*===================================================================
@@ -658,10 +517,4 @@
 	}
 }
 
-/*===================================================================
-  Pages > Search Results > Pagination (Move to Pagination)
-====================================================================*/
-.property-listing-pagination {
-	float: right;
-}
 

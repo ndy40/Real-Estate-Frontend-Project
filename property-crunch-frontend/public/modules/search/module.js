@@ -11,11 +11,13 @@
     ], function (ng) {
         return  ng.module("PCAPPSEARCH", [])
             .constant("APPSRCHURL", {
-                "search" 		: "http://app.propertycrunch.co/client/search/search-properties/",
-				"propertyTypes"	: "http://app.propertycrunch.co/client/search/property-types",
-				"yield"			: "./modules/search/filters-data/yield.json", 	// Replace this with Live API
-				"price"			: "./modules/search/filters-data/price.json" 	// Replace this with Live API
-            });
+                "search" 				: "http://app.propertycrunch.co/client/search/search-properties/",
+				"typeList"				: "http://app.propertycrunch.co/client/search/property-types",
+				"yieldList"				: "./modules/search/filters-data/yield.json", 	// Replace this with Live API
+				"priceList"				: "./modules/search/filters-data/price.json", 	// Replace this with Live API
+				"sortList"				: "./modules/search/filters-data/sort.json", 	// Replace this with Live API
+				"resultsPerPageList" 	: "./modules/search/filters-data/results.json" 	// Replace this with Live API
+            })
     });
 
 }(define));

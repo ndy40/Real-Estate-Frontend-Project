@@ -6,16 +6,18 @@
 }
 
 .panel-default > .panel-heading {
-	border: 1px solid @gray;
+	border: 1px solid @gray-dark;
 	background: @gray-dark;
 	color: @white;
-	font-weight: 400;
+//	background: @gray-light;
+//	color: darken(@gray-dark, 15%);
 	
-	h5 {
-		font-weight: 400;
-	}
 }
 
+.panel-light .panel-heading {
+	border: 1px solid @gray;
+	background: @gray-lighter;
+}
 .panel-primary .panel-heading {
 	border: 1px solid @brand-primary;
 	background: @brand-primary;

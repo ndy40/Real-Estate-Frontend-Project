@@ -8,7 +8,7 @@
             <div class="row" ng-show="searchObject.status">
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
-                        <h5 class="result_count">Showing Properties with {{searchObject.pager.count}} result(s)</h5>
+                        <h5 class="result_count">Showing Properties with {{searchObject.pager.totalProperties}} result(s)</h5>
                     </div>
                 </div>
             </div>
@@ -24,33 +24,19 @@
   			<ng-include src="'modules/search/partials/searchaside.html'"></ng-include>
             
             <div class="col-lg-8">
-                <div class="panel panel-default info-filters">
+                <div class="panel panel-light sort-filters">
                     <div class="panel-heading">
-                        <div class="filter-left">
-                            <h6>Filters:</h6>
-                            <div class="label label-default">
-                                <i id="repo-label" class="icon-cross2 icon7-cross"></i>
-                                Reposessed
-                            </div>
-                            <div class="label label-default">
-                                <i id="mod-label" class="icon-cross2 icon7-cross"></i>
-                                Need Modernising
-                            </div>
-                            <div class="label label-default">
-                                <i id="auc-label" class="icon-cross2 icon7-cross"></i>
-                                Auction
-                            </div>
-                            <div class="label label-default">
-                                <i id="dtv-label" class="icon-cross2 icon7-cross"></i>
-                                Direct to Vendor
-                            </div>
-                            <div class="label label-default">
-                                <i id="red-label" class="icon-cross2 icon7-cross"></i>
-                                Reduced in Price
-                            </div>
+                    	<div class="sort">
+                            <h5>Sort by:</h6>
+                            <selectbox class="small-select sort-select" defaults="{option: 'Most Recent', value : 1}" callback="setSortOrder" options="searchObject.filter.sortBy.list"></selectbox>
                         </div>
+                        <div class="number-results">
+                        	<h5>Results per page:</h6>
+                            <selectbox class="small-select" defaults="{option: 10, value : 10}" callback="setResultsPerPage" options="searchObject.filter.resultsPerPage"></selectbox>
+                        </div>    
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-outline info-tags">
@@ -114,15 +100,21 @@
 								<h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
 							</div>
 						</div>
-						<!--<a href="properties/{{property.id}}.html" class="btn btn-default btn-fullwidth hidden-lg details-page">More Details</a>-->
 						
-						
-						<div class="dtv-overlay">
-							<a href="login.html">Direct to Vendor</a>
-						</div>
                     </article>
-                </div>  
-
+                </div> 
+                <ul class="pagination pagination-custom">
+                	<li ng-show="searchObject.pager.prev">
+                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage-1)">Previous</a>
+                    </li>
+                    <li ng-repeat="page in searchObject.pager.pagesArray">
+                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="selectPage(page.num)">{{page.num}}</a>
+                    </li>
+                    <li ng-show="searchObject.pager.next" class="next">
+                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage + 1)">Next</a>
+                    </li>
+                </ul> 
+                <!--<search-pagination total-pages="" class="pagination-custom"></search-pagination>-->
             </div>
         </div>
     </div>

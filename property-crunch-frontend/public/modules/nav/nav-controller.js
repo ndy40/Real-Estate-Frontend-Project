@@ -1,6 +1,6 @@
 /*global define */
 /**
- * Agency Login Controller
+ * Navigation Controller
  */
 
 define(["./module"], function (app) {
