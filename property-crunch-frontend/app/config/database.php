@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '192.163.33.4',
 			'database'  => 'pc_web',
 			'username'  => 'root',
 			'password'  => 'mysql',
@@ -114,7 +114,7 @@ return array(
 		'cluster' => false,
 
 		'default' => array(
-			'host'     => '127.0.0.1',
+			'host'     => '192.168.33.4',
 			'port'     => 6379,
 			'database' => 0,
 		),
