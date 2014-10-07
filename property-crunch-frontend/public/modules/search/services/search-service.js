@@ -77,7 +77,6 @@ define(["../module"], function (app) {
             'use strict';
             this.filter = filter;
         };
-
         /**
          * Returns the search filter object.
          * @returns Object
@@ -95,37 +94,6 @@ define(["../module"], function (app) {
             'use strict';
 
         };
-
-		 /**
-         * Get the selectBox Filter list data
-         */
-        SearchService.prototype.getTypeList = function () {
-                var url = APPSRCHURL.typeList;
-                return $http.get(url);
-        };
-
-        SearchService.prototype.getYieldList = function () {
-                var url = APPSRCHURL.yieldList;
-                return $http.get(url);
-        };
-
-        SearchService.prototype.getPriceList = function () {
-                var url = APPSRCHURL.priceList;
-                return $http.get(url);
-        };
-
-        SearchService.prototype.getSortList = function () {
-                var url = APPSRCHURL.sortList;
-                return $http.get(url);
-        };
-
-        SearchService.prototype.getResultsPerPageList = function () {
-                var url = APPSRCHURL.resultsPerPageList;
-                return $http.get(url);
-        };
-
-
-        /**
          * initializes the search and returns a search result.
          *
          * @returns {Promise}
@@ -143,7 +111,6 @@ define(["../module"], function (app) {
             }
             return $http.get(url);
         };
-
         return new SearchService();
     }]);
 });
