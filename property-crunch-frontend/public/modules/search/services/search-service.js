@@ -69,18 +69,18 @@ define(["../module"], function (app) {
             return $http.get(url);
         };
 		
-		SearchService.prototype.getPropertyTypes = function () {
-			var url = APPSRCHURL.propertyTypes;
-			return $http.get(url);
-		}
-		SearchService.prototype.getYieldFilters = function () {
-			var url = APPSRCHURL.yield;
-			return $http.get(url);
-		}
-		SearchService.prototype.getPriceFilters = function () {
-			var url = APPSRCHURL.price;
-			return $http.get(url);
-		}
+        SearchService.prototype.getPropertyTypes = function () {
+                var url = APPSRCHURL.propertyTypes;
+                return $http.get(url);
+        };
+        SearchService.prototype.getYieldFilters = function () {
+                var url = APPSRCHURL.yield;
+                return $http.get(url);
+        };
+        SearchService.prototype.getPriceFilters = function () {
+                var url = APPSRCHURL.price;
+                return $http.get(url);
+        };
 		
         return new SearchService();
     }]);

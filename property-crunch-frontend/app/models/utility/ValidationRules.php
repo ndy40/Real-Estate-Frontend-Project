@@ -26,8 +26,9 @@ class ValidationRules
      */
     protected static $USER_VALIDATION_RULES = array (
         "email"      => "required|email",
-        "first_name" => "required|alpha-dash|size:40",
-        "last_name"  => "required|alpha-dash|size:40"
+        "first_name" => "required|alpha-dash",
+        "last_name"  => "required|alpha-dash",
+        "password"   => "required|min:8"
     );
     
     /**
@@ -40,14 +41,15 @@ class ValidationRules
      */
     public static function validate($data, $validationtype) 
     {
-        $validator = Validator::make($data, $this->{$validationtype});
+        $validator = Validator::make($data, self::$$validationtype);
         if ($validator->fails()) {
             $messages = $validator->messages();
-            
             return $messages;
+
         }
         
-        return $this->VALIDATION_PASS;
+        return self::$VALIDATION_PASS;
+
     }
     
     

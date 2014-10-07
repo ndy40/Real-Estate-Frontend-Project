@@ -17,20 +17,17 @@ use Illuminate\Support\Facades\Log;
 
 class UserRepository implements UserRepositoryInterface
 {
-    /**
-     * Validation rules.
-     * 
-     * @var array 
-     */
-    protected $USER_VALIDATION_RULES = array (
-        "email"      => "required|email",
-        "first_name" => "required|alpha-dash|size:40",
-        "last_name"  => "required|alpha-dash|size:40"
-    );
-    
-    public function login($username, $password, $remember) {
+    public function authenticate($email, $password, $remember = false) 
+    {
+        $credentials = array (
+            'email' => $email,
+            'password' => $password
+        );
+        $user = Sentry::authenticate($credentials, $remember);
         
+        return $user;
     }
+    
     
     /**
      * Create a new user. 
@@ -39,14 +36,16 @@ class UserRepository implements UserRepositoryInterface
      * @param type $groupName - The group the user should be assigned to.
      * @return boolean
      */
-    public function create(array $user, $groupName = "basic") 
+    public function create(array $user, $groupName = "basic", $activated = true)
     {
-        
+        if (!array_key_exists("activated", $user)) {
+            $user["activated"] = true;
+        }
+
         $newUser = Sentry::createUser($user);
-        //
         $group = Sentry::findGroupByName(strtolower($groupName));
         $newUser->addGroup($group);
-        
+
         if ($newUser) {
             return $newUser;
         }
@@ -69,6 +68,17 @@ class UserRepository implements UserRepositoryInterface
     public function logout() 
     {
         Sentry::logout();
+    }
+
+    public function login($email, $password, $remember = false) 
+    {
+        $user = $this->authenticate($email, $password, $remember);
+        if ($user) {
+            Sentry::login($user, $remember);
+            return true;
+        }
+        
+        return false;
     }
 
 }

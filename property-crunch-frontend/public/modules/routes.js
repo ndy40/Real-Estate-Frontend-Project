@@ -5,7 +5,7 @@
 (function (define) {
     'use strict';
     define(["./app"], function (app) {
-        return app.config(["$routeProvider", "$locationProvider", "$provide", function ($routeProvider, $locationProvider, $provide) {
+        app.config(["$routeProvider", "$locationProvider", "$provide", function ($routeProvider, $locationProvider, $provide) {
             $routeProvider.when("/home", {
                 templateUrl : "modules/home/home.html",
                 controller  : "HomeCtrl"
@@ -52,6 +52,11 @@
             $locationProvider.html5Mode(true).hashPrefix('!');
 
             
+        }]);
+        return app.run(["$http", function ($http) {
+            var csrf_token = document.childNodes[1].getAttribute("csrf");
+            $http.defaults.headers.common['_token'] = csrf_token;
+            document.childNodes[1].removeAttribute("csrf");
         }]);
     });
 }(define));

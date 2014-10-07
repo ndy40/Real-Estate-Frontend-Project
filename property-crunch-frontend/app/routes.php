@@ -20,7 +20,6 @@ App::missing(function($exception) {
 
 /* create prefixed group for login and logout */
 Route::group(array('prefix'=>'/api'),function(){
-	Route::post('login/auth','AuthController@Login');
-	Route::get('login/destroy','AuthController@Logout');
+	Route::controller("auth", "controllers\\services\\AuthController");
 });
 

@@ -12,7 +12,7 @@ interface UserRepositoryInterface extends BaseRepositoryInterface {
     
     public function update($user);
     
-    public function create($user, $permission = "basic");
+    public function create(array $user, $permission = "basic");
     
     /**
      * Method to check if a user is currently logged in

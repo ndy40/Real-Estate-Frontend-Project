@@ -48,7 +48,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+    Log::error($exception);
 });
 
 /*
@@ -82,3 +82,4 @@ require app_path().'/filters.php';
 
 //custom PHP exception handler
 require app_path() . "/pcexceptions.php";
+require app_path() . "/ioc.php";
