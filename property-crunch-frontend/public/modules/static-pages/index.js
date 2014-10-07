@@ -3,6 +3,6 @@
 *   Module index file.
 */
 
-define(["./learn-more-controller"], function () {
+define(["./static-controller"], function () {
     'use strict';
 });

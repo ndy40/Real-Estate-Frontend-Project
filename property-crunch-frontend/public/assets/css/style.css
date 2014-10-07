@@ -128,9 +128,6 @@ input[type="checkbox"]:focus,
 .panel {
   border: none;
 }
-.navbar {
-  margin-bottom: 0;
-}
 .tooltip {
   width: 200px;
 }
@@ -232,7 +229,7 @@ ul {
   General Styling > General Classes
 ====================================================================*/
 .main-content {
-  padding: 50px 0;
+  padding: 125px 0 50px;
 }
 .bottom-0 {
   margin-bottom: 0;
@@ -587,6 +584,9 @@ i.icon-help:hover {
 /*===================================================================
   Components > Custom Checkboxes
 ====================================================================*/
+input[type="checkbox"] {
+  margin: 0;
+}
 input[type=checkbox]:not(old) {
   width: 0;
   opacity: 0;
@@ -594,7 +594,7 @@ input[type=checkbox]:not(old) {
 }
 input[type=checkbox]:not(old) + label {
   display: inline-block;
-  line-height: 24px;
+  line-height: 1;
   cursor: pointer;
 }
 input[type=checkbox]:not(old) + label > span {
@@ -602,22 +602,20 @@ input[type=checkbox]:not(old) + label > span {
   border: 1px solid #e9edeb;
   display: inline-block;
   height: 18px;
-  margin: 3px 7px 3px 0;
+  margin: 0 0 0 -16px;
   vertical-align: bottom;
   width: 18px;
 }
 label {
   font-weight: 300;
   font-size: 14px;
+  margin-bottom: 0;
 }
 input[type=checkbox]:not(old):checked + label > span:before {
   content: "\e614";
   font-size: 18px;
-  color: #191e1d;
+  color: #999999;
   margin-left: -1px;
-}
-input[type=checkbox]:not(old) + label {
-  margin-left: -16px;
 }
 /*===================================================================
   Components > Buttons
@@ -649,7 +647,7 @@ button,
 }
 button:hover,
 .btn:hover {
-  background: #191e1d;
+  background: #999999;
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -666,13 +664,20 @@ button:active,
   color: #ffffff;
   min-width: 170px;
   padding: 17px 30px;
-  box-shadow: 0 3px #b98300;
 }
-.btn:hover,
-.btn:focus {
-  box-shadow: 0 2px #000000;
+.btn:hover {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+.btn-3d {
+  padding: 14px 30px;
+  box-shadow: 0 3px #b98300;
+}
+.btn-3d:focus {
+  box-shadow: 0 3px #b98300;
+}
+.btn-3d:hover {
+  box-shadow: 0 3px #7a7a7a;
 }
 .btn-fullwidth {
   font-size: 18px;
@@ -704,13 +709,13 @@ header .btn:active {
   margin-bottom: 20px;
 }
 .panel-default > .panel-heading {
-  border: 1px solid #e9edeb;
+  border: 1px solid #999999;
   background: #999999;
   color: #ffffff;
-  font-weight: 400;
 }
-.panel-default > .panel-heading h5 {
-  font-weight: 400;
+.panel-light .panel-heading {
+  border: 1px solid #e9edeb;
+  background: #f9f9f9;
 }
 .panel-primary .panel-heading {
   border: 1px solid #f6af00;
@@ -745,15 +750,6 @@ header .btn:active {
   .panel-body {
     padding: 30px 25px;
   }
-}
-/*===================================================================
-  Components > Labels
-====================================================================*/
-.label {
-  padding: 4px 6px;
-}
-.label.label-primary {
-  color: #ffffff;
 }
 /*===================================================================
   Components > Alerts
@@ -850,8 +846,10 @@ header .btn:active {
 /*===================================================================
   Components > Pagination
 ====================================================================*/
-.pagination-custom li a,
-.pagination-custom li > span {
+.pagination-custom {
+  float: right;
+}
+.pagination-custom li a {
   font-size: 18px;
   color: #191e1d;
   border: 1px solid #e9edeb;
@@ -860,24 +858,24 @@ header .btn:active {
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-.pagination-custom li a:hover,
-.pagination-custom li > span:hover,
-.pagination-custom li a:focus,
-.pagination-custom li > span:focus {
+.pagination-custom li a.active,
+.pagination-custom li a:hover {
   color: #ffffff;
   background: #f6af00;
   border-color: transparent;
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-.pagination-custom li.disabled {
-  color: #191e1d;
+.pagination-custom li a.last {
+  margin-right: 0;
 }
-.pagination-custom li.disabled > span,
-.pagination-custom li.disabled > span:hover,
-.pagination-custom li.disabled > span:focus {
-  color: #191e1d;
+.pagination-custom li.disabled a,
+.pagination-custom li.disabled a:hover {
+  color: #e9edeb;
   border: 1px solid #f2f2f2;
+}
+.pagination-custom li.next a {
+  margin-left: 10px;
 }
 .pagination-custom li:last-child a {
   margin-right: 0;
@@ -1101,6 +1099,12 @@ header {
   width: 169px;
   height: 28px;
 }
+.navbar-default {
+  width: 100%;
+  margin-bottom: 0;
+  position: absolute;
+  z-index: 5;
+}
 .navbar-default .nav a {
   margin: 0 20px;
   padding: 10px 0;
@@ -1153,10 +1157,10 @@ header {
 }
 .search-header {
   background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/search_banner.jpg) fixed center 0;
-  height: 360px;
+  height: 260px;
 }
 .search-content {
-  padding: 170px 0 70px;
+  padding: 125px 0 25px;
   text-align: center;
 }
 .search-content .input-group {
@@ -1202,7 +1206,7 @@ header {
 .navbar-nav.login > li > a,
 .navbar-nav.login > li .profile {
   padding: 0;
-  margin: 25px 0 20px;
+  margin: 25px 0 0;
 }
 .navbar-nav.login > li > a {
   font-weight: 300;
@@ -1343,7 +1347,8 @@ footer ul li {
 footer ul li:first-child {
   padding-left: 0;
 }
-footer ul li.last-link {
+footer ul li.last,
+footer ul li:last-child {
   border: none;
   padding-right: 0;
 }
@@ -1398,6 +1403,7 @@ footer ul li.last-link {
   float: right;
   color: #999999;
   font-size: 28px;
+  cursor: pointer;
 }
 .custom-select .dropdown-menu {
   box-shadow: none;
@@ -1451,7 +1457,13 @@ footer ul li.last-link {
 }
 .spinner button {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 400;
+  background: #999999;
+  color: #ffffff;
+}
+.spinner button:hover {
+  background: #f6af00;
+  color: #ffffff;
 }
 /*===================================================================
   Pages
@@ -1842,28 +1854,17 @@ blockquote {
   text-align: center;
   margin: 50px 0;
 }
-@media (min-width: 992px) and (max-width: 1199px) {
-  .selectize-input {
-    padding: 6px 10px;
-  }
-  .selectize-control.single .selectize-input:after {
-    font-size: 22px;
-    margin-right: -7px;
-    position: relative;
-    top: 5px;
-  }
-}
 /*===================================================================
-  Pages > Search Results > Filter the Results
+  Pages > Search Results > Filters Panel
 ====================================================================*/
-.filter-checkbox {
-  margin-bottom: 10px;
-}
-.filter-checkbox input[type="checkbox"]:not(old) + label {
-  margin-left: -7px;
+.filters-list li {
+  margin-bottom: 15px;
 }
 .filter-checkbox label {
   font-size: 16px;
+}
+.filter-checkbox label i {
+  cursor: pointer;
 }
 .filter-checkbox span,
 .filter-checkbox i {
@@ -1872,140 +1873,83 @@ blockquote {
 .filter-checkbox i {
   position: relative;
   color: #999999;
+  line-height: 1;
   margin: 0 10px 0 7px;
-  top: 4px;
+  font-size: 16px;
 }
 .filter-checkbox i.icon-help {
   float: none;
   top: 1px;
-}
-.filter-checkbox i.icon-library {
-  font-size: 18px;
-  top: 2px;
-  margin-left: 8px;
-}
-.filter-checkbox i.icon-tools {
-  font-size: 16px;
-  margin-left: 10px;
-}
-.filter-checkbox i.icon-auction {
-  font-size: 22px;
-  top: 1px;
-  margin-right: 8px;
-}
-.filter-checkbox i.icon-users {
-  font-size: 16px;
-  margin-left: 9px;
-  margin-right: 11px;
-}
-.filter-checkbox i.icon-chart {
-  font-size: 18px;
-  margin-right: 11px;
-}
-@media (min-width: 991px) {
-  .filter-checkbox input[type="checkbox"]:not(old) + label {
-    margin-left: -20px;
-  }
+  left: -5px;
 }
 /*===================================================================
-  Pages > Search Results > Filters Panel
+  Pages > Search Results > Sort Panel
 ====================================================================*/
-.info-filters .panel-heading {
-  padding: 9px 10px 4px;
-  min-height: 50px;
-  background: #ffffff;
-  color: #191e1d;
+.sort-filters .panel-heading {
+  background: #f9f9f9;
+  padding: 10px 26px;
 }
-.info-filters .panel-heading:before,
-.info-filters .panel-heading:after {
+.sort-filters .panel-heading:before,
+.sort-filters .panel-heading:after {
   content: " ";
   display: table;
 }
-.info-filters .panel-heading:after {
+.sort-filters .panel-heading:after {
   clear: both;
 }
-.info-filters h6 {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0 10px 0 0;
-  display: inline-block;
+.sort-filters .panel-heading .sort {
   float: left;
 }
-.info-filters .label {
-  padding: 5px 5px 5px 2px;
-  margin: 0 10px 10px 0;
-  float: left;
-  font-size: 11px;
-}
-.info-filters .label i {
-  position: relative;
-  top: 1px;
-  color: #999999;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-.info-filters .label i:hover {
-  color: #191e1d;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-/*===================================================================
-  Pages > Search Results > Filters Panel > Left Section
-====================================================================*/
-.filter-left {
-  padding: 5px 0;
-  float: left;
-}
-/*===================================================================
-  Pages > Search Results > Filters Panel > Right Section
-====================================================================*/
-.filter-right {
-  float: left;
-}
-.results-filter:before,
-.results-filter:after {
-  content: " ";
-  display: table;
-}
-.results-filter:after {
-  clear: both;
-}
-.results-filter .dropdown-label {
-  float: left;
-}
-.results-filter .selectize-control {
+.sort-filters .panel-heading .number-results {
   float: right;
 }
-.results-filter .selectize-control .selectize-input {
+.sort-filters .panel-heading .sort:before,
+.sort-filters .panel-heading .number-results:before,
+.sort-filters .panel-heading .sort:after,
+.sort-filters .panel-heading .number-results:after {
+  content: " ";
+  display: table;
+}
+.sort-filters .panel-heading .sort:after,
+.sort-filters .panel-heading .number-results:after {
+  clear: both;
+}
+.sort-filters .panel-heading h5,
+.sort-filters .panel-heading .small-select {
+  float: left;
+}
+.sort-filters .panel-heading h5 {
   font-size: 16px;
-  line-height: 24px;
-  min-height: 30px;
-  width: 76px;
-  padding: 2px 12px;
+  line-height: 30px;
+  margin: 0 15px 0 0;
 }
-.results-filter .selectize-control .selectize-input.not-full {
-  margin-right: 0;
+.sort-filters .small-select .custom-select {
+  position: relative;
+  height: auto;
+  width: 66px;
 }
-.results-filter .selectize-control .selectize-input:after {
+.sort-filters .small-select .custom-select button {
+  height: 30px;
+}
+.sort-filters .small-select .custom-select button .option-selected {
+  line-height: 27px;
+}
+.sort-filters .small-select .custom-select button .select-arrow {
+  line-height: 30px;
+}
+.sort-filters .small-select .custom-select button .select-arrow {
   font-size: 24px;
-  line-height: 1;
 }
-.results-filter .dropdown-label {
-  line-height: 20px;
-  padding: 5px 10px 5px 0;
+.sort-filters .small-select .custom-select .dropdown-menu {
+  top: 30px;
+  overflow: hidden;
+  height: auto;
 }
-@media (min-width: 768px) {
-  .filter-right {
-    float: right;
-  }
+.sort-filters .small-select .custom-select .dropdown-menu > li > a {
+  padding: 3px 10px;
 }
-@media (min-width: 992px) {
-  .info-filters .label {
-    margin-bottom: 0;
-  }
-  .info-filters .results-filter .dropdown-label {
-    padding: 5px 10px;
-  }
+.sort-filters .sort-select .custom-select {
+  width: 128px;
 }
 /*===================================================================
   Pages > Search Results > Tags Panel
@@ -2064,53 +2008,6 @@ blockquote {
 }
 .property-listing img {
   width: 694px;
-}
-/*===================================================================
-  Pages > Search Results > Property Listing > Direct2Vendor Property
-====================================================================*/.dtv-overlay {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  top: 0;
-  left: 0;
-}
-.dtv-overlay > a {
-  font-size: 36px;
-  font-weight: 300;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  margin: 240px 0;
-}
-@media (min-width: 360px) {
-  
-}
-@media (min-width: 480px) {
-  .dtv-overlay a {
-    margin: 230px 0;
-  }
-}
-@media (min-width: 640px) {
-  .dtv-overlay a {
-    margin: 327px 0;
-  }
-}
-@media (min-width: 768px) {
-  .dtv-overlay a {
-    margin: 130px 0;
-  }
-}
-@media (min-width: 992px) {
-  .dtv-overlay a {
-    margin: 160px 0;
-  }
-}
-@media (min-width: 1200px) {
-  .dtv-overlay a {
-    margin: 44px 0;
-  }
 }
 /*===================================================================
   Pages > Search Results > Property Listing  > Price & Add to Fav
@@ -2392,12 +2289,6 @@ blockquote {
     font-size: 14px;
     top: 2px;
   }
-}
-/*===================================================================
-  Pages > Search Results > Pagination (Move to Pagination)
-====================================================================*/
-.property-listing-pagination {
-  float: right;
 }
 /*===================================================================
   Pages > Property Details
@@ -2692,10 +2583,6 @@ blockquote {
   display: block;
   margin: 0 auto;
 }
-.no-cssgradients .dtv-overlay > a {
-  position: absolute;
-  top: 30%;
-}
 /*===================================================================
   Browser Fixes > IE8
 ====================================================================*/
@@ -2845,11 +2732,6 @@ blockquote {
   background: #191e1d;
   opacity: 0.8;
   filter: alpha(opacity=80);
-}
-.no-multiplebgs .dtv-overlay {
-  background: #ffffff;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
 }
 .no-multiplebgs #property-carousel .item .item-overlay {
   background: #191e1d;
@@ -3027,12 +2909,6 @@ input {
 }
 .filter-left .label {
   display: none;
-}
-.dtv-overlay {
-  display: none;
-}
-.dtv .dtv-overlay {
-  display: block;
 }
 /*===================================================================
   Spacing Overwrites

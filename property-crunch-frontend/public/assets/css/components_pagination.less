@@ -2,37 +2,39 @@
   Components > Pagination
 ====================================================================*/
 .pagination-custom {
+	float: right;
 	
 	li {
-		a, 
-		> span {
+		a {
 			font-size: @font-size-h5;
 			color: @gray-darker;
 			border: 1px solid @gray;
 			font-weight: 300;
 			margin-right: 10px;
-			
 			.transition(background 0.3s);
 			
-			&:hover,
-			&:focus {
+			&.active,
+			&:hover {
 				color: @white;
 				background: @brand-primary;
 				border-color: transparent;
-				
 				.transition(background 0.3s);
+			}
+			
+			&.last {
+				margin-right: 0;
 			}
 		}
 		
 		&.disabled {
-			color: @gray-darker;
-			
-			> span, 
-			> span:hover, 
-			> span:focus {
-				color: @gray-darker;
+			a, a:hover {
+				color: @gray;
 				border: 1px solid @gray-light;
 			}
+		}
+		
+		&.next a {
+			margin-left: 10px;
 		}
 		
 		&:last-child a {

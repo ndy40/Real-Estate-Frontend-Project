@@ -9,26 +9,25 @@ define([
     "./home/index",
     "./search/index",
     "./property-details/index",
-    // "./shared/index",
-    "./learn-more/index",
-    "./list-property/index",
+    "./shared/index",
+    "./static-pages/index",
     "./login/index",
-    // "./investor-dashboard/index",
-    // "./nav/index"
+    "./investor-dashboard/index",
+    "./nav/index"
 	
 ], function (angular) {
     'use strict';
     return angular.module("PCAPP", [
 		"ngRoute",
+//		"ui.bootstrap",
 		"PCAPPHOME", 
 		"PCAPPSEARCH",
 		"PCAPPPROPERTYDETAILS",
-		// "PCSHARED",
-		"PCAPPLEARNMORE",
-		"PCAPPLISTPROPERTY",
+		"PCSHARED",
+		"PCAPPSTATICPAGES",
 		"PCAPPLOGIN",
-		// "PCAPPINVESTORDASHBOARD",
-		// "PCAPPNAV"
+		"PCAPPINVESTORDASHBOARD",
+		"PCAPPNAV"
 	]);
 });
 

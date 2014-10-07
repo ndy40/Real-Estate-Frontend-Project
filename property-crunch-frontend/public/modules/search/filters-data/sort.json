@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "option": "Highest Price",
+      "value": 2
+    },
+    {
+      "option": "Lowest Price",
+      "value": 3
+    },
+    {
+      "option": "Highest Yield",
+      "value": 4
+    },
+    {
+      "option": "Lowest Yield",
+      "value": 5
+    }
+  ]
+}

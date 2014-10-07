@@ -3,19 +3,19 @@
 ====================================================================*/
 button {
 	color: @white;
-  display: inline-block;
-  margin-bottom: 0; // For input.btn
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none; 
-  border: 1px solid transparent;
-  white-space: nowrap;
-  
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; 
+	border: 1px solid transparent;
+	white-space: nowrap;
+	
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
 }
 
 button,
@@ -28,7 +28,7 @@ button,
 	.transition(all 0.3s);
 	
 	&:hover {
-		background: @gray-darker;
+		background: @gray-dark;
 		outline: none;
 		.transition(all 0.3s);
 	}
@@ -46,12 +46,22 @@ button,
 	color: @white;
     min-width: 170px;
     padding: 17px 30px;
+	
+	&:hover {
+		.transition(all 0.3s);
+	}
+}
+.btn-3d {
+	padding: 14px 30px;
 	box-shadow: 0 3px darken(@brand-primary, 12%);
 	
-	&:hover,
 	&:focus {
-		box-shadow: 0 2px darken(@gray-darker, 12%);
-		.transition(all 0.3s);
+		
+	box-shadow: 0 3px darken(@brand-primary, 12%);
+	}
+	
+	&:hover {
+		box-shadow: 0 3px darken(@gray-dark, 12%);
 	}
 }
 .btn-fullwidth {

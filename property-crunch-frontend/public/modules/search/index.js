@@ -11,7 +11,7 @@
         "./filters/currency-filter", 
         "./directives/searchbox-directive",
         "./directives/selectbox-directive",
-        "./directives/spinner-directive" 
+        "./directives/spinner-directive"
         ], function () {
     });
 

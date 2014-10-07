@@ -1,4 +1,3 @@
-/*global define */
 /**
  * Property Controller
  */

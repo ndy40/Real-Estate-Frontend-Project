@@ -5,12 +5,11 @@
 
 require.config({
     paths : {
-
         "domReady"      : "../assets/requirejs-domready/domReady",
         "angular"       : "../assets/angular/angular.min",
         "ngRoute"       : "../assets/angular-route/angular-route",
-        "jQuery"        : "../assets/js/jquery",
-		"owl.carousel"	: "../assets/js/owl.carousel"
+        "modernizr"     : "../assets/js/modernizr.custom",
+        "jQuery"        : "../assets/js/jquery"
     },
 
     shim : {
@@ -19,6 +18,6 @@ require.config({
     },
 
     deps : ["./bootstrap"],
-    priority : ["domReady", "jQuery", "angular"]
+    priority : ["domReady", "modernizr", "jQuery", "angular"]
 
 });

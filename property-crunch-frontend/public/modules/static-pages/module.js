@@ -7,5 +7,5 @@ define([
     "ngRoute"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPPROPERTYDETAILS",  ["ngRoute"]);
+    return ng.module("PCAPPSTATICPAGES",  ["ngRoute"]);
 });

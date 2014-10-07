@@ -2,7 +2,7 @@
  * Shared Directive 
  */
 
-define(["./module", "owl.carousel"], function (shared) {
+define(["./module"], function (shared) {
    'use strict';
 	
 	shared.directive('activeLink', ['$location', function(location) {
