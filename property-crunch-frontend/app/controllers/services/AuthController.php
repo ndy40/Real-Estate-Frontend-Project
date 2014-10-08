@@ -35,18 +35,30 @@ class AuthController extends BaseController
      */
     public function postIndex()
     {
-        $email = Input::get("email");
-        $password = Input::get("password");
-        $remember = Input::has("remember") 
-            ? boolval(Input::get("remember")) : false;
-        
-        $isLoggedIn = $this->accountLogic->login($email, $password, $remember);
-        
-        if ($user) {
-            return Response::json($isLoggedIn, 200);
-        }
+        $data = null;
+        try {
+            $email = Input::get("email");
+            $password = Input::get("password");
+            $remember = Input::has("remember") 
+                ? Input::get("remember") : false;
 
-        return Response::json(array("flash" => "Invalid login"), 401);
+            $isLoggedIn = $this->accountLogic->login($email, $password, $remember);
+
+            if ($isLoggedIn) {
+                return Response::json($isLoggedIn, 200);
+            }
+
+        } catch (\Cartalyst\Sentry\Users\WrongPasswordException $ex) {
+            $data = array("flash" => "Wrong password");
+        } catch (\Cartalyst\Sentry\Users\LoginRequiredException $ex) {
+            $data = array("flash" => "Login details required.");
+        } catch (\Cartalyst\Sentry\Users\UserNotFoundException $ex) {
+            $data = array("flash" => "User not found");
+        } catch (\Cartalyst\Sentry\Throttling\UserSuspendedException $ex) {
+            $data = array ("flash" => $ex->getMessage());
+        }
+        
+        return Response::json($data, 401);
     }
 
 

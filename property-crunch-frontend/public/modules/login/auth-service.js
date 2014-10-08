@@ -10,7 +10,7 @@ define(["./module"], function (app) {
 				var authUser = $http({method:'POST',url:'api/login/auth',params:credentials});
 				return authUser;
 			}
-		}
+		};
     }]);
 });
 

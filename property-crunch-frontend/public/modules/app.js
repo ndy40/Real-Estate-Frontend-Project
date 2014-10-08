@@ -14,7 +14,6 @@ define([
     "./login/index",
     "./investor-dashboard/index",
     "./nav/index"
-	
 ], function (angular) {
     'use strict';
     return angular.module("PCAPP", [

@@ -27,7 +27,6 @@ define(["../module"], function (app) {
             return this.results;
         };
 
-
         /**
          * Set & Get Keyword
          */
@@ -40,7 +39,6 @@ define(["../module"], function (app) {
             'use strict';
             return this.keywords;
         };
-
 
         /**
          * Set & Get Current Page
@@ -55,7 +53,6 @@ define(["../module"], function (app) {
             return this.pageNumber;
         };
 
-
         /**
          * Set & Get Results Per Page
          */
@@ -68,7 +65,6 @@ define(["../module"], function (app) {
                 'use strict';
             return this.count;
         };
-
 
         /**
          * Set & Get Filters
@@ -92,7 +88,34 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.filterQueryString = function () {
             'use strict';
+        };
+        
+        /**
+         * Get a list of property types.
+         * @returns {Promise}
+         */
+        SearchService.prototype.getTypeList = function () {
+            var url = APPSRCHURL.typeList;
+            return $http.get(url);
+        };
+        
+        SearchService.prototype.getYieldList = function () {
+            var url = APPSRCHURL.yieldList;
+            return $http.get(url);
+        };
+		
+        SearchService.prototype.getPriceList = function () {
+            var url = APPSRCHURL.priceList;
+            return $http.get(url);
+        };
 
+        SearchService.prototype.getSortList = function () {
+            var url = APPSRCHURL.sortList;
+            return $http.get(url);
+        };
+        SearchService.prototype.getResultsPerPageList = function () {
+            var url = APPSRCHURL.resultsPerPageList;
+            return $http.get(url);
         };
          
         /*

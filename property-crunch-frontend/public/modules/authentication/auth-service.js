@@ -44,9 +44,9 @@
              * @param {string} password
              * @returns {$promise}
              */
-            AuthService.prototype.authenticate = function (email, password) {
+            AuthService.prototype.authenticate = function (email, password, remember) {
                 'use strict';
-                var parameters = { "email" : email, "password" : password};
+                var parameters = { "email" : email, "password" : password, remember : remember};
                 return $http.post(AUTHURL, parameters);
             };
             
@@ -79,6 +79,18 @@
                 return this.user;
             };
             
+            /**
+             * Clear all login session data.
+             */
+            AuthService.prototype.destroy = function () {
+                this.user = null;
+                this.isLoggedIn = null;
+                $cookies.isLoggedIn = false;
+            };
+            
+            /**
+            * Method for registering a new user.
+            */
             AuthService.prototype.register = function (data) {
                 var url = AUTHURL + "/register";
                 return $http.post(url, data);

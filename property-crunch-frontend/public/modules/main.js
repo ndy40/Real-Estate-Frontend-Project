@@ -9,7 +9,8 @@ require.config({
         "angular"       : "../assets/angular/angular.min",
         "ngRoute"       : "../assets/angular-route/angular-route",
         "modernizr"     : "../assets/js/modernizr.custom",
-        "jQuery"        : "../assets/js/jquery"
+        "jQuery"        : "../assets/js/jquery",
+        'cookies'       : "../assets/angular-cookies/angular-cookies.min"
     },
 
     shim : {
