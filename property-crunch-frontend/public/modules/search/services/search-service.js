@@ -94,7 +94,9 @@ define(["../module"], function (app) {
             'use strict';
 
         };
-         * initializes the search and returns a search result.
+         
+        /*
+         * Initializes the search and returns a search result.
          *
          * @returns {Promise}
          */
