@@ -16,7 +16,7 @@
     </div>
 </header>
 
-<section class="main-content">
+<section class="main-content search-results">
     <div class="container">
         <div class="row">
             
@@ -104,14 +104,14 @@
                     </article>
                 </div> 
                 <ul class="pagination pagination-custom">
-                	<li ng-show="searchObject.pager.prev">
-                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage-1)">Previous</a>
+                	<li ng-show="searchObject.pager.first">
+                        <a href="" ng-click="changePage(1)">First</a>
                     </li>
                     <li ng-repeat="page in searchObject.pager.pagesArray">
-                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="selectPage(page.num)">{{page.num}}</a>
+                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="changePage(page.num)">{{page.num}}</a>
                     </li>
-                    <li ng-show="searchObject.pager.next" class="next">
-                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage + 1)">Next</a>
+                    <li ng-show="searchObject.pager.last" class="next">
+                        <a href="" ng-click="changePage(searchObject.pager.totalPages)">Last</a>
                     </li>
                 </ul> 
                 <!--<search-pagination total-pages="" class="pagination-custom"></search-pagination>-->

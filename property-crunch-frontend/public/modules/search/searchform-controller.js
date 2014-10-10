@@ -24,7 +24,7 @@ define(["./module"], function (app, angular) {
 					pageNum			: 1,	// Setting Default Page Number 	
                     resultsPerPage	: 10,	// Setting Default Properties Per Page
 					totalProperties : "", 	// To store Total Properties Per Page 
-					selectedPage	: 1		
+                    totalPages      : "",	
 				}		
             };
 			
@@ -87,56 +87,99 @@ define(["./module"], function (app, angular) {
                 $scope.searchObject.properties = data.data;
 				$scope.searchObject.pager.totalProperties = data.count;
 				
-				// Init Pagination -  totalProperties, resultsPerPage as Paramater
-				$scope.initPagination($scope.searchObject.pager.totalProperties, $scope.searchObject.pager.resultsPerPage); 	
+				// Init Pagination
+				$scope.initPagination(); 	
             };
 			
 			
 			/**
-             * Init Pagination
-             */
+			 * Provides Pagination for The Search Results. It's init in loadPropertyTable();
+			 */
 			$scope.initPagination = function(totalProperties, resultsPerPage) {
-				var totalProperties = totalProperties,
-					totalPages = totalProperties <  resultsPerPage ? 1 : Math.ceil(totalProperties/resultsPerPage);
+                $scope.searchObject.pager.totalPages = $scope.searchObject.pager.totalProperties <  $scope.searchObject.pager.resultsPerPage ? 1 : Math.ceil($scope.searchObject.pager.totalProperties / $scope.searchObject.pager.resultsPerPage);
 				
-				
-				$scope.searchObject.pager.pagesArray = [];
-				for (var i = 0; i < totalPages; i++) {
-					$scope.searchObject.pager.pagesArray.push({
-						num: i+1,
-						isActive: false
-					});
-				}
-				
-				$scope.setLinkStates();
-				
+				$scope.createPages();
+				$scope.setActivePage($scope.searchObject.pager.pageNum);
+				$scope.hideFirstOrLast();
 			};
 			
-			
-			$scope.setLinkStates = function() {
-				if ($scope.searchObject.pager.selectedPage === 1) {
-					$scope.searchObject.pager.pagesArray[0].isActive = true;				// Set Active
-					$scope.searchObject.pager.prev = false;									// Hide Previous
-				} else {
-					var adjustedIndex = $scope.searchObject.pager.selectedPage - 1;
-					$scope.searchObject.pager.pagesArray[adjustedIndex].isActive = true;	// Set Active
-					$scope.searchObject.pager.prev = true;									// Show Previous
-				}
-				
-				if ($scope.searchObject.pager.selectedPage === $scope.searchObject.pager.pagesArray.length) {
-					$scope.searchObject.pager.next = false;
-				} else {
-					$scope.searchObject.pager.next = true;
+            /**
+			 * Being Used in the Loops of createPages() function
+			 */
+            $scope.pushNewPage = function(i) {
+                $scope.searchObject.pager.pagesArray.push({
+                    num: i+1,
+                    isActive: false
+                });
+            }
+            
+            /**
+			 * Create pages for the pagination and store them in $scope.searchObject.pager.pagesArray
+			 */
+			$scope.createPages = function() {
+				$scope.searchObject.pager.pagesArray = [];
+				// If there are more than 5 pages - Limit to 5
+				if ($scope.searchObject.pager.totalPages > 5) {
+					// If Current Page + 4 is Larger than Total Pages, Show Last 5 Pages
+					if ($scope.searchObject.pager.pageNum + 4 > $scope.searchObject.pager.totalPages) {
+                        // Start Loop at Total Pages-5 & End Loop at Total Pages
+						for (var i = $scope.searchObject.pager.totalPages - 5; i < $scope.searchObject.pager.totalPages; i++) {
+							 $scope.pushNewPage(i);
+						}
+					} else {  // Else Show Current Page + Next 4 Pages
+                        // Start Loop at Current Page (pageNum-1 to adjust array index) & End Loop at Current Page + 4
+					    for (var i = $scope.searchObject.pager.pageNum - 1; i < $scope.searchObject.pager.pageNum + 4; i++) {
+							$scope.pushNewPage(i);
+						}
+                    }   
+				} else {	// There are less than or equal to 5 pages so no need to limit to 5
+					for (var i = 0; i < $scope.searchObject.pager.totalPages; i++) {
+						$scope.pushNewPage(i);
+					}
 				}
 			}
 			
-			// Move to Directive Later
-			$scope.selectPage = function(pageNum) {
-				$scope.searchObject.pager.selectedPage = pageNum;
+            /**
+			 * Set Active State of the Current Page
+			 */
+			$scope.setActivePage = function(pageNum) {
+				// Default Active
+				if (pageNum === 1) {
+					$scope.searchObject.pager.pagesArray[0].isActive = true; // Using pagesArray[0] because it's faster
+				} else {
+					for (var i = 0; i < $scope.searchObject.pager.pagesArray.length; i++) {
+						if ($scope.searchObject.pager.pagesArray[i].num === pageNum) {                   
+							$scope.searchObject.pager.pagesArray[i].isActive = true;
+						}
+					}
+				}
+			}
+			
+			// Hide/ Show First or Last Pages
+			$scope.hideFirstOrLast = function() {
+				// Hide First if First Page
+				if ($scope.searchObject.pager.pageNum === 1 || $scope.searchObject.pager.pageNum !== 1 && $scope.searchObject.pager.totalPages <= 5) {
+                   $scope.searchObject.pager.first = false;
+                } else {
+					$scope.searchObject.pager.first = true;
+				}
+				
+				// Hide Last if Last Page
+				if ($scope.searchObject.pager.pageNum === $scope.searchObject.pager.totalPages) {
+					$scope.searchObject.pager.last = false;
+				} else {
+					$scope.searchObject.pager.last = true;
+				}
+			}
+			
+			// Change Page
+			$scope.changePage = function(pageNum) {
 				$scope.searchObject.pager.pageNum = pageNum;
 				$scope.getProperties();
 			}
 			
+
+
 			/**
 			 * RESULTS PER PAGE FILTER
 			 */ 
@@ -165,7 +208,6 @@ define(["./module"], function (app, angular) {
 				
 				// Resetting Pagination
 				$scope.searchObject.pager.pageNum = 1; 		// resetting page num to 1
-				$scope.searchObject.pager.selectedPage = 1;	// resetting selected page num to 1
 				
 				// Get Properties to Re-Populate Results
 				$scope.getProperties(); 

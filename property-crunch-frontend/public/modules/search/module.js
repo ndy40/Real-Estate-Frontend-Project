@@ -5,6 +5,7 @@
 
 (function (define) {
     'use strict';
+
     define([
         "angular"
     ], function (ng) {
@@ -18,4 +19,5 @@
 				"resultsPerPageList" 	: "./modules/search/filters-data/results.json" 	// Replace this with Live API
             })
     });
+
 }(define));
