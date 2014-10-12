@@ -10,12 +10,13 @@
                 templateUrl : "modules/home/home.html",
                 controller  : "HomeCtrl"
             });
+            
             $routeProvider.when("/search", {
                 templateUrl : "modules/search/searchresult.html",
                 controller  : "SearchFormCtrl"
             });
 
-			$routeProvider.when("/property/:id", {
+            $routeProvider.when("/property/:id", {
                 templateUrl : "modules/property-details/property.html",
                 controller  : "PropertyCtrl"
             });
