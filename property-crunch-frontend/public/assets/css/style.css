@@ -293,7 +293,9 @@ ul {
 [class^="icon-"],
 [class*=" icon-"],
 input[type=checkbox]:not(old):checked + label > span:before,
-ul.list-arrows li:before {
+ul.list-arrows li:before,
+.login-tabs li.login-tab a:before,
+.login-tabs li.create-account-tab a:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -1686,9 +1688,14 @@ blockquote {
 .login-tabs li > a {
   font-size: 18px;
   padding: 16px 5px;
+  cursor: pointer;
   text-align: center;
 }
-.login-tab-content {
+.login-tabs li.login-tab a:before,
+.login-tabs li.create-account-tab a:before {
+  display: none;
+}
+.login-tabs .tab-content {
   padding: 54px 20px;
 }
 .forgot-password-link,
@@ -1717,22 +1724,30 @@ blockquote {
   }
 }
 @media (min-width: 768px) {
-  .login-tab-content {
-    padding: 54px 99px;
-  }
   .login-tabs li > a {
     padding: 16px 30px;
     font-size: 24px;
     text-align: left;
   }
-  .login-tabs li > a > i {
-    font-size: 18px;
+  .login-tabs li.login-tab a:before,
+  .login-tabs li.create-account-tab a:before {
+    font-size: 24px;
+    line-height: 1.4;
+    display: block;
+    float: left;
+    margin-right: 15px;
   }
-  .login-tabs li > a > i.icon-plus {
-    font-size: 20px;
+  .login-tabs li.login-tab a:before {
+    content: "\e613";
+  }
+  .login-tabs li.create-account-tab a:before {
+    content: "\e616";
     position: relative;
     left: 1px;
     top: 1px;
+  }
+  .login-tabs .tab-content {
+    padding: 54px 99px;
   }
 }
 /*===================================================================
