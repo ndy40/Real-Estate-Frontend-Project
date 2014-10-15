@@ -67,9 +67,10 @@ class AuthController extends BaseController
      *
      * @return Response
      */
-    public function create()
+    public function getLogout()
     {
-            //
+        $isLoggedOut = $this->accountLogic->logout();
+        return Response::json($isLoggedOut, 200);
     }
 
 

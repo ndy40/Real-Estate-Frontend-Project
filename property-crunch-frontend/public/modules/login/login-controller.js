@@ -5,7 +5,7 @@
 
 define(["./module", "../nav/index", "../authentication/index"], function (app) {
     'use strict';
-    app.controller("LoginCtrl", ["$scope", 'AuthService', 'sessionService', function ($scope, AuthService, sessionService) {
+    app.controller("LoginCtrl", ["$scope", "$location", 'AuthService', function ($scope, $location, AuthService) {
 	'use strict';
         //Model for holding login data
         $scope.loginData = {};
@@ -13,16 +13,20 @@ define(["./module", "../nav/index", "../authentication/index"], function (app) {
         //Submit form data for login to take place.
         $scope.submitForm = function () {
             'use strict';
-            var isValude = false;
-            AuthService.authenticate(
+            AuthService.login(
                 $scope.loginData.email,
                 $scope.loginData.password,
-                $scope.loginData.remember
-            ).success(function(response){
-                $scope.$broadcash("loginSuccess");
-            }).error(function (response) {
-                alert(response.flash);
-            });
+                $scope.loginData.remember, 
+                function (data) {
+                     if (data !== undefined) {
+                        $scope.$broadcast("loginSuccess");
+                        $location.path("/home");
+                    }
+                }, 
+                function (data) {
+                    alert ("Failed");
+                }
+            );
         };	
     }]);
 });

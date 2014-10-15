@@ -37,7 +37,7 @@ define(["../module"], function (app) {
             restrict : "E",
             templateUrl : "./modules/search/directives/searchbox.html",
             scope : {
-				keywords    : "=",
+                keywords    : "=",
                 redirect    : "@",  // this is the route to redirect to when result is present. 
                 bindResult  : "=",  //The Controller model to bind results of search to.
                 filters     : "=",  //this is the search filter parameter to be set and used by this module for performing searches. 

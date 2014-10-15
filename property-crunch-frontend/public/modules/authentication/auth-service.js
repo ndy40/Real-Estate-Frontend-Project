@@ -7,7 +7,7 @@
 (function (define) {
     define(["./module"], function (app) {
         'use stict';
-        return app.service("AuthService", ["$http", "$cookies", "AUTHURL", function ($http, $cookies, AUTHURL) {
+        return app.service("AuthService", ["$http", "$cookies", "$storage", "AUTHURL", function ($http, $cookies, $storage, AUTHURL) {
             'use strict';
             
             /**
@@ -15,25 +15,33 @@
              * 
              * @constructor
              */
-            var AuthService = function () {
-                this.user;
-                this.isLoggedIn = ($cookies.isLoggedIn === undefined) ? false : $cookies.isLoggedIn;
+            var AuthService = {
+                user : undefined,
+                isLoggedIn : ($cookies.isLoggedIn === undefined) ? false : $cookies.isLoggedIn,
+                db : $storage("auth")
             };
             
             /*
              * Get the data of the currently logged in user.
              */
-            AuthService.prototype.getCurentUser = function () {
+            AuthService.getCurentUser = function (onSuccess) {
                 'use strict';
                 var self = this;
-                if (this.user === undefined) {
+                if ((this.user === undefined | this.user === null) && this.isLoggedIn == "false") {
                     $http.get(AUTHURL).success(function (data) {
                         self.user = data;
                         self.isLoggedIn = true;
                         $cookies.isLoggedIn = true;
+                        self.db.setItem("user", data);
+                        onSuccess(data);
                     });
+                } else {
+                    self.user = this.db.getItem("user");
+                    self.isLoggedIn = true;
+                    if (onSuccess)
+                        onSuccess(this.user);
                 }
-
+                
                 return this.user;
             };
             
@@ -44,7 +52,7 @@
              * @param {string} password
              * @returns {$promise}
              */
-            AuthService.prototype.authenticate = function (email, password, remember) {
+            AuthService.authenticate = function (email, password, remember) {
                 'use strict';
                 var parameters = { "email" : email, "password" : password, remember : remember};
                 return $http.post(AUTHURL, parameters);
@@ -57,46 +65,62 @@
              * @param {string} password
              * @returns {auth-service_L10.AuthService.user}
              */
-            AuthService.prototype.login = function (email, password) {
+            AuthService.login = function (email, password, remember, onSuccess, onFailure) {
                 'use strict';
                 var self = this, 
                     callback;
                 
                 callback = function (data) {
-                    self.user = data;
-                    self.isLoggedIn = true;
-                    $cookies.isLoggedIn = true;
+//                    self.user = data;
+//                    self.isLoggedIn = true;
+//                    $cookies.isLoggedIn = true;
+                      self.getCurentUser(onSuccess);
                 };
+                
+                if (remember === undefined) {
+                    remember = false;
+                }
+                
+                if (onSuccess === undefined) {
+                    throw new Exception ("No callback method provided.");
+                }
+                
                 //call the authentication method to do the job.
-                this.authenticate(email, password).success(callback)
+                this.authenticate(email, password, remember).success(callback)
                     .error(function (data) {
                         self.user = null;
                         self.isLoggedIn = false;
                         $cookies.isLoggedIn = false;
-                        throw new Exception("Failed to login " + data);
+                        if (onFailure)
+                            onFailure(data);
                     }); 
-                
-                return this.user;
             };
             
             /**
              * Clear all login session data.
              */
-            AuthService.prototype.destroy = function () {
+            AuthService.destroy = function () {
                 this.user = null;
                 this.isLoggedIn = null;
                 $cookies.isLoggedIn = false;
+                this.db.truncate();
+            };
+            
+            AuthService.logout = function (onSuccess, onFailure) {
+                'use strict';
+                var url = AUTHURL + "/logout";
+                return $http.get(url).success(onSuccess).error(onFailure);
             };
             
             /**
             * Method for registering a new user.
             */
-            AuthService.prototype.register = function (data) {
+            AuthService.register = function (data) {
                 var url = AUTHURL + "/register";
                 return $http.post(url, data);
             };
             
-            return new AuthService();
+            return AuthService;
         }]);
     });
 })(define);

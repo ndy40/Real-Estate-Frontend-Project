@@ -13,7 +13,6 @@
         <img src="assets/images/logo.png" alt="Property Crunch Logo" />
       </a>
     </div>
-
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div collapse="!isCollapsed" class="collapse navbar-collapse">
@@ -21,7 +20,7 @@
         <li><a active-link="active" ng-href="/static/learn_more">LEARN MORE</a></li>
         <li><a active-link="active" ng-href="/static/list_property">LIST A PROPERTY</a></li>
         <li>
-            <a active-link="active" href="/login">
+            <a active-link="active" href="/login" ng-show="!showLogin">
                 <i class="icon-login icon16-login"></i>
                 <span class="link-text">Log In</span>
             </a>
@@ -34,15 +33,21 @@
             </a>
         </li>
         <li>
-            <div class="profile">
+            <div class="profile" ng-show="showLogin">
                 <figure>
                     <img src="assets/images/profilepic.png" alt="">
                 </figure>
-                <span class="username">Charles Aji</span>
+                <span class="username">{{user.first_name + " " + user.last_name}}</span>
                 <a href="#" id="verifyUser">
                     <i class="icon-warning icon20-warning has-tooltip" data-toggle="tooltip" data-placement="bottom" title="User Not Verified! Click to Verify"></i>
                 </a>
             </div>
+        </li>
+         <li>
+            <a active-link="active" href="/logout" ng-show="showLogin" ng-click="logout()">
+                <i class="icon-login icon16-login"></i>
+                <span class="link-text">Log Out</span>
+            </a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

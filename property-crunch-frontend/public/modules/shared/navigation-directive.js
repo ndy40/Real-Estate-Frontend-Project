@@ -7,9 +7,44 @@ define(["./module"], function (app) {
     'use strict';
     app.directive("menuNavigation", ["AuthService", function (AuthService) {
         var link = function (scope, element, attr) {
-            $scope.$on("loginSuccess", function (targetScope, currentScope) {
-                currentScope.showLogin = true;
+            scope.showLogin = (AuthService.isLoggedIn !== 'true') ? false : true;
+            scope.user = AuthService.getCurentUser(undefined);
+            
+            scope.$on("loginSuccess", function (targetScope, currentScope) {
+                scope.user = AuthService.user;
+                scope.showLogin = AuthService.isLoggedIn;
             });
+            
+            scope.$on("$locationChangeStart", function (tscope) {
+                if (AuthService.user === undefined || AuthService.user == null) {
+                    AuthService.getCurentUser(scope.setUserData);
+                } else {
+                    scope.user = AuthService.user;
+                }
+                 
+                scope.showLogin = AuthService.isLoggedIn;
+            });
+            
+            scope.setUserData = function (data) {
+                scope.user = data;
+                scope.showLogin = (AuthService.isLoggedIn !== 'true') ? false : true;
+            };
+            
+            scope.logout = function () {
+                AuthService.logout(function (data) {
+                    if (data === 'true') {
+                        delete scope.showLogin;
+                        delete scope.user;
+                        AuthService.destroy();
+                    }
+                });
+            };
         };
-    });
+        
+        return {
+            link        : link,
+            restrict : "E",
+            templateUrl : "../modules/shared/navigation-partial.html"
+        };
+    }]);
 });

@@ -11,7 +11,8 @@ require.config({
         "modernizr"	: "../assets/js/modernizr.custom",
         "jQuery"        : "../assets/js/jquery",
         "ui-bootstrap"	: "../assets/ui-bootstrap/ui-bootstrap-custom-tpls-0.10.0.min",
-        'cookies'       : "../assets/angular-cookies/angular-cookies.min"
+        'cookies'       : "../assets/angular-cookies/angular-cookies.min",
+        "localStorage"  : "../assets/angular-localStorageService/src/storageprovider"
     },
 
     shim : {
