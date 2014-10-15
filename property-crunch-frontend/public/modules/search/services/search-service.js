@@ -118,7 +118,16 @@ define(["../module"], function (app) {
             return $http.get(url);
         }
 		
-		
+	
+        /**
+         * Set & Get Property Details 
+         */ 
+        SearchService.prototype.getProperty = function () {
+            'use strict';
+            var url = APPSRCHURL.property;
+            return $http.get(url);
+        };
+        
         /**
          * initializes the search and returns a search result.
          * 

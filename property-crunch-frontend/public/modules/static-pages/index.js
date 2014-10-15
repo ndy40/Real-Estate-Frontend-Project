@@ -1,8 +1,14 @@
-/*global define */
 /**
 *   Module index file.
 */
 
-define(["./static-controller"], function () {
+(function (define) {
     'use strict';
-});
+
+    define([
+        "./static-controller", 
+        "./directives/carousel-directive"
+        ], function () {
+    });
+
+})(define);
