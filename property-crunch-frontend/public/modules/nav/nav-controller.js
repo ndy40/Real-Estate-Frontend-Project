@@ -6,7 +6,7 @@
 define(["./module"], function (app) {
     'use strict';
     app.controller("NavCtrl", ["$scope", function ($scope) {
-		$scope.isCollapsed = false;
+	$scope.isCollapsed = false;
     }]);
 });
 

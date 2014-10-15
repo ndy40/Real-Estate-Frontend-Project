@@ -6,14 +6,23 @@
 		> a {
 			font-size: @font-size-h5;
 			padding: 16px 5px;
+            cursor: pointer;
 			text-align: center;
 		}
-	}
+	    
+        // Login Tabs Heading Icons
+        &.login-tab a:before,
+        &.create-account-tab a:before {
+            display: none;            
+        }
+    }
+    
+    .tab-content {
+        padding: 54px 20px; //Same as .panel-password .panel-body 
+    }
 }
+        
 
-.login-tab-content {
-	padding: 54px 20px; //Same as .panel-password .panel-body 
-}
 
 .forgot-password-link,
 .terms  {
@@ -47,10 +56,6 @@
 }
 
 @media (min-width: 768px) {
-	.login-tab-content {
-		padding: 54px 99px;  
-	}
-	
 	.login-tabs {
 		li {
 			> a {
@@ -58,17 +63,31 @@
 				font-size: @font-size-h4;
 				text-align: left;
 				
-				> i {
-					font-size: @font-size-h5;
-									
-					&.icon-plus {
-						font-size: 20px;
-						position: relative;
-						left: 1px;
-						top: 1px;
-					}
-				}
-			}	
+			}
+            
+            // Login Tabs Heading Icons
+            &.login-tab a:before,
+            &.create-account-tab a:before {
+				font-size: @font-size-h4;
+                line-height: 1.4;
+                display: block;
+                float: left;
+                margin-right: 15px;
+            }
+            
+            &.login-tab a:before {
+	            content: "\e613";
+            }
+            
+            &.create-account-tab a:before {
+                content: "\e616";
+                position: relative;
+                left: 1px;
+                top: 1px;
+             }
 		}
+        .tab-content {
+		    padding: 54px 99px; 
+        }
 	}
 }

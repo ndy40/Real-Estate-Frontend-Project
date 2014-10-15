@@ -1,10 +1,11 @@
 <header class="search-header">
     <!-- Navigation Partial --> 
-  	<ng-include src="'modules/shared/navigation-partial.html'"></ng-include>
+    <ng-include src="'modules/shared/navigation-partial.html'"></ng-include>
+    
     <div class="search-content dark">
         <div class="container">
-        	<!-- Search form here --> 
-      		<search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></search-form>
+            <!-- Search form here --> 
+            <search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></search-form>
             <div class="row" ng-show="searchObject.status">
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
@@ -16,12 +17,12 @@
     </div>
 </header>
 
-<section class="main-content">
+<section class="main-content search-results">
     <div class="container">
         <div class="row">
             
             <!-- Aside Partial --> 
-  			<ng-include src="'modules/search/partials/searchaside.html'"></ng-include>
+            <ng-include src="'modules/search/partials/searchaside.html'"></ng-include>
             
             <div class="col-lg-8">
                 <div class="panel panel-light sort-filters">
@@ -31,7 +32,7 @@
                             <selectbox class="small-select sort-select" defaults="{option: 'Most Recent', value : 1}" callback="setSortOrder" options="searchObject.filter.sortBy.list"></selectbox>
                         </div>
                         <div class="number-results">
-                        	<h5>Results per page:</h6>
+                            <h5>Results per page:</h6>
                             <selectbox class="small-select" defaults="{option: 10, value : 10}" callback="setResultsPerPage" options="searchObject.filter.resultsPerPage"></selectbox>
                         </div>    
                     </div>
@@ -48,76 +49,75 @@
                     <div class="col-sm-6">
                         <div class="panel panel-outline info-tags">
                             <div class="panel-heading">
-                                    <h5 class="avgRentalPrice"><i class="icon-key icon20-key-hover"></i>Average Rental Price: &nbsp; <span>£700</span></h5>
+                                <h5 class="avgRentalPrice"><i class="icon-key icon20-key-hover"></i>Average Rental Price: &nbsp; <span>£700</span></h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div id="properties_list">
-                	<article data-ng-repeat="property in searchObject.properties" class="property-listing" ng-show="{{searchObject.status}}">
-    						<div class="row">
-							<div class="col-lg-3 col-sm-6">
-								<div class="property-img">
-									<img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
-									<a ng-href="/property/{{property.id}}" class="visible-lg details-page">
-										<span>Click Here for More Details</span>
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-sm-6">
-								<div class="property-title-group">
-									<h4>{{property.price | customCurrency: "£"}}</h4>
-									<a class="add-to-fav" href="favourites.html"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
-								</div>
-								<p>{{property.address}}</p>
-								<div class="property-details-group">
-									<p class="beds">{{property.title}}</p>
-									<ul class="property-tags {{property.tags}}">
-										<li class="irepossessed">
-											<i class="icon-library icon12-library has-tooltip" data-toggle="tooltip" data-placement="top" title="Reposessed"></i>
-										</li>
-										<li class="imodernising">
-											<i class="icon-tools icon12-tools has-tooltip" data-toggle="tooltip" data-placement="top" title="Need Modernising"></i>
-										</li>
-										<li class="iauction">
-											<i class="icon-auction icon12-auction has-tooltip" data-toggle="tooltip" data-placement="top" title="Auction"></i>
-										</li>
-										<li class="idtv">
-											<i class="icon-users icon12-users has-tooltip" data-toggle="tooltip" data-placement="top" title="Direct to Vendor"></i>
-										</li>
-										<li class="ireduced">
-											<i class="icon-chart icon12-chart has-tooltip" data-toggle="tooltip" data-placement="top" title="Reduced in Price"></i>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3 col-sm-6">
-								<h5 class="right-section-label">
-									Est. Rental Yield 
-									<i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="This figure is just an estimate. The actual rental yield may be more depending on the final purchase price of the property."></i>
-								</h5>
-								<h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
-							</div>
-						</div>
-						
+                    <article data-ng-repeat="property in searchObject.properties" class="property-listing" ng-show="{{searchObject.status}}">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="property-img">
+                                    <img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
+                                    <a ng-href="/property/{{property.id}}" class="visible-lg details-page">
+                                        <span>Click Here for More Details</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="property-title-group">
+                                    <h4>{{property.price | customCurrency: "£"}}</h4>
+                                    <a class="add-to-fav" href="favourites.html"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
+                                </div>
+                                <p>{{property.address}}</p>
+                                <div class="property-details-group">
+                                    <p class="beds">{{property.title}}</p>
+                                    <ul class="property-tags {{property.tags}}">
+                                        <li class="irepossessed">
+                                            <i class="icon-library icon12-library has-tooltip" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
+                                        </li>
+                                        <li class="imodernising">
+                                            <i class="icon-tools icon12-tools has-tooltip" tooltip="Need Modernising" tooltip-placement="Need Modernising" title="Need Modernising"></i>
+                                        </li>
+                                        <li class="iauction">
+                                            <i class="icon-auction icon12-auction has-tooltip" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
+                                        </li>
+                                        <li class="idtv">
+                                            <i class="icon-users icon12-users has-tooltip" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
+                                        </li>
+                                        <li class="ireduced">
+                                            <i class="icon-chart icon12-chart has-tooltip" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h5 class="right-section-label">
+                                    Est. Rental Yield 
+                                    <i class="icon-help icon16-help has-tooltip" tooltip="This figure is just an estimate. The actual rental yield may be more depending on the final purchase price of the property." tooltip-placement="top" title="This figure is just an estimate. The actual rental yield may be more depending on the final purchase price of the property."></i>
+                                </h5>
+                                <h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
+                            </div>
+                        </div>
                     </article>
                 </div> 
                 <ul class="pagination pagination-custom">
-                	<li ng-show="searchObject.pager.prev">
-                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage-1)">Previous</a>
+                    <li ng-show="searchObject.pager.first">
+                        <a href="" ng-click="changePage(1)">First</a>
                     </li>
                     <li ng-repeat="page in searchObject.pager.pagesArray">
-                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="selectPage(page.num)">{{page.num}}</a>
+                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="changePage(page.num)">{{page.num}}</a>
                     </li>
-                    <li ng-show="searchObject.pager.next" class="next">
-                        <a href="" ng-click="selectPage(searchObject.pager.selectedPage + 1)">Next</a>
+                    <li ng-show="searchObject.pager.last" class="next">
+                        <a href="" ng-click="changePage(searchObject.pager.totalPages)">Last</a>
                     </li>
                 </ul> 
                 <!--<search-pagination total-pages="" class="pagination-custom"></search-pagination>-->
             </div>
         </div>
     </div>
-        </section>
+</section>
 <!-- footer template -->
 <ng-include src="'modules/shared/footer.html'"></ng-include>

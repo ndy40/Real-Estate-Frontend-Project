@@ -16,10 +16,15 @@
                     controller  : "SearchFormCtrl"
                 });
 
-                            $routeProvider.when("/property/:id", {
-                    templateUrl : "modules/property-details/property.html",
-                    controller  : "PropertyCtrl"
-                });
+            $routeProvider.when("/property/:id", {
+                templateUrl : "modules/property-details/property.html",
+                controller  : "PropertyCtrl"
+            });
+            
+            $routeProvider.when("/static/:pageName", {
+                templateUrl : "modules/static-pages/static.html",
+                controller  : "StaticCtrl"
+            });
 
                 $routeProvider.when("/static/:pageName", {
                     templateUrl : "modules/static-pages/static.html",

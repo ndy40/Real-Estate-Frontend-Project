@@ -17,17 +17,17 @@ define([
 ], function (angular) {
     'use strict';
     return angular.module("PCAPP", [
-		"ngRoute",
-//		"ui.bootstrap",
-		"PCAPPHOME", 
-		"PCAPPSEARCH",
-		"PCAPPPROPERTYDETAILS",
-		"PCSHARED",
-		"PCAPPSTATICPAGES",
-		"PCAPPLOGIN",
-		"PCAPPINVESTORDASHBOARD",
-		"PCAPPNAV"
-	]);
+        "ngRoute",
+        "ui.bootstrap",
+        "PCAPPHOME", 
+        "PCAPPSEARCH",
+        "PCAPPPROPERTYDETAILS",
+        "PCSHARED",
+        "PCAPPSTATICPAGES",
+        "PCAPPLOGIN",
+        "PCAPPINVESTORDASHBOARD",
+        "PCAPPNAV"
+    ]);
 });
 
 
