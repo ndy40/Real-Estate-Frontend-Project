@@ -3,6 +3,6 @@
 *   Login index file.
 */
 
-define(["./login-controller", "./auth-service", "./session-service"], function () {
+define(["./login-controller", "./session-service"], function () {
     'use strict';
 });

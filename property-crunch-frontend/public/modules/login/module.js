@@ -4,8 +4,9 @@
  */
 
 define([
-    "angular"
-	], function (ng) {
+    "angular",
+    "../authentication/index"
+], function (ng) {
     'use strict';
-    return ng.module("PCAPPLOGIN",  []);
+    return ng.module("PCAPPLOGIN",  ["PCAuthModule", "PCSHARED"]);
 });

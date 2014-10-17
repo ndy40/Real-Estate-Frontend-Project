@@ -68,4 +68,15 @@ class AccountsLogic extends BusinessLogicAbstract
     {
         return $this->userRepository->currentUser();
     }
+    
+    public function logout()
+    {
+        $this->userRepository->logout();
+        $currentUser = $this->currentUser();
+        if ($currentUser === null) {
+            return true;
+        } else {
+            throw new Exception("Failed to logout");
+        }
+    }
 } 

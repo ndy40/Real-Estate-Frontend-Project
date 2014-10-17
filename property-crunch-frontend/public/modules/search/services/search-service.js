@@ -38,7 +38,7 @@ define(["../module"], function (app) {
             'use strict';
             return this.keywords;
         };
-        	
+
         /**
          * Set & Get Current Page
          */
@@ -51,7 +51,7 @@ define(["../module"], function (app) {
             'use strict';
             return this.pageNumber;
         };
-		
+
         /**
          * Set & Get Results Per Page 
          */
@@ -64,9 +64,9 @@ define(["../module"], function (app) {
             'use strict';
             return this.count;
         };
-		
-	/**
-         * Set & Get Filters 
+
+        /**
+         * Set & Get Filters
          */
         SearchService.prototype.setFilters = function (filter) {
             'use strict';

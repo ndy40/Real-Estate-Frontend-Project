@@ -5,37 +5,24 @@ header {
 	color: #fff;
 }
 
-.navbar-brand {
-	font-size: 24px;
-	img {
-		width: 169px;
-		height: 28px;
-	}
-}
-
 .navbar-default {
 	width: 100%;
 	margin-bottom: 0;
 	position: absolute;
 	z-index: 5;
 	
-	.nav  {
-		a {
-			margin: 0 20px;
-			padding: 10px 0;
-			.transition(all 0.3s);
-		}
+    .navbar-brand {
+        font-size: 24px;
+        
+        img {
+            width: 169px;
+            height: 28px;
+        }
+    }
+    
+    .navbar-toggle {
 		
-		li {
-			&:hover, &:focus, &.active {
-				background: @brand-primary;
-				.transition(all 0.3s);
-			}
-		}
-	}
-	
-	.navbar-toggle {
-		.icon-bar {
+        .icon-bar {
 			background-color: #ddd;
 		}
 		
@@ -51,26 +38,210 @@ header {
 			}
 		}
 	}
+    
+    .navbar-nav {
+        li {
+            &:hover, &:focus, &.active {
+                background: @brand-primary;
+                .transition(all 0.3s);
+            }
+            
+             a {
+                margin: 0 20px;
+                padding: 10px 0;
+                .transition(all 0.3s);
+            }
+            
+            .icon-star {
+                font-size: 18px;    
+            }
+            
+        }
+        
+        .dropdown-caret {
+            display: none;
+        }
+        
+        .dropdown-menu {
+            display: block;
+            background: transparent;
+            position: relative;
+            width: 100%;
+            
+            li {
+                margin-right: 0;
+                
+                a {
+                    padding: 7px 35px;
+                    margin: 0;
+                    color: #fff;
+                    font-size: @font-size-h6;
+                    
+                    &:hover, &:focus {
+                        background-color: @brand-primary;
+                        color: @white;
+                    }
+                }
+            }
+        }
+        
+       
+        .link-text {
+            margin-left: 5px;
+        }	
+        
+        
+        .username {
+            > a {
+                text-transform: capitalize;
+                
+                i, span {
+                    color: @brand-primary;
+                }
+                
+            }
+            
+            .icon-user3 {
+                font-size: 20px;
+                position: relative;
+                top: 2px;
+            }
+            
+            &:hover, &.active {
+                background: transparent;
+            }
+            
+        }
+        
+         .badge {
+            background: @brand-primary;
+            position: absolute;
+            font-size: 12px;
+            min-width: 14px;
+            line-height: 10px;
+            font-weight: 300;
+            padding: 3px;
+            top: 18px;
+            left: 7px;
+            
+            .transition(color 0.3s);
+            .transition(background 0.3s);
+        }
+        
+    }
 }
 
+
+
 @media (min-width: 768px) {
-	.navbar-default {
-		.nav  {
-			li {
-				&:hover, &:focus, &.active {
-					background: transparent;
-				}
-			}
-			
-			a {		
-				padding: 25px 0 5px;
-				
-				&.active {
-					color: @brand-primary;
-				}
-			}
-		}
-	}
+    .navbar-default {
+        float: right;
+        padding: 0;
+            
+        .navbar-collapse {
+            padding: 0;
+        }
+            
+        .navbar-nav {
+            margin-left: 0;
+            margin-left: 80px;
+            
+            li { 
+                margin-right: 50px;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+                
+                &:hover, &:focus, &.active {
+                    background: transparent;
+                }
+                
+                a {
+                    padding: 0;
+                    margin: 27px 0 26px;
+                    font-weight: 300;
+                    position: relative;
+                    
+                    .transition(color 0.3s);
+                    
+                    &:hover,
+                    &.active {
+                        color: @brand-primary;
+                        .transition(color 0.3s);
+                    }
+                }
+            }
+            
+            i {
+                cursor: pointer;
+                
+                &.icon-login {
+                    position: relative;
+                    top: 2px;
+                }
+                
+                &.icon-star {
+                    font-size: 22px;
+                    line-height: 16px;
+                }
+                
+                &.icon-warning {
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+            }
+    
+            .dropdown-caret {
+                display: block;
+                top: 5px;
+                float: right;
+                margin-left: 5px;
+                position: relative;
+            }
+            
+            .dropdown-menu {
+                background: @navbar-default-bg;
+                display: none;
+                position: absolute;
+                right: -28px;
+                width: 148px;
+                
+                &.open {
+                    display: block;
+                }
+                
+                li {
+                    margin-right: 0;
+                    
+                    a {
+                        padding: 7px 35px;
+                        margin: 0;
+                        color: #fff;
+                        
+                        &:hover, &:focus {
+                            background-color: @brand-primary;
+                        }
+                    }
+                }
+            }
+            
+            .username {
+                .dropdown-menu {
+                    right: 0;
+                }
+            }
+            
+            .badge {
+                top: 7px;
+                left: 8px;
+            }
+        }
+    }
+}
+
+@media (min-width: 991px) {
+
 }
 
 /*===================================================================
@@ -125,150 +296,5 @@ header {
 		.searchbar-bottom {
 			text-align: right;
 		}	
-	}
-}
-
-/*===================================================================
-  Pages > Header > Log In / Logged In Toolbar
-====================================================================*/
-.navbar-nav.login {
-	margin-left: 0;
-	padding-bottom: 35px;
-	
-	> li { 
-		margin-right: 30px;
-		
-		&.last {
-			margin-right: 0;
-		}
-		
-		> a, 
-		.profile {
-			padding: 0;
-			margin: 25px 0 0;
-		}
-		
-		> a {
-			font-weight: 300;
-			position: relative;
-			
-			.transition(color 0.3s);
-			
-			&:hover {
-				color: @brand-primary;
-				
-				.transition(color 0.3s);
-				
-				
-			}
-		}
-	}
-	i.icon-login {
-		position: relative;
-    	top: 2px;
-	}
-	i.icon-star {
-		font-size: 22px;
-		line-height: 16px;
-	}
-	i.icon-warning {
-		cursor: pointer;
-		font-size: 20px;
-	}
-}		
-
-.badge {
-	background: @brand-primary;
-	position: absolute;
-	font-size: 12px;
-	min-width: 14px;
-	line-height: 10px;
-	font-weight: 300;
-	padding: 3px;
-	top: 9px;
-	left: 9px;
-	
-	.transition(color 0.3s);
-	.transition(background 0.3s);
-}
-
-.link-text,
-.username {
-	margin-left: 15px;
-}	
-
-.username {
-	color: @white;
-	font-weight: 300;
-	font-size: 16px;
-	position: relative;
-	top: 0;
-	cursor: default;
-	.transition(color 0.3s);
-	
-}
-
-.verified .username {
-	margin-left: 12px;
-}
-
-.profile {
-	
-	figure {
-		width: 24px;
-		height: 24px;
-		border-radius: 36px;
-		border: 1px solid @brand-primary;
-		overflow: hidden;    
-		display: inline-block;
-		
-		img {
-			width: 24px;
-			height: 24px;
-		    vertical-align: top;
-		}
-	}
-	
-	i {
-		font-size: 16px;
-		color: @brand-danger;
-		left: 15px;
-    	position: absolute;
-    	top: 5px;
-	}
-}
-
-
-@media (min-width: 768px) {
-	.navbar-nav.login {
-		margin-left: 15px;
-		padding-bottom: 0;
-	}
-	
-	.profile {
-		i {
-			left: 15px;
-			top: 32px;
-		}
-	}
-	
-	.link-text {
-		margin-left: 7px;
-	
-	}
-	
-	.username {
-		margin-left: 10px;
-	}
-	
-	.verified .username {
-		margin-left: 6px;
-	}	
-	
-}
-
-@media (min-width: 991px) {
-	.username {
-		top: -6px;
 	}
 }

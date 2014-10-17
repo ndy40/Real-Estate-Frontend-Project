@@ -5,16 +5,16 @@
 (function (define) {
     'use strict';
     define(["./app"], function (app) {
-        return app.config(["$routeProvider", "$locationProvider", "$provide", function ($routeProvider, $locationProvider, $provide) {
-            $routeProvider.when("/home", {
-                templateUrl : "modules/home/home.html",
-                controller  : "HomeCtrl"
-            });
-            
-            $routeProvider.when("/search", {
-                templateUrl : "modules/search/searchresult.html",
-                controller  : "SearchFormCtrl"
-            });
+        app.config(["$routeProvider", "$locationProvider", "$provide", 
+            function ($routeProvider, $locationProvider, $provide) {
+                $routeProvider.when("/home", {
+                    templateUrl : "modules/home/home.html",
+                    controller  : "HomeCtrl"
+                });
+                $routeProvider.when("/search", {
+                    templateUrl : "modules/search/searchresult.html",
+                    controller  : "SearchFormCtrl"
+                });
 
             $routeProvider.when("/property/:id", {
                 templateUrl : "modules/property-details/property.html",
@@ -26,28 +26,40 @@
                 controller  : "StaticCtrl"
             });
 
-            $routeProvider.when("/login", {
-                templateUrl : "modules/login/login.html",
-                controller  : "LoginCtrl"
-            });
+                $routeProvider.when("/static/:pageName", {
+                    templateUrl : "modules/static-pages/static.html",
+                    controller  : "StaticCtrl"
+                });
+
+                $routeProvider.when("/login", {
+                    templateUrl : "modules/login/login.html",
+                    controller  : "LoginCtrl"
+                });
+
+                // $routeProvider.when("/investor-dashboard", {
+                //     templateUrl : "modules/investor-dashboard/investor-dashboard.html",
+                //     controller  : "InvestorDashboardCtrl"
+                // });
+
+                $routeProvider.otherwise({
+                    redirectTo : "/home"
+                });
+
+                $provide.decorator('$sniffer', function($delegate) {
+                  $delegate.history = false;
+                  return $delegate;
+                });
+
+                $locationProvider.html5Mode(true).hashPrefix('!');
+        }]);
+    
+        return app.run(["$http", function ($http) {
+            var csrf_token = document.childNodes[1].getAttribute("csrf");
+            $http.defaults.headers.common['_token'] = csrf_token;
+            document.childNodes[1].removeAttribute("csrf");
             
-            // $routeProvider.when("/investor-dashboard", {
-            //     templateUrl : "modules/investor-dashboard/investor-dashboard.html",
-            //     controller  : "InvestorDashboardCtrl"
-            // });
-
-            $routeProvider.otherwise({
-                redirectTo : "/home"
-            });
-
-            $provide.decorator('$sniffer', function($delegate) {
-              $delegate.history = false;
-              return $delegate;
-            });
-
-            $locationProvider.html5Mode(true).hashPrefix('!');
-
-            
+            //default content type
+//            $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
         }]);
     });
 }(define));
