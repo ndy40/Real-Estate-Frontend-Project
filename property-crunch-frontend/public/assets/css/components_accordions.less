@@ -1,0 +1,60 @@
+/*===================================================================
+  Components > Accordions
+====================================================================*/
+.accordion {
+    text-align: left;
+    
+    .panel {
+        margin-bottom: 18px;
+    }
+    
+    .panel-heading {
+        padding: 0;
+        color: @gray-darker;
+        background: @gray-lighter;
+        border: 1px solid @gray;
+    }
+    
+    .panel-primary .panel-heading {
+        color: #fff;
+        border: 1px solid @brand-primary;
+        background: @brand-primary;
+    }
+    
+    .panel-title {
+        > a {
+            .clearfix();
+            
+            display: block;
+            padding: 15px 15px;
+            font-size: @font-size-h5;
+            cursor: pointer;
+            
+            i {
+                margin-right: 10px;
+            }
+            
+            span {
+                float: left;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {	
+    .accordion {
+       
+        .panel-title {
+            > a {
+                padding: 11px 17px;
+                font-size: @font-size-h4;
+                
+                i {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+

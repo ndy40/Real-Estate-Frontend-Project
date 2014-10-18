@@ -6,8 +6,7 @@
     'use strict';
 
     define([
-        "./static-controller", 
-        "./directives/carousel-directive"
+        "./static-controller"
         ], function () {
     });
 

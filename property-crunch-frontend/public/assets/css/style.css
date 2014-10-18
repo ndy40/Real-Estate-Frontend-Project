@@ -128,13 +128,6 @@ input[type="checkbox"]:focus,
 .panel {
   border: none;
 }
-.tooltip {
-  width: 200px;
-}
-.tooltip-inner {
-  padding: 12px 15px;
-  text-align: left;
-}
 /*===================================================================
   General Styling > Typography
 ====================================================================*/
@@ -154,8 +147,13 @@ a:focus {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.navb ar-brand span,
-h1 span {
+.navbar-brand span span,
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
   font-weight: 600;
 }
 h1,
@@ -165,9 +163,6 @@ h4,
 h5,
 h6 {
   margin: 0;
-}
-.text-center {
-  text-align: center;
 }
 h1,
 h2,
@@ -186,14 +181,10 @@ p,
 ul {
   margin-bottom: 30px;
 }
-.label {
-  font-weight: 300;
-  padding: 4px;
-  border-radius: 0;
-  cursor: default;
-}
-.label i {
-  cursor: pointer;
+blockquote {
+  margin: 0 auto 14px;
+  padding: 0 25px;
+  text-align: justify;
 }
 @media (min-width: 768px) {
   h1 {
@@ -224,12 +215,40 @@ ul {
   h6 {
     margin-bottom: 20px;
   }
+  blockquote {
+    font-size: 20px;
+  }
 }
 /*===================================================================
   General Styling > General Classes
 ====================================================================*/
 .main-content {
-  padding: 125px 0 50px;
+  padding: 50px 0 50px;
+}
+.large-section {
+  padding: 90px 0;
+}
+.large-section h2 {
+  margin-bottom: 70px;
+}
+.tooltip {
+  width: 200px;
+}
+.tooltip-inner {
+  padding: 12px 15px;
+  text-align: left;
+}
+.label {
+  font-weight: 300;
+  padding: 4px;
+  border-radius: 0;
+  cursor: default;
+}
+.label i {
+  cursor: pointer;
+}
+.dropdown-menu.open {
+  display: block;
 }
 .bottom-0 {
   margin-bottom: 0;
@@ -273,12 +292,12 @@ ul {
 .text-left {
   text-align: left;
 }
+.dark {
+  color: #fff;
+}
 .dark a:hover,
 .dark a:focus {
   color: #ffffff;
-}
-.dropdown-menu.open {
-  display: block;
 }
 /*===================================================================
   Components
@@ -1765,11 +1784,13 @@ header .btn:active {
 ====================================================================*/
 header {
   color: #fff;
+  padding-top: 75px;
 }
 .navbar-default {
   width: 100%;
   margin-bottom: 0;
   position: absolute;
+  margin-top: -75px;
   z-index: 5;
 }
 .navbar-default .navbar-brand {
@@ -1961,6 +1982,28 @@ header {
   
 }
 /*===================================================================
+  Components > Header > Home Header
+====================================================================*/
+.home-header {
+  background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
+}
+.home-header #search {
+  margin-top: -1px;
+}
+/*===================================================================
+  Components > Header > Lern More Header
+====================================================================*/
+.lern-more-header {
+  background: url(../images/learn_more_banner.jpg) fixed center 0;
+  height: 550px;
+}
+.lern-more-header .jumbotron {
+  padding: 130px 0;
+}
+@media (min-width: 768px) {
+  
+}
+/*===================================================================
    Components > Header > Search Results Header
 ====================================================================*/
 .navbar-abs {
@@ -1973,7 +2016,7 @@ header {
   height: 260px;
 }
 .search-content {
-  padding: 125px 0 25px;
+  padding: 50px 0 25px;
   text-align: center;
 }
 .search-content .input-group {
@@ -2004,10 +2047,43 @@ header {
   }
 }
 /*===================================================================
+  Components > Jumbotron
+====================================================================*/
+.jumbotron {
+  padding: 50px 0 10px;
+  margin: 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.jumbotron p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding: 108px 0;
+  }
+  .jumbotron h1 {
+    font-size: 62px;
+    margin-bottom: 50px;
+  }
+  .jumbotron p {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .jumbotron.jumbo-v2 h1 {
+    font-size: 50px;
+    margin-bottom: 60px;
+  }
+}
+/*===================================================================
   Components > Footer
 ====================================================================*/
 footer {
-  background: url(../images/footer-bg.jpg) repeat scroll 0 0;
+  background: #000;
   height: 75px;
   text-align: center;
   margin: 0 auto;
@@ -2162,46 +2238,124 @@ footer ul li:last-child {
   color: #ffffff;
 }
 /*===================================================================
+  Components > Featured Boxes (Numbers)
+====================================================================*/
+.feautred-boxes-num {
+  margin-bottom: 50px;
+}
+.feautred-boxes-num .title {
+  margin-bottom: 30px;
+}
+.feautred-boxes-num .title:before,
+.feautred-boxes-num .title:after {
+  content: " ";
+  display: table;
+}
+.feautred-boxes-num .title:after {
+  clear: both;
+}
+.feautred-boxes-num .title .num,
+.feautred-boxes-num .title h3 {
+  float: left;
+}
+.feautred-boxes-num .title h3 {
+  margin: 12px 0;
+  font-weight: 600;
+}
+.feautred-boxes-num .title .num {
+  margin-right: 30px;
+  font-size: 36px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  line-height: 62px;
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  line-height: 52px;
+}
+.feautred-boxes-num p {
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .feautred-boxes-num {
+    margin-bottom: 0;
+  }
+}
+/*===================================================================
+  Components > Featured Boxes (Icons)
+====================================================================*/
+.feature-box-icon {
+  margin-bottom: 50px;
+}
+.feature-box-icon i {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 30px;
+}
+.feature-box-icon p {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .feautred-boxes-icon {
+    margin-bottom: 0;
+  }
+}
+/*===================================================================
+  Components > Accordions
+====================================================================*/
+.accordion {
+  text-align: left;
+}
+.accordion .panel {
+  margin-bottom: 18px;
+}
+.accordion .panel-heading {
+  padding: 0;
+  color: #191e1d;
+  background: #f9f9f9;
+  border: 1px solid #e9edeb;
+}
+.accordion .panel-primary .panel-heading {
+  color: #fff;
+  border: 1px solid #f6af00;
+  background: #f6af00;
+}
+.accordion .panel-title > a {
+  display: block;
+  padding: 15px 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.accordion .panel-title > a:before,
+.accordion .panel-title > a:after {
+  content: " ";
+  display: table;
+}
+.accordion .panel-title > a:after {
+  clear: both;
+}
+.accordion .panel-title > a i {
+  margin-right: 10px;
+}
+.accordion .panel-title > a span {
+  float: left;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  .accordion .panel-title > a {
+    padding: 11px 17px;
+    font-size: 24px;
+  }
+  .accordion .panel-title > a i {
+    margin-right: 15px;
+  }
+}
+/*===================================================================
   Pages
 ====================================================================*/
 /*===================================================================
   Pages > Home
 ====================================================================*/
-/*===================================================================
-  Pages > Home > Header
-====================================================================*/
-.home-header {
-  background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
-}
-.home-header #search {
-  margin-top: -1px;
-}
-.jumbotron {
-  padding: 50px 0 10px;
-  margin: 0;
-  text-align: center;
-}
-.jumbotron h1 {
-  font-size: 40px;
-  margin-bottom: 50px;
-}
-.jumbotron p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-@media (min-width: 768px) {
-  .jumbotron {
-    padding: 108px 0;
-  }
-  .jumbotron h1 {
-    font-size: 62px;
-    margin-bottom: 50px;
-  }
-  .jumbotron p {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-}
 /*===================================================================
   Pages > Home > Why Us Section
 ====================================================================*/
@@ -2272,11 +2426,6 @@ footer ul li:last-child {
 #testimonials h2 {
   margin-bottom: 80px;
 }
-blockquote {
-  margin: 0 auto 14px;
-  padding: 0 25px;
-  text-align: justify;
-}
 .client-info-wrap {
   margin: 0 auto;
   padding: 20px 0 0;
@@ -2326,8 +2475,7 @@ blockquote {
     background-attachment: fixed;
     color: #fff;
   }
-  blockquote {
-    font-size: 20px;
+  #testimonials blockquote {
     width: 70%;
   }
   .client-info-wrap {
@@ -2375,6 +2523,83 @@ blockquote {
   #off-market h5 {
     margin-bottom: 40px;
   }
+}
+/*===================================================================
+  Pages > Learn More
+====================================================================*/
+/*===================================================================
+  Pages > Learn More > Jumbotron
+====================================================================*/
+.play-btn {
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 50px;
+  border: 2px solid #ffffff;
+  line-height: 72px;
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.play-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/*===================================================================
+  Pages > Learn More > Why invest in Property?
+====================================================================*/
+.fact-box {
+  margin-bottom: 50px;
+}
+.fact-box blockquote {
+  margin-bottom: 30px;
+}
+.fact-box .source-logo {
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .fact-box {
+    margin-bottom: 50px;
+  }
+  .fact-box.second-box blockquote {
+    margin-bottom: 116px;
+  }
+}
+/*===================================================================
+  Pages > Learn More > Potential Ways
+====================================================================*/
+.potential-ways {
+  background: url("../images/potential-ways-bg.jpg") fixed center top 0;
+}
+/*===================================================================
+  Pages > Learn More > Potential Ways
+====================================================================*/
+.investment-journey {
+  background: url("../images/featured-bg.jpg") fixed center top 0;
+}
+.investment-journey h2 {
+  margin-bottom: 50px;
+}
+.investment-journey .btn {
+  font-size: 24px;
+  font-weight: 300;
+}
+/*===================================================================
+  Pages > List a Property
+====================================================================*/
+.why-list h5 {
+  margin-top: 15px;
+}
+/*===================================================================
+  Pages > List a Property > FAQ
+====================================================================*/
+.faq {
+  background: #f9f9f9;
+}
+.faq h3 {
+  margin-bottom: 50px;
 }
 /*===================================================================
   Pages > Login /  Create an Account 

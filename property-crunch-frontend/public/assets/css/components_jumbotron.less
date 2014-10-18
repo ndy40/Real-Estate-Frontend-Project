@@ -1,0 +1,42 @@
+/*===================================================================
+  Components > Jumbotron
+====================================================================*/
+.jumbotron {
+	padding: 50px 0 10px;
+	margin: 0;
+	text-align: center;
+	
+	h1 {
+		font-size: @font-size-h1;
+		margin-bottom: 50px;
+	}
+	
+	p {
+		font-size: @font-size-h5;
+		margin-bottom: 30px;
+	}
+    
+}
+
+@media (min-width: 768px) {
+	.jumbotron {
+		padding: 108px 0;
+	
+		h1 {
+			font-size: 62px;
+			margin-bottom: 50px;
+		}
+		
+		p {
+			font-size: @font-size-h4;
+			margin-bottom: 30px;
+		}
+	    
+        &.jumbo-v2 {
+            h1 {
+                font-size: 50px;
+		        margin-bottom: 60px;
+            }
+        }
+    }
+}

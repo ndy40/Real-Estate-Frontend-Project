@@ -96,35 +96,35 @@ define(["../module"], function (app) {
         SearchService.prototype.getTypeList = function () {
             var url = APPSRCHURL.typeList;
             return $http.get(url);
-        }
+        };
 
         SearchService.prototype.getYieldList = function () {
             var url = APPSRCHURL.yieldList;
             return $http.get(url);
-        }
+        };
 		
         SearchService.prototype.getPriceList = function () {
             var url = APPSRCHURL.priceList;
             return $http.get(url);
-        }
+        };
 
         SearchService.prototype.getSortList = function () {
             var url = APPSRCHURL.sortList;
             return $http.get(url);
-        }
+        };
 
         SearchService.prototype.getResultsPerPageList = function () {
             var url = APPSRCHURL.resultsPerPageList;
             return $http.get(url);
-        }
+        };
 		
 	
         /**
-         * Set & Get Property Details 
+         * Set & Get Property Details
          */ 
-        SearchService.prototype.getProperty = function () {
+        SearchService.prototype.getProperty = function (propertyId) {
             'use strict';
-            var url = APPSRCHURL.property;
+            var url = APPSRCHURL.property + propertyId;
             return $http.get(url);
         };
         

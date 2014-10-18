@@ -1,14 +1,19 @@
 /*===================================================================
   Components > Header
 ====================================================================*/
+// Variables // 
+@header-height: 75px;
+
 header {
 	color: #fff;
+    padding-top: @header-height;
 }
 
 .navbar-default {
 	width: 100%;
 	margin-bottom: 0;
 	position: absolute;
+    margin-top: -@header-height;
 	z-index: 5;
 	
     .navbar-brand {
@@ -245,6 +250,35 @@ header {
 }
 
 /*===================================================================
+  Components > Header > Home Header
+====================================================================*/
+.home-header {
+	background: 
+		url(../images/header-bg-pattern.png) repeat fixed center 0,
+		url(../images/header-bg.jpg) fixed center 0;
+		
+	#search {
+		margin-top: -1px;
+	}
+}
+
+
+/*===================================================================
+  Components > Header > Lern More Header
+====================================================================*/
+.lern-more-header {
+	background: url(../images/learn_more_banner.jpg) fixed center 0;
+    height: 550px;
+    
+    .jumbotron {
+        padding: 130px 0;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+/*===================================================================
    Components > Header > Search Results Header
 ====================================================================*/
 .navbar-abs {
@@ -262,7 +296,7 @@ header {
 }
 
 .search-content {
-	padding: 125px 0 25px;
+	padding: 50px 0 25px;
 	.text-center();
 	
 	.input-group {
