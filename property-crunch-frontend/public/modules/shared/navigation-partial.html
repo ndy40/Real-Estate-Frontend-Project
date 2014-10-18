@@ -15,41 +15,56 @@
     </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div collapse="!isCollapsed" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right login">
-        <li><a active-link="active" ng-href="/static/learn_more">LEARN MORE</a></li>
-        <li><a active-link="active" ng-href="/static/list_property">LIST A PROPERTY</a></li>
-        <li>
-            <a active-link="active" href="/login" ng-show="!navData.showLogin">
-                <i class="icon-login icon16-login"></i>
-                <span class="link-text">Log In</span>
-            </a>
-        </li>
-        <li ng-show="navData.showLogin">
-            <a href="favourites.html">
-                <i class="icon-star icon20-star-nav"></i>
-                <span class="badge">6</span>
-                <span class="link-text">Favourites</span>
-            </a>
-        </li>
-        <li>
-            <div class="profile" ng-show="navData.showLogin">
-                <figure>
-                    <img src="assets/images/profilepic.png" alt="">
-                </figure>
-                <span class="username">{{navData.fullname}}</span>
-                <a href="#" id="verifyUser">
-                    <i class="icon-warning icon20-warning has-tooltip" data-toggle="tooltip" data-placement="bottom" title="User Not Verified! Click to Verify"></i>
+    <div collapse="!isCollapsed" class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav" ng-show="!showLogin">
+            <li><a active-link="active" ng-href="/static/learn_more">Learn More</a></li>
+            <li><a active-link="active" ng-href="/static/list_property">List a Property</a></li>
+            <li>
+                <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
+                    <i class="icon-login icon16-login"></i>
+                    <span class="link-text">Log In</span>
+                    <i ng-class="{'icon-arrow-down4':!dropOpenStatus, 'icon-arrow-up3':dropOpenStatus}" class="dropdown-caret"></i>
                 </a>
-            </div>
-        </li>
-         <li>
-            <a active-link="active" href="/logout" ng-show="navData.showLogin" ng-click="logout()">
-                <i class="icon-login icon16-login"></i>
-                <span class="link-text">Log Out</span>
-            </a>
-        </li>
-      </ul>
+                <ul ng-class="{'open':dropOpenStatus}" class="dropdown-menu">
+                    <li>
+                        <a href="/login">
+                            <i class="icon-user3"></i>
+                            <span class="link-text">Investor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="htt://pc.agency/login">
+                            <i class="icon-office"></i>
+                            <span class="link-text">Agency</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav" ng-show="showLogin">
+            <li>
+                <a href="favourites.html">
+                    <i class="icon-star icon20-star-nav"></i>
+                    <span class="badge">6</span>
+                    <span class="link-text">Favourites</span>
+                </a>
+            </li>
+            <li class="username">
+                <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
+                    <i class="icon-user3"></i>
+                    <span class="link-text">arslan akram</span>
+                    <i ng-class="{'icon-arrow-down4':!dropOpenStatus, 'icon-arrow-up3':dropOpenStatus}" class="dropdown-caret"></i>
+                </a>
+                <ul ng-class="{'open':dropOpenStatus}" class="dropdown-menu">
+                    <li>
+                        <a href="/logout">
+                            <i class="icon-logout"></i>
+                            <span class="link-text">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>  
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
