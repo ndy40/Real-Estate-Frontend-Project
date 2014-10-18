@@ -16,10 +16,10 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div collapse="!isCollapsed" class="collapse navbar-collapse navbar-right">
-        <ul class="nav navbar-nav" ng-show="!showLogin">
+        <ul class="nav navbar-nav">
             <li><a active-link="active" ng-href="/static/learn_more">Learn More</a></li>
             <li><a active-link="active" ng-href="/static/list_property">List a Property</a></li>
-            <li>
+            <li ng-hide="!navData.showLoginButton">
                 <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
                     <i class="icon-login icon16-login"></i>
                     <span class="link-text">Log In</span>
@@ -41,7 +41,7 @@
                 </ul>
             </li>
         </ul>
-        <ul class="nav navbar-nav" ng-show="showLogin">
+        <ul class="nav navbar-nav" ng-show="navData.showLogin">
             <li>
                 <a href="favourites.html">
                     <i class="icon-star icon20-star-nav"></i>
@@ -52,12 +52,12 @@
             <li class="username">
                 <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
                     <i class="icon-user3"></i>
-                    <span class="link-text">arslan akram</span>
+                    <span class="link-text">{{navData.fullname}}</span>
                     <i ng-class="{'icon-arrow-down4':!dropOpenStatus, 'icon-arrow-up3':dropOpenStatus}" class="dropdown-caret"></i>
                 </a>
                 <ul ng-class="{'open':dropOpenStatus}" class="dropdown-menu">
                     <li>
-                        <a href="/logout">
+                        <a href="/logout" ng-click="logout()">
                             <i class="icon-logout"></i>
                             <span class="link-text">Log Out</span>
                         </a>
