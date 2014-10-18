@@ -31,6 +31,13 @@ define(["./module"], function (app) {
             $rootScope.navData.showLogin = UserModel.isLoggedIn;
             $rootScope.navData.showLoginButton = false;
         };
+        // Hiding Dropdown by default
+        $scope.dropOpenStatus = false; 
+        
+        //  Toggle Dropdown
+        $scope.toggleDropdown = function() {
+            $scope.dropOpenStatus = !$scope.dropOpenStatus;              
+        };
 
     }]);
 });
