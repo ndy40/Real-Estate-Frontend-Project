@@ -61,14 +61,14 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="property-img">
                                     <img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
-                                    <a href="" ng-click="goToDetails(property)" class="visible-lg details-page">
+                                    <a ng-href="/proeprty/{{property.id}}" class="visible-lg details-page">
                                         <span>Click Here for More Details</span>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="property-title-group">
-                                    <a href="" ng-click="goToDetails(property)">{{property.price | customCurrency: "£"}}</a>
+                                    <a ng-href="/proeprty/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
                                     <a class="add-to-fav" href="favourites.html"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
                                 </div>
                                 <p>{{property.address}}</p>

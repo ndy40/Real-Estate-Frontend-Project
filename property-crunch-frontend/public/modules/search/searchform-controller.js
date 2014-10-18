@@ -70,8 +70,6 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
-
-
             /**
              * Loads data onto the results table. 
              * @param Object data
@@ -96,7 +94,8 @@ define(["./module"], function (app, angular) {
              * Provides Pagination for The Search Results. It's init in loadPropertyTable();
              */
             $scope.initPagination = function(totalProperties, resultsPerPage) {
-            $scope.searchObject.pager.totalPages = $scope.searchObject.pager.totalProperties <  $scope.searchObject.pager.resultsPerPage ? 1 : Math.ceil($scope.searchObject.pager.totalProperties / $scope.searchObject.pager.resultsPerPage);
+                $scope.searchObject.pager.totalPages 
+                        = $scope.searchObject.pager.totalProperties <  $scope.searchObject.pager.resultsPerPage ? 1 : Math.ceil($scope.searchObject.pager.totalProperties / $scope.searchObject.pager.resultsPerPage);
 
                 $scope.createPages();
                 $scope.setActivePage($scope.searchObject.pager.pageNum);
@@ -111,7 +110,7 @@ define(["./module"], function (app, angular) {
                     num: i+1,
                     isActive: false
                 });
-            }
+            };
             
             /**
              * Create pages for the pagination and store them in $scope.searchObject.pager.pagesArray
@@ -153,7 +152,7 @@ define(["./module"], function (app, angular) {
                         }
                     }
                 }
-            }
+            };
 
             // Hide/ Show First or Last Pages
             $scope.hideFirstOrLast = function() {
@@ -176,7 +175,7 @@ define(["./module"], function (app, angular) {
             $scope.changePage = function(pageNum) {
                 $scope.searchObject.pager.pageNum = pageNum;
                 $scope.getProperties();
-            }
+            };
 
 
 
