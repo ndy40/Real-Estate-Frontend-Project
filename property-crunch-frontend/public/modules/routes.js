@@ -53,10 +53,18 @@
                 $locationProvider.html5Mode(true).hashPrefix('!');
         }]);
     
-        return app.run(["$http", function ($http) {
+        return app.run(["$http", "$rootScope", "AuthService", "UserModel", function ($http, $rootScope, AuthService, UserModel) {
             var csrf_token = document.childNodes[1].getAttribute("csrf");
             $http.defaults.headers.common['_token'] = csrf_token;
             document.childNodes[1].removeAttribute("csrf");
+
+            $rootScope.$on("$locationChangeStart    ", function () {
+                if (UserModel.isLoggedIn) {     
+                    $rootScope.navData.fullname = UserModel.fullname;
+                    $rootScope.navData.showLogin = UserModel.isLoggedIn;
+                    $rootScope.navData.showLoginButton = false;
+                }
+            });
             
             //default content type
 //            $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" ng-controller="NavigationCtrl">
   <div class="container">
   
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,12 +20,12 @@
         <li><a active-link="active" ng-href="/static/learn_more">LEARN MORE</a></li>
         <li><a active-link="active" ng-href="/static/list_property">LIST A PROPERTY</a></li>
         <li>
-            <a active-link="active" href="/login" ng-show="!showLogin">
+            <a active-link="active" href="/login" ng-show="!navData.showLogin">
                 <i class="icon-login icon16-login"></i>
                 <span class="link-text">Log In</span>
             </a>
         </li>
-        <li>
+        <li ng-show="navData.showLogin">
             <a href="favourites.html">
                 <i class="icon-star icon20-star-nav"></i>
                 <span class="badge">6</span>
@@ -33,18 +33,18 @@
             </a>
         </li>
         <li>
-            <div class="profile" ng-show="showLogin">
+            <div class="profile" ng-show="navData.showLogin">
                 <figure>
                     <img src="assets/images/profilepic.png" alt="">
                 </figure>
-                <span class="username">{{user.first_name + " " + user.last_name}}</span>
+                <span class="username">{{navData.fullname}}</span>
                 <a href="#" id="verifyUser">
                     <i class="icon-warning icon20-warning has-tooltip" data-toggle="tooltip" data-placement="bottom" title="User Not Verified! Click to Verify"></i>
                 </a>
             </div>
         </li>
          <li>
-            <a active-link="active" href="/logout" ng-show="showLogin" ng-click="logout()">
+            <a active-link="active" href="/logout" ng-show="navData.showLogin" ng-click="logout()">
                 <i class="icon-login icon16-login"></i>
                 <span class="link-text">Log Out</span>
             </a>

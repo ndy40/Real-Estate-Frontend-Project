@@ -26,7 +26,8 @@ define([
         "PCAPPSTATICPAGES",
         "PCAPPLOGIN",
         "PCAPPINVESTORDASHBOARD",
-        "PCAPPNAV"
+        "PCAPPNAV",
+        "PCAuthModule"
     ]);
 });
 
