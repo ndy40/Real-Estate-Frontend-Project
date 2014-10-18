@@ -11,18 +11,18 @@ define(["../module"], function (app) {
                 options     : "=",
                 defaults    : "=",
                 callback    : "="
+                //dropDownStatus: "=",
             },
             templateUrl : "./modules/search/directives/selectbox.html",
             link : function (scope, element, attr) {
-
+                   
+                // Hiding Dropdown by default
+                scope.dropDownStatus = false; 
+            
                 //  Toggle Dropdown
-                var dropOpen = function(event, $document) {					
-                    event.preventDefault();
-                    var dropDownEl = element.find('ul');
-                    dropDownEl.toggleClass('show');
+                scope.dropdown = function() {
+                    scope.dropDownStatus = !scope.dropDownStatus;              
                 };
-                
-                element.bind('click', dropOpen);
 
                 // Setting Default Options
                 if (scope.defaults !== undefined) {
@@ -36,6 +36,8 @@ define(["../module"], function (app) {
                         scope.callback(value);
                     }
                     scope.optionSelected = value;
+                    // Hiding Dropdown on Select
+                    scope.dropDownStatus = false;
                 };
             }
          };

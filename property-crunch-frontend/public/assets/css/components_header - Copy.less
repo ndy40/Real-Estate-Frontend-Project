@@ -1,0 +1,373 @@
+/*===================================================================
+  Components > Header
+====================================================================*/
+header {
+	color: #fff;
+}
+
+.navbar-brand {
+	font-size: 24px;
+	img {
+		width: 169px;
+		height: 28px;
+	}
+}
+
+.navbar-default {
+	width: 100%;
+	margin-bottom: 0;
+	position: absolute;
+	z-index: 5;
+	
+    .navbar-collapse {
+        padding: 0;
+    }
+    
+    .navbar-nav {
+        margin-left: 0;
+        margin-left: 80px;
+        
+        > li { 
+            margin-right: 50px;
+            
+            &:last-child {
+                margin-right: 0;
+            }
+            
+            a {
+                padding: 0;
+                margin: 27px 0 26px;
+                font-weight: 300;
+                position: relative;
+                
+                .transition(color 0.3s);
+                
+                &:hover,
+                &.active {
+                    color: @brand-primary;
+                    .transition(color 0.3s);
+                }
+            }
+            
+            i {
+                cursor: pointer;
+            }
+            
+            i.icon-login {
+                position: relative;
+                top: 2px;
+            }
+            i.icon-star {
+                font-size: 22px;
+                line-height: 16px;
+            }
+            i.icon-warning {
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+        
+        .dropdown-caret {
+            top: 3px;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            background: @navbar-default-bg;
+            right: -28px;
+            
+            li {
+                
+                a {
+                    padding: 7px 35px;
+                    margin: 0;
+                    color: #fff;
+                    
+                    &:hover, &:focus {
+                        background-color: @brand-primary;
+                    }
+                }
+            }
+        }
+    }
+    
+	.navbar-nav {
+		a {
+			margin: 0 20px;
+			padding: 10px 0;
+			.transition(all 0.3s);
+		}
+		
+		li {
+			&:hover, &:focus, &.active {
+				background: @brand-primary;
+				.transition(all 0.3s);
+			}
+		}
+	}
+	
+	.navbar-toggle {
+		.icon-bar {
+			background-color: #ddd;
+		}
+		
+		&:hover, 
+		&:focus {
+			background-color: @brand-primary;
+			border-color: @brand-primary;
+			.transition(all 0.3s);
+			
+			.icon-bar {
+				background-color: #fff;
+				.transition(all 0.3s);
+			}
+		}
+	}
+}
+
+.badge {
+	background: @brand-primary;
+	position: absolute;
+	font-size: 12px;
+	min-width: 14px;
+	line-height: 10px;
+	font-weight: 300;
+	padding: 3px;
+	top: 9px;
+	left: 9px;
+	
+	.transition(color 0.3s);
+	.transition(background 0.3s);
+}
+
+.link-text,
+.username {
+	margin-left: 15px;
+}	
+
+.username {
+	color: @white;
+	font-weight: 300;
+	font-size: 16px;
+	position: relative;
+	top: 0;
+	cursor: default;
+	.transition(color 0.3s);
+	
+}
+
+.verified .username {
+	margin-left: 12px;
+}
+
+.profile {
+	
+	figure {
+		width: 24px;
+		height: 24px;
+		border-radius: 36px;
+		border: 1px solid @brand-primary;
+		overflow: hidden;    
+		display: inline-block;
+		
+		img {
+			width: 24px;
+			height: 24px;
+		    vertical-align: top;
+		}
+	}
+	
+	i {
+		font-size: 16px;
+		color: @brand-danger;
+		left: 15px;
+    	position: absolute;
+    	top: 5px;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-default {
+		.navbar-nav  {
+			li {
+				&:hover, &:focus, &.active {
+					background: transparent;
+				}
+			}
+			
+			a {		
+				padding: 25px 0 5px;
+				
+				&.active {
+					color: @brand-primary;
+				}
+			}
+		}
+	}
+
+    .navbar-nav {
+        margin-left: 15px;
+        padding-bottom: 0;
+    }
+	
+	.profile {
+		i {
+			left: 15px;
+			top: 32px;
+		}
+	}
+	
+	.link-text {
+		margin-left: 7px;
+	
+	}
+	
+	.username {
+		margin-left: 10px;
+	}
+	
+	.verified .username {
+		margin-left: 6px;
+	}	
+}
+
+@media (min-width: 991px) {
+	.navbar-default {
+        float: right;
+        padding: 0;
+        
+        .navbar-collapse {
+            padding: 0;
+        }
+        
+        .navbar-nav {
+            margin-left: 0;
+            margin-left: 80px;
+            
+            > li { 
+                margin-right: 50px;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+                
+                a {
+                    padding: 0;
+                    margin: 27px 0 26px;
+                    font-weight: 300;
+                    position: relative;
+                    
+                    .transition(color 0.3s);
+                    
+                    &:hover,
+                    &.active {
+                        color: @brand-primary;
+                        .transition(color 0.3s);
+                    }
+                }
+                
+                i {
+                    cursor: pointer;
+                }
+                
+                i.icon-login {
+                    position: relative;
+                    top: 2px;
+                }
+                i.icon-star {
+                    font-size: 22px;
+                    line-height: 16px;
+                }
+                i.icon-warning {
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+                
+                .dropdown-caret {
+                    top: 3px;
+                    margin-left: 5px;
+                    position: relative;
+                }
+            }
+            .dropdown-menu {
+                background: @navbar-default-bg;
+                right: -28px;
+                
+                li {
+                    
+                    a {
+                        padding: 7px 35px;
+                        margin: 0;
+                        color: #fff;
+                        
+                        &:hover, &:focus {
+                            background-color: @brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .username {
+		top: -6px;
+	}
+}
+
+
+
+/*===================================================================
+   Components > Header > Search Results Header
+====================================================================*/
+.navbar-abs {
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+}
+
+.search-header {
+	background: 
+		url(../images/header-bg-pattern.png) repeat fixed center 0,
+		url(../images/search_banner.jpg) fixed center 0;
+	
+	height: 260px;
+}
+
+.search-content {
+	padding: 125px 0 25px;
+	.text-center();
+	
+	.input-group {
+		.bottom-20();
+	}
+	
+	.searchbar-bottom {
+		text-align: center;
+		font-size: @font-size-h5;		
+		
+		a:hover, a:focus {
+			color: @white;
+		}
+		
+		i {
+			font-size: 28px;
+			line-height: 14px;
+			position: relative;
+			top: 6px;
+			left: 6px;
+			cursor: pointer;
+		}
+	}
+}
+.searchbar {
+	border-right: none;
+}
+
+@media (min-width: 360px) {
+	.search-content {
+		.searchbar-bottom {
+			text-align: right;
+		}	
+	}
+}

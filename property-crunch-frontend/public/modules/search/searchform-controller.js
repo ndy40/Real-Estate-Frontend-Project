@@ -4,8 +4,8 @@
  
 define(["./module"], function (app, angular) {
     'use strict';
-    app.controller("SearchFormCtrl", ["$scope", "SearchService", 
-        function ($scope, SearchService) {
+    app.controller("SearchFormCtrl", ["$scope", "SearchService", "$location", 
+        function ($scope, SearchService, $location) {
 			
             /**
              * Object to Store Search Data
@@ -24,7 +24,7 @@ define(["./module"], function (app, angular) {
                     pageNum         : 1,    // Setting Default Page Number 	
                     resultsPerPage  : 10,   // Setting Default Properties Per Page
                     totalProperties : "",   // To store Total Properties Per Page 
-                    totalPages      : "",	
+                    totalPages      : ""
 		}		
             };
 			
@@ -35,7 +35,7 @@ define(["./module"], function (app, angular) {
                     SearchService.setKeyword($scope.searchObject.keywords); 			// Remove this Later
                     SearchService.setCurrentPage($scope.searchObject.pager.pageNum);
                     SearchService.setResultsPerPage($scope.searchObject.pager.resultsPerPage);
-            }
+            };
 
             /**
              * @description 
@@ -348,7 +348,11 @@ define(["./module"], function (app, angular) {
             * Init all functions
             */
             $scope.init();
-			
+            
+            $scope.goToDetails = function (property) {
+                $location.path('/property/'+property.id);
+                //console.log(property);
+            };                        
 			
             // Ndi Please Provide Some Description here. Not sure What this is Used For
             $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
