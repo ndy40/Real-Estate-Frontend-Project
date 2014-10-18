@@ -3,9 +3,9 @@
  * Investor Login Controller
  */
 
-define(["./module", "../nav/index", "../authentication/index"], function (app) {
+define(["./module", "../nav/index"], function (app) {
     'use strict';
-    app.controller("LoginCtrl", ["$scope", "$location", 'AuthService', function ($scope, $location, AuthService) {
+    app.controller("LoginCtrl", ["$scope", "$rootScope", "$location", 'AuthService', function ($scope, $rootScope, $location, AuthService) {
 	'use strict';
         //Model for holding login data
         $scope.loginData = {};
@@ -19,7 +19,7 @@ define(["./module", "../nav/index", "../authentication/index"], function (app) {
                 $scope.loginData.remember, 
                 function (data) {
                      if (data !== undefined) {
-                        $scope.$broadcast("loginSuccess");
+                        $rootScope.$broadcast("loginsuccess");
                         $location.path("/home");
                     }
                 }, 
@@ -27,6 +27,18 @@ define(["./module", "../nav/index", "../authentication/index"], function (app) {
                     alert ("Failed");
                 }
             );
-        };	
+        };
+        
+        $scope.$on("logOut", function (tscope) {
+            $rootScope.showLogin = false;
+            $rootScope.user = undefined;
+        });
+
+        $scope.register = function () {
+            // AuthService.register(
+            //     $scope.loginData.
+            // );
+
+        };
     }]);
 });

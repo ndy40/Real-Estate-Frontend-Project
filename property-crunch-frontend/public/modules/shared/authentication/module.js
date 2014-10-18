@@ -4,8 +4,8 @@
 
 (function (define) {
     'use stict';
-    define(["angular", "cookies", "localStorage"], function (app) {
-        return app.module("PCAuthModule", ["ngCookies", "localStorageModule"])
+    define(["angular", "cookies"], function (app) {
+        return app.module("PCAuthModule", ["ngCookies"])
             .constant("AUTHURL", "http://pc.frontend/api/auth");
     });
 })(define);

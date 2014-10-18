@@ -7,9 +7,12 @@
     'use strict';
 
     define([
-        "angular"
+        "angular",
+        "localStorage",
+        "cookies",
+       "./authentication/index"
     ], function (ng) {
-        return ng.module("PCSHARED", []);
+        return ng.module("PCSHARED", ["PCAuthModule", "localStorageModule", "ngCookies"]);
     });
 
 }(define));

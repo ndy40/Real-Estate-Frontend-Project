@@ -5,8 +5,8 @@
 
 define([
     "angular",
-    "../authentication/index"
+    "../shared/index"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPLOGIN",  ["PCAuthModule", "PCSHARED"]);
+    return ng.module("PCAPPLOGIN",  ["PCSHARED", "PCAuthModule"]);
 });

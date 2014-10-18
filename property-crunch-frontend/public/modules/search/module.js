@@ -18,7 +18,7 @@
                 "priceList"         : "./modules/search/filters-data/price.json", 	// Replace this with Live API
                 "sortList"          : "./modules/search/filters-data/sort.json", 	// Replace this with Live API
                 "resultsPerPageList": "./modules/search/filters-data/results.json" 	// Replace this with Live API
-            })
+            });
     });
 
 }(define));

@@ -19,8 +19,9 @@
         <![endif]-->
     
     </head>
-    <body data-spy="scroll"  data-target=".navbar-collapse" ng-view>
+    <body data-spy="scroll"  data-target=".navbar-collapse">
         <!-- contents go in here. -->
+        <ng-view></ng-view>
 
         <script src="{{asset('assets/requirejs/require.js')}}" data-main="{{asset('modules/main.js')}}"></script>
 	</body>

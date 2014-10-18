@@ -4,8 +4,7 @@
  */
 (function (define) {
     'use strict';
-
-    define(["./auth-service", "./shared-directive", "./navigation-directive"], function () {
+    define(["./NavigationCtrl", "./UserModel", "./authentication/index"], function () {
 
     });
 
