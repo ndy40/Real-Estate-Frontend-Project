@@ -120,11 +120,11 @@ define(["../module"], function (app) {
 		
 	
         /**
-         * Set & Get Property Details 
+         * Set & Get Property Details
          */ 
-        SearchService.prototype.getProperty = function () {
+        SearchService.prototype.getProperty = function (propertyId) {
             'use strict';
-            var url = APPSRCHURL.property;
+            var url = APPSRCHURL.property + propertyId;
             return $http.get(url);
         };
         

@@ -1,0 +1,69 @@
+/*===================================================================
+  Pages > Learn More
+====================================================================*/
+/*===================================================================
+  Pages > Learn More > Jumbotron
+====================================================================*/
+.play-btn {
+    background: rgba(255,255,255, 0.2);
+    font-size: 50px;
+    .circle(2, #fff, 70);
+    .transition(all 0.3s);
+    
+    &:hover {
+        background: rgba(255,255,255, 0.5);
+        .transition(all 0.3s);
+    }
+}
+
+/*===================================================================
+  Pages > Learn More > Why invest in Property?
+====================================================================*/
+.fact-box {
+    margin-bottom: 50px;
+    
+    blockquote {
+        margin-bottom: 30px;
+    }
+    
+    .source-logo {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media (min-width: 768px) {	
+    .fact-box {
+        margin-bottom: 50px;
+        
+        &.second-box {
+            blockquote {
+                margin-bottom: 116px;
+            }
+        }
+    }
+}
+
+/*===================================================================
+  Pages > Learn More > Potential Ways
+====================================================================*/
+.potential-ways {
+    background: url("../images/potential-ways-bg.jpg") fixed center top 0;
+}
+
+/*===================================================================
+  Pages > Learn More > Potential Ways
+====================================================================*/
+.investment-journey {
+    background: url("../images/featured-bg.jpg") fixed center top 0;
+    
+    h2 {
+        margin-bottom: 50px;
+    }
+    
+    .btn {
+        font-size: @font-size-h4;
+        font-weight: 300;
+    }
+}

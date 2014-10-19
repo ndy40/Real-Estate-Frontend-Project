@@ -16,62 +16,17 @@ define(["../module"], function (app) {
             templateUrl : "./modules/static-pages/directives/carousel.html",
             link : function (scope, element, attr) {
                 
-                var testWidth = 234;
-                
-                scope.itemStyle = {
-                    'width': testWidth+'px'
+                var hello = function () {
+                    element.owlCarousel({			
+			items : 4, //10 items above 1000px browser width
+			itemsDesktop : [1199,3], //5 items between 1000px and 901px
+			itemsDesktopSmall : [991,2], // 3 items betweem 900px and 601px
+			itemsTablet: [767,2], //2 items between 600 and 0;
+			itemsMobile : [479,1], // itemsMobile disabled - inherit from itemsTablet option
+			slideSpeed: 500,
+			autoPlay: false
+		  }); 
                 };
-                
-                
-                scope.winWidth = angular.element($window).innerWidth;
-                scope.dirWidth = element[0].offsetWidth;
-               
-                console.log(document.querySelectorAll('.no-bullets').offsetWidth);
-                
-                //Init Smartphone Devices Layout
-                if (scope.dirWidth < 768) {
-                } 
-                
-                //Init Tablet Devices Layout
-                else if (scope.dirWidth > 767 && scope.dirWidth < 992) {
-                }
-                
-                //Init Desktop Devices Layout
-                else if (scope.dirWidth > 991)  {
-                }
-                
-                angular.element($window).bind('resize', function () {
-                    console.log(element[0].offsetWidth);
-                    // Mobile
-                    
-                    // Tablet
-                    
-                    // Desktop
-                    
-                    //Selecting Parent Element 
-                    //element[0].style.background = "red";
-                    
-                    
-                    //Get Parent width
-                    //element[0].offsetWidth
-                    
-                    //Selecting child
-                    //element.find('li').css({
-//                        position: 'relative',
-//                        border: '1px solid red'
-//                    });
-                    //console.log($window.innerWidth);
-                });
-                
-                
-                // JS Way
-                //window.onresize = function() {
-//                //console.log(clientWidth);
-//                    console.log(window.innerWidth);
-//                    console.log(element.innerWidth);
-//
-//
-//                };
             }
          };
     });

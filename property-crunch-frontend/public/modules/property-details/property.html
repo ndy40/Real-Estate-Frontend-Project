@@ -26,29 +26,27 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6">
                     <div class="property-heading">
-                        <h3 class="property-title">{{propertyDetails.rooms}} Bedroom {{propertyDetails.type.name}} for Sale</h3>
+                        <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
                         <div class="property-sub">
-                            <h5 class="property-address">{{propertyDetails.address}}</h5>
+                            <h5 class="property-address">{{property.details.address}}</h5>
                             <h6 class="label label-primary first-listed">
-                                First Listed: <span>{{propertyDetails.firstListed}}</span>
+                                First Listed: <span>{{property.firstListed}}</span>
                             </h6>
                         </div>
                     </div>
-                    <div class="pc-slider-wrapper">
+<!--                    <div class="pc-slider-wrapper">
                         <div class="img-large">
-                            <img class="img-responsive property-detail-img" src="../images/properties/1.jpg" alt="">
+                            <img class="img-responsive property-detail-img" ng-src="{{property.details.images[0].image}}" alt="">
                         </div>
                         <ul class="no-bullets le">
-                            <li data-ng-repeat="images in propertyDetails.images">
+                            <li data-ng-repeat="images in property.details.images">
                                 <img ng-src="{{images.image}}">
                             </li>
                         </ul>
-                       
-                        
-                    </div>
+                    </div>-->
                 </div>
 
-                <div class="col-lg-5 col-md-6">
+<!--                <div class="col-lg-5 col-md-6">
                     <div class="panel panel-outline property-links">
                         <div class="panel-heading">
                                 <ul class="no-bullets horizontal-list">
@@ -96,12 +94,12 @@
                                                                 </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>                  
         </div>
     </article>
         
-            <aside class="comparables">  
+<!--            <aside class="comparables">  
                 <div class="container">         
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -109,7 +107,7 @@
                         </div>
                     </div>
                     
-                    <!-- Property Listing -->
+                     Property Listing 
 					<div class="property-listing comparables-listing">
 						<div class="row">
 							<div class="col-lg-2 col-md-3 col-sm-6">
@@ -144,11 +142,11 @@
 							</div>
 						</div>
 						<a href="1.html" class="btn btn-default btn-fullwidth hidden-lg">More Details</a>
-					</div> <!-- Property Listing -->
+					</div>  Property Listing 
 
                     <div id="more-properties">  
                     
-                    	<!-- Property Listing -->    
+                    	 Property Listing     
                         <div class="property-listing comparables-listing">
 							<div class="row">
 								<div class="col-lg-2 col-md-3 col-sm-6">
@@ -183,7 +181,7 @@
 								</div>
 							</div>
 							<a href="2.html" class="btn btn-default btn-fullwidth hidden-lg">More Details</a>
-						</div> <!-- Property Listing -->
+						</div>  Property Listing 
                     </div>
                     
                     <div id="no-more-properties">
@@ -198,7 +196,7 @@
                     </div>
 				</div>
                     
-            </aside>
+            </aside>-->
             
             <aside class="other-properties">
                 <div class="container">                
@@ -208,9 +206,10 @@
                         </div>
                     </div>
                     <div class="carousel-wrapper">
-                        <div id="property-carousel" class="owl-carousel">
+                         <carousel images-src="property.details.images"></carousel>
+<!--                        <div id="property-carousel" class="owl-carousel">
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/45.jpg" alt="">
+                                <img class="img-responsive" ng-src="{{property.details.images[0].image}}" alt="">
                                 <a href="45.html" class="item-overlay">
                                     <h5 class="item-price">£250,000</h5>
                                     <h5 class="item-location">Lea Bridge Road, London E10</h5>
@@ -219,50 +218,50 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/46.jpg" alt="">
-                                <a href="46.html" class="item-overlay">
-                                    <h5 class="item-price">£399,950</h5>
-                                    <h5 class="item-location">Fairfax Road, London N8</h5>
-                                    <h5 class="item-income"><span>£2,250</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>7%</span> Yield</h5>
+                                <img class="img-responsive" ng-src="{{property.details.images[1].image}}" alt="">
+                                <a href="45.html" class="item-overlay">
+                                    <h5 class="item-price">£250,000</h5>
+                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
                                 </a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/47.jpg" alt="">
-                                <a href="47.html" class="item-overlay">
-                                    <h5 class="item-price">£379,950</h5>
-                                    <h5 class="item-location">Portland Rise, London N4</h5>
-                                    <h5 class="item-income"><span>£1,364</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>4%</span> Yield</h5>
+                                <img class="img-responsive" ng-src="{{property.details.images[2].image}}" alt="">
+                                <a href="45.html" class="item-overlay">
+                                    <h5 class="item-price">£250,000</h5>
+                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
                                 </a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/48.jpg" alt="">
-                                <a href="48.html" class="item-overlay">
-                                    <h5 class="item-price">£350,000</h5>
-                                    <h5 class="item-location">Seymour Road, London N8</h5>
-                                    <h5 class="item-income"><span>£1,572</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>5%</span> Yield</h5>
+                                <img class="img-responsive" ng-src="{{property.details.images[3].image}}" alt="">
+                                <a href="45.html" class="item-overlay">
+                                    <h5 class="item-price">£250,000</h5>
+                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
                                 </a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/49.jpg" alt="">
-                                <a href="49.html" class="item-overlay">
-                                    <h5 class="item-price">£395,000</h5>
-                                    <h5 class="item-location">Tottenham Lane, London N8</h5>
-                                    <h5 class="item-income"><span>£1,572</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>5%</span> Yield</h5>
+                                <img class="img-responsive" ng-src="{{property.details.images[4].image}}" alt="">
+                                <a href="45.html" class="item-overlay">
+                                    <h5 class="item-price">£250,000</h5>
+                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
                                 </a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../images/properties/50.jpg" alt="">
-                                <a href="50.html" class="item-overlay">
-                                    <h5 class="item-price">£399,950</h5>
-                                    <h5 class="item-location">Falkland Road, Harringay, London N8</h5>
-                                    <h5 class="item-income"><span>£1,697</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>5%</span> Yield</h5>
+                                <img class="img-responsive" ng-src="{{property.details.images[5].image}}" alt="">
+                                <a href="45.html" class="item-overlay">
+                                    <h5 class="item-price">£250,000</h5>
+                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
                                 </a>
-                            </div>
+                            </div>-->
                         </div>     
                     
                         <i class="carousel-nav icon-arrow-left3 icon44-left prev visible-lg"></i>
@@ -271,6 +270,5 @@
                 </div>
             </aside>
         </section>
-The score is {{propertyId}}.
 <!-- footer template -->
 <ng-include src="'modules/shared/footer.html'"></ng-include>

@@ -11,40 +11,35 @@
              * Object to Store Property Data
              */
             $scope.property = {
-                details: [], 
-                status: false, 
-            }
+                details: {}, 
+                status: false 
+            };
             
             $scope.setPageRoute = function() {
                 $scope.propertyId = $routeParams.id;
             };
             
             $scope.getPropertyDetails = function () {
-                SearchService.getProperty(389)
+                SearchService.getProperty($routeParams.id)
                     .success($scope.loadPropertyDetails)
                     .error(function (error) {
                         $scope.property.status = 'Unable to load data: ' + error.message;
                     });
-                
-                
-                if ($scope.propertyDetails !== undefined) {
-                    $scope.getFirstListedDate($scope.propertyDetails.created_at);
-                };
             };
             
             $scope.loadPropertyDetails = function (data) {		
-                $scope.searchObject.properties = data.data;
-                
+                $scope.property.details = data;
+                $scope.getFirstListedDate(data.created_at);
                 if (data.length > 0) {
                     $scope.property.status = true;
                 } else {
                     $scope.property.status = false;
                 }
-			
             };
             
-            $scope.getFirstListedDate = function (date) {
-                var dateTimeSplit = date.split(" "),
+            // Calculate First Listed (Days Ago) - Create Directive Later
+            $scope.getFirstListedDate = function (created_at) {
+                var dateTimeSplit = created_at.split(" "),
                     dateParts        = dateTimeSplit[0].split("-"),
                     createdYear      = dateParts[0],
                     createdMonth     = dateParts[1]-1,
@@ -54,21 +49,19 @@
                     firstListedHours = (currentDate.valueOf() - createdDate.valueOf())/3600000;
                 
                 if (firstListedHours < 1) {
-                    $scope.propertyDetails.firstListed = "less than an hour ago";
+                    $scope.property.firstListed = "less than an hour ago";
                 } else if (firstListedHours < 24) {
-                    $scope.propertyDetails.firstListed = firstListedHours+" hours ago";
+                    $scope.property.firstListed = firstListedHours+" hours ago";
                 } else if (firstListedHours < 168) {
-                    $scope.propertyDetails.firstListed = Math.floor(firstListedHours/24)+" day(s) ago";
+                    $scope.property.firstListed = Math.floor(firstListedHours/24)+" day(s) ago";
                 } else if (firstListedHours < 720) {
-                    $scope.propertyDetails.firstListed =  Math.floor(firstListedHours/168)+" week(s) ago";
+                    $scope.property.firstListed =  Math.floor(firstListedHours/168)+" week(s) ago";
                 }  else if (firstListedHours < 8760) {
-                    $scope.propertyDetails.firstListed =  Math.ceil(firstListedHours/720)+" month(s) ago";
+                    $scope.property.firstListed =  Math.ceil(firstListedHours/720)+" month(s) ago";
                 }
-                
             };
             
            
-            
             $scope.init = function() {
                 $scope.getPropertyDetails();
                 $scope.setPageRoute();
