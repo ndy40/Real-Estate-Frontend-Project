@@ -18,3 +18,6 @@ App::error(function (Cartalyst\Sentry\Users\UserNotFoundException $ex) {
         return Response::json(array("flash" => $ex->getMessage()), 401);
     }
 });
+
+
+
