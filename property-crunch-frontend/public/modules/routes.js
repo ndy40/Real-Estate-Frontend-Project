@@ -18,7 +18,7 @@
                     controller  : "PropertyCtrl"
                 });
 
-                $routeProvider.when("/static/:pageName", {
+                $routeProvider.when("/pages/:pageName", {
                     templateUrl : "modules/static-pages/static.html",
                     controller  : "StaticCtrl"
                 });
