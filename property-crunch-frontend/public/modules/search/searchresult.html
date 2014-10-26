@@ -56,7 +56,7 @@
                 </div>
                 
                 <div id="properties_list">
-                    <article data-ng-repeat="property in searchObject.properties" class="property-listing" ng-show="{{searchObject.status}}">
+                    <article ng-repeat="property in searchObject.properties" class="property-listing" ng-show="{{searchObject.status}}">
                         <div class="row">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="property-img">
@@ -96,7 +96,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <h5 class="right-section-label">
                                     Est. Rental Yield 
-                                    <i class="icon-help icon16-help has-tooltip" tooltip="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property." tooltip-placement="top" title="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property. "></i>
+                                    <i class="icon-help" tooltip="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property." tooltip-placement="top" title="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property."></i>
                                 </h5>
                                 <h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
                             </div>
@@ -114,10 +114,8 @@
                         <a href="" ng-click="changePage(searchObject.pager.totalPages)">Last</a>
                     </li>
                 </ul> 
-                <!--<search-pagination total-pages="" class="pagination-custom"></search-pagination>-->
                 
-                
-                <div id="noProperties">
+                <!--<div id="noProperties">
                     <div class="alert alert-danger" role="alert">
                         <i class="icon-warning icon18-warning"></i>
                         <span>Sorry!</span> no properties found matching your criteria.
@@ -126,56 +124,8 @@
                     <div class="alert alert-success" role="alert">
                         <i class="icon-thumbsup icon18-thumbsup-alert"></i>
                         <span>Cheer up!</span> we found other properties suitable for investment.
-                    </div>
-
-                    <article class="property-listing repossessed">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="property-img">
-                                    <img alt="2 Bed Flat for Sale in Borwick Avenue, London" src="images/properties/14.jpg" class="img-responsive">
-                                    <a class="visible-lg details-page" href="properties/14.html">
-                                        <span>Click Here for More Details</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="property-title-group">
-                                    <h4>£250000</h4>
-                                    <a href="favourites.html" class="add-to-fav"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
-                                </div>
-                                <p>Borwick Avenue, London E17</p>
-                                <div class="property-details-group">
-                                    <p class="beds">2 Bed Flat for Sale</p>
-                                    <ul class="property-tags repossessed">
-                                        <li class="irepossessed">
-                                            <i title="" data-placement="top" data-toggle="tooltip" class="icon-library icon12-library has-tooltip" data-original-title="Reposessed"></i>
-                                        </li>
-                                        <li class="imodernising">
-                                            <i title="" data-placement="top" data-toggle="tooltip" class="icon-tools icon12-tools has-tooltip" data-original-title="Need Modernising"></i>
-                                        </li>
-                                        <li class="iauction">
-                                            <i title="" data-placement="top" data-toggle="tooltip" class="icon-auction icon12-auction has-tooltip" data-original-title="Auction"></i>
-                                        </li>
-                                        <li class="idtv">
-                                            <i title="" data-placement="top" data-toggle="tooltip" class="icon-users icon12-users has-tooltip" data-original-title="Direct to Vendor"></i>
-                                        </li>
-                                        <li class="ireduced">
-                                            <i title="" data-placement="top" data-toggle="tooltip" class="icon-chart icon12-chart has-tooltip" data-original-title="Reduced in Price"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <h5 class="right-section-label">
-                                    Est. Rental Yield 
-                                    <i title="" data-placement="top" data-toggle="tooltip" class="icon-help icon16-help has-tooltip" data-original-title="This figure is just an estimate. The actual rental yield may be more depending on the final purchase price of the property."></i>
-                                </h5>
-                                <h3 class="right-section-value">8<span>%</span></h3>
-                            </div>
-                        </div>
-                        <a class="btn btn-default btn-fullwidth hidden-lg details-page" href="properties/14.html">More Details</a>
-                    </article>		
-                </div>
+                    </div>	
+                </div>-->
             </div>
         </div>
     </div>

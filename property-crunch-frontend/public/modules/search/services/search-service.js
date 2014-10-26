@@ -129,6 +129,15 @@ define(["../module"], function (app) {
         };
         
         /**
+         * Get Comparables
+         */ 
+        SearchService.prototype.getComparables = function (location) {
+            var url = APPSRCHURL.search + location + "/1/5",
+                self = this;
+            return $http.get(url);
+        };
+        
+        /**
          * initializes the search and returns a search result.
          * 
          * @returns {Promise}
@@ -146,7 +155,7 @@ define(["../module"], function (app) {
             }
             return $http.get(url);
         };
-		
+        
         return new SearchService();
     }]);
 });

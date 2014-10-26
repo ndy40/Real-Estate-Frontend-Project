@@ -1,19 +1,19 @@
 <!-- include header -->
 <header class="home-header">
-  <!-- include navigation here --> 
-  <ng-include src="'../modules/shared/navigation-partial.html'"></ng-include>
-  
-  <div class="jumbotron dark">
-    <div class="container">
-      <h1>Invest in Property like a <span>Pro</span></h1>
-      <p>Find investment properties in your area</p>
-      <!-- Search form here --> 
-        <search-form keywords="keywords" redirect="/search"></search-form>
-      <!-- /input-group --><!-- end of search form -->
-    </div>
-  </div>
+    <!-- include navigation here --> 
+    <ng-include src="'../modules/shared/navigation-partial.html'"></ng-include>
 
+    <div class="jumbotron dark">
+        <div class="container">
+            <h1>Invest in Property like a <span>Pro</span></h1>
+            <p>Find investment properties in your area</p>
+            <!-- Search form here --> 
+              <search-form keywords="keywords" redirect="/search"></search-form>
+            <!-- /input-group --><!-- end of search form -->
+        </div>
+    </div>
 </header>
+
 <section id="why-us">
     <div class="container">
         <div class="text-center">
@@ -61,32 +61,33 @@
     </div>
 </section>
     	
-        <section id="testimonials" class="dark">
-            <div class="container">
-				<h2>97% of Property Buyers surveyed recommend Property Crunch</h2>
-                <blockquote>I have been sourcing and investing in property for over 12 months now. Finding the right property to buy is not easy. I spend an average 8 hours each week researching the market. Property Crunch will save me time and money. I am really excited about the product!</blockquote>
-                <div class="client-info-wrap">
-                    <div class="client-img-overlay">
-                        <img class="img-circle" src="assets/images/client-image.jpg" alt="Chika Okeke">
-                    </div>
-                    <div class="client-details">
-                        <h3>Chika Okeke</h3>
-                        <h5>Property Investor</h5>
-                        <a href="http://isaacnoah.com">IsaacNoah.com</a>
-                    </div>
-                </div>
+<section id="testimonials" class="dark">
+    <div class="container">
+                        <h2>97% of Property Buyers surveyed recommend Property Crunch</h2>
+        <blockquote>I have been sourcing and investing in property for over 12 months now. Finding the right property to buy is not easy. I spend an average 8 hours each week researching the market. Property Crunch will save me time and money. I am really excited about the product!</blockquote>
+        <div class="client-info-wrap">
+            <div class="client-img-overlay">
+                <img class="img-circle" src="assets/images/client-image.jpg" alt="Chika Okeke">
             </div>
-        </section>
-        
-        <section id="off-market">
-	        <div class="container">
-                <div class="text-center">
-                    <h2>Find Off Market Properties Now</h2>
-                    <h5>Using Property Crunch is like having an Estate Agent in your Back Pocket</h5>
-                	<a href="/search" class="btn btn-default btn-large" type="button">Start Your Search</a>
-                </div>
+            <div class="client-details">
+                <h3>Chika Okeke</h3>
+                <h5>Property Investor</h5>
+                <a href="http://isaacnoah.com">IsaacNoah.com</a>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-<!-- footer template -->
-<ng-include src="'modules/shared/footer.html'"></ng-include>
+<aside class="main-content">
+    <rec-properties properties-src="recProperties.list"></rec-properties>
+</aside>
+
+<section id="off-market">
+        <div class="container">
+        <div class="text-center">
+            <h2>Find Off Market Properties Now</h2>
+            <h5>Using Property Crunch is like having an Estate Agent in your Back Pocket</h5>
+                <a href="/search" class="btn btn-default btn-large" type="button">Start Your Search</a>
+        </div>
+    </div>
+</section>

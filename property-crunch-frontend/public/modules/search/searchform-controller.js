@@ -25,7 +25,7 @@ define(["./module"], function (app, angular) {
                     resultsPerPage  : 10,   // Setting Default Properties Per Page
                     totalProperties : "",   // To store Total Properties Per Page 
                     totalPages      : ""
-		}		
+		        }		
             };
 			
             /**
@@ -61,8 +61,8 @@ define(["./module"], function (app, angular) {
                     $scope.searchObject.keywords = SearchService.getKeywords();
                 } else {
                     SearchService.setKeyword($scope.searchObject.keywords);
-                        SearchService.setCurrentPage($scope.searchObject.pager.pageNum);
-                        SearchService.setResultsPerPage($scope.searchObject.pager.resultsPerPage);
+                    SearchService.setCurrentPage($scope.searchObject.pager.pageNum);
+                    SearchService.setResultsPerPage($scope.searchObject.pager.resultsPerPage);
                     SearchService.getResults()
                         .success($scope.loadPropertyTable)
                         .error(function (error) {
@@ -96,7 +96,11 @@ define(["./module"], function (app, angular) {
              * Provides Pagination for The Search Results. It's init in loadPropertyTable();
              */
             $scope.initPagination = function(totalProperties, resultsPerPage) {
-            $scope.searchObject.pager.totalPages = $scope.searchObject.pager.totalProperties <  $scope.searchObject.pager.resultsPerPage ? 1 : Math.ceil($scope.searchObject.pager.totalProperties / $scope.searchObject.pager.resultsPerPage);
+                $scope.searchObject.pager.totalPages = 
+                    $scope.searchObject.pager.totalProperties <  
+                    $scope.searchObject.pager.resultsPerPage ? 1 : 
+                    Math.ceil($scope.searchObject.pager.totalProperties / 
+                    $scope.searchObject.pager.resultsPerPage);
 
                 $scope.createPages();
                 $scope.setActivePage($scope.searchObject.pager.pageNum);
@@ -111,7 +115,7 @@ define(["./module"], function (app, angular) {
                     num: i+1,
                     isActive: false
                 });
-            }
+            };
             
             /**
              * Create pages for the pagination and store them in $scope.searchObject.pager.pagesArray
@@ -137,7 +141,7 @@ define(["./module"], function (app, angular) {
                         $scope.pushNewPage(i);
                     }
                 }
-            }
+            };
 
             /**
              * Set Active State of the Current Page
@@ -153,7 +157,7 @@ define(["./module"], function (app, angular) {
                         }
                     }
                 }
-            }
+            };
 
             // Hide/ Show First or Last Pages
             $scope.hideFirstOrLast = function() {
@@ -170,13 +174,13 @@ define(["./module"], function (app, angular) {
                 } else {
                     $scope.searchObject.pager.last = true;
                 }
-            }
+            };
 
             // Change Page
             $scope.changePage = function(pageNum) {
                 $scope.searchObject.pager.pageNum = pageNum;
                 $scope.getProperties();
-            }
+            };
 
 
 
@@ -207,11 +211,11 @@ define(["./module"], function (app, angular) {
                 $scope.searchObject.pager.resultsPerPage = resultsPerPage.value;
 
                 // Resetting Pagination
-                $scope.searchObject.pager.pageNum = 1; 		// resetting page num to 1
+                $scope.searchObject.pager.pageNum = 1;// resetting page num to 1
 
                 // Get Properties to Re-Populate Results
                 $scope.getProperties(); 
-            }
+            };
 
 			
             /**
@@ -238,7 +242,7 @@ define(["./module"], function (app, angular) {
              */
             $scope.setCurrentType = function(type) {
                 $scope.searchObject.filter.refineSearch.selectedType = type.value;
-            }
+            };
 			
             /**
              * Get Yield List by Using SearchService.getYieldList() & Populate the Yield Filter SelectBox.
@@ -260,7 +264,7 @@ define(["./module"], function (app, angular) {
              */
             $scope.setCurrentYield = function(minYield) {
                 $scope.searchObject.filter.refineSearch.selectedYield = minYield.value;
-            }
+            };
 
             /**
              * Get Price List by Using SearchService.getPriceList() & Populate the Min Price & Max Price
@@ -289,10 +293,10 @@ define(["./module"], function (app, angular) {
              */
             $scope.setCurrentMinPrice = function(minPrice) {
                 $scope.searchObject.filter.refineSearch.selectedMinPrice = minPrice.value;
-            }
+            };
             $scope.setCurrentMaxPrice = function(maxPrice) {
                 $scope.searchObject.filter.refineSearch.selectedMaxPrice = maxPrice.value;
-            }
+            };
 
             /**
              * Callback function used in number of Beds Spinner on Search Results Page. This sets the current  
@@ -300,7 +304,7 @@ define(["./module"], function (app, angular) {
              */
             $scope.setCurrentBeds = function(beds) {
                 $scope.searchObject.filter.refineSearch.selectedBeds = beds;
-            }
+            };
 
 
             /**
@@ -327,7 +331,7 @@ define(["./module"], function (app, angular) {
              */
             $scope.setSortOrder = function(sortOrder) {
                 $scope.searchObject.filter.sortBy.selectedOrder = sortOrder.value;
-            }
+            };
 
 
 
@@ -351,7 +355,6 @@ define(["./module"], function (app, angular) {
             
             $scope.goToDetails = function (property) {
                 $location.path('/property/'+property.id);
-                //console.log(property);
             };                        
 			
             // Ndi Please Provide Some Description here. Not sure What this is Used For

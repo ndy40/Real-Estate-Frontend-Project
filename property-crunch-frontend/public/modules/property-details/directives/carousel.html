@@ -1,21 +1,22 @@
-<!--<div class="pc-slider-wrapper">
-    <div class="img-large">
-        <img class="img-responsive property-detail-img" src="assets/images/properties/1.jpg" alt="">
+<div class="property-img-carousel" ng-show="imagesSrc">
+    <div class="img-preview">
+        <img class="img-responsive" ng-src="{{currentImg}}" alt="">
+        <div class="carousel-nav">
+            <button class="prev"> 
+                <i class="icon-arrow-left7"></i>
+            </button>
+            <button class="next">
+                <i class="icon-uniE6F0"></i>
+            </button>
+        </div>
     </div>
-    <ul id="test" class="no-bullets">
-        <li ng-style="itemStyle" data-ng-repeat="images in imagesSrc">
-            <img ng-src="{{images.image}}">
-        </li>
-    </ul>
-</div>-->
-<div id="property-carousel" class="owl-carousel">
-    <div class="item" data-ng-repeat="images in imagesSrc">
-        <img class="img-responsive" ng-src="{{images.image}}" alt="">
-        <a href="45.html" class="item-overlay">
-            <h5 class="item-price">£250,000</h5>
-            <h5 class="item-location">Lea Bridge Road, London E10</h5>
-            <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-            <h5 class="item-yield"><span>8%</span> Yield</h5>
-        </a>
+    <div class="carousel-wrapper">
+        <div class="owl-carousel">
+            <div class="item" data-ng-repeat="images in imagesSrc" ng-class="{'active first':$first, 'last':$last}">
+                <img class="img-responsive" ng-src="{{images.image}}" alt="" ng-click="setCurrentImg(images.image)">
+                <!--Use the following to use thumbs version-->
+                <!--<img class="img-responsive" ng-src="{{images.thumb}}" large-src="{{images.image}}" alt="" ng-click="setCurrentImg(images.image)">-->
+            </div>
+        </div>
     </div>
-</div>
+</div>         

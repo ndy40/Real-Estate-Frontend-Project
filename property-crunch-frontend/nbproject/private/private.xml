@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/home/home.html</file>
-            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/static-pages/templates/learn_more.html</file>
-            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/static-pages/static.html</file>
-            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/search/searchresult.html</file>
+            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/search/services/search-service.js</file>
+            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/search/searchform-controller.js</file>
+            <file>file:/C:/xampp/htdocs/elance/propertycrunch/GIT/property-crunch-frontend/public/modules/static-pages/directives/carousel.html</file>
         </group>
     </open-files>
 </project-private>

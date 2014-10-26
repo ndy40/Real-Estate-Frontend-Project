@@ -5,13 +5,21 @@
 
     define(["./module"], function (app) {
         'use strict';
-        app.controller("PropertyCtrl", ["$scope", "SearchService", "$routeParams", function ($scope, SearchService, $routeParams) {
+        app.controller("PropertyCtrl", ["$scope", "SearchService", "$routeParams", "$location", function ($scope, SearchService, $routeParams, $location) {
             
              /**
              * Object to Store Property Data
              */
             $scope.property = {
                 details: {}, 
+                status: false 
+            };
+            
+             /**
+             * Object to Store Property Data
+             */
+             $scope.comparables = {
+                list: {}, 
                 status: false 
             };
             
@@ -30,11 +38,38 @@
             $scope.loadPropertyDetails = function (data) {		
                 $scope.property.details = data;
                 $scope.getFirstListedDate(data.created_at);
+                
+                // Get Comparables
+                $scope.getComparables(data.address);
+                
+                // Set Status
                 if (data.length > 0) {
                     $scope.property.status = true;
                 } else {
                     $scope.property.status = false;
                 }
+                
+            };
+            
+            $scope.getComparables = function (location) {
+                //SearchService.getComparables(location)
+                SearchService.getComparables("SW7")
+                    .success($scope.loadComparablesList)
+                    .error(function (error) {
+                        $scope.comparables.status = 'Unable to load data: ' + error.message;
+                    });
+            };
+            
+            $scope.loadComparablesList = function (data) {		
+                $scope.comparables.list = data.data;
+                
+                // Set Status
+                if (data.length > 0) {
+                    $scope.comparables.status = true;
+                } else {
+                    $scope.comparables.status = false;
+                }
+                
             };
             
             // Calculate First Listed (Days Ago) - Create Directive Later
@@ -68,6 +103,7 @@
             };
             
             $scope.init();
+            
         }]);
     });
 })(define);

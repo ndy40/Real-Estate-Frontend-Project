@@ -7,26 +7,17 @@
     define(["./app"], function (app) {
         app.config(["$routeProvider", "$locationProvider", "$provide", 
             function ($routeProvider, $locationProvider, $provide) {
-                $routeProvider.when("/home", {
-                    templateUrl : "modules/home/home.html",
-                    controller  : "HomeCtrl"
-                });
                 $routeProvider.when("/search", {
                     templateUrl : "modules/search/searchresult.html",
                     controller  : "SearchFormCtrl"
                 });
 
-            $routeProvider.when("/property/:id", {
-                templateUrl : "modules/property-details/property.html",
-                controller  : "PropertyCtrl"
-            });
-            
-            $routeProvider.when("/static/:pageName", {
-                templateUrl : "modules/static-pages/static.html",
-                controller  : "StaticCtrl"
-            });
+                $routeProvider.when("/property/:id", {
+                    templateUrl : "modules/property-details/property.html",
+                    controller  : "PropertyCtrl"
+                });
 
-                $routeProvider.when("/static/:pageName", {
+                $routeProvider.when("/pages/:pageName", {
                     templateUrl : "modules/static-pages/static.html",
                     controller  : "StaticCtrl"
                 });
@@ -36,13 +27,8 @@
                     controller  : "LoginCtrl"
                 });
 
-                // $routeProvider.when("/investor-dashboard", {
-                //     templateUrl : "modules/investor-dashboard/investor-dashboard.html",
-                //     controller  : "InvestorDashboardCtrl"
-                // });
-
                 $routeProvider.otherwise({
-                    redirectTo : "/home"
+                    redirectTo : "/pages/home"
                 });
 
                 $provide.decorator('$sniffer', function($delegate) {

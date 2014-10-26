@@ -1,64 +1,115 @@
 /*===================================================================
   Pages > Property Details
 ====================================================================*/
+.property-details {
+    .left-details,
+    .right-details {
+        margin-bottom: 20px;
+    }
+    
+}
+
 /*===================================================================
   Pages > Property Details > Property Heading
 ====================================================================*/
 .property-heading {
 	margin-bottom: 20px;
-	
-	.property-title {
-		margin-bottom: 15px;
-	}
-	
-	.property-sub {
-		.clearfix();
-		
-		.property-address,
-		.first-listed {
-			margin: 0;
-			float: left;
-		}
-		
-		.property-address {
-			width: 100%;
-			margin-bottom: 15px;
-		}
-		
-		.first-listed {
-            color: #fff;
-			span {
-				font-weight: 400;
-			}
-		}
-		
-	}
+	.clearfix();
+    
+    .property-title {
+        margin-bottom: 10px;    
+    }
+    
+    .property-date {
+        margin-top: 5px;
+    }
+    
+    .property-price,
+    .property-address,
+    .property-date {
+        margin-bottom: 0;
+    }
+    
+    .property-address {
+        line-height: 24px;
+    }
+    
+    .property-price {
+        float: left;
+        
+        .clearfix();
+        
+        i, span {
+            float: right;
+        }
+        
+        i {
+            margin-right: 7px;
+        }
+    }
+    .property-date {
+        float: right;
+    }
+    
+	.left-section {
+        float: left;
+    }
+    
+    .right-section {    
+        float: left;
+        margin-top: 15px;
+    }
 }
 
-@media (min-width: 480px) {
-	.property-heading {
-		
-		.property-title {
-			margin-bottom: 13px;
-		}
-		
-		.property-sub {
-			
-			.property-address {
-				width: auto;
-				margin-bottom: 0;
-			}
-			
-			.first-listed {
-				float: right;
-			}
-			
-		}
-	}
+@media (max-width: 639px) {
+    .property-heading {
+        .right-section {    
+            width: 100%;
+        }
+        .property-price {
+            font-size: 24px;
+            
+            i {
+                line-height: 26px;
+                font-size: 18px;
+            }
+        }
+        
+    }
 }
 
 @media (min-width: 640px) {
-	.property-detail-img {
+    .property-heading {
+        .property-title,
+        .property-price {
+            margin-bottom: 10px;
+        }
+        
+        .right-section {    
+            float: right;
+            margin: 0;
+        }
+        
+        .property-price {
+            .clearfix();
+            
+            i, span {
+                float: right;
+            }
+            
+            i {
+                line-height: 33px;
+                font-size: 24px;
+                margin-right: 7px;
+            }
+        }
+        
+        .property-price {
+            width: 100%;
+        }
+    }
+	
+    .img-preview img {
 		width: 720px;
 	}
 }
@@ -83,7 +134,12 @@
 			
 			&.last {
 				margin-bottom: 0;
+                float: right;
 			}
+			    
+            a {
+                font-size: 16px;
+            }
 		}
 		
 		i {
@@ -109,7 +165,7 @@
 			
 			i {
 				margin-right: 5px;
-			}
+            }
 		}
 	}
 }
@@ -157,76 +213,65 @@
 }
 
 /*===================================================================
-  Pages > Property Details > Investment Details Panel
+  Pages > Property Details > Profit Calculator
 ====================================================================*/
-.property-data {
-	li {
-		margin-bottom: 26px;
-		.clearfix();
-	}
-	h5 {
-		margin: 0;
-	}
-	.data-label {
-		float: left;
-	}
-	.data-value {
-		float: right;
-	}
-	i.icon-help {
-		top: 1px;
-	}
+.profit-calculator {
+    h4 {
+        margin-bottom: 35px;
+    }
+    
+    .tab-content {
+        min-height: 521px;
+    }
+
+    .form-field-row {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-size: 16px;    
+        padding: 9px 0;
+    }
+    .form-control {
+        font-size: 16px;
+        min-height: 40px;
+    }
+    
+    .results {
+        .form-field-row {
+            h6 {
+                font-size: 16px;
+                padding: 0;
+                margin: 0;
+            }
+            
+            h5 {
+                margin: 0;
+            }
+        }
+    }
+    
+    .btn.calculate {
+        margin-top: 30px;
+    }
 }
 
-.get-details {
-	p {
-		margin: 20px 0 20px;
-		text-align: center;
-	}
-	.btn {
-		width: 100%;
-	}
+/*===================================================================
+  Pages > Property Details > Request Details
+====================================================================*/
+.request-details {
+    padding: 48px 0 50px;
+    
+    h2 {
+        line-height: 50px;
+        margin:0;
+    }
+    
+    .btn-fullwidth {
+        margin-top: 0;
+    }
+    
 }
-
-@media (min-width: 640px) {
-	.get-details {
-		.clearfix();
-		p {
-			float: left;
-			text-align: left;
-			margin: 0;
-		}
-		.btn {
-			float: right;
-			width: auto;
-		}
-	}
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-	.get-details {
-		p {
-			margin: 12px 0 20px;
-			width: 100%;
-			text-align: center;
-		}
-		.btn {
-			width: 100%;
-		}
-	}
-}
-
-@media (min-width: 1200px) {
-	.get-details {
-		margin-top: 14px;
-		
-		p {
-			margin: 13px 0;
-		}
-	}
-}
-
 
 /*===================================================================
   Pages > Property Details > Comparables
@@ -246,6 +291,10 @@
 }
 
 .comparables-listing {
+    h4 {
+        margin: 0;
+    }
+        
 	.right-section-group {
 		margin-top: 20px;
 	
@@ -261,11 +310,6 @@
 	width: 180px;
 	margin: 0 auto;
 	padding: 30px 0;
-}
-
-#more-properties,
-#no-more-properties {
-	display: none;
 }
 
 @media (min-width: 360px) {

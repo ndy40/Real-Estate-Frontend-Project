@@ -1,8 +1,6 @@
-/*global define */
 /**
  * Module definition file.
  */
-
 (function (define) {
     'use strict';
 
@@ -12,7 +10,14 @@
         "cookies",
        "./authentication/index"
     ], function (ng) {
-        return ng.module("PCSHARED", ["PCAuthModule", "localStorageModule", "ngCookies"]);
+        return ng.module("PCSHARED", [
+            "PCAuthModule", 
+            "localStorageModule", 
+            "ngCookies"
+        ])
+        .constant("APPURL", {
+            "recProperties" : "http://app.propertycrunch.co/client/search/search-properties/"
+        });
     });
 
 }(define));

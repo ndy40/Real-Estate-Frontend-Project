@@ -1,0 +1,64 @@
+<form ng-show="!toSellResults">
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Purchase Price:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toSell.purchasePrice" placeholder="£125,000" currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Mortgage LTV:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toSell.mortgageLtv" placeholder="e.g.75%" percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Mortgage Rate:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toSell.mortgageRate" placeholder="e.g. 4.5%" percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Est. Resale Price:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toSell.resalePrice" placeholder="e.g. £150,000" currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-8">Holding Period (months):</label>
+        <div class="input-group col-sm-7 col-xs-4">
+            <input class="form-control" ng-model="toSell.holdingPeriod" placeholder="e.g. 12">
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Refurbishment:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toSell.refurbishment" placeholder="e.g. £15,000" currency>
+        </div>
+    </div>
+    <button class="btn btn-default btn-3d btn-large calculate" ng-click="calculateToSellResults()">Calculate</button>
+</form>
+        
+<div class="results" ng-show="toSellResults">
+    <h4>Results:</h4>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Monthly Mortgage:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toSell.monthlyMortgage | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Deposit Needed:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toSell.depositNeeded | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Total Investment:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toSell.totalInvestment | customCurrency: "£"}}</span> per year</h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Profit/ (Loss):</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toSell.profitLoss | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">ROI:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toSell.rOI | percent}}</span></h5>
+    </div>
+    <button class="btn btn-default btn-3d btn-large calculate" ng-click="reCalculateToSellResults()">Re-calculate</button>
+</div>

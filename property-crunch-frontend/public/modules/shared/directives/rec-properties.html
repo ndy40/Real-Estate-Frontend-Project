@@ -1,0 +1,23 @@
+<div class="property-img-carousel" ng-show="propertiesSrc">
+    <div class="carousel-wrapper">
+        <div class="owl-carousel">
+            <div class="item" data-ng-repeat="property in propertiesSrc">
+                <img class="img-responsive" ng-src="{{property.images.image}}" alt="">
+                <a href="45.html" class="item-overlay">
+                    <h5 class="item-price">£250,000</h5>
+                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
+                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
+                    <h5 class="item-yield"><span>8%</span> Yield</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>         
+<div class="carousel-nav">
+    <button class="prev"> 
+        <i class="icon-arrow-left7"></i>
+    </button>
+    <button class="next">
+        <i class="icon-uniE6F0"></i>
+    </button>
+</div>

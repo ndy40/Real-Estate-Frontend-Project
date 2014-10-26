@@ -4,8 +4,16 @@
  */
 (function (define) {
     'use strict';
-    define(["./NavigationCtrl", "./UserModel", "./authentication/index"], function () {
-
+    define([
+        "./services/rec-properties-service", 
+        "./shared-ctrl",
+        "./directives/rec-properties-directive",
+        "./filters/currency-filter", 
+        "./filters/percent-filter", 
+        "./NavigationCtrl", 
+        "./UserModel", 
+        "./authentication/index"
+        ], function () {
     });
 
 }(define));

@@ -7,92 +7,85 @@
 }
 
 /*===================================================================
-  Components > Carousel > Property Carousel
+  Components > Carousel > Property Images Carousel
 ====================================================================*/
-#property-carousel {
-	.item {
+.property-img-carousel {
+    .item {
+        cursor: pointer;
 		margin: 0 30px 0 0;
 		position: relative;
-		
-		&:hover {
-			.item-overlay {
-				background: rgba(0,0,0,0.8);
-				.transition(background 0.3s);
-			}
-			
-			h5 {
-				color: @brand-primary;
-				.transition(color 0.3s);
-			}
-		}
-		
-		.item-overlay {
-			position: absolute;
-			background: rgba(0,0,0,0.7);
-			padding: 35px 20px;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			.transition(background 0.3s);
-		}
-	
-		h5 {
-			color: @white;
-			margin-bottom: 6%;
-			.transition(color 0.3s);
-			
-			span,
-			&.item-price {
-				font-weight: 600;
-			}
-			
-			&.item-price {
-				color: @brand-primary;
-			}
-		}
-	}	
+        opacity: 0.4;
+        .transition(all 0.3s);
+        
+        &:hover,
+        &.active {
+            opacity: 1;
+            .transition(all 0.3s);
+        }
+    }
+    
+    .img-preview {
+        position: relative;
+        
+        img {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .carousel-nav {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 40%;
+        
+        .clearfix();
+        
+        button {
+            font-size: 50px;
+            line-height: 44px;
+            padding: 4px;
+            
+            background: rgba(25, 30, 29, 0.8);
+            color: #fff;
+            .transition(color 0.3s);
+            
+            &:hover {
+                background: rgba(25, 30, 29, 0.9);
+                color: @brand-primary;
+                .transition(color 0.3s);
+            } 
+            
+            &.prev {
+                float:left;
+            }
+            
+            &.next {
+                float: right;
+            }
+            
+            i {
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                //user-select: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                cursor: pointer;
+            } 	
+        }
+    }
 }
 
-.carousel-nav {
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	//user-select: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	cursor: pointer;
-	font-size: 50px;
-	line-height: 1;
-	color: @gray-dark;
-	position: absolute;
-	top: 35%;
-	
-	.transition(color 0.3s);	
-	
-	&:hover {
-		color: @brand-primary;
-		.transition(color 0.3s);
-	}
-	
-	&.prev {
-		left: -80px;
-	}
-	
-	&.next {
-		right: -80px;
-	}
-}
 
 
 @media (min-width: 360px) {
-	#property-carousel .item h5 {
+	.property-img-carousel .item h5 {
 		margin-bottom: 8%;
 	}
 }
 
 @media (min-width: 480px) {
-	#property-carousel {
+	.property-img-carousel {
 		.item {
 			
 			.item-overlay {
@@ -108,7 +101,7 @@
 }
 
 @media (min-width: 640px) {
-	#property-carousel {
+	.property-img-carousel {
 		.item {
 			
 			.item-overlay {
@@ -123,19 +116,156 @@
 }
 
 @media (min-width: 768px) {
-	#property-carousel .item h5 {
+	.property-img-carousel .item h5 {
 		margin-bottom: 10%;
 	}
 }
 
 @media (min-width: 992px) {
-	#property-carousel .item h5 {
+	.property-img-carousel .item h5 {
 		margin-bottom: 8%;
 	}
 }
 
 @media (min-width: 1200px) {
-	#property-carousel .item h5 {
+	.property-img-carousel .item h5 {
 		margin-bottom: 5px;
 	}
 }
+
+
+///*===================================================================
+//  Components > Carousel > Other Properties Carousel
+//====================================================================*/
+//.property-img-carousel {
+//	.item {
+//		margin: 0 30px 0 0;
+//		position: relative;
+//		
+//		&:hover {
+//			.item-overlay {
+//				background: rgba(0,0,0,0.8);
+//				.transition(background 0.3s);
+//			}
+//			
+//			h5 {
+//				color: @brand-primary;
+//				.transition(color 0.3s);
+//			}
+//		}
+//		
+//		.item-overlay {
+//			position: absolute;
+//			background: rgba(0,0,0,0.7);
+//			padding: 35px 20px;
+//			width: 100%;
+//			height: 100%;
+//			top: 0;
+//			left: 0;
+//			.transition(background 0.3s);
+//		}
+//	
+//		h5 {
+//			color: @white;
+//			margin-bottom: 6%;
+//			.transition(color 0.3s);
+//			
+//			span,
+//			&.item-price {
+//				font-weight: 600;
+//			}
+//			
+//			&.item-price {
+//				color: @brand-primary;
+//			}
+//		}
+//	}
+//    
+//    .carousel-nav {
+//        -webkit-user-select: none;
+//        -khtml-user-select: none;
+//        -moz-user-select: none;
+//        -ms-user-select: none;
+//        //user-select: none;
+//        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//        cursor: pointer;
+//        font-size: 50px;
+//        line-height: 1;
+//        color: @gray-dark;
+//        position: absolute;
+//        top: 35%;
+//        
+//        .transition(color 0.3s);	
+//        
+//        &:hover {
+//            color: @brand-primary;
+//            .transition(color 0.3s);
+//        }
+//        
+//        &.prev {
+//            left: -80px;
+//        }
+//        
+//        &.next {
+//            right: -80px;
+//        }
+//    }
+//	
+//}
+//
+//
+//
+//@media (min-width: 360px) {
+//	.property-img-carousel .item h5 {
+//		margin-bottom: 8%;
+//	}
+//}
+//
+//@media (min-width: 480px) {
+//	.property-img-carousel {
+//		.item {
+//			
+//			.item-overlay {
+//				padding: 15px;
+//			}
+//			
+//			h5 {
+//				font-size: 14px;
+//				margin-bottom: 7%;
+//			}
+//		}
+//	}
+//}
+//
+//@media (min-width: 640px) {
+//	.property-img-carousel {
+//		.item {
+//			
+//			.item-overlay {
+//				padding: 30px;
+//			}
+//			
+//			h5 {
+//				font-size: @font-size-h5;
+//			}
+//		}
+//	}
+//}
+//
+//@media (min-width: 768px) {
+//	.property-img-carousel .item h5 {
+//		margin-bottom: 10%;
+//	}
+//}
+//
+//@media (min-width: 992px) {
+//	.property-img-carousel .item h5 {
+//		margin-bottom: 8%;
+//	}
+//}
+//
+//@media (min-width: 1200px) {
+//	.property-img-carousel .item h5 {
+//		margin-bottom: 5px;
+//	}
+//}

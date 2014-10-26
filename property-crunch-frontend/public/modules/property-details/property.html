@@ -10,7 +10,7 @@
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
                         <a href="../search_results.html">
-                            <i class="icon-arrow-left2 icon14-back"></i>
+                            <i class="icon-arrow-left6"></i>
                             Back to Search Results
                         </a>
                     </div>
@@ -24,251 +24,86 @@
     <article class="property-details">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class="property-heading">
-                        <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
-                        <div class="property-sub">
-                            <h5 class="property-address">{{property.details.address}}</h5>
-                            <h6 class="label label-primary first-listed">
-                                First Listed: <span>{{property.firstListed}}</span>
-                            </h6>
+                <div class="col-lg-7 col-md-7">
+                    <div class="left-details">
+                        <div class="property-heading">
+                            <hgroup class="left-section">
+                                <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
+                                <h5 class="property-address">{{property.details.address}}</h5>
+                            </hgroup>
+                            <hgroup class="right-section">
+                                <h3 class="property-price">
+                                    <span>{{property.details.price | customCurrency: "£"}}</span>
+                                    <i class="icon-tag"></i>
+                                </h3>
+                                <h6 class="label label-primary property-date">
+                                    First Listed: <span>{{property.firstListed}}</span>
+                                </h6>
+                            </hgroup>
                         </div>
+                        <carousel images-src="property.details.images"></carousel>
                     </div>
-<!--                    <div class="pc-slider-wrapper">
-                        <div class="img-large">
-                            <img class="img-responsive property-detail-img" ng-src="{{property.details.images[0].image}}" alt="">
-                        </div>
-                        <ul class="no-bullets le">
-                            <li data-ng-repeat="images in property.details.images">
-                                <img ng-src="{{images.image}}">
-                            </li>
-                        </ul>
-                    </div>-->
                 </div>
 
-<!--                <div class="col-lg-5 col-md-6">
-                    <div class="panel panel-outline property-links">
-                        <div class="panel-heading">
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="right-details">
+                        <div class="panel panel-outline property-links">
+                            <div class="panel-heading">
                                 <ul class="no-bullets horizontal-list">
-                                <li>
-                                        <a href="../favourites.html" class="add-to-favourites"><i class="icon-star icon18-star"></i>Add to Favourites</a>
-                                </li>
-                                <li>
-                                        <a href="https://www.google.com/maps/preview?q=Chingford+Road,+Walthamstow,+London+E17&hl=en&ll=51.594715,-0.015224&spn=0.005499,0.016512&sll=51.515046,-0.144024&sspn=0.088132,0.264187&hnear=Chingford+Rd,+United+Kingdom&t=m&z=17&layer=c&cbll=51.595152,-0.015861&panoid=5HgRyoRx5d4lGb-2hNxHwg&cbp=12,189.08,,0,0"class="street-view"><i class="icon-directions icon20-directions"></i>Street View</a>
-                                </li>
-                                <li>
-                                            <a href="mailto:enter@yourfriendsemail.com" class="email-friend"><i class="icon-mail icon20-mail"></i>Email a Friend</a>
-                                        </li>
+                                    <li class="add-to-favourites">
+                                        <a href="../favourites.html"><i class="icon-star"></i>Add to Favourites</a>
+                                    </li>
+                                    <li  class="email-friend last">
+                                        <a href="mailto:enter@yourfriendsemail.com"><i class="icon-mail"></i>Email a Friend</a>
+                                    </li>
                                 </ul>        
+                            </div>
                         </div>
+                        <tabset class="profit-calculator">
+                            <tab heading="Buy to Let">
+                                <buy-to-let-calculator purchase-price="property.details.price" rental-income=""></buy-to-let-calculator>
+                            </tab>
+                            
+                            <tab heading="Buy to Sell">
+                                <buy-to-sell-calculator purchase-price="property.details.price"></buy-to-sell-calculator>
+                            </tab>
+                        </tabset>
+                        
                     </div>
-
-                    <div class="panel property-data">
-                        <div class="panel-body">
-                            <ul class="no-bullets">
-                                <li>
-                                    <h5 class="data-label">
-                                        <span>Asking Price: </span>
-                                        <i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="Always try and negotiate a lower purchase price than what is advertised."></i>
-                                        </h5>
-                                    <h5 class="data-value">£280,000</h5>
-                                </li>
-                                <li>
-                                    <h5 class="data-label">
-                                        <span class="est-yield">Estimated Rental Yield: </span>
-                                        <i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="This figure is just an estimate. The actual rental yield may be more depending on the final purchase price of the property."></i>
-                                    </h5>
-                                    <h5 class="data-value">5%</h5>
-                                </li>
-                                <li>
-                                    <h5 class="data-label">
-                                        <span class="est-income">Estimated Rental Income: </span> 
-                                        <i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="This is an estimated figure of average rental price in the area."></i>
-                                    </h5>
-                                    <h5 class="data-value">£1148</h5>
-                                </li>
-                            </ul>
-                            <div class="get-details">
-                                <p>Want to Invest in this Property?</p>
-                                <a href="mailto:support@propertycrunch.co" class="btn btn-default">Request Details</a>
-                                                                </div>
-                        </div>
-                    </div>
-                </div>-->
-            </div>                  
-        </div>
-    </article>
-        
-<!--            <aside class="comparables">  
-                <div class="container">         
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h5>Comparables <span>(Recently Sold Nearby)</span></h5>
-                        </div>
-                    </div>
-                    
-                     Property Listing 
-					<div class="property-listing comparables-listing">
-						<div class="row">
-							<div class="col-lg-2 col-md-3 col-sm-6">
-								<div class="property-img">
-									<img class="img-responsive" src="../images/properties/1.jpg" alt="">
-									<a href="1.html" class="visible-lg">
-										<span>Click Here for More Details</span>
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-5 col-sm-6">
-								<div class="property-title-group noPrice">
-									<h4>2 Bed Flat for Sale</h4>
-								</div>
-								<p>Chingford Road, Walthamstow, London E17</p>
-								<p class="distance">15 mins walk from this location</p>
-							</div>
-							<div class="col-lg-2 col-md-2 col-sm-6">
-								<div class="right-section-group">
-									<h5 class="right-section-label">Sold Price</h5>
-									<h3 class="right-section-value no-border">£280,000</h3>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2 col-sm-6">
-								<div class="right-section-group">
-									<h5 class="right-section-label">
-										Date 
-										<i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="The date the property was sold."></i>
-									</h5>
-									<h3 class="right-section-value no-border">1 month ago</h3>
-								</div>
-							</div>
-						</div>
-						<a href="1.html" class="btn btn-default btn-fullwidth hidden-lg">More Details</a>
-					</div>  Property Listing 
-
-                    <div id="more-properties">  
-                    
-                    	 Property Listing     
-                        <div class="property-listing comparables-listing">
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-6">
-									<div class="property-img">
-										<img class="img-responsive" src="../images/properties/2.jpg" alt="">
-										<a href="2.html" class="visible-lg">
-											<span>Click Here for More Details</span>
-										</a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-5 col-sm-6">
-									<div class="property-title-group">
-										<h4>2 Bed Flat for Sale</h4>
-									</div>
-									<p>Hazelwood Road, Walthamstow, London E17</p>
-									<p class="distance">20 mins walk from this location</p>
-								</div>
-								<div class="col-lg-2 col-md-2 col-sm-6">
-									<div class="right-section-group">
-										<h5 class="right-section-label">Sold Price</h5>
-										<h3 class="right-section-value no-border">£349,995</h3>
-									</div>
-								</div>
-								<div class="col-lg-2 col-md-2 col-sm-6">
-									<div class="right-section-group">
-										<h5 class="right-section-label">
-											Date 
-											<i class="icon-help icon16-help has-tooltip" data-toggle="tooltip" data-placement="top" title="The date the property was sold."></i>
-										</h5>
-										<h3 class="right-section-value no-border">2 months ago</h3>
-									</div>
-								</div>
-							</div>
-							<a href="2.html" class="btn btn-default btn-fullwidth hidden-lg">More Details</a>
-						</div>  Property Listing 
-                    </div>
-                    
-                    <div id="no-more-properties">
-                    	<div class="alert alert-info" role="alert">
-                        	<i class="icon-info icon18-info-alert"></i>
-                            <span>Sorry!</span> No more 2 bedroom properties sold in the last 6 months. More properties can be found below:
-                        </div>
-                    </div>
-                    
-                    <div class="more-button-wrap">
-                        <button id="more-properties-toggle" class="btn btn-default">More Properties</button>
-                    </div>
-				</div>
-                    
-            </aside>-->
+                </div>                  
+            </div>
             
-            <aside class="other-properties">
-                <div class="container">                
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h5>Other Properties You Might Like</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-wrapper">
-                         <carousel images-src="property.details.images"></carousel>
-<!--                        <div id="property-carousel" class="owl-carousel">
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[0].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[1].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[2].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[3].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[4].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" ng-src="{{property.details.images[5].image}}" alt="">
-                                <a href="45.html" class="item-overlay">
-                                    <h5 class="item-price">£250,000</h5>
-                                    <h5 class="item-location">Lea Bridge Road, London E10</h5>
-                                    <h5 class="item-income"><span>£1,650</span> Rental Income</h5>
-                                    <h5 class="item-yield"><span>8%</span> Yield</h5>
-                                </a>
-                            </div>-->
-                        </div>     
-                    
-                        <i class="carousel-nav icon-arrow-left3 icon44-left prev visible-lg"></i>
-                        <i class="carousel-nav icon-icon-uniE6D8 icon44-right next visible-lg"></i>
-                    </div>
+            <div ng-show="property.info" class="panel panel-default">
+                <div class="panel-heading">
+                    <h5>Additional Information:</h5>
                 </div>
-            </aside>
-        </section>
+                <div class="panel-body">{{property.info}}</div>
+            </div>
+        </div>
+    </article>    
+</section>
+
+<aside class="featured-section request-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Want to Invest in this <span>Property?</span></h2>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-default btn-3d btn-fullwidth">Request Details</button>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<aside class="main-content">
+    <comparables property-src="comparables.list"></comparables>
+</aside>
+
+<aside class="main-content">
+    <rec-properties properties-src="recProperties.list"></rec-properties>
+</aside>
+
 <!-- footer template -->
 <ng-include src="'modules/shared/footer.html'"></ng-include>
