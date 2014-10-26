@@ -4,7 +4,11 @@ namespace controllers\services;
 use BaseController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class AuthController extends BaseController
 {
@@ -56,7 +60,7 @@ class AuthController extends BaseController
             $data = array("flash" => "User not found");
         } catch (\Cartalyst\Sentry\Throttling\UserSuspendedException $ex) {
             $data = array ("flash" => $ex->getMessage());
-        }
+        } 
         
         return Response::json($data, 401);
     }
@@ -89,11 +93,26 @@ class AuthController extends BaseController
             unset($data["activate"]);
             $credentials = $data;
             $output = $this->accountLogic->registerUser($credentials, $group, $activate);
+            try {
+                // Add logic for Sending registration Email.
+                Mail::send('emails.account.welcome', $data, function($message) use ($data)
+                {
+                    $message->to(
+                        $data["email"],
+                        $data["first_name"] . " " . $data["last_name"]
+                    )
+                        ->subject('Welcome to Property Crunch');
+                });
+            } catch (\Exception $ex) {
+                Log::error($ex->getMessage());
+            }
+
 
             return Response::json($output, 200);
             //Trigger event for pushing account creation email to client. Make this a model event maybe.
-        } catch (\Exception $ex) {
-            Response::json(array("flash" => $ex->getMessage()), 401);
+        }
+        catch (\Exception $ex) {
+            return Response::json(array("flash" => $ex->getMessage()), 401);
         }
     }
 

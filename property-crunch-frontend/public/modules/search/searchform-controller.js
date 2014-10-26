@@ -70,8 +70,6 @@ define(["./module"], function (app, angular) {
                         });
                 }
             };
-
-
             /**
              * Loads data onto the results table. 
              * @param Object data

@@ -6,39 +6,64 @@
 define(["./module"], function (app) {
     'use strict';
     app.controller("LoginCtrl", ["$scope", "$rootScope", "$location", 'AuthService', function ($scope, $rootScope, $location, AuthService) {
-	'use strict';
         //Model for holding login data
-        $scope.loginData = {};
+        $scope.loginData = {
+            email      : "",
+            password   : ""
+        };
+        
+        $scope.registerData = {
+            first_name : "",
+            last_name  : "",
+            email      : "",
+            password   : "",
+            password_confirmation : ""
+        };
         
         //Submit form data for login to take place.
-        $scope.submitForm = function () {
+        $scope.login = function () {
             'use strict';
             AuthService.login(
                 $scope.loginData.email,
                 $scope.loginData.password,
-                $scope.loginData.remember, 
+                $scope.loginData.remember,
                 function (data) {
-                     if (data !== undefined) {
+                    if (data !== undefined) {
                         $rootScope.$broadcast("loginsuccess");
                         $location.path("/home");
                     }
-                }, 
+                },
                 function (data) {
-                    alert ("Failed");
+                    $scope.alert.failedLogin = true;
+                    $scope.alert.loginMessage = data.flash;
                 }
             );
         };
-        
-        $scope.$on("logOut", function (tscope) {
+
+        $scope.$on("logOut", function () {
             $rootScope.showLogin = false;
             $rootScope.user = undefined;
         });
 
         $scope.register = function () {
-            // AuthService.register(
-            //     $scope.loginData.
-            // );
+            AuthService.register(
+                $scope.registerData
+            ).success(function () {
+                $scope.alert.success = true;
+                $scope.alert.isError = false;
+            }).error(function (data) {
+                var messages = data.flash.split(",");
+                $scope.showErrorMessage(true, messages);
+                $scope.alert.success = false;
+            });
 
         };
+
+        $scope.showErrorMessage = function (isError, message) {
+            $scope.alert.isError = isError;
+            $scope.alert.errorMessage = message;
+        };
+
+        $scope.alert = {isError : false, errorMessage : "", success : false};
     }]);
 });
