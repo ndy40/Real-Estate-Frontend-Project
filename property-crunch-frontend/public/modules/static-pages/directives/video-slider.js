@@ -19,13 +19,6 @@ define(["../module"], function (app) {
                  scope.playVideo = function() {
                     scope.video.status = !scope.video.status;
                  };
-                 
-               // 
-//                scope.$watch('imagesSrc', function() {
-//                    if (scope.imagesSrc !== undefined) {
-//                       scope.initCarousel();
-//                    } 
-//                });
                 
             }
          };

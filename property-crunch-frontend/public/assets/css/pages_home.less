@@ -177,3 +177,38 @@
 		}
 	}
 }
+/*===================================================================
+  Pages > Home > Cookie Policy
+====================================================================*/
+.cookie-policy {
+    bottom: 5px;
+    margin: 0 1%;
+    position: fixed;
+    width: 98%;
+    z-index: 9;
+    
+    a:hover {
+        color: #fff;
+    }
+    
+    i {
+        color: @brand-primary;
+        .transition(color 0.3s);
+        
+        &.cookie-icon {
+            float: right;    
+            cursor: pointer;
+            
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    
+    
+    .alert {
+        background-color: rgba(0, 0, 0, 0.9);
+        border-color: #191e1d;
+        color: #fff;
+    }
+}

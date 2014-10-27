@@ -2638,6 +2638,36 @@ footer ul li:last-child {
   }
 }
 /*===================================================================
+  Pages > Home > Cookie Policy
+====================================================================*/
+.cookie-policy {
+  bottom: 5px;
+  margin: 0 1%;
+  position: fixed;
+  width: 98%;
+  z-index: 9;
+}
+.cookie-policy a:hover {
+  color: #fff;
+}
+.cookie-policy i {
+  color: #f6af00;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.cookie-policy i.cookie-icon {
+  float: right;
+  cursor: pointer;
+}
+.cookie-policy i.cookie-icon:hover {
+  color: #fff;
+}
+.cookie-policy .alert {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: #191e1d;
+  color: #fff;
+}
+/*===================================================================
   Pages > Learn More
 ====================================================================*/
 /*===================================================================

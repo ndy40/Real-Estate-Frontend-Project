@@ -7,7 +7,8 @@
 
     define([
         "./static-controller",
-        "./directives/video-slider"
+        "./directives/video-slider",
+        "./directives/cookie-policy"
         ], function () {
     });
 
