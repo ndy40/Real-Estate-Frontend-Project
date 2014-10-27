@@ -6,7 +6,8 @@
     'use strict';
 
     define([
-        "./static-controller"
+        "./static-controller",
+        "./directives/video-slider"
         ], function () {
     });
 
