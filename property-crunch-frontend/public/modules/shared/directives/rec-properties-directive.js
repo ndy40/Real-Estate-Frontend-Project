@@ -2,31 +2,62 @@
  * Recommeded Properties Carousel Directive
  */
 define(["../module"], function (app) {
-    app.directive("recProperties", function () {
+    app.directive("recProperties", ["RecPropertyService", function (RecPropertyService) {
         'use strict';
 		
          return {
             restrict : "E",
-            scope : {
-                propertiesSrc   : "="
-            },
             templateUrl : "./modules/shared/directives/rec-properties.html",
             link : function (scope, element, attr) {
                 
+                scope.recProperties = {}
+                 
+                /**
+                * Get Reccomended Property Data from Service
+                */
+                scope.getRecProperties = function () {
+                   if (RecPropertyService.getCache().hasOwnProperty("data")) {
+                       scope.loadRecProperties(RecPropertyService.getCache());
+                   } else {
+                       RecPropertyService.getRecProperties()
+                           .success(scope.loadRecProperties);
+                   }
+                };
+
+                /**
+                * Loads data onto the loadRecProperties
+                */
+                scope.loadRecProperties = function (data) {
+                   if (data.data.length > 0) {
+                       scope.recProperties.status = true;
+                       scope.recProperties.list = data.data;
+                       scope.recProperties.count = data.count;
+                   } else {
+                       scope.recProperties.status = false;
+                   }
+                };
+                
+                /**
+                *  Init Get Reccomended Properties
+                */
+                scope.getRecProperties();
+                
+                /**
+                *  Set up Carousel
+                */
                 scope.initCarousel = function() {
-                    var propertyCarousel = $('.property-img-carousel .owl-carousel'),
-                        carouselItems = $('.property-img-carousel .item'),
-                        nextNav = $(".property-img-carousel .next"),
-                        prevNav = $(".property-img-carousel .prev");
+                    var propertyCarousel = $('.recommended-carousel .owl-carousel'),
+                        nextNav = $(".recommended-carousel .next"),
+                        prevNav = $(".recommended-carousel .prev");
                         
                     propertyCarousel.owlCarousel({			
-                        items : 4, //10 items above 1000px browser width
-                        itemsDesktop : [1199,4], //5 items between 1000px and 901px
-                        itemsDesktopSmall : [991,4], // 3 items betweem 900px and 601px
-                        itemsTablet: [767,4], //2 items between 600 and 0;
-                        itemsMobile : [479,3], // itemsMobile disabled - inherit from itemsTablet option
+                        items : 4,                      // Default Items
+                        itemsDesktop : [1199,3],        // 3 items between 991px and 1199px
+                        itemsDesktopSmall : [991,2],    // 2 items betweem 767px and 991px
+                        itemsTablet: [767,2],           // 2 items between 479px and 767px;
+                        itemsMobile : [479,1],          // 1 item on mobile
                         slideSpeed: 500,
-                        autoPlay: false
+                        autoPlay: false,
                     }); 
                               
                     // Custom Navigation Events
@@ -39,14 +70,16 @@ define(["../module"], function (app) {
                     })
                 };
                 
-                scope.$watch('propertiesSrc', function() {
-                    if (scope.propertiesSrc !== undefined) {
+                /**
+                *  Init Carousel once Data has been loaded from the Service
+                */
+                scope.$watch('recProperties.list', function() {
+                    if (scope.recProperties.list !== undefined) {
                        scope.initCarousel();
                     } 
                 });
-                
             }
          };
-    });
+    }]);
 });
 

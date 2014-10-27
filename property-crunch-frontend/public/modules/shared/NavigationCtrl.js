@@ -4,7 +4,6 @@
 define(["./module"], function (app) {
     'use strict';
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel", "AuthService", function ($scope, $rootScope, UserModel, AuthService) {
-        $scope.isCollapsed = false;
         
         UserModel.refresh();
 

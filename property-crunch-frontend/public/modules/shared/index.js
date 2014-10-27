@@ -6,7 +6,6 @@
     'use strict';
     define([
         "./services/rec-properties-service", 
-        "./shared-ctrl",
         "./directives/rec-properties-directive",
         "./filters/currency-filter", 
         "./filters/percent-filter", 

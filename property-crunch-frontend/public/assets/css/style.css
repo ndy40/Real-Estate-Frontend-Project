@@ -1728,6 +1728,7 @@ header .btn:active {
 .carousel-wrapper {
   position: relative;
   overflow-x: hidden;
+  z-index: 2;
 }
 /*===================================================================
   Components > Carousel > Property Images Carousel
@@ -1752,42 +1753,43 @@ header .btn:active {
 .property-img-carousel .img-preview img {
   margin-bottom: 20px;
 }
-.property-img-carousel .carousel-nav {
+.carousel-nav {
   position: absolute;
   width: 100%;
   z-index: 1;
   top: 40%;
 }
-.property-img-carousel .carousel-nav:before,
-.property-img-carousel .carousel-nav:after {
+.carousel-nav:before,
+.carousel-nav:after {
   content: " ";
   display: table;
 }
-.property-img-carousel .carousel-nav:after {
+.carousel-nav:after {
   clear: both;
 }
-.property-img-carousel .carousel-nav button {
+.carousel-nav button {
   font-size: 50px;
   line-height: 44px;
   padding: 4px;
+  position: relative;
   background: rgba(25, 30, 29, 0.8);
   color: #fff;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.property-img-carousel .carousel-nav button:hover {
+.carousel-nav button:hover {
   background: rgba(25, 30, 29, 0.9);
   color: #f6af00;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.property-img-carousel .carousel-nav button.prev {
+.carousel-nav button.prev {
   float: left;
 }
-.property-img-carousel .carousel-nav button.next {
+.carousel-nav button.next {
   float: right;
 }
-.property-img-carousel .carousel-nav button i {
+.carousel-nav button i {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -1795,40 +1797,102 @@ header .btn:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
+/*===================================================================
+  Components > Carousel > Reccomended Properties Carousel
+====================================================================*/
+.recommended-carousel {
+  position: relative;
+}
+.recommended-carousel .item {
+  margin: 0 30px 0 0;
+  position: relative;
+}
+.recommended-carousel .item:hover .item-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.recommended-carousel .item:hover h5 {
+  color: #f6af00;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.recommended-carousel .item .item-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 35px 20px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.recommended-carousel .item h5 {
+  color: #ffffff;
+  margin-bottom: 6%;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.recommended-carousel .item h5 span,
+.recommended-carousel .item h5.item-price {
+  font-weight: 600;
+}
+.recommended-carousel .item h5.item-price {
+  color: #f6af00;
+}
+.recommended-carousel .carousel-nav button {
+  background: none;
+  color: #999999;
+  padding: 0;
+  margin-top: -10px;
+}
+.recommended-carousel .carousel-nav button:hover {
+  background: none;
+  color: #f6af00;
+}
+.recommended-carousel .carousel-nav button.prev {
+  float: left;
+  left: -80px;
+}
+.recommended-carousel .carousel-nav button.next {
+  float: right;
+  right: -80px;
+}
 @media (min-width: 360px) {
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 8%;
   }
 }
 @media (min-width: 480px) {
-  .property-img-carousel .item .item-overlay {
+  .recommended-carousel .item .item-overlay {
     padding: 15px;
   }
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     font-size: 14px;
     margin-bottom: 7%;
   }
 }
 @media (min-width: 640px) {
-  .property-img-carousel .item .item-overlay {
+  .recommended-carousel .item .item-overlay {
     padding: 30px;
   }
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     font-size: 18px;
   }
 }
 @media (min-width: 768px) {
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 10%;
   }
 }
 @media (min-width: 992px) {
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 8%;
   }
 }
 @media (min-width: 1200px) {
-  .property-img-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 5px;
   }
 }
@@ -2412,10 +2476,6 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Home > Why Us Section
 ====================================================================*/
-#why-us {
-  background: none repeat scroll 0 0 #fff;
-  padding: 110px 0 60px;
-}
 .responsive-devices {
   text-align: center;
 }
@@ -2469,14 +2529,14 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Home > Testimonials Section
 ====================================================================*/
-#testimonials {
+.testimonials {
   padding: 130px 0 95px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/testimonial-bg.jpg) center center;
   background-attachment: scroll;
   color: #fff;
   text-align: center;
 }
-#testimonials h2 {
+.testimonials h2 {
   margin-bottom: 80px;
 }
 .client-info-wrap {
@@ -2524,11 +2584,11 @@ footer ul li:last-child {
   padding: 5px 0;
 }
 @media (min-width: 768px) {
-  #testimonials {
+  .testimonials {
     background-attachment: fixed;
     color: #fff;
   }
-  #testimonials blockquote {
+  .testimonials blockquote {
     width: 70%;
   }
   .client-info-wrap {

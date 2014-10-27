@@ -27,7 +27,7 @@ define(["../module"], function (app) {
          * Get Recommended Properties
          */ 
         RecPropertyService.prototype.getRecProperties = function () {
-            var url = APPURL.recProperties + "london" + "/1/10",
+            var url = APPURL.recProperties + "E14" + "/1/8",
                 self = this;
             return $http.get(url);
         };
