@@ -45,13 +45,19 @@ class AccountsLogic extends BusinessLogicAbstract
     public function registerUser($credentials, $group = 'basic', $activate = true)
     {
         $valid = ValidationRules::validate($credentials, ValidationRules::$VALIDATE_USER);
-
+        
         if ($valid !== ValidationRules::$VALIDATION_PASS) {
-            $messages = implode(",", $valid);
-            throw new ValidationException($messages);
+            $messages = array();
+            foreach ($valid->all() as $message) {
+                $messages[] = $message;
+            }
+            throw new ValidationException(implode(",", $messages));
         }
+        
+        unset($credentials["password_confirmation"]);
 
         $success = $this->userRepository->create($credentials, $group, $activate);
+        die($success);
         if ($success) {
             return true;
         }

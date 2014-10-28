@@ -41,8 +41,8 @@ class UserRepository implements UserRepositoryInterface
         if (!array_key_exists("activated", $user)) {
             $user["activated"] = true;
         }
-
-        $newUser = Sentry::createUser($user);
+        
+        $newUser = Sentry::createUser($user); 
         $group = Sentry::findGroupByName(strtolower($groupName));
         $newUser->addGroup($group);
 

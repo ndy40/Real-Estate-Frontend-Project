@@ -97,8 +97,16 @@
             * Method for registering a new user.
             */
             AuthService.prototype.register = function (data) {
-                var url = AUTHURL + "/register";
-                return $http.post(url, data);
+                var url = AUTHURL + "/register",
+                    params;
+                params = {
+                    "first_name"    : data.first_name,
+                    "last_name"     : data.last_name,
+                    "email"         : data.email,
+                    "password"      : data.password,
+                    "password_confirmation" : data.password_confirmation
+                };
+                return $http.post(url, params);
             };
             
             return new AuthService();

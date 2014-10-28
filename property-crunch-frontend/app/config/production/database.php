@@ -19,17 +19,15 @@ return array(
 	*/
 
 	'connections' => array(
-
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '192.168.33.4',
-			'database'  => 'pc_web',
+			'host'      => 'localhost',
+			'database'  => 'propertycrunch_web',
 			'username'  => 'root',
-			'password'  => 'mysql',
+			'password'  => 'regMoov3',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
 	),
-
 );

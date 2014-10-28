@@ -28,7 +28,7 @@ class ValidationRules
         "email"      => "required|email",
         "first_name" => "required|alpha-dash",
         "last_name"  => "required|alpha-dash",
-        "password"   => "required|min:8"
+        "password"   => "required|min:8|confirmed",
     );
     
     /**

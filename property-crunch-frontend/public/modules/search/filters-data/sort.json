@@ -2,19 +2,19 @@
   "data": [
     {
       "option": "Highest Price",
-      "value": 2
+      "value": "price desc"
     },
     {
       "option": "Lowest Price",
-      "value": 3
+      "value": "price asc"
     },
     {
       "option": "Highest Yield",
-      "value": 4
+      "value": "yeild desc"
     },
     {
       "option": "Lowest Yield",
-      "value": 5
+      "value": "yeild asc"
     }
   ]
 }
