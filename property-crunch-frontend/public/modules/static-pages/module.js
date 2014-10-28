@@ -1,5 +1,6 @@
+/*global define */
 /**
- * Property Details Module definition
+ * pcStaticPages - Static Pages Module definition
  */
 
 define([
@@ -7,5 +8,8 @@ define([
     "ngRoute"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPSTATICPAGES",  ["ngRoute", "PCSHARED"]);
+    return ng.module("pcStaticPages",  [
+        "ngRoute",
+        "pcShared"
+    ]);
 });

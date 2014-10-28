@@ -1,27 +1,28 @@
+/*global define */
 /**
- * Custom Selectbox Directive
+ * pcSelectbox Directive - Custom Selectbox Directive - Used on "Refine your 
+ * Search" Filters
  */
 define(["../module"], function (app) {
-    app.directive("selectbox", function () {
-        'use strict';
-		
+    'use strict';
+    app.directive("pcSelectbox", function () {
+
         return {
             restrict : "E",
+            templateUrl : "./modules/search/directives/selectbox.html",
             scope : {
                 options     : "=",
                 defaults    : "=",
                 callback    : "="
-                //dropDownStatus: "=",
             },
-            templateUrl : "./modules/search/directives/selectbox.html",
-            link : function (scope, element, attr) {
-                   
+            link : function (scope) {
+
                 // Hiding Dropdown by default
-                scope.dropDownStatus = false; 
-            
+                scope.dropDownStatus = false;
+
                 //  Toggle Dropdown
-                scope.dropdown = function() {
-                    scope.dropDownStatus = !scope.dropDownStatus;              
+                scope.dropdown = function () {
+                    scope.dropDownStatus = !scope.dropDownStatus;
                 };
 
                 // Setting Default Options
@@ -31,7 +32,7 @@ define(["../module"], function (app) {
                     scope.optionSelected = scope.options[0];
                 }
 
-                scope.onSelectEvent = function(value) {
+                scope.onSelectEvent = function (value) {
                     if (scope.callback !== undefined) {
                         scope.callback(value);
                     }
@@ -40,7 +41,6 @@ define(["../module"], function (app) {
                     scope.dropDownStatus = false;
                 };
             }
-         };
+        };
     });
 });
-

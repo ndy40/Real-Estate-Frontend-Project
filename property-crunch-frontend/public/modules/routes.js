@@ -1,6 +1,6 @@
 /*global define, document, $ */
 /**
- * Default route for for PCAPP module.
+ * Default route for for pcApp module.
  */
 (function (define) {
     'use strict';
@@ -9,22 +9,22 @@
             function ($routeProvider, $locationProvider, $provide) {
 
                 $routeProvider.when("/search", {
-                    templateUrl : "modules/search/searchresult.html",
+                    templateUrl : "modules/search/views/searchresult.html",
                     controller  : "SearchFormCtrl"
                 });
 
                 $routeProvider.when("/property/:id", {
-                    templateUrl : "modules/property-details/property.html",
+                    templateUrl : "modules/property-details/views/property.html",
                     controller  : "PropertyCtrl"
                 });
 
                 $routeProvider.when("/pages/:pageName", {
-                    templateUrl : "modules/static-pages/static.html",
+                    templateUrl : "modules/static-pages/views/template.html",
                     controller  : "StaticCtrl"
                 });
 
                 $routeProvider.when("/login", {
-                    templateUrl : "modules/login/login.html",
+                    templateUrl : "modules/login/views/login.html",
                     controller  : "LoginCtrl"
                 });
 

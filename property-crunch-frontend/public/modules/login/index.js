@@ -1,8 +1,10 @@
 /*global define */
 /**
-*   Login index file.
+*   Login index file. (RequireJS Module Definitions)
 */
 
-define(["./login-controller", "./session-service"], function () {
-    'use strict';
-});
+define([
+    "./controllers/login-controller",
+    "./services/auth-service",
+    "./services/session-service"
+]);

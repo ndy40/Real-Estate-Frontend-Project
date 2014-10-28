@@ -1,24 +1,20 @@
+/*global define */
 /**
- * Cookie Policy Directive
+ * pcCookiePolicy Directive - Cookie Policy Directive
  */
 define(["../module"], function (app) {
-    app.directive("cookiePolicy", function ($window, $document) {
-        'use strict';
-		
+    'use strict';
+    app.directive("pcCookiePolicy", function () {
+
         return {
             restrict : "E",
             templateUrl : "./modules/static-pages/directives/cookie-policy.html",
-            link : function (scope, element, attr) {
-                
-                 scope.alertStatus = true;
-                 
-                 scope.closeAlert = function() {
+            link : function (scope) {
+                scope.alertStatus = true;
+                scope.closeAlert = function () {
                     scope.alertStatus = false;
-                 };
-                 
-                
+                };
             }
-         };
+        };
     });
 });
-

@@ -1,23 +1,21 @@
+/*global define */
 /**
- * Module definition file.
+ * pcShared - Shared Module definition file
  */
-(function (define) {
+
+define([
+    "angular",
+    "localStorage",
+    "cookies",
+    "./authentication/index"
+], function (ng) {
     'use strict';
-
-    define([
-        "angular",
-        "localStorage",
-        "cookies",
-       "./authentication/index"
-    ], function (ng) {
-        return ng.module("PCSHARED", [
-            "PCAuthModule", 
-            "localStorageModule", 
-            "ngCookies"
-        ])
-        .constant("APPURL", {
-            "recProperties" : "http://app.propertycrunch.co/client/search/search-properties/"
-        });
+    return ng.module("pcShared",  [
+        "pcAuthentication", 
+        "localStorageModule", 
+        "ngCookies"
+    ])
+    .constant("APPURL", {
+        "recProperties" : "http://app.propertycrunch.co/client/search/search-properties/"
     });
-
-}(define));
+});

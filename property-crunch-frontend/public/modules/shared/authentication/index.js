@@ -1,12 +1,6 @@
-/* 
-*   Module Index
+/*global define */
+/**
+*   Authentication Module Definition for RequireJS
 */
 
-(function (define) {
-    define(["./auth-service"], function () {
-        'use strict';
-    });
-})(define);
-
-
-
+define(["./auth-service"]);
