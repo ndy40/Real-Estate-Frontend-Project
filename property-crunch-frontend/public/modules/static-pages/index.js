@@ -6,7 +6,9 @@
     'use strict';
 
     define([
-        "./static-controller"
+        "./static-controller",
+        "./directives/video-slider",
+        "./directives/cookie-policy"
         ], function () {
     });
 

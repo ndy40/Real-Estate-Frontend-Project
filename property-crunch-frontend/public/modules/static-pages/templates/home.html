@@ -1,0 +1,102 @@
+<!-- include header -->
+<header class="home-header">
+    <!-- include navigation here --> 
+    <ng-include src="'../modules/shared/navigation-partial.html'"></ng-include>
+
+    <div class="jumbotron dark">
+        <div class="container">
+            <h1>Invest in Property like a <span>Pro</span></h1>
+            <p>Find investment properties in your area</p>
+            <!-- Search form here --> 
+              <search-form keywords="keywords" redirect="/search"></search-form>
+            <!-- /input-group --><!-- end of search form -->
+        </div>
+    </div>
+</header>
+<section class="large-section text-center why-us">
+    <div class="container">
+        <hgroup class="text-center">
+            <h2>Why Use Property <span>Crunch</span>? </h2>
+            <h4>Property Crunch is a smarter way to find property deals that are great for investment.</h4>
+        </hgroup>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-5 responsive-devices">
+                    <img class="img-responsive" alt="Responsive Devices" src="assets/images/responsive_devices.jpg">
+                    <h4>It works across all devices</h4>
+                </div>
+                <div class="col-md-7 featured-info">
+                    <article class="media">
+                        <div class="pull-left">
+                            <div class="featured-icons icon-clock icon66-clock"></div>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Save Time</h3>
+                            <p>Spend less time researching and more time investing. With Property Crunch, you can quickly find below market value deals.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="media">
+                        <div class="pull-left">
+                            <div class="featured-icons icon-map icon66-map"></div>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Find an area to Buy In</h3>
+                            <p>Property Crunch helps you discover what areas are investment gold mine. You are presented with a snapshot of the rental yield each property can potentially generate.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="media">
+                        <div class="pull-left">
+                            <div class="featured-icons icon-thumbsup icon66-thumbsup"></div>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Make the Right Offer</h3>
+                            <p>You can use our calculator to find out how much profit you will make from a purchase. It will also tell you the best offer price to present to the Estate agent (this is a premium feature).</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="large-section dark testimonials">
+    <div class="container">
+        <h2 class="text-center">97% of Property Buyers surveyed recommend Property <span>Crunch</span></h2>
+        <blockquote>I have been sourcing and investing in property for over 12 months now. Finding the right property to buy is not easy. I spend an average 8 hours each week researching the market. Property Crunch will save me time and money. I am really excited about the product!</blockquote>
+        <div class="client-info-wrap">
+            <div class="client-img-overlay">
+                <img class="img-circle" src="assets/images/client-image.jpg" alt="Chika Okeke">
+            </div>
+            <div class="client-details">
+                <h3>Chika Okeke</h3>
+                <h5>Property Investor</h5>
+                <a href="http://isaacnoah.com">IsaacNoah.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="large-section">
+    <div class="container">
+        <h2 class="text-center">Reccomended <span>Properties</span></h2>
+        <rec-properties properties-src="recProperties.list"></rec-properties>
+    </div>
+</section>
+
+<section class="large-section text-center featured-section investment-journey">
+    <div class="container">
+        <hgroup class="text-center">
+            <h2>Find Off Market Properties <span>Now</span></h2>
+            <h5>Using Property Crunch is like having an Estate Agent in your Back Pocket</h5>
+        </hgroup> 
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <button class="btn btn-default btn-3d btn-fullwidth">Start Your Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<cookie-policy></cookie-policy>

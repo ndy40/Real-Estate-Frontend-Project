@@ -222,6 +222,13 @@ blockquote {
 /*===================================================================
   General Styling > General Classes
 ====================================================================*/
+.dark {
+  color: #fff;
+}
+.dark a:hover,
+.dark a:focus {
+  color: #ffffff;
+}
 .main-content {
   padding: 50px 0 50px;
 }
@@ -230,6 +237,18 @@ blockquote {
 }
 .large-section h2 {
   margin-bottom: 70px;
+}
+.featured-section {
+  background: url("../images/featured-bg.jpg") fixed center top 0;
+  color: #fff;
+}
+.featured-section a:hover,
+.featured-section a:focus {
+  color: #ffffff;
+}
+.featured-section .btn {
+  font-size: 24px;
+  font-weight: 400;
 }
 .tooltip {
   width: 200px;
@@ -291,13 +310,6 @@ blockquote {
 }
 .text-left {
   text-align: left;
-}
-.dark {
-  color: #fff;
-}
-.dark a:hover,
-.dark a:focus {
-  color: #ffffff;
 }
 .loading {
   background: #fff;
@@ -1165,6 +1177,7 @@ i.icon-help:hover {
   background: #f2f2f2;
   border-color: #e9edeb;
   margin-right: 0;
+  cursor: pointer;
 }
 .nav-tabs li > a:hover,
 .nav-tabs li > a:focus {
@@ -1204,6 +1217,12 @@ i.icon-help:hover {
   .tab-content {
     padding: 30px 25px;
   }
+}
+/*===================================================================
+  Components > Inputs
+====================================================================*/
+.form-control.invalid {
+  border: 1px solid #bf0404;
 }
 /*===================================================================
   Components > Forms
@@ -1354,6 +1373,7 @@ button,
   outline: none;
   position: relative;
   background: #f6af00;
+  font-weight: 300;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1382,7 +1402,7 @@ button:active,
   transition: all 0.3s;
 }
 .btn-3d {
-  padding: 14px 30px;
+  padding: 12px 30px;
   box-shadow: 0 3px #b98300;
 }
 .btn-3d:focus {
@@ -1412,6 +1432,9 @@ header .btn:active {
   .btn {
     font-size: 18px;
     padding: 16px 30px;
+  }
+  .btn-3d {
+    padding: 14px 30px;
   }
 }
 /*===================================================================
@@ -1512,6 +1535,18 @@ header .btn:active {
   top: 7px;
   margin-left: -28px;
   line-height: 20px;
+}
+/*===================================================================
+  Components > Labels
+====================================================================*/
+.label {
+  padding: 3px 6px;
+}
+.label.label-primary {
+  color: #fff;
+}
+.label.label-primary span {
+  font-weight: 400;
 }
 /*===================================================================
   Components > Modals
@@ -1693,27 +1728,98 @@ header .btn:active {
 .carousel-wrapper {
   position: relative;
   overflow-x: hidden;
+  z-index: 2;
 }
 /*===================================================================
-  Components > Carousel > Property Carousel
+  Components > Carousel > Property Images Carousel
 ====================================================================*/
-#property-carousel .item {
+.property-img-carousel .item {
+  cursor: pointer;
+  margin: 0 30px 0 0;
+  position: relative;
+  opacity: 0.4;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.property-img-carousel .item:hover,
+.property-img-carousel .item.active {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.property-img-carousel .img-preview {
+  position: relative;
+}
+.property-img-carousel .img-preview img {
+  margin-bottom: 20px;
+}
+.carousel-nav {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 40%;
+}
+.carousel-nav:before,
+.carousel-nav:after {
+  content: " ";
+  display: table;
+}
+.carousel-nav:after {
+  clear: both;
+}
+.carousel-nav button {
+  font-size: 50px;
+  line-height: 44px;
+  padding: 4px;
+  position: relative;
+  background: rgba(25, 30, 29, 0.8);
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.carousel-nav button:hover {
+  background: rgba(25, 30, 29, 0.9);
+  color: #f6af00;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.carousel-nav button.prev {
+  float: left;
+}
+.carousel-nav button.next {
+  float: right;
+}
+.carousel-nav button i {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+/*===================================================================
+  Components > Carousel > Reccomended Properties Carousel
+====================================================================*/
+.recommended-carousel {
+  position: relative;
+}
+.recommended-carousel .item {
   margin: 0 30px 0 0;
   position: relative;
 }
-#property-carousel .item:hover .item-overlay {
+.recommended-carousel .item:hover .item-overlay {
   background: rgba(0, 0, 0, 0.8);
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-#property-carousel .item:hover h5 {
+.recommended-carousel .item:hover h5 {
   color: #f6af00;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-#property-carousel .item .item-overlay {
+.recommended-carousel .item .item-overlay {
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   padding: 35px 20px;
   width: 100%;
   height: 100%;
@@ -1722,79 +1828,71 @@ header .btn:active {
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-#property-carousel .item h5 {
+.recommended-carousel .item h5 {
   color: #ffffff;
   margin-bottom: 6%;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-#property-carousel .item h5 span,
-#property-carousel .item h5.item-price {
+.recommended-carousel .item h5 span,
+.recommended-carousel .item h5.item-price {
   font-weight: 600;
 }
-#property-carousel .item h5.item-price {
+.recommended-carousel .item h5.item-price {
   color: #f6af00;
 }
-.carousel-nav {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  font-size: 50px;
-  line-height: 1;
+.recommended-carousel .carousel-nav button {
+  background: none;
   color: #999999;
-  position: absolute;
-  top: 35%;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  padding: 0;
+  margin-top: -10px;
 }
-.carousel-nav:hover {
+.recommended-carousel .carousel-nav button:hover {
+  background: none;
   color: #f6af00;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
 }
-.carousel-nav.prev {
+.recommended-carousel .carousel-nav button.prev {
+  float: left;
   left: -80px;
 }
-.carousel-nav.next {
+.recommended-carousel .carousel-nav button.next {
+  float: right;
   right: -80px;
 }
 @media (min-width: 360px) {
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 8%;
   }
 }
 @media (min-width: 480px) {
-  #property-carousel .item .item-overlay {
+  .recommended-carousel .item .item-overlay {
     padding: 15px;
   }
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     font-size: 14px;
     margin-bottom: 7%;
   }
 }
 @media (min-width: 640px) {
-  #property-carousel .item .item-overlay {
+  .recommended-carousel .item .item-overlay {
     padding: 30px;
   }
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     font-size: 18px;
   }
 }
 @media (min-width: 768px) {
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 10%;
   }
 }
 @media (min-width: 992px) {
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 8%;
   }
 }
 @media (min-width: 1200px) {
-  #property-carousel .item h5 {
+  .recommended-carousel .item h5 {
     margin-bottom: 5px;
   }
 }
@@ -2378,10 +2476,6 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Home > Why Us Section
 ====================================================================*/
-#why-us {
-  background: none repeat scroll 0 0 #fff;
-  padding: 110px 0 60px;
-}
 .responsive-devices {
   text-align: center;
 }
@@ -2435,14 +2529,14 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Home > Testimonials Section
 ====================================================================*/
-#testimonials {
+.testimonials {
   padding: 130px 0 95px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/testimonial-bg.jpg) center center;
   background-attachment: scroll;
   color: #fff;
   text-align: center;
 }
-#testimonials h2 {
+.testimonials h2 {
   margin-bottom: 80px;
 }
 .client-info-wrap {
@@ -2490,11 +2584,11 @@ footer ul li:last-child {
   padding: 5px 0;
 }
 @media (min-width: 768px) {
-  #testimonials {
+  .testimonials {
     background-attachment: fixed;
     color: #fff;
   }
-  #testimonials blockquote {
+  .testimonials blockquote {
     width: 70%;
   }
   .client-info-wrap {
@@ -2544,11 +2638,116 @@ footer ul li:last-child {
   }
 }
 /*===================================================================
+  Pages > Home > Cookie Policy
+====================================================================*/
+.cookie-policy {
+  bottom: 5px;
+  margin: 0 1%;
+  position: fixed;
+  width: 98%;
+  z-index: 9;
+}
+.cookie-policy a:hover {
+  color: #fff;
+}
+.cookie-policy i {
+  color: #f6af00;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.cookie-policy i.cookie-icon {
+  float: right;
+  cursor: pointer;
+}
+.cookie-policy i.cookie-icon:hover {
+  color: #fff;
+}
+.cookie-policy .alert {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: #191e1d;
+  color: #fff;
+}
+/*===================================================================
   Pages > Learn More
 ====================================================================*/
 /*===================================================================
   Pages > Learn More > Jumbotron
 ====================================================================*/
+.video-slider {
+  width: 290px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.video-slider-wrapper {
+  width: 2400px;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.video-slider-wrapper:before,
+.video-slider-wrapper:after {
+  content: " ";
+  display: table;
+}
+.video-slider-wrapper:after {
+  clear: both;
+}
+.video-slider-wrapper.video-on {
+  left: -100%;
+}
+.video-slider-wrapper .jumbotron,
+.video-slider-wrapper .video {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 290px;
+}
+.video-slider-wrapper .video {
+  margin-top: 15px;
+}
+@media (min-width: 360px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 330px;
+  }
+}
+@media (min-width: 480px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 450px;
+  }
+}
+@media (min-width: 640px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 610px;
+  }
+}
+@media (min-width: 768px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .video-slider,
+  .video-slider-wrapper .jumbotron,
+  .video-slider-wrapper .video {
+    width: 1170px;
+  }
+}
 .play-btn {
   background: rgba(255, 255, 255, 0.2);
   font-size: 50px;
@@ -2564,6 +2763,9 @@ footer ul li:last-child {
   background: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+@media (min-width: 768px) {
+  
 }
 /*===================================================================
   Pages > Learn More > Why invest in Property?
@@ -2595,15 +2797,8 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Learn More > Potential Ways
 ====================================================================*/
-.investment-journey {
-  background: url("../images/featured-bg.jpg") fixed center top 0;
-}
 .investment-journey h2 {
   margin-bottom: 50px;
-}
-.investment-journey .btn {
-  font-size: 24px;
-  font-weight: 300;
 }
 /*===================================================================
   Pages > List a Property
@@ -3250,52 +3445,108 @@ footer ul li:last-child {
 /*===================================================================
   Pages > Property Details
 ====================================================================*/
+.property-details .left-details,
+.property-details .right-details {
+  margin-bottom: 20px;
+}
 /*===================================================================
   Pages > Property Details > Property Heading
 ====================================================================*/
 .property-heading {
   margin-bottom: 20px;
 }
-.property-heading .property-title {
-  margin-bottom: 15px;
-}
-.property-heading .property-sub:before,
-.property-heading .property-sub:after {
+.property-heading:before,
+.property-heading:after {
   content: " ";
   display: table;
 }
-.property-heading .property-sub:after {
+.property-heading:after {
   clear: both;
 }
-.property-heading .property-sub .property-address,
-.property-heading .property-sub .first-listed {
-  margin: 0;
+.property-heading .property-title {
+  margin-bottom: 10px;
+}
+.property-heading .property-date {
+  margin-top: 5px;
+}
+.property-heading .property-price,
+.property-heading .property-address,
+.property-heading .property-date {
+  margin-bottom: 0;
+}
+.property-heading .property-address {
+  line-height: 24px;
+}
+.property-heading .property-price {
   float: left;
 }
-.property-heading .property-sub .property-address {
-  width: 100%;
-  margin-bottom: 15px;
+.property-heading .property-price:before,
+.property-heading .property-price:after {
+  content: " ";
+  display: table;
 }
-.property-heading .property-sub .first-listed {
-  color: #fff;
+.property-heading .property-price:after {
+  clear: both;
 }
-.property-heading .property-sub .first-listed span {
-  font-weight: 400;
+.property-heading .property-price i,
+.property-heading .property-price span {
+  float: right;
 }
-@media (min-width: 480px) {
-  .property-heading .property-title {
-    margin-bottom: 13px;
+.property-heading .property-price i {
+  margin-right: 7px;
+}
+.property-heading .property-date {
+  float: right;
+}
+.property-heading .left-section {
+  float: left;
+}
+.property-heading .right-section {
+  float: left;
+  margin-top: 15px;
+}
+@media (max-width: 639px) {
+  .property-heading .right-section {
+    width: 100%;
   }
-  .property-heading .property-sub .property-address {
-    width: auto;
-    margin-bottom: 0;
+  .property-heading .property-price {
+    font-size: 24px;
   }
-  .property-heading .property-sub .first-listed {
-    float: right;
+  .property-heading .property-price i {
+    line-height: 26px;
+    font-size: 18px;
   }
 }
 @media (min-width: 640px) {
-  .property-detail-img {
+  .property-heading .property-title,
+  .property-heading .property-price {
+    margin-bottom: 10px;
+  }
+  .property-heading .right-section {
+    float: right;
+    margin: 0;
+  }
+  .property-heading .property-price:before,
+  .property-heading .property-price:after {
+    content: " ";
+    display: table;
+  }
+  .property-heading .property-price:after {
+    clear: both;
+  }
+  .property-heading .property-price i,
+  .property-heading .property-price span {
+    float: right;
+  }
+  .property-heading .property-price i {
+    line-height: 33px;
+    font-size: 24px;
+    margin-right: 7px;
+  }
+  .property-heading .property-price {
+    width: 100%;
+  }
+  .img-preview img {
     width: 720px;
   }
 }
@@ -3316,6 +3567,10 @@ footer ul li:last-child {
 }
 .property-links ul li.last {
   margin-bottom: 0;
+  float: right;
+}
+.property-links ul li a {
+  font-size: 16px;
 }
 .property-links ul i {
   font-size: 20px;
@@ -3360,74 +3615,48 @@ footer ul li:last-child {
   }
 }
 /*===================================================================
-  Pages > Property Details > Investment Details Panel
+  Pages > Property Details > Profit Calculator
 ====================================================================*/
-.property-data li {
-  margin-bottom: 26px;
+.profit-calculator h4 {
+  margin-bottom: 35px;
 }
-.property-data li:before,
-.property-data li:after {
-  content: " ";
-  display: table;
+.profit-calculator .tab-content {
+  min-height: 521px;
 }
-.property-data li:after {
-  clear: both;
+.profit-calculator .form-field-row {
+  margin-bottom: 20px;
 }
-.property-data h5 {
+.profit-calculator label {
+  font-size: 16px;
+  padding: 9px 0;
+}
+.profit-calculator .form-control {
+  font-size: 16px;
+  min-height: 40px;
+}
+.profit-calculator .results .form-field-row h6 {
+  font-size: 16px;
+  padding: 0;
   margin: 0;
 }
-.property-data .data-label {
-  float: left;
+.profit-calculator .results .form-field-row h5 {
+  margin: 0;
 }
-.property-data .data-value {
-  float: right;
+.profit-calculator .btn.calculate {
+  margin-top: 30px;
 }
-.property-data i.icon-help {
-  top: 1px;
+/*===================================================================
+  Pages > Property Details > Request Details
+====================================================================*/
+.request-details {
+  padding: 48px 0 50px;
 }
-.get-details p {
-  margin: 20px 0 20px;
-  text-align: center;
+.request-details h2 {
+  line-height: 50px;
+  margin: 0;
 }
-.get-details .btn {
-  width: 100%;
-}
-@media (min-width: 640px) {
-  .get-details:before,
-  .get-details:after {
-    content: " ";
-    display: table;
-  }
-  .get-details:after {
-    clear: both;
-  }
-  .get-details p {
-    float: left;
-    text-align: left;
-    margin: 0;
-  }
-  .get-details .btn {
-    float: right;
-    width: auto;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .get-details p {
-    margin: 12px 0 20px;
-    width: 100%;
-    text-align: center;
-  }
-  .get-details .btn {
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .get-details {
-    margin-top: 14px;
-  }
-  .get-details p {
-    margin: 13px 0;
-  }
+.request-details .btn-fullwidth {
+  margin-top: 0;
 }
 /*===================================================================
   Pages > Property Details > Comparables
@@ -3447,6 +3676,9 @@ footer ul li:last-child {
 .comparables .panel-heading h5 span {
   font-size: 14px;
 }
+.comparables-listing h4 {
+  margin: 0;
+}
 .comparables-listing .right-section-group {
   margin-top: 20px;
 }
@@ -3459,10 +3691,6 @@ footer ul li:last-child {
   width: 180px;
   margin: 0 auto;
   padding: 30px 0;
-}
-#more-properties,
-#no-more-properties {
-  display: none;
 }
 @media (min-width: 360px) {
   .comparables .panel-heading h5 span {

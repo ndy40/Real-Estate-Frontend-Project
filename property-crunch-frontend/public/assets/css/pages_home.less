@@ -4,10 +4,6 @@
 /*===================================================================
   Pages > Home > Why Us Section
 ====================================================================*/
-#why-us {
-	background: none repeat scroll 0 0 #fff;
-	padding: 110px 0 60px;
-}
 .responsive-devices {
 	text-align: center;
 	
@@ -70,7 +66,7 @@
 /*===================================================================
   Pages > Home > Testimonials Section
 ====================================================================*/
-#testimonials {
+.testimonials {
 	padding: 130px 0 95px;
 	background: 
 		linear-gradient(
@@ -128,7 +124,7 @@
 	}
 }
 @media (min-width: 768px) {
-	#testimonials {
+	.testimonials {
 		background-attachment: fixed;
 		color: #fff;
                 
@@ -180,4 +176,39 @@
 			margin-bottom: 40px;
 		}
 	}
+}
+/*===================================================================
+  Pages > Home > Cookie Policy
+====================================================================*/
+.cookie-policy {
+    bottom: 5px;
+    margin: 0 1%;
+    position: fixed;
+    width: 98%;
+    z-index: 9;
+    
+    a:hover {
+        color: #fff;
+    }
+    
+    i {
+        color: @brand-primary;
+        .transition(color 0.3s);
+        
+        &.cookie-icon {
+            float: right;    
+            cursor: pointer;
+            
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    
+    
+    .alert {
+        background-color: rgba(0, 0, 0, 0.9);
+        border-color: #191e1d;
+        color: #fff;
+    }
 }

@@ -96,6 +96,14 @@ blockquote {
 /*===================================================================
   General Styling > General Classes
 ====================================================================*/
+.dark {
+    color: #fff;
+    
+	a:hover, a:focus {
+		color: @white;
+	}
+}
+
 .main-content {
 	padding: 50px 0 50px;
 }
@@ -106,6 +114,17 @@ blockquote {
     h2 {
         margin-bottom: 70px;
     }
+}
+
+.featured-section {
+    background: url("../images/featured-bg.jpg") fixed center top 0;
+    .dark();
+        
+    .btn {
+        font-size: @font-size-h4;
+        font-weight: 400;
+    }
+
 }
 
 .tooltip {
@@ -155,13 +174,6 @@ blockquote {
 	text-align: left;
 }
 
-.dark {
-    color: #fff;
-    
-	a:hover, a:focus {
-		color: @white;
-	}
-}
 
 // Usage : .circle(2, #fff, 70);
 .circle(@border, @border-color, @radius) {

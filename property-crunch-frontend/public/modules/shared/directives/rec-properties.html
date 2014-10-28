@@ -1,0 +1,23 @@
+<div class="recommended-carousel">
+    <div class="carousel-wrapper">
+        <div class="owl-carousel">
+            <div class="item" data-ng-repeat="property in recProperties.list">
+                <img class="img-responsive" ng-src="{{property.images[0].image}}" alt="">
+                <a ng-href="/property/{{property.id}}" class="item-overlay">
+                    <h5 class="item-price">{{property.price | customCurrency: "£"}}</h5>
+                    <h5 class="item-location">{{property.address}}</h5>
+                    <h5 class="item-income"><span>{{property.price | customCurrency: "£"}}</span> Rental Income</h5>
+                    <h5 class="item-yield"><span>{{property.yield}}</span> Yield</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-nav">
+        <button class="prev"> 
+            <i class="icon-arrow-left7"></i>
+        </button>
+        <button class="next">
+            <i class="icon-uniE6F0"></i>
+        </button>
+    </div>
+</div>         

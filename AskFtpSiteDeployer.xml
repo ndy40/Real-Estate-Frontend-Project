@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><FtpSiteDeployer basedir="/var/www" createbkp="yes" directorycloaking="CVS" host="propertycrunch.co" pass="regMoov3" port="21" project-type="java" user="ndy40"/></root>

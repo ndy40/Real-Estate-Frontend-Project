@@ -111,9 +111,12 @@ define(["./module"], function (app) {
              * Provides Pagination for The Search Results. It's init in loadPropertyTable();
              */
             $scope.initPagination = function () {
-                $scope.searchObject.pager.totalPages
-                        = $scope.searchObject.pager.totalProperties <  $scope.searchObject.pager.resultsPerPage ? 1 : Math.ceil($scope.searchObject.pager.totalProperties / $scope.searchObject.pager.resultsPerPage);
+                var numOfPages = Math.ceil($scope.searchObject.pager.totalProperties /
+                    $scope.searchObject.pager.resultsPerPage);
 
+                $scope.searchObject.pager.totalPages =
+                    ($scope.searchObject.pager.totalProperties < $scope.searchObject.pager.resultsPerPage)
+                        ? 1 : numOfPages;
                 $scope.createPages();
                 $scope.setActivePage($scope.searchObject.pager.pageNum);
                 $scope.hideFirstOrLast();
@@ -344,13 +347,5 @@ define(["./module"], function (app) {
             * Init all functions
             */
             $scope.init();
-
-            // Ndi Please Provide Some Description here. Not sure What this is Used For
-            // $scope.$watch($scope.searchObject.properties, function (newVal, oldVal) {
-            //     if (newVal !== undefined && newVal.hasOwnProperty("length")) {
-            //         $scope.searchObject.status = true;
-            //     }
-            // });
-
         }]);
 });

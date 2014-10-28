@@ -131,8 +131,15 @@ define(["../module"], function (app) {
          * Set & Get Property Details
          */
         SearchService.prototype.getProperty = function (propertyId) {
-            'use strict';
             var url = APPSRCHURL.property + propertyId;
+            return $http.get(url);
+        };
+
+        /**
+         * Get Comparables
+         */
+        SearchService.prototype.getComparables = function (location) {
+            var url = APPSRCHURL.search + location + "/1/5";
             return $http.get(url);
         };
 
@@ -143,8 +150,7 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.getResults = function () {
             var url = APPSRCHURL.search + this.keywords + "/" + this.pageNumber + "/" + this.count,
-                queryString,
-                self = this;
+                queryString;
 
             queryString = this.filterQueryString(this.filter, true);
 
@@ -154,8 +160,6 @@ define(["../module"], function (app) {
 
             return $http.get(url);
         };
-
-
 
         return new SearchService();
     }]);

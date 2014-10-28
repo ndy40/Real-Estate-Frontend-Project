@@ -11,7 +11,7 @@ button {
 	background-image: none; 
 	border: 1px solid transparent;
 	white-space: nowrap;
-	
+    
 	&:hover,
 	&:focus {
 		text-decoration: none;
@@ -25,6 +25,7 @@ button,
 	outline: none;
 	position: relative;
 	background: @brand-primary;
+	font-weight: 300;
 	.transition(all 0.3s);
 	
 	&:hover {
@@ -52,7 +53,7 @@ button,
 	}
 }
 .btn-3d {
-	padding: 14px 30px;
+	padding: 12px 30px;
 	box-shadow: 0 3px darken(@brand-primary, 12%);
 	
 	&:focus {
@@ -93,6 +94,9 @@ header {
 		font-size: 18px;
 		padding: 16px 30px;
 	}
+    .btn-3d {
+	    padding: 14px 30px;
+    }
 }
 
 

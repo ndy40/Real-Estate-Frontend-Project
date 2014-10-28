@@ -1,0 +1,58 @@
+ <div class="container">         
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>Comparables (Recently Sold Nearby)</h5>
+        </div>
+    </div>
+    
+    <!-- Property Listing -->
+    <div class="property-listing comparables-listing" ng-repeat="comparable in propertySrc">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="property-img">
+                    <img class="img-responsive" ng-src="{{comparable.images[0].image}}" alt="{{comparable.beds}} Bed {{comparable.type.name}} for Sale">
+                    <a ng-href="/property/{{comparable.id}}" class="visible-lg">
+                        <span>Click Here for More Details</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-sm-6">
+                <div class="property-title-group noPrice">
+                    <h4>{{comparable.rooms}} Bed {{comparable.type.name}} for Sale</h4>
+                </div>
+                <p>{{comparable.address}}</p>
+                <p class="distance">15 mins walk from this location</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6">
+                <div class="right-section-group">
+                    <h5 class="right-section-label">Sold Price</h5>
+                    <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6">
+                <div class="right-section-group">
+                    <h5 class="right-section-label">
+                        Date 
+                        <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
+                    </h5>
+                    <h3 class="right-section-value no-border">1 month ago</h3>
+                </div>
+            </div>
+        </div>
+        <a ng-href="/property/{{comparable.id}}" class="btn btn-default btn-fullwidth hidden-lg">More Details</a>
+    </div> <!-- Property Listing -->
+<div role="alert" class="alert alert-info">
+    <i class="icon-info2"></i>
+    <span>Info!</span> info message.
+</div>
+    <!--<div id="no-more-properties">
+        <div class="alert alert-info" role="alert">
+            <i class="icon-info icon18-info-alert"></i>
+            <span>Sorry!</span> No more 2 bedroom properties sold in the last 6 months. More properties can be found below:
+        </div>
+    </div>
+    
+    <div class="more-button-wrap">
+        <button id="more-properties-toggle" class="btn btn-default">More Properties</button>
+    </div>-->
+</div>
