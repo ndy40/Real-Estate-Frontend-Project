@@ -11,8 +11,6 @@ define(["../module"], function (app) {
             scope.searchProperty = function (keywords, filters) {
                 SearchService.setKeyword(keywords);
                 SearchService.setFilters(filters);
-                SearchService.results = undefined;
-
                 SearchService.getResults()
                     .success(scope.handleSearchData);
             };

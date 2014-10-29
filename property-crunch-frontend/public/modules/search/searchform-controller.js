@@ -12,7 +12,7 @@ define(["./module"], function (app) {
              * Object to Store Search Data
              */
             $scope.searchObject = {
-                keywords: "",         // Setting Default Keywords Value - Remove this Later
+                keywords: SearchService.keywords,         // Setting Default Keywords Value - Remove this Later
                 properties: [],             // To store Properties
                 filter : {
                     refineSearch: {},       // To store Refine Search filter List and selected Options
