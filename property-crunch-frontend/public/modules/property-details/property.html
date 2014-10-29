@@ -1,15 +1,15 @@
 <header class="search-header">
-    <!-- Navigation Partial --> 
+    <!-- Navigation Partial -->
     <ng-include src="'modules/shared/navigation-partial.html'"></ng-include>
-    
+
     <div class="search-content dark">
         <div class="container">
-            <!-- Search form here --> 
+            <!-- Search form here -->
             <search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></search-form>
             <div class="row">
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
-                        <a href="../search_results.html">
+                        <a href="" onclick="javascript: window.history.back();">
                             <i class="icon-arrow-left6"></i>
                             Back to Search Results
                         </a>
@@ -57,23 +57,23 @@
                                     <li  class="email-friend last">
                                         <a href="mailto:enter@yourfriendsemail.com"><i class="icon-mail"></i>Email a Friend</a>
                                     </li>
-                                </ul>        
+                                </ul>
                             </div>
                         </div>
                         <tabset class="profit-calculator">
                             <tab heading="Buy to Let">
                                 <buy-to-let-calculator purchase-price="property.details.price" rental-income=""></buy-to-let-calculator>
                             </tab>
-                            
+
                             <tab heading="Buy to Sell">
                                 <buy-to-sell-calculator purchase-price="property.details.price"></buy-to-sell-calculator>
                             </tab>
                         </tabset>
-                        
+
                     </div>
-                </div>                  
+                </div>
             </div>
-            
+
             <div ng-show="property.info" class="panel panel-default">
                 <div class="panel-heading">
                     <h5>Additional Information:</h5>
@@ -81,7 +81,7 @@
                 <div class="panel-body">{{property.info}}</div>
             </div>
         </div>
-    </article>    
+    </article>
 </section>
 
 <aside class="featured-section request-details">
