@@ -1,38 +1,12 @@
+/*global define */
 /**
  * This directive will be responsible for displaying the search form across all
  * pages.
  */
 
 define(["../module"], function (app) {
-    app.directive("searchForm", ["SearchService", "$location", function (SearchService, $location) {
-        'use strict';
-        var link = function (scope, element, attr) {
-
-            scope.searchProperty = function (keywords, filters) {
-                SearchService.setKeyword(keywords);
-                SearchService.setFilters(filters);
-                SearchService.getResults()
-                    .success(scope.handleSearchData);
-            };
-
-            scope.handleSearchData = function (data) {
-                if (attr.bindResult !== undefined) {
-                    scope[attr.bindResult] = data;
-                }
-
-                if (attr.redirect !== undefined) {
-                    SearchService.cacheResults(data);
-                    $location.path(attr.redirect);
-                }
-
-                if (attr.callback !== undefined) {
-                    scope.callback(data);
-                }
-            };
-        };
-
-
-
+    'use strict';
+    app.directive("pcSearchForm", ["SearchService", "$location", function (SearchService, $location) {
         return {
             restrict : "E",
             templateUrl : "./modules/search/directives/searchbox.html",
@@ -44,7 +18,30 @@ define(["../module"], function (app) {
                 callback    : "=" // this holds the name of the callback function to call on when a result is present.
 
             },
-            link : link
+            link : function (scope, element, attr) {
+
+                scope.searchProperty = function (keywords, filters) {
+                    SearchService.setKeyword(keywords);
+                    SearchService.setFilters(filters);
+                    SearchService.getResults()
+                        .success(scope.handleSearchData);
+                };
+
+                scope.handleSearchData = function (data) {
+                    if (attr.bindResult !== undefined) {
+                        scope[attr.bindResult] = data;
+                    }
+
+                    if (attr.redirect !== undefined) {
+                        SearchService.cacheResults(data);
+                        $location.path(attr.redirect);
+                    }
+
+                    if (attr.callback !== undefined) {
+                        scope.callback(data);
+                    }
+                };
+            }
         };
     }]);
 });

@@ -5,11 +5,13 @@
 
 define([
     "angular",
-    "ngRoute"
+    "ngRoute",
+    "../search/index"
 ], function (ng) {
     'use strict';
     return ng.module("pcStaticPages",  [
         "ngRoute",
-        "pcShared"
+        "pcShared",
+        "pcSearch"
     ]);
 });
