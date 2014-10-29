@@ -1,10 +1,11 @@
+/*global define */
 /**
- * Comparables Directive
+ * pcComparables Directive
  */
 define(["../module"], function (app) {
-    app.directive("comparables", function () {
-        'use strict';
-		
+    'use strict';
+    app.directive("pcComparables", function () {
+
         return {
             restrict : "E",
             scope : {
@@ -12,20 +13,14 @@ define(["../module"], function (app) {
             },
             templateUrl : "./modules/property-details/directives/comparables.html",
             link : function (scope, element, attr, ngModel) {
-                
-                
-                //$location.path('/property/'+property.id);
-                
-                // Define Purchase Price After Service Returns Data in Controller
-                //scope.$watch('propertySrc', function() {
-//                     if (scope.propertySrc === undefined) {
-//                        scope.propertySrc = 0;
-//                     } else {
-//                        scope.toSell.purchasePrice = scope.purchasePrice;
-//                     }
-//                });
-                
+                scope.$watch('propertySrc', function () {
+                    if (scope.propertySrc === undefined) {
+                        scope.propertySrc = 0;
+                    } else {
+                        scope.toSell.purchasePrice = scope.purchasePrice;
+                    }
+                });
             }
-         };
+        };
     });
 });

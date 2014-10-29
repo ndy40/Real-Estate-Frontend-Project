@@ -1,19 +1,12 @@
 /*global define */
 /**
- * Module index file.
- */
-(function (define) {
-    'use strict';
+*   Search Module Definition for RequireJS
+*/
 
-    define([
-        "./searchform-controller", 
-        "./services/search-service", 
-        "./filters/currency-filter", 
-        "./directives/searchbox-directive",
-        "./directives/selectbox-directive",
-        "./directives/spinner-directive"
-        ], function () {
-    });
-
-})(define);
-
+define([
+    "./controllers/searchform-controller",
+    "./services/search-service",
+    "./directives/searchbox-directive",
+    "./directives/selectbox-directive",
+    "./directives/spinner-directive"
+]);

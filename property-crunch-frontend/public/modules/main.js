@@ -1,6 +1,6 @@
 /*global require */
 /**
- * Application Main setup file
+ * Application Main setup file for RequireJs
  */
 
 require.config({

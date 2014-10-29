@@ -1,19 +1,14 @@
 /*global define */
 /**
- * Module index file.
- */
-(function (define) {
-    'use strict';
-    define([
-        "./services/rec-properties-service", 
-        "./directives/rec-properties-directive",
-        "./filters/currency-filter", 
-        "./filters/percent-filter", 
-        "./NavigationCtrl", 
-        "./UserModel", 
-        "./authentication/index"
-        ], function () {
-    });
+*   Shared Module Definition for RequireJS
+*/
 
-}(define));
-
+define([
+    "./controllers/navigation-controller",
+    "./directives/rec-properties-directive",
+    "./filters/currency-filter",
+    "./filters/percent-filter",
+    "./services/rec-properties-service",
+    "./services/user-model-service",
+    "./authentication/index"
+]);

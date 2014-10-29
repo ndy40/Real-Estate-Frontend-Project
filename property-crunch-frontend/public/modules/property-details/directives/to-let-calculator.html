@@ -1,0 +1,63 @@
+<form ng-show="!toLetResults">
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">
+            Purchase Price:
+            <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
+        </label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.purchasePrice" placeholder="£125,000" pc-currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Mortgage LTV:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.mortgageLtv" placeholder="e.g.75%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Mortgage Rate:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.mortgageRate" placeholder="e.g. 4.5%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Est. Rental Income:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.estRentalIncome" placeholder="e.g. £850" pc-currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Management Cost:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.managementCost" placeholder="e.g. 5%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-5 col-xs-7">Maintenance Cost:</label>
+        <div class="input-group col-sm-7 col-xs-5">
+            <input class="form-control" ng-model="toLet.maintenanceCost" placeholder="e.g. 5%" pc-percent>
+        </div>
+    </div>
+    <button class="btn btn-default btn-3d btn-large calculate" ng-click="calculateToLetResults()">Calculate</button>
+</form>
+
+<div class="results" ng-show="toLetResults">
+    <h4>Results:</h4>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Monthly Mortgage:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toLet.monthlyMortgage | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Deposit Needed:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toLet.depositNeeded | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Rental Profit:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toLet.rentalProfit | customCurrency: "£"}}</span> per year</h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-sm-5 col-xs-7">Est. Rental Yield:</h6>
+        <h5 class="col-sm-7 col-xs-5"><span>{{toLet.estRentalYield | percent}}</span></h5>
+    </div>
+    <button class="btn btn-default btn-3d btn-large calculate" ng-click="reCalculateToLetResults()">Re-calculate</button>
+</div>

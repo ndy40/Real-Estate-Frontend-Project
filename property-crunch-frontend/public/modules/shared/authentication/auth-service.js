@@ -1,25 +1,25 @@
+/*global define */
 /* 
  * This is the Authentication Service
  * 
  * @author Ndifreke Ekott <ndy40.ekott@gmail.com>
  */
 
-(function (define) {
-    define(["./module"], function (app) {
-        'use stict';
-        return app.factory("AuthService", ["$http", "$cookieStore","AUTHURL", function ($http, $cookieStore, AUTHURL) {
-            'use strict';
-            
+define(["./module"], function (app) {
+    'use stict';
+    return app.factory("AuthService", ["$http", "$cookieStore", "AUTHURL",
+        function ($http, $cookieStore, AUTHURL) {
             /**
              * AuthService Class for authenticating users.
              * 
              * @constructor
              */
             var AuthService = function () {
-                this.user = undefined,
-                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true") ? true : false;
+                this.user = undefined;
+                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true")
+                    ? true : false;
             };
-            
+
             /*
              * Get the data of the currently logged in user.
              */
@@ -27,7 +27,7 @@
                 'use strict';
                 $http.get(AUTHURL).success(callback);
             };
-            
+
             /**
              * Authenticate a user and return a promise.
              * 
@@ -35,12 +35,14 @@
              * @param {string} password
              * @returns {$promise}
              */
-            AuthService.prototype.authenticate = function (email, password, remember) {
+            AuthService.prototype.authenticate = function (email, password,
+                remember) {
                 'use strict';
-                var parameters = { "email" : email, "password" : password, remember : remember};
+                var parameters = { "email" : email, "password" : password,
+                    remember : remember};
                 return $http.post(AUTHURL, parameters);
             };
-            
+
             /**
              * Verify a users login and cache the data.
              * 
@@ -48,18 +50,19 @@
              * @param {string} password
              * @returns {auth-service_L10.AuthService.prototype.user}
              */
-            AuthService.prototype.login = function (email, password, remember, onSuccess, onFailure) {
+            AuthService.prototype.login = function (email, password, remember,
+                onSuccess, onFailure) {
                 'use strict';
                 var self = this;
-                
+
                 if (remember === undefined) {
                     remember = false;
                 }
-                
+
                 if (onSuccess === undefined) {
-                    throw new Exception ("No callback method provided.");
+                    throw new Exception("No callback method provided.");
                 }
-                
+
                 //call the authentication method to do the job.
                 this.authenticate(email, password, remember)
                     .success(function (data) {
@@ -69,30 +72,31 @@
                     .error(function (data) {
                         self.user = null;
                         self.isLoggedIn = false;
-                        if (onFailure)
+                        if (onFailure) {
                             onFailure(data);
-                    }); 
+                        }
+                    });
             };
-            
+
             /**
              * Clear all login session data.
              */
             AuthService.prototype.destroy = function () {
                 this.user = null;
                 this.isLoggedIn = null;
-                
+
                 delete this.user;
                 delete this.isLoggedIn;
-                
+
                 this.db.truncate();
             };
-            
+
             AuthService.prototype.logout = function (onSuccess, onFailure) {
                 'use strict';
                 var url = AUTHURL + "/logout";
                 return $http.get(url).success(onSuccess).error(onFailure);
             };
-            
+
             /**
             * Method for registering a new user.
             */
@@ -108,10 +112,7 @@
                 };
                 return $http.post(url, params);
             };
-            
+
             return new AuthService();
         }]);
-    });
-})(define);
-
-
+});

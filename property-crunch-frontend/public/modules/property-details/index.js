@@ -1,19 +1,14 @@
+/*global define */
 /**
-*   Module index file.
+*   Property Details Module Definition for RequireJS
 */
 
-(function (define) {
-    'use strict';
-
-    define([
-        "./property-controller", 
-        "./directives/carousel-directive",
-        "./directives/percent-directive",
-        "./directives/currency-directive",
-        "./directives/buytolet-calculator-directive",
-        "./directives/buytosell-calculator-directive",
-        "./directives/comparables-directive",
-        ], function () {
-    });
-
-})(define);
+define([
+    "./controllers/property-controller",
+    "./directives/carousel-directive",
+    "./directives/percent-directive",
+    "./directives/currency-directive",
+    "./directives/to-let-calculator-directive",
+    "./directives/to-sell-calculator-directive",
+    "./directives/comparables-directive"
+]);
