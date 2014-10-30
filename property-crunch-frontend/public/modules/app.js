@@ -6,25 +6,23 @@
 define([
     "angular",
     "ngRoute",
-    "./search/index",
-    "./property-details/index",
-    "./shared/index",
-    "./static-pages/index",
+    //"./investors/index",
     "./login/index",
-    "./investor-dashboard/index",
+    "./property-details/index",
+    "./search/index",
+    "./shared/index",
+    "./static-pages/index"
 ], function (angular) {
     'use strict';
     return angular.module("PCAPP", [
         "ngRoute",
         "ui.bootstrap",
-        "PCAPPSEARCH",
-        "PCAPPPROPERTYDETAILS",
-        "PCSHARED",
-        "PCAPPSTATICPAGES",
-        "PCAPPLOGIN",
-        //"PCAPPINVESTORDASHBOARD",
-        "PCAuthModule"
+        //"pcInvestors",
+        "pcLogin",
+        "pcPropertyDetails",
+        "pcSearch",
+        "pcShared",
+        "pcStaticPages",
+        "pcAuthentication"
     ]);
 });
-
-

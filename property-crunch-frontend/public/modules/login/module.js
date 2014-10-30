@@ -8,5 +8,8 @@ define([
     "../shared/index"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPLOGIN",  ["PCSHARED", "PCAuthModule"]);
+    return ng.module("pcLogin",  [
+        "pcShared",
+        "pcAuthentication"
+    ]);
 });

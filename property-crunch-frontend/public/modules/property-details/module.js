@@ -1,5 +1,6 @@
+/*global define */
 /**
- * Property Details Module definition
+ * pcPropertyDetails - Property Details Module definition
  */
 
 define([
@@ -7,5 +8,8 @@ define([
     "ngRoute"
 ], function (ng) {
     'use strict';
-    return ng.module("PCAPPPROPERTYDETAILS",  ["ngRoute", "PCSHARED"]);
+    return ng.module("pcPropertyDetails",  [
+        "ngRoute",
+        "pcShared"
+    ]);
 });
