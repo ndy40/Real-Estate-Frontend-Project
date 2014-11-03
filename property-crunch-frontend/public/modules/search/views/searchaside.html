@@ -1,33 +1,5 @@
 <div class="col-lg-4">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h5>Refine your Search</h5>
-        </div>
-        <div class="panel-body">
-            <div class="row filter-row">
-                <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Minimum Price:</label>
-                <pc-selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMinPrice" options="searchObject.filter.refineSearch.minPriceList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
-            </div>
-            <div class="row filter-row">
-                <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Maximum Price:</label>
-                <pc-selectbox defaults="{option: 'All', value : -1}" callback="setCurrentMaxPrice" options="searchObject.filter.refineSearch.maxPriceList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
-            </div>
-            <div class="row filter-row">
-                <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Type:</label>
-                <pc-selectbox defaults="{option: 'All', value : -1}" callback="setCurrentType" options="searchObject.filter.refineSearch.types" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
-                
-            </div>
-            <div class="row filter-row">
-                <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Min Yield:</label>
-                <pc-selectbox defaults="{option: 'All', value : -1}" callback="setCurrentYield" options="searchObject.filter.refineSearch.yieldList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
-            </div>
-            <div class="row filter-row">
-                <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Beds:</label>
-                <pc-spinner defaults="all" callback="setCurrentBeds" class="col-md-7 col-sm-8 col-xs-12"></pc-spinner>
-            </div>
-            <button class="btn btn-default btn-3d btn-fullwidth" ng-click="getProperties()">Update Results</button>
-        </div>
-    </div>
+    <pc-refine-filters callback="getProperties"></pc-refine-filters>
     
     <div class="panel panel-default">
         <div class="panel-heading">

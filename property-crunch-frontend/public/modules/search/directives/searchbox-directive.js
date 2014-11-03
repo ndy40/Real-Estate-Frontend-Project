@@ -18,7 +18,8 @@ define(["../module"], function (app) {
                     redirect    : "@",  // Route to redirect to (if result is present.)
                     bindResult  : "=",  // Controller model to bind results of search to.
                     filters     : "=",  // Search filter parameter to be set and used by this module for performing searches.
-                    callback    : "="   // this holds the name of the callback function to call on when a result is present.
+                    callback    : "=",   // this holds the name of the callback function to call on when a result is present.
+                    back        : "@"
                 },
                 link : function (scope, element, attr) {
                     scope.searchProperty = function (keywords, filters) {

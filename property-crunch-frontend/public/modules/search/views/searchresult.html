@@ -1,15 +1,16 @@
 <header class="search-header">
     <!-- Navigation Partial -->
     <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
-
+    
     <div class="search-content dark">
         <div class="container">
-            <!-- Search form here -->
             <pc-search-form keywords="searchObject.keywords" filter="searchObject.filterData" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
+            
+            <!-- Search Status Here -->
             <div class="row" ng-show="searchObject.status">
                 <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                    <div class="searchbar-bottom">
-                        <h5 class="result_count">Showing Properties with {{searchObject.pager.totalProperties}} result(s)</h5>
+                        <h5 class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
                     </div>
                 </div>
             </div>
@@ -21,22 +22,13 @@
     <div class="container">
         <div class="row">
 
-            <!-- Aside Partial -->
-            <ng-include src="'modules/search/views/searchaside.html'"></ng-include>
+            <div class="col-lg-4">
+                <pc-refine-filters callback="getProperties"></pc-refine-filters>
+                <pc-keyword-filters callback="getProperties"></pc-refine-filters>
+            </div>
 
             <div class="col-lg-8">
-                <div class="panel panel-light sort-filters">
-                    <div class="panel-heading">
-                    	<div class="sort">
-                            <h5>Sort by:</h5>
-                            <pc-selectbox class="small-select sort-select" defaults="{option: 'Most Recent', value : 'updated_at desc'}" callback="setSortOrder" options="searchObject.filter.sortBy.list"></pc-selectbox>
-                        </div>
-                        <div class="number-results">
-                            <h5>Results per page:</h5>
-                            <pc-selectbox class="small-select" defaults="{option: 10, value : 10}" callback="setResultsPerPage" options="searchObject.filter.resultsPerPage"></pc-selectbox>
-                        </div>
-                    </div>
-                </div>
+                <pc-result-options callback="getProperties"></pc-result-options>
 
                 <div class="row" ng-show="searchObject.status">
                     <div class="col-sm-6">
@@ -103,17 +95,7 @@
                         </div>
                     </article>
                 </div>
-                <ul class="pagination pagination-custom" ng-show="searchObject.properties.length > 0">
-                    <li ng-show="searchObject.pager.first">
-                        <a href="" ng-click="changePage(1)">First</a>
-                    </li>
-                    <li ng-repeat="page in searchObject.pager.pagesArray">
-                        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="changePage(page.num)">{{page.num}}</a>
-                    </li>
-                    <li ng-show="searchObject.pager.last" class="next">
-                        <a href="" ng-click="changePage(searchObject.pager.totalPages)">Last</a>
-                    </li>
-                </ul>
+                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="getProperties"></pc-pager>
             </div>
         </div>
     </div>
