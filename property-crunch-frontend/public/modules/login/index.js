@@ -7,4 +7,4 @@ define([
     "./controllers/login-controller",
     "./services/auth-service",
     "./services/session-service"
-]);
+], function () {});

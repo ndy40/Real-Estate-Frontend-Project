@@ -7,4 +7,4 @@ define([
     "./controllers/static-controller",
     "./directives/video-slider",
     "./directives/cookie-policy"
-]);
+], function () {});

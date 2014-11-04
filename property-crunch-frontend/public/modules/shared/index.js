@@ -11,4 +11,4 @@ define([
     "./services/rec-properties-service",
     "./services/user-model-service",
     "./authentication/index"
-]);
+], function () {});

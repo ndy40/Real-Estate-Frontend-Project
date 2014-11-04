@@ -12,69 +12,63 @@ define(["../module"], function (app) {
             this.keywords = "";
             this.results = {};
             this.filter = {"offer_type" : "Sale"};
-            this.count = "";
-            this.pageNumber = "";
+            this.count = "";    // Check and Delete if not being used
+            this.pager = {
+                pageNumber      : 1, // Setting Default Page Number
+                resultsPerPage  : 10 // Setting Default Properties Per Page
+            };
         };
 
         /**
-         * Set & Get Cache
+         * CACHING SERVICE
          */
         SearchService.prototype.cacheResults = function (results) {
             this.results = results;
         };
-
         SearchService.prototype.getCache = function () {
             return this.results;
         };
+        SearchService.prototype.clearCache = function () {
+            this.results = {};
+        };
 
         /**
-         * Set & Get Keyword
+         * SEARCH KEYWORD
          */
         SearchService.prototype.setKeyword =  function (keywords) {
             this.keywords = keywords;
         };
-
         SearchService.prototype.getKeywords = function () {
             return this.keywords;
         };
 
         /**
-         * Set & Get Current Page
+         * PAGINATION SERVICE 
          */
         SearchService.prototype.setCurrentPage = function (pageNumber) {
-            this.pageNumber = pageNumber;
+            this.pager.pageNumber = pageNumber;
         };
-
         SearchService.prototype.getCurrentPage = function () {
-            return this.pageNumber;
+            return this.pager.pageNumber;
         };
-
-        /**
-         * Set & Get Results Per Page
-         */
-        SearchService.prototype.setResultsPerPage = function (count) {
-            this.count = count;
+        
+        
+        SearchService.prototype.setResultsPerPage = function (resultsPerPage) {
+            this.pager.resultsPerPage = resultsPerPage;
         };
-
         SearchService.prototype.getResultsPerPage = function () {
-            return this.count;
+            return this.pager.resultsPerPage;
         };
 
         /**
-         * Set & Get Filters
+         * SEARCH FILTERS
          */
         SearchService.prototype.setFilters = function (filter) {
             this.filter = filter || {"offer_type" : "Sale"};
         };
-
-        /**
-         * Returns the search filter object.
-         * @returns Object
-         */
         SearchService.prototype.getFilters = function () {
             return this.filter;
         };
-
         /**
          * Generates the filter parameters as query strings for request
          * @returns {string}
@@ -91,8 +85,7 @@ define(["../module"], function (app) {
                         query.push(e + "=" + data[e]);
                     }
                 });
-
-
+                
                 if (asString === true) {
                     return query.join("&");
                 }
@@ -102,28 +95,24 @@ define(["../module"], function (app) {
         };
 
         /**
-         * Get the selectBox Filter list data
+         * POPULATE SELECTBOX FILTERS
          */
         SearchService.prototype.getTypeList = function () {
             var url = APPSRCHURL.typeList;
             return $http.get(url);
         };
-
         SearchService.prototype.getYieldList = function () {
             var url = APPSRCHURL.yieldList;
             return $http.get(url);
         };
-
         SearchService.prototype.getPriceList = function () {
             var url = APPSRCHURL.priceList;
             return $http.get(url);
         };
-
         SearchService.prototype.getSortList = function () {
             var url = APPSRCHURL.sortList;
             return $http.get(url);
         };
-
         SearchService.prototype.getResultsPerPageList = function () {
             var url = APPSRCHURL.resultsPerPageList;
             return $http.get(url);
@@ -131,7 +120,7 @@ define(["../module"], function (app) {
 
 
         /**
-         * Set & Get Property Details
+         * GET PROPERTY DETAILS
          */
         SearchService.prototype.getProperty = function (propertyId) {
             var url = APPSRCHURL.property + propertyId;
@@ -139,7 +128,7 @@ define(["../module"], function (app) {
         };
 
         /**
-         * Get Comparables
+         * GET COMPARABLES
          */
         SearchService.prototype.getComparables = function (location) {
             var url = APPSRCHURL.search + location + "/1/5";
@@ -147,13 +136,12 @@ define(["../module"], function (app) {
         };
 
         /**
-         * initializes the search and returns a search result.
-         *
+         * RETURN SEARCH RESULTS
          * @returns {Promise}
          */
         SearchService.prototype.getResults = function () {
-            var url = APPSRCHURL.search + this.keywords + "/" + this.pageNumber
-                    + "/" + this.count,
+            var url = APPSRCHURL.search + this.keywords + "/" + this.pager.pageNumber
+                    + "/" + this.pager.resultsPerPage,
                 queryString;
 
             queryString = this.filterQueryString(this.filter, true);

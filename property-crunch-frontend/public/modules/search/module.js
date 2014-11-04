@@ -13,8 +13,6 @@ define([
             "property" : "http://app.propertycrunch.co/client/search/property/",
             "typeList" : "http://app.propertycrunch.co/client/search/property-types",
             "yieldList" : "./modules/search/filters-data/yield.json",
-            "priceList" : "./modules/search/filters-data/price.json",
-            "sortList"  : "./modules/search/filters-data/sort.json",
-            "resultsPerPageList" : "./modules/search/filters-data/results.json"
+            "priceList" : "./modules/search/filters-data/price.json"
         });
 });

@@ -1,0 +1,12 @@
+ <div class="panel panel-light sort-filters">
+    <div class="panel-heading">
+        <div class="sort">
+            <h5>Sort by:</h5>
+            <pc-selectbox class="small-select sort-select" defaults="{option: 'Most Recent', value : 'updated_at desc'}" callback="setSortOrder" options="sortBy"></pc-selectbox>
+        </div>
+        <div class="number-results">
+            <h5>Results per page:</h5>
+            <pc-selectbox class="small-select" defaults="{option: 10, value : 10}" callback="setResultsPerPage" options="resultsPerPage"></pc-selectbox>
+        </div>
+    </div>
+</div>
