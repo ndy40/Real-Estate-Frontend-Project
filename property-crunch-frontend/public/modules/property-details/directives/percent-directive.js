@@ -1,54 +1,49 @@
+/*global define */
 /**
- * Profit Calculator Directive
+ * pcPercent Directive - Percent to Integer to Percent Convertor
  */
 define(["../module"], function (app) {
-    app.directive("percent", function () {
-        'use strict';
-		
+    'use strict';
+    app.directive("pcPercent", function () {
         return {
             restrict : "A",
             require: 'ngModel',
-            link : function (scope, element, attr, ngModelController) {
-                
+            link : function (scope, element, attr, ngModel) {
                 // Add % sign & multiply by 100 to get integer
-                var percentify = function(data) {
+                scope.percentify = function (data) {
                     if (data !== undefined) {
                         return (data * 100) + "%";
                     }
-                }
-                
+                };
+
                 // Remove % sign & divide by 100 to get float
-                var numify = function(data) {
+                scope.numify = function (data) {
                     var splitData = data.split("%"),
                         int = splitData[0] / 100;
-                    
                     if (isNaN(int)) {
                         return 0;
-                    } else {
-                        return int;
                     }
-                }
-                
-                // Convert FROM View TO Model
-                ngModelController.$parsers.push(function(data) {
-                    return numify(data);
-                });
-                
-                // Convert FROM Model to VIEW 
-                ngModelController.$formatters.push(function(data) {
-                    return percentify(data);
-                });
-                
-                // Update View on Blur
-                element.bind('blur', function() {
-                    if (ngModelController.$modelValue !== undefined) {
-                        ngModelController.$viewValue = percentify(ngModelController.$modelValue);
-                        ngModelController.$render();
-                    } 
-                });  
+                    return int;
+                };
 
+                // Convert FROM View TO Model
+                ngModel.$parsers.push(function (data) {
+                    return scope.numify(data);
+                });
+
+                // Convert FROM Model to VIEW 
+                ngModel.$formatters.push(function (data) {
+                    return scope.percentify(data);
+                });
+
+                // Update View on Blur
+                element.bind('blur', function () {
+                    if (ngModel.$modelValue !== undefined) {
+                        ngModel.$viewValue = scope.percentify(ngModel.$modelValue);
+                        ngModel.$render();
+                    }
+                });
             }
-         };
+        };
     });
 });
-

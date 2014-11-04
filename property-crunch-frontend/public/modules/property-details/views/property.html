@@ -1,0 +1,116 @@
+<header class="search-header">
+    <!-- Navigation Partial --> 
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+    
+    <div class="search-content dark">
+        <div class="container">
+            <!-- Search form here --> 
+            <pc-search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                   <div class="searchbar-bottom">
+                        <a href="../search_results.html">
+                            <i class="icon-arrow-left6"></i>
+                            Back to Search Results
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="main-content">
+    <article class="property-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7">
+                    <div class="left-details">
+                        <div class="property-heading">
+                            <hgroup class="left-section">
+                                <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
+                                <h5 class="property-address">{{property.details.address}}</h5>
+                            </hgroup>
+                            <hgroup class="right-section">
+                                <h3 class="property-price">
+                                    <span>{{property.details.price | customCurrency: "£"}}</span>
+                                    <i class="icon-tag"></i>
+                                </h3>
+                                <h6 class="label label-primary property-date">
+                                    First Listed: <span>{{property.firstListed}}</span>
+                                </h6>
+                            </hgroup>
+                        </div>
+                        <pc-carousel images-src="property.details.images"></pc-carousel>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="right-details">
+                        <div class="panel panel-outline property-links">
+                            <div class="panel-heading">
+                                <ul class="no-bullets horizontal-list">
+                                    <li class="add-to-favourites">
+                                        <a href="../favourites.html"><i class="icon-star"></i>Add to Favourites</a>
+                                    </li>
+                                    <li  class="email-friend last">
+                                        <a href="mailto:enter@yourfriendsemail.com"><i class="icon-mail"></i>Email a Friend</a>
+                                    </li>
+                                </ul>        
+                            </div>
+                        </div>
+                        <tabset class="profit-calculator">
+                            <tab heading="Buy to Let">
+                                <pc-to-let-calculator purchase-price="property.details.price" rental-income=""></pc-to-let-calculator>
+                            </tab>
+                            
+                            <tab heading="Buy to Sell">
+                                <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
+                            </tab>
+                        </tabset>
+                        
+                    </div>
+                </div>                  
+            </div>
+            
+            <div ng-show="property.info" class="panel panel-default">
+                <div class="panel-heading">
+                    <h5>Additional Information:</h5>
+                </div>
+                <div class="panel-body">{{property.info}}</div>
+            </div>
+        </div>
+    </article>    
+</section>
+
+<aside class="featured-section request-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Want to Invest in this <span>Property?</span></h2>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-default btn-3d btn-fullwidth">Request Details</button>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<aside class="main-content">
+    <pc-comparables property-src="comparables.list"></pc-comparables>
+</aside>
+
+<aside class="main-content">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5>Other Properties You Might Like:</h5>
+            </div>
+        </div>
+        <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
+    </div>
+</aside>
+
+<!-- footer template -->
+<ng-include src="'modules/shared/views/footer.html'"></ng-include>

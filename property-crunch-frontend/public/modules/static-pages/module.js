@@ -1,17 +1,14 @@
-/*global define */
 /**
- * pcStaticPages - Static Pages Module definition
+ * Property Details Module definition
  */
 
 define([
     "angular",
-    "ngRoute",
-    "../search/index"
+    "ngRoute"
 ], function (ng) {
     'use strict';
     return ng.module("pcStaticPages",  [
         "ngRoute",
-        "pcShared",
-        "pcSearch"
+        "pcShared"
     ]);
 });

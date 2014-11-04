@@ -1,11 +1,13 @@
 /*global define */
 /*
- * A Search service used for passing in Search keywords and sending Location search results to the database.
+ * A Search service used for passing in Search keywords and sending Location 
+ * search results to the database.
  */
 
 define(["../module"], function (app) {
     'use strict';
-    return app.service('SearchService', ['$http', 'APPSRCHURL', function ($http, APPSRCHURL) {
+    return app.service('SearchService', ['$http', 'APPSRCHURL', function ($http,
+            APPSRCHURL) {
         var SearchService = function () {
             this.keywords = "";
             this.results = {};
@@ -77,7 +79,8 @@ define(["../module"], function (app) {
          * Generates the filter parameters as query strings for request
          * @returns {string}
          */
-        SearchService.prototype.filterQueryString = function (filterObject, asString) {
+        SearchService.prototype.filterQueryString = function (filterObject,
+            asString) {
             var data = filterObject || this.filter,
                 query = [],
                 keys;
@@ -149,7 +152,8 @@ define(["../module"], function (app) {
          * @returns {Promise}
          */
         SearchService.prototype.getResults = function () {
-            var url = APPSRCHURL.search + this.keywords + "/" + this.pageNumber + "/" + this.count,
+            var url = APPSRCHURL.search + this.keywords + "/" + this.pageNumber
+                    + "/" + this.count,
                 queryString;
 
             queryString = this.filterQueryString(this.filter, true);

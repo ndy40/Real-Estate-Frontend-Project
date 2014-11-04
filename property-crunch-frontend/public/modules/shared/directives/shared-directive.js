@@ -1,26 +1,25 @@
-/* 
- * Shared Directive 
+/**
+ * pcActiveLink - Set Nav Active States Directive
  */
-
-define(["./module"], function (shared) {
-   'use strict';
-	
-	shared.directive('activeLink', ['$location', function(location) {
-		return {
-			restrict: 'A',
-			link: function(scope, element, attrs, controller) {
-				//var clazz = attrs.activeLink;
-//				var path = attrs.href;
-//				path = path.substring(1); //hack because path does bot return including hashbang
-//				scope.location = location;
-//				scope.$watch('location.path()', function(newPath) {
-//					if (path === newPath) {
-//						element.addClass(clazz);
-//					} else {
-//						element.removeClass(clazz);
-//					}
-//				});
-			}
-		};
+define(["../module"], function (app) {
+    app.directive("pcActiveLink", ["$location", function (location) {
+        'use strict';
+		
+//         return {
+//            restrict : "A",
+//            link : function (scope, element, attr) {
+//                var clazz = attr.activeLink;
+//                var path = attr.href;
+//                path = path.substring(1); //hack because path does bot return including hashbang
+//                scope.location = location;
+//                scope.$watch('location.path()', function(newPath) {
+//                    if (path === newPath) {
+//                            element.addClass(clazz);
+//                    } else {
+//                            element.removeClass(clazz);
+//                    }
+//                });
+//            }
+//         };
     }]);
 });

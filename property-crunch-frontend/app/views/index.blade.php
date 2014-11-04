@@ -19,7 +19,7 @@
         <![endif]-->
     
     </head>
-    <body data-spy="scroll"  data-target=".navbar-collapse">
+    <body>
         <!-- contents go in here. -->
         <ng-view></ng-view>
 
