@@ -32,17 +32,17 @@ define(["../module"], function (app) {
              * $scope.searchObject.status
              */
             $scope.getProperties = function () {
-                if (SearchService.getCache().hasOwnProperty("data")) {
+                if (SearchService.getCache() !== undefined &&
+                        SearchService.getCache().hasOwnProperty("data")) {
                     $scope.loadPropertyTable(SearchService.getCache());
                     $scope.searchObject.keywords = SearchService.getKeywords();
                 } else {
                     SearchService.setKeyword($scope.searchObject.keywords);
                     SearchService.getResults()
-                        .success($scope.loadPropertyTable)
+                        .success($scope.loadPropertyTable);
                 }
-//                SearchService.results = undefined;
             };
-            
+
             /**
              * Load Properties onto the results table.
              *
@@ -54,7 +54,7 @@ define(["../module"], function (app) {
                     $scope.searchObject.status = true;
                     $scope.searchObject.properties = data.data;
                     $scope.searchObject.count = data.count;
-                    
+
                     // Cache Results
                     SearchService.cacheResults(data);
                 } else {

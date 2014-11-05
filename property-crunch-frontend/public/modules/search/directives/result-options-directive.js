@@ -6,7 +6,7 @@
 define(["../module"], function (app) {
     'use strict';
 
-    app.directive("pcResultOptions", ["SearchService", 
+    app.directive("pcResultOptions", ["SearchService",
         function (SearchService) {
 
             return {
@@ -16,50 +16,55 @@ define(["../module"], function (app) {
                     callback: "="
                 },
                 link : function (scope) {
+                    scope.filters = {}; //Object to Store Filters Lists
+
                     /**
                     * POPULATE SELECTBOXES
                     */
-                    scope.sortBy = [ // To store Sort by filter list
+                    scope.filters.sortBy = [ // To store Sort by filter list
                         {"option": "Highest Price", "value": "price desc"},
                         {"option": "Lowest Price",  "value": "price asc"},
                         {"option": "Highest Yield", "value": "yeild desc"},
                         {"option": "Lowest Yield",  "value": "yeild asc"}
-                    ];   
-                    
-                    scope.resultsPerPage = [ // To store results per page list
+                    ];
+
+                    // To store results per page list
+                    scope.filters.resultsPerPage = [
                         {"option": 25,  "value": 25},
                         {"option": 50,  "value": 50},
                         {"option": 100, "value": 100},
                         {"option": 200, "value": 200}
                     ];
-                    
-                    /**
-                    * CALLBACK FUNCTIONS FOR SELECTBOXES
-                    */
 
                     /**
-                    * Callback function used in Sort Order SelectBox on Search Results Page. This sets the current
-                    * Sorting filter after User selects an option from SelectBox.
+                    * CALLBACK FUNCTIONS FOR SELECTBOXES
+                    *
+                    * When a user selects the filter options from selectboxes,
+                    * run these functions. 
+                    * 
+                    * Run callback() after the user has selected an option from
+                    * the selectbox
                     */
-//                    scope.setSortOrder = function (sortOrder) {
-//                        scope.searchObject.filterData.sort = sortOrder.value;
-//                        scope.getProperties();
-//                    };
-//
-//                    /**
-//                    * Results Per Page
-//                    */
-//                    scope.setResultsPerPage = function (resultsPerPage) {
-//                        SearchService.setResultsPerPage(resultsPerPage.value);
-//                        SearchService.setCurrentPage(1); // Resetting Pagination to 1
-//                        scope.getProperties(); // Get Properties to Re-Populate Results
-//                    };
-//            
-//                    scope.updateService = function() {
-//                        SearchService.setFilters(scope.selectedFilters);
-//                        scope.callback();
-//                    };
-                    
+                    scope.setCurrentSortOrder = function (sortOrder) {
+                        SearchService.setCurrentSortOrder(sortOrder);
+                        scope.callback();
+                    };
+                    scope.setCurrentResultsPerPage = function (resultsPerPage) {
+                        SearchService.setCurrentResultsPerPage(resultsPerPage);
+                        scope.callback();
+                    };
+
+                    /**
+                    * GET CURRENT FILTER VALUES
+                    *
+                    * The following var use SearchService to get the Current
+                    * Values of the Filters. This helps cache the filters for
+                    * the results.
+                    */
+                    scope.currentSortOrder =
+                            SearchService.getCurrentSortOrder();
+                    scope.currentResultsPerPage =
+                            SearchService.getResultsPerPageObject();
                 }
             };
         }]);

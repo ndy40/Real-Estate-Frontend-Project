@@ -11,12 +11,12 @@ define(["../module"], function (app) {
         var SearchService = function () {
             this.keywords = "";
             this.results = {};
-            this.filter = {"offer_type" : "Sale"};
             this.count = "";    // Check and Delete if not being used
             this.pager = {
                 pageNumber      : 1, // Setting Default Page Number
                 resultsPerPage  : 10 // Setting Default Properties Per Page
             };
+            this.filters = {};
         };
 
         /**
@@ -27,9 +27,6 @@ define(["../module"], function (app) {
         };
         SearchService.prototype.getCache = function () {
             return this.results;
-        };
-        SearchService.prototype.clearCache = function () {
-            this.results = {};
         };
 
         /**
@@ -47,55 +44,17 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.setCurrentPage = function (pageNumber) {
             this.pager.pageNumber = pageNumber;
+            this.results = {}; // Clear Cache
         };
         SearchService.prototype.getCurrentPage = function () {
             return this.pager.pageNumber;
         };
-        
-        
-        SearchService.prototype.setResultsPerPage = function (resultsPerPage) {
-            this.pager.resultsPerPage = resultsPerPage;
-        };
-        SearchService.prototype.getResultsPerPage = function () {
+        SearchService.prototype.getResultsPerPageValue = function () {
             return this.pager.resultsPerPage;
         };
 
         /**
-         * SEARCH FILTERS
-         */
-        SearchService.prototype.setFilters = function (filter) {
-            this.filter = filter || {"offer_type" : "Sale"};
-        };
-        SearchService.prototype.getFilters = function () {
-            return this.filter;
-        };
-        /**
-         * Generates the filter parameters as query strings for request
-         * @returns {string}
-         */
-        SearchService.prototype.filterQueryString = function (filterObject,
-            asString) {
-            var data = filterObject || this.filter,
-                query = [],
-                keys;
-            if (this.filter !== undefined) {
-                keys = Object.keys(this.filter);
-                Array.prototype.forEach.call(keys, function (e) {
-                    if (data[e] !== 'All' && data[e] !== "-1") {
-                        query.push(e + "=" + data[e]);
-                    }
-                });
-                
-                if (asString === true) {
-                    return query.join("&");
-                }
-            }
-
-            return query;
-        };
-
-        /**
-         * POPULATE SELECTBOX FILTERS
+         * POPULATE SEARCH FILTERS LISTS USED BY SELECTBOXES
          */
         SearchService.prototype.getTypeList = function () {
             var url = APPSRCHURL.typeList;
@@ -109,15 +68,98 @@ define(["../module"], function (app) {
             var url = APPSRCHURL.priceList;
             return $http.get(url);
         };
-        SearchService.prototype.getSortList = function () {
-            var url = APPSRCHURL.sortList;
-            return $http.get(url);
-        };
-        SearchService.prototype.getResultsPerPageList = function () {
-            var url = APPSRCHURL.resultsPerPageList;
-            return $http.get(url);
-        };
 
+        /**
+         * SET CURRENT SEARCH FILTERS
+         */
+        // Used by Refine Filters
+        SearchService.prototype.setCurrentRooms = function (rooms) {
+            this.filters.rooms = rooms;
+            this.results = {}; // Clear Cache
+        };
+        SearchService.prototype.setCurrentType = function (type) {
+            this.filters.type = type;
+            this.results = {}; // Clear Cache
+        };
+        SearchService.prototype.setCurrentMaxPrice = function (maxPrice) {
+            this.filters.price_max = maxPrice;
+            this.results = {}; // Clear Cache
+        };
+        SearchService.prototype.setCurrentMinPrice = function (minPrice) {
+            this.filters.price_min = minPrice;
+            this.results = {}; // Clear Cache
+        };
+        SearchService.prototype.setCurrentYield = function (minYield) {
+            this.filters.minYield = minYield;
+            this.results = {}; // Clear Cache
+        };
+        // Used by Result Option Filters
+        SearchService.prototype.setCurrentSortOrder = function (order) {
+            this.filters.sort = order;
+            this.results = {}; // Clear Cache
+        };
+        // Used by Result Option Filters & Pagination
+        SearchService.prototype.setCurrentResultsPerPage =
+            function (resultsPerPage) {
+                this.filters.resultsPerPage = resultsPerPage;
+                this.pager.resultsPerPage = resultsPerPage.value;
+                this.results = {}; // Clear Cache
+            };
+
+        /**
+         * GET SEARCH FILTERS - getting default values to show for selectbox 
+         */
+        // Used by Refine Filters
+        SearchService.prototype.getCurrentRooms = function () {
+            if (this.filters.rooms !== undefined) {
+                return this.filters.rooms;
+            } else {
+                return "all";
+            }
+        };
+        SearchService.prototype.getCurrentType = function () {
+            if (this.filters.type !== undefined) {
+                return this.filters.type;
+            } else {
+                return {option: 'All', value : -1};
+            }
+        };
+        SearchService.prototype.getCurrentMaxPrice = function () {
+            if (this.filters.price_max !== undefined) {
+                return this.filters.price_max;
+            } else {
+                return {option: 'All', value : -1};
+            }
+        };
+        SearchService.prototype.getCurrentMinPrice = function () {
+            if (this.filters.price_min !== undefined) {
+                return this.filters.price_min;
+            } else {
+                return {option: 'All', value : -1};
+            }
+        };
+        SearchService.prototype.getCurrentYield = function () {
+            if (this.filters.minYield !== undefined) {
+                return this.filters.minYield;
+            } else {
+                return {option: 'All', value : -1};
+            }
+        };
+        // Used by Result Options Filters
+        SearchService.prototype.getCurrentSortOrder = function () {
+            if (this.filters.sort !== undefined) {
+                return this.filters.sort;
+            } else {
+                return {option: 'Most Recent', value : 'updated_at desc'};
+            }
+        };
+        SearchService.prototype.getResultsPerPageObject = function () {
+            if (this.filters.resultsPerPage !== undefined) {
+                return this.filters.resultsPerPage;
+            } else {
+                return {option: 10, value : 10};
+            }
+        };
 
         /**
          * GET PROPERTY DETAILS
@@ -140,14 +182,34 @@ define(["../module"], function (app) {
          * @returns {Promise}
          */
         SearchService.prototype.getResults = function () {
-            var url = APPSRCHURL.search + this.keywords + "/" + this.pager.pageNumber
-                    + "/" + this.pager.resultsPerPage,
-                queryString;
+            var url = APPSRCHURL.search + this.keywords + "/" +
+                        this.pager.pageNumber + "/" + this.pager.resultsPerPage
+                            + "?" + "offer_type=Sale",
+                filtersQuery = "";
 
-            queryString = this.filterQueryString(this.filter, true);
+            if (this.filters.rooms !== undefined) {
+                filtersQuery += "&" + "rooms=" + this.filters.rooms;
+            }
+            if (this.filters.type !== undefined) {
+                filtersQuery += "&" + "type=" + this.filters.type.value;
+            }
+            if (this.filters.price_max !== undefined) {
+                filtersQuery += "&" + "price_max=" +
+                    this.filters.price_max.value;
+            }
+            if (this.filters.price_min !== undefined) {
+                filtersQuery += "&" + "price_min=" +
+                    this.filters.price_min.value;
+            }
+            if (this.filters.sort !== undefined) {
+                filtersQuery += "&" + "sort=" + this.filters.sort.value;
+            }
+            if (this.filters.minYield !== undefined) {
+                filtersQuery += "&" + "minYield=" + this.filters.minYield.value;
+            }
 
-            if (queryString !== null) {
-                url += "?" + queryString;
+            if (filtersQuery) {
+                url += filtersQuery;
             }
 
             return $http.get(url);
