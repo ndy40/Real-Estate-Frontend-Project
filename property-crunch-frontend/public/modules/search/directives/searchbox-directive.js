@@ -14,16 +14,21 @@ define(["../module"], function (app) {
                 templateUrl : "./modules/search/directives/searchbox.html",
                 scope : {
                     keywords    : "=",
-                    redirect    : "@",  // Route to redirect to (if result is present.)
-                    bindResult  : "=",  // Controller model to bind results of search to.
-                    filters     : "=",  // Search filter parameter to be set and used by this module for performing searches.
-                    callback    : "=",   // this holds the name of the callback function to call on when a result is present.
+                    // Route to redirect to (if result is present.)
+                    redirect    : "@",
+                    // Controller model to bind results of search to.
+                    bindResult  : "=",
+                    // Search filter parameter to be set and used by this module
+                    // for performing searches.
+                    filters     : "=",
+                    // this holds the name of the callback function to call on
+                    // when a result is present.
+                    callback    : "=",
                     back        : "@"
                 },
                 link : function (scope, element, attr) {
-                    scope.searchProperty = function (keywords, filters) {
+                    scope.searchProperty = function (keywords) {
                         SearchService.setKeyword(keywords);
-                        SearchService.setFilters(filters);
                         SearchService.results = undefined;
                         SearchService.getResults()
                             .success(scope.handleSearchData);
