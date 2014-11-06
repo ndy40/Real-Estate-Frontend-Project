@@ -8,10 +8,14 @@ define(["../module"], function (app) {
 
         return {
             restrict : "E",
+            scope: {
+                alertStatus: "="
+            },
             templateUrl : "./modules/static-pages/directives/cookie-policy.html",
             link : function (scope) {
                 if ($cookieStore.get('showCookieNote') !== 1) {
                     scope.alertStatus = true;
+
                     scope.closeAlert = function () {
                         scope.alertStatus = false;
                         // Saving Cookie to Disable Alert on Refresh

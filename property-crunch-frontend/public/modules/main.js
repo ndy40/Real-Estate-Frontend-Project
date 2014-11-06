@@ -11,7 +11,7 @@ require.config({
         "owl-carousel"  : "../assets/js/owl.carousel",
         "angular"       : "../assets/angular/angular.min",
         "ngRoute"       : "../assets/angular-route/angular-route",
-        "ui-bootstrap"  : "../assets/ui-bootstrap/ui-bootstrap-custom-tpls-0.10.0.min",
+        "ui-bootstrap"  : "../assets/ui-bootstrap/ui-bootstrap-tpls-0.11.2.min",
         'cookies'       : "../assets/angular-cookies/angular-cookies.min",
         "localStorage"  : "../assets/angular-localStorageService/src/storageprovider"
     },

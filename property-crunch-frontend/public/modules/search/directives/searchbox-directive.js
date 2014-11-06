@@ -49,6 +49,13 @@ define(["../module"], function (app) {
                             scope.callback(data);
                         }
                     };
+                    
+                    // Search on Enter
+                    scope.enterSearch = function (event, keywords) {
+                        if (event.keyCode === 13) {
+                            scope.searchProperty(keywords);
+                        }
+                    };
                 }
             };
         }]);

@@ -3,9 +3,9 @@
     <div class="icon-container">
         <i class="icon-search icon18-search"></i>
     </div>
-    <input type="text" id="search_box" class="form-control form-control-icon searchbar" placeholder="e.g. Oxford, NW3 or Waterloo Station" ng-model="keywords" required />
+    <input type="text" id="search_box" class="form-control form-control-icon searchbar" placeholder="e.g. Oxford, NW3 or Waterloo Station" ng-model="keywords" required ng-keyup="enterSearch($event, keywords)"/>
     <div class="input-group-btn">
-        <button id="search" class="btn btn-default" type="button" ng-click="searchProperty(keywords, filters)">Start Your Search</button>
+        <button id="search" class="btn btn-default" type="button" ng-click="searchProperty(keywords)">Start Your Search</button>
     </div>
 </div>
 <!-- Back to Search Here -->
