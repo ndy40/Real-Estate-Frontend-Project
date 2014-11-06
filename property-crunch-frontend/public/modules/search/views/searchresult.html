@@ -44,9 +44,20 @@
                         </div>
                     </div>
                 </div>
+                
+                <div ng-show="searchObject.defaultStatus">
+                    <div class="alert alert-danger" role="alert">
+                        <i class="icon-warning"></i>
+                        <span>Sorry!</span> no properties found matching your criteria.
+                    </div>
 
+                    <div class="alert alert-success" role="alert">
+                        <i class="icon-thumbsup"></i>
+                        <span>Cheer up!</span> we found some other properties in the area that are suitable for investment.
+                    </div>
+                </div>
                 <div id="properties_list">
-                    <article ng-repeat="property in searchObject.properties" class="property-listing" ng-show="{{searchObject.status}}">
+                    <article ng-repeat="property in searchObject.properties" class="property-listing" ng-show="searchObject.status|| searchObject.defaultStatus">
                         <div class="row">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="property-img">

@@ -14,7 +14,8 @@ define(["../module"], function (app) {
             $scope.searchObject = {
                 properties: [],         // To store Properties
                 count: "",
-                status: false      // Setting Default search status
+                status: false,          // Setting Search Status
+                defaultStatus: false    // Setting Default Properties Statues
             };
 
             /**
@@ -32,8 +33,7 @@ define(["../module"], function (app) {
              * $scope.searchObject.status
              */
             $scope.getProperties = function () {
-                if (SearchService.getCache() !== undefined &&
-                        SearchService.getCache().hasOwnProperty("data")) {
+                if (SearchService.results.hasOwnProperty("data")) {
                     $scope.loadPropertyTable(SearchService.getCache());
                     $scope.searchObject.keywords = SearchService.getKeywords();
                 } else {
@@ -52,6 +52,7 @@ define(["../module"], function (app) {
             $scope.loadPropertyTable = function (data) {
                 if (data.hasOwnProperty("data") &&  data.data.length > 0) {
                     $scope.searchObject.status = true;
+                    $scope.searchObject.defaultStatus = false;
                     $scope.searchObject.properties = data.data;
                     $scope.searchObject.count = data.count;
 
@@ -59,9 +60,22 @@ define(["../module"], function (app) {
                     SearchService.cacheResults(data);
                 } else {
                     $scope.searchObject.status = false;
+                    $scope.getDefaultProperties();
                 }
             };
-
+            
+            $scope.getDefaultProperties = function () {
+                SearchService.setKeyword("london");
+                SearchService.getResults()
+                        .success($scope.loadDefaultTable);
+            };
+            
+            $scope.loadDefaultTable = function (data) {
+                $scope.searchObject.defaultStatus = true;
+                $scope.searchObject.properties = data.data;
+                $scope.searchObject.count = data.count;
+            };
+            
             /**
             * Init getProperties
             */
