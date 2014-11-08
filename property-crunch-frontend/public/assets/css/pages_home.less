@@ -66,8 +66,8 @@
 /*===================================================================
   Pages > Home > Testimonials Section
 ====================================================================*/
-.testimonials {
-	padding: 130px 0 95px;
+.testimonials {    
+    padding-bottom: 140px;
 	background: 
 		linear-gradient(
 		  rgba(0, 0, 0, 0.8), 
@@ -83,6 +83,71 @@
 	}
 }
 
+.testimonials-carousel {
+    position: relative;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+    
+    li {
+        border: 1px solid @brand-primary;
+        width: 13px;
+        height: 13px;
+        margin-right: 4px;
+    }
+    
+    .active {
+        background-color: @brand-primary;
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+    }
+}
+.carousel-control {
+    bottom: 0;
+    color: #ffffff;
+    font-size: 36px;
+    opacity: 1;
+    text-shadow: none;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    .transition(all 0.3s);
+    
+    &.right, &.left {
+        background: none;
+    }
+    
+    &:hover {
+        span {
+            color: @brand-primary;
+            .transition(all 0.3s);
+        }
+    }
+    
+    span {
+        cursor: pointer;
+        
+        &.glyphicon-chevron-left:before {
+            content: "\e6ea";
+        }
+        
+        &.glyphicon-chevron-right:before {
+	        content: "\e6ed";
+        }
+    }
+    .glyphicon {
+        display: none;
+    }
+}
+
+blockquote {
+	margin: 0 auto 14px;
+	padding: 0 25px;
+    text-align: justify;
+}
+
 .client-info-wrap {
 	margin: 0 auto;
 	padding: 20px 0 0;
@@ -93,6 +158,7 @@
 	div {
 		float: left;
 	}
+    
 }
 
 .client-img-overlay {
@@ -127,10 +193,10 @@
 	.testimonials {
 		background-attachment: fixed;
 		color: #fff;
-                
-        blockquote {
-            width:  70%;
-        }
+	}
+	blockquote {
+		font-size: 20px;
+		width:  70%;
 	}
 	.client-info-wrap {
 		margin: 0 auto;
@@ -157,7 +223,14 @@
 	.client-details {
 		margin-left: 20px;
 	}
+    
+    .carousel-control {
+        .glyphicon {
+            display: block;
+        }
+    }
 }
+
 
 /*===================================================================
   Pages > Home > Find Off Market Properties Section
@@ -181,34 +254,57 @@
   Pages > Home > Cookie Policy
 ====================================================================*/
 .cookie-policy {
-    bottom: 5px;
-    margin: 0 1%;
-    position: fixed;
-    width: 98%;
+    position: absolute;
+    margin-top: -75px;
+    width: 100%;
     z-index: 9;
     
-    a:hover {
+    a {
+        font-weight: 300;
+        text-decoration: underline;
+        opacity: 1;
         color: #fff;
+        .transition(opacity 0.3s);
+        
+        &:hover {
+            opacity: 0.8;
+            .transition(opacity 0.3s);
+        }
     }
     
     i {
-        color: @brand-primary;
-        .transition(color 0.3s);
+        opacity: 1;
+        .transition(opacity 0.3s);
         
         &.cookie-icon {
             float: right;    
             cursor: pointer;
             
             &:hover {
-                color: #fff;
+                opacity: 0.8;
+                .transition(opacity 0.3s);
             }
         }
     }
     
     
     .alert {
-        background-color: rgba(0, 0, 0, 0.9);
-        border-color: #191e1d;
+        background-color: @brand-info;
         color: #fff;
+        border: 0;
+        margin: 0;
+        padding: 5px 0;
+        position: relative;
     }
+}
+// Used on the Nav when cookie policy alert is on
+.cookie-alert-on {
+    padding-top: 0;
+    
+    .navbar-default,
+    .cookie-policy {
+        position: relative;
+        margin-top: 0;
+    }
+    
 }

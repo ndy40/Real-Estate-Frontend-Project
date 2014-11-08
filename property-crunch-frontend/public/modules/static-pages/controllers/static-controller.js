@@ -7,8 +7,14 @@ define(["../module"], function (app) {
     app.controller("StaticCtrl", ["$scope", "$routeParams",
         function ($scope, $routeParams) {
 
+            /**
+             * To Store Page Name for Routing Views
+             */
             $scope.pageName = $routeParams.pageName;
 
+            /**
+             * Accordion Data for Learn More Page
+             */
             $scope.accordion = {
                 status: {
                     first: true,
@@ -24,5 +30,16 @@ define(["../module"], function (app) {
                     eleventh: false
                 }
             };
+
+            /**
+             * Cookie Policy Directive Status to Apply Styling to Home Header
+             */
+            $scope.cookieAlertStatus = false;
+
+            /**
+             * Testimonial Slider - Using Bootstrap UI's Carousel Directive
+             */
+            
+            
         }]);
 });

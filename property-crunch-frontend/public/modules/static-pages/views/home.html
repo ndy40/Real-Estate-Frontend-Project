@@ -1,8 +1,9 @@
 <!-- include header -->
-<header class="home-header">
+<header class="home-header" ng-class="{'cookie-alert-on': cookieAlertStatus}">
+    <pc-cookie-policy alert-status="cookieAlertStatus"></pc-cookie-policy>
     <!-- include navigation here --> 
     <ng-include src="'../modules/shared/views/navigation-partial.html'"></ng-include>
-
+    
     <div class="jumbotron dark">
         <div class="container">
             <h1>Invest in Property like a <span>Pro</span></h1>
@@ -61,9 +62,48 @@
     </div>
 </section>
 
-<section class="large-section dark testimonials">
+<section class="large-section testimonials dark">
     <div class="container">
         <h2 class="text-center">97% of Property Buyers surveyed recommend Property <span>Crunch</span></h2>
+        <carousel interval="5000" class="testimonials-carousel">
+            <slide active="slide.active">
+                <blockquote>An excellent tool for people new to property investment, it takes away some of the frustration of finding a viable investment</blockquote>
+                <div class="client-info-wrap">
+                    <div class="client-img-overlay">
+                        <img class="img-circle" src="assets/images/kate_poole.jpg" alt="Kate Poole">
+                    </div>
+                    <div class="client-details">
+                        <h3>Kate Poole</h3>
+                        <h5>Property Investor</h5>
+                        <a href="javascript:void(0)">Cheshire</a>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <blockquote>The site provides a great opportunity to ​connect with​ serious investors who are financially ready and can move quickly when the opportunity arises.</blockquote>
+                <div class="client-info-wrap">
+                    <div class="client-img-overlay">
+                        <img class="img-circle" src="assets/images/manal-shaker.jpg" alt="Manal Shaker">
+                    </div>
+                    <div class="client-details">
+                        <h3>Manal Shaker</h3>
+                        <h5>Estate Agent</h5>
+                        <a href="http://www.manoliahomes.co.uk/">Manolia Homes</a>
+                    </div>
+                </div>
+            </slide>
+        </carousel>
+        
+        
+       
+                    <!-- Controls -->
+<!--                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="icon-arrow-left3 icon44-left prev visible-lg"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="icon-icon-uniE6D8 icon44-right next visible-lg"></span>
+                    </a>-->
+<!--        
         <blockquote>I have been sourcing and investing in property for over 12 months now. Finding the right property to buy is not easy. I spend an average 8 hours each week researching the market. Property Crunch will save me time and money. I am really excited about the product!</blockquote>
         <div class="client-info-wrap">
             <div class="client-img-overlay">
@@ -74,7 +114,7 @@
                 <h5>Property Investor</h5>
                 <a href="http://isaacnoah.com">IsaacNoah.com</a>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 
@@ -99,4 +139,3 @@
     </div>
 </section>
 
-<pc-cookie-policy></pc-cookie-policy>

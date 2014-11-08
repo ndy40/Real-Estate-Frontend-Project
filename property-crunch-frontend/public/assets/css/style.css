@@ -348,7 +348,8 @@ blockquote {
 input[type=checkbox]:not(old):checked + label > span:before,
 ul.list-arrows li:before,
 .login-tabs li.login-tab a:before,
-.login-tabs li.create-account-tab a:before {
+.login-tabs li.create-account-tab a:before,
+.carousel-control span {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -1367,10 +1368,10 @@ button:focus {
   text-decoration: none;
 }
 button,
-.btn {
+.btn,
+.feedback-btn {
   font-size: 16px;
   line-height: 1;
-  outline: none;
   position: relative;
   background: #f6af00;
   font-weight: 300;
@@ -1378,18 +1379,15 @@ button,
   transition: all 0.3s;
 }
 button:hover,
-.btn:hover {
+.btn:hover,
+.feedback-btn:hover {
   background: #999999;
-  outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-button:focus,
-.btn:focus {
-  outline: none;
-}
 button:active,
-.btn:active {
+.btn:active,
+.feedback-btn:active {
   box-shadow: 0;
 }
 .btn {
@@ -2468,6 +2466,39 @@ footer ul li:last-child {
   }
 }
 /*===================================================================
+  Components > Feedback
+====================================================================*/
+.feedback-btn {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 7px;
+  position: fixed;
+  right: -80px;
+  top: 200px;
+  z-index: 9;
+}
+.feedback-btn i {
+  font-size: 24px;
+  position: relative;
+  top: 1px;
+}
+.feedback-btn span {
+  bottom: 4px;
+  margin-left: 3px;
+  position: relative;
+}
+.feedback-btn:hover {
+  background: #f6af00;
+  color: #ffffff;
+  right: 0;
+}
+.feedback-btn:focus,
+.feedback-btn:active {
+  background: #999999;
+}
+/*===================================================================
   Pages
 ====================================================================*/
 /*===================================================================
@@ -2530,7 +2561,7 @@ footer ul li:last-child {
   Pages > Home > Testimonials Section
 ====================================================================*/
 .testimonials {
-  padding: 130px 0 95px;
+  padding-bottom: 140px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/testimonial-bg.jpg) center center;
   background-attachment: scroll;
   color: #fff;
@@ -2538,6 +2569,62 @@ footer ul li:last-child {
 }
 .testimonials h2 {
   margin-bottom: 80px;
+}
+.testimonials-carousel {
+  position: relative;
+}
+.carousel-indicators {
+  bottom: -50px;
+}
+.carousel-indicators li {
+  border: 1px solid #f6af00;
+  width: 13px;
+  height: 13px;
+  margin-right: 4px;
+}
+.carousel-indicators .active {
+  background-color: #f6af00;
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+}
+.carousel-control {
+  bottom: 0;
+  color: #ffffff;
+  font-size: 36px;
+  opacity: 1;
+  text-shadow: none;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.carousel-control.right,
+.carousel-control.left {
+  background: none;
+}
+.carousel-control:hover span {
+  color: #f6af00;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.carousel-control span {
+  cursor: pointer;
+}
+.carousel-control span.glyphicon-chevron-left:before {
+  content: "\e6ea";
+}
+.carousel-control span.glyphicon-chevron-right:before {
+  content: "\e6ed";
+}
+.carousel-control .glyphicon {
+  display: none;
+}
+blockquote {
+  margin: 0 auto 14px;
+  padding: 0 25px;
+  text-align: justify;
 }
 .client-info-wrap {
   margin: 0 auto;
@@ -2588,7 +2675,8 @@ footer ul li:last-child {
     background-attachment: fixed;
     color: #fff;
   }
-  .testimonials blockquote {
+  blockquote {
+    font-size: 20px;
     width: 70%;
   }
   .client-info-wrap {
@@ -2621,6 +2709,9 @@ footer ul li:last-child {
   .client-details {
     margin-left: 20px;
   }
+  .carousel-control .glyphicon {
+    display: block;
+  }
 }
 /*===================================================================
   Pages > Home > Find Off Market Properties Section
@@ -2641,31 +2732,53 @@ footer ul li:last-child {
   Pages > Home > Cookie Policy
 ====================================================================*/
 .cookie-policy {
-  bottom: 5px;
-  margin: 0 1%;
-  position: fixed;
-  width: 98%;
+  position: absolute;
+  margin-top: -75px;
+  width: 100%;
   z-index: 9;
 }
-.cookie-policy a:hover {
+.cookie-policy a {
+  font-weight: 300;
+  text-decoration: underline;
+  opacity: 1;
   color: #fff;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.cookie-policy a:hover {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .cookie-policy i {
-  color: #f6af00;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .cookie-policy i.cookie-icon {
   float: right;
   cursor: pointer;
 }
 .cookie-policy i.cookie-icon:hover {
-  color: #fff;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .cookie-policy .alert {
-  background-color: rgba(0, 0, 0, 0.9);
-  border-color: #191e1d;
+  background-color: #31708f;
   color: #fff;
+  border: 0;
+  margin: 0;
+  padding: 5px 0;
+  position: relative;
+}
+.cookie-alert-on {
+  padding-top: 0;
+}
+.cookie-alert-on .navbar-default,
+.cookie-alert-on .cookie-policy {
+  position: relative;
+  margin-top: 0;
 }
 /*===================================================================
   Pages > Learn More
