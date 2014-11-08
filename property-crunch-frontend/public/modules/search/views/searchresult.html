@@ -53,7 +53,7 @@
 
                     <div class="alert alert-success" role="alert">
                         <i class="icon-thumbsup"></i>
-                        <span>Cheer up!</span> we found some other properties in the area that are suitable for investment.
+                        <span>Cheer up!</span> we found some other properties suitable for investment.
                     </div>
                 </div>
                 <div id="properties_list">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="property-title-group">
-                                    <a ng-href="#/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
+                                    <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
                                     <a class="add-to-fav" href="favourites.html"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
                                 </div>
                                 <p>{{property.address}}</p>
