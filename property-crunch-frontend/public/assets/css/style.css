@@ -2499,6 +2499,17 @@ footer ul li:last-child {
   background: #999999;
 }
 /*===================================================================
+  Components > ng Animate (Angular Animations)
+====================================================================*/
+.property-listing {
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.property-listing.ng-enter {
+  opacity: 0;
+}
+/*===================================================================
   Pages
 ====================================================================*/
 /*===================================================================
@@ -2611,15 +2622,6 @@ footer ul li:last-child {
 }
 .carousel-control span {
   cursor: pointer;
-}
-.carousel-control span.glyphicon-chevron-left:before {
-  content: "\e6ea";
-}
-.carousel-control span.glyphicon-chevron-right:before {
-  content: "\e6ed";
-}
-.carousel-control .glyphicon {
-  display: none;
 }
 blockquote {
   margin: 0 auto 14px;

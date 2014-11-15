@@ -5,7 +5,7 @@
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("SearchFormCtrl", ["$scope", "SearchService",
+    app.controller("SearchFormCtrl", ["$scope", "SearchService", 
         function ($scope, SearchService) {
 
             /**
