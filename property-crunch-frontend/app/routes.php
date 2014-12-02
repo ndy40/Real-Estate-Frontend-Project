@@ -21,5 +21,6 @@ App::missing(function($exception) {
 /* create prefixed group for login and logout */
 Route::group(array('prefix'=>'/api'),function(){
 	Route::controller("auth", "controllers\\services\\AuthController");
+    Route::controller("property", "controllers\\services\\PropertyController");
 });
 
