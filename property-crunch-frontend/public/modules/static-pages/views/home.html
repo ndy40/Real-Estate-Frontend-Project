@@ -1,8 +1,14 @@
 <!-- include header -->
+<<<<<<< HEAD
 <header class="home-header">
     <!-- include navigation here -->
+=======
+<header class="home-header" ng-class="{'cookie-alert-on': cookieAlertStatus}">
+    <pc-cookie-policy alert-status="cookieAlertStatus"></pc-cookie-policy>
+    <!-- include navigation here --> 
+>>>>>>> integration
     <ng-include src="'../modules/shared/views/navigation-partial.html'"></ng-include>
-
+    
     <div class="jumbotron dark">
         <div class="container">
             <h1>Invest in Property like a <span>Pro</span></h1>
@@ -61,20 +67,10 @@
     </div>
 </section>
 
-<section class="large-section dark testimonials">
+<section class="large-section testimonials dark">
     <div class="container">
         <h2 class="text-center">97% of Property Buyers surveyed recommend Property <span>Crunch</span></h2>
-        <blockquote>I have been sourcing and investing in property for over 12 months now. Finding the right property to buy is not easy. I spend an average 8 hours each week researching the market. Property Crunch will save me time and money. I am really excited about the product!</blockquote>
-        <div class="client-info-wrap">
-            <div class="client-img-overlay">
-                <img class="img-circle" src="assets/images/client-image.jpg" alt="Chika Okeke">
-            </div>
-            <div class="client-details">
-                <h3>Chika Okeke</h3>
-                <h5>Property Investor</h5>
-                <a href="http://isaacnoah.com">IsaacNoah.com</a>
-            </div>
-        </div>
+        <testimonial-carousel></testimonial-carousel>
     </div>
 </section>
 
@@ -99,4 +95,7 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 <pc-cookie-policy></pc-cookie-policy>
+=======
+>>>>>>> integration

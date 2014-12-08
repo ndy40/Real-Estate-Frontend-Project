@@ -1,21 +1,10 @@
 <header class="search-header">
-    <!-- Navigation Partial -->
-    <ng-include src="'modules/shared/navigation-partial.html'"></ng-include>
-
+    <!-- Navigation Partial --> 
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+    
     <div class="search-content dark">
         <div class="container">
-            <!-- Search form here -->
-            <search-form keywords="searchObject.keywords" filter="searchObject.filter" bind-result="searchObject.properties" callback="loadPropertyTable"></search-form>
-            <div class="row">
-                <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                   <div class="searchbar-bottom">
-                        <a href="" onclick="javascript: window.history.back();">
-                            <i class="icon-arrow-left6"></i>
-                            Back to Search Results
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <pc-search-form keywords="keywords" redirect="/search" back="true"></pc-search-form>
         </div>
     </div>
 </header>

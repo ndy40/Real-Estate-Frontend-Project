@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="f70036d6-91aa-4086-807d-3d4967b7aeda" name="Default" comment="">
+=======
+    <list default="true" id="f70036d6-91aa-4086-807d-3d4967b7aeda" name="Default" comment="Merge branch 'integration' of https://bitbucket.org/ndy40/propertycrunch-frontend-project into integration&#10;&#10;Conflicts:&#10;&#9;property-crunch-frontend/public/modules/app.js&#10;&#9;property-crunch-frontend/public/modules/login/module.js&#10;&#9;property-crunch-frontend/public/modules/property-details/module.js&#10;&#9;property-crunch-frontend/public/modules/search/directives/searchbox-directive.js&#10;&#9;property-crunch-frontend/public/modules/search/module.js&#10;&#9;property-crunch-frontend/public/modules/search/views/searchresult.html&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/auth-service.js&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/module.js&#10;&#9;property-crunch-frontend/public/modules/shared/module.js&#10;&#9;property-crunch-frontend/public/modules/static-pages/module.js&#10;">
+>>>>>>> integration
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/nbproject/configs/android.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/nbproject/configs/android_1.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/services/auth-service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investors/views/favourites.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investors/controllers/investors-controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/nbproject/configs/ios.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/nbproject/configs/ios_1.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investors/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/controllers/property-controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/services/session-service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/template.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/to-let-calculator-directive.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/14.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/15.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/16.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/17.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/18.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/19.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/20.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/21.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/22.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/23.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/24.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/25.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/26.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/27.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/28.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/29.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/30.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/31.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/32.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/33.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/34.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/35.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/36.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/37.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/38.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/39.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/40.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/41.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/42.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/43.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/44.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/45.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/46.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/47.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/48.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/49.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/50.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/assets/properties/9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investor-dashboard/investor-dashboard-controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investor-dashboard/investor-dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investor-dashboard/module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/auth-service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/session-service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/buytolet-calculator-directive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/property-controller.js" afterPath="" />
+<<<<<<< HEAD
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/property.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/filters-data/results.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/filters/currency-filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchresult.html" afterPath="" />
+=======
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/filters-data/results.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/filters/currency-filter.js" afterPath="" />
+>>>>>>> integration
+      <change type="DELETED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/static.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investor-dashboard/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/investors/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/login-controller.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/controllers/login-controller.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/login.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/views/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/buytolet-calculator.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/to-let-calculator.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/buytosell-calculator-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/to-sell-calculator-directive.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/buytosell-calculator.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/to-sell-calculator.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/property.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/views/property.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/partials/searchaside.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchaside.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchform-controller.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/controllers/searchform-controller.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchresult.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchresult.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/NavigationCtrl.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/controllers/navigation-controller.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/UserModel.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/services/user-model-service.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/footer.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/views/footer.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/navigation-partial.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/views/navigation-partial.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/static-controller.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/controllers/static-controller.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/home.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/home.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/learn_more.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/learn_more.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/list_property.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/list_property.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/loader.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/loader.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/privacy_policy.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/privacy_policy.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/templates/terms_of_use.html" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/terms_of_use.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/auth-service.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/auth-service.js" />
+=======
+>>>>>>> integration
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/carousel-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/carousel-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/comparables-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/comparables-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/directives/cookie-policy.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/directives/cookie-policy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/currency-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/currency-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/filters/currency-filter.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/filters/currency-filter.js" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php" afterPath="$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php" />
+=======
+>>>>>>> integration
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/app/views/index.blade.php" afterPath="$PROJECT_DIR$/property-crunch-frontend/app/views/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/index.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/main.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/main.js" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/module.js" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/module.js" />
+>>>>>>> integration
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/module.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/percent-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/directives/percent-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/filters/percent-filter.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/filters/percent-filter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/property-crunch-frontend/nbproject/private/private.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/directives/rec-properties-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/directives/rec-properties-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/services/rec-properties-service.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/services/rec-properties-service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js" />
+>>>>>>> integration
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/directives/shared-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/directives/shared-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/directives/video-slider.js" afterPath="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/directives/video-slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <list id="4388111f-60b0-43b1-87cb-9c68faae3552" name="Rejected commit: Default" comment="Added the Mail sending logic for registered accounts.&#10;&#10;Completed the registration page integration with API and added alert boxes for failure messages.&#10;&#10;Added alert boxes for failed login" />
+    <ignored path="property-crunch-frontend.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="property-crunch-frontend" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+<<<<<<< HEAD
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="585">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
+=======
+      <file leaf-file-name="searchresult.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchresult.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.166666" vertical-offset="1208" max-vertical-offset="1860">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+>>>>>>> integration
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="search-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1875" max-vertical-offset="2640">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+=======
+      <file leaf-file-name="searchaside.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchaside.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> integration
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+=======
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1455">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+>>>>>>> integration
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.7457887" vertical-offset="0" max-vertical-offset="1455">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectbox-directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="765">
+=======
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+>>>>>>> integration
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="spinner-directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="1185">
+=======
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+>>>>>>> integration
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="searchbox-directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="840">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <folding>
+                <marker date="1414551659000" expanded="true" signature="758:1100" placeholder="{...}" />
+                <marker date="1414551659000" expanded="true" signature="929:967" placeholder="{...}" />
+              </folding>
+=======
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+              <folding />
+>>>>>>> integration
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ndy40.ekott@gmail.com" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/home/index.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchform.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/bootstrap.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/home/module.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/app/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/home/home-controller.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/search-service.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/../property-crunch-ui/search_results.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/app/controllers/services/AuthController.php" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/app/config/mail.php" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/login-controller.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/login/login.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/main.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchresult.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/property.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchform-controller.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js" />
+=======
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/property-details/property.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchform-controller.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/module.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/views/home.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/auth-service.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/searchresult.html" />
+        <option value="$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchresult.html" />
+>>>>>>> integration
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1276" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> integration
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+<<<<<<< HEAD
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+=======
+>>>>>>> integration
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="directives" />
+=======
+              <option name="myItemId" value="views" />
+>>>>>>> integration
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="property-crunch-frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="property-details" />
+=======
+              <option name="myItemId" value="login" />
+>>>>>>> integration
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="preferences.sourceCode.General" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/property-crunch-frontend/public/modules" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <envs />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" myUseAcceleration="nothing">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f70036d6-91aa-4086-807d-3d4967b7aeda" name="Default" comment="" />
+      <created>1409607129528</created>
+      <option name="number" value="Default" />
+      <updated>1409607129528</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added the Mail sending logic for registered accounts.&#10;&#10;Completed the registration page integration with API and added alert boxes for failure messages.&#10;&#10;Added alert boxes for failed login">
+      <created>1414231824867</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1414231824867</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Completed the Search Result integration with API. &#10;&#10;Refactored code to meet JS standard. &#10;&#10;Updated sorting drop down event to API.&#10;&#10;Sorted some search data issue releated to double ajax request. This is because search is already performed in search-service.js. SearchController doens't not need to perform the SearchService.getResults();">
+      <created>1414467927783</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1414467927783</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Doing JS merge, cleanup and Code standard validation.">
+      <created>1414469647416</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1414469647416</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Some random changes I can't remember,">
+      <created>1414551555366</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1414551555366</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Some random changes I can't remember,">
+      <created>1414551600275</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1414551600275</updated>
+    </task>
+<<<<<<< HEAD
+    <option name="localTasksCounter" value="6" />
+=======
+    <task id="LOCAL-00006" summary="Committing merged files with Arslans formatting.">
+      <created>1414551982240</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1414551982240</updated>
+    </task>
+    <task id="LOCAL-00007" summary="merged changes.">
+      <created>1414553415160</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1414553415160</updated>
+    </task>
+    <task id="LOCAL-00008" summary="merging conflicts">
+      <created>1414651219876</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1414651219876</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+>>>>>>> integration
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1276" height="773" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> integration
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.2838983" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.7161017" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Added the Mail sending logic for registered accounts.&#10;&#10;Completed the registration page integration with API and added alert boxes for failure messages.&#10;&#10;Added alert boxes for failed login" />
+    <MESSAGE value="Completed the Search Result integration with API. &#10;&#10;Refactored code to meet JS standard. &#10;&#10;Updated sorting drop down event to API.&#10;&#10;Sorted some search data issue releated to double ajax request. This is because search is already performed in search-service.js. SearchController doens't not need to perform the SearchService.getResults();" />
+    <MESSAGE value="Doing JS merge, cleanup and Code standard validation." />
+    <MESSAGE value="Some random changes I can't remember," />
+<<<<<<< HEAD
+    <option name="LAST_COMMIT_MESSAGE" value="Some random changes I can't remember," />
+=======
+    <MESSAGE value="Committing merged files with Arslans formatting." />
+    <MESSAGE value="merged changes." />
+    <MESSAGE value="merging conflicts" />
+    <MESSAGE value="Merge branch 'integration' of https://bitbucket.org/ndy40/propertycrunch-frontend-project into integration&#10;&#10;Conflicts:&#10;&#9;property-crunch-frontend/public/modules/app.js&#10;&#9;property-crunch-frontend/public/modules/login/module.js&#10;&#9;property-crunch-frontend/public/modules/property-details/module.js&#10;&#9;property-crunch-frontend/public/modules/search/directives/searchbox-directive.js&#10;&#9;property-crunch-frontend/public/modules/search/module.js&#10;&#9;property-crunch-frontend/public/modules/search/views/searchresult.html&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/auth-service.js&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/module.js&#10;&#9;property-crunch-frontend/public/modules/shared/module.js&#10;&#9;property-crunch-frontend/public/modules/static-pages/module.js&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'integration' of https://bitbucket.org/ndy40/propertycrunch-frontend-project into integration&#10;&#10;Conflicts:&#10;&#9;property-crunch-frontend/public/modules/app.js&#10;&#9;property-crunch-frontend/public/modules/login/module.js&#10;&#9;property-crunch-frontend/public/modules/property-details/module.js&#10;&#9;property-crunch-frontend/public/modules/search/directives/searchbox-directive.js&#10;&#9;property-crunch-frontend/public/modules/search/module.js&#10;&#9;property-crunch-frontend/public/modules/search/views/searchresult.html&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/auth-service.js&#10;&#9;property-crunch-frontend/public/modules/shared/authentication/module.js&#10;&#9;property-crunch-frontend/public/modules/shared/module.js&#10;&#9;property-crunch-frontend/public/modules/static-pages/module.js&#10;" />
+>>>>>>> integration
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/../property-crunch-ui/search_results.html">
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js">
+>>>>>>> integration
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="795">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="345">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/index.php">
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js">
+>>>>>>> integration
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2640">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/controllers/services/AuthController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/../property-crunch-ui/search_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="10275">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="510">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/index.php">
+>>>>>>> integration
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="13" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/controllers/services/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37042683" vertical-offset="1257" max-vertical-offset="2040">
+          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> integration
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5945122" vertical-offset="0" max-vertical-offset="656">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../property-crunch-ui/search_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="10275">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="657">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/config/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99085367" vertical-offset="775" max-vertical-offset="1950">
+          <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox.html">
+<<<<<<< HEAD
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php">
+>>>>>>> integration
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="585">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="653">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/login/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="653">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/app/config/production/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="585">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="840">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <marker date="1414551659000" expanded="true" signature="758:1100" placeholder="{...}" />
+            <marker date="1414551659000" expanded="true" signature="929:967" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/selectbox-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/spinner-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/services/search-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2640">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2640">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22189349" vertical-offset="0" max-vertical-offset="510">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/static-pages/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3106509" vertical-offset="0" max-vertical-offset="676">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/directives/searchbox-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64349115" vertical-offset="30" max-vertical-offset="780">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37721893" vertical-offset="0" max-vertical-offset="676">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/auth-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4186391" vertical-offset="1124" max-vertical-offset="1800">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1455">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+>>>>>>> integration
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/shared/authentication/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7457887" vertical-offset="0" max-vertical-offset="1455">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+=======
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchresult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.166666" vertical-offset="1208" max-vertical-offset="1860">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/property-crunch-frontend/public/modules/search/views/searchaside.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> integration
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

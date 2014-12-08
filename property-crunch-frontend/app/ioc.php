@@ -10,3 +10,9 @@ App::bind("AccountsLogic", function ($app) {
         new \models\repositories\UserRepository()
     );
 });
+
+App::bind("PropertyLogic", function ($app) {
+    return new \models\logic\PropertyLogic(
+        new \models\repositories\PropertyRepository()
+    );
+});

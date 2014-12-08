@@ -11,4 +11,4 @@ define([
     "./directives/to-let-calculator-directive",
     "./directives/to-sell-calculator-directive",
     "./directives/comparables-directive"
-]);
+], function () {});

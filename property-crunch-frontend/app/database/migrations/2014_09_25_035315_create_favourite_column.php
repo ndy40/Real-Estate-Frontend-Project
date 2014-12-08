@@ -14,9 +14,9 @@ class CreateFavouriteColumn extends Migration {
 	 */
 	public function up()
 	{
-            Schema::table("users", function (Blueprint $table) {
-                $table->string("favourites", 100);
-            });
+        Schema::table("users", function (Blueprint $table) {
+            $table->string("favourites", 100);
+        });
 	}
 
 	/**
@@ -26,9 +26,9 @@ class CreateFavouriteColumn extends Migration {
 	 */
 	public function down()
 	{
-            Schema::table("users", function (Blueprint $table) {
-                $table->dropColumn("users");
-            });
+        Schema::table("users", function (Blueprint $table) {
+            $table->dropColumn("favourites");
+        });
 	}
 
 }

@@ -15,9 +15,9 @@ define(["../module"], function (app) {
             link : function (scope, element, attr, ngModel) {
                 scope.$watch('propertySrc', function () {
                     if (scope.propertySrc === undefined) {
-                        scope.propertySrc = 0;
+                        scope.propertySrc = {};
                     } else {
-                        scope.toSell.purchasePrice = scope.purchasePrice;
+                        //scope.toSell.purchasePrice = scope.purchasePrice;
                     }
                 });
             }

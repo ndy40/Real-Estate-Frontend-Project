@@ -1,9 +1,21 @@
 <?php
 namespace models\entities;
 
-use Cartalyst\Sentry\Users\Eloquent\User;
 
-class User extends User {
+/**
+ * Class User
+ * @package models\entities
+ *
+ * @property string first_name
+ * @property string last_name
+ * @property string email
+ * @property string password
+ * @property string id
+ * @property date last_login
+ * @property string activated
+ * @property string favourite
+ */
+class User extends \Cartalyst\Sentry\Users\Eloquent\User {
 	/**
 	 * The database table used by the model.
 	 *
@@ -17,24 +29,5 @@ class User extends User {
 	 * @var array
 	 */
 	protected $hidden = array('password', 'remember_token');
-        
-	public function addFavorite($id)
-	{
-		if (!is_array($this->favourites)) {
-			$this->favourites = array();
-		}
-	
-		if (!in_array($id, $this->favourites)) {
-			$this->favourites[] = $id;
-		}
-	}
-	
-	public function removeFavourite($id) 
-	{
-		if (in_array($id, $this->favourites)) {
-			$index = array_search($id, $this->favourites);
-			unset($this->favourites[$index]);
-		}
-	}
 
 }

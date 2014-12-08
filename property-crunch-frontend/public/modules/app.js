@@ -1,11 +1,12 @@
 /*global define */
 /**
- * Applicaiton Angular modules declaration file
+ * Applicaiton module declaration file.
  */
 
 define([
     "angular",
     "ngRoute",
+    "ngAnimate",
     //"./investors/index",
     "./login/index",
     "./property-details/index",
@@ -16,6 +17,7 @@ define([
     'use strict';
     return angular.module("PCAPP", [
         "ngRoute",
+        "ngAnimate",
         "ui.bootstrap",
         //"pcInvestors",
         "pcLogin",

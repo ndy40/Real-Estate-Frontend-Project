@@ -5,8 +5,8 @@
 (function (define) {
     'use strict';
     define(["./app"], function (app) {
-        app.config(["$routeProvider", "$locationProvider", "$provide",
-            function ($routeProvider, $locationProvider, $provide) {
+        app.config(["$routeProvider", "$locationProvider", "$provide", "$httpProvider",
+            function ($routeProvider, $locationProvider, $provide, $httpProvider) {
 
                 $routeProvider.when("/search", {
                     templateUrl : "modules/search/views/searchresult.html",
@@ -40,21 +40,21 @@
 
                 $locationProvider.html5Mode(true).hashPrefix('!');
 
-//                $httpProvider.defaults.useXDomain = true;
-//                //default content type
-//                $httpProvider.defaults.headers.post["Accept"] = "application/x-www-form-urlencoded";
-//
-//                $httpProvider.responseInterceptors.push('ajaxHttpInterceptor');
-//                var spinnerFunction = function(data, headersGetter){
-//                    $("body").append(
-//                        "<div class='loading'><div class='loader'>"
-//                        + "<img src='assets/images/loader.gif' alt='Loading.. Please Wait'>"
-//                        + "<h6>Loading.. Please Wait</h6></div></div>"
-//                    );
-//                    return data;
-//               };
-//
-//              $httpProvider.defaults.transformRequest.push(spinnerFunction);
+                $httpProvider.defaults.useXDomain = true;
+                //default content type
+                $httpProvider.defaults.headers.post["Accept"] = "application/x-www-form-urlencoded";
+
+                $httpProvider.responseInterceptors.push('ajaxHttpInterceptor');
+                var spinnerFunction = function(data, headersGetter){
+                    $("body").append(
+                        "<div class='loading'><div class='loader'>"
+                        + "<img src='assets/images/loader.gif' alt='Loading.. Please Wait'>"
+                        + "<h6>Loading.. Please Wait</h6></div></div>"
+                    );
+                    return data;
+               };
+
+              $httpProvider.defaults.transformRequest.push(spinnerFunction);
             }]);
 
         //ajax interceptor for showing Ajax loader when ajax call is being made.

@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h5>Refine your Search</h5>
+    </div>
+    <div class="panel-body">
+        <div class="row filter-row">
+            <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Minimum Price:</label>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentMinPrice" callback="setCurrentMinPrice" options="filters.minPriceList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
+        </div>
+        <div class="row filter-row">
+            <label for="property_price" class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Maximum Price:</label>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentMaxPrice" callback="setCurrentMaxPrice" options="filters.maxPriceList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
+        </div>
+        <div class="row filter-row">
+            <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Type:</label>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentType" callback="setCurrentType" options="filters.types" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
+
+        </div>
+        <div class="row filter-row">
+            <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Min Yield:</label>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentYield" callback="setCurrentYield" options="filters.yieldList" class="col-md-7 col-sm-8 col-xs-12"></pc-selectbox>
+        </div>
+        <div class="row filter-row">
+            <label class="col-md-5 col-sm-4 col-xs-12 dropdown-label">Beds:</label>
+            <pc-spinner option-selected="currentRooms" callback="setCurrentRooms" class="col-md-7 col-sm-8 col-xs-12"></pc-spinner>
+        </div>
+        <button class="btn btn-default btn-3d btn-fullwidth" ng-click="callback()">Update Results</button>
+    </div>
+</div>

@@ -11,8 +11,8 @@ define([
 ], function (ng) {
     'use strict';
     return ng.module("pcShared",  [
-        "pcAuthentication", 
-        "localStorageModule", 
+        "pcAuthentication",
+        "localStorageModule",
         "ngCookies"
     ])
     .constant("APPURL", {
