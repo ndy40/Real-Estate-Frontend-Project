@@ -13,4 +13,5 @@ define([
     "./directives/keyword-filters-directive",
     "./directives/result-options-directive",
     "./directives/pager-directive",
+    "./directives/infinite-scroll-directive"
 ]);

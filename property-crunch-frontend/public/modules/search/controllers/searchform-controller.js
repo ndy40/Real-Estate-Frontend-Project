@@ -17,6 +17,14 @@ define(["../module"], function (app) {
                 status: false,          // Setting Search Status
                 defaultStatus: false    // Setting Default Properties Statues
             };
+            
+            /**
+             * Object to Store Infinite Scroll Status
+             */
+            $scope.infiniteStatus = {
+                busy : false,
+                last : false
+            };
 
             /**
              * Get Properties from Search Service
@@ -80,5 +88,26 @@ define(["../module"], function (app) {
             * Init getProperties
             */
             $scope.getProperties();
+            
+            $scope.nextPage = function () {
+                if ($scope.infiniteStatus.busy) return;
+                $scope.infiniteStatus.busy = true;
+
+                if (!$scope.infiniteStatus.last) {
+                    SearchService.getResults().success(function(data) {
+                        if (data.data.length > 0) {
+                            $scope.searchObject.properties =
+                                $scope.searchObject.properties.concat(data.data);
+                            
+                            SearchService.setCurrentPage(SearchService.getCurrentPage()+1);
+                            $scope.infiniteStatus.busy = false;
+                        } else {
+                            $scope.infiniteStatus.busy = false;
+                            $scope.infiniteStatus.last = true;
+                        }
+                    }.bind(this));
+                }
+            };
+            
         }]);
 });

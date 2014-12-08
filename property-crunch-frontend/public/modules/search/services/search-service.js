@@ -17,6 +17,8 @@ define(["../module"], function (app) {
                 resultsPerPage  : 10 // Setting Default Properties Per Page
             };
             this.filters = {};
+            this.filtersQuery = "";
+            this.url = "";
         };
 
         /**
@@ -176,45 +178,58 @@ define(["../module"], function (app) {
             var url = APPSRCHURL.search + location + "/1/5";
             return $http.get(url);
         };
+        
+        /**
+         * CONSTRUCT FILTERS QUERY
+         */
+        SearchService.prototype.setFiltersQuery = function () {
+            if (this.filters.rooms !== undefined) {
+                this.filtersQuery += "&" + "rooms=" + this.filters.rooms;
+            }
+            if (this.filters.type !== undefined) {
+                this.filtersQuery += "&" + "type=" + this.filters.type.value;
+            }
+            if (this.filters.price_max !== undefined) {
+                this.filtersQuery += "&" + "price_max=" +
+                    this.filters.price_max.value;
+            }
+            if (this.filters.price_min !== undefined) {
+                this.filtersQuery += "&" + "price_min=" +
+                    this.filters.price_min.value;
+            }
+            if (this.filters.sort !== undefined) {
+                this.filtersQuery += "&" + "sort=" + this.filters.sort.value;
+            }
+            if (this.filters.minYield !== undefined) {
+                this.filtersQuery += "&" + "minYield=" + this.filters.minYield.value;
+            }
+        };
+        
+        /**
+         * SET URL - CONSTRUCT URL FOR API CALL
+         */
+        SearchService.prototype.setUrl = function () {
+            this.url = APPSRCHURL.search + this.keywords + "/" +
+                        this.pager.pageNumber + "/" + this.pager.resultsPerPage
+                            + "?" + "offer_type=Sale";
+        };
 
         /**
          * RETURN SEARCH RESULTS
          * @returns {Promise}
          */
         SearchService.prototype.getResults = function () {
-            var url = APPSRCHURL.search + this.keywords + "/" +
-                        this.pager.pageNumber + "/" + this.pager.resultsPerPage
-                            + "?" + "offer_type=Sale",
-                filtersQuery = "";
+            this.setFiltersQuery();
+            this.setUrl();
 
-            if (this.filters.rooms !== undefined) {
-                filtersQuery += "&" + "rooms=" + this.filters.rooms;
-            }
-            if (this.filters.type !== undefined) {
-                filtersQuery += "&" + "type=" + this.filters.type.value;
-            }
-            if (this.filters.price_max !== undefined) {
-                filtersQuery += "&" + "price_max=" +
-                    this.filters.price_max.value;
-            }
-            if (this.filters.price_min !== undefined) {
-                filtersQuery += "&" + "price_min=" +
-                    this.filters.price_min.value;
-            }
-            if (this.filters.sort !== undefined) {
-                filtersQuery += "&" + "sort=" + this.filters.sort.value;
-            }
-            if (this.filters.minYield !== undefined) {
-                filtersQuery += "&" + "minYield=" + this.filters.minYield.value;
+            if (this.filtersQuery) {
+                this.url += this.filtersQuery;
             }
 
-            if (filtersQuery) {
-                url += filtersQuery;
-            }
-
-            return $http.get(url);
+            return $http.get(this.url);
         };
-
+        
+        
         return new SearchService();
     }]);
 });

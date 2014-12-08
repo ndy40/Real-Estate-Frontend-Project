@@ -56,9 +56,11 @@
                         <span>Cheer up!</span> we found some other properties suitable for investment.
                     </div>
                 </div>
+                
                 <div id="properties_list">
-                    <article ng-repeat="property in searchObject.properties" class="property-listing">
-                        <div class="row">
+                     <div infinite-scroll='nextPage()' infinite-scroll-disabled='infiniteStatus.busy' infinite-scroll-distance='1'>
+                        <article ng-repeat="property in searchObject.properties" class="property-listing">
+                            <div class="row">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="property-img">
                                     <img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
@@ -74,22 +76,22 @@
                                 </div>
                                 <p>{{property.address}}</p>
                                 <div class="property-details-group">
-                                    <p class="beds">{{property.title}}</p>
-                                    <ul class="property-tags {{property.tags}}">
+                                    <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
+                                    <ul class="property-tags repossessed modernising auction dtv reduced">
                                         <li class="irepossessed">
-                                            <i class="icon-library icon12-library has-tooltip" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
+                                            <i class="icon-library" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
                                         </li>
                                         <li class="imodernising">
-                                            <i class="icon-tools icon12-tools has-tooltip" tooltip="Need Modernising" tooltip-placement="Need Modernising" title="Need Modernising"></i>
+                                            <i class="icon-tools" tooltip="Need Modernising" tooltip-placement="top" title="Need Modernising"></i>
                                         </li>
                                         <li class="iauction">
-                                            <i class="icon-auction icon12-auction has-tooltip" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
+                                            <i class="icon-auction" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
                                         </li>
                                         <li class="idtv">
-                                            <i class="icon-users icon12-users has-tooltip" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
+                                            <i class="icon-users" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
                                         </li>
                                         <li class="ireduced">
-                                            <i class="icon-chart icon12-chart has-tooltip" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
+                                            <i class="icon-chart" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
                                         </li>
                                     </ul>
                                 </div>
@@ -99,12 +101,16 @@
                                     Est. Rental Yield 
                                     <i class="icon-help" tooltip="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property." tooltip-placement="top" title="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property."></i>
                                 </h5>
-                                <h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
+                                <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
                             </div>
                         </div>
-                    </article>
+                        </article>
+                        <div ng-show='infiniteStatus.busy && !infiniteStatus.last'>Loading data...</div>
+                        <div ng-show='infiniteStatus.last'>No More Items..</div> 
+                    </div>
                 </div>
-                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="getProperties"></pc-pager>
+                
+                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="getProperties" class="hidden-xs"></pc-pager>
             </div>
         </div>
     </div>
