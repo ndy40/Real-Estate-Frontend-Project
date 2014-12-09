@@ -187,7 +187,7 @@ define(["../module"], function (app) {
                 this.filtersQuery += "&" + "rooms=" + this.filters.rooms;
             }
             if (this.filters.type !== undefined) {
-                this.filtersQuery += "&" + "type=" + this.filters.type.value;
+                this.filtersQuery += "&" + "type_id=" + this.filters.type.value;
             }
             if (this.filters.price_max !== undefined) {
                 this.filtersQuery += "&" + "price_max=" +
@@ -201,7 +201,7 @@ define(["../module"], function (app) {
                 this.filtersQuery += "&" + "sort=" + this.filters.sort.value;
             }
             if (this.filters.minYield !== undefined) {
-                this.filtersQuery += "&" + "minYield=" + this.filters.minYield.value;
+                this.filtersQuery += "&" + "yield=" + this.filters.minYield.value;
             }
         };
         

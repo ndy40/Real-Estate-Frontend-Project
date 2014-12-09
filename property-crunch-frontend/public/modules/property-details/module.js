@@ -1,6 +1,5 @@
-/*global define */
 /**
- * pcPropertyDetails - Property Details Module definition
+ * Property Details Module definition
  */
 
 define([

@@ -8,4 +8,4 @@ define([
     "./directives/video-slider",
     "./directives/testimonial-carousel",
     "./directives/cookie-policy"
-]);
+], function () {});

@@ -5,7 +5,6 @@
 define(["../module"], function (app) {
     'use strict';
     app.directive("pcCookiePolicy", ["$cookieStore", function ($cookieStore) {
-
         return {
             restrict : "E",
             scope: {

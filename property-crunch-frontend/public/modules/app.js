@@ -1,6 +1,6 @@
 /*global define */
 /**
- * Applicaiton Angular modules declaration file
+ * Applicaiton module declaration file.
  */
 
 define([

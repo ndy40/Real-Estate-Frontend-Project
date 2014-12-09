@@ -1,6 +1,6 @@
 /*global define */
 /**
- * pcSearch - Search Module definition file
+ * Module definition file.
  */
 
 define([
@@ -9,7 +9,7 @@ define([
     'use strict';
     return ng.module("pcSearch",  [])
         .constant("APPSRCHURL", {
-            "search"  : "http://app.propertycrunch.co/client/search/search-properties/",
+            "search"   : "http://app.propertycrunch.co/client/search/search-properties/",
             "property" : "http://app.propertycrunch.co/client/search/property/",
             "typeList" : "http://app.propertycrunch.co/client/search/property-types",
             "yieldList" : "./modules/search/filters-data/yield.json",

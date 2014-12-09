@@ -1,17 +1,17 @@
-/*global define */
-/* 
+/*global define, Exception */
+/*
  * This is the Authentication Service
- * 
+ *
  * @author Ndifreke Ekott <ndy40.ekott@gmail.com>
  */
 
 define(["./module"], function (app) {
-    'use stict';
+    'use strict';
     return app.factory("AuthService", ["$http", "$cookieStore", "AUTHURL",
         function ($http, $cookieStore, AUTHURL) {
             /**
              * AuthService Class for authenticating users.
-             * 
+             *
              * @constructor
              */
             var AuthService = function () {
@@ -24,20 +24,18 @@ define(["./module"], function (app) {
              * Get the data of the currently logged in user.
              */
             AuthService.prototype.getCurentUser = function (callback) {
-                'use strict';
                 $http.get(AUTHURL).success(callback);
             };
 
             /**
              * Authenticate a user and return a promise.
-             * 
+             *
              * @param {string} email
              * @param {string} password
              * @returns {$promise}
              */
             AuthService.prototype.authenticate = function (email, password,
                 remember) {
-                'use strict';
                 var parameters = { "email" : email, "password" : password,
                     remember : remember};
                 return $http.post(AUTHURL, parameters);
@@ -45,14 +43,13 @@ define(["./module"], function (app) {
 
             /**
              * Verify a users login and cache the data.
-             * 
+             *
              * @param {string} email
              * @param {string} password
              * @returns {auth-service_L10.AuthService.prototype.user}
              */
             AuthService.prototype.login = function (email, password, remember,
                 onSuccess, onFailure) {
-                'use strict';
                 var self = this;
 
                 if (remember === undefined) {
@@ -92,7 +89,6 @@ define(["./module"], function (app) {
             };
 
             AuthService.prototype.logout = function (onSuccess, onFailure) {
-                'use strict';
                 var url = AUTHURL + "/logout";
                 return $http.get(url).success(onSuccess).error(onFailure);
             };

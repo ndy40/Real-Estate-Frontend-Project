@@ -1,6 +1,6 @@
 /*global define */
 /**
- * pcLogin - User Login Module definition
+ * Investor Login Module definition
  */
 
 define([

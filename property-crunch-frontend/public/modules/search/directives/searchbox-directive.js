@@ -1,7 +1,6 @@
-/*global define */
 /**
- * pcSearchForm Directive - Search Form Responsible for displaying the search 
- * form across all pages.
+ * This directive will be responsible for displaying the search form across all
+ * pages.
  */
 
 define(["../module"], function (app) {

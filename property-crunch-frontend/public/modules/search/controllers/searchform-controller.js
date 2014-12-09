@@ -7,7 +7,6 @@ define(["../module"], function (app) {
     'use strict';
     app.controller("SearchFormCtrl", ["$scope", "SearchService", 
         function ($scope, SearchService) {
-
             /**
              * Object to Store Search Data
              */

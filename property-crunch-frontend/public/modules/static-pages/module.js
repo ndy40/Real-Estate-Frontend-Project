@@ -1,6 +1,5 @@
-/*global define */
 /**
- * pcStaticPages - Static Pages Module definition
+ * Property Details Module definition
  */
 
 define([
