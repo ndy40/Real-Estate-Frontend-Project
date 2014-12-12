@@ -1,0 +1,44 @@
+/*===================================================================
+  Components > Featured Info (Used on Home Page)
+====================================================================*/
+.featured-info {
+	text-align: center;
+    
+    .media {
+        margin-bottom: 40px;
+        
+        > .pull-left {
+            margin: 0;
+            float: none !important;
+        }
+        
+        .media-heading {
+            margin-bottom: 25px;
+        }
+    }
+    
+    .featured-icons {
+        font-size: 66px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+	.featured-info {
+		padding-top: 0;
+		text-align: left;
+        
+        .media {
+            margin-bottom: 40px;
+            
+            .media-heading {
+                margin-bottom: 5px;
+            }
+            
+            > .pull-left {
+                margin-right: 30px;
+                float: left !important;
+            }
+        }
+	}
+}

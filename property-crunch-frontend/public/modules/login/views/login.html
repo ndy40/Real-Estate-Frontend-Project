@@ -2,6 +2,7 @@
     <!-- nav template --> 
     <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
 </header>
+
 <section class="main-content">
     <div class="container">
         <div class="row">
@@ -9,11 +10,12 @@
                 <tabset class="login-tabs">
                     <tab heading="Log In" class="login-tab">
                         <p ng-show="!alert.failedLogin">Log In to save searches and track price changes.</p>
+                        
                         <!--Failed registration-->
                         <div role="alert" class="alert alert-danger" ng-show="alert.failedLogin">
                             <i class="icon-warning"></i>
                             <span>Registration Error!</span>
-                            <ul><li>{{alert.loginMessage}}</li></ul>
+                            {{alert.loginMessage}}
                         </div>
                         
                         <form class="defaultForm">
@@ -22,7 +24,7 @@
                                 <h5 class="control-label">Email:</h5>
                                 <div class="input-group col-sm-10 col-xs-12">
                                     <div class="icon-container">
-                                        <i class="icon-mail icon20-mail"></i>
+                                        <i class="icon-mail"></i>
                                     </div>
                                     <input type="email" name="email" ng-model="loginData.email" class="form-control form-control-icon" placeholder="joe@example.com">
                                 </div>
@@ -32,7 +34,7 @@
                                 <h5 class="control-label">Password:</h5>
                                 <div class="input-group col-sm-10 col-xs-12">
                                     <div class="icon-container">
-                                        <i class="icon-lock icon20-lock"></i>
+                                        <i class="icon-lock"></i>
                                     </div>
                                     <input type="password" name="password" ng-model="loginData.password" ng-minlength="5" ng-maxlength="15" class="form-control form-control-icon" placeholder="5 to 15 characters">
                                 </div>
@@ -46,12 +48,13 @@
                             </div>
                             
                             <div class="col-sm-offset-2">
-                                <button id="loggedIn" ng-click="login()" type="submit" class="btn btn-default btn-large goToLoggedIn">Log In</button>
+                                <button id="loggedIn" ng-click="login()" type="submit" class="btn btn-3d btn-lg">Log In</button>
                             </div>
                         </form>
                     </tab>
-                    <tab heading="Create an Account" class="create-account-tab">
+                    <tab heading="Create Account" class="create-account-tab">
                         <p ng-show="!alert.isError">Create a free account to save searches and track price changes. (It only takes a minute)</p>
+                        
                         <!--Failed registration-->
                         <div role="alert" class="alert alert-danger" ng-show="alert.isError">
                                 <i class="icon-warning"></i>
@@ -60,13 +63,14 @@
                                     <li ng-repeat="message in alert.errorMessage">{{message}}</li>
                                 </ul>
                         </div>
+                        
                         <!--successful registration-->
                         <div role="alert" class="alert alert-success" ng-show="alert.success">
                             <i class="icon-thumbsup"></i>
                             <span>Success!</span> <p>You account has being created and an email will be sent shortly.</p>
                         </div>
-                        <!--Registration form-->
                         
+                        <!--Registration form-->
                         <form class="defaultForm">
                             <div class="form-group form-field-row">
                                 <h5 class="control-label">First Name:</h5>
@@ -90,7 +94,7 @@
                                 <h5 class="control-label">Email:</h5>
                                 <div class="input-group col-sm-10 col-xs-12">
                                     <div class="icon-container">
-                                        <i class="icon-mail icon20-mail"></i>
+                                        <i class="icon-mail"></i>
                                     </div>
                                     <input type="email" name="email" class="form-control form-control-icon" placeholder="joe@example.com" ng-model="registerData.email" required>
                                 </div>
@@ -100,7 +104,7 @@
                                 <h5 class="control-label">Password:</h5>
                                 <div class="input-group col-sm-10 col-xs-12">
                                     <div class="icon-container">
-                                        <i class="icon-lock icon20-lock"></i>
+                                        <i class="icon-lock"></i>
                                     </div>
                                     <input type="password" name="password" class="form-control form-control-icon" placeholder="8 to 15 characters" ng-model="registerData.password" required>
                                 </div>
@@ -109,7 +113,7 @@
                                 <h5 class="control-label">Confirm:</h5>
                                 <div class="input-group col-sm-10 col-xs-12">
                                     <div class="icon-container">
-                                        <i class="icon-lock icon20-lock"></i>
+                                        <i class="icon-lock"></i>
                                     </div>
                                     <input type="password" name="password_confirmation" class="form-control form-control-icon" placeholder="Confirm Password" ng-model="registerData.password_confirmation" required>
                                 
@@ -119,7 +123,7 @@
                             </div>
                             
                             <div class="col-sm-offset-2">
-                                <button type="submit" class="btn btn-default btn-large goToLoggedIn" ng-click="register()">Create Account</button>
+                                <button type="submit" class="btn btn-3d btn-lg" ng-click="register()">Create Account</button>
                             </div>
                         </form>
                     </tab>

@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/home">
-        <img src="assets/images/logo.png" alt="Property Crunch Logo" />
+        <img src="assets/images/nello-logo.png" alt="nello Logo" />
       </a>
     </div>
     
@@ -21,7 +21,7 @@
             <li><a active-link="active" ng-href="/pages/list_property">List a Property</a></li>
             <li ng-hide="!navData.showLoginButton">
                 <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
-                    <i class="icon-login icon16-login"></i>
+                    <i class="icon-login"></i>
                     <span class="link-text">Log In</span>
                     <i ng-class="{'icon-arrow-down4':!dropOpenStatus, 'icon-arrow-up3':dropOpenStatus}" class="dropdown-caret"></i>
                 </a>
@@ -44,7 +44,7 @@
         <ul class="nav navbar-nav" ng-show="navData.showLogin">
             <li>
                 <a href="favourites.html">
-                    <i class="icon-star icon20-star-nav"></i>
+                    <i class="icon-star"></i>
                     <span class="badge">6</span>
                     <span class="link-text">Favourites</span>
                 </a>
@@ -68,7 +68,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<a class="feedback-btn" href="/pages/feedback">
+<a class="btn feedback-btn" href="/pages/feedback">
     <i class="icon-comment"></i>
     <span>Feedback</span>
 </a>

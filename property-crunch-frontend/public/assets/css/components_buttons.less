@@ -1,98 +1,77 @@
 /*===================================================================
   Components > Buttons
 ====================================================================*/
+@default-transition: all 0.3s ease 0s;
+
 button {
-	color: @white;
-	display: inline-block;
-	margin-bottom: 0; // For input.btn
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
 	background-image: none; 
 	border: 1px solid transparent;
-	white-space: nowrap;
-    
-	&:hover,
-	&:focus {
-		text-decoration: none;
-	}
-}
-
-button,
-.btn,
-.feedback-btn {
-	font-size: 16px;
-	line-height: 1;
-	position: relative;
-	background: @brand-primary;
-	font-weight: 300;
-	.transition(all 0.3s);
-	
-	&:hover {
-		background: @gray-dark;
-		.transition(all 0.3s);
-	}
-	
-	
-	&:active {
-		box-shadow: 0;
-	}
 }
 
 .btn {
 	color: @white;
-    min-width: 170px;
-    padding: 17px 30px;
+	font-size: 18px;
+	line-height: 1;
+	position: relative;
+	background: @brand-primary;
+	.transition(all 0.3s);
 	
 	&:hover {
+		background: darken(@brand-primary, 5%);
 		.transition(all 0.3s);
 	}
-}
-.btn-3d {
-	padding: 12px 30px;
-	box-shadow: 0 3px darken(@brand-primary, 12%);
-	
-	&:focus {
-		
-	box-shadow: 0 3px darken(@brand-primary, 12%);
-	}
-	
-	&:hover {
-		box-shadow: 0 3px darken(@gray-dark, 12%);
-	}
-}
-.btn-fullwidth {
-	font-size: 18px;
-    min-width: 100%;
-    padding: 15px 0;
-	margin-top: 20px;
-}
-
-header {
-	.btn {
-		box-shadow: 0 0;
-		
-		&:hover,
-		&:focus,
-		&:active {
-			box-shadow: 0 0;
-			//background: darken(@brand-primary, 5%);
-		}
-		&:active {
-			left: -1px;
-		}
-	}
-}
-
-
-@media (min-width: 768px) {
-	.btn {
-		font-size: 18px;
-		padding: 16px 30px;
-	}
-    .btn-3d {
-	    padding: 14px 30px;
+    
+    &.btn-sm {
+        border-radius: @border-radius-base;
     }
 }
 
+.btn-3d {
+	box-shadow: 0 5px darken(@brand-primary, 20%);
+    .transition(@default-transition);
+    
+    &:active {
+        top: 3px;
+        box-shadow: 0 0 0 darken(@brand-primary, 20%);
+        .transition(@default-transition);
+    }
+}
 
+.btn-lg {
+	font-size: 20px;
+    min-width: 270px;
+}
+
+.btn-fullwidth {
+	font-size: 18px;
+    min-width: 100%;
+	margin-top: 20px;
+}
+
+
+.feedback-btn {
+    padding: 7px;
+    position: fixed;
+    right: -80px;
+    top: 200px;
+    z-index: 9;
+    
+    .border-right-radius(0);
+    
+    i {
+        font-size: 24px;
+        position: relative;
+        top: 1px;
+    }
+    
+    span {
+        bottom: 4px;
+        margin-left: 3px;
+        position: relative;
+        font-weight: 600;
+    }
+    
+    &:hover {
+        right: 0;
+    }
+}

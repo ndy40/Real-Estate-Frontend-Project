@@ -8,7 +8,7 @@
         <link href="{{asset('assets/css/bootstrap/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
-        <title>Property Crunch</title>
+        <title>nello - a smarter way to find properties</title>
         <base href="/">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

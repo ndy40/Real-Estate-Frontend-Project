@@ -2,8 +2,6 @@
 // Variables
 // --------------------------------------------------
 
-
-
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
@@ -16,19 +14,13 @@
 
 @white:					#fff;
 
-@brand-primary:         #F6AF00;
-@brand-success:         #3C763D;
+@brand-primary:         #F44647;
+@brand-success:         #028863;
 @brand-info:            #31708F;
 @brand-warning:         #8C6200;
-@brand-danger:          #BF0404;
+@brand-danger:          #E76D65;
 
-// #00A4EF; Light Blue
-// #048ABF; Dark Blue
-// #F6AF00; Yellow
-// #D3340C; Red
-// #0ED188; Green
-// #03A678; Dark Green
-
+@brand-blue:               #299ECB;
 
 
  
@@ -92,29 +84,29 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+@padding-base-vertical:     5px;
+@padding-base-horizontal:   14px;
 
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
+@padding-large-vertical:    14px;
+@padding-large-horizontal:  30px;
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    10px;
+@padding-small-horizontal:  30px;
 
-@padding-xs-vertical:       1px;
-@padding-xs-horizontal:     5px;
+@padding-xs-vertical:       7px;
+@padding-xs-horizontal:     14px;
 
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        0;
-@border-radius-large:       0;
-@border-radius-small:       0;
+@border-radius-base:        4px;
+@border-radius-large:       6px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
 //** Global background color for active items (e.g., navs or dropdowns).
-@component-active-bg:       @brand-primary;
+@component-active-bg:       @brand-blue;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
 @caret-width-base:          4px;
@@ -147,7 +139,7 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                normal;
+@btn-font-weight:                400;
 
 @btn-default-color:              #fff;
 @btn-default-bg:                 @brand-primary;
@@ -338,7 +330,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    75px;
+@navbar-height:                    60px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -346,7 +338,7 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #fff;
-@navbar-default-bg:                rgba(0,0,0,0.9);
+@navbar-default-bg:                rgba(0, 0, 0, 0.95);
 @navbar-default-border:            transparent;
 
 // Navbar links
@@ -603,7 +595,7 @@
 //## Define alert colors, border radius, and padding.
 
 @alert-padding:               15px;
-@alert-border-radius:         @border-radius-base;
+@alert-border-radius:         @border-radius-small;
 @alert-link-font-weight:      bold;
 
 @alert-success-bg:            @state-success-bg;

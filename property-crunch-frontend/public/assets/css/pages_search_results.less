@@ -1,184 +1,84 @@
 /*===================================================================
   Pages > Search Results
 ====================================================================*/
-.search-results {
-    padding: 50px 0 50px;
+/*===================================================================
+  Pages > Search Results > Refine Filters
+====================================================================*/
+.refine-filters {
+    padding: 25px 20px;
+    
+    .filter-row {
+        margin-bottom: 15px;
+        .clearfix();
+    }
+    
+    .filter-field {
+        float: right;
+        min-width: 140px;
+    }
+    
+    .btn-fullwidth {
+        margin: 10px 0 20px;
+    }
+
 }
 
 /*===================================================================
-  Pages > Search Results > Buy to Let & Buy to Sell Tabs
+  Pages > Search Results > Keyword Filters
 ====================================================================*/
-.buy-to-tabs {
-	.bottom-20(); 
-}
-
-.dropdown-label {
-	font-size: @font-size-base;
-	line-height: 38px;
-}
-
-.filter-row {
-	.bottom-10(); 
-}
-
-#buy-to-sell {
-	h4 {
-		color: @gray-dark;
-		text-align: center;
-		margin: 50px 0;
-	}
-}
-
-
-
-/*===================================================================
-  Pages > Search Results > Filters Panel
-====================================================================*/
-.filters-list {
+.keyword-filters {
 	li {
 		margin-bottom: 15px;
-	}
-}
-.filter-checkbox {
-	label {
-		font-size: @font-size-base;
-		
-		i {
-			cursor: pointer;
-		}
-	}
-	
-	span, i {
-		float: left;
-	}
-	
-	i {
-		position: relative;
-		color: @gray-dark;
-		line-height: 1;
-		margin: 0 10px 0 7px;
-		font-size: @font-size-base;
-		
-		&.icon-help {
-			float: none;
-			top: 1px;
-			left: -5px;
-		}
-	}
+        
+        label {
+            font-size: @font-size-base;
+            
+            i {
+                cursor: pointer;
+            }
+        }
+        
+        span, i {
+            float: left;
+        }
+        
+        i {
+            position: relative;
+            color: @gray-dark;
+            line-height: 1;
+            margin: 0 10px 0 7px;
+            font-size: @font-size-base;
+            
+            &.icon-help {
+                float: none;
+                top: 1px;
+                left: -5px;
+            }
+        }
+	}        
 }
 
 /*===================================================================
-  Pages > Search Results > Sort Panel
+  Pages > Search Results > Result Options
 ====================================================================*/
-.sort-filters {
+.result-options {
 	.panel-heading {
-		background: @gray-lighter;
-		padding: 10px 26px;
+        padding: 10px 20px;
+        
 		.clearfix();
 		
-		.sort {
+		.sort-by {
 			float: left;
+            
+            .selectbox-list {
+                width: 128px;
+            }
 		}
 		
-		.number-results {
+		.results-per-page {
 			float: right;
-		}
-		
-		.sort,
-		.number-results {
-			.clearfix();
-		}
-		
-		h5,
-		.small-select {
-			float: left;
-		}
-		
-		h5 {
-			font-size: @font-size-base;
-			line-height: 30px;
-			margin: 0 15px 0 0;
-		}
+		}		
 	}
-	.small-select {
-		.custom-select {
-			position: relative;
-			height: auto;
-			width: 66px;
-			
-			button {
-				height: 30px;
-				
-				.option-selected {
-					line-height: 27px;
-				}
-				.select-arrow {
-					line-height: 30px;
-				}
-				
-				.select-arrow {
-					font-size: 24px;
-				}
-				
-			}
-			
-			.dropdown-menu {
-				top: 30px;
-   				overflow: hidden;
-				height: auto;
-				
-				> li > a {
-					padding: 3px 10px;
-				}
-			}	
-		}
-	}
-	.sort-select {
-		.custom-select {
-			width: 128px;
-		}
-	}
-}
-
-
-/*===================================================================
-  Pages > Search Results > Tags Panel
-====================================================================*/
-.info-tags {
-	
-	.panel-heading {
-		padding: 14px 10px;
-		
-		.clearfix();
-		
-		i {
-			margin-right: 10px;
-			position: relative;
-			top: 2px;
-		}
-		
-		h5 {
-			text-align: center;
-			font-weight: 500;
-			
-			span {
-				font-weight: 600;
-			}
-		}
-	}
-}
-
-
-@media (min-width: 1200) {
-	
-	.info-tags {
-		
-		.panel-heading {
-			padding: 14px 22px;
-		}
-		
-	}
-	
 }
 
 /*===================================================================
@@ -186,13 +86,21 @@
 ====================================================================*/
 .property-listing {
 	border: 1px solid @gray;
+    background: #fff;
+    border-radius: @border-radius-base;
 	padding: 20px;
 	margin-bottom: 20px;
 	position: relative;
 	height: 100%;
 
 	.clearfix();
-	
+	.transition(all 0.3s);
+    
+    &:hover {
+        background: @gray-lighter;
+        .transition(all 0.3s);
+    }
+
 	p {
 		margin-bottom: 20px;
 		
@@ -204,57 +112,182 @@
 	img {
 		width: 694px;
 	}
+    
+    .property-title-group {
+        margin: 20px 0;
+        
+        .clearfix();
+        
+        a, .add-to-fav {
+            line-height: 26px;
+        }
+        
+        a {
+            font-size: @font-size-h4;
+            margin: 0;
+            float: left;
+        }
+        
+        .add-to-fav {
+            float: right;
+            font-size: @font-size-h6;
+            
+            i {
+                font-size: 18px;
+                position: relative;
+                top: 2px;
+                margin-right: 6px;
+            }
+        }
+    }
+    
+    .property-details-group {
+        margin-bottom: 10px;
+        .clearfix();
+        
+        .beds, 
+        .property-tags {
+            float: left;
+        }
+        
+        .beds {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+    
+        .property-tags {
+            padding: 0;
+            margin: 0;
+            cursor: default;
+            
+            .clearfix();
+            
+            li {
+                float: left;
+                list-style-type: none;
+                margin-right: 15px;
+                .hide();
+            }
+            
+            i {
+                position: relative;
+                color: @gray-darker;
+                margin: 0;
+                
+                &.icon-library {
+                    font-size: 18px;
+                    top: 1px;
+                }
+                &.icon-tools {
+                    font-size: 16px;
+                }
+                &.icon-auction {
+                    font-size: 22px;
+                    top: -1px;
+                }
+                &.icon-users {
+                    font-size: 16px;
+                    top: -1px;
+                }
+                &.icon-chart {
+                    font-size: 18px;
+                }
+            }
+    
+            &.repossessed .irepossessed { .show(); }
+            &.modernising .imodernising { .show();	}
+            &.auction .iauction { .show(); }
+            &.dtv .idtv { .show(); }
+            &.reduced .ireduced { .show(); }        
+        }
+    }
+    
+    .right-section-label {
+        float: left;
+        margin: 16px 0;
+        
+        i.icon-help {
+            top: 1px;
+        }
+    }
+    
+    .right-section-value {
+        float: right;
+        color: @gray-darker;
+        font-weight: 600;	
+        width: auto;
+        text-align: center;
+        margin-bottom: 0;
+        line-height: 48px;
+            
+        span {
+            font-size: @font-size-h4;
+            font-weight: 500;
+        }
+    }
 }
-/*===================================================================
-  Pages > Search Results > Property Listing  > Price & Add to Fav
-====================================================================*/
-.property-title-group {
-	margin: 20px 0;
-	
-	.clearfix();
-	
-	a, .add-to-fav {
-		line-height: 26px;
-	}
-	
-	a {
-        font-size: @font-size-h4;
-		margin: 0;
-		float: left;
-	}
-	
-	.add-to-fav {
-		float: right;
-		font-size: @font-size-h6;
-		
-		i {
-			font-size: 18px;
-			position: relative;
-			top: 2px;
-			margin-right: 6px;
-		}
-	}
+
+@media (min-width: 640px) {
+    .property-listing {
+        .property-details-group {
+            .beds {
+                float: left;
+                margin-bottom: 10px;
+                width: auto;
+            }
+        
+            .property-tags {
+                float: right;
+                
+                li:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 768px) {
-	.property-listing p,
-	.property-title-group {
-		margin: 0 0 18px;	
-	}
-	
+	.property-listing {
+        p,
+        .property-title-group {
+            margin: 0 0 18px;	
+        }
+        
+      	.property-details-group {
+            margin-bottom: 15px;
+            
+            .beds {
+                width: 100%;
+                margin-bottom: 18px;
+            }
+            
+            .property-tags {
+                float: left;
+            }
+        }
+    }
 }
 
 @media (min-width: 992px) {
-	
-	.property-listing p,
-	.property-title-group {
-		margin: 0 0 38px;	
-	}
+	.property-listing {
+        p,
+        .property-title-group {
+            margin: 0 0 38px;	
+        }
+        
+      	.property-details-group {
+            margin-bottom: 30px;
+            
+            .beds {
+                margin-bottom: 30px;
+            }
+        }
 
+    }
 }
 
 @media (min-width: 1200px) {
-	
 	.property-listing {
 		p {
 			margin-bottom: 14px;
@@ -266,259 +299,61 @@
 				.transition(opacity 0.6s);
 			}
 		}
+        
+        .property-title-group {
+            margin: 0 0 18px 0;
+            .clearfix();
+            
+            a, .add-to-fav {
+                float: left;
+            }
+            
+            a {
+                margin: 0 18px 0 0;
+            }
+            
+            .add-to-fav {
+                font-size: @font-size-h6;
+            }
+        }
 	}
-	
-	.property-img {
-		position: relative;
-		
-		a {
-			font-size: @font-size-h6;
-			position: absolute;
-			background: rgba(0,0,0,0.7);
-			top: 0;
-			height: 100%;
-			width: 100%;
-			text-align: center;
-			color: @white;
-			
-			.opacity(0);
-			.transition(color 0.3s);
-			.transition(opacity 0.6s);
-			
-			&:hover {
-				color: @brand-primary;
-				.transition(color 0.3s);
-			}
-			
-			span {
-				display: inline-block;
-				padding: 30px;
-			}
-			
-		}
-	}
-	
-	.property-title-group {
-		margin: 0 0 18px 0;
-		.clearfix();
-		
-		a, .add-to-fav {
-			float: left;
-		}
-		
-		a {
-			margin: 0 18px 0 0;
-		}
-		
-		.add-to-fav {
-			font-size: @font-size-h6;
-		}
-	}
-	
-	
-}
-/*===================================================================
-  Pages > Search Results > Property Listing > Right Section
-====================================================================*/
-.right-section-group {
-	.clearfix();
-}
-
-.right-section-label {
-	float: left;
-    margin: 16px 0;
-	
-	i.icon-help {
-		top: 1px;
-	}
-}
-
-.right-section-value {
-	float: right;
-	color: @brand-primary;
-	border: 1px solid @brand-primary;
-	padding: 10px;
-	width: 60px;
-	margin: 0 auto;
-	font-weight: 600;
-	
-	span {
-		font-size: @font-size-h4;
-		font-weight: 500;
-	}
-	
-	&.no-border {
-		border: none;
-		width: auto;
-		text-align: center;
-		font-size: @font-size-h5;
-		font-weight: 400;
-	}
-}
-
-
-@media (min-width: 1200px) {
-	.right-section-label,
-	.right-section-value {    
-		float: none;
-	}
-	
-	.right-section-label {
-		margin: 0 0 16px 0;
-    	text-align: center;
-	}
-}
-
-/*===================================================================
-  Pages > Search Results > Property Listing > Other Details
-====================================================================*/
-.property-details-group {
-	margin-bottom: 10px;
-	
-	.clearfix();
-	
-	.beds, 
-	.property-tags {
-		float: left;
-	}
-	
-	.beds {
-		margin-bottom: 25px;
-		width: 100%;
-	}
-
-	.property-tags {
-		padding: 0;
-		margin: 0;
-		cursor: default;
-		
-		.clearfix();
-		
-		li {
-			float: left;
-			list-style-type: none;
-			margin-right: 15px;
-		}
-		
-		i {
-			position: relative;
-			color: @gray-darker;
-			margin: 0;
-			
-			&.icon-library {
-				font-size: 18px;
-				top: 1px;
-			}
-			&.icon-tools {
-				font-size: 16px;
-			}
-			&.icon-auction {
-				font-size: 22px;
-				top: -1px;
-			}
-			&.icon-users {
-				font-size: 16px;
-				top: -1px;
-			}
-			&.icon-chart {
-				font-size: 18px;
-			}
-		}
-	}
-}
-
-
-@media (min-width: 640px) {
-	
-	.property-details-group {
-		
-		.beds {
-			float: left;
-			margin-bottom: 10px;
-			width: auto;
-		}
-	
-		.property-tags {
-			float: right;
-			
-			li:last-child {
-				margin-right: 0;
-			}
-		}
-		
-	}
-
-}
-
-@media (min-width: 768px) {
-	
-	.property-details-group {
-		margin-bottom: 15px;
-		
-		.beds {
-			width: 100%;
-			margin-bottom: 18px;
-		}
-		
-		.property-tags {
-			float: left;
-		}
-	}
-	
-}
-
-@media (min-width: 992px) {
-	
-	.property-details-group {
-		margin-bottom: 30px;
-		
-		.beds {
-			margin-bottom: 30px;
-		}
-	}
-
 }
 
 @media (min-width: 1200px) {
-	
-	.property-details-group {
-		margin-bottom: 0; //14px
-		
-		.beds {
-			margin-bottom: 0;
-			width: auto;
-		}
-	
-		.property-tags {
-			margin: 0 0 0 10px;
-			
-			li {
-				margin-right: 7px;
-			}
-			
-			i {
-				
-				&.icon-library {
-					font-size: 14px;
-				}
-				&.icon-tools {
-					font-size: 12px;
-				}
-				&.icon-auction {
-					font-size: 18px;
-					top: 3px;
-				}
-				&.icon-users {
-					font-size: 12px;
-					top: 0;
-				}
-				&.icon-chart {
-					font-size: 14px;
-					top: 2px;
-				}
-			}
-		}
-	}
+    .property-listing {
+      	.property-details-group {
+            margin-bottom: 0; 
+            
+            .beds {
+                margin-bottom: 0;
+                width: auto;
+            }
+        
+            .property-tags {
+                margin: 0 0 0 10px;
+                
+                li {
+                    margin-right: 7px;
+                }
+                
+                i {
+                    &.icon-library { font-size: 14px; }
+                    &.icon-tools { font-size: 12px; }
+                    &.icon-auction { font-size: 18px; top: 3px; }
+                    &.icon-users { font-size: 12px; top: 0; }
+                    &.icon-chart { font-size: 14px; top: 2px; }
+                }
+            }
+        }
+
+        .right-section-label,
+        .right-section-value {    
+            float: none;
+        }
+    
+        .right-section-label {
+            margin: 0 0 16px 0;
+            text-align: center;
+        }
+    }
 }
-
-
