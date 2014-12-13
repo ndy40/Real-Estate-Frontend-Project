@@ -6,6 +6,9 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+@brand-blue:            #299ECB;
+@brand-red:             #F44647;
+
 @gray-darker:            #191e1d;
 @gray-dark:              #999999;
 @gray:                   #e9edeb;
@@ -14,14 +17,11 @@
 
 @white:					#fff;
 
-@brand-primary:         #F44647;
+@brand-primary:         @brand-blue;
 @brand-success:         #028863;
 @brand-info:            #31708F;
 @brand-warning:         #8C6200;
 @brand-danger:          #E76D65;
-
-@brand-blue:               #299ECB;
-
 
  
 //== Scaffolding
@@ -34,7 +34,7 @@
 @text-color:            @gray-darker;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @brand-red;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      @gray-darker; //darken(@link-color, 15%);
 
@@ -106,7 +106,7 @@
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
 //** Global background color for active items (e.g., navs or dropdowns).
-@component-active-bg:       @brand-blue;
+@component-active-bg:       @brand-primary;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
 @caret-width-base:          4px;
@@ -142,8 +142,8 @@
 @btn-font-weight:                400;
 
 @btn-default-color:              #fff;
-@btn-default-bg:                 @brand-primary;
-@btn-default-border:             @brand-primary;
+@btn-default-bg:                 @brand-red;
+@btn-default-border:             @brand-red;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -343,9 +343,9 @@
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          #fff;
+@navbar-default-link-hover-color:          @brand-primary;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #fff;
+@navbar-default-link-active-color:         @brand-primary;
 @navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
@@ -357,7 +357,7 @@
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
+@navbar-default-toggle-icon-bar-bg:        #ddd;
 @navbar-default-toggle-border-color:       #ddd;
 
 
@@ -422,21 +422,21 @@
 //
 //##
 
-@pagination-color:                     @link-color;
+@pagination-color:                     @gray-darker;
 @pagination-bg:                        #fff;
-@pagination-border:                    #ddd;
+@pagination-border:                    @gray;
 
-@pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-hover-color:               #fff;
+@pagination-hover-bg:                  @brand-red;
+@pagination-hover-border:              @brand-red;
 
 @pagination-active-color:              #fff;
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
+@pagination-active-bg:                 @brand-red;
+@pagination-active-border:             @brand-red;
 
-@pagination-disabled-color:            @gray-light;
+@pagination-disabled-color:            @gray;
 @pagination-disabled-bg:               #fff;
-@pagination-disabled-border:           #ddd;
+@pagination-disabled-border:           @gray-light;
 
 
 //== Pager
@@ -496,8 +496,8 @@
 //** Tooltip text color
 @tooltip-color:               #fff;
 //** Tooltip background color
-@tooltip-bg:                  #000;
-@tooltip-opacity:             .9;
+@tooltip-bg:                  @brand-primary;
+@tooltip-opacity:             1;
 
 //** Tooltip arrow width
 @tooltip-arrow-width:         5px;

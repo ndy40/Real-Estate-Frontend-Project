@@ -113,6 +113,9 @@ input[type="checkbox"]:focus,
 .panel {
   border: none;
 }
+form .input-group .form-control.form-control-icon {
+  border-radius: 4px;
+}
 /*===================================================================
   General Styling > Typography
 ====================================================================*/
@@ -121,7 +124,7 @@ body {
   min-width: 320px;
 }
 a {
-  font-weight: 400;
+  font-weight: 600;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -131,6 +134,11 @@ a:focus {
   text-decoration: none;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+}
+.nav a,
+.footer-links a {
+  letter-spacing: 0.25px;
+  word-spacing: 2px;
 }
 h1,
 h2,
@@ -169,6 +177,7 @@ blockquote {
   margin: 0 auto 14px;
   padding: 0 25px;
   text-align: justify;
+  border-color: #299ecb;
 }
 @media (min-width: 768px) {
   h1,
@@ -257,6 +266,17 @@ blockquote {
 }
 .dropdown-menu.open {
   display: block;
+}
+.input-group.searchbar .form-control.form-control-icon {
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.input-group.searchbar .form-control.form-control-icon:focus {
+  border: 1px solid #f44647;
+}
+.input-group.searchbar i.icon-search {
+  color: #f44647;
 }
 /*===================================================================
   General Styling > Loader
@@ -1100,20 +1120,67 @@ ul.list-arrows li:before,
   content: "\e725";
 }
 /*===================================================================
-  Components > Icons > Custom Styling
+  Components > Panels
 ====================================================================*/
-i.icon-help {
-  color: #999999;
-  font-size: 16px;
-  margin: 0 3px 0;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.panel {
+  margin-bottom: 20px;
 }
-i.icon-help:hover {
-  color: #191e1d;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.panel-heading {
+  padding: 14px 22px;
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.panel-heading h4,
+.panel-heading h5 {
+  margin-bottom: 0;
+}
+.panel-body {
+  padding: 30px 20px;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.panel-no-body .panel-heading {
+  border-radius: 4px;
+}
+.panel-default .panel-body,
+.panel-primary .panel-body,
+.panel-success .panel-body,
+.panel-info .panel-body,
+.panel-warning .panel-body,
+.panel-danger .panel-body,
+.panel-outline .panel-body {
+  border-top: none;
+}
+.panel-default > .panel-heading {
+  border: 1px solid #999999;
+  background: #999999;
+  color: #ffffff;
+}
+.panel-light .panel-heading {
+  border: 1px solid #e9edeb;
+  background: #f9f9f9;
+}
+.panel-primary .panel-heading {
+  border: 1px solid #299ecb;
+  background: #299ecb;
+}
+.panel-2 .panel-heading {
+  border: 1px solid #299ecb;
+  background: #299ecb;
+  color: #fff;
+}
+.panel-outline .panel-heading {
+  background: #ffffff;
+  border: 1px solid #299ecb;
+  color: #299ecb;
+}
+@media (min-width: 768px) {
+  .panel-body {
+    padding: 30px 25px;
+  }
 }
 /*===================================================================
   Components > Accordions
@@ -1132,8 +1199,8 @@ i.icon-help:hover {
 }
 .accordion .panel-primary .panel-heading {
   color: #fff;
-  border: 1px solid #f44647;
-  background: #f44647;
+  border: 1px solid #299ecb;
+  background: #299ecb;
 }
 .accordion .panel-title > a {
   display: block;
@@ -1247,6 +1314,16 @@ button {
 .feedback-btn:hover {
   right: 0;
 }
+@media (max-width: 767px) {
+  .btn-lg {
+    min-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .btn-lg {
+    min-width: 270px;
+  }
+}
 /*===================================================================
   Components > Carousel
 ====================================================================*/
@@ -1304,7 +1381,7 @@ button {
 }
 .carousel-nav button:hover {
   background: rgba(25, 30, 29, 0.9);
-  color: #f44647;
+  color: #299ecb;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1338,7 +1415,7 @@ button {
   transition: background 0.3s;
 }
 .recommended-carousel .item:hover h5 {
-  color: #f44647;
+  color: #299ecb;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -1364,7 +1441,7 @@ button {
   font-weight: 600;
 }
 .recommended-carousel .item h5.item-price {
-  color: #f44647;
+  color: #299ecb;
 }
 .recommended-carousel .carousel-nav button {
   background: none;
@@ -1374,7 +1451,7 @@ button {
 }
 .recommended-carousel .carousel-nav button:hover {
   background: none;
-  color: #f44647;
+  color: #299ecb;
 }
 .recommended-carousel .carousel-nav button.prev {
   float: left;
@@ -1457,6 +1534,7 @@ input[type=checkbox]:not(old) + label {
 input[type=checkbox]:not(old) + label > span {
   background: none repeat scroll 0 0 #ffffff;
   border: 1px solid #e9edeb;
+  border-radius: 4px;
   display: inline-block;
   height: 18px;
   margin: 0 0 0 -16px;
@@ -1694,7 +1772,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   min-height: 50px;
 }
 .form-control:focus {
-  border-color: #f44647;
+  border-color: #299ecb;
 }
 @media (min-width: 768px) {
   .input-group .btn {
@@ -1713,7 +1791,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   z-index: 3;
 }
 .icon-container i {
-  color: #f44647;
+  color: #299ecb;
   font-size: 22px;
   line-height: 50px;
 }
@@ -1799,7 +1877,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 .list-arrows li:before {
   content: "\e6e9";
-  color: #f44647;
+  color: #299ecb;
   font-size: 28px;
   position: relative;
   top: 7px;
@@ -1861,88 +1939,29 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 .pagination-custom li a {
   font-size: 18px;
-  color: #191e1d;
-  border: 1px solid #e9edeb;
+  border-radius: 4px;
   font-weight: 300;
   margin-right: 10px;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.pagination-custom li a.active,
 .pagination-custom li a:hover {
-  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.pagination-custom li a.active {
   background: #f44647;
-  border-color: transparent;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
+  color: #fff;
+  border: 1px solid #f44647;
 }
 .pagination-custom li a.last {
   margin-right: 0;
-}
-.pagination-custom li.disabled a,
-.pagination-custom li.disabled a:hover {
-  color: #e9edeb;
-  border: 1px solid #f2f2f2;
 }
 .pagination-custom li.next a {
   margin-left: 10px;
 }
 .pagination-custom li:last-child a {
   margin-right: 0;
-}
-/*===================================================================
-  Components > Panels
-====================================================================*/
-.panel {
-  margin-bottom: 20px;
-}
-.panel-default > .panel-heading {
-  border: 1px solid #999999;
-  background: #999999;
-  color: #ffffff;
-}
-.panel-light .panel-heading {
-  border: 1px solid #e9edeb;
-  background: #f9f9f9;
-}
-.panel-primary .panel-heading {
-  border: 1px solid #f44647;
-  background: #f44647;
-}
-.panel-2 .panel-heading {
-  border: 1px solid #299ecb;
-  background: #299ecb;
-  color: #fff;
-}
-.panel-outline .panel-heading {
-  background: #ffffff;
-  border: 1px solid #f44647;
-  color: #f44647;
-}
-.panel-body {
-  padding: 30px 20px;
-  border: 1px solid #f2f2f2;
-}
-.panel-default .panel-body,
-.panel-primary .panel-body,
-.panel-success .panel-body,
-.panel-info .panel-body,
-.panel-warning .panel-body,
-.panel-danger .panel-body,
-.panel-outline .panel-body {
-  border-top: none;
-}
-.panel-heading {
-  padding: 14px 22px;
-}
-.panel-heading h4,
-.panel-heading h5 {
-  margin-bottom: 0;
-}
-@media (min-width: 768px) {
-  .panel-body {
-    padding: 30px 25px;
-  }
 }
 /*===================================================================
   Components > Selectboxes
@@ -2007,7 +2026,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   transition: all 0s;
 }
 .selectbox .selectbox-list .dropdown-menu > li > a:hover {
-  background: #f44647;
+  background: #299ecb;
   color: #ffffff;
   -webkit-transition: all 0s;
   transition: all 0s;
@@ -2065,6 +2084,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   font-size: 16px;
   line-height: 35px;
   float: left;
+  margin-bottom: 0;
 }
 .spinner {
   position: relative;
@@ -2109,7 +2129,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   border-top-left-radius: 0;
 }
 .spinner button:hover {
-  background: #f44647;
+  background: #299ecb;
   color: #ffffff;
 }
 /*===================================================================
@@ -2179,6 +2199,19 @@ input[type=checkbox]:not(old):checked + label > span:before {
   padding: 12px 15px;
   text-align: left;
 }
+i.icon-help {
+  color: #999999;
+  font-size: 16px;
+  margin: 0 3px 0;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+i.icon-help:hover {
+  color: #299ecb;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
 /*===================================================================
   Components > Testimonials Carousel
 ====================================================================*/
@@ -2199,13 +2232,13 @@ input[type=checkbox]:not(old):checked + label > span:before {
   bottom: -50px;
 }
 .testimonials .testimonials-carousel .carousel-indicators li {
-  border: 1px solid #f44647;
+  border: 1px solid #299ecb;
   width: 13px;
   height: 13px;
   margin-right: 4px;
 }
 .testimonials .testimonials-carousel .carousel-indicators .active {
-  background-color: #f44647;
+  background-color: #299ecb;
   width: 14px;
   height: 14px;
   margin-right: 3px;
@@ -2227,7 +2260,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   background: none;
 }
 .testimonials .testimonials-carousel .carousel-control:hover span {
-  color: #f44647;
+  color: #299ecb;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -2260,7 +2293,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   height: 106px;
   width: 106px;
   border-radius: 70px;
-  border: 2px solid #f44647;
+  border: 2px solid #299ecb;
   -webkit-transform: scale(0.85, 0.85);
   -ms-transform: scale(0.85, 0.85);
   transform: scale(0.85, 0.85);
@@ -2330,7 +2363,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   Components > Header
 ====================================================================*/
 header {
-  color: #fff;
   padding-top: 60px;
 }
 .navbar-default {
@@ -2348,19 +2380,14 @@ header {
 .navbar-default .navbar-brand img {
   width: 57px;
 }
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ddd;
+.navbar-default .navbar-toggle {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
   background-color: #299ecb;
   border-color: #299ecb;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.navbar-default .navbar-toggle:hover .icon-bar,
-.navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -2376,6 +2403,9 @@ header {
   padding: 10px 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+.navbar-default .navbar-nav li a:hover {
+  color: #fff;
 }
 .navbar-default .navbar-nav li .icon-star {
   font-size: 18px;
@@ -2409,10 +2439,6 @@ header {
 .navbar-default .navbar-nav .username > a {
   text-transform: capitalize;
 }
-.navbar-default .navbar-nav .username > a i,
-.navbar-default .navbar-nav .username > a span {
-  color: #299ecb;
-}
 .navbar-default .navbar-nav .username .icon-user3 {
   font-size: 20px;
   position: relative;
@@ -2428,7 +2454,7 @@ header {
   font-size: 12px;
   min-width: 14px;
   line-height: 10px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 3px;
   top: 18px;
   left: 7px;
@@ -2463,7 +2489,6 @@ header {
   .navbar-default .navbar-nav li a {
     padding: 0;
     margin: 21px 0;
-    font-weight: 300;
     position: relative;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
@@ -2623,6 +2648,9 @@ footer h6 {
 footer h6,
 footer ul {
   margin: 0 auto;
+}
+footer a {
+  color: #299ecb;
 }
 footer ul {
   list-style-type: none;
@@ -2841,6 +2869,9 @@ footer ul li:last-child {
   margin-right: 40px;
   padding-top: 0;
 }
+.terms input[type="checkbox"]:not(old) + label > span {
+  margin-right: 5px;
+}
 .terms h6 {
   margin: 0;
 }
@@ -2983,7 +3014,7 @@ footer ul li:last-child {
   Pages > Search Results
 ====================================================================*/
 /*===================================================================
-  Pages > Search Results > Refine Filters
+  Pages > Search Results > Filters
 ====================================================================*/
 .refine-filters {
   padding: 25px 20px;
@@ -2999,16 +3030,9 @@ footer ul li:last-child {
 .refine-filters .filter-row:after {
   clear: both;
 }
-.refine-filters .filter-field {
-  float: right;
-  min-width: 140px;
-}
 .refine-filters .btn-fullwidth {
   margin: 10px 0 20px;
 }
-/*===================================================================
-  Pages > Search Results > Keyword Filters
-====================================================================*/
 .keyword-filters li {
   margin-bottom: 15px;
 }
@@ -3027,12 +3051,34 @@ footer ul li:last-child {
   color: #999999;
   line-height: 1;
   margin: 0 10px 0 7px;
-  font-size: 16px;
 }
 .keyword-filters li i.icon-help {
   float: none;
   top: 1px;
   left: -5px;
+}
+@media (min-width: 640px) and (max-width: 991px) {
+  .filters-wrap {
+    width: 50%;
+  }
+  .keyword-filters {
+    min-height: 310px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .refine-filters .selectbox.selectbox-sm .selectbox-list {
+    min-width: 100%;
+  }
+  .refine-filters .spinner .form-control {
+    width: 100px;
+  }
+  .refine-filters .btn-fullwidth {
+    margin-top: 20px;
+    padding: 10px 26px;
+  }
+  .keyword-filters li label {
+    font-size: 15px;
+  }
 }
 /*===================================================================
   Pages > Search Results > Result Options
@@ -3089,6 +3135,10 @@ footer ul li:last-child {
 }
 .property-listing p.distance {
   margin-bottom: 0;
+}
+.property-listing .property-img {
+  border-radius: 4px;
+  overflow: hidden;
 }
 .property-listing img {
   width: 694px;
@@ -3205,6 +3255,7 @@ footer ul li:last-child {
 }
 .property-listing .right-section-label i.icon-help {
   top: 1px;
+  margin: 0;
 }
 .property-listing .right-section-value {
   float: right;
@@ -3249,20 +3300,8 @@ footer ul li:last-child {
   }
 }
 @media (min-width: 992px) {
-  .property-listing p,
-  .property-listing .property-title-group {
-    margin: 0 0 38px;
-  }
-  .property-listing .property-details-group {
-    margin-bottom: 30px;
-  }
-  .property-listing .property-details-group .beds {
-    margin-bottom: 30px;
-  }
-}
-@media (min-width: 1200px) {
   .property-listing p {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
   .property-listing:hover .property-img a {
     opacity: 1;
@@ -3271,7 +3310,7 @@ footer ul li:last-child {
     transition: opacity 0.6s;
   }
   .property-listing .property-title-group {
-    margin: 0 0 18px 0;
+    margin: 0 0 15px 0;
   }
   .property-listing .property-title-group:before,
   .property-listing .property-title-group:after {
@@ -3291,8 +3330,6 @@ footer ul li:last-child {
   .property-listing .property-title-group .add-to-fav {
     font-size: 14px;
   }
-}
-@media (min-width: 1200px) {
   .property-listing .property-details-group {
     margin-bottom: 0;
   }
@@ -3331,6 +3368,14 @@ footer ul li:last-child {
   .property-listing .right-section-label {
     margin: 0 0 16px 0;
     text-align: center;
+  }
+}
+@media (min-width: 1200px) {
+  .property-listing p {
+    margin-bottom: 14px;
+  }
+  .property-listing .property-title-group {
+    margin: 0 0 18px 0;
   }
 }
 /*===================================================================

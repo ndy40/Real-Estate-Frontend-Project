@@ -13,11 +13,11 @@ button {
 	font-size: 18px;
 	line-height: 1;
 	position: relative;
-	background: @brand-primary;
+	background: @brand-red;
 	.transition(all 0.3s);
 	
 	&:hover {
-		background: darken(@brand-primary, 5%);
+		background: darken(@brand-red, 5%);
 		.transition(all 0.3s);
 	}
     
@@ -27,12 +27,12 @@ button {
 }
 
 .btn-3d {
-	box-shadow: 0 5px darken(@brand-primary, 20%);
+	box-shadow: 0 5px darken(@brand-red, 20%);
     .transition(@default-transition);
     
     &:active {
         top: 3px;
-        box-shadow: 0 0 0 darken(@brand-primary, 20%);
+        box-shadow: 0 0 0 darken(@brand-red, 20%);
         .transition(@default-transition);
     }
 }
@@ -73,5 +73,18 @@ button {
     
     &:hover {
         right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-lg {
+        min-width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .btn-lg {
+        min-width: 270px;
     }
 }

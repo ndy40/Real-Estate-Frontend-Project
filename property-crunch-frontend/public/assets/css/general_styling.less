@@ -34,6 +34,11 @@ input[type="checkbox"]:focus,
 	border: none;
 }
 
+form .input-group .form-control.form-control-icon {
+    border-radius: @border-radius-base;
+}
+
+
 /*===================================================================
   General Styling > Typography
 ====================================================================*/
@@ -45,7 +50,7 @@ body {
 }
 
 a {
-	font-weight: 400;
+	font-weight: 600;
 	.transition(color 0.3s);
 	
 	&:hover, &:focus {
@@ -53,6 +58,13 @@ a {
 		text-decoration: none;
 		.transition(color 0.3s);
 	}
+}
+
+.nav, .footer-links {
+    a {
+        letter-spacing: 0.25px;
+        word-spacing: 2px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,6 +90,7 @@ blockquote {
 	margin: 0 auto 14px;
 	padding: 0 25px;
     text-align: justify;
+    border-color: @brand-blue;
 }
 
 @media (min-width: 768px) {	
@@ -158,6 +171,21 @@ blockquote {
 
 .dropdown-menu.open {
     display: block;
+}
+
+.input-group.searchbar  {
+    .form-control.form-control-icon {
+        border-radius: @border-radius-base;
+        .border-right-radius(0);
+        
+        &:focus {
+            border: 1px solid @brand-red;
+        }
+    }
+    
+    i.icon-search {
+        color: @brand-red;
+    }
 }
 
 /*===================================================================

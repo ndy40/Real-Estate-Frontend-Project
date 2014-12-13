@@ -2,7 +2,7 @@
   Pages > Search Results
 ====================================================================*/
 /*===================================================================
-  Pages > Search Results > Refine Filters
+  Pages > Search Results > Filters
 ====================================================================*/
 .refine-filters {
     padding: 25px 20px;
@@ -12,20 +12,11 @@
         .clearfix();
     }
     
-    .filter-field {
-        float: right;
-        min-width: 140px;
-    }
-    
     .btn-fullwidth {
         margin: 10px 0 20px;
     }
-
 }
 
-/*===================================================================
-  Pages > Search Results > Keyword Filters
-====================================================================*/
 .keyword-filters {
 	li {
 		margin-bottom: 15px;
@@ -47,7 +38,6 @@
             color: @gray-dark;
             line-height: 1;
             margin: 0 10px 0 7px;
-            font-size: @font-size-base;
             
             &.icon-help {
                 float: none;
@@ -56,6 +46,37 @@
             }
         }
 	}        
+}
+
+@media (min-width: 640px) and (max-width: 991px) {
+    .filters-wrap  {
+        width: 50%;
+    }
+    
+    .keyword-filters {
+        min-height: 310px;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .refine-filters {
+        .selectbox.selectbox-sm .selectbox-list {
+            min-width: 100%;
+        }
+        
+        .spinner .form-control {
+            width: 100px;
+        }
+        
+        .btn-fullwidth {
+            margin-top: 20px;
+            padding: 10px 26px;
+        }
+    }
+    .keyword-filters li label {
+        font-size: 15px;
+    }
 }
 
 /*===================================================================
@@ -109,6 +130,11 @@
 		}
 	}
 	
+    .property-img {
+        border-radius: @border-radius-base;
+        overflow: hidden;
+    }
+    
 	img {
 		width: 694px;
 	}
@@ -208,6 +234,7 @@
         
         i.icon-help {
             top: 1px;
+            margin: 0;
         }
     }
     
@@ -271,26 +298,8 @@
 
 @media (min-width: 992px) {
 	.property-listing {
-        p,
-        .property-title-group {
-            margin: 0 0 38px;	
-        }
-        
-      	.property-details-group {
-            margin-bottom: 30px;
-            
-            .beds {
-                margin-bottom: 30px;
-            }
-        }
-
-    }
-}
-
-@media (min-width: 1200px) {
-	.property-listing {
 		p {
-			margin-bottom: 14px;
+			margin-bottom: 13px;
 		}
 		
 		&:hover {
@@ -301,7 +310,7 @@
 		}
         
         .property-title-group {
-            margin: 0 0 18px 0;
+            margin: 0 0 15px 0;
             .clearfix();
             
             a, .add-to-fav {
@@ -316,11 +325,7 @@
                 font-size: @font-size-h6;
             }
         }
-	}
-}
-
-@media (min-width: 1200px) {
-    .property-listing {
+        
       	.property-details-group {
             margin-bottom: 0; 
             
@@ -355,5 +360,13 @@
             margin: 0 0 16px 0;
             text-align: center;
         }
+    }
+}
+
+@media (min-width: 1200px) {
+	.property-listing {
+		p { margin-bottom: 14px; }
+        
+        .property-title-group { margin: 0 0 18px 0; }
     }
 }

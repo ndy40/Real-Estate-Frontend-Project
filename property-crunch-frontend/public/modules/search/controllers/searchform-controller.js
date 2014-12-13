@@ -21,7 +21,7 @@ define(["../module"], function (app) {
              * Object to Store Infinite Scroll Status
              */
             $scope.infiniteStatus = {
-                busy : false,
+                busy : true,
                 last : false
             };
 
@@ -62,9 +62,9 @@ define(["../module"], function (app) {
                     $scope.searchObject.defaultStatus = false;
                     $scope.searchObject.properties = data.data;
                     $scope.searchObject.count = data.count;
-
                     // Cache Results
                     SearchService.cacheResults(data);
+                    $scope.infiniteStatus.busy = false;
                 } else {
                     $scope.searchObject.status = false;
                     $scope.getDefaultProperties();
@@ -81,6 +81,7 @@ define(["../module"], function (app) {
                 $scope.searchObject.defaultStatus = true;
                 $scope.searchObject.properties = data.data;
                 $scope.searchObject.count = data.count;
+                $scope.infiniteStatus.busy = false;
             };
             
             /**
@@ -89,22 +90,23 @@ define(["../module"], function (app) {
             $scope.getProperties();
             
             $scope.nextPage = function () {
-                if ($scope.infiniteStatus.busy) return;
-                $scope.infiniteStatus.busy = true;
-
-                if (!$scope.infiniteStatus.last) {
-                    SearchService.getResults().success(function(data) {
-                        if (data.data.length > 0) {
-                            $scope.searchObject.properties =
-                                $scope.searchObject.properties.concat(data.data);
-                            
-                            SearchService.setCurrentPage(SearchService.getCurrentPage()+1);
-                            $scope.infiniteStatus.busy = false;
-                        } else {
-                            $scope.infiniteStatus.busy = false;
-                            $scope.infiniteStatus.last = true;
-                        }
-                    }.bind(this));
+                if (!$scope.infiniteStatus.busy) {
+                    $scope.infiniteStatus.busy = true;
+                    if (!$scope.infiniteStatus.last) {
+                        // Increment Page Num
+                        SearchService.setCurrentPage(SearchService.getCurrentPage()+1);
+                        // Get Results for The Next Page
+                        SearchService.getResults().success(function(data) {
+                            if (data.data.length > 0) {
+                                $scope.searchObject.properties =
+                                    $scope.searchObject.properties.concat(data.data);
+                                $scope.infiniteStatus.busy = false;
+                            } else {
+                                $scope.infiniteStatus.busy = false;
+                                $scope.infiniteStatus.last = true;
+                            }
+                        }.bind(this));
+                    }
                 }
             };
             

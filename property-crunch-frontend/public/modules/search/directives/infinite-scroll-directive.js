@@ -73,7 +73,7 @@ define(["../module"], function (app) {
                             $window.unbind('scroll');
                         }
                     };
-                    
+                    runOnMobileOnly();
                     $window.on('resize', runOnMobileOnly);
                 }
             };

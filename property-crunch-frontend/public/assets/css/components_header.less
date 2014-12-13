@@ -5,7 +5,6 @@
 @header-height: 60px;
 
 header {
-	color: #fff;
     padding-top: @header-height;
 }
 
@@ -27,21 +26,13 @@ header {
     }
     
     .navbar-toggle {
-		
-        .icon-bar {
-			background-color: #ddd;
-		}
+	    .transition(all 0.3s);
 		
 		&:hover, 
 		&:focus {
 			background-color: @brand-blue;
 			border-color: @brand-blue;
 			.transition(all 0.3s);
-			
-			.icon-bar {
-				background-color: #fff;
-				.transition(all 0.3s);
-			}
 		}
 	}
     
@@ -56,6 +47,10 @@ header {
                 margin: 0 20px;
                 padding: 10px 0;
                 .transition(all 0.3s);
+                
+                &:hover {
+                    color: #fff;
+                }
             }
             
             .icon-star {
@@ -100,11 +95,6 @@ header {
         .username {
             > a {
                 text-transform: capitalize;
-                
-                i, span {
-                    color: @brand-blue;
-                }
-                
             }
             
             .icon-user3 {
@@ -125,7 +115,7 @@ header {
             font-size: 12px;
             min-width: 14px;
             line-height: 10px;
-            font-weight: 300;
+            font-weight: 400;
             padding: 3px;
             top: 18px;
             left: 7px;
@@ -166,7 +156,6 @@ header {
                 a {
                     padding: 0;
                     margin: 21px 0;
-                    font-weight: 300;
                     position: relative;
                     
                     .transition(color 0.3s);
