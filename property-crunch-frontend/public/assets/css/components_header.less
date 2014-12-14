@@ -2,18 +2,19 @@
   Components > Header
 ====================================================================*/
 // Variables // 
-@header-height: 60px;
-
-header {
-    padding-top: @header-height;
-}
+//@header-height: 60px;
+//
+//header {
+//    padding-top: @header-height;
+//}
+//
 
 .navbar-default {
-	width: 100%;
 	margin-bottom: 0;
-	position: absolute;
-    margin-top: -@header-height;
 	z-index: 5;
+//	width: 100%;
+//	position: absolute;
+//    margin-top: -@header-height;
 	
     .navbar-brand {
         font-size: 24px;
@@ -131,7 +132,7 @@ header {
 
 @media (min-width: 768px) {
     .navbar-default {
-        float: right;
+        //float: right;
         padding: 0;
             
         .navbar-collapse {
@@ -246,10 +247,6 @@ header {
 	background: 
 		url(../images/header-bg-pattern.png) repeat fixed center 0,
 		url(../images/header-bg.jpg) fixed center 0;
-		
-	#search {
-		margin-top: -1px;
-	}
 }
 
 
@@ -278,28 +275,51 @@ header {
 }
 
 .search-header {
-	background: 
-		url(../images/header-bg-pattern.png) repeat fixed center 0,
-		url(../images/search_banner.jpg) fixed center 0;
-	
-	height: 260px;
+	background: url(../images/search_banner.jpg) fixed center 0;
+    padding: 50px 0 35px;
 }
 
 .search-content {
-	padding: 50px 0 25px;
 	.text-center();
 	
 	.input-group {
-		.bottom-20();
+		.bottom-10();
 	}
 	
 	.searchbar-bottom {
 		text-align: center;
-		font-size: @font-size-h5;		
+		font-size: @font-size-h5;	
+		.bottom-10();
+        .clearfix();
 		
-		a:hover, a:focus {
-			color: @white;
-		}
+        
+        .advanced-search,
+        .result_count {
+            line-height: 1.1;
+            float: left;
+            text-shadow: 1px 1px 1px #000;	
+        }
+        
+        .advanced-search {
+            font-weight: 700;
+            letter-spacing: 0.35px;
+            margin-right: 20px;
+		    .bottom-10();
+            .transition(all 0.3s);
+            
+            &:hover {
+                .transition(all 0.3s);
+            }
+            
+            &:focus {
+                color: @brand-red;
+            }
+             
+        }
+         
+        .result_count {
+            margin-bottom: 0;	
+        }
 		
 		i {
 			font-size: 28px;
@@ -318,10 +338,16 @@ header {
 	border-right: none;
 }
 
-@media (min-width: 360px) {
-	.search-content {
+
+@media (min-width: 480px) {
+    .search-content {
 		.searchbar-bottom {
-			text-align: right;
+			 .advanced-search {
+                float: left;
+             }
+            .result_count {
+                float: right;
+            }
 		}	
 	}
 }

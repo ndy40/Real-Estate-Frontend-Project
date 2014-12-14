@@ -278,6 +278,29 @@ blockquote {
 .input-group.searchbar i.icon-search {
   color: #f44647;
 }
+@media (max-width: 479px) {
+  .searchbar .form-control.form-control-icon {
+    padding-left: 15px;
+  }
+  .searchbar .icon-container.input-icon {
+    display: none;
+  }
+  .searchbar .input-group-btn .btn {
+    padding: 12px 11px 11px;
+  }
+  .searchbar .input-group-btn .btn span {
+    display: none;
+  }
+  .searchbar .input-group-btn .btn i.icon-search.button-icon {
+    color: #fff;
+    font-size: 24px;
+  }
+}
+@media (min-width: 480px) {
+  .searchbar .input-group-btn .btn i.icon-search.button-icon {
+    display: none;
+  }
+}
 /*===================================================================
   General Styling > Loader
 ====================================================================*/
@@ -1761,7 +1784,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 .input-group .btn {
   min-width: 100%;
-  padding: 17px 11px;
+  padding: 14px 11px;
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
@@ -1774,7 +1797,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 .form-control:focus {
   border-color: #299ecb;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .input-group .btn {
     padding: 15px 11px;
   }
@@ -1817,7 +1840,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   Components > Jumbotron
 ====================================================================*/
 .jumbotron {
-  padding: 50px 0 10px;
+  padding: 70px 0 80px;
   margin: 0;
   text-align: center;
 }
@@ -2362,14 +2385,8 @@ i.icon-help:hover {
 /*===================================================================
   Components > Header
 ====================================================================*/
-header {
-  padding-top: 60px;
-}
 .navbar-default {
-  width: 100%;
   margin-bottom: 0;
-  position: absolute;
-  margin-top: -60px;
   z-index: 5;
 }
 .navbar-default .navbar-brand {
@@ -2465,7 +2482,6 @@ header {
 }
 @media (min-width: 768px) {
   .navbar-default {
-    float: right;
     padding: 0;
   }
   .navbar-default .navbar-collapse {
@@ -2560,9 +2576,6 @@ header {
 .home-header {
   background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
 }
-.home-header #search {
-  margin-top: -1px;
-}
 /*===================================================================
   Components > Header > Lern More Header
 ====================================================================*/
@@ -2585,23 +2598,51 @@ header {
   z-index: 9;
 }
 .search-header {
-  background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/search_banner.jpg) fixed center 0;
-  height: 260px;
+  background: url(../images/search_banner.jpg) fixed center 0;
+  padding: 50px 0 35px;
 }
 .search-content {
-  padding: 50px 0 25px;
   text-align: center;
 }
 .search-content .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .search-content .searchbar-bottom {
   text-align: center;
   font-size: 18px;
+  margin-bottom: 10px;
 }
-.search-content .searchbar-bottom a:hover,
-.search-content .searchbar-bottom a:focus {
-  color: #ffffff;
+.search-content .searchbar-bottom:before,
+.search-content .searchbar-bottom:after {
+  content: " ";
+  display: table;
+}
+.search-content .searchbar-bottom:after {
+  clear: both;
+}
+.search-content .searchbar-bottom .advanced-search,
+.search-content .searchbar-bottom .result_count {
+  line-height: 1.1;
+  float: left;
+  text-shadow: 1px 1px 1px #000;
+}
+.search-content .searchbar-bottom .advanced-search {
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.search-content .searchbar-bottom .advanced-search:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.search-content .searchbar-bottom .advanced-search:focus {
+  color: #f44647;
+}
+.search-content .searchbar-bottom .result_count {
+  margin-bottom: 0;
 }
 .search-content .searchbar-bottom i {
   font-size: 28px;
@@ -2617,9 +2658,12 @@ header {
   border-top-right-radius: 0;
   border-right: none;
 }
-@media (min-width: 360px) {
-  .search-content .searchbar-bottom {
-    text-align: right;
+@media (min-width: 480px) {
+  .search-content .searchbar-bottom .advanced-search {
+    float: left;
+  }
+  .search-content .searchbar-bottom .result_count {
+    float: right;
   }
 }
 /*===================================================================
@@ -3503,6 +3547,7 @@ footer ul li:last-child {
 .property-links .panel-heading {
   padding-top: 20px;
   padding-bottom: 20px;
+  border-color: #f44647;
 }
 .property-links ul li {
   width: 100%;

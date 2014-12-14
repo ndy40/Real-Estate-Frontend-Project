@@ -188,6 +188,42 @@ blockquote {
     }
 }
 
+@media (max-width: 479px) {
+    .searchbar  {
+        .form-control.form-control-icon {
+            padding-left: 15px;
+        }
+        .icon-container.input-icon {
+            display: none;
+        }
+        
+        .input-group-btn .btn  {
+            padding: 12px 11px 11px;
+             
+            span {
+                display: none;
+            }
+
+            i.icon-search.button-icon {
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .searchbar  {
+        .input-group-btn .btn  {
+            i.icon-search.button-icon {
+                display: none;
+            }
+        }
+    }
+
+}
+
+
 /*===================================================================
   General Styling > Loader
 ====================================================================*/

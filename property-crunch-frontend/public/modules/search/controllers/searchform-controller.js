@@ -24,7 +24,9 @@ define(["../module"], function (app) {
                 busy : true,
                 last : false
             };
-
+            
+            $scope.advancedSearchStatus = false;
+            
             /**
              * Get Properties from Search Service
              *
@@ -89,6 +91,22 @@ define(["../module"], function (app) {
             */
             $scope.getProperties();
             
+            
+            $scope.advanceSearch = function() {
+                $scope.infiniteStatus.busy = true;
+                $scope.advancedSearchStatus = true;
+            };
+            
+            $scope.closeAdvancedSearch = function() {
+                $scope.getProperties();
+                $scope.infiniteStatus.busy = false;
+                $scope.advancedSearchStatus = false;
+            };
+            
+            
+            /**
+            * Infinite Properties on Mobile
+            */
             $scope.nextPage = function () {
                 if (!$scope.infiniteStatus.busy) {
                     $scope.infiniteStatus.busy = true;
