@@ -46,15 +46,12 @@
 
                 $httpProvider.responseInterceptors.push('ajaxHttpInterceptor');
                 var spinnerFunction = function(data, headersGetter){
-                    $("body").append(
-                        "<div class='loading'><div class='loader'>"
-                        + "<img src='assets/images/loader.gif' alt='Loading.. Please Wait'>"
-                        + "<h6>Loading.. Please Wait</h6></div></div>"
-                    );
+                    $("body").addClass('body-loading');
+                    $("body div.loading").removeClass('hide');
                     return data;
-               };
+                };
 
-              $httpProvider.defaults.transformRequest.push(spinnerFunction);
+                $httpProvider.defaults.transformRequest.push(spinnerFunction);
             }]);
 
         //ajax interceptor for showing Ajax loader when ajax call is being made.
@@ -62,12 +59,14 @@
             return function (promise) {
                 return promise.then(function (response) {
                     //do something on success
-                    $("body div.loading").remove();
+                    $("body div.loading").addClass('hide');
+                    $("body").removeClass('body-loading');
+                    
                     return response;
                 },
                     function (response) {
-                        $("body div.loading").remove();
-
+                        $("body div.loading").addClass('hide');
+                        $("body").removeClass('body-loading');
                         return $q.reject(response);
                     });
             };
@@ -84,6 +83,17 @@
                     $rootScope.navData.showLoginButton = false;
                 }
             });
+        }]);
+        
+        
+        // ScrollToTop Fix for Anchor Tags
+        // Src: http://codepen.io/jonashartmann/pen/kBqmj
+        app.run(["$rootScope", "$location", "$anchorScroll", "$routeParams", 
+            function($rootScope, $location, $anchorScroll, $routeParams) {
+                $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+                    $location.hash($routeParams.scrollTo);
+                    $anchorScroll();  
+                });
         }]);
 
         return app;

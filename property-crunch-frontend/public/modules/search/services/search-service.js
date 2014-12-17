@@ -183,6 +183,8 @@ define(["../module"], function (app) {
          * CONSTRUCT FILTERS QUERY
          */
         SearchService.prototype.setFiltersQuery = function () {
+            this.filtersQuery = ""; // Clearing previous query
+            
             if (this.filters.rooms !== undefined) {
                 this.filtersQuery += "&" + "rooms=" + this.filters.rooms;
             }

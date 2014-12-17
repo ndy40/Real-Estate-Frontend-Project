@@ -122,6 +122,7 @@ form .input-group .form-control.form-control-icon {
 body {
   font-weight: 300;
   min-width: 320px;
+  overflow-x: hidden;
 }
 a {
   font-weight: 600;
@@ -301,24 +302,31 @@ blockquote {
     display: none;
   }
 }
+@media (min-width: 768px) {
+  .infinite-notifications {
+    display: none;
+  }
+}
 /*===================================================================
   General Styling > Loader
 ====================================================================*/
 .loading {
-  background: #fff;
-  position: absolute;
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+  position: fixed;
   z-index: 7;
   width: 100%;
   height: 100%;
 }
 .loading .loader {
-  text-align: center;
   margin-top: 230px;
 }
 .loading .loader img {
   width: 64px;
   height: 64px;
   margin: 0 auto;
+}
+.loader {
+  text-align: center;
 }
 .body-loading {
   overflow: hidden;
@@ -1431,6 +1439,9 @@ button {
 .recommended-carousel .item {
   margin: 0 30px 0 0;
   position: relative;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 4px;
+  overflow: hidden;
 }
 .recommended-carousel .item:hover .item-overlay {
   background: rgba(0, 0, 0, 0.8);
@@ -1462,9 +1473,6 @@ button {
 .recommended-carousel .item h5 span,
 .recommended-carousel .item h5.item-price {
   font-weight: 600;
-}
-.recommended-carousel .item h5.item-price {
-  color: #299ecb;
 }
 .recommended-carousel .carousel-nav button {
   background: none;
@@ -1519,6 +1527,27 @@ button {
 @media (min-width: 1200px) {
   .recommended-carousel .item h5 {
     margin-bottom: 5px;
+  }
+}
+/*===================================================================
+  Components > Carousel > Reccomended Properties Carousel > Blink Text
+====================================================================*/
+.swipe-notification {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation-duration: 800ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+    color: #191e1d;
+  }
+  to {
+    color: #299ecb;
   }
 }
 /*===================================================================

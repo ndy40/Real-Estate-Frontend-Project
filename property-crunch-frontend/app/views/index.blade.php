@@ -20,6 +20,13 @@
     
     </head>
     <body>
+        <!-- Loader -->
+        <div class="loading">
+            <div class="loader">
+                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">
+                <h6>Loading.. Please Wait</h6>
+            </div>
+        </div>   
         <!-- contents go in here. -->
         <ng-view></ng-view>
 
