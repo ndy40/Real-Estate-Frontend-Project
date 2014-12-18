@@ -17,18 +17,56 @@ define(["../module"], function (app) {
                 resultsPerPage  : 10 // Setting Default Properties Per Page
             };
             this.filters = {};
+            this.filtersCache = {
+                typeList : "",
+                yieldList : "",
+                priceList : ""
+            };      // To cache Filters List
             this.filtersQuery = "";
             this.url = "";
         };
 
         /**
-         * CACHING SERVICE
+         * CACHING SERVICE For Results
          */
         SearchService.prototype.cacheResults = function (results) {
             this.results = results;
         };
         SearchService.prototype.getCache = function () {
             return this.results;
+        };
+        SearchService.prototype.clearCache = function () {
+            this.results = {};
+        };
+        
+        /**
+         * CACHING SERVICE For Filters Lists
+         */
+        SearchService.prototype.cacheTypeList = function (data) {
+            this.filtersCache.typeList = data;
+        };
+        SearchService.prototype.cacheYieldList = function (data) {
+            this.filtersCache.yieldList = data;
+        };
+        SearchService.prototype.cachePriceList = function (data) {
+            this.filtersCache.priceList = data;
+        };
+        
+        SearchService.prototype.getTypeListCache = function () {
+            return this.filtersCache.typeList;
+        };
+        SearchService.prototype.getYieldListCache = function () {
+            return this.filtersCache.yieldList;
+        };
+        SearchService.prototype.getPriceListCache = function () {
+            return this.filtersCache.priceList;
+        };
+        
+        /**
+         * CLEAR CACHE for Filters
+         */
+        SearchService.prototype.clearFilters = function () {
+            this.filters = {};
         };
 
         /**
@@ -46,7 +84,6 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.setCurrentPage = function (pageNumber) {
             this.pager.pageNumber = pageNumber;
-            this.results = {}; // Clear Cache
         };
         SearchService.prototype.getCurrentPage = function () {
             return this.pager.pageNumber;
@@ -77,35 +114,28 @@ define(["../module"], function (app) {
         // Used by Refine Filters
         SearchService.prototype.setCurrentRooms = function (rooms) {
             this.filters.rooms = rooms;
-            this.results = {}; // Clear Cache
         };
         SearchService.prototype.setCurrentType = function (type) {
             this.filters.type = type;
-            this.results = {}; // Clear Cache
         };
         SearchService.prototype.setCurrentMaxPrice = function (maxPrice) {
             this.filters.price_max = maxPrice;
-            this.results = {}; // Clear Cache
         };
         SearchService.prototype.setCurrentMinPrice = function (minPrice) {
             this.filters.price_min = minPrice;
-            this.results = {}; // Clear Cache
         };
         SearchService.prototype.setCurrentYield = function (minYield) {
             this.filters.minYield = minYield;
-            this.results = {}; // Clear Cache
         };
         // Used by Result Option Filters
         SearchService.prototype.setCurrentSortOrder = function (order) {
             this.filters.sort = order;
-            this.results = {}; // Clear Cache
         };
         // Used by Result Option Filters & Pagination
         SearchService.prototype.setCurrentResultsPerPage =
             function (resultsPerPage) {
                 this.filters.resultsPerPage = resultsPerPage;
                 this.pager.resultsPerPage = resultsPerPage.value;
-                this.results = {}; // Clear Cache
             };
 
         /**
@@ -113,6 +143,7 @@ define(["../module"], function (app) {
          */
         // Used by Refine Filters
         SearchService.prototype.getCurrentRooms = function () {
+            console.log(this.filters.rooms);
             if (this.filters.rooms !== undefined) {
                 return this.filters.rooms;
             } else {
@@ -208,6 +239,13 @@ define(["../module"], function (app) {
         };
         
         /**
+         * GET FILTERS QUERY - To check if Query was made
+         */
+        SearchService.prototype.getFiltersQuery = function () {
+            return this.filtersQuery;
+        };
+        
+        /**
          * SET URL - CONSTRUCT URL FOR API CALL
          */
         SearchService.prototype.setUrl = function () {
@@ -225,12 +263,18 @@ define(["../module"], function (app) {
             this.setUrl();
 
             if (this.filtersQuery) {
-                this.url += this.filtersQuery;
+                return $http.get(this.url + this.filtersQuery);
+            } else {
+                return $http.get(this.url);
             }
-
-            return $http.get(this.url);
         };
         
+        /**
+         * TEST Location - To check if Location returned Zero Results
+         */
+        SearchService.prototype.testLocation = function () {
+            return $http.get(this.url);
+        };
         
         return new SearchService();
     }]);

@@ -12,7 +12,6 @@
                    <div class="searchbar-bottom">
                         <a href="" class="visible-xs advanced-search" ng-click="advanceSearch()">Advanced Search</a>
                         <h5 ng-show="searchObject.status" class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
-                        
                     </div>
                 </div>
             </div>
@@ -25,15 +24,15 @@
         <div class="row">
             <aside class="col-md-3" ng-class="{'hidden-xs': !advancedSearchStatus}">
                 <div class="row">
-                    <pc-refine-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="getProperties"></pc-refine-filters>
-                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="getProperties"></pc-keyword-filters>
+                    <pc-refine-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
+                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>
                 </div>
-                <pc-result-options class="visible-xs" callback="getProperties"></pc-result-options>
+                <pc-result-options class="visible-xs" callback="updateFilters"></pc-result-options>
                 <button class="btn btn-sm btn-3d btn-fullwidth visible-xs" ng-click="closeAdvancedSearch()">Update Results</button>
             </aside>
             
-            <div class="col-md-9" ng-class="{'hidden-xs': advancedSearchStatus}">
-                <pc-result-options class="hidden-xs" callback="getProperties"></pc-result-options>
+            <div class="col-md-9" ng-class="{'hidden-xs': searchObject.advSearchStatus}">
+                <pc-result-options class="hidden-xs" callback="updateFilters"></pc-result-options>
                 
                 <!--<div class="row" ng-show="searchObject.status">
                     <div class="col-sm-6">
@@ -52,20 +51,23 @@
                     </div>
                 </div>-->
                 
-                <div ng-show="searchObject.defaultStatus">
-                    <div class="alert alert-danger" role="alert">
-                        <i class="icon-warning"></i>
-                        <span>Sorry!</span> no properties found matching your criteria.
-                    </div>
-
-                    <div class="alert alert-success" role="alert">
-                        <i class="icon-thumbsup"></i>
-                        <span>Cheer up!</span> we found some other properties suitable for investment.
-                    </div>
+                <div class="alert alert-danger" role="alert" ng-show="!searchObject.keywords && !searchObject.status">
+                    <i class="icon-warning"></i>
+                    Please enter a location to start your search
                 </div>
                 
-                <div id="properties_list">
-                     <div infinite-scroll='nextPage()' infinite-scroll-disabled='infiniteStatus.busy' infinite-scroll-distance='1'>
+                <div class="alert alert-danger" role="alert" ng-show="searchObject.errorType.location">
+                    <i class="icon-warning"></i>
+                    Search a New <span>area</span>. Sorry, no properties found.
+                </div>
+                
+                <div class="alert alert-danger" role="alert" ng-show="searchObject.errorType.filters">
+                    <i class="icon-warning"></i>
+                    Please <span>Refine Your Search</span>. Sorry, no properties found matching your criteria.
+                </div>
+                
+                <div id="properties_list" ng-show="searchObject.status">
+                     <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy' infinite-scroll-distance='1'>
                         <article ng-repeat="property in searchObject.properties" class="property-listing">
                             <div class="row">
                             <div class="col-md-3 col-sm-6">
@@ -111,20 +113,20 @@
                         </div>
                     </article>
                     <div class="infinite-notifications">
-                        <div ng-show='infiniteStatus.busy && !infiniteStatus.last'>
+                        <div ng-show='searchObject.busy && !searchObject.last'>
                             <div class="loader">
 <!--                                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">-->
                                 <h6>Loading Properties..</h6>
                             </div>
                         </div>
-                        <div class="alert alert-danger" ng-show='infiniteStatus.last' role="alert">
+                        <div class="alert alert-danger" ng-show='searchObject.last' role="alert">
                             <i class="icon-warning"></i>
                             <span>Sorry!</span> no more properties to be loaded.
                         </div> 
                     </div> 
                 </div>
                 
-                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="getProperties" class="hidden-xs"></pc-pager>
+                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="updateFilters" class="hidden-xs"></pc-pager>
             </div>
         </div>
     </div>

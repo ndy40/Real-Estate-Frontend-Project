@@ -1267,16 +1267,19 @@ ul.list-arrows li:before,
   Components > Alerts
 ====================================================================*/
 .alert {
-  padding: 8px 15px;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
 }
 .alert i {
-  font-size: 18px;
+  font-size: 24px;
   margin-right: 5px;
   position: relative;
   top: 2px;
 }
 .alert span {
-  font-weight: 600;
+  font-weight: 700;
 }
 /*===================================================================
   Components > Buttons
@@ -1611,7 +1614,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   position: absolute;
   margin-top: -75px;
   width: 100%;
-  z-index: 9;
 }
 .cookie-policy a {
   font-weight: 300;
@@ -1642,11 +1644,16 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 .cookie-policy .alert {
   background-color: #31708f;
+  font-size: 16px;
+  line-height: 22px;
   color: #fff;
   border: 0;
   margin: 0;
   padding: 5px 0;
   position: relative;
+}
+.cookie-policy .alert i {
+  font-size: 20px;
 }
 .cookie-alert-on {
   padding-top: 0;
@@ -1851,7 +1858,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   Components > Forms > Inputs > Form Feedback
 ====================================================================*/
 .form-control.invalid {
-  border: 1px solid #e76d65;
+  border: 1px solid #f44647;
 }
 .has-success .form-control:focus,
 .has-error .form-control:focus {
@@ -3458,6 +3465,9 @@ footer ul li:last-child {
 .property-details .right-details {
   margin-bottom: 20px;
 }
+.searchbar-bottom.back-to-search {
+  float: right;
+}
 /*===================================================================
   Pages > Property Details > Property Heading
 ====================================================================*/
@@ -3636,7 +3646,8 @@ footer ul li:last-child {
   Pages > Property Details > Profit Calculator
 ====================================================================*/
 .profit-calculator h4 {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
+  font-weight: 600;
 }
 .profit-calculator .tab-content {
   min-height: 521px;
@@ -3652,6 +3663,13 @@ footer ul li:last-child {
   font-size: 16px;
   min-height: 40px;
 }
+.profit-calculator .results .form-field-row {
+  margin-bottom: 20px;
+}
+.profit-calculator .results .form-field-row h5,
+.profit-calculator .results .form-field-row h6 {
+  line-height: 24px;
+}
 .profit-calculator .results .form-field-row h6 {
   font-size: 16px;
   padding: 0;
@@ -3659,9 +3677,27 @@ footer ul li:last-child {
 }
 .profit-calculator .results .form-field-row h5 {
   margin: 0;
+  font-size: 16px;
+}
+.profit-calculator .results .form-field-row h5 span {
+  font-size: 18px;
 }
 .profit-calculator .btn.calculate {
   margin-top: 30px;
+}
+@media (min-width: 480px) {
+  .profit-calculator .results .form-field-row {
+    margin-bottom: 30px;
+  }
+  .profit-calculator .results .form-field-row h6 {
+    font-size: 18px;
+  }
+  .profit-calculator .results .form-field-row h5 {
+    font-size: 18px;
+  }
+  .profit-calculator .results .form-field-row h5 span {
+    font-size: 22px;
+  }
 }
 /*===================================================================
   Pages > Property Details > Request Details
@@ -3675,6 +3711,7 @@ footer ul li:last-child {
 }
 .request-details .btn-fullwidth {
   margin-top: 0;
+  width: 100%;
 }
 /*===================================================================
   Pages > Property Details > Comparables
