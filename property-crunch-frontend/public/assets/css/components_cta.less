@@ -2,11 +2,18 @@
   Components > CTA (Call-To-Action) Section
 ====================================================================*/
 .cta-section {
-    background: url("../images/featured-bg.jpg") fixed center top 0;
+    background: url("../images/featured-bg.jpg");
+    background-position: center top;
+    background-attachment: fixed;
+    
     .dark();
         
     .btn {
         font-size: @font-size-h4;
+    }
+    
+    .searchbar .input-group-btn .btn {
+        font-size: 18px;
     }
     
     &.v2 {

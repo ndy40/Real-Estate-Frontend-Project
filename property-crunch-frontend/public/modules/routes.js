@@ -7,7 +7,11 @@
     define(["./app"], function (app) {
         app.config(["$routeProvider", "$locationProvider", "$provide", "$httpProvider",
             function ($routeProvider, $locationProvider, $provide, $httpProvider) {
-
+                
+                $routeProvider.when("/", {
+                    redirectTo : "/pages/home"
+                });
+                
                 $routeProvider.when("/search", {
                     templateUrl : "modules/search/views/searchresult.html",
                     controller  : "SearchFormCtrl"
@@ -27,9 +31,19 @@
                     templateUrl : "modules/login/views/login.html",
                     controller  : "LoginCtrl"
                 });
+                
+                $routeProvider.when("/forgot-password", {
+                    templateUrl : "modules/login/views/forgot-password.html",
+                    controller  : "LoginCtrl"
+                });
+                
+                $routeProvider.when("/forgot-password-2", {
+                    templateUrl : "modules/login/views/forgot-password-2.html",
+                    controller  : "LoginCtrl"
+                });
 
                 $routeProvider.otherwise({
-                    redirectTo : "/pages/home"
+                    redirectTo : "/pages/404"
                 });
 
 

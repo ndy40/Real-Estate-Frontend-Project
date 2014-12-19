@@ -2,11 +2,11 @@
     <div class="panel-heading">
         <div class="selectbox selectbox-xs sort-by">
             <h5 class="selectbox-label">Sort by:</h5>
-            <pc-selectbox defaults="{option: 'Most Recent', value : 'updated_at desc'}" option-selected="currentSortOrder" callback="setCurrentSortOrder" options="filters.sortBy"></pc-selectbox>
+            <pc-selectbox class="selectbox-fix" defaults="{option: 'Most Recent', value : 'updated_at desc'}" option-selected="currentSortOrder" callback="setCurrentSortOrder" options="filters.sortBy"></pc-selectbox>
         </div>
         <div class="selectbox selectbox-xs hidden-xs results-per-page">
             <h5 class="selectbox-label">Results per page:</h5>
-            <pc-selectbox defaults="{option: 10, value : 10}" option-selected="currentResultsPerPage" callback="setCurrentResultsPerPage" options="filters.resultsPerPage"></pc-selectbox>
+            <pc-selectbox class="selectbox-fix" defaults="{option: 10, value : 10}" option-selected="currentResultsPerPage" callback="setCurrentResultsPerPage" options="filters.resultsPerPage"></pc-selectbox>
         </div>
     </div>
 </div>

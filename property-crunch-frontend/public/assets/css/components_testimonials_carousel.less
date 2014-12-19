@@ -1,65 +1,52 @@
 /*===================================================================
   Components > Testimonials Carousel
 ====================================================================*/
-.testimonials {    
-    padding-bottom: 140px;
-	background: url(../images/testimonial-bg.jpg) center center;
-	background-attachment: scroll;
-	color: #fff;
-	text-align: center;
-	
-	h2 {
-		margin-bottom: 80px;
-	}
-
-    .testimonials-carousel {
-        position: relative;
-        
-        .carousel-indicators {
-            bottom: -50px;
-            
-            li {
-                border: 1px solid @brand-primary;
-                width: 13px;
-                height: 13px;
-                margin-right: 4px;
-            }
-            
-            .active {
-                background-color: @brand-primary;
-                width: 14px;
-                height: 14px;
-                margin-right: 3px;
-            }
-        }
-        
-        .carousel-control {
-            bottom: 0;
-            color: #ffffff;
-            font-size: 36px;
-            opacity: 1;
-            text-shadow: none;
-            top: 0;
-            width: 40px;
-            height: 40px;
-            .transition(all 0.3s);
-            
-            &.right, &.left {
-                background: none;
-            }
-            
-            &:hover {
-                span {
-                    color: @brand-primary;
-                    .transition(all 0.3s);
-                }
-            }
-            
-            span {
-                cursor: pointer;
-            }
-        }
+.testimonials-carousel {
+    position: relative;
     
+    .carousel-indicators {
+        bottom: -50px;
+        
+        li {
+            border: 1px solid @brand-primary;
+            width: 13px;
+            height: 13px;
+            margin-right: 4px;
+        }
+        
+        .active {
+            background-color: @brand-primary;
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+        }
+    }
+    
+    .carousel-control {
+        bottom: 0;
+        color: #ffffff;
+        font-size: 36px;
+        opacity: 1;
+        text-shadow: none;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        .transition(all 0.3s);
+        
+        &.right, &.left {
+            background: none;
+        }
+        
+        &:hover {
+            span {
+                color: @brand-primary;
+                .transition(all 0.3s);
+            }
+        }
+        
+        span {
+            cursor: pointer;
+        }
     }
     
     blockquote {
@@ -67,86 +54,12 @@
         padding: 0 25px;
         text-align: justify;
     }
-    
-    .client-info-wrap {
-        margin: 0 auto;
-        padding: 20px 0 0;
-        width: 280px;
-        text-align: left;
-        .clearfix();
-        
-        div {
-            float: left;
-        }
-        
-    }
-    
-    .client-img-overlay {
-        height: 106px;
-        width: 106px;
-        border-radius: 70px;
-        border: 2px solid @brand-blue;
-        .scale(0.85; 0.85);
-        
-        .img-circle {
-            width: 102px;
-        }
-    
-    }
-    
-    .client-details {
-        margin-left: 2px;
-        
-        h3, h5, a {
-            margin: 0;
-        }
-        
-        h3 {
-            padding: 7px 0;
-        }
-        
-        h5, a {
-            padding: 5px 0;
-        }
-    }   
+
 }
 
 
 @media (min-width: 768px) {
-	.testimonials {
-		background-attachment: fixed;
-		color: #fff;
-        
-        blockquote {
-            font-size: 20px;
-            width:  70%;
-        }
-        .client-info-wrap {
-            margin: 0 auto;
-            padding-top: 50px;
-            width: 300px;
-            .clearfix();
-            
-            div {
-                float: left;
-            }
-        }
-        .client-details {
-            margin-left: 20px;
-            
-            h3 {
-                padding: 5px 0 10px;
-            }
-        }
-        
-        .client-img-overlay {
-            .scale(1; 1);
-        }
-        
-        .client-details {
-            margin-left: 20px;
-        }
-        
+    .testimonials-carousel {    
         .carousel-control {
             .glyphicon {
                 display: block;

@@ -5,7 +5,6 @@
 
 define([
     "./controllers/static-controller",
-    "./directives/video-slider",
     "./directives/testimonial-carousel",
     "./directives/cookie-policy"
 ], function () {});

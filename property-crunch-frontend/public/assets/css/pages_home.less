@@ -5,3 +5,114 @@
     margin: 0 auto 65px;
 }
 
+/*===================================================================
+  Pages > Home > Testimonials
+====================================================================*/
+.testimonials {    
+	background: url(../images/testimonial-bg.jpg) center center;
+	background-attachment: scroll;
+	color: #fff;
+	text-align: center;
+	
+	h2 {
+		margin-bottom: 80px;
+	}
+    
+    a:hover {
+        color: #fff;
+    }
+    
+    .client-info-wrap {
+        margin: 0 auto;
+        padding: 20px 0 80px;
+        width: 210px;
+        text-align: left;
+        .clearfix();
+        
+        div {
+            float: left;
+        }
+        
+    }
+    
+    .client-img-overlay {
+        height: 74px;
+        width: 74px;
+        border-radius: 70px;
+        border: 2px solid @brand-blue;
+        margin-right: 20px;
+        
+        .img-circle {
+            width: 70px;
+        }
+    
+    }
+    
+    .client-details {
+        h3, h5, a {
+            margin-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 20px;
+        }
+        
+        h5, a {
+            font-size: 16px;
+        }
+    }   
+}
+
+@media (min-width: 768px) {
+	.testimonials {
+		background-attachment: fixed;
+		color: #fff;
+        
+        blockquote {
+            font-size: 20px;
+            width:  70%;
+        }
+        .client-info-wrap {
+            margin: 0 auto;
+            padding-top: 50px;
+            width: 300px;
+            .clearfix();
+            
+            div {
+                float: left;
+            }
+        }
+        .client-details {
+            margin-top: 10px;
+            
+            h3 {
+                font-size: 24px;
+            }
+            
+             h3, h5, a {
+                margin-bottom: 10px;
+            }
+        }
+        
+        .client-img-overlay {
+            height: 106px;
+            width: 106px;
+            
+            .img-circle {
+                width: 102px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonials .client-info-wrap {
+        padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .testimonials blockquote {
+        min-height: 172px;
+    }
+}
