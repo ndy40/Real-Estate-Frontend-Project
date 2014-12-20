@@ -101,7 +101,7 @@ class AuthController extends BaseController
                         $data["email"],
                         $data["first_name"] . " " . $data["last_name"]
                     )
-                        ->subject('Welcome to Property Crunch');
+                        ->subject('Welcome to nello');
                 });
             } catch (\Exception $ex) {
                 Log::error($ex->getMessage());
