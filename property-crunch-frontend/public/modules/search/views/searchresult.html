@@ -1,0 +1,113 @@
+<header class="search-header">
+    <!-- Navigation Partial -->
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+    
+    <div class="search-content dark">
+        <div class="container">
+            <pc-search-form keywords="searchObject.keywords" filter="searchObject.filterData" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
+            
+            <!-- Search Status Here -->
+            <div class="row" ng-show="searchObject.status">
+                <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                   <div class="searchbar-bottom">
+                        <h5 class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="main-content search-results">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <pc-refine-filters callback="getProperties"></pc-refine-filters>
+                <pc-keyword-filters callback="getProperties"></pc-refine-filters>
+            </div>
+            
+            <div class="col-lg-8">
+                <pc-result-options callback="getProperties"></pc-result-options>
+                <div class="row" ng-show="searchObject.status">
+                    <div class="col-sm-6">
+                        <div class="panel panel-outline info-tags">
+                            <div class="panel-heading">
+                                <h5 class="avgAskingPrice"><i class="icon-tag icon20-tag-hover"></i>Average Asking Price: &nbsp; <span>£125,000</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-outline info-tags">
+                            <div class="panel-heading">
+                                <h5 class="avgRentalPrice"><i class="icon-key icon20-key-hover"></i>Average Rental Price: &nbsp; <span>£700</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div ng-show="searchObject.defaultStatus">
+                    <div class="alert alert-danger" role="alert">
+                        <i class="icon-warning"></i>
+                        <span>Sorry!</span> no properties found matching your criteria.
+                    </div>
+
+                    <div class="alert alert-success" role="alert">
+                        <i class="icon-thumbsup"></i>
+                        <span>Cheer up!</span> we found some other properties suitable for investment.
+                    </div>
+                </div>
+                <div id="properties_list">
+                    <article ng-repeat="property in searchObject.properties" class="property-listing">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="property-img">
+                                    <img class="img-responsive" ng-src="{{property.images[0].thumb}}" alt="{{property.alt}}">
+                                    <a ng-href="/property/{{property.id}}" class="visible-lg details-page">
+                                        <span>Click Here for More Details</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="property-title-group">
+                                    <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
+                                    <a class="add-to-fav" href="favourites.html"><i class="icon-star icon18-star-sm"></i>Add to Favourites</a>
+                                </div>
+                                <p>{{property.address}}</p>
+                                <div class="property-details-group">
+                                    <p class="beds">{{property.title}}</p>
+                                    <ul class="property-tags {{property.tags}}">
+                                        <li class="irepossessed">
+                                            <i class="icon-library icon12-library has-tooltip" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
+                                        </li>
+                                        <li class="imodernising">
+                                            <i class="icon-tools icon12-tools has-tooltip" tooltip="Need Modernising" tooltip-placement="Need Modernising" title="Need Modernising"></i>
+                                        </li>
+                                        <li class="iauction">
+                                            <i class="icon-auction icon12-auction has-tooltip" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
+                                        </li>
+                                        <li class="idtv">
+                                            <i class="icon-users icon12-users has-tooltip" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
+                                        </li>
+                                        <li class="ireduced">
+                                            <i class="icon-chart icon12-chart has-tooltip" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h5 class="right-section-label">
+                                    Est. Rental Yield 
+                                    <i class="icon-help" tooltip="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property." tooltip-placement="top" title="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property."></i>
+                                </h5>
+                                <h3 class="right-section-value">{{property.yield}}<span>%</span></h3>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="getProperties"></pc-pager>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- footer template -->
+<ng-include src="'modules/shared/views/footer.html'"></ng-include>
