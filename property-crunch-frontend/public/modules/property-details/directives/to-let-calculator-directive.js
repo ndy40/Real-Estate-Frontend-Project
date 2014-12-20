@@ -16,32 +16,44 @@ define(["../module"], function (app) {
             link : function (scope) {
                 // Default Values
                 scope.toLet = {
+                    // Inputs
                     mortgageLtv:        0.75, //  (Default: 75%)
                     mortgageRate:       0.06, //  (Default: 6%)
                     managementCost:     0,
                     maintenanceCost:    0,
-                    monthlyMortgage:    "",
-                    depositNeeded:      "",
-                    rentalProfit:       "",
-                    estRentalYield:     ""
+                    // Results
+                    monthlyMortgage:        "",
+                    depositNeeded:          "",
+                    monthlyProfitOrLoss:    "",
+                    netRentalYield:         "",
+                    trueRoR:                ""
                 };
 
                 scope.calculateToLetResults = function () {
+                    // Calculate Monthly Mortgage
                     scope.toLet.monthlyMortgage = scope.toLet.purchasePrice *
                         scope.toLet.mortgageLtv * scope.toLet.mortgageRate / 12;
 
-                    scope.toLet.depositNeeded = scope.toLet.purchasePrice -
+                    // Calculate Deposit Needed
+                    scope.toLet.depositNeeded  = scope.toLet.purchasePrice -
                         (scope.toLet.purchasePrice * scope.toLet.mortgageLtv);
 
-                    scope.toLet.rentalProfit = scope.toLet.estRentalIncome -
+                    // Calculate Monthly Profit Or Loss
+                    scope.toLet.monthlyProfitOrLoss  =
+                        scope.toLet.estRentalIncome -
                         scope.toLet.monthlyMortgage -
                         (scope.toLet.managementCost *
                         scope.toLet.estRentalIncome) -
                         (scope.toLet.maintenanceCost *
                         scope.toLet.estRentalIncome);
 
-                    scope.toLet.estRentalYield = scope.toLet.estRentalIncome *
-                        12 / scope.toLet.purchasePrice;
+                    // Calculate Net Rental Yield
+                    scope.toLet.netRentalYield = scope.toLet.monthlyProfitOrLoss
+                        * 12 / scope.toLet.purchasePrice;
+
+                    // Calculate True Rate of Return
+                    scope.toLet.trueRoR = scope.toLet.monthlyProfitOrLoss * 12 /
+                        scope.toLet.depositNeeded;
 
                     // Show Results
                     scope.toLetResults = true;
@@ -66,7 +78,7 @@ define(["../module"], function (app) {
                     if (scope.rentalIncome === undefined) {
                         scope.toLet.estRentalIncome = 0;
                     } else {
-                        scope.toLet.estRentalIncome = scope.rentalIncome;
+                        scope.toLet.estRentalIncome = scope.rentalIncome * scope.toLet.purchasePrice / 100 / 12;
                     }
                 });
             }
