@@ -41,7 +41,13 @@
                     templateUrl : "modules/login/views/forgot-password-2.html",
                     controller  : "LoginCtrl"
                 });
-
+                
+                // Used as an iframe on Blog
+                $routeProvider.when("/property-calculator", {
+                    templateUrl : "modules/property-details/views/calculator.html",
+                    controller  : "PropertyCtrl"
+                });
+                
                 $routeProvider.otherwise({
                     redirectTo : "/pages/404"
                 });
