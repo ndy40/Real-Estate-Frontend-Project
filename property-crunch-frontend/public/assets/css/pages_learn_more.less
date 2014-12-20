@@ -4,100 +4,18 @@
 /*===================================================================
   Pages > Learn More > Jumbotron
 ====================================================================*/
-.video-slider {
-    width: 290px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.video-slider-wrapper {
-    .clearfix();
-    width: 2400px;
-    position: relative;
-    left: 0;
-    .transition(all 0.5s);
-    
-    &.video-on {
-        left: -100%;
-    }
-    
-    .jumbotron,
-    .video {
-        float: left;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 290px;
-    }
-    
-    .video {   
-        margin-top: 15px; 
-        //background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
-//        display: block;
-//        height: 500px;
-    }
-}
-
-@media (min-width: 360px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 330px;
-    }
-}
-@media (min-width: 480px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 450px;
-    }
-}
-@media (min-width: 640px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 610px;
-    }
-}
-@media (min-width: 768px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 750px;
-    }
-}
-@media (min-width: 992px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 970px;
-    }
-}
-@media (min-width: 1200px) {
-    .video-slider,
-    .video-slider-wrapper .jumbotron,
-    .video-slider-wrapper .video {
-        width: 1170px;
-    }
-}
-
-
-
-
 .play-btn {
-    background: rgba(255,255,255, 0.2);
+    background: rgba(255,255,255, 0.5);
     font-size: 50px;
     .circle(2, #fff, 70);
     .transition(all 0.3s);
     
     &:hover {
-        background: rgba(255,255,255, 0.5);
+        background: rgba(255,255,255, 0.7);
         .transition(all 0.3s);
     }
 }
 
-@media (min-width: 768px) {	
-
-}
 /*===================================================================
   Pages > Learn More > Why invest in Property?
 ====================================================================*/
@@ -131,14 +49,7 @@
   Pages > Learn More > Potential Ways
 ====================================================================*/
 .potential-ways {
-    background: url("../images/potential-ways-bg.jpg") fixed center top 0;
-}
-
-/*===================================================================
-  Pages > Learn More > Potential Ways
-====================================================================*/
-.investment-journey {
-    h2 {
-        margin-bottom: 50px;
-    }
+    background: url("../images/potential-ways-bg.jpg");
+    background-position: center top;
+    background-attachment: fixed;
 }

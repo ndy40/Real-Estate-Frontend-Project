@@ -1,15 +1,12 @@
- <div class="panel panel-light sort-filters">
+ <div class="panel panel-light panel-no-body result-options">
     <div class="panel-heading">
-        <div class="sort">
-            <h5>Sort by:</h5>
-            <pc-selectbox class="small-select sort-select" defaults="{option: 'Most Recent', value : 'updated_at desc'}" option-selected="currentSortOrder" callback="setCurrentSortOrder" options="filters.sortBy"></pc-selectbox>
+        <div class="selectbox selectbox-xs sort-by">
+            <h5 class="selectbox-label">Sort by:</h5>
+            <pc-selectbox class="selectbox-fix" defaults="{option: 'Most Recent', value : 'updated_at desc'}" option-selected="currentSortOrder" callback="setCurrentSortOrder" options="filters.sortBy"></pc-selectbox>
         </div>
-        <div class="number-results">
-            <h5>Results per page:</h5>
-            <pc-selectbox class="small-select" defaults="{option: 10, value : 10}" option-selected="currentResultsPerPage" callback="setCurrentResultsPerPage" options="filters.resultsPerPage"></pc-selectbox>
+        <div class="selectbox selectbox-xs hidden-xs results-per-page">
+            <h5 class="selectbox-label">Results per page:</h5>
+            <pc-selectbox class="selectbox-fix" defaults="{option: 10, value : 10}" option-selected="currentResultsPerPage" callback="setCurrentResultsPerPage" options="filters.resultsPerPage"></pc-selectbox>
         </div>
     </div>
 </div>
-<!--
-
--->

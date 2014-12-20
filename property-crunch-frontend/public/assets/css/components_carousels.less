@@ -89,6 +89,9 @@
 	.item {
 		margin: 0 30px 0 0;
 		position: relative;
+        text-shadow: 1px 1px 1px #000;	
+        border-radius: @border-radius-base;
+        overflow: hidden;
 		
 		&:hover {
 			.item-overlay {
@@ -97,7 +100,7 @@
 			}
 			
 			h5 {
-				color: @brand-primary;
+                color: @brand-primary;
 				.transition(color 0.3s);
 			}
 		}
@@ -121,10 +124,6 @@
 			span,
 			&.item-price {
 				font-weight: 600;
-			}
-			
-			&.item-price {
-				color: @brand-primary;
 			}
 		}
 	}
@@ -210,4 +209,29 @@
 	.recommended-carousel .item h5 {
 		margin-bottom: 5px;
 	}
+}
+
+
+/*===================================================================
+  Components > Carousel > Reccomended Properties Carousel > Blink Text
+====================================================================*/
+.swipe-notification {
+    text-align:center;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 600;
+    animation-duration: 800ms;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    from {
+        color: @gray-darker;
+    }
+    
+    to {
+        color: @brand-primary;
+    }
 }

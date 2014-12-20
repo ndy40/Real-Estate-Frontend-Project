@@ -1,18 +1,26 @@
 /*===================================================================
   Components > Modals
 ====================================================================*/
+.modal-dialog {
+    z-index: 1060;
+}
+
 .modal-content {
 	box-shadow: none;
 }
+
 .modal-body {
 	padding: 0 20px 50px;
 }
+
 .close {
 	color: @gray-dark;
 	opacity: 1;
+    .transition(all 0.3s);
 	
 	&:hover {
-		color: @gray-darker;
+		color: @brand-red;
+        .transition(all 0.3s);
 	}
 	
 	.icon-cross {
@@ -29,7 +37,19 @@
 }
 
 @media (min-width: 768px) {
-	.modal-body {
-		padding: 10px 50px 50px;
+	.modal-dialog {
+        width: 670px;
+    }
+    
+    .modal-body {
+		padding: 20px 50px 50px;
 	}
+    
 }
+
+@media (min-width: 992px) {
+	.modal-dialog {
+        width: 800px;
+    }
+}
+    

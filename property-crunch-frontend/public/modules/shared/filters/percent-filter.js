@@ -1,6 +1,6 @@
 /*global define */
 /* 
- * Custom Currency Filter. Angular Native currency filter shows decimal points
+ * Custom Percent Filter
  */
 
 define(["../module"], function (app) {

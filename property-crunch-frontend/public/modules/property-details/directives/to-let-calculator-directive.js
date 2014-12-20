@@ -41,11 +41,11 @@ define(["../module"], function (app) {
                     // Calculate Monthly Profit Or Loss
                     scope.toLet.monthlyProfitOrLoss  =
                         scope.toLet.estRentalIncome -
-                        scope.toLet.monthlyMortgage -
-                        (scope.toLet.managementCost *
-                        scope.toLet.estRentalIncome) -
-                        (scope.toLet.maintenanceCost *
-                        scope.toLet.estRentalIncome);
+                            scope.toLet.monthlyMortgage -
+                                (scope.toLet.managementCost *
+                                    scope.toLet.estRentalIncome) -
+                                        (scope.toLet.maintenanceCost *
+                                            scope.toLet.estRentalIncome);
 
                     // Calculate Net Rental Yield
                     scope.toLet.netRentalYield = scope.toLet.monthlyProfitOrLoss

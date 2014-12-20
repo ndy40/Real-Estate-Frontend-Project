@@ -2,6 +2,10 @@
   Pages > Login /  Create an Account 
 ====================================================================*/
 .login-tabs {
+    .alert {
+        margin-bottom: 40px;
+    }
+    
 	li {
 		> a {
 			font-size: @font-size-h5;
@@ -36,6 +40,10 @@
 	margin-right: 40px;
 	padding-top: 0;
 	
+    input[type="checkbox"]:not(old) + label > span {
+        margin-right: 5px;
+    }
+    
 	h6 {
 		margin: 0;
 	}
@@ -63,7 +71,6 @@
 				
 			}
             
-            // Login Tabs Heading Icons
             &.login-tab a:before,
             &.create-account-tab a:before {
 				font-size: @font-size-h4;

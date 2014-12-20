@@ -7,32 +7,26 @@
 	li {
 		a {
 			font-size: @font-size-h5;
-			color: @gray-darker;
-			border: 1px solid @gray;
+            border-radius: @border-radius-base;
 			font-weight: 300;
 			margin-right: 10px;
-			.transition(background 0.3s);
+			.transition(all 0.3s);
 			
-			&.active,
 			&:hover {
-				color: @white;
-				background: @brand-primary;
-				border-color: transparent;
-				.transition(background 0.3s);
+				.transition(all 0.3s);
 			}
+            
+            &.active {
+                background: @brand-red;
+                color: #fff;
+                border: 1px solid @brand-red;
+            }
 			
 			&.last {
 				margin-right: 0;
 			}
 		}
-		
-		&.disabled {
-			a, a:hover {
-				color: @gray;
-				border: 1px solid @gray-light;
-			}
-		}
-		
+				
 		&.next a {
 			margin-left: 10px;
 		}

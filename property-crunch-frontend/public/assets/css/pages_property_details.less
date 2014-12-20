@@ -9,6 +9,9 @@
     
 }
 
+.searchbar-bottom.back-to-search {
+    float: right;
+}
 /*===================================================================
   Pages > Property Details > Property Heading
 ====================================================================*/
@@ -114,6 +117,18 @@
 	}
 }
 
+@media (min-width: 992px) {
+     .property-heading {
+        .property-address {
+            max-width: 350px;
+        }
+        
+        .right-section {    
+            max-width: 185px;
+        }
+     }
+}
+
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -123,6 +138,7 @@
 	.panel-heading {
 		padding-top: 20px;
 		padding-bottom: 20px;
+        border-color: @brand-red;
 	}
 	
 	ul {
@@ -217,7 +233,8 @@
 ====================================================================*/
 .profit-calculator {
     h4 {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
+        font-weight: 600;
     }
     
     .tab-content {
@@ -239,6 +256,12 @@
     
     .results {
         .form-field-row {
+            margin-bottom: 20px;
+
+            h5, h6 {
+                line-height: 24px;
+            }
+
             h6 {
                 font-size: 16px;
                 padding: 0;
@@ -247,12 +270,39 @@
             
             h5 {
                 margin: 0;
+                font-size: 16px;
+                
+                span {
+                    font-size: 18px;
+                }
             }
         }
     }
     
     .btn.calculate {
         margin-top: 30px;
+    }
+}
+
+@media (min-width: 480px) {
+    .profit-calculator {
+        .results {
+            .form-field-row {
+                margin-bottom: 30px;
+                
+                h6 {
+                    font-size: 18px;
+                }
+                
+                h5 {
+                    font-size: 18px;
+                    
+                    span {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -269,6 +319,7 @@
     
     .btn-fullwidth {
         margin-top: 0;
+        width: 100%;
     }
     
 }

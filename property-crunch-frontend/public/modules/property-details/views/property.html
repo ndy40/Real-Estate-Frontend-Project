@@ -1,7 +1,7 @@
-<header class="search-header">
-    <!-- Navigation Partial --> 
-    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
-    
+<!-- Navigation Partial --> 
+<ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+
+<header class="search-header">    
     <div class="search-content dark">
         <div class="container">
             <pc-search-form keywords="keywords" redirect="/search" back="true"></pc-search-form>
@@ -34,10 +34,10 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-5 col-md-5">
 
                     <div class="right-details">
-                        <div class="panel panel-outline property-links">
+                        <div class="panel panel-outline panel-no-body property-links">
                             <div class="panel-heading">
                                 <ul class="no-bullets horizontal-list">
                                     <li class="add-to-favourites">
@@ -51,7 +51,7 @@
                         </div>
                         <tabset class="profit-calculator">
                             <tab heading="Buy to Let">
-                                <buy-to-let-calculator purchase-price="property.details.price" rental-income=""></buy-to-let-calculator>
+                                <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
                             </tab>
 
                             <tab heading="Buy to Sell">
@@ -62,8 +62,8 @@
                     </div>
                 </div>
             </div>
-
-            <div ng-show="property.info" class="panel panel-default">
+            
+            <div ng-show="property.info" class="panel panel-default panel-no-body">
                 <div class="panel-heading">
                     <h5>Additional Information:</h5>
                 </div>
@@ -73,26 +73,26 @@
     </article>
 </section>
 
-<aside class="featured-section request-details">
+<aside class="cta-section request-details">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <h2>Want to Invest in this <span>Property?</span></h2>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-default btn-3d btn-fullwidth">Request Details</button>
+                <button class="btn btn-lg btn-3d btn-fullwidth">Request Details</button>
             </div>
         </div>
     </div>
 </aside>
 
-<aside class="main-content">
-    <comparables property-src="comparables.list"></comparables>
-</aside>
+<!--<aside class="main-content">
+    <pc-comparables property-src="comparables.list"></pc-comparables>
+</aside>-->
 
 <aside class="main-content">
     <div class="container">
-        <div class="panel panel-default">
+        <div class="panel panel-primary panel-no-body">
             <div class="panel-heading">
                 <h5>Other Properties You Might Like:</h5>
             </div>

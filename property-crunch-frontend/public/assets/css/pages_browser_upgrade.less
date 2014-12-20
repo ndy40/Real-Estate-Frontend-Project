@@ -1,0 +1,171 @@
+/*===================================================================
+  Pages > Browser Upgrage
+====================================================================*/
+h1.bu-title {
+    margin-bottom: 50px;
+}
+
+#browserupgrade {
+	zoom: 1;
+    
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    &:after {
+        clear: both;
+    }
+    
+    li {
+        width: 270px;
+        float: left;
+        margin: 7px;
+        background: @gray-lighter;
+        border: 1px solid @gray;
+        
+        .icon {
+            width: 125px;
+            height: 135px;
+            margin: 0 auto 20px;
+            background: url(../images/browser-sprite.png) no-repeat;
+        }
+    
+        &#chrome .icon {
+            background-position: 0 0;
+        }
+        
+        &#firefox .icon {
+            background-position: -125px 0;
+        }
+        
+        &#opera .icon {
+            background-position: -250px 0;
+        }
+        
+        &#safari .icon {
+            background-position: -375px 0;
+        }
+        
+        &#ie .icon {
+            background-position: -500px 0;
+        }
+        
+        a:link, a:visited {
+            color: @gray-darker;
+            padding: 30px 10px 10px;
+            display: block;
+            overflow: hidden;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        
+        a:hover {
+            background: rgba(255,255,255,.3);
+            -webkit-transform: scale(1.05,1.05);
+            -moz-transform: scale(1.05,1.05);
+            -o-transform: scale(1.05,1.05);
+            transform: scale(1.05,1.05);
+        }
+        
+        a:hover .website {
+            background: @brand-red;
+            color: #fff;
+            text-shadow: 0 1px 0 #266E67;
+        }
+        
+        a:hover .icon {
+            -webkit-transform: scale(1.1,1.1);
+            -moz-transform: scale(1.1,1.1);
+            -o-transform: scale(1.1,1.1);
+            transform: scale(1.1,1.1);
+        }
+        
+        a, a .icon {
+            -webkit-transition: all .1s;
+            -moz-transition: all .1s;
+            -o-transition: all .1s;
+            transition: all .1s;
+        }
+        
+        a .website {
+            -webkit-transition: all .5s ease-in;
+            -moz-transition: all .5s ease-in;
+            -o-transition: all .5s ease-in;
+            transition: all .5s ease-in;
+        }
+        
+        a:hover, a:hover .icon {
+            -webkit-transition: all .8s;
+            -moz-transition: all .8s;
+            -o-transition: all .8s;
+            transition: all .8s;
+        }
+        
+        a:link, a:link .icon {
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+        }
+        
+        a:hover .website {
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+        
+        a:link .website {
+            -webkit-transition: all .1s ease-out;
+            -moz-transition: all .1s ease-out;
+            -o-transition: all .1s ease-out;
+            transition: all .1s ease-out;
+        }
+    }
+    
+    h2 {
+        font: 140%/1 Impact, Helvetica, sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        color: @brand-red;
+        text-shadow: 0 1px 0 #fff;
+        background-color: rgba(255,255,255,.3);
+        margin: 0 0 10px;
+        line-height: 1;
+        padding: 8px 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    
+    p {
+        padding: 0 5px;
+        text-shadow: 0 1px 0 rgba(255,255,255,.8);
+        
+        &.info {
+            min-height: 120px;
+        }
+        
+        &.version {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        &.website {
+            background-color: rgba(255,255,255,.3);
+            line-height: 1;
+            margin: 0;
+            padding: 8px 5px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+    }
+
+}
+

@@ -1,6 +1,10 @@
 /*===================================================================
   Browser Fixes
 ====================================================================*/
+.selectbox-fix {
+    float: right;
+}
+
 /*===================================================================
   Browser Fixes > IE10 & +
 ====================================================================*/
@@ -458,7 +462,11 @@
   Browser Fixes > Safari
 ====================================================================*/
 .no-flexbox.csstransforms3d {
-	
+	.navbar-default .navbar-nav .dropdown-caret {
+        display: inline;
+        float: none;
+    }
+    
 	#testimonials {
 		background: url(../images/test-bg-alt.jpg) fixed center 0;
 	}
