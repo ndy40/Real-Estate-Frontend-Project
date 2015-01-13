@@ -23,7 +23,8 @@
     margin-bottom: 50px;
     
     blockquote {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        text-align: left;
     }
     
     .source-logo {
@@ -33,14 +34,22 @@
     
 }
 
-@media (min-width: 768px) {	
+@media (min-width: 992px) and (max-width: 1199px) {	
     .fact-box {
-        margin-bottom: 50px;
+        &.first-box blockquote {
+            margin-bottom: 66px;
+        }
         
-        &.second-box {
-            blockquote {
-                margin-bottom: 116px;
-            }
+        &.second-box blockquote {
+            margin-bottom: 143px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {	
+    .fact-box {
+        &.second-box blockquote {
+            margin-bottom: 91px;
         }
     }
 }

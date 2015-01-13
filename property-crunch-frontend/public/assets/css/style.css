@@ -2782,18 +2782,24 @@ footer.default-footer ul li:last-child {
   margin-bottom: 50px;
 }
 .fact-box blockquote {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-align: left;
 }
 .fact-box .source-logo {
   width: 100%;
   margin-bottom: 10px;
 }
-@media (min-width: 768px) {
-  .fact-box {
-    margin-bottom: 50px;
+@media (min-width: 992px) and (max-width: 1199px) {
+  .fact-box.first-box blockquote {
+    margin-bottom: 66px;
   }
   .fact-box.second-box blockquote {
-    margin-bottom: 116px;
+    margin-bottom: 143px;
+  }
+}
+@media (min-width: 1200px) {
+  .fact-box.second-box blockquote {
+    margin-bottom: 91px;
   }
 }
 /*===================================================================
@@ -3552,6 +3558,9 @@ footer.default-footer ul li:last-child {
 /*===================================================================
   Pages > Property Details > Profit Calculator
 ====================================================================*/
+.profit-calculator.embedded {
+  background: #e9edeb;
+}
 .profit-calculator h4 {
   margin-bottom: 40px;
   font-weight: 600;
@@ -3712,11 +3721,8 @@ footer.default-footer ul li:last-child {
   Pages > 404 Page
 ====================================================================*/
 .error-page {
-  background: #f44647;
-  color: #fff;
-  height: 100%;
+  color: #191e1d;
   width: 100%;
-  position: fixed;
   text-align: center;
 }
 .error-page h1 {
@@ -3725,15 +3731,10 @@ footer.default-footer ul li:last-child {
   border-bottom: 1px solid #e9edeb;
   margin-bottom: 50px;
   padding-bottom: 40px;
+  color: #299ecb;
 }
 .error-page p {
   font-size: 24px;
-}
-.error-page a {
-  color: #fff;
-}
-.error-page a:hover {
-  color: #e9edeb;
 }
 @media (min-width: 480px) {
   .error-page h1 {
