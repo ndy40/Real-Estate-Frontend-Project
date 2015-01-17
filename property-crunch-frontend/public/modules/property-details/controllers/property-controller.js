@@ -23,6 +23,15 @@ define(["../module"], function (app) {
             status: false
         };
 
+        /**
+        * Object to Store Request Details Data
+        */
+        $scope.requestDetails = {
+            message: ""
+        };
+        
+        //$scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about. Thank you.";
+        
         $scope.setPageRoute = function () {
             $scope.propertyId = $routeParams.id;
         };
@@ -39,6 +48,8 @@ define(["../module"], function (app) {
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
             $scope.getFirstListedDate(data.created_at);
+            // Populate Email Message for Request Details
+            $scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
             // Get Comparables
             $scope.getComparables(data.address);
             // Set Status

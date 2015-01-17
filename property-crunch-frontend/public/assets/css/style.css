@@ -136,6 +136,9 @@ a:focus {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+a > i {
+  cursor: pointer;
+}
 .nav a,
 .footer-links a {
   letter-spacing: 0.25px;
@@ -1848,6 +1851,12 @@ input[type=checkbox]:not(old):checked + label > span:before {
   }
 }
 /*===================================================================
+  Components > Forms > Inputs > Text Area
+====================================================================*/
+textarea.form-control {
+  border-radius: 4px !important;
+}
+/*===================================================================
   Components > Forms > Inputs > Inputs with Icon
 ====================================================================*/
 .form-control-icon {
@@ -3514,6 +3523,7 @@ footer.default-footer ul li:last-child {
   font-size: 16px;
 }
 .property-links ul i {
+  cursor: pointer;
   font-size: 20px;
   line-height: 1;
   position: relative;
@@ -3579,6 +3589,9 @@ footer.default-footer ul li:last-child {
   font-size: 16px;
   min-height: 40px;
 }
+.profit-calculator .input-group .form-control {
+  border-radius: 4px;
+}
 .profit-calculator .results .form-field-row {
   margin-bottom: 20px;
 }
@@ -3628,6 +3641,55 @@ footer.default-footer ul li:last-child {
 .request-details .btn-fullwidth {
   margin-top: 0;
   width: 100%;
+}
+.request-details-modal .modal-dialog {
+  max-width: 620px;
+}
+.request-details-modal .modal-body {
+  padding: 10px 80px 60px;
+}
+.request-details-modal .modal-body h4 {
+  margin-bottom: 30px;
+}
+.request-details-modal .modal-body .input-group {
+  margin: 0;
+  width: 100%;
+}
+.request-details-modal .modal-body .icon-container i {
+  font-size: 18px;
+  line-height: 44px;
+}
+.request-details-modal .modal-body .form-control {
+  font-size: 16px;
+  min-height: 44px;
+}
+.request-details-modal .modal-body .terms {
+  padding-top: 0;
+}
+.request-details-modal .modal-body .btn {
+  width: 100%;
+}
+.request-details-modal .agency-info {
+  margin-bottom: 30px;
+}
+.request-details-modal .agency-info a {
+  display: block;
+  margin-bottom: 10px;
+}
+.request-details-modal .agency-info h6 {
+  font-size: 16px;
+}
+.request-details-modal .agency-info i {
+  color: #191e1d;
+  margin-right: 10px;
+}
+@media (max-width: 991px) {
+  .request-details h2 {
+    text-align: center;
+  }
+  .request-details .btn-fullwidth {
+    margin-top: 30px;
+  }
 }
 /*===================================================================
   Pages > Property Details > Comparables
