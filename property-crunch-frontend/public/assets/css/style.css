@@ -136,6 +136,9 @@ a:focus {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+a > i {
+  cursor: pointer;
+}
 .nav a,
 .footer-links a {
   letter-spacing: 0.25px;
@@ -1848,6 +1851,12 @@ input[type=checkbox]:not(old):checked + label > span:before {
   }
 }
 /*===================================================================
+  Components > Forms > Inputs > Text Area
+====================================================================*/
+textarea.form-control {
+  border-radius: 4px !important;
+}
+/*===================================================================
   Components > Forms > Inputs > Inputs with Icon
 ====================================================================*/
 .form-control-icon {
@@ -2637,50 +2646,6 @@ footer.default-footer ul li:last-child {
   }
 }
 /*===================================================================
-  Components > Feedback
-====================================================================*/
-.feedback-btn {
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 7px;
-  position: fixed;
-  right: -80px;
-  top: 200px;
-  z-index: 9;
-}
-.feedback-btn i {
-  font-size: 24px;
-  position: relative;
-  top: 1px;
-}
-.feedback-btn span {
-  bottom: 4px;
-  margin-left: 3px;
-  position: relative;
-}
-.feedback-btn:hover {
-  background: #f6af00;
-  color: #ffffff;
-  right: 0;
-}
-.feedback-btn:focus,
-.feedback-btn:active {
-  background: #999999;
-}
-/*===================================================================
-  Components > ng Animate (Angular Animations)
-====================================================================*/
-.property-listing {
-  opacity: 1;
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
-}
-.property-listing.ng-enter {
-  opacity: 0;
-}
-/*===================================================================
   Pages
 ====================================================================*/
 /*===================================================================
@@ -2700,53 +2665,6 @@ footer.default-footer ul li:last-child {
 }
 .testimonials h2 {
   margin-bottom: 80px;
-}
-.testimonials-carousel {
-  position: relative;
-}
-.carousel-indicators {
-  bottom: -50px;
-}
-.carousel-indicators li {
-  border: 1px solid #f6af00;
-  width: 13px;
-  height: 13px;
-  margin-right: 4px;
-}
-.carousel-indicators .active {
-  background-color: #f6af00;
-  width: 14px;
-  height: 14px;
-  margin-right: 3px;
-}
-.carousel-control {
-  bottom: 0;
-  color: #ffffff;
-  font-size: 36px;
-  opacity: 1;
-  text-shadow: none;
-  top: 0;
-  width: 40px;
-  height: 40px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.carousel-control.right,
-.carousel-control.left {
-  background: none;
-}
-.carousel-control:hover span {
-  color: #f6af00;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.carousel-control span {
-  cursor: pointer;
-}
-blockquote {
-  margin: 0 auto 14px;
-  padding: 0 25px;
-  text-align: justify;
 }
 .testimonials a:hover {
   color: #fff;
@@ -2833,9 +2751,6 @@ blockquote {
   .testimonials .client-img-overlay .img-circle {
     width: 102px;
   }
-  .carousel-control .glyphicon {
-    display: block;
-  }
 }
 @media (min-width: 992px) {
   .testimonials .client-info-wrap {
@@ -2876,18 +2791,24 @@ blockquote {
   margin-bottom: 50px;
 }
 .fact-box blockquote {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-align: left;
 }
 .fact-box .source-logo {
   width: 100%;
   margin-bottom: 10px;
 }
-@media (min-width: 768px) {
-  .fact-box {
-    margin-bottom: 50px;
+@media (min-width: 992px) and (max-width: 1199px) {
+  .fact-box.first-box blockquote {
+    margin-bottom: 66px;
   }
   .fact-box.second-box blockquote {
-    margin-bottom: 116px;
+    margin-bottom: 143px;
+  }
+}
+@media (min-width: 1200px) {
+  .fact-box.second-box blockquote {
+    margin-bottom: 91px;
   }
 }
 /*===================================================================
@@ -3602,6 +3523,7 @@ blockquote {
   font-size: 16px;
 }
 .property-links ul i {
+  cursor: pointer;
   font-size: 20px;
   line-height: 1;
   position: relative;
@@ -3646,6 +3568,9 @@ blockquote {
 /*===================================================================
   Pages > Property Details > Profit Calculator
 ====================================================================*/
+.profit-calculator.embedded {
+  background: #e9edeb;
+}
 .profit-calculator h4 {
   margin-bottom: 40px;
   font-weight: 600;
@@ -3663,6 +3588,9 @@ blockquote {
 .profit-calculator .form-control {
   font-size: 16px;
   min-height: 40px;
+}
+.profit-calculator .input-group .form-control {
+  border-radius: 4px;
 }
 .profit-calculator .results .form-field-row {
   margin-bottom: 20px;
@@ -3713,6 +3641,55 @@ blockquote {
 .request-details .btn-fullwidth {
   margin-top: 0;
   width: 100%;
+}
+.request-details-modal .modal-dialog {
+  max-width: 620px;
+}
+.request-details-modal .modal-body {
+  padding: 10px 80px 60px;
+}
+.request-details-modal .modal-body h4 {
+  margin-bottom: 30px;
+}
+.request-details-modal .modal-body .input-group {
+  margin: 0;
+  width: 100%;
+}
+.request-details-modal .modal-body .icon-container i {
+  font-size: 18px;
+  line-height: 44px;
+}
+.request-details-modal .modal-body .form-control {
+  font-size: 16px;
+  min-height: 44px;
+}
+.request-details-modal .modal-body .terms {
+  padding-top: 0;
+}
+.request-details-modal .modal-body .btn {
+  width: 100%;
+}
+.request-details-modal .agency-info {
+  margin-bottom: 30px;
+}
+.request-details-modal .agency-info a {
+  display: block;
+  margin-bottom: 10px;
+}
+.request-details-modal .agency-info h6 {
+  font-size: 16px;
+}
+.request-details-modal .agency-info i {
+  color: #191e1d;
+  margin-right: 10px;
+}
+@media (max-width: 991px) {
+  .request-details h2 {
+    text-align: center;
+  }
+  .request-details .btn-fullwidth {
+    margin-top: 30px;
+  }
 }
 /*===================================================================
   Pages > Property Details > Comparables
@@ -3806,11 +3783,8 @@ blockquote {
   Pages > 404 Page
 ====================================================================*/
 .error-page {
-  background: #f44647;
-  color: #fff;
-  height: 100%;
+  color: #191e1d;
   width: 100%;
-  position: fixed;
   text-align: center;
 }
 .error-page h1 {
@@ -3819,15 +3793,10 @@ blockquote {
   border-bottom: 1px solid #e9edeb;
   margin-bottom: 50px;
   padding-bottom: 40px;
+  color: #299ecb;
 }
 .error-page p {
   font-size: 24px;
-}
-.error-page a {
-  color: #fff;
-}
-.error-page a:hover {
-  color: #e9edeb;
 }
 @media (min-width: 480px) {
   .error-page h1 {

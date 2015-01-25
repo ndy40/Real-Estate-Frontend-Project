@@ -159,6 +159,7 @@
 		}
 		
 		i {
+            cursor: pointer;
 			font-size: 20px;
 			line-height: 1;
 			position: relative;
@@ -232,6 +233,10 @@
   Pages > Property Details > Profit Calculator
 ====================================================================*/
 .profit-calculator {
+    &.embedded {
+        background: @gray;
+    }
+    
     h4 {
         margin-bottom: 40px;
         font-weight: 600;
@@ -252,6 +257,10 @@
     .form-control {
         font-size: 16px;
         min-height: 40px;
+    }
+    
+    .input-group .form-control {
+        border-radius: @border-radius-base;
     }
     
     .results {
@@ -322,6 +331,72 @@
         width: 100%;
     }
     
+}
+.request-details-modal {
+    .modal-dialog {
+        max-width: 620px;
+    }
+    
+    .modal-body {
+        padding: 10px 80px 60px;
+        
+        h4 {
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin: 0;
+            width: 100%;
+        }
+        
+        .icon-container i {
+            font-size: 18px;
+            line-height: 44px;
+        }
+        
+        .form-control {
+            font-size: 16px;
+            min-height: 44px;
+        }
+        
+        .terms {
+            padding-top: 0;
+        }
+        
+        .btn {
+            width: 100%;
+        }
+    }
+    
+    .agency-info {
+        margin-bottom: 30px;
+        
+        a {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        h6 {
+            font-size: @font-size-base;
+        }
+        
+        i {
+            color: @gray-darker;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .request-details {
+        h2 {
+            text-align: center;
+        }
+        
+        .btn-fullwidth {
+            margin-top: 30px;
+        }
+    }
 }
 
 /*===================================================================

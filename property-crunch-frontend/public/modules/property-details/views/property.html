@@ -30,7 +30,7 @@
                                 </h6>
                             </hgroup>
                         </div>
-                        <carousel images-src="property.details.images"></carousel>
+                        <pc-carousel images-src="property.details.images"></pc-carousel>
                     </div>
                 </div>
 
@@ -46,21 +46,21 @@
                                     <li  class="email-friend last">
                                         <a href="mailto:enter@yourfriendsemail.com"><i class="icon-mail"></i>Email a Friend</a>
                                     </li>
-                                </ul>
+                                </ul>        
                             </div>
                         </div>
                         <tabset class="profit-calculator">
                             <tab heading="Buy to Let">
                                 <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
                             </tab>
-
+                            
                             <tab heading="Buy to Sell">
-                                <buy-to-sell-calculator purchase-price="property.details.price"></buy-to-sell-calculator>
+                                <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
                             </tab>
                         </tabset>
-
+                        
                     </div>
-                </div>
+                </div>                  
             </div>
             
             <div ng-show="property.info" class="panel panel-default panel-no-body">
@@ -70,7 +70,7 @@
                 <div class="panel-body">{{property.info}}</div>
             </div>
         </div>
-    </article>
+    </article>    
 </section>
 
 <aside class="cta-section request-details">
@@ -80,11 +80,59 @@
                 <h2>Want to Invest in this <span>Property?</span></h2>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-lg btn-3d btn-fullwidth">Request Details</button>
+                <button class="btn btn-lg btn-3d btn-fullwidth" data-toggle="modal" data-target="#requestdetails">Request Details</button>
             </div>
         </div>
     </div>
 </aside>
+<!-- Request Details Modal -->
+<div class="modal fade request-details-modal" id="requestdetails" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="icon-cross icon18-cross"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Learn more about this property</h4>
+                <div class="agency-info">
+                    <a href="#"><i class="icon-office"></i>Allison Center</a>
+                    <h6><i class="icon-phone"></i>202-444-4444</h6>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-user"></i></div>
+                            <input type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mobile"></i></div>
+                            <input type="text" class="form-control form-control-icon" placeholder="Your Phone: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea ng-model="requestDetails.message" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                        </div>    
+                    </div>
+                    <div class="terms">
+                        <h6>By sending you accept our <a ng-href="/pages/terms_of_use">Terms of Service</a> and <a ng-href="/pages/privacy_policy">Privacy Policy</a>.</h6>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-3d calculate">Request Information</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--<aside class="main-content">
     <pc-comparables property-src="comparables.list"></pc-comparables>
@@ -97,9 +145,9 @@
                 <h5>Other Properties You Might Like:</h5>
             </div>
         </div>
-        <rec-properties properties-src="recProperties.list"></rec-properties>
+        <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
     </div>
 </aside>
 
 <!-- footer template -->
-<ng-include src="'modules/shared/footer.html'"></ng-include>
+<ng-include src="'modules/shared/views/footer.html'"></ng-include>
