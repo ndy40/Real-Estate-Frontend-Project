@@ -30,7 +30,7 @@ define(["../module"], function (app) {
                 function (data) {
                     if (data !== undefined) {
                         $rootScope.$broadcast("loginsuccess");
-                        $location.path("/home");
+                        $location.path("/pages/home");
                     }
                 },
                 function (data) {
