@@ -12,5 +12,6 @@ define([
     "./directives/refine-filters-directive",
     "./directives/keyword-filters-directive",
     "./directives/result-options-directive",
-    "./directives/pager-directive"
+    "./directives/pager-directive",
+    "./directives/infinite-scroll-directive"
 ], function () {});

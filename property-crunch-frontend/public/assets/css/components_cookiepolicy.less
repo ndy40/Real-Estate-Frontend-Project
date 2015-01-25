@@ -1,0 +1,64 @@
+/*===================================================================
+  Components > Cookie Policy
+====================================================================*/
+.cookie-policy {
+    position: absolute;
+    margin-top: -75px;
+    width: 100%;
+    
+    a {
+        font-weight: 300;
+        text-decoration: underline;
+        opacity: 1;
+        color: #fff;
+        .transition(opacity 0.3s);
+        
+        &:hover {
+            opacity: 0.8;
+            .transition(opacity 0.3s);
+        }
+    }
+    
+    i {
+        opacity: 1;
+        .transition(opacity 0.3s);
+        
+        &.cookie-icon {
+            float: right;    
+            cursor: pointer;
+            
+            &:hover {
+                opacity: 0.8;
+                .transition(opacity 0.3s);
+            }
+        }
+    }
+    
+    .alert {
+        background-color: @brand-info;
+        font-size: 16px;
+        line-height: 22px;
+        color: #fff;
+        border: 0;
+        margin: 0;
+        padding: 5px 0;
+        position: relative;
+        
+        i {
+            font-size: 20px;
+        }
+    }
+}
+
+
+// Used on the Nav when cookie policy alert is on
+.cookie-alert-on {
+    padding-top: 0;
+    
+    .navbar-default,
+    .cookie-policy {
+        position: relative;
+        margin-top: 0;
+    }
+    
+}

@@ -1,14 +1,12 @@
-// Variables
-
 /*===================================================================
   General Styling > Reset
 ====================================================================*/
 ::selection {
-	background: @brand-primary; /* WebKit/Blink Browsers */
+	background: @brand-blue; /* WebKit/Blink Browsers */
 	color: @white;
 }
 ::-moz-selection {
-	background: @brand-primary;  /* Gecko Browsers */
+	background: @brand-blue;  /* Gecko Browsers */
 	color: @white;
 }
 
@@ -17,22 +15,29 @@ input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 .form-control,
 .form-control:focus,
-.btn, 
-.btn:hover, 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
 .panel {
 	box-shadow: none;
 	outline: none;
  	outline-offset: none;
 }
+
 .btn, 
 .btn:hover, 
 .btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+	outline: none;
+ 	outline-offset: none;
+}
+
 .panel {
 	border: none;
 }
+
+form .input-group .form-control.form-control-icon {
+    border-radius: @border-radius-base;
+}
+
 
 /*===================================================================
   General Styling > Typography
@@ -42,10 +47,11 @@ input[type="checkbox"]:focus,
 body {
 	font-weight: 300;
 	min-width: 320px;
+    overflow-x: hidden;
 }
 
 a {
-	font-weight: 400;
+	font-weight: 600;
 	.transition(color 0.3s);
 	
 	&:hover, &:focus {
@@ -54,19 +60,29 @@ a {
 		.transition(color 0.3s);
 	}
 }
-.navbar-brand span,
+
+a > i {
+    cursor: pointer;
+}
+
+.nav, .footer-links {
+    a {
+        letter-spacing: 0.25px;
+        word-spacing: 2px;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+    
     span {
 	    font-weight: 600;
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0
-}
-
 h1, h2, h3 { margin-bottom: 50px; }
 h4, h5, h6 { margin-bottom: 40px; }
+
 h6 {
 	line-height: 1.43;
 }
@@ -75,19 +91,7 @@ p, ul {
 	margin-bottom: 30px;
 }
 
-blockquote {
-	margin: 0 auto 14px;
-	padding: 0 25px;
-    text-align: justify;
-}
-
 @media (min-width: 768px) {	
-	h1 { font-size: @font-size-h1; }
-	h2 { font-size: @font-size-h2; }
-	h3 { font-size: @font-size-h3; }
-	h4 { font-size: @font-size-h4; }
-	h5 { font-size: @font-size-h5; }
-	h6 { font-size: @font-size-h6; }
 	h1, h2, h3 { margin-bottom: 30px; }
 	h4, h5, h6 { margin-bottom: 20px; }
     blockquote { font-size: 20px;}
@@ -96,61 +100,6 @@ blockquote {
 /*===================================================================
   General Styling > General Classes
 ====================================================================*/
-.dark {
-    color: #fff;
-    
-	a:hover, a:focus {
-		color: @white;
-	}
-}
-
-.main-content {
-	padding: 50px 0 50px;
-}
-
-.large-section {
-    padding: 90px 0;
-    
-    h2 {
-        margin-bottom: 70px;
-    }
-}
-
-.featured-section {
-    background: url("../images/featured-bg.jpg") fixed center top 0;
-    .dark();
-        
-    .btn {
-        font-size: @font-size-h4;
-        font-weight: 400;
-    }
-
-}
-
-.tooltip {
-	width: 200px;
-}
-
-.tooltip-inner {
-	padding: 12px 15px;
-	text-align: left;
-}
-
-.label {
-	font-weight: 300;
-	padding: 4px;;
-	border-radius: 0;
-	cursor: default;
-	
-	i {
-		cursor: pointer;
-	}
-}
-
-.dropdown-menu.open {
-    display: block;
-}
-
 // Mixins
 .bottom-0 	{ margin-bottom: 0; }
 .bottom-10 	{ margin-bottom: 10px; }
@@ -166,6 +115,22 @@ blockquote {
 .top-40 	{ padding-top: 40px; }
 .top-50 	{ padding-top: 50px; }
 
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.dark {
+    color: #fff;
+    
+	a:hover, a:focus {
+		color: @white;
+	}
+}
+
 .text-center {
 	text-align: center;
 }
@@ -174,8 +139,6 @@ blockquote {
 	text-align: left;
 }
 
-
-// Usage : .circle(2, #fff, 70);
 .circle(@border, @border-color, @radius) {
     @computed-line-height: @border+@radius;
     border: ~"@{border}px" solid @border-color;
@@ -185,15 +148,96 @@ blockquote {
     border-radius: ~"@{radius}px";
 }
 
+
+
+.main-content {
+	padding: 50px 0 50px;
+}
+
+.large-section {
+    padding: 90px 0;
+    
+    h2 {
+        margin-bottom: 60px;
+    }
+    
+    h4 {
+        margin-bottom: 70px;
+    }
+}
+
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.input-group.searchbar  {
+    .form-control.form-control-icon {
+        border-radius: @border-radius-base;
+        .border-right-radius(0);
+        
+        &:focus {
+            border: 1px solid @brand-red;
+        }
+    }
+    
+    i.icon-search {
+        color: @brand-red;
+    }
+}
+
+@media (max-width: 479px) {
+    .searchbar  {
+        .form-control.form-control-icon {
+            padding-left: 15px;
+        }
+        .icon-container.input-icon {
+            display: none;
+        }
+        
+        .input-group-btn .btn  {
+            padding: 12px 11px 11px;
+             
+            span {
+                display: none;
+            }
+
+            i.icon-search.button-icon {
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .searchbar  {
+        .input-group-btn .btn  {
+            i.icon-search.button-icon {
+                display: none;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .infinite-notifications {
+        display: none;
+    }
+}
+
+/*===================================================================
+  General Styling > Loader
+====================================================================*/
 .loading {
-     background: #fff;
-     position: absolute;
+     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+     position: fixed;
      z-index: 7;
      width: 100%;
      height: 100%;
      
     .loader {
-        text-align: center;
         margin-top: 230px;
         
         img {
@@ -203,7 +247,9 @@ blockquote {
         }
     }
 }
-
+.loader {
+    text-align: center;
+}
 .body-loading {
     overflow: hidden;
 }

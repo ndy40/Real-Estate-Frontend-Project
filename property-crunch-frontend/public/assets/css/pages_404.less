@@ -1,0 +1,81 @@
+/*===================================================================
+  Pages > 404 Page
+====================================================================*/
+.error-page {    
+//    background: @brand-red;
+//    height: 100%;
+//    position: fixed;
+    color: @gray-darker; 
+    width: 100%;
+    text-align: center;
+    
+    h1 {
+        font-size: 46px;
+        line-height: 1.43;
+        border-bottom: 1px solid @gray;
+        margin-bottom: 50px;
+        padding-bottom: 40px;
+        color: @brand-primary;
+    }
+    
+    p {
+        font-size: @font-size-h4;
+    }
+    
+//    a {
+//        color: #fff;
+//        
+//        &:hover {
+//            color: @gray;
+//        }
+//    }
+    
+}
+
+@media (min-width: 480px) {
+    .error-page h1 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 640px) {
+    .error-page h1 {
+        font-size: 56px;
+    }
+}
+
+@media (min-width: 768px) {
+    .error-page {
+        .main-content {
+            padding: 150px 0;
+        }
+        
+        h1 {
+            font-size: 70px;
+            margin-bottom: 100px;
+            padding-bottom: 80px;
+        }
+        
+        p {
+            font-size: @font-size-h2;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .error-page { 
+        .main-content {
+            padding: 100px 0;
+        }
+        
+        h1 {
+            font-size: 100px;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+}

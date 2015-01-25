@@ -2,11 +2,12 @@
 // Variables
 // --------------------------------------------------
 
-
-
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
+
+@brand-blue:            #299ECB;
+@brand-red:             #F44647;
 
 @gray-darker:            #191e1d;
 @gray-dark:              #999999;
@@ -16,20 +17,11 @@
 
 @white:					#fff;
 
-@brand-primary:         #F6AF00;
-@brand-success:         #3C763D;
+@brand-primary:         @brand-blue;
+@brand-success:         #028863;
 @brand-info:            #31708F;
 @brand-warning:         #8C6200;
-@brand-danger:          #BF0404;
-
-// #00A4EF; Light Blue
-// #048ABF; Dark Blue
-// #F6AF00; Yellow
-// #D3340C; Red
-// #0ED188; Green
-// #03A678; Dark Green
-
-
+@brand-danger:          @brand-red;
 
  
 //== Scaffolding
@@ -42,7 +34,7 @@
 @text-color:            @gray-darker;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @brand-red;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      @gray-darker; //darken(@link-color, 15%);
 
@@ -92,24 +84,24 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+@padding-base-vertical:     5px;
+@padding-base-horizontal:   14px;
 
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
+@padding-large-vertical:    14px;
+@padding-large-horizontal:  30px;
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    10px;
+@padding-small-horizontal:  30px;
 
-@padding-xs-vertical:       1px;
-@padding-xs-horizontal:     5px;
+@padding-xs-vertical:       7px;
+@padding-xs-horizontal:     14px;
 
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        0;
-@border-radius-large:       0;
-@border-radius-small:       0;
+@border-radius-base:        4px;
+@border-radius-large:       6px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -147,11 +139,11 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                normal;
+@btn-font-weight:                400;
 
 @btn-default-color:              #fff;
-@btn-default-bg:                 @brand-primary;
-@btn-default-border:             @brand-primary;
+@btn-default-bg:                 @brand-red;
+@btn-default-border:             @brand-red;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -338,22 +330,22 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    75px;
+@navbar-height:                    60px;
 @navbar-margin-bottom:             @line-height-computed;
-@navbar-border-radius:             @border-radius-base;
+@navbar-border-radius:             0;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #fff;
-@navbar-default-bg:                rgba(0,0,0,0.9);
+@navbar-default-bg:                rgba(0, 0, 0, 0.95);
 @navbar-default-border:            transparent;
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          #fff;
+@navbar-default-link-hover-color:          @brand-primary;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #fff;
+@navbar-default-link-active-color:         @brand-primary;
 @navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
@@ -365,7 +357,7 @@
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
+@navbar-default-toggle-icon-bar-bg:        #ddd;
 @navbar-default-toggle-border-color:       #ddd;
 
 
@@ -430,21 +422,21 @@
 //
 //##
 
-@pagination-color:                     @link-color;
+@pagination-color:                     @gray-darker;
 @pagination-bg:                        #fff;
-@pagination-border:                    #ddd;
+@pagination-border:                    @gray;
 
-@pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-hover-color:               #fff;
+@pagination-hover-bg:                  @brand-red;
+@pagination-hover-border:              @brand-red;
 
 @pagination-active-color:              #fff;
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
+@pagination-active-bg:                 @brand-red;
+@pagination-active-border:             @brand-red;
 
-@pagination-disabled-color:            @gray-light;
+@pagination-disabled-color:            @gray;
 @pagination-disabled-bg:               #fff;
-@pagination-disabled-border:           #ddd;
+@pagination-disabled-border:           @gray-light;
 
 
 //== Pager
@@ -483,16 +475,16 @@
 @state-success-border:           #C7DEC1; //darken(spin(@state-success-bg, -10), 5%);
 
 @state-info-text:                @brand-info;
-@state-info-bg:                  #D9EDF7; //Changed
-@state-info-border:              #C0DAE8; //darken(spin(@state-info-bg, -10), 7%);
+@state-info-bg:                  #EEF; //Changed
+@state-info-border:              #BBF; //darken(spin(@state-info-bg, -10), 7%);
 
 @state-warning-text:             @brand-warning;
 @state-warning-bg:               #FCF8E3; //Changed
 @state-warning-border:           #EBE2C1; //darken(spin(@state-warning-bg, -10), 5%);
 
 @state-danger-text:              @brand-danger;
-@state-danger-bg:                #F8E5E5; //Changed
-@state-danger-border:            #F6DDDD; //darken(spin(@state-danger-bg, -10), 5%);
+@state-danger-bg:                #FEE; //Changed
+@state-danger-border:            #FBB; //darken(spin(@state-danger-bg, -10), 5%);
 
 
 //== Tooltips
@@ -504,8 +496,8 @@
 //** Tooltip text color
 @tooltip-color:               #fff;
 //** Tooltip background color
-@tooltip-bg:                  #000;
-@tooltip-opacity:             .9;
+@tooltip-bg:                  @brand-primary;
+@tooltip-opacity:             1;
 
 //** Tooltip arrow width
 @tooltip-arrow-width:         5px;
@@ -603,7 +595,7 @@
 //## Define alert colors, border radius, and padding.
 
 @alert-padding:               15px;
-@alert-border-radius:         @border-radius-base;
+@alert-border-radius:         @border-radius-small;
 @alert-link-font-weight:      bold;
 
 @alert-success-bg:            @state-success-bg;

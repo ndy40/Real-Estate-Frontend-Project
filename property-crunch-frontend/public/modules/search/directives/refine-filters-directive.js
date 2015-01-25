@@ -17,6 +17,7 @@ define(["../module"], function (app) {
                 },
                 link : function (scope) {
                     scope.filters = {};
+                    
                     /**
                     * POPULATE SELECTBOXES
                     */
@@ -25,16 +26,27 @@ define(["../module"], function (app) {
                     * Populate the Min Price & Max Price filter SelectBoxes.
                     */
                     scope.getPriceList = function () {
-                        SearchService.getPriceList()
-                            .success(function (data) {
-                                var values = Array.prototype.map.call(data.data,
-                                    function (e) {
-                                        return {option : e.option,
-                                            value : e.value};
+                        if (SearchService.getPriceListCache().length === 0) {
+                            SearchService.getPriceList()
+                                .success(function (data) {
+                                    var prices =
+                                        Array.prototype.map.call(data.data,
+                                            function (e) {
+                                                return {
+                                                    option : e.option,
+                                                    value : e.value
+                                                };
                                     });
-                                scope.filters.minPriceList = values;
-                                scope.filters.maxPriceList = values;
+                                    scope.filters.minPriceList = prices;
+                                    scope.filters.maxPriceList = prices;
+                                    SearchService.cachePriceList(prices);
                             });
+                        } else {
+                            scope.filters.minPriceList =
+                                SearchService.getPriceListCache();
+                            scope.filters.maxPriceList =
+                                SearchService.getPriceListCache();
+                        }
                     };
 
                     /**
@@ -42,15 +54,24 @@ define(["../module"], function (app) {
                     * Populate the Type Filter SelectBox.
                     */
                     scope.getTypeList = function () {
-                        SearchService.getTypeList()
-                            .success(function (data) {
-                                var types = Array.prototype.map.call(data.data,
-                                    function (e) {
-                                        return { "option" : e.name,
-                                            "value" : e.id };
+                        if (SearchService.getTypeListCache().length === 0) {
+                            SearchService.getTypeList()
+                                .success(function (data) {
+                                    var types = 
+                                        Array.prototype.map.call(data.data,
+                                            function (e) {
+                                                return {
+                                                    "option" : e.name,
+                                                    "value" : e.id
+                                                };
                                     });
-                                scope.filters.types = types;
+                                    scope.filters.types = types;
+                                    SearchService.cacheTypeList(types);
                             });
+                        } else {
+                            scope.filters.types =
+                                SearchService.getTypeListCache();
+                        }
                     };
 
                     /**
@@ -58,16 +79,24 @@ define(["../module"], function (app) {
                     * Populate the Yield Filter SelectBox.
                     */
                     scope.getYieldList = function () {
-                        SearchService.getYieldList()
-                            .success(function (data) {
-                                var rentalYield =
-                                    Array.prototype.map.call(data.data,
-                                        function (e) {
-                                            return { option : e.option,
-                                                value : e.value };
+                        if (SearchService.getYieldListCache().length === 0) {
+                            SearchService.getYieldList()
+                                .success(function (data) {
+                                    var rentalYield = 
+                                        Array.prototype.map.call(data.data,
+                                            function (e) {
+                                                return {
+                                                    option : e.option,
+                                                    value : e.value
+                                                };
                                         });
-                                scope.filters.yieldList = rentalYield;
+                                    scope.filters.yieldList = rentalYield;
+                                    SearchService.cacheYieldList(rentalYield);
                             });
+                        } else {
+                            scope.filters.yieldList =
+                                SearchService.getYieldListCache();
+                        }
                     };
 
                     scope.initList = function () {

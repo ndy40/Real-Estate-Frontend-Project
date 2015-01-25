@@ -14,6 +14,7 @@ define(["../module"], function (app) {
                 link : function (scope) {
 
                     scope.recProperties = {};
+                    scope.swipeAlert = true;
 
                     /**
                     * Get Reccomended Property Data from Service
@@ -39,12 +40,23 @@ define(["../module"], function (app) {
                             scope.recProperties.status = false;
                         }
                     };
-
+                    
+                    /**
+                    * Turns of Swipe Alert
+                    */
+                    scope.swipeAlertOff = function() {
+                        var car = $(".recommended-carousel");
+                        car.on('click', function () {
+                            scope.swipeAlert = false;
+                        });
+                    };
+                    
                     /**
                     *  Init Get Reccomended Properties
                     */
                     scope.getRecProperties();
-
+                    scope.swipeAlertOff();
+                    
                     /**
                     *  Set up Carousel
                     */

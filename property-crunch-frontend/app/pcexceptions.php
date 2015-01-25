@@ -1,6 +1,6 @@
 <?php
 /* 
- * This file contains a list of Property Crunch Exceptions
+ * This file contains a list of Nello Exceptions
  * @author Ndifreke Ekott <ndy40.ekott@gmail.com>
  * 
  */

@@ -1,4 +1,5 @@
 <div class="recommended-carousel">
+    <h5 ng-show="swipeAlert" class="swipe-notification visible-xs visible-sm">Swipe Left to View More</h5>
     <div class="carousel-wrapper">
         <div class="owl-carousel">
             <div class="item" data-ng-repeat="property in recProperties.list">
@@ -7,12 +8,12 @@
                     <h5 class="item-price">{{property.price | customCurrency: "£"}}</h5>
                     <h5 class="item-location">{{property.address}}</h5>
                     <h5 class="item-income"><span>{{property.price | customCurrency: "£"}}</span> Rental Income</h5>
-                    <h5 class="item-yield"><span>{{property.yield}}</span> Yield</h5>
+                    <h5 class="item-yield"><span>{{property.yield | number : 1}}% Yield</h5>
                 </a>
             </div>
         </div>
     </div>
-    <div class="carousel-nav">
+    <div class="carousel-nav hidden-xs">
         <button class="prev"> 
             <i class="icon-arrow-left7"></i>
         </button>

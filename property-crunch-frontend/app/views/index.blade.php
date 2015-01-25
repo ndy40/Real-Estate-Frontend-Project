@@ -8,7 +8,7 @@
         <link href="{{asset('assets/css/bootstrap/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
-        <title>Property Crunch</title>
+        <title>nello - a smarter way to find properties</title>
         <base href="/">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,6 +20,13 @@
     
     </head>
     <body>
+        <!-- Loader -->
+        <div class="loading">
+            <div class="loader">
+                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">
+                <h6>Loading.. Please Wait</h6>
+            </div>
+        </div>   
         <!-- contents go in here. -->
         <ng-view></ng-view>
 

@@ -1,53 +1,35 @@
 /*===================================================================
   Components > Header
 ====================================================================*/
-// Variables // 
-@header-height: 75px;
-
-header {
-	color: #fff;
-    padding-top: @header-height;
-}
-
 .navbar-default {
-	width: 100%;
 	margin-bottom: 0;
-	position: absolute;
-    margin-top: -@header-height;
 	z-index: 5;
 	
     .navbar-brand {
         font-size: 24px;
-        
+        height: 100%;
+        padding: 17px 15px;
+             
         img {
-            width: 169px;
-            height: 28px;
+            width: 57px;
         }
     }
     
     .navbar-toggle {
-		
-        .icon-bar {
-			background-color: #ddd;
-		}
+	    .transition(all 0.3s);
 		
 		&:hover, 
 		&:focus {
-			background-color: @brand-primary;
-			border-color: @brand-primary;
+			background-color: @brand-blue;
+			border-color: @brand-blue;
 			.transition(all 0.3s);
-			
-			.icon-bar {
-				background-color: #fff;
-				.transition(all 0.3s);
-			}
 		}
 	}
     
     .navbar-nav {
         li {
             &:hover, &:focus, &.active {
-                background: @brand-primary;
+                background: @brand-blue;
                 .transition(all 0.3s);
             }
             
@@ -55,6 +37,10 @@ header {
                 margin: 0 20px;
                 padding: 10px 0;
                 .transition(all 0.3s);
+                
+                &:hover {
+                    color: #fff;
+                }
             }
             
             .icon-star {
@@ -83,8 +69,8 @@ header {
                     font-size: @font-size-h6;
                     
                     &:hover, &:focus {
-                        background-color: @brand-primary;
-                        color: @white;
+                        background-color: @brand-blue;
+                        color: #fff;
                     }
                 }
             }
@@ -99,11 +85,6 @@ header {
         .username {
             > a {
                 text-transform: capitalize;
-                
-                i, span {
-                    color: @brand-primary;
-                }
-                
             }
             
             .icon-user3 {
@@ -119,12 +100,12 @@ header {
         }
         
          .badge {
-            background: @brand-primary;
+            background: @brand-blue;
             position: absolute;
             font-size: 12px;
             min-width: 14px;
             line-height: 10px;
-            font-weight: 300;
+            font-weight: 400;
             padding: 3px;
             top: 18px;
             left: 7px;
@@ -140,7 +121,6 @@ header {
 
 @media (min-width: 768px) {
     .navbar-default {
-        float: right;
         padding: 0;
             
         .navbar-collapse {
@@ -148,9 +128,6 @@ header {
         }
             
         .navbar-nav {
-            margin-left: 0;
-            margin-left: 80px;
-            
             li { 
                 margin-right: 50px;
                 
@@ -164,15 +141,14 @@ header {
                 
                 a {
                     padding: 0;
-                    margin: 27px 0 26px;
-                    font-weight: 300;
+                    margin: 21px 0;
                     position: relative;
                     
                     .transition(color 0.3s);
                     
                     &:hover,
                     &.active {
-                        color: @brand-primary;
+                        color: @brand-blue;
                         .transition(color 0.3s);
                     }
                 }
@@ -225,7 +201,7 @@ header {
                         color: #fff;
                         
                         &:hover, &:focus {
-                            background-color: @brand-primary;
+                            background-color: @brand-blue;
                         }
                     }
                 }
@@ -245,10 +221,6 @@ header {
     }
 }
 
-@media (min-width: 991px) {
-
-}
-
 /*===================================================================
   Components > Header > Home Header
 ====================================================================*/
@@ -256,12 +228,7 @@ header {
 	background: 
 		url(../images/header-bg-pattern.png) repeat fixed center 0,
 		url(../images/header-bg.jpg) fixed center 0;
-		
-	#search {
-		margin-top: -1px;
-	}
 }
-
 
 /*===================================================================
   Components > Header > Lern More Header
@@ -275,9 +242,6 @@ header {
     }
 }
 
-@media (min-width: 768px) {
-}
-
 /*===================================================================
    Components > Header > Search Results Header
 ====================================================================*/
@@ -288,28 +252,51 @@ header {
 }
 
 .search-header {
-	background: 
-		url(../images/header-bg-pattern.png) repeat fixed center 0,
-		url(../images/search_banner.jpg) fixed center 0;
-	
-	height: 260px;
+	background: url(../images/search_banner.jpg) fixed center 0;
+    padding: 50px 0 35px;
 }
 
 .search-content {
-	padding: 50px 0 25px;
 	.text-center();
 	
 	.input-group {
-		.bottom-20();
+		.bottom-10();
 	}
 	
 	.searchbar-bottom {
 		text-align: center;
-		font-size: @font-size-h5;		
+		font-size: @font-size-h5;	
+		.bottom-10();
+        .clearfix();
 		
-		a:hover, a:focus {
-			color: @white;
-		}
+        
+        .advanced-search,
+        .result_count {
+            line-height: 1.1;
+            float: left;
+            text-shadow: 1px 1px 1px #000;	
+        }
+        
+        .advanced-search {
+            font-weight: 700;
+            letter-spacing: 0.35px;
+            margin-right: 20px;
+		    .bottom-10();
+            .transition(all 0.3s);
+            
+            &:hover {
+                .transition(all 0.3s);
+            }
+            
+            &:focus {
+                color: @brand-red;
+            }
+             
+        }
+         
+        .result_count {
+            margin-bottom: 0;	
+        }
 		
 		i {
 			font-size: 28px;
@@ -321,14 +308,23 @@ header {
 		}
 	}
 }
-.searchbar {
+.search-content .input-group .form-control.form-control-icon.searchbar {
+    border-radius: @border-radius-base;
+    .border-right-radius(0);
+    
 	border-right: none;
 }
 
-@media (min-width: 360px) {
-	.search-content {
+
+@media (min-width: 480px) {
+    .search-content {
 		.searchbar-bottom {
-			text-align: right;
+			 .advanced-search {
+                float: left;
+             }
+            .result_count {
+                float: right;
+            }
 		}	
 	}
 }

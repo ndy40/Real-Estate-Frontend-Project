@@ -1,36 +1,53 @@
 /*===================================================================
   Components > Spinner
 ====================================================================*/
+.spinner-label {
+    font-size: @font-size-base;
+    line-height: 35px;
+    float: left;
+    margin-bottom: 0;
+}
+
 .spinner {
 	position: relative;
+    float: right;
 	.clearfix();
-	
+    
 	.form-control,
 	button {
-		float: left;    
-		min-height: 40px;
-    	padding: 5px 10px;
-		width: 40px;	
+		float: left;
+        line-height: 33px;  
 	}
 	
 	.form-control {
 		font-size: 16px;
-		
+        padding: 0;
+        min-height: 35px;
+        height: 35px;
+        width: 70px;
+        border-radius: 0;
 		text-align: center;
-    	width: 87px;
 	}
 	
 	button {
 		font-size: 24px;
-		font-weight: 400;
-		background: @gray-dark;
-		color: @white;
-		
+        height: 35px;
+		width: 35px;	
+		background: @gray;
+		color: @gray-darker;
+		border-radius: @border-radius-base;
+        
+        &.subtract {
+            .border-right-radius(0);
+        }
+        
+        &.add {
+            .border-left-radius(0);
+        }
+        
 		&:hover {
 			background: @brand-primary;
 			color: @white;
 		}
 	}
-	
-	
 }
