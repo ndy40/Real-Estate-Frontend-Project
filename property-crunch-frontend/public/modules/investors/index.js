@@ -2,7 +2,8 @@
 /**
 *   Module index file.
 */
-
-define(["./controllers/investors-controller"], function () {
-    'use strict';
-});
+define([
+    "./controllers/investors-controller",
+    "./views/favourites",
+    "./services/session-service"
+], function () {});
