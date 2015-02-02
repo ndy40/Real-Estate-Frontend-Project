@@ -5,14 +5,9 @@
 
 <section class="main-content">
     <div class="container">
-        <h3>Favourties</h3>
-        <div class="alert alert-danger hidden" role="alert" ng-show="searchObject.errorType.filters">
-            <i class="icon-warning"></i>
-            Please <span>Refine Your Search</span>. Sorry, no properties found matching your criteria.
-        </div>
-                
-        <div id="properties_list">
-            <article ng-repeat="property in searchObject.properties" class="property-listing">
+        <h3>Favourites</h3>
+        <div id="favourites_list">
+            <article ng-repeat="property in favList.properties" class="property-listing">
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <a ng-href="/property/{{property.id}}" class="property-img">
@@ -23,7 +18,6 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="property-title-group">
                             <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
-                            <a class="add-to-fav" href="favourites.html"><i class="icon-star"></i>Add to Favourites</a>
                         </div>
                         <p>{{property.address}}</p>
                         <div class="property-details-group">
@@ -46,6 +40,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <button class="btn btn-xs remove-fav-btn" ng-click="removeFromFav(property.id)"><i class="icon-cross"></i>Remove From Favourites</button>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <h5 class="right-section-label">
@@ -54,9 +49,10 @@
                         </h5>
                         <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
                     </div>
+                    </div>
                 </div>
             </article>
-        </div>
+        </div
     </div>
 </section>
 

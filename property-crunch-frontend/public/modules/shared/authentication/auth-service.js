@@ -25,9 +25,8 @@ define(["./module"], function (app) {
              */
             AuthService.prototype.getCurentUser = function (callback) {
                 $http.get(AUTHURL).success(callback);
-                console.log(callback);
             };
-
+            
             /**
              * Authenticate a user and return a promise.
              *

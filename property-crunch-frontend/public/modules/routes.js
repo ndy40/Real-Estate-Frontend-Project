@@ -42,6 +42,11 @@
                     controller  : "LoginCtrl"
                 });
                 
+                $routeProvider.when("/favourites", {
+                    templateUrl : "modules/favourites/views/favourites.html",
+                    controller  : "FavouritesCtrl"
+                });
+                
                 // Used as an iframe on Blog
                 $routeProvider.when("/property-calculator", {
                     templateUrl : "modules/property-details/views/calculator.html",

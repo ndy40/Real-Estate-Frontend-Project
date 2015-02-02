@@ -5,12 +5,17 @@
 
 define(["../module", "localStorage", "cookies"], function (app) {
     'use strict';
-    app.service("UserModel", ["AuthService", "$storage", "$cookieStore", function (AuthService, $storage, $cookieStore) {
+    app.service("UserModel", ["AuthService", "$storage", "$cookieStore",
+        '$http', 'APPURL',
+            function (AuthService, $storage, $cookieStore, $http, APPURL) {
         
         var fn = function () {
             this.fullname = null;
             this.isLoggedIn = false;
             this.user = null;
+            this.userId = null;
+            this.favourites = null;
+            this.favCount = 0;
             this.session = $storage("auth");
         };
         
@@ -22,16 +27,63 @@ define(["../module", "localStorage", "cookies"], function (app) {
             AuthService.logout();
         };
 
+        // Save Property on Server
+        fn.prototype.addToFav = function (propertyId) {
+            return $http.get(APPURL.addToFav + this.userId + "/" + propertyId);
+        };
+        
+        // Check to See if a Property is in Favourites
+        fn.prototype.isFav = function (propertyId) {
+            if( this.favourites.match(new RegExp("(?:^|,)"+propertyId+"(?:,|$)"))) 
+                return true;
+        };
+        
+        // Update Favourites on Frontend Cache
+        fn.prototype.updateFavourites = function (propertyId) {
+            // Add Property only if not already in list
+            if( !this.isFav(propertyId) ) {
+                this.favourites += "," + propertyId;
+                this.incFavCount();
+            }
+        };
+        
+        
+        // Get Favourites Count
+        fn.prototype.getFavCount = function () {
+            var adjustCounted = this.favourites.split(',').length - 1;
+
+            if (adjustCounted < 0 ) {
+                this.favCount = 0;
+            } else {
+                this.favCount = adjustCounted;
+            }
+            
+            return this.favCount;
+        };
+        
+        // Increment Favourites Counter
+        fn.prototype.incFavCount = function () {
+            return this.favCount++;
+        };
+        
+        // Decrement Favourites Counter
+        fn.prototype.decFavCount = function () {
+            return this.favCount--;
+        };
+
         fn.prototype.createSession = function (data) {
             if (data.hasOwnProperty("first_name")) {
                 this.fullname = data.first_name + " " + data.last_name;
+                this.userId = data.id;
                 this.user = data;
+                this.favourites = data.favourites;
+                this.getFavCount();
                 this.isLoggedIn = true;
                 $cookieStore.put("isLoggedIn", true); 
                 this.session.setItem("auth", data);
             }                   
         };
-
+        
         fn.prototype.refresh = function () {
             var isLoggedIn = $cookieStore.get("isLoggedIn");
 

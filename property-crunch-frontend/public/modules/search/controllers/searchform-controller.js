@@ -1,12 +1,14 @@
 /*global define */
 /**
- * Search Form Controller for the PCAPPSEARCH Module
+ * Search Form Controller for the pcSearch Module
  */
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("SearchFormCtrl", ["$scope", "SearchService", 
-        function ($scope, SearchService) {
+    app.controller("SearchFormCtrl", ["$scope", "$rootScope", "UserModel",
+         "SearchService", "$location", 
+            function ($scope, $rootScope, UserModel, SearchService, $location) {
+
             /**
              * Object to Store Search Data
              */
@@ -136,6 +138,26 @@ define(["../module"], function (app) {
                     }
                 }
             };
+
+            /**
+            * Add Property To Favourites
+            */
+            $scope.addToFavourites = function(propertyId) {
+                if (UserModel.userId !== null) {
+                    UserModel.addToFav(propertyId)
+                        .success(function() {
+                            UserModel.updateFavourites(propertyId);
+                            $rootScope.$broadcast("favUpdated");
+                        });
+                } else {
+                    // Send to Login Page
+                    $location.path("/login");
+                }
+            };
             
+                
+            $scope.$on("favUpdated", function (targetscope, currscope) {
+                $scope.favUpdate = true;
+            });
         }]);
 });
