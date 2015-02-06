@@ -3720,6 +3720,10 @@ footer.default-footer ul li:last-child {
   margin: 0;
   padding: 0;
 }
+.comparables-listing .right-section-group .right-section-value {
+  font-size: 24px;
+  font-weight: 300;
+}
 .more-button-wrap {
   width: 180px;
   margin: 0 auto;
@@ -3745,25 +3749,13 @@ footer.default-footer ul li:last-child {
   }
   .comparables-listing .right-section-group .right-section-value {
     float: left;
-    margin-top: 31px;
+    margin-top: 20px;
   }
 }
 @media (min-width: 1200px) {
   .comparables-listing p,
   .comparables-listing .property-title-group {
     margin-bottom: 16px;
-  }
-  .comparables-listing .right-section-group {
-    margin-top: 5px;
-  }
-  .comparables-listing .right-section-group .right-section-label,
-  .comparables-listing .right-section-group .right-section-value {
-    width: 100%;
-    text-align: center;
-  }
-  .comparables-listing .right-section-group .right-section-value {
-    float: left;
-    margin-top: 31px;
   }
   .more-button-wrap {
     padding: 10px 0 0;
