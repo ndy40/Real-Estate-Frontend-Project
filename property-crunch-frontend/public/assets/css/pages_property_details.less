@@ -34,7 +34,7 @@
     }
     
     .property-address {
-        line-height: 24px;
+        line-height: 1.43;
     }
     
     .property-price {
@@ -120,15 +120,26 @@
 @media (min-width: 992px) {
      .property-heading {
         .property-address {
-            max-width: 350px;
+            max-width: 330px;
         }
         
         .right-section {    
-            max-width: 185px;
+            max-width: 200px;
         }
      }
 }
 
+@media (min-width: 1200px) {
+     .property-heading {
+        .property-address {
+            max-width: 450px;
+        }
+        
+        .right-section {    
+            max-width: 200px;
+        }
+     }
+}
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -153,21 +164,30 @@
                 float: right;
 			}
 			    
-            a {
+            a, .added-to-fav {
                 font-size: 16px;
             }
-		}
-		
-		i {
-            cursor: pointer;
-			font-size: 20px;
-			line-height: 1;
-			position: relative;
-			top: 3px;
-			margin-right: 10px;
-		}
+		    
+            .added-to-fav {
+                color: @gray-darker;
+                font-weight: 600;
+                margin-bottom: 0;
+                
+                i {
+                    cursor: default;
+                }
+            }
+            
+            i {
+                cursor: pointer;
+                font-size: 20px;
+                line-height: 1;
+                position: relative;
+                top: 3px;
+                margin-right: 7px;
+            }
+        }
 	}
-	
 }
 
 @media (min-width: 480px) {

@@ -10,5 +10,6 @@ define([
     "./filters/percent-filter",
     "./services/rec-properties-service",
     "./services/user-model-service",
-    "./authentication/index"
+    "./authentication/index",
+    "./directives/add-to-fav-directive"
 ], function () {});

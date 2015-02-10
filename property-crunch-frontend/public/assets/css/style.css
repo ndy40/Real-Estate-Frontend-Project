@@ -1415,14 +1415,15 @@ button {
   line-height: 44px;
   padding: 4px;
   position: relative;
+  border-radius: 3px;
   background: rgba(25, 30, 29, 0.8);
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .carousel-nav button:hover {
-  background: rgba(25, 30, 29, 0.9);
-  color: #299ecb;
+  background: #299ecb;
+  color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1808,7 +1809,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   padding: 3px 6px;
   font-weight: 300;
   padding: 4px;
-  border-radius: 0;
   cursor: default;
 }
 .label i {
@@ -1964,6 +1964,9 @@ textarea.form-control {
 /*===================================================================
   Components > Modals
 ====================================================================*/
+.modal-backdrop {
+  background: #000;
+}
 .modal-dialog {
   z-index: 1060;
 }
@@ -2402,7 +2405,7 @@ i.icon-help:hover {
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-default {
     padding: 0;
   }
@@ -2785,6 +2788,46 @@ footer.default-footer ul li:last-child {
   transition: all 0.3s;
 }
 /*===================================================================
+  Pages > Learn More > Video Modal
+====================================================================*/
+.video-modal .modal-backdrop {
+  background: #000;
+}
+.video-modal .modal-dialog {
+  background: transparent;
+  border: none;
+}
+.video-modal .modal-body {
+  padding: 0;
+  position: relative;
+}
+.video-modal .modal-body:hover button.close {
+  opacity: 1;
+}
+.video-modal button.close {
+  background: none repeat scroll 0 0 #191e1d;
+  border: 0 none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+.video-modal button.close i.icon-cross {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+  text-shadow: none;
+}
+.video-modal button.close:hover {
+  opacity: 0.95;
+}
+/*===================================================================
   Pages > Learn More > Why invest in Property?
 ====================================================================*/
 .fact-box {
@@ -3157,19 +3200,24 @@ footer.default-footer ul li:last-child {
   clear: both;
 }
 .property-listing .property-title-group a,
-.property-listing .property-title-group .add-to-fav {
+.property-listing .property-title-group .add-to-fav,
+.property-listing .property-title-group .added-to-fav {
   line-height: 26px;
 }
-.property-listing .property-title-group a {
+.property-listing .property-title-group a,
+.property-listing .property-title-group .added-to-fav {
   font-size: 24px;
+  font-weight: 600;
   margin: 0;
   float: left;
 }
-.property-listing .property-title-group .add-to-fav {
+.property-listing .property-title-group .add-to-fav,
+.property-listing .property-title-group .added-to-fav {
   float: right;
   font-size: 14px;
 }
-.property-listing .property-title-group .add-to-fav i {
+.property-listing .property-title-group .add-to-fav i,
+.property-listing .property-title-group .added-to-fav i {
   font-size: 18px;
   position: relative;
   top: 2px;
@@ -3272,6 +3320,16 @@ footer.default-footer ul li:last-child {
   font-size: 24px;
   font-weight: 500;
 }
+.added-to-fav {
+  cursor: default;
+  display: none;
+}
+.favourite .add-to-fav {
+  display: none;
+}
+.favourite .added-to-fav {
+  display: block;
+}
 @media (min-width: 640px) {
   .property-listing .property-details-group .beds {
     float: left;
@@ -3323,13 +3381,16 @@ footer.default-footer ul li:last-child {
     clear: both;
   }
   .property-listing .property-title-group a,
-  .property-listing .property-title-group .add-to-fav {
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing .property-title-group .added-to-fav {
     float: left;
   }
-  .property-listing .property-title-group a {
+  .property-listing .property-title-group a,
+  .property-listing .property-title-group .added-to-fav {
     margin: 0 18px 0 0;
   }
-  .property-listing .property-title-group .add-to-fav {
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing .property-title-group .added-to-fav {
     font-size: 14px;
   }
   .property-listing .property-details-group {
@@ -3416,7 +3477,7 @@ footer.default-footer ul li:last-child {
   margin-bottom: 0;
 }
 .property-heading .property-address {
-  line-height: 24px;
+  line-height: 1.43;
 }
 .property-heading .property-price {
   float: left;
@@ -3493,10 +3554,18 @@ footer.default-footer ul li:last-child {
 }
 @media (min-width: 992px) {
   .property-heading .property-address {
-    max-width: 350px;
+    max-width: 330px;
   }
   .property-heading .right-section {
-    max-width: 185px;
+    max-width: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  .property-heading .property-address {
+    max-width: 450px;
+  }
+  .property-heading .right-section {
+    max-width: 200px;
   }
 }
 /*===================================================================
@@ -3519,16 +3588,25 @@ footer.default-footer ul li:last-child {
   margin-bottom: 0;
   float: right;
 }
-.property-links ul li a {
+.property-links ul li a,
+.property-links ul li .added-to-fav {
   font-size: 16px;
 }
-.property-links ul i {
+.property-links ul li .added-to-fav {
+  color: #191e1d;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.property-links ul li .added-to-fav i {
+  cursor: default;
+}
+.property-links ul li i {
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
   position: relative;
   top: 3px;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 @media (min-width: 480px) {
   .property-links ul li {
@@ -3771,8 +3849,27 @@ footer.default-footer ul li:last-child {
 /*===================================================================
   Pages > Favourites
 ====================================================================*/
-#favourites_list .remove-fav-btn {
-  margin-top: 30px;
+#favourites_list .property-title-group .add-to-fav {
+  font-size: 15px;
+}
+#favourites_list .icon-cross2 {
+  margin-right: 2px;
+  position: relative;
+  top: 3px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #favourites_list .right-section-label {
+    margin: 6px 0;
+  }
+  #favourites_list .right-section-value {
+    line-height: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #favourites_list .property-title-group,
+  #favourites_list p {
+    margin-bottom: 30px;
+  }
 }
 /*===================================================================
   Pages > 404 Page

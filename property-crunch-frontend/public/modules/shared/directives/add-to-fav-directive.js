@@ -1,12 +1,12 @@
 /*global define */
 /**
- * pcIsFav Directive - To Add Classes to Favourite Properties 
+ * pcAddToFav Directive - To Add Classes to Favourite Properties 
  */
 
 define(["../module"], function (app) {
     'use strict';
 
-    app.directive("pcIsFav", ["UserModel", function (UserModel) {
+    app.directive("pcAddToFav", ["UserModel", function (UserModel) {
         return {
             restrict : "E",
             scope : {
@@ -18,9 +18,11 @@ define(["../module"], function (app) {
                  * Add "favourite" class to the favourite properties
                  */
                 scope.setFav = function () {
-                    if (UserModel.isFav(scope.propertyId)) {
-                        elem.addClass("favourite");
-                    } 
+                    if (UserModel.isLoggedIn) {
+                        if (UserModel.isFav(scope.propertyId)) {
+                            elem.addClass("favourite");
+                        }
+                    }
                 };
 
                 /**
@@ -30,6 +32,7 @@ define(["../module"], function (app) {
                 scope.$watch('propertyId', function () {
                     scope.setFav();
                 });
+                
                 scope.$watch('favUpdate', function () {
                     scope.setFav();
                 });

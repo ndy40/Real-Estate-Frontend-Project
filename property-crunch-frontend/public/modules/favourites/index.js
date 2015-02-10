@@ -5,5 +5,6 @@
 
 define([
     "./controllers/favourites-controller",
-    "./services/favourites-service"
+    "./services/favourites-service",
+    "./directives/remove-fav-directive"
 ], function () {});

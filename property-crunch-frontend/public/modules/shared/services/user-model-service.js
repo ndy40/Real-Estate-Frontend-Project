@@ -27,19 +27,22 @@ define(["../module", "localStorage", "cookies"], function (app) {
             AuthService.logout();
         };
 
-        // Save Property on Server
+        // Check to See if a Property is in Favourites
+        fn.prototype.isFav = function (propertyId) {
+            if( this.favourites.match(new RegExp("(?:^|,)"+propertyId+"(?:,|$)"))) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        
+        // Add to Favourites on the Server
         fn.prototype.addToFav = function (propertyId) {
             return $http.get(APPURL.addToFav + this.userId + "/" + propertyId);
         };
         
-        // Check to See if a Property is in Favourites
-        fn.prototype.isFav = function (propertyId) {
-            if( this.favourites.match(new RegExp("(?:^|,)"+propertyId+"(?:,|$)"))) 
-                return true;
-        };
-        
-        // Update Favourites on Frontend Cache
-        fn.prototype.updateFavourites = function (propertyId) {
+        // Add to Favourites on the Frontend
+        fn.prototype.addToFavFE = function (propertyId) {
             // Add Property only if not already in list
             if( !this.isFav(propertyId) ) {
                 this.favourites += "," + propertyId;
@@ -47,6 +50,23 @@ define(["../module", "localStorage", "cookies"], function (app) {
             }
         };
         
+        // Remove from Favourites on the Server
+        fn.prototype.removeFav = function (propertyId) {
+            return $http.get(APPURL.removeFav + this.userId + "/" + propertyId);
+        };
+        
+        // Remove from Favourites on the Frontend
+        fn.prototype.removeFavFE = function (propertyId) {
+            var splitFav = this.favourites.split(",");
+        
+            for (var i = 0 ; i < splitFav.length ; i++) {
+                if (splitFav[i] === propertyId) {
+                    splitFav.splice(i, 1);
+                }
+            }
+            this.favourites = splitFav.toString();
+            this.decFavCount();
+        };
         
         // Get Favourites Count
         fn.prototype.getFavCount = function () {

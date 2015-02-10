@@ -8,7 +8,6 @@ define([
 ], function (ng) {
     'use strict';
     return ng.module("pcPropertyDetails",  [
-        "ngRoute",
-        "pcShared"
+        "ngRoute"
     ]);
 });

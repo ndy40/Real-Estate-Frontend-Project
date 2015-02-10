@@ -17,6 +17,7 @@ define([
     ])
     .constant("APPURL", {
         "recProperties" : "http://app.propertycrunch.co/client/search/search-properties/",
-        "addToFav"  : "api/property/add-favourite/"
+        "addToFav"  : "api/property/add-favourite/",
+        "removeFav" : "api/property/remove-favourite/"
     });
 });

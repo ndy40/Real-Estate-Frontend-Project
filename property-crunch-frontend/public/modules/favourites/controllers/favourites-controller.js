@@ -5,8 +5,9 @@
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("FavouritesCtrl", ["$scope", "FavService", "UserModel", "$location", 
-        function ($scope, FavService, UserModel, $location) {
+    app.controller("FavouritesCtrl", ["$scope", "$rootScope", "FavService",
+        "UserModel", "$location",
+            function ($scope, $rootScope, FavService, UserModel, $location) {
         
         /**
         * Send to Login Page if Not Logged in
@@ -55,6 +56,27 @@ define(["../module"], function (app) {
         * Init getFavourites
         */
         $scope.getFavourites();
+        
+        
+        /**
+        * Remove From Favourites
+        */
+        $scope.removeFromFav = function(propertyId) {
+            UserModel.removeFav(propertyId)
+                .success(function() {
+                    UserModel.removeFavFE(propertyId);
+                    $rootScope.$broadcast("favUpdated");
+                });
+        };
+
+
+        $scope.$on("favUpdated", function (targetscope, currscope) {
+            if ($scope.favUpdate) {
+                $scope.favUpdate = false;
+            } else {
+                $scope.favUpdate = true;
+            }
+        });
         
     }]);
 });

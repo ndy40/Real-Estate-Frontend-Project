@@ -4,8 +4,9 @@
  */
 define(["../module"], function (app) {
     'use strict';
-    app.controller("PropertyCtrl", ["$scope", "SearchService",
-        "$routeParams", function ($scope, SearchService, $routeParams) {
+    app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
+        "SearchService", "$routeParams", "$location", function ($scope,
+            $rootScope, UserModel, SearchService, $routeParams, $location) {
 
         /**
         * Object to Store Property Data
@@ -47,6 +48,7 @@ define(["../module"], function (app) {
 
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
+            $scope.property.status = true;
             $scope.getFirstListedDate(data.created_at);
             // Populate Email Message for Request Details
             $scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
@@ -114,6 +116,30 @@ define(["../module"], function (app) {
         };
 
         $scope.init();
+        
+        /**
+        * Add Property To Favourites
+        */
+        $scope.addToFavourites = function(propertyId) {
+            if (UserModel.userId !== null) {
+                UserModel.addToFav(propertyId)
+                    .success(function() {
+                        UserModel.addToFavFE(propertyId);
+                        $rootScope.$broadcast("favUpdated");
+                    });
+            } else {
+                // Send to Login Page
+                $location.path("/login");
+            }
+        };
 
+
+        $scope.$on("favUpdated", function (targetscope, currscope) {
+            if ($scope.favUpdate) {
+                $scope.favUpdate = false;
+            } else {
+                $scope.favUpdate = true;
+            }
+        });
     }]);
 });

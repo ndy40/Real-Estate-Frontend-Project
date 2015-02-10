@@ -70,7 +70,7 @@
                      <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy' infinite-scroll-distance='1'>
                         <article ng-repeat="property in searchObject.properties" class="property-listing">
                             <div class="row">
-                                <pc-is-fav property-id="property.id" fav-update="favUpdate">
+                                <pc-add-to-fav property-id="property.id" fav-update="favUpdate">
                                     <div class="col-md-3 col-sm-6">
                                         <a ng-href="/property/{{property.id}}" class="property-img">
                                             <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
@@ -81,6 +81,7 @@
                                         <div class="property-title-group">
                                             <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
                                             <a ng-click="addToFavourites(property.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                            <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
                                         </div>
                                         <p>{{property.address}}</p>
                                         <div class="property-details-group">
@@ -111,7 +112,7 @@
                                         </h5>
                                         <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
                                     </div>
-                                </pc-is-fav>
+                                </pc-add-to-fav>
                             </div>
                         </article>
                      </div>

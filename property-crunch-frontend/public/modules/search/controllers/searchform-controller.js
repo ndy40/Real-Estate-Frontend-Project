@@ -146,7 +146,7 @@ define(["../module"], function (app) {
                 if (UserModel.userId !== null) {
                     UserModel.addToFav(propertyId)
                         .success(function() {
-                            UserModel.updateFavourites(propertyId);
+                            UserModel.addToFavFE(propertyId);
                             $rootScope.$broadcast("favUpdated");
                         });
                 } else {
@@ -157,7 +157,11 @@ define(["../module"], function (app) {
             
                 
             $scope.$on("favUpdated", function (targetscope, currscope) {
-                $scope.favUpdate = true;
+                if ($scope.favUpdate) {
+                    $scope.favUpdate = false;
+                } else {
+                    $scope.favUpdate = true;
+                }
             });
         }]);
 });
