@@ -2827,6 +2827,11 @@ footer.default-footer ul li:last-child {
 .video-modal button.close:hover {
   opacity: 0.95;
 }
+@media (min-width: 1200px) {
+  .video-modal .modal-dialog {
+    margin: 80px auto;
+  }
+}
 /*===================================================================
   Pages > Learn More > Why invest in Property?
 ====================================================================*/
