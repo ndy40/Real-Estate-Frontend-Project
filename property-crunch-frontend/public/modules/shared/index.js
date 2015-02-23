@@ -6,6 +6,7 @@
 define([
     "./controllers/navigation-controller",
     "./directives/rec-properties-directive",
+    "./filters/address-filter",
     "./filters/currency-filter",
     "./filters/percent-filter",
     "./services/rec-properties-service",

@@ -74,7 +74,7 @@
                                     <div class="col-md-3 col-sm-6">
                                         <a ng-href="/property/{{property.id}}" class="property-img">
                                             <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
-                                            <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.alt}}">
+                                            <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.address | address}}">
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
@@ -83,7 +83,7 @@
                                             <a ng-click="addToFavourites(property.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
                                             <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
                                         </div>
-                                        <p>{{property.address}}</p>
+                                        <p>{{property.address | address}}</p>
                                         <div class="property-details-group">
                                             <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
                                             <ul class="property-tags repossessed modernising auction dtv reduced">

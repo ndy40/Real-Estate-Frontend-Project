@@ -20,7 +20,7 @@
                                 <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
                                 <a ng-click="removeFromFav(property.id)" class="add-to-fav" href=""><i class="icon-cross2"></i>Remove From Favourites</a>           
                             </div>
-                            <p>{{property.address}}</p>
+                            <p>{{property.address | address}}</p>
                             <div class="property-details-group">
                                 <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
                                 <ul class="property-tags repossessed modernising auction dtv reduced">

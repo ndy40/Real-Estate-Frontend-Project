@@ -19,7 +19,6 @@ define(["../module"], function (app) {
         
         $scope.logout = function () {
             UserModel.logout();
-            AuthService.logout();
             $scope.$apply();
         };
 

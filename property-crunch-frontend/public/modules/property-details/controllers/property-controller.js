@@ -5,8 +5,9 @@
 define(["../module"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
-        "SearchService", "$routeParams", "$location", function ($scope,
-            $rootScope, UserModel, SearchService, $routeParams, $location) {
+        "SearchService", "$routeParams", "$location", "emailService",
+            function ($scope, $rootScope, UserModel, SearchService,
+                $routeParams, $location, emailService) {
 
         /**
         * Object to Store Property Data
@@ -15,7 +16,31 @@ define(["../module"], function (app) {
             details: {},
             status: false
         };
-
+        
+        /**
+        * Object to Store Email Data
+        */
+        $scope.email  = {
+            toFriend : {
+                name            : "",
+                email           : "",
+                friendsEmail    : "",
+                msg             : "I thought you might want to take a look at this property for sale on nello",
+                propertyTitle   : "",
+                propertyImg     : "",
+                propertyPrice   : ""
+            },
+            requestDetails : {
+                name        : "",
+                email       : "",
+                phone       : "",
+                msg         : "",
+                agencyName  : "",
+                agencyPhone : "",
+                propertyId  : ""
+            }
+        };
+        
         /**
         * Object to Store Comparables Data
         */
@@ -24,15 +49,6 @@ define(["../module"], function (app) {
             status: false
         };
 
-        /**
-        * Object to Store Request Details Data
-        */
-        $scope.requestDetails = {
-            message: ""
-        };
-        
-        //$scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about. Thank you.";
-        
         $scope.setPageRoute = function () {
             $scope.propertyId = $routeParams.id;
         };
@@ -50,8 +66,9 @@ define(["../module"], function (app) {
             $scope.property.details = data;
             $scope.property.status = true;
             $scope.getFirstListedDate(data.created_at);
-            // Populate Email Message for Request Details
-            $scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
+            // Populate Email Data for Request Details & Email Friend
+            $scope.populateRqstDetailsData(data);
+            $scope.populateEmailFriendData(data);
             // Get Comparables
             $scope.getComparables(data.address);
             // Set Status
@@ -60,6 +77,32 @@ define(["../module"], function (app) {
             } else {
                 $scope.property.status = false;
             }
+        };
+        
+        // Populate Email Data for Request Details
+        $scope.populateRqstDetailsData = function(data) {
+            $scope.email.requestDetails.agencyName = data.marketer;
+            $scope.email.requestDetails.agencyPhone = data.phone;
+            $scope.email.requestDetails.propertyId = data.id;
+            $scope.email.requestDetails.msg = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
+        };
+        
+        // Populate Email Data for Email a Friend
+        $scope.populateEmailFriendData = function(data) {
+            $scope.email.toFriend.propertyTitle = data.rooms +
+                ' bed property for Sale at ' + data.address;
+            $scope.email.toFriend.propertyImg = data.images[0].image;
+            $scope.email.toFriend.propertyPrice = data.price;
+        };
+        
+        // Send Request Details Email
+        $scope.emailRequestDetails = function() {
+            emailService.updateRequestDetails($scope.email.requestDetails);
+        };
+
+        // Send Email a Friend Email
+        $scope.emailFriend = function() {
+            emailService.updateToFriend($scope.email.toFriend);
         };
 
         $scope.getComparables = function (location) {

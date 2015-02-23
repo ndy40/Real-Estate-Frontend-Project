@@ -3845,6 +3845,17 @@ footer.default-footer ul li:last-child {
   }
 }
 /*===================================================================
+  Pages > Property Details > Email a Friend Modal
+====================================================================*/
+.email-friend-img img,
+.email-friend-title h5 {
+  margin-bottom: 20px;
+}
+.email-friend-title h5 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+/*===================================================================
   Pages > Property Details > Other Properties
 ====================================================================*/
 .other-properties {

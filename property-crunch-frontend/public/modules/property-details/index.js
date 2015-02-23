@@ -5,7 +5,8 @@
 
 define([
     "./controllers/property-controller",
-    "./services/request-details-service",
+    "./services/email-service",
+    "./directives/carousel-directive",
     "./directives/carousel-directive",
     "./directives/percent-directive",
     "./directives/currency-directive",

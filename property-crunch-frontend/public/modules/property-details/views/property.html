@@ -18,7 +18,7 @@
                         <div class="property-heading">
                             <hgroup class="left-section">
                                 <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
-                                <h5 class="property-address">{{property.details.address}}</h5>
+                                <h5 class="property-address">{{property.details.address | address}}</h5>
                             </hgroup>
                             <hgroup class="right-section">
                                 <h3 class="property-price">
@@ -46,7 +46,7 @@
                                             <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
                                         </li>
                                         <li  class="email-friend last">
-                                            <a href="mailto:enter@yourfriendsemail.com"><i class="icon-mail"></i>Email a Friend</a>
+                                            <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
                                         </li>
                                     </ul> 
                                 </pc-add-to-fav>
@@ -88,6 +88,67 @@
         </div>
     </div>
 </aside>
+
+<!-- Email Friend Modal -->
+<div class="modal fade request-details-modal" id="emailFriend" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="icon-cross icon18-cross"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 email-friend-img">
+                        <img ng-show="!property.details.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+                        <img ng-show="property.details.images[0].image" class="img-responsive" ng-src="{{property.details.images[0].image}}" alt="{{property.details.address | address}}">
+                    </div>
+                    <div class="col-md-8 email-friend-title">
+                        <h5>Email a friend about the {{property.details.rooms}} bed property for Sale at {{property.details.address | address}}</h5>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-user"></i></div>
+                            <input ng-model="email.toFriend.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input ng-model="email.toFriend.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input ng-model="email.toFriend.friendsEmail" type="text" class="form-control form-control-icon" placeholder="Your Friend's Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="input-group">
+                            <label class="control-label">Multiple receipients?
+                                <i title="Please seperate email addresses by a (,) comma, e.g. friend1@email.com, friend2@email.com" tooltip-placement="top" tooltip="Please seperate email addresses by a (,) comma, e.g. friend1@email.com, friend2@email.com ." class="icon-help ng-scope"></i>
+                            </label>
+                        </div> 
+                    </div>        
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea ng-model="email.toFriend.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                        </div>    
+                    </div>
+                    <div class="terms">
+                        <h6>Note: Your friends will not receive any other emails unless they register on nello.</h6>
+                    </div>
+                    <button ng-click="emailFriend()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Send Email</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Request Details Modal -->
 <div class="modal fade request-details-modal" id="requestdetails" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -100,37 +161,37 @@
             <div class="modal-body">
                 <h4>Learn more about this property</h4>
                 <div class="agency-info">
-                    <a href="#"><i class="icon-office"></i>Allison Center</a>
-                    <h6><i class="icon-phone"></i>202-444-4444</h6>
+                    <a href="#"><i class="icon-office"></i>{{property.details.marketer}}</a>
+                    <h6><i class="icon-phone"></i>{{property.details.phone}}</h6>
                 </div>
                 <form>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-user"></i></div>
-                            <input type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                            <input ng-model="email.requestDetails.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mail"></i></div>
-                            <input type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                            <input ng-model="email.requestDetails.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mobile"></i></div>
-                            <input type="text" class="form-control form-control-icon" placeholder="Your Phone: " required>
+                            <input ng-model="email.requestDetails.phone" type="text" class="form-control form-control-icon" placeholder="Your Phone: " required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <textarea ng-model="requestDetails.message" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                            <textarea ng-model="email.requestDetails.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
                         </div>    
                     </div>
                     <div class="terms">
                         <h6>By sending you accept our <a ng-href="/pages/terms_of_use">Terms of Service</a> and <a ng-href="/pages/privacy_policy">Privacy Policy</a>.</h6>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-3d calculate">Request Information</button>
+                    <button ng-click="emailRequestDetails()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Request Information</button>
                </form>
             </div>
         </div>
