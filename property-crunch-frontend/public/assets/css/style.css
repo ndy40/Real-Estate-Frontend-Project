@@ -231,6 +231,20 @@ ul {
 .top-50 {
   padding-top: 50px;
 }
+.split-half:before,
+.split-half:after {
+  content: " ";
+  display: table;
+}
+.split-half:after {
+  clear: both;
+}
+.split-half .left {
+  float: left;
+}
+.split-half .right {
+  float: right;
+}
 .hide {
   display: none;
 }
@@ -1183,9 +1197,9 @@ ul.list-arrows li:before,
   border-top: none;
 }
 .panel-default > .panel-heading {
-  border: 1px solid #999999;
-  background: #999999;
-  color: #ffffff;
+  border: 1px solid #e9edeb;
+  background: #f9f9f9;
+  color: #333;
 }
 .panel-light .panel-heading {
   border: 1px solid #e9edeb;
@@ -1201,6 +1215,11 @@ ul.list-arrows li:before,
   color: #fff;
 }
 .panel-outline .panel-heading {
+  background: #ffffff;
+  border: 1px solid #299ecb;
+  color: #299ecb;
+}
+.panel-outline-blue .panel-heading {
   background: #ffffff;
   border: 1px solid #299ecb;
   color: #299ecb;
@@ -3574,14 +3593,48 @@ footer.default-footer ul li:last-child {
   }
 }
 /*===================================================================
+  Pages > Property Details > Value Comparison Panel
+====================================================================*/
+.value-comparison h6 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.value-comparison h6 b {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+.value-comparison h6 span {
+  font-weight: 600;
+  font-size: 14px;
+}
+.value-comparison h6 i {
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+.value-comparison .value-com {
+  margin-bottom: 10px;
+  color: #191e1d;
+}
+.value-comparison .value-com .decrease i {
+  color: #da1b1b;
+}
+.value-comparison .value-com .increase i {
+  color: #028863;
+}
+.value-comparison .negative .increase,
+.value-comparison .positive .decrease {
+  display: none;
+}
+/*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
 .property-links {
   margin-top: 20px;
 }
 .property-links .panel-heading {
-  padding-top: 20px;
-  padding-bottom: 20px;
   border-color: #f44647;
 }
 .property-links ul li {
@@ -3655,14 +3708,15 @@ footer.default-footer ul li:last-child {
   background: #e9edeb;
 }
 .profit-calculator h4 {
-  margin-bottom: 40px;
-  font-weight: 600;
+  margin-bottom: 25px;
+  font-weight: 500;
 }
 .profit-calculator .tab-content {
-  min-height: 521px;
+  min-height: 431px;
+  padding-top: 27px;
 }
 .profit-calculator .form-field-row {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .profit-calculator label {
   font-size: 16px;
@@ -3676,7 +3730,7 @@ footer.default-footer ul li:last-child {
   border-radius: 4px;
 }
 .profit-calculator .results .form-field-row {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 }
 .profit-calculator .results .form-field-row h5,
 .profit-calculator .results .form-field-row h6 {
@@ -3695,11 +3749,11 @@ footer.default-footer ul li:last-child {
   font-size: 18px;
 }
 .profit-calculator .btn.calculate {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 @media (min-width: 480px) {
   .profit-calculator .results .form-field-row {
-    margin-bottom: 30px;
+    margin-bottom: 23px;
   }
   .profit-calculator .results .form-field-row h6 {
     font-size: 18px;

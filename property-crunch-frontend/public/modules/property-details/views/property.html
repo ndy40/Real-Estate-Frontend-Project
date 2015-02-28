@@ -35,8 +35,45 @@
                 </div>
 
                 <div class="col-lg-5 col-md-5">
-
                     <div class="right-details">
+                        <div class="panel panel-outline-blue panel-no-body value-comparison">
+                            <div class="panel-heading">
+                                <div class="split-half value-com">
+                                    <div class="left" pc-color-code input-src="property.marketDiff">
+                                        <h6 class="increase" ng-show='!property.noMarketData'>
+                                            <i class="icon-arrow-up"></i>
+                                            <b>{{property.marketDiff | number : 1}}</b> 
+                                            <span>%</span> above market
+                                        </h6>
+                                        <h6 class="decrease" ng-show='!property.noMarketData'>
+                                            <i class="icon-arrow-down"></i>
+                                            <b>{{property.marketDiff | number : 1 | positive}}</b> 
+                                            <span>%</span> below market
+                                        </h6>
+                                        <h6 ng-show='property.noMarketData'>
+                                            No Market Data Available
+                                        </h6>
+                                    </div>
+                                    <div class="right" pc-color-code input-src="property.historyDiff">
+                                        <h6 class="decrease" ng-show='!property.noHistoryData'>
+                                            <i class="icon-minus3"></i>
+                                            <b>{{property.historyDiff | customCurrency: "£"}}</b> price reduction
+                                        </h6>
+                                        <h6 class="increase" ng-show='!property.noHistoryData'>
+                                            <i class="icon-plus3"></i>
+                                            <b>{{property.historyDiff | customCurrency: "£"}}</b> price increase
+                                        </h6>
+                                        <h6 ng-show='property.noHistoryData'>
+                                            No History Available
+                                        </h6>
+                                    </div>
+                                </div>    
+                                <div class="split-half">
+                                    <h6 class="left"><b>{{property.details.yield}}</b> <span>%</span> Rental Yield</h6>
+                                    <h6 class="right"><b>{{property.details.yield * property.details.price /1200 | customCurrency: "£"}}</b> Rental Income</h6>
+                                </div>
+                            </div>
+                        </div>
                         <div class="panel panel-outline panel-no-body property-links">
                             <div class="panel-heading">
                                 <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
@@ -66,11 +103,11 @@
                 </div>                  
             </div>
             
-            <div ng-show="property.info" class="panel panel-default panel-no-body">
+            <div ng-show="property.details.description" class="panel panel-primary">
                 <div class="panel-heading">
                     <h5>Additional Information:</h5>
                 </div>
-                <div class="panel-body">{{property.info}}</div>
+                <div class="panel-body" ng-bind-html="property.details.description | trusted_html"></div>
             </div>
         </div>
     </article>    
@@ -86,6 +123,21 @@
                 <button class="btn btn-lg btn-3d btn-fullwidth" data-toggle="modal" data-target="#requestdetails">Request Details</button>
             </div>
         </div>
+    </div>
+</aside>
+
+<aside class="main-content">
+    <pc-comparables property-src="comparables.list"></pc-comparables>
+</aside>
+
+<aside class="main-content">
+    <div class="container">
+        <div class="panel panel-primary panel-no-body">
+            <div class="panel-heading">
+                <h5>Other Properties You Might Like:</h5>
+            </div>
+        </div>
+        <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
     </div>
 </aside>
 
@@ -198,20 +250,6 @@
     </div>
 </div>
 
-<aside class="main-content">
-    <pc-comparables property-src="comparables.list"></pc-comparables>
-</aside>
-
-<aside class="main-content">
-    <div class="container">
-        <div class="panel panel-primary panel-no-body">
-            <div class="panel-heading">
-                <h5>Other Properties You Might Like:</h5>
-            </div>
-        </div>
-        <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
-    </div>
-</aside>
-
 <!-- footer template -->
 <ng-include src="'modules/shared/views/footer.html'"></ng-include>
+

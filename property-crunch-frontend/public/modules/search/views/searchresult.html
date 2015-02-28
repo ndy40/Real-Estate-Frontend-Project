@@ -34,23 +34,6 @@
             <div class="col-md-9" ng-class="{'hidden-xs': searchObject.advSearchStatus}">
                 <pc-result-options class="hidden-xs" callback="updateFilters"></pc-result-options>
                 
-                <!--<div class="row" ng-show="searchObject.status">
-                    <div class="col-sm-6">
-                        <div class="panel panel-outline info-tags">
-                            <div class="panel-heading">
-                                <h5 class="avgAskingPrice"><i class="icon-tag"></i>Average Asking Price: &nbsp; <span>£125,000</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="panel panel-outline info-tags">
-                            <div class="panel-heading">
-                                <h5 class="avgRentalPrice"><i class="icon-key"></i>Average Rental Price: &nbsp; <span>£700</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-                
                 <div class="alert alert-danger" role="alert" ng-show="!searchObject.keywords && !searchObject.status">
                     <i class="icon-warning"></i>
                     Please enter a location to start your search

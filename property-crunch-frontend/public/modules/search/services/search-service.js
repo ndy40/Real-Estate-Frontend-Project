@@ -234,7 +234,7 @@ define(["../module"], function (app) {
                 this.filtersQuery += "&" + "sort=" + this.filters.sort.value;
             }
             if (this.filters.minYield !== undefined) {
-                this.filtersQuery += "&" + "yield=" + this.filters.minYield.value;
+                this.filtersQuery += "&" + "yield_min=" + this.filters.minYield.value;
             }
         };
         

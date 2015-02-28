@@ -78,7 +78,8 @@ define(["../module"], function (app) {
                     if (scope.rentalIncome === undefined) {
                         scope.toLet.estRentalIncome = 0;
                     } else {
-                        scope.toLet.estRentalIncome = scope.rentalIncome * scope.toLet.purchasePrice / 100 / 12;
+                        scope.toLet.estRentalIncome = scope.rentalIncome *
+                            scope.toLet.purchasePrice / 100 / 12;
                     }
                 });
             }

@@ -140,6 +140,55 @@
         }
      }
 }
+
+/*===================================================================
+  Pages > Property Details > Value Comparison Panel
+====================================================================*/
+.value-comparison {
+    h6 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        
+        b {
+            font-weight: 700;    
+            font-size: 18px;
+            line-height: 20px;
+        }
+        
+        span {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        i {
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+        }
+    }
+    
+    .value-com {
+        margin-bottom: 10px;
+        color: @gray-darker;
+        
+        .decrease i {
+            color: #da1b1b;
+        }
+        
+        .increase i {
+            color: @brand-success;
+        }
+    }
+    
+    // Conditional Code
+    .negative .increase,
+    .positive .decrease { 
+        display: none; 
+    }
+    
+}
+
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -147,8 +196,6 @@
 	margin-top: 20px; 
 		
 	.panel-heading {
-		padding-top: 20px;
-		padding-bottom: 20px;
         border-color: @brand-red;
 	}
 	
@@ -258,16 +305,17 @@
     }
     
     h4 {
-        margin-bottom: 40px;
-        font-weight: 600;
+        margin-bottom: 25px;
+        font-weight: 500;
     }
     
     .tab-content {
-        min-height: 521px;
+        min-height: 431px;    
+        padding-top: 27px;
     }
 
     .form-field-row {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     label {
@@ -285,7 +333,7 @@
     
     .results {
         .form-field-row {
-            margin-bottom: 20px;
+                margin-bottom: 23px;
 
             h5, h6 {
                 line-height: 24px;
@@ -309,7 +357,7 @@
     }
     
     .btn.calculate {
-        margin-top: 30px;
+        margin-top: 15px;
     }
 }
 
@@ -317,7 +365,7 @@
     .profit-calculator {
         .results {
             .form-field-row {
-                margin-bottom: 30px;
+                margin-bottom: 23px;
                 
                 h6 {
                     font-size: 18px;

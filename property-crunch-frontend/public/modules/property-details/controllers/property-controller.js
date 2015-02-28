@@ -5,16 +5,23 @@
 define(["../module"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
-        "SearchService", "$routeParams", "$location", "emailService",
-            function ($scope, $rootScope, UserModel, SearchService,
-                $routeParams, $location, emailService) {
+        "SearchService", "$routeParams", "$location", "emailService", 
+            "propertyService", function ($scope, $rootScope, UserModel, 
+                SearchService, $routeParams, $location, emailService,
+                    propertyService) {
 
         /**
         * Object to Store Property Data
         */
         $scope.property = {
-            details: {},
-            status: false
+            details         : {},
+            avgPrice        : "",   // Used for Value Comparison
+            marketDiff      : "",   
+            priceHistory    : "",   // Used for Historical Price Difference
+            historyDiff     : "",
+            noMarketData    : false,
+            noHistoryData   : false,
+            status          : false
         };
         
         /**
@@ -49,10 +56,16 @@ define(["../module"], function (app) {
             status: false
         };
 
+        /**
+        * Get Page Id from URL and Set New Page Route
+        */
         $scope.setPageRoute = function () {
             $scope.propertyId = $routeParams.id;
         };
-
+        
+        /**
+        * Get Property Details
+        */
         $scope.getPropertyDetails = function () {
             SearchService.getProperty($routeParams.id)
                 .success($scope.loadPropertyDetails)
@@ -61,16 +74,29 @@ define(["../module"], function (app) {
                         error.message;
                 });
         };
-
+        
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
             $scope.property.status = true;
             $scope.getFirstListedDate(data.created_at);
+            // Get Average Price from Service
+            propertyService.getAvgPrice(data.post_code_id, data.rooms, data.type_id)
+                .success($scope.calcMarketDiff)
+                .error(function (error) {
+                    $scope.property.noMarketData = true;
+                });
+            // Get Price History from Service
+            propertyService.getPriceHistroy(data.id)
+                .success($scope.calcHistoryDiff)
+                .error(function (error) {
+                    $scope.property.noHistoryData = true;
+                });
+            
             // Populate Email Data for Request Details & Email Friend
             $scope.populateRqstDetailsData(data);
             $scope.populateEmailFriendData(data);
             // Get Comparables
-            $scope.getComparables(data.address);
+            //$scope.getComparables(data.address);
             // Set Status
             if (data.length > 0) {
                 $scope.property.status = true;
@@ -79,15 +105,36 @@ define(["../module"], function (app) {
             }
         };
         
-        // Populate Email Data for Request Details
+        $scope.calcMarketDiff = function (data) {
+            $scope.property.noMarketData = false;
+            $scope.property.avgPrice = data.data;
+            $scope.property.marketDiff = 
+                ($scope.property.details.price - $scope.property.avgPrice) /
+                    $scope.property.avgPrice * 100;
+            
+            console.log($scope.property.marketDiff);
+        };
+        
+        $scope.calcHistoryDiff = function (data) {
+            $scope.property.priceHistory = data;
+            if (data.hasOwnProperty('old_price')) {
+                $scope.property.noHistoryData = false;
+                $scope.property.historyDiff = data.new_price - data.old_price;
+            } else {
+                $scope.property.noHistoryData = true;
+                $scope.property.historyDiff = 0;
+            }
+        };
+        
+        /**
+        * Populate Email Data for Request Details & Email a Friend
+        */
         $scope.populateRqstDetailsData = function(data) {
             $scope.email.requestDetails.agencyName = data.marketer;
             $scope.email.requestDetails.agencyPhone = data.phone;
             $scope.email.requestDetails.propertyId = data.id;
             $scope.email.requestDetails.msg = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
         };
-        
-        // Populate Email Data for Email a Friend
         $scope.populateEmailFriendData = function(data) {
             $scope.email.toFriend.propertyTitle = data.rooms +
                 ' bed property for Sale at ' + data.address;
@@ -95,16 +142,19 @@ define(["../module"], function (app) {
             $scope.email.toFriend.propertyPrice = data.price;
         };
         
-        // Send Request Details Email
+        /**
+        * Send Emails - Request Details & Email a Friend
+        */
         $scope.emailRequestDetails = function() {
             emailService.updateRequestDetails($scope.email.requestDetails);
         };
-
-        // Send Email a Friend Email
         $scope.emailFriend = function() {
             emailService.updateToFriend($scope.email.toFriend);
         };
-
+        
+        /**
+        * Get Comparables for Current Property
+        */
         $scope.getComparables = function (location) {
             //SearchService.getComparables(location) - Use Later
             SearchService.getComparables("SW7")
@@ -114,7 +164,6 @@ define(["../module"], function (app) {
                         error.message;
                 });
         };
-
         $scope.loadComparablesList = function (data) {
             $scope.comparables.list = data.data;
             // Set Status
@@ -125,7 +174,10 @@ define(["../module"], function (app) {
             }
         };
 
-        // Calculate First Listed (Days Ago) - Create Directive Later
+        
+        /**
+        * Calculate First Listed (Days Ago) - Create Directive/ Filter 
+        */
         $scope.getFirstListedDate = function (created_at) {
             var dateTimeSplit = created_at.split(" "),
                 dateParts = dateTimeSplit[0].split("-"),
@@ -175,7 +227,6 @@ define(["../module"], function (app) {
                 $location.path("/login");
             }
         };
-
 
         $scope.$on("favUpdated", function (targetscope, currscope) {
             if ($scope.favUpdate) {
