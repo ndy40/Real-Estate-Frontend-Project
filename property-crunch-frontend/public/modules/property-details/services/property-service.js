@@ -8,10 +8,6 @@ define(["../module"], function (app) {
     return app.service('propertyService', ['$http', 'APPURL', function ($http,
             APPURL) {
         var propertyService = function () {
-            this.avgPriceUrl        = "";
-            this.priceHistroyUrl    = "";
-            this.comparablesUrl     = "";
-            
             this.avgPrice           = "";
             this.priceHistroy       = "";
             this.comparables        = {};
@@ -39,31 +35,38 @@ define(["../module"], function (app) {
             this.comparables = {};
         };
 
-
+        /**
+         * GET PROPERTY DETAILS
+         */
+        propertyService.prototype.getProperty = function (propertyId) {
+            var url = APPURL.property + propertyId;
+            return $http.get(url);
+        };
+        
         /**
          * Get Average Price
          */
         propertyService.prototype.getAvgPrice =
             function (postCode, rooms, type) {
-                this.avgPriceUrl = APPURL.avgPrice + postCode + "/" + rooms +
+                var url = APPURL.avgPrice + postCode + "/" + rooms +
                     "/" + type + "/";
-                return $http.get(this.avgPriceUrl);
+                return $http.get(url);
         };
         
         /**
          * Get Price History
          */
         propertyService.prototype.getPriceHistroy = function (propertyId) {
-            this.priceHistroyUrl = APPURL.priceHistory + propertyId + "/";
-            return $http.get(this.priceHistroyUrl);
+            var url = APPURL.priceHistory + propertyId + "/";
+            return $http.get(url);
         };
         
         /**
          * Get Comparables
          */
         propertyService.prototype.getComparables = function (propertyId) {
-            this.comparablesUrl = APPURL.comparables + propertyId + "/";
-            return $http.get(this.comparablesUrl);
+            var url = APPURL.comparables + propertyId + "/";
+            return $http.get(url);
         };
         
         return new propertyService();

@@ -26,7 +26,8 @@
                                     <i class="icon-tag"></i>
                                 </h3>
                                 <h6 class="label label-primary property-date">
-                                    First Listed: <span>{{property.firstListed}}</span>
+                                    First Listed:
+                                    <span pc-date-ago date-src="property.details.created_at"></span>
                                 </h6>
                             </hgroup>
                         </div>

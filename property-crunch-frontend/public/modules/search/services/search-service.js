@@ -143,7 +143,6 @@ define(["../module"], function (app) {
          */
         // Used by Refine Filters
         SearchService.prototype.getCurrentRooms = function () {
-            console.log(this.filters.rooms);
             if (this.filters.rooms !== undefined) {
                 return this.filters.rooms;
             } else {
@@ -192,22 +191,6 @@ define(["../module"], function (app) {
             } else {
                 return {option: 10, value : 10};
             }
-        };
-
-        /**
-         * GET PROPERTY DETAILS
-         */
-        SearchService.prototype.getProperty = function (propertyId) {
-            var url = APPSRCHURL.property + propertyId;
-            return $http.get(url);
-        };
-
-        /**
-         * GET COMPARABLES
-         */
-        SearchService.prototype.getComparables = function (location) {
-            var url = APPSRCHURL.search + location + "/1/5";
-            return $http.get(url);
         };
         
         /**

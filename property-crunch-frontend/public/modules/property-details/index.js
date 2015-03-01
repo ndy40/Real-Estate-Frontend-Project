@@ -8,10 +8,10 @@ define([
     "./services/property-service",
     "./services/email-service",
     "./directives/carousel-directive",
-    "./directives/carousel-directive",
-    "./directives/percent-directive",
+    "./directives/comp-date-ago-directive",
+    "./directives/comparables-directive",
     "./directives/currency-directive",
+    "./directives/percent-directive",
     "./directives/to-let-calculator-directive",
     "./directives/to-sell-calculator-directive",
-    "./directives/comparables-directive"
 ], function () {});

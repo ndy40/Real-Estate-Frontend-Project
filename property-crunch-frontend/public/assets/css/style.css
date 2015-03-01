@@ -3861,6 +3861,9 @@ footer.default-footer ul li:last-child {
   font-size: 24px;
   font-weight: 300;
 }
+.comparables-listing .comp-address {
+  text-transform: capitalize;
+}
 .more-button-wrap {
   width: 180px;
   margin: 0 auto;

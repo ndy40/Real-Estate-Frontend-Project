@@ -5,9 +5,10 @@
 
 define([
     "./controllers/navigation-controller",
-    "./directives/rec-properties-directive",
     "./directives/add-to-fav-directive",
     "./directives/color-code-directive",
+    "./directives/date-ago-directive",
+    "./directives/rec-properties-directive",
     "./filters/address-filter",
     "./filters/currency-filter",
     "./filters/percent-filter",
@@ -15,5 +16,5 @@ define([
     "./filters/trusted-html-filter",
     "./services/rec-properties-service",
     "./services/user-model-service",
-    "./authentication/index",
+    "./authentication/index"
 ], function () {});
