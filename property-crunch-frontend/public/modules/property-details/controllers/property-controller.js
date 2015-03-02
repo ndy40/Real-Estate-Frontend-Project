@@ -21,11 +21,7 @@ define(["../module"], function (app) {
             historyDiff     : "",
             noMarketData    : false,
             noHistoryData   : false,
-            status          : false,
-            comparables     : {
-                list : {},
-                status : false
-            }
+            status          : false
         };
         
         /**
@@ -121,6 +117,7 @@ define(["../module"], function (app) {
         };
         $scope.loadComparables = function (data) {
             $scope.comparables.list = data;
+            $scope.comparables.title = "4 Bedroom for Sale";
             // Set Status
             if (data.length > 0) {
                 $scope.comparables.status = true;

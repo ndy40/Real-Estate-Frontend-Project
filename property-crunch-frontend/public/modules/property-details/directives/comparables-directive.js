@@ -9,7 +9,8 @@ define(["../module"], function (app) {
         return {
             restrict : "E",
             scope : {
-                propertySrc: "="
+                propertySrc: "=",
+                compareTitle: "="
             },
             templateUrl : "./modules/property-details/directives/comparables.html",
             link : function (scope, element, attr, ngModel) {
