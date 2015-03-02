@@ -56,7 +56,9 @@ define(["../module"], function (app) {
             $scope.property.status = true;
             $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
             $scope.getPriceHistroy(data.id);
+            $scope.comparables.title = data.rooms + " Bedroom for Sale";
             $scope.getComparables(data.id);
+            
             // Populate Email Data for Request Details & Email Friend
             $scope.populateRqstDetailsData(data);
             $scope.populateEmailFriendData(data);
@@ -117,7 +119,6 @@ define(["../module"], function (app) {
         };
         $scope.loadComparables = function (data) {
             $scope.comparables.list = data;
-            $scope.comparables.title = "4 Bedroom for Sale";
             // Set Status
             if (data.length > 0) {
                 $scope.comparables.status = true;

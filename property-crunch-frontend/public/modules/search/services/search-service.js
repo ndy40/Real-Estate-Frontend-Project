@@ -200,7 +200,7 @@ define(["../module"], function (app) {
             this.filtersQuery = ""; // Clearing previous query
             
             if (this.filters.rooms !== undefined) {
-                this.filtersQuery += "&" + "rooms=" + this.filters.rooms;
+                this.filtersQuery += "&" + "rooms_min=" + this.filters.rooms;
             }
             if (this.filters.type !== undefined) {
                 this.filtersQuery += "&" + "type_id=" + this.filters.type.value;
