@@ -17,7 +17,9 @@ define(["../module"], function (app) {
                 if (amount >= 0) {
                     return value.substring(0, sep);
                 } else { // Negative Value
-                    return value.substring(0, sep) + ')';
+                    var bracket = value.substring(0, sep),
+                        split   = bracket.replace("(", "-"); 
+                    return split;
                 }
             };
         }

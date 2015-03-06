@@ -3624,6 +3624,13 @@ footer.default-footer ul li:last-child {
 .value-comparison .value-com .increase i {
   color: #028863;
 }
+@media (max-width: 479px) {
+  .value-comparison .split-half .left,
+  .value-comparison .split-half .right {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -3746,6 +3753,9 @@ footer.default-footer ul li:last-child {
 }
 .profit-calculator .btn.calculate {
   margin-top: 15px;
+}
+.profit-calculator .negative {
+  color: #da1b1b;
 }
 @media (min-width: 480px) {
   .profit-calculator .results .form-field-row {
@@ -3905,28 +3915,33 @@ footer.default-footer ul li:last-child {
     font-size: 16px;
   }
 }
-@media (min-width: 992px) {
-  .comparables-listing .property-title-group h4 {
-    display: inline-block;
-    margin: 0 10px 0 0;
+@media (min-width: 768px) and (max-width: 991px) {
+  .comparables-listing .right-section-group .right-section-label,
+  .comparables-listing .right-section-group .right-section-value {
+    font-size: 16px;
+    font-weight: 600;
   }
-  .comparables-listing .comp-market-price h6 {
-    display: inline-block;
-    margin: 0;
-  }
-  .right-section-group .right-section-label,
-  .right-section-group .right-section-value {
-    margin: 0;
-    padding: 0;
+  .comparables-listing .right-section-group .right-section-value {
+    font-weight: 400;
+    margin-left: 5px;
   }
 }
 @media (min-width: 992px) {
   .comparables-listing p,
   .comparables-listing .property-title-group {
-    margin-bottom: 31px;
+    margin-bottom: 10px;
+  }
+  .comparables-listing .property-title-group h4 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    line-height: 1;
+  }
+  .comparables-listing .comp-market-price h6 {
+    margin-top: 10px;
   }
   .comparables-listing .right-section-group {
-    margin-top: 5px;
+    margin-top: 0;
+    line-height: 1;
   }
   .comparables-listing .right-section-group .right-section-label,
   .comparables-listing .right-section-group .right-section-value {
@@ -3942,6 +3957,14 @@ footer.default-footer ul li:last-child {
   .comparables-listing p,
   .comparables-listing .property-title-group {
     margin-bottom: 16px;
+  }
+  .comparables-listing p h4,
+  .comparables-listing .property-title-group h4 {
+    line-height: 1;
+  }
+  .comparables-listing .comp-market-price h6 {
+    display: inline-block;
+    margin: 0;
   }
   .more-button-wrap {
     padding: 10px 0 0;

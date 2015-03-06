@@ -78,8 +78,11 @@ define(["../module"], function (app) {
                     if (scope.rentalIncome === undefined) {
                         scope.toLet.estRentalIncome = 0;
                     } else {
-                        scope.toLet.estRentalIncome = scope.rentalIncome *
-                            scope.toLet.purchasePrice / 100 / 12;
+                        // Adding  Math.round(num *100)/100 for 2 decimal points
+                        scope.toLet.estRentalIncome = 
+                            Math.round(scope.rentalIncome *
+                                scope.toLet.purchasePrice / 100 / 12 * 100) /
+                                    100;
                     }
                 });
             }

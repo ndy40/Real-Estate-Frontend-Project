@@ -24,13 +24,28 @@
                     <i class="icon-location"></i>
                     {{comparable.distance | walking | number: 0}} mins walk from this location</p>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <div class="visible-sm col-sm-6 right-section-group">
+                <div class="split-half">
+                    <div class="left">
+                        <h5 class="right-section-label">Sold Price:</h5>
+                        <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
+                    </div>
+                    <div class="right">
+                        <h5 class="right-section-label">
+                            Date: 
+                            <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
+                        </h5>
+                        <h3 class="right-section-value no-border" pc-comp-date-ago date-src="comparable.transactionDate"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
                 <div class="right-section-group">
                     <h5 class="right-section-label">Sold Price</h5>
                     <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6  col-xs-12">
+            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
                 <div class="right-section-group">
                     <h5 class="right-section-label">
                         Date 
