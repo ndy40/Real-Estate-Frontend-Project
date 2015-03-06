@@ -24,8 +24,8 @@ define(["../module"], function (app) {
                     scope.filters.sortBy = [ // To store Sort by filter list
                         {"option": "Highest Price", "value": "price desc"},
                         {"option": "Lowest Price",  "value": "price asc"},
-                        {"option": "Highest Yield", "value": "yeild desc"},
-                        {"option": "Lowest Yield",  "value": "yeild asc"}
+                        {"option": "Highest Yield", "value": "yield desc"},
+                        {"option": "Lowest Yield",  "value": "yield asc"}
                     ];
 
                     // To store results per page list

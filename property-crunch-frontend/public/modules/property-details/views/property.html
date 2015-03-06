@@ -17,7 +17,7 @@
                     <div class="left-details">
                         <div class="property-heading">
                             <hgroup class="left-section">
-                                <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type.name}} for Sale</h3>
+                                <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type}} for Sale</h3>
                                 <h5 class="property-address">{{property.details.address | address}}</h5>
                             </hgroup>
                             <hgroup class="right-section">
@@ -40,21 +40,7 @@
                         <div class="panel panel-outline-blue panel-no-body value-comparison">
                             <div class="panel-heading">
                                 <div class="split-half value-com">
-                                    <div class="left" pc-color-code input-src="property.marketDiff">
-                                        <h6 class="increase" ng-show='!property.noMarketData'>
-                                            <i class="icon-arrow-up"></i>
-                                            <b>{{property.marketDiff | number : 1}}</b> 
-                                            <span>%</span> above market
-                                        </h6>
-                                        <h6 class="decrease" ng-show='!property.noMarketData'>
-                                            <i class="icon-arrow-down"></i>
-                                            <b>{{property.marketDiff | number : 1 | positive}}</b> 
-                                            <span>%</span> below market
-                                        </h6>
-                                        <h6 ng-show='property.noMarketData'>
-                                            No Market Data Available
-                                        </h6>
-                                    </div>
+                                    <div class="left" pc-price-compare avg-price="property.avgPrice" property-price="property.details.price"></div>
                                     <div class="right" pc-color-code input-src="property.historyDiff">
                                         <h6 class="decrease" ng-show='!property.noHistoryData'>
                                             <i class="icon-minus3"></i>
@@ -128,19 +114,22 @@
 </aside>
 
 <aside class="main-content">
-    <pc-comparables property-src="comparables.list" compare-title="comparables.title"></pc-comparables>
-</aside>
-
-<aside class="main-content">
-    <div class="container">
-        <div class="panel panel-primary panel-no-body">
-            <div class="panel-heading">
-                <h5>Other Properties You Might Like:</h5>
+    <pc-comparables property-src="comparables.list" compare-title="comparables.title" avg-price="property.avgPrice"></pc-comparables>
+    <br />
+    <br />
+    
+    <div class="other-properties">
+        <div class="container">
+            <div class="panel panel-primary panel-no-body">
+                <div class="panel-heading">
+                    <h5>Other Properties You Might Like:</h5>
+                </div>
             </div>
+            <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
         </div>
-        <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
     </div>
 </aside>
+
 
 <!-- Email Friend Modal -->
 <div class="modal fade request-details-modal" id="emailFriend" tabindex="-1" role="dialog" aria-hidden="true">

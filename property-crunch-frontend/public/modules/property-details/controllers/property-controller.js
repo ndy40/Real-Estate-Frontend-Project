@@ -16,7 +16,6 @@ define(["../module"], function (app) {
         $scope.property = {
             details         : {},
             avgPrice        : "",   // Used for Value Comparison
-            marketDiff      : "",   
             priceHistory    : "",   // Used for Historical Price Difference
             historyDiff     : "",
             noMarketData    : false,
@@ -56,7 +55,7 @@ define(["../module"], function (app) {
             $scope.property.status = true;
             $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
             $scope.getPriceHistroy(data.id);
-            $scope.comparables.title = data.rooms + " Bedroom for Sale";
+            $scope.comparables.title = data.rooms + " Bedroom " + data.type + " for Sale";
             $scope.getComparables(data.id);
             
             // Populate Email Data for Request Details & Email Friend
@@ -74,17 +73,13 @@ define(["../module"], function (app) {
         // Get Average Price from Service
         $scope.getAvgPrice = function (postCode, rooms, type) {
             propertyService.getAvgPrice(postCode, rooms, type)
-                .success($scope.calcMarketDiff)
+                .success(function (data) {
+                    $scope.property.noMarketData = false;
+                    $scope.property.avgPrice = data.data;
+                })
                 .error(function (error) {
                     $scope.property.noMarketData = true;
                 });
-        };
-        $scope.calcMarketDiff = function (data) {
-            $scope.property.noMarketData = false;
-            $scope.property.avgPrice = data.data;
-            $scope.property.marketDiff = 
-                ($scope.property.details.price - $scope.property.avgPrice) /
-                    $scope.property.avgPrice * 100;
         };
         
         // Get Price History from Service

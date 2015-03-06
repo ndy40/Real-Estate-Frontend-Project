@@ -3624,10 +3624,6 @@ footer.default-footer ul li:last-child {
 .value-comparison .value-com .increase i {
   color: #028863;
 }
-.value-comparison .negative .increase,
-.value-comparison .positive .decrease {
-  display: none;
-}
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -3846,19 +3842,54 @@ footer.default-footer ul li:last-child {
 .comparables .panel-heading h5 span {
   font-size: 14px;
 }
-.comparables-listing h4 {
+.comparables-listing .property-title-group h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+.comparables-listing .comp-market-price h6 {
+  font-size: 14px;
+  display: inline-block;
   margin: 0;
+}
+.comparables-listing .comp-market-price h6 b {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+.comparables-listing .comp-market-price h6 span {
+  font-weight: 500;
+  font-size: 12px;
+}
+.comparables-listing .comp-market-price h6 i {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+.comparables-listing .comp-market-price .decrease i {
+  color: #da1b1b;
+}
+.comparables-listing .comp-market-price .increase i {
+  color: #028863;
+}
+.comparables-listing .distance i {
+  position: relative;
+  top: 1px;
 }
 .comparables-listing .right-section-group {
   margin-top: 20px;
 }
+.comparables-listing .right-section-group .right-section-label {
+  font-weight: 400;
+}
 .comparables-listing .right-section-group .right-section-label,
 .comparables-listing .right-section-group .right-section-value {
-  margin: 0;
-  padding: 0;
+  font-size: 18px;
+  line-height: 1.1;
+  margin: 0 0 20px;
 }
 .comparables-listing .right-section-group .right-section-value {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
 }
 .comparables-listing .comp-address {
@@ -3872,6 +3903,21 @@ footer.default-footer ul li:last-child {
 @media (min-width: 360px) {
   .comparables .panel-heading h5 span {
     font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .comparables-listing .property-title-group h4 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+  .comparables-listing .comp-market-price h6 {
+    display: inline-block;
+    margin: 0;
+  }
+  .right-section-group .right-section-label,
+  .right-section-group .right-section-value {
+    margin: 0;
+    padding: 0;
   }
 }
 @media (min-width: 992px) {

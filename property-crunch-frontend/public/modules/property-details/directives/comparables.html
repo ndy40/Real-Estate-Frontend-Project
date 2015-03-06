@@ -6,7 +6,7 @@
     </div>
     
     <!-- Property Listing -->
-    <div class="property-listing comparables-listing" ng-repeat="comparable in propertySrc">
+    <div class="property-listing comparables-listing" ng-repeat="comparable in obj.current">
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="property-img">
@@ -17,17 +17,20 @@
             <div class="col-lg-6 col-md-5 col-sm-6">
                 <div class="property-title-group noPrice">
                     <h4>{{compareTitle}}</h4>
+                    <span class="comp-market-price" pc-price-compare avg-price="avgPrice" property-price="comparable.price"></span>
                 </div>
-                <p class="comp-address">{{comparable.address | address}}</p>
-                <p class="distance">15 mins walk from this location</p>
+                <p class="comp-address">{{comparable.address | address | lowercase}}</p>
+                <p class="distance">
+                    <i class="icon-location"></i>
+                    {{comparable.distance | walking | number: 0}} mins walk from this location</p>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <div class="right-section-group">
                     <h5 class="right-section-label">Sold Price</h5>
                     <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-2 col-sm-6  col-xs-12">
                 <div class="right-section-group">
                     <h5 class="right-section-label">
                         Date 
@@ -37,19 +40,12 @@
                 </div>
             </div>
         </div>
-    </div> <!-- Property Listing -->
-<!--<div role="alert" class="alert alert-info">
-    <i class="icon-info2"></i>
-    <span>Info!</span> info message.
-</div>-->
-    <!--<div id="no-more-properties">
-        <div class="alert alert-info" role="alert">
-            <i class="icon-info"></i>
-            <span>Sorry!</span> No more 2 bedroom properties sold in the last 6 months. More properties can be found below:
-        </div>
+    </div> 
+    <div class="more-button-wrap" ng-show="!obj.noMore">
+        <button ng-click="updateList()" id="more-properties-toggle" class="btn btn-lg btn-3d">More Comparables</button>
     </div>
-    
-    <div class="more-button-wrap">
-        <button id="more-properties-toggle" class="btn btn-default">More Properties</button>
-    </div>-->
+    <div class="alert alert-danger"  ng-show="obj.noMore" role="alert">
+        <i class="icon-warning"></i>
+        <span>Sorry!</span> No more comparables found in the area. Other properties can be found below.
+    </div> 
 </div>
