@@ -9,127 +9,148 @@
     </div>
 </header>
 
-<section class="main-content">
-    <article class="property-details">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7">
-                    <div class="left-details">
-                        <div class="property-heading">
-                            <hgroup class="left-section">
-                                <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type}} for Sale</h3>
-                                <h5 class="property-address">{{property.details.address | address}}</h5>
-                            </hgroup>
-                            <hgroup class="right-section">
-                                <h3 class="property-price">
-                                    <span>{{property.details.price | customCurrency: "£"}}</span>
-                                    <i class="icon-tag"></i>
-                                </h3>
-                                <h6 class="label label-primary property-date">
-                                    First Listed:
-                                    <span pc-date-ago date-src="property.details.created_at"></span>
-                                </h6>
-                            </hgroup>
-                        </div>
-                        <pc-carousel images-src="property.details.images"></pc-carousel>
-                    </div>
-                </div>
+<div class="main-content" ng-show="!property.status && property.errorStatus">
+    <div class="container">
+        <div class="alert alert-danger" role="alert">
+            <i class="icon-warning"></i>
+            {{property.errorMsg}}
+        </div>
+    </div>
+</div>  
 
-                <div class="col-lg-5 col-md-5">
-                    <div class="right-details">
-                        <div class="panel panel-outline-blue panel-no-body value-comparison">
-                            <div class="panel-heading">
-                                <div class="split-half value-com">
-                                    <div class="left" pc-price-compare avg-price="property.avgPrice" property-price="property.details.price"></div>
-                                    <div class="right" pc-color-code input-src="property.historyDiff">
-                                        <h6 class="decrease" ng-show='!property.noHistoryData'>
-                                            <i class="icon-minus3"></i>
-                                            <b>{{property.historyDiff | customCurrency: "£"}}</b> price reduction
-                                        </h6>
-                                        <h6 class="increase" ng-show='!property.noHistoryData'>
-                                            <i class="icon-plus3"></i>
-                                            <b>{{property.historyDiff | customCurrency: "£"}}</b> price increase
-                                        </h6>
-                                        <h6 ng-show='property.noHistoryData'>
-                                            No History Available
-                                        </h6>
+<div class="main-content" ng-show="!property.status && !property.errorStatus">
+    <div class="container">
+        <h5 class="text-center">{{property.statusMsg}}</h5>
+    </div>
+</div>  
+
+<div class="property-details-main" ng-show="property.status">
+    <section class="main-content">
+        <article class="property-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="left-details">
+                            <div class="property-heading">
+                                <hgroup class="left-section">
+                                    <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type}} for Sale</h3>
+                                    <h5 class="property-address">{{property.details.address | address}}</h5>
+                                </hgroup>
+                                <hgroup class="right-section">
+                                    <h3 class="property-price">
+                                        <span>{{property.details.price | customCurrency: "£"}}</span>
+                                        <i class="icon-tag"></i>
+                                    </h3>
+                                    <h6 class="label label-primary property-date">
+                                        First Listed:
+                                        <span pc-date-ago date-src="property.details.created_at"></span>
+                                    </h6>
+                                </hgroup>
+                            </div>
+                            <pc-carousel images-src="property.details.images"></pc-carousel>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5">
+                        <div class="right-details">
+                            <div class="panel panel-outline-blue panel-no-body value-comparison">
+                                <div class="panel-heading">
+                                    <div class="split-half value-com">
+                                        <div class="left">
+                                            <div ng-show="property.avgPrice.status" pc-price-compare avg-price="property.avgPrice.data" property-price="property.details.price"></div>
+                                            <h6 ng-show="!property.avgPrice.status && property.avgPrice.errorStatus">{{property.avgPrice.errorMsg}}</h6>
+                                            <h6 ng-show="!property.avgPrice.status && !property.avgPrice.errorStatus">{{property.avgPrice.statusMsg}}</h6>
+                                        </div>
+                                        <div class="right">
+                                            <div ng-show="property.priceHistory.status" pc-price-history price-history="property.priceHistory.data" property-price="property.details.price"></div>
+                                            <h6 ng-show="!property.priceHistory.status && property.priceHistory.errorStatus">{{property.priceHistory.errorMsg}}</h6>
+                                            <h6 ng-show="!property.priceHistory.status && !property.priceHistory.errorStatus">{{property.priceHistory.statusMsg}}</h6>
+                                        </div>
+                                    </div>    
+                                    <div class="split-half">
+                                        <h6 class="left"><b>{{property.details.yield}}</b> <span>%</span> Rental Yield</h6>
+                                        <h6 class="right"><b>{{property.details.yield * property.details.price /1200 | customCurrency: "£"}}</b> Rental Income</h6>
                                     </div>
-                                </div>    
-                                <div class="split-half">
-                                    <h6 class="left"><b>{{property.details.yield}}</b> <span>%</span> Rental Yield</h6>
-                                    <h6 class="right"><b>{{property.details.yield * property.details.price /1200 | customCurrency: "£"}}</b> Rental Income</h6>
                                 </div>
                             </div>
-                        </div>
-                        <div class="panel panel-outline panel-no-body property-links">
-                            <div class="panel-heading">
-                                <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
-                                    <ul class="no-bullets horizontal-list">
-                                        <li class="add-to-favourites">
-                                            <a ng-click="addToFavourites(property.details.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
-                                            <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
-                                        </li>
-                                        <li  class="email-friend last">
-                                            <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
-                                        </li>
-                                    </ul> 
-                                </pc-add-to-fav>
+                            <div class="panel panel-outline panel-no-body property-links">
+                                <div class="panel-heading">
+                                    <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
+                                        <ul class="no-bullets horizontal-list">
+                                            <li class="add-to-favourites">
+                                                <a ng-click="addToFavourites(property.details.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                                <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
+                                            </li>
+                                            <li  class="email-friend last">
+                                                <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
+                                            </li>
+                                        </ul> 
+                                    </pc-add-to-fav>
+                                </div>
                             </div>
+                            <tabset class="profit-calculator">
+                                <tab heading="Buy to Let">
+                                    <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
+                                </tab>
+
+                                <tab heading="Buy to Sell">
+                                    <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
+                                </tab>
+                            </tabset>
+
                         </div>
-                        <tabset class="profit-calculator">
-                            <tab heading="Buy to Let">
-                                <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
-                            </tab>
-                            
-                            <tab heading="Buy to Sell">
-                                <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
-                            </tab>
-                        </tabset>
-                        
-                    </div>
-                </div>                  
-            </div>
-            
-            <div ng-show="property.details.description" class="panel panel-primary">
-                <div class="panel-heading">
-                    <h5>Additional Information:</h5>
+                    </div>                  
                 </div>
-                <div class="panel-body" ng-bind-html="property.details.description | trusted_html"></div>
-            </div>
-        </div>
-    </article>    
-</section>
 
-<aside class="cta-section request-details">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>Want to Invest in this <span>Property?</span></h2>
+                <div ng-show="property.details.description" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h5>Additional Information:</h5>
+                    </div>
+                    <div class="panel-body" ng-bind-html="property.details.description | trusted_html"></div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <button class="btn btn-lg btn-3d btn-fullwidth" data-toggle="modal" data-target="#requestdetails">Request Details</button>
-            </div>
-        </div>
-    </div>
-</aside>
+        </article>    
+    </section>
 
-<aside class="main-content">
-    <pc-comparables property-src="comparables.list" compare-title="comparables.title" avg-price="property.avgPrice"></pc-comparables>
-    <br />
-    <br />
-    
-    <div class="other-properties">
+    <aside class="cta-section request-details">
         <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Want to Invest in this <span>Property?</span></h2>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-lg btn-3d btn-fullwidth" data-toggle="modal" data-target="#requestdetails">Request Details</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="main-content">
+         <div class="container">         
             <div class="panel panel-primary panel-no-body">
                 <div class="panel-heading">
-                    <h5>Other Properties You Might Like:</h5>
+                    <h5>Comparables (Recently Sold Nearby)</h5>
                 </div>
             </div>
-            <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
-        </div>
-    </div>
-</aside>
+            <h5 class="text-center" ng-show="!property.comparables.status && property.comparables.errorStatus">{{property.comparables.errorMsg}}</h5>
+            <h5 class="text-center" ng-show="!property.comparables.status && !property.comparables.errorStatus">{{property.comparables.statusMsg}}</h5>
+            <pc-comparables ng-show="property.comparables.status" property-src="property.comparables.list" compare-title="property.comparables.title" avg-price="property.avgPrice.data"></pc-comparables>
+         </div>   
+        <br />
+        <br />
 
+        <div class="other-properties">
+            <div class="container">
+                <div class="panel panel-primary panel-no-body">
+                    <div class="panel-heading">
+                        <h5>Other Properties You Might Like:</h5>
+                    </div>
+                </div>
+                <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
+            </div>
+        </div>
+    </aside>
+</div>
 
 <!-- Email Friend Modal -->
 <div class="modal fade request-details-modal" id="emailFriend" tabindex="-1" role="dialog" aria-hidden="true">
@@ -241,5 +262,5 @@
 </div>
 
 <!-- footer template -->
-<ng-include src="'modules/shared/views/footer.html'"></ng-include>
+<ng-include src="'modules/shared/views/footer.html'"  ng-show="property.status"></ng-include>
 

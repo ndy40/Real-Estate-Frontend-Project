@@ -15,22 +15,35 @@ define(["../module"], function (app) {
         */
         $scope.property = {
             details         : {},
-            avgPrice        : "",   // Used for Value Comparison
-            priceHistory    : "",   // Used for Historical Price Difference
-            historyDiff     : "",
-            noMarketData    : false,
-            noHistoryData   : false,
-            status          : false
+            status          : false,
+            errorStatus     : false,
+            statusMsg       : "Loading Details.. Please Wait",
+            errorMsg        : "",
+            avgPrice        : {    // Used for Value Comparison
+                data        : "",
+                status      : false,
+                statusMsg   : "Loading Market Difference..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            },
+            priceHistory    : {     // Used for Historical Price Difference
+                data        : "",
+                diff        : "",
+                status      : false,
+                statusMsg   : "Loading Price Changes..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            },   
+            comparables     : {
+                list: {},
+                title       : "",
+                status      : false,
+                statusMsg   : "Loading Comparables..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            }
         };
         
-        /**
-        * Object to Store Comparables Data
-        */
-        $scope.comparables = {
-            list: {},
-            status: false
-        };
-
         /**
         * Get Page Id from URL and Set New Page Route
         */
@@ -45,60 +58,59 @@ define(["../module"], function (app) {
             propertyService.getProperty($routeParams.id)
                 .success($scope.loadPropertyDetails)
                 .error(function (error) {
-                    $scope.property.status = 'Unable to load data: ' +
+                    $scope.property.errorStatus = true;
+                    $scope.property.errorMsg = 'Unable to load data: ' +
                         error.message;
+                    $scope.property.status = false;
                 });
         };
         
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
-            $scope.property.status = true;
             $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
             $scope.getPriceHistroy(data.id);
-            $scope.comparables.title = data.rooms + " Bedroom " + data.type + " for Sale";
+            $scope.property.comparables.title = data.rooms + " Bedroom " + data.type + " for Sale";
             $scope.getComparables(data.id);
-            
-            // Populate Email Data for Request Details & Email Friend
             $scope.populateRqstDetailsData(data);
             $scope.populateEmailFriendData(data);
-            
-            // Set Status
-            if (data.length > 0) {
-                $scope.property.status = true;
-            } else {
-                $scope.property.status = false;
-            }
+            $scope.property.errorStatus = false;
+            $scope.property.status = true;
         };
         
         // Get Average Price from Service
         $scope.getAvgPrice = function (postCode, rooms, type) {
             propertyService.getAvgPrice(postCode, rooms, type)
                 .success(function (data) {
-                    $scope.property.noMarketData = false;
-                    $scope.property.avgPrice = data.data;
+                    $scope.property.avgPrice.data = data.data;
+                    $scope.property.avgPrice.errorStatus = false;
+                    $scope.property.avgPrice.status = true;
                 })
                 .error(function (error) {
-                    $scope.property.noMarketData = true;
+                    $scope.property.avgPrice.errorStatus = true;
+                    $scope.property.avgPrice.errorMsg = 'Unable to get market data';
+                    $scope.property.avgPrice.status = false;
                 });
         };
         
         // Get Price History from Service
         $scope.getPriceHistroy = function (id) {
             propertyService.getPriceHistroy(id)
-                .success($scope.calcHistoryDiff)
+                .success(function (data) {
+                    if (data.data.hasOwnProperty('data')) {
+                        $scope.property.priceHistory.data = data.data;
+                        $scope.property.priceHistory.errorStatus = false;
+                        $scope.property.priceHistory.status = true;
+                    } else {
+                        $scope.property.priceHistory.errorStatus = true;
+                        $scope.property.priceHistory.errorMsg = 'No price history';
+                        $scope.property.priceHistory.status = false;
+                    }
+                })
                 .error(function (error) {
-                    $scope.property.noHistoryData = true;
+                    $scope.property.priceHistory.errorStatus = true;
+                    $scope.property.priceHistory.errorMsg = 'Unable to get historical data';
+                    $scope.property.priceHistory.status = false;
                 });
-        };
-        $scope.calcHistoryDiff = function (data) {
-            $scope.property.priceHistory = data;
-            if (data.hasOwnProperty('old_price')) {
-                $scope.property.noHistoryData = false;
-                $scope.property.historyDiff = data.new_price - data.old_price;
-            } else {
-                $scope.property.noHistoryData = true;
-                $scope.property.historyDiff = 0;
-            }
         };
         
         /**
@@ -106,20 +118,16 @@ define(["../module"], function (app) {
         */
         $scope.getComparables = function (id) {
             propertyService.getComparables(id)
-                .success($scope.loadComparables)
+                .success(function (data) {
+                    $scope.property.comparables.list = data;
+                    $scope.property.comparables.errorStatus = false;
+                    $scope.property.comparables.status = true;
+                })
                 .error(function (error) {
-                    $scope.comparables.status = 'Unable to load data: ' +
-                        error.message;
+                    $scope.property.comparables.errorStatus = true;
+                    $scope.property.comparables.errorMsg = 'Unable to get comparables';
+                    $scope.property.comparables.status = false;
                 });
-        };
-        $scope.loadComparables = function (data) {
-            $scope.comparables.list = data;
-            // Set Status
-            if (data.length > 0) {
-                $scope.comparables.status = true;
-            } else {
-                $scope.comparables.status = false;
-            }
         };
 
         /**

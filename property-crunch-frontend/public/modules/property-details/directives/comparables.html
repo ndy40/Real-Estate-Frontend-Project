@@ -1,66 +1,58 @@
- <div class="container">         
-    <div class="panel panel-primary panel-no-body">
-        <div class="panel-heading">
-            <h5>Comparables (Recently Sold Nearby)</h5>
+<!-- Property Listing -->
+<div class="property-listing comparables-listing" ng-repeat="comparable in obj.current">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="property-img">
+                <img ng-show="comparable.images[0].image" class="img-responsive" ng-src="{{comparable.images[0].image}}" alt="Comparable Image">
+                <img ng-show="!comparable.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+            </div>
         </div>
-    </div>
-    
-    <!-- Property Listing -->
-    <div class="property-listing comparables-listing" ng-repeat="comparable in obj.current">
-        <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-6">
-                <div class="property-img">
-                    <img ng-show="comparable.images[0].image" class="img-responsive" ng-src="{{comparable.images[0].image}}" alt="Comparable Image">
-                    <img ng-show="!comparable.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
-                </div>
+        <div class="col-lg-6 col-md-5 col-sm-6">
+            <div class="property-title-group noPrice">
+                <h4>{{compareTitle}}</h4>
+                <span class="comp-market-price" pc-price-compare avg-price="avgPrice" property-price="comparable.price"></span>
             </div>
-            <div class="col-lg-6 col-md-5 col-sm-6">
-                <div class="property-title-group noPrice">
-                    <h4>{{compareTitle}}</h4>
-                    <span class="comp-market-price" pc-price-compare avg-price="avgPrice" property-price="comparable.price"></span>
-                </div>
-                <p class="comp-address">{{comparable.address | address | lowercase}}</p>
-                <p class="distance">
-                    <i class="icon-location"></i>
-                    {{comparable.distance | walking | number: 0}} mins walk from this location</p>
-            </div>
-            <div class="visible-sm col-sm-6 right-section-group">
-                <div class="split-half">
-                    <div class="left">
-                        <h5 class="right-section-label">Sold Price:</h5>
-                        <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
-                    </div>
-                    <div class="right">
-                        <h5 class="right-section-label">
-                            Date: 
-                            <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
-                        </h5>
-                        <h3 class="right-section-value no-border" pc-comp-date-ago date-src="comparable.transactionDate"></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
-                <div class="right-section-group">
-                    <h5 class="right-section-label">Sold Price</h5>
+            <p class="comp-address">{{comparable.address | address | lowercase}}</p>
+            <p class="distance">
+                <i class="icon-location"></i>
+                {{comparable.distance | walking | number: 0}} mins walk from this location</p>
+        </div>
+        <div class="visible-sm col-sm-6 right-section-group">
+            <div class="split-half">
+                <div class="left">
+                    <h5 class="right-section-label">Sold Price:</h5>
                     <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
-                <div class="right-section-group">
+                <div class="right">
                     <h5 class="right-section-label">
-                        Date 
+                        Date: 
                         <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
                     </h5>
                     <h3 class="right-section-value no-border" pc-comp-date-ago date-src="comparable.transactionDate"></h3>
                 </div>
             </div>
         </div>
-    </div> 
-    <div class="more-button-wrap" ng-show="!obj.noMore">
-        <button ng-click="updateList()" id="more-properties-toggle" class="btn btn-lg btn-3d">More Comparables</button>
+        <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+            <div class="right-section-group">
+                <h5 class="right-section-label">Sold Price</h5>
+                <h3 class="right-section-value no-border">{{comparable.price | customCurrency: "£"}}</h3>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+            <div class="right-section-group">
+                <h5 class="right-section-label">
+                    Date 
+                    <i class="icon-help" tooltip="The date the property was sold." tooltip-placement="top" title="The date the property was sold."></i>
+                </h5>
+                <h3 class="right-section-value no-border" pc-comp-date-ago date-src="comparable.transactionDate"></h3>
+            </div>
+        </div>
     </div>
-    <div class="alert alert-danger"  ng-show="obj.noMore" role="alert">
-        <i class="icon-warning"></i>
-        <span>Sorry!</span> No more comparables found in the area. Other properties can be found below.
-    </div> 
+</div> 
+<div class="more-button-wrap" ng-show="!obj.noMore">
+    <button ng-click="updateList()" id="more-properties-toggle" class="btn btn-lg btn-3d">More Comparables</button>
 </div>
+<div class="alert alert-danger"  ng-show="obj.noMore" role="alert">
+    <i class="icon-warning"></i>
+    <span>Sorry!</span> No more comparables found in the area. Other properties can be found below.
+</div> 

@@ -11,6 +11,8 @@ define([
     "./directives/comp-date-ago-directive",
     "./directives/comparables-directive",
     "./directives/currency-directive",
+    "./directives/price-compare-directive",
+    "./directives/price-history-directive",
     "./directives/percent-directive",
     "./directives/to-let-calculator-directive",
     "./directives/to-sell-calculator-directive",

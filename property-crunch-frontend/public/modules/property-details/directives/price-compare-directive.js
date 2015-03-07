@@ -8,7 +8,7 @@ define(["../module"], function (app) {
     app.directive("pcPriceCompare", function () {
         return {
             restrict : "EA",
-            templateUrl : "./modules/shared/directives/price-compare.html",
+            templateUrl : "./modules/property-details/directives/price-compare.html",
             scope : {
                 avgPrice: "=",
                 propertyPrice: "="

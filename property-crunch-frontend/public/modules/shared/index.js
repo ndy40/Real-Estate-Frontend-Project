@@ -8,7 +8,6 @@ define([
     "./directives/add-to-fav-directive",
     "./directives/color-code-directive",
     "./directives/date-ago-directive",
-    "./directives/price-compare-directive",
     "./directives/rec-properties-directive",
     "./filters/address-filter",
     "./filters/currency-filter",

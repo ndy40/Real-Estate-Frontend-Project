@@ -1,0 +1,7 @@
+<h6 class="decrease" ng-show='status.below'>
+    <b>{{historyDiff | customCurrency: "£"}}</b> price reduction
+</h6>
+<h6 class="increase" ng-show='status.above'>
+    <b>{{historyDiff | customCurrency: "£"}}</b> price increase
+</h6>
+<h6 class="zero" ng-show='status.zero'>No Price Difference</h6>
