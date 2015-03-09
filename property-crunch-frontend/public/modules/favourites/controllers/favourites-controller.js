@@ -51,7 +51,7 @@ define(["../module"], function (app) {
             $scope.favList.properties = data;
             FavService.cache(data);
         };
-            
+                
         /**
         * Init getFavourites
         */
@@ -65,6 +65,8 @@ define(["../module"], function (app) {
             UserModel.removeFav(propertyId)
                 .success(function() {
                     UserModel.removeFavFE(propertyId);
+                    FavService.clearCache();
+                    $scope.getFavourites();
                     $rootScope.$broadcast("favUpdated");
                 });
         };

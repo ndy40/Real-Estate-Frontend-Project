@@ -15,7 +15,7 @@ define([
         "localStorageModule",
         "ngCookies"
     ])
-    .constant("APPURL", {
+    .constant("FAPI", {
         "addToFav"  : "api/property/add-favourite/",
         "removeFav" : "api/property/remove-favourite/"
     });

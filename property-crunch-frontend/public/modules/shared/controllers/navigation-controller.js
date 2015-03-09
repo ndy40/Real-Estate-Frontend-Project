@@ -7,19 +7,14 @@ define(["../module"], function (app) {
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel",
         "AuthService", function ($scope, $rootScope, UserModel, AuthService) {
 
-        UserModel.refresh();
-
         $rootScope.navData  = {
+            isLoggedIn : UserModel.isLoggedIn,
             fullname : UserModel.fullname,
-            showLogin : UserModel.isLoggedIn,
-            showLoginButton : !UserModel.isLoggedIn,
             favCount : UserModel.favCount
         };
         
-        
         $scope.logout = function () {
             UserModel.logout();
-            $scope.$apply();
         };
 
         $scope.$on("loginsuccess", function (targetscope, currscope) {
@@ -32,14 +27,10 @@ define(["../module"], function (app) {
 
         $scope.modifynav = function (data) {
             UserModel.createSession(data);
-
+            $rootScope.navData.isLoggedIn = UserModel.isLoggedIn;
             $rootScope.navData.fullname = UserModel.fullname;
-            $rootScope.navData.showLogin = UserModel.isLoggedIn;
             $rootScope.navData.favCount = UserModel.favCount;
-            $rootScope.navData.showLoginButton = false;
-            
         };
-        
         
         // Hiding Dropdown by default
         $scope.dropOpenStatus = false;

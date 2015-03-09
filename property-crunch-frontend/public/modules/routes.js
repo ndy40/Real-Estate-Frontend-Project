@@ -97,18 +97,18 @@
             };
         });
 
-        app.run(["$http", "$rootScope", "UserModel", function ($http, $rootScope, UserModel) {
-            $http.defaults.headers.common["_token"] = document.childNodes[1].getAttribute("csrf");
-            document.childNodes[1].removeAttribute("csrf");
-
-            $rootScope.$on("$locationChangeStart    ", function () {
-                if (UserModel.isLoggedIn) {
-                    $rootScope.navData.fullname = UserModel.fullname;
-                    $rootScope.navData.showLogin = UserModel.isLoggedIn;
-                    $rootScope.navData.showLoginButton = false;
-                }
-            });
-        }]);
+//        app.run(["$http", "$rootScope", "UserModel", function ($http, $rootScope, UserModel) {
+//            $http.defaults.headers.common["_token"] = document.childNodes[1].getAttribute("csrf");
+//            document.childNodes[1].removeAttribute("csrf");
+//
+//            $rootScope.$on("$locationChangeStart    ", function () {
+//                if (UserModel.isLoggedIn) {
+//                    $rootScope.navData.fullname = UserModel.fullname;
+//                    $rootScope.navData.showLogin = UserModel.isLoggedIn;
+//                    $rootScope.navData.showLoginButton = false;
+//                }
+//            });
+//        }]);
         
         
         // ScrollToTop Fix for Anchor Tags

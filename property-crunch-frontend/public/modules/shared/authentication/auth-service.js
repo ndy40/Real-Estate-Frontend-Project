@@ -88,9 +88,9 @@ define(["./module"], function (app) {
                 this.db.truncate();
             };
 
-            AuthService.prototype.logout = function (onSuccess, onFailure) {
+            AuthService.prototype.logout = function () {
                 var url = AUTHURL + "/logout";
-                return $http.get(url).success(onSuccess).error(onFailure);
+                return $http.get(url);
             };
 
             /**
