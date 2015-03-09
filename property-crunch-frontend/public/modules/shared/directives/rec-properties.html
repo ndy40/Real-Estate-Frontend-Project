@@ -7,7 +7,7 @@
                 <a ng-href="/property/{{property.id}}" class="item-overlay">
                     <h5 class="item-price">{{property.price | customCurrency: "£"}}</h5>
                     <h5 class="item-location">{{property.address | address}}</h5>
-                    <h5 class="item-income"><span>{{property.price | customCurrency: "£"}}</span> Rental Income</h5>
+                    <h5 class="item-income"><span>{{property.yield * property.price /1200 | customCurrency: "£"}}</span> Rental Income</h5>
                     <h5 class="item-yield"><span>{{property.yield | number : 1}}% Yield</h5>
                 </a>
             </div>

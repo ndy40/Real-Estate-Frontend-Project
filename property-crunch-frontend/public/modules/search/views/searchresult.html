@@ -113,7 +113,7 @@
                     </div> 
                 </div>
                 
-                <pc-pager properties="searchObject.properties" total-results="searchObject.count" callback="updateFilters" class="hidden-xs"></pc-pager>
+                <pc-pager ng-show="searchObject.status" properties="searchObject.properties" total-results="searchObject.count" callback="updateFilters" class="hidden-xs"></pc-pager>
             </div>
         </div>
     </div>
