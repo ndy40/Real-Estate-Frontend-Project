@@ -42,6 +42,11 @@
                     controller  : "LoginCtrl"
                 });
                 
+                $routeProvider.when("/favourites", {
+                    templateUrl : "modules/favourites/views/favourites.html",
+                    controller  : "FavouritesCtrl"
+                });
+                
                 // Used as an iframe on Blog
                 $routeProvider.when("/property-calculator", {
                     templateUrl : "modules/property-details/views/calculator.html",
@@ -92,18 +97,18 @@
             };
         });
 
-        app.run(["$http", "$rootScope", "UserModel", function ($http, $rootScope, UserModel) {
-            $http.defaults.headers.common["_token"] = document.childNodes[1].getAttribute("csrf");
-            document.childNodes[1].removeAttribute("csrf");
-
-            $rootScope.$on("$locationChangeStart    ", function () {
-                if (UserModel.isLoggedIn) {
-                    $rootScope.navData.fullname = UserModel.fullname;
-                    $rootScope.navData.showLogin = UserModel.isLoggedIn;
-                    $rootScope.navData.showLoginButton = false;
-                }
-            });
-        }]);
+//        app.run(["$http", "$rootScope", "UserModel", function ($http, $rootScope, UserModel) {
+//            $http.defaults.headers.common["_token"] = document.childNodes[1].getAttribute("csrf");
+//            document.childNodes[1].removeAttribute("csrf");
+//
+//            $rootScope.$on("$locationChangeStart    ", function () {
+//                if (UserModel.isLoggedIn) {
+//                    $rootScope.navData.fullname = UserModel.fullname;
+//                    $rootScope.navData.showLogin = UserModel.isLoggedIn;
+//                    $rootScope.navData.showLoginButton = false;
+//                }
+//            });
+//        }]);
         
         
         // ScrollToTop Fix for Anchor Tags
@@ -112,7 +117,7 @@
             function($rootScope, $location, $anchorScroll, $routeParams) {
                 $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
                     $location.hash($routeParams.scrollTo);
-                    $anchorScroll();  
+                    $anchorScroll();
                 });
         }]);
 

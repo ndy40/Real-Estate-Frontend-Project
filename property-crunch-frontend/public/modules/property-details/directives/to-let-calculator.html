@@ -45,23 +45,23 @@
     <h4>Results:</h4>
     <div class="form-field-row">
         <h6 class="col-xs-6">Monthly Mortgage:</h6>
-        <h5 class="col-xs-6"><span>{{toLet.monthlyMortgage | customCurrency: "£"}}</span></h5>
+        <h5 class="col-xs-6"><span pc-color-code input-src="toLet.monthlyMortgage">{{toLet.monthlyMortgage | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
         <h6 class="col-xs-6">Deposit Needed:</h6>
-        <h5 class="col-xs-6"><span>{{toLet.depositNeeded | customCurrency: "£"}}</span></h5>
+        <h5 class="col-xs-6"><span pc-color-code input-src="toLet.depositNeeded">{{toLet.depositNeeded | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
         <h6 class="col-xs-6">Monthly Profit/ Loss:</h6>
-        <h5 class="col-xs-6"><span>{{toLet.monthlyProfitOrLoss | customCurrency: "£"}}</span> per year</h5>
+        <h5 class="col-xs-6"><span pc-color-code input-src="toLet.monthlyProfitOrLoss">{{toLet.monthlyProfitOrLoss | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
         <h6 class="col-xs-6">Net Rental Yield:</h6>
-        <h5 class="col-xs-6"><span>{{toLet.netRentalYield | percent}}</span></h5>
+        <h5 class="col-xs-6"><span pc-color-code input-src="toLet.netRentalYield">{{toLet.netRentalYield | percent}}</span></h5>
     </div>
     <div class="form-field-row">
         <h6 class="col-xs-6">True Rate of Return:</h6>
-        <h5 class="col-xs-6"><span>{{toLet.trueRoR | percent}}</span></h5>
+        <h5 class="col-xs-6"><span pc-color-code input-src="toLet.trueRoR">{{toLet.trueRoR | percent}}</span></h5>
     </div>
     <button class="btn btn-lg btn-3d calculate" ng-click="reCalculateToLetResults()">Re-calculate</button>
 </div>

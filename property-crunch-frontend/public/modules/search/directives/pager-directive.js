@@ -6,8 +6,8 @@
 define(["../module"], function (app) {
     'use strict';
 
-    app.directive("pcPager", ["SearchService",
-        function (SearchService) {
+    app.directive("pcPager", ["SearchService", "$anchorScroll",
+        function (SearchService, $anchorScroll) {
 
             return {
                 restrict : "E",
@@ -134,6 +134,8 @@ define(["../module"], function (app) {
                         SearchService.setCurrentPage(currentPage);
                         // Init getProperties() function from Controller 
                         scope.callback();
+                        // Scroll To Top
+                        $anchorScroll();  
                     };
 
                     /**

@@ -17,6 +17,60 @@
 }
 
 /*===================================================================
+  Pages > Learn More > Video Modal
+====================================================================*/
+.video-modal {
+     .modal-backdrop {
+        background: #000; 
+    }
+
+    .modal-dialog {
+        background: transparent;
+        border: none;
+    }
+    
+    .modal-body {
+        padding: 0;
+        position: relative;
+        
+        &:hover button.close {
+            opacity: 1;
+        }
+    }
+    
+    button.close {
+        background: none repeat scroll 0 0 #191e1d;
+        border: 0 none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 5px;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+        
+        i.icon-cross {
+            color: #fff;
+            font-size: 18px;
+            line-height: 1;
+            position: relative;
+            text-shadow: none;
+        }
+        
+        &:hover {
+            opacity: 0.95;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .video-modal .modal-dialog {
+        margin: 80px auto;
+    }
+}
+/*===================================================================
   Pages > Learn More > Why invest in Property?
 ====================================================================*/
 .fact-box {

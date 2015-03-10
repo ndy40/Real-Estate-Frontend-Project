@@ -231,6 +231,20 @@ ul {
 .top-50 {
   padding-top: 50px;
 }
+.split-half:before,
+.split-half:after {
+  content: " ";
+  display: table;
+}
+.split-half:after {
+  clear: both;
+}
+.split-half .left {
+  float: left;
+}
+.split-half .right {
+  float: right;
+}
 .hide {
   display: none;
 }
@@ -1183,9 +1197,9 @@ ul.list-arrows li:before,
   border-top: none;
 }
 .panel-default > .panel-heading {
-  border: 1px solid #999999;
-  background: #999999;
-  color: #ffffff;
+  border: 1px solid #e9edeb;
+  background: #f9f9f9;
+  color: #333;
 }
 .panel-light .panel-heading {
   border: 1px solid #e9edeb;
@@ -1201,6 +1215,11 @@ ul.list-arrows li:before,
   color: #fff;
 }
 .panel-outline .panel-heading {
+  background: #ffffff;
+  border: 1px solid #299ecb;
+  color: #299ecb;
+}
+.panel-outline-blue .panel-heading {
   background: #ffffff;
   border: 1px solid #299ecb;
   color: #299ecb;
@@ -1415,14 +1434,15 @@ button {
   line-height: 44px;
   padding: 4px;
   position: relative;
+  border-radius: 3px;
   background: rgba(25, 30, 29, 0.8);
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .carousel-nav button:hover {
-  background: rgba(25, 30, 29, 0.9);
-  color: #299ecb;
+  background: #299ecb;
+  color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1808,7 +1828,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   padding: 3px 6px;
   font-weight: 300;
   padding: 4px;
-  border-radius: 0;
   cursor: default;
 }
 .label i {
@@ -1964,6 +1983,9 @@ textarea.form-control {
 /*===================================================================
   Components > Modals
 ====================================================================*/
+.modal-backdrop {
+  background: #000;
+}
 .modal-dialog {
   z-index: 1060;
 }
@@ -2402,7 +2424,7 @@ i.icon-help:hover {
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-default {
     padding: 0;
   }
@@ -2785,6 +2807,51 @@ footer.default-footer ul li:last-child {
   transition: all 0.3s;
 }
 /*===================================================================
+  Pages > Learn More > Video Modal
+====================================================================*/
+.video-modal .modal-backdrop {
+  background: #000;
+}
+.video-modal .modal-dialog {
+  background: transparent;
+  border: none;
+}
+.video-modal .modal-body {
+  padding: 0;
+  position: relative;
+}
+.video-modal .modal-body:hover button.close {
+  opacity: 1;
+}
+.video-modal button.close {
+  background: none repeat scroll 0 0 #191e1d;
+  border: 0 none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+.video-modal button.close i.icon-cross {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+  text-shadow: none;
+}
+.video-modal button.close:hover {
+  opacity: 0.95;
+}
+@media (min-width: 1200px) {
+  .video-modal .modal-dialog {
+    margin: 80px auto;
+  }
+}
+/*===================================================================
   Pages > Learn More > Why invest in Property?
 ====================================================================*/
 .fact-box {
@@ -3157,19 +3224,24 @@ footer.default-footer ul li:last-child {
   clear: both;
 }
 .property-listing .property-title-group a,
-.property-listing .property-title-group .add-to-fav {
+.property-listing .property-title-group .add-to-fav,
+.property-listing .property-title-group .added-to-fav {
   line-height: 26px;
 }
-.property-listing .property-title-group a {
+.property-listing .property-title-group a,
+.property-listing .property-title-group .added-to-fav {
   font-size: 24px;
+  font-weight: 600;
   margin: 0;
   float: left;
 }
-.property-listing .property-title-group .add-to-fav {
+.property-listing .property-title-group .add-to-fav,
+.property-listing .property-title-group .added-to-fav {
   float: right;
   font-size: 14px;
 }
-.property-listing .property-title-group .add-to-fav i {
+.property-listing .property-title-group .add-to-fav i,
+.property-listing .property-title-group .added-to-fav i {
   font-size: 18px;
   position: relative;
   top: 2px;
@@ -3272,6 +3344,16 @@ footer.default-footer ul li:last-child {
   font-size: 24px;
   font-weight: 500;
 }
+.added-to-fav {
+  cursor: default;
+  display: none;
+}
+.favourite .add-to-fav {
+  display: none;
+}
+.favourite .added-to-fav {
+  display: block;
+}
 @media (min-width: 640px) {
   .property-listing .property-details-group .beds {
     float: left;
@@ -3323,13 +3405,16 @@ footer.default-footer ul li:last-child {
     clear: both;
   }
   .property-listing .property-title-group a,
-  .property-listing .property-title-group .add-to-fav {
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing .property-title-group .added-to-fav {
     float: left;
   }
-  .property-listing .property-title-group a {
+  .property-listing .property-title-group a,
+  .property-listing .property-title-group .added-to-fav {
     margin: 0 18px 0 0;
   }
-  .property-listing .property-title-group .add-to-fav {
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing .property-title-group .added-to-fav {
     font-size: 14px;
   }
   .property-listing .property-details-group {
@@ -3416,7 +3501,7 @@ footer.default-footer ul li:last-child {
   margin-bottom: 0;
 }
 .property-heading .property-address {
-  line-height: 24px;
+  line-height: 1.43;
 }
 .property-heading .property-price {
   float: left;
@@ -3493,10 +3578,57 @@ footer.default-footer ul li:last-child {
 }
 @media (min-width: 992px) {
   .property-heading .property-address {
-    max-width: 350px;
+    max-width: 330px;
   }
   .property-heading .right-section {
-    max-width: 185px;
+    max-width: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  .property-heading .property-address {
+    max-width: 450px;
+  }
+  .property-heading .right-section {
+    max-width: 200px;
+  }
+}
+/*===================================================================
+  Pages > Property Details > Value Comparison Panel
+====================================================================*/
+.value-comparison h6 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.value-comparison h6 b {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+.value-comparison h6 span {
+  font-weight: 600;
+  font-size: 14px;
+}
+.value-comparison h6 i {
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+.value-comparison .value-com {
+  margin-bottom: 10px;
+  color: #191e1d;
+}
+.value-comparison .value-com .decrease i {
+  color: #da1b1b;
+}
+.value-comparison .value-com .increase i {
+  color: #028863;
+}
+@media (max-width: 479px) {
+  .value-comparison .split-half .left,
+  .value-comparison .split-half .right {
+    width: 100%;
+    margin: 5px 0;
   }
 }
 /*===================================================================
@@ -3506,8 +3638,6 @@ footer.default-footer ul li:last-child {
   margin-top: 20px;
 }
 .property-links .panel-heading {
-  padding-top: 20px;
-  padding-bottom: 20px;
   border-color: #f44647;
 }
 .property-links ul li {
@@ -3519,16 +3649,25 @@ footer.default-footer ul li:last-child {
   margin-bottom: 0;
   float: right;
 }
-.property-links ul li a {
+.property-links ul li a,
+.property-links ul li .added-to-fav {
   font-size: 16px;
 }
-.property-links ul i {
+.property-links ul li .added-to-fav {
+  color: #191e1d;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.property-links ul li .added-to-fav i {
+  cursor: default;
+}
+.property-links ul li i {
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
   position: relative;
   top: 3px;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 @media (min-width: 480px) {
   .property-links ul li {
@@ -3572,14 +3711,15 @@ footer.default-footer ul li:last-child {
   background: #e9edeb;
 }
 .profit-calculator h4 {
-  margin-bottom: 40px;
-  font-weight: 600;
+  margin-bottom: 25px;
+  font-weight: 500;
 }
 .profit-calculator .tab-content {
-  min-height: 521px;
+  min-height: 431px;
+  padding-top: 27px;
 }
 .profit-calculator .form-field-row {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .profit-calculator label {
   font-size: 16px;
@@ -3593,7 +3733,7 @@ footer.default-footer ul li:last-child {
   border-radius: 4px;
 }
 .profit-calculator .results .form-field-row {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 }
 .profit-calculator .results .form-field-row h5,
 .profit-calculator .results .form-field-row h6 {
@@ -3612,11 +3752,14 @@ footer.default-footer ul li:last-child {
   font-size: 18px;
 }
 .profit-calculator .btn.calculate {
-  margin-top: 30px;
+  margin-top: 15px;
+}
+.profit-calculator .negative {
+  color: #da1b1b;
 }
 @media (min-width: 480px) {
   .profit-calculator .results .form-field-row {
-    margin-bottom: 30px;
+    margin-bottom: 23px;
   }
   .profit-calculator .results .form-field-row h6 {
     font-size: 18px;
@@ -3709,16 +3852,58 @@ footer.default-footer ul li:last-child {
 .comparables .panel-heading h5 span {
   font-size: 14px;
 }
-.comparables-listing h4 {
+.comparables-listing .property-title-group h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+.comparables-listing .comp-market-price h6 {
+  font-size: 14px;
+  display: inline-block;
   margin: 0;
+}
+.comparables-listing .comp-market-price h6 b {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+.comparables-listing .comp-market-price h6 span {
+  font-weight: 500;
+  font-size: 12px;
+}
+.comparables-listing .comp-market-price h6 i {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+.comparables-listing .comp-market-price .decrease i {
+  color: #da1b1b;
+}
+.comparables-listing .comp-market-price .increase i {
+  color: #028863;
+}
+.comparables-listing .distance i {
+  position: relative;
+  top: 1px;
 }
 .comparables-listing .right-section-group {
   margin-top: 20px;
 }
+.comparables-listing .right-section-group .right-section-label {
+  font-weight: 400;
+}
 .comparables-listing .right-section-group .right-section-label,
 .comparables-listing .right-section-group .right-section-value {
-  margin: 0;
-  padding: 0;
+  font-size: 18px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+.comparables-listing .right-section-group .right-section-value {
+  font-size: 20px;
+  font-weight: 300;
+}
+.comparables-listing .comp-address {
+  text-transform: capitalize;
 }
 .more-button-wrap {
   width: 180px;
@@ -3730,13 +3915,33 @@ footer.default-footer ul li:last-child {
     font-size: 16px;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .comparables-listing .right-section-group .right-section-label,
+  .comparables-listing .right-section-group .right-section-value {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .comparables-listing .right-section-group .right-section-value {
+    font-weight: 400;
+    margin-left: 5px;
+  }
+}
 @media (min-width: 992px) {
   .comparables-listing p,
   .comparables-listing .property-title-group {
-    margin-bottom: 31px;
+    margin-bottom: 10px;
+  }
+  .comparables-listing .property-title-group h4 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    line-height: 1;
+  }
+  .comparables-listing .comp-market-price h6 {
+    margin-top: 10px;
   }
   .comparables-listing .right-section-group {
-    margin-top: 5px;
+    margin-top: 0;
+    line-height: 1;
   }
   .comparables-listing .right-section-group .right-section-label,
   .comparables-listing .right-section-group .right-section-value {
@@ -3745,7 +3950,7 @@ footer.default-footer ul li:last-child {
   }
   .comparables-listing .right-section-group .right-section-value {
     float: left;
-    margin-top: 31px;
+    margin-top: 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -3753,21 +3958,28 @@ footer.default-footer ul li:last-child {
   .comparables-listing .property-title-group {
     margin-bottom: 16px;
   }
-  .comparables-listing .right-section-group {
-    margin-top: 5px;
+  .comparables-listing p h4,
+  .comparables-listing .property-title-group h4 {
+    line-height: 1;
   }
-  .comparables-listing .right-section-group .right-section-label,
-  .comparables-listing .right-section-group .right-section-value {
-    width: 100%;
-    text-align: center;
-  }
-  .comparables-listing .right-section-group .right-section-value {
-    float: left;
-    margin-top: 31px;
+  .comparables-listing .comp-market-price h6 {
+    display: inline-block;
+    margin: 0;
   }
   .more-button-wrap {
     padding: 10px 0 0;
   }
+}
+/*===================================================================
+  Pages > Property Details > Email a Friend Modal
+====================================================================*/
+.email-friend-img img,
+.email-friend-title h5 {
+  margin-bottom: 20px;
+}
+.email-friend-title h5 {
+  font-size: 20px;
+  line-height: 1.4;
 }
 /*===================================================================
   Pages > Property Details > Other Properties
@@ -3779,6 +3991,28 @@ footer.default-footer ul li:last-child {
 /*===================================================================
   Pages > Favourites
 ====================================================================*/
+#favourites_list .property-title-group .add-to-fav {
+  font-size: 15px;
+}
+#favourites_list .icon-cross2 {
+  margin-right: 2px;
+  position: relative;
+  top: 3px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #favourites_list .right-section-label {
+    margin: 6px 0;
+  }
+  #favourites_list .right-section-value {
+    line-height: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #favourites_list .property-title-group,
+  #favourites_list p {
+    margin-bottom: 30px;
+  }
+}
 /*===================================================================
   Pages > 404 Page
 ====================================================================*/

@@ -17,10 +17,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div collapse="!isCollapsed" class="collapse navbar-collapse navbar-right">
         <ul class="nav navbar-nav">
+            <li><a active-link="active" ng-href="/search">Search</a></li>
             <li><a active-link="active" ng-href="/pages/learn_more">Learn More</a></li>
             <li><a active-link="active" ng-href="/pages/list_property">List a Property</a></li>
             <li><a active-link="active" ng-href="http://thenello.com/blog">Blog</a></li>
-            <li ng-hide="!navData.showLoginButton">
+            <li ng-show="!navData.isLoggedIn">
                 <a ng-class="{'active':dropOpenStatus}" href="" ng-click="toggleDropdown()">
                     <i class="icon-login"></i>
                     <span class="link-text">Log In</span>
@@ -42,11 +43,11 @@
                 </ul>
             </li>
         </ul>
-        <ul class="nav navbar-nav" ng-show="navData.showLogin">
+        <ul class="nav navbar-nav" ng-show="navData.isLoggedIn">
             <li>
-                <a href="favourites.html">
+                <a href="/favourites">
                     <i class="icon-star"></i>
-                    <span class="badge">6</span>
+                    <span class="badge">{{navData.favCount}}</span>
                     <span class="link-text">Favourites</span>
                 </a>
             </li>
@@ -58,7 +59,7 @@
                 </a>
                 <ul ng-class="{'open':dropOpenStatus}" class="dropdown-menu">
                     <li>
-                        <a href="/logout" ng-click="logout()">
+                        <a href="/" ng-click="logout()">
                             <i class="icon-logout"></i>
                             <span class="link-text">Log Out</span>
                         </a>

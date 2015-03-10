@@ -4,116 +4,212 @@
  */
 define(["../module"], function (app) {
     'use strict';
-    app.controller("PropertyCtrl", ["$scope", "SearchService",
-        "$routeParams", function ($scope, SearchService, $routeParams) {
+    app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
+        "SearchService", "$routeParams", "$location", "emailService", 
+            "propertyService", function ($scope, $rootScope, UserModel, 
+                SearchService, $routeParams, $location, emailService,
+                    propertyService) {
 
         /**
         * Object to Store Property Data
         */
         $scope.property = {
-            details: {},
-            status: false
-        };
-
-        /**
-        * Object to Store Comparables Data
-        */
-        $scope.comparables = {
-            list: {},
-            status: false
-        };
-
-        /**
-        * Object to Store Request Details Data
-        */
-        $scope.requestDetails = {
-            message: ""
+            details         : {},
+            status          : false,
+            errorStatus     : false,
+            statusMsg       : "Loading Details.. Please Wait",
+            errorMsg        : "",
+            avgPrice        : {    // Used for Value Comparison
+                data        : "",
+                status      : false,
+                statusMsg   : "Loading Market Difference..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            },
+            priceHistory    : {     // Used for Historical Price Difference
+                data        : "",
+                diff        : "",
+                status      : false,
+                statusMsg   : "Loading Price Changes..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            },   
+            comparables     : {
+                list: {},
+                title       : "",
+                status      : false,
+                statusMsg   : "Loading Comparables..",   // Used to display "Loading"
+                errorStatus : false,
+                errorMsg    : ""    // Used to display error msgs
+            }
         };
         
-        //$scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about. Thank you.";
-        
+        /**
+        * Get Page Id from URL and Set New Page Route
+        */
         $scope.setPageRoute = function () {
             $scope.propertyId = $routeParams.id;
         };
-
+        
+        /**
+        * Get Property Details
+        */
         $scope.getPropertyDetails = function () {
-            SearchService.getProperty($routeParams.id)
+            propertyService.getProperty($routeParams.id)
                 .success($scope.loadPropertyDetails)
                 .error(function (error) {
-                    $scope.property.status = 'Unable to load data: ' +
+                    $scope.property.errorStatus = true;
+                    $scope.property.errorMsg = 'Unable to load data: ' +
                         error.message;
+                    $scope.property.status = false;
                 });
         };
-
+        
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
-            $scope.getFirstListedDate(data.created_at);
-            // Populate Email Message for Request Details
-            $scope.requestDetails.message = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
-            // Get Comparables
-            $scope.getComparables(data.address);
-            // Set Status
-            if (data.length > 0) {
-                $scope.property.status = true;
-            } else {
-                $scope.property.status = false;
-            }
+            $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
+            $scope.getPriceHistroy(data.id);
+            $scope.property.comparables.title = data.rooms + " Bedroom " + data.type + " for Sale";
+            $scope.getComparables(data.id);
+            $scope.populateRqstDetailsData(data);
+            $scope.populateEmailFriendData(data);
+            $scope.property.errorStatus = false;
+            $scope.property.status = true;
         };
-
-        $scope.getComparables = function (location) {
-            //SearchService.getComparables(location) - Use Later
-            SearchService.getComparables("SW7")
-                .success($scope.loadComparablesList)
+        
+        // Get Average Price from Service
+        $scope.getAvgPrice = function (postCode, rooms, type) {
+            propertyService.getAvgPrice(postCode, rooms, type)
+                .success(function (data) {
+                    $scope.property.avgPrice.data = data.data;
+                    $scope.property.avgPrice.errorStatus = false;
+                    $scope.property.avgPrice.status = true;
+                })
                 .error(function (error) {
-                    $scope.comparables.status = 'Unable to load data: ' +
-                        error.message;
+                    $scope.property.avgPrice.errorStatus = true;
+                    $scope.property.avgPrice.errorMsg = 'Unable to get market data';
+                    $scope.property.avgPrice.status = false;
+                });
+        };
+        
+        // Get Price History from Service
+        $scope.getPriceHistroy = function (id) {
+            propertyService.getPriceHistroy(id)
+                .success(function (data) {
+                    if (data.data.hasOwnProperty('data')) {
+                        $scope.property.priceHistory.data = data.data;
+                        $scope.property.priceHistory.errorStatus = false;
+                        $scope.property.priceHistory.status = true;
+                    } else {
+                        $scope.property.priceHistory.errorStatus = true;
+                        $scope.property.priceHistory.errorMsg = 'No price history';
+                        $scope.property.priceHistory.status = false;
+                    }
+                })
+                .error(function (error) {
+                    $scope.property.priceHistory.errorStatus = true;
+                    $scope.property.priceHistory.errorMsg = 'Unable to get historical data';
+                    $scope.property.priceHistory.status = false;
+                });
+        };
+        
+        /**
+        * Get Comparables for Current Property
+        */
+        $scope.getComparables = function (id) {
+            propertyService.getComparables(id)
+                .success(function (data) {
+                    $scope.property.comparables.list = data;
+                    $scope.property.comparables.errorStatus = false;
+                    $scope.property.comparables.status = true;
+                })
+                .error(function (error) {
+                    $scope.property.comparables.errorStatus = true;
+                    $scope.property.comparables.errorMsg = 'Unable to get comparables';
+                    $scope.property.comparables.status = false;
                 });
         };
 
-        $scope.loadComparablesList = function (data) {
-            $scope.comparables.list = data.data;
-            // Set Status
-            if (data.length > 0) {
-                $scope.comparables.status = true;
+        /**
+        * Object to Store Email Data
+        */
+        $scope.email  = {
+            toFriend : {
+                name            : "",
+                email           : "",
+                friendsEmail    : "",
+                msg             : "I thought you might want to take a look at this property for sale on nello",
+                propertyTitle   : "",
+                propertyImg     : "",
+                propertyPrice   : ""
+            },
+            requestDetails : {
+                name        : "",
+                email       : "",
+                phone       : "",
+                msg         : "",
+                agencyName  : "",
+                agencyPhone : "",
+                propertyId  : ""
+            }
+        };
+        
+        /**
+        * Populate Email Data for Request Details & Email a Friend
+        */
+        $scope.populateRqstDetailsData = function(data) {
+            $scope.email.requestDetails.agencyName = data.marketer;
+            $scope.email.requestDetails.agencyPhone = data.phone;
+            $scope.email.requestDetails.propertyId = data.id;
+            $scope.email.requestDetails.msg = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
+        };
+        $scope.populateEmailFriendData = function(data) {
+            $scope.email.toFriend.propertyTitle = data.rooms +
+                ' bed property for Sale at ' + data.address;
+            $scope.email.toFriend.propertyImg = data.images[0].image;
+            $scope.email.toFriend.propertyPrice = data.price;
+        };
+        
+        /**
+        * Send Emails - Request Details & Email a Friend
+        */
+        $scope.emailRequestDetails = function() {
+            emailService.updateRequestDetails($scope.email.requestDetails);
+        };
+        
+        $scope.emailFriend = function() {
+            emailService.updateToFriend($scope.email.toFriend);
+        };
+        
+        /**
+        * Add Property To Favourites
+        */
+        $scope.addToFavourites = function(propertyId) {
+            if (UserModel.userId !== null) {
+                UserModel.addToFav(propertyId)
+                    .success(function() {
+                        UserModel.addToFavFE(propertyId);
+                        $rootScope.$broadcast("favUpdated");
+                    });
             } else {
-                $scope.comparables.status = false;
+                // Send to Login Page
+                $location.path("/login");
             }
         };
 
-        // Calculate First Listed (Days Ago) - Create Directive Later
-        $scope.getFirstListedDate = function (created_at) {
-            var dateTimeSplit = created_at.split(" "),
-                dateParts = dateTimeSplit[0].split("-"),
-                createdYear = dateParts[0],
-                createdMonth = dateParts[1] - 1,
-                createdDay = dateParts[2],
-                createdDate = new Date(createdYear, createdMonth, createdDay),
-                currentDate = new Date(),
-                firstListedHours = (currentDate.valueOf() -
-                    createdDate.valueOf()) / 3600000;
-
-            if (firstListedHours < 1) {
-                $scope.property.firstListed = "less than an hour ago";
-            } else if (firstListedHours < 24) {
-                $scope.property.firstListed = firstListedHours + " hours ago";
-            } else if (firstListedHours < 168) {
-                $scope.property.firstListed = Math.floor(firstListedHours / 24)
-                    + " day(s) ago";
-            } else if (firstListedHours < 720) {
-                $scope.property.firstListed =  Math.floor(firstListedHours /
-                    168) + " week(s) ago";
-            } else if (firstListedHours < 8760) {
-                $scope.property.firstListed =  Math.ceil(firstListedHours /
-                    720) + " month(s) ago";
+        $scope.$on("favUpdated", function (targetscope, currscope) {
+            if ($scope.favUpdate) {
+                $scope.favUpdate = false;
+            } else {
+                $scope.favUpdate = true;
             }
-        };
+        });
 
         $scope.init = function () {
             $scope.getPropertyDetails();
             $scope.setPageRoute();
         };
-
+        
         $scope.init();
-
     }]);
 });

@@ -15,7 +15,8 @@ define([
         "localStorageModule",
         "ngCookies"
     ])
-    .constant("APPURL", {
-        "recProperties" : "http://app.propertycrunch.co/client/search/search-properties/"
+    .constant("FAPI", {
+        "addToFav"  : "api/property/add-favourite/",
+        "removeFav" : "api/property/remove-favourite/"
     });
 });

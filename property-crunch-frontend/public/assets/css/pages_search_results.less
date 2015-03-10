@@ -144,17 +144,18 @@
         
         .clearfix();
         
-        a, .add-to-fav {
+        a, .add-to-fav, .added-to-fav {
             line-height: 26px;
         }
         
-        a {
+        a, .added-to-fav {
             font-size: @font-size-h4;
+            font-weight: 600;
             margin: 0;
             float: left;
         }
         
-        .add-to-fav {
+        .add-to-fav, .added-to-fav {
             float: right;
             font-size: @font-size-h6;
             
@@ -254,6 +255,15 @@
     }
 }
 
+.added-to-fav {
+    cursor: default;
+    display: none;
+}
+
+.favourite {
+    .add-to-fav { display: none; }
+    .added-to-fav { display: block; }
+}
 @media (min-width: 640px) {
     .property-listing {
         .property-details-group {
@@ -313,15 +323,15 @@
             margin: 0 0 15px 0;
             .clearfix();
             
-            a, .add-to-fav {
+            a, .add-to-fav, .added-to-fav  {
                 float: left;
             }
             
-            a {
+            a, .added-to-fav {
                 margin: 0 18px 0 0;
             }
             
-            .add-to-fav {
+            .add-to-fav, .added-to-fav {
                 font-size: @font-size-h6;
             }
         }

@@ -34,7 +34,7 @@
     }
     
     .property-address {
-        line-height: 24px;
+        line-height: 1.43;
     }
     
     .property-price {
@@ -120,14 +120,77 @@
 @media (min-width: 992px) {
      .property-heading {
         .property-address {
-            max-width: 350px;
+            max-width: 330px;
         }
         
         .right-section {    
-            max-width: 185px;
+            max-width: 200px;
         }
      }
 }
+
+@media (min-width: 1200px) {
+     .property-heading {
+        .property-address {
+            max-width: 450px;
+        }
+        
+        .right-section {    
+            max-width: 200px;
+        }
+     }
+}
+
+/*===================================================================
+  Pages > Property Details > Value Comparison Panel
+====================================================================*/
+.value-comparison {
+    h6 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        
+        b {
+            font-weight: 700;    
+            font-size: 18px;
+            line-height: 20px;
+        }
+        
+        span {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        i {
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+        }
+    }
+    
+    .value-com {
+        margin-bottom: 10px;
+        color: @gray-darker;
+        
+        .decrease i {
+            color: #da1b1b;
+        }
+        
+        .increase i {
+            color: @brand-success;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .value-comparison .split-half {
+        .left, .right {
+            width: 100%;
+            margin: 5px 0;
+        }
+    }
+}
+
 
 /*===================================================================
   Pages > Property Details > Property Links Panel
@@ -136,8 +199,6 @@
 	margin-top: 20px; 
 		
 	.panel-heading {
-		padding-top: 20px;
-		padding-bottom: 20px;
         border-color: @brand-red;
 	}
 	
@@ -153,21 +214,30 @@
                 float: right;
 			}
 			    
-            a {
+            a, .added-to-fav {
                 font-size: 16px;
             }
-		}
-		
-		i {
-            cursor: pointer;
-			font-size: 20px;
-			line-height: 1;
-			position: relative;
-			top: 3px;
-			margin-right: 10px;
-		}
+		    
+            .added-to-fav {
+                color: @gray-darker;
+                font-weight: 600;
+                margin-bottom: 0;
+                
+                i {
+                    cursor: default;
+                }
+            }
+            
+            i {
+                cursor: pointer;
+                font-size: 20px;
+                line-height: 1;
+                position: relative;
+                top: 3px;
+                margin-right: 7px;
+            }
+        }
 	}
-	
 }
 
 @media (min-width: 480px) {
@@ -238,16 +308,17 @@
     }
     
     h4 {
-        margin-bottom: 40px;
-        font-weight: 600;
+        margin-bottom: 25px;
+        font-weight: 500;
     }
     
     .tab-content {
-        min-height: 521px;
+        min-height: 431px;    
+        padding-top: 27px;
     }
 
     .form-field-row {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     label {
@@ -265,7 +336,7 @@
     
     .results {
         .form-field-row {
-            margin-bottom: 20px;
+                margin-bottom: 23px;
 
             h5, h6 {
                 line-height: 24px;
@@ -289,7 +360,11 @@
     }
     
     .btn.calculate {
-        margin-top: 30px;
+        margin-top: 15px;
+    }
+    
+    .negative {
+        color: #da1b1b;
     }
 }
 
@@ -297,7 +372,7 @@
     .profit-calculator {
         .results {
             .form-field-row {
-                margin-bottom: 30px;
+                margin-bottom: 23px;
                 
                 h6 {
                     font-size: 18px;
@@ -417,19 +492,76 @@
 }
 
 .comparables-listing {
-    h4 {
-        margin: 0;
+    .property-title-group h4 {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 0 15px;
     }
+
+    .comp-market-price {
+        h6 {
+            font-size: 14px;
+            display: inline-block;
+            margin: 0;
+            
+            b {
+                font-weight: 700;    
+                font-size: 16px;
+                line-height: 18px;
+            }
+            
+            span {
+                font-weight: 500;
+                font-size: 12px;
+            }
+            
+            i {
+                font-size: 16px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .decrease i {
+            color: #da1b1b;
+        }
         
+        .increase i {
+            color: @brand-success;
+        }
+    }
+    
+    .distance {
+        i {
+            position: relative;
+            top: 1px;
+        }
+        
+    }
+    
 	.right-section-group {
 		margin-top: 20px;
-	
+	    
+        
+		.right-section-label {
+            font-weight: 400;
+        }
+        
 		.right-section-label, 
 		.right-section-value {
-			margin: 0;
-			padding: 0;
+            font-size: 18px;
+            line-height: 1.1;
+            margin: 0 0 20px;
 		}
+        
+        .right-section-value  {
+            font-size: 20px;
+            font-weight: 300;
+        }
 	}
+    
+    .comp-address {
+        text-transform: capitalize;
+    }
 }
 
 .more-button-wrap {
@@ -444,16 +576,44 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .comparables-listing {
+       .right-section-group {
+			.right-section-label,
+			.right-section-value {
+                font-size: 16px;
+                font-weight: 600;
+			}
+			.right-section-value {
+				font-weight: 400;
+                margin-left: 5px;
+			}
+		}
+    }
+}
+
 @media (min-width: 992px) {
-	.comparables-listing {
-		
+	.comparables-listing {		
 		p,
 		.property-title-group{ 
-			margin-bottom: 31px;
+			margin-bottom: 10px;
 		}
 		
+        .property-title-group h4 {
+            display: inline-block;
+            margin: 0 10px 0 0;
+            line-height:1;
+        }
+    
+        .comp-market-price {
+            h6 {
+                margin-top: 10px;
+            }
+        }
+        
 		.right-section-group {
-			margin-top: 5px;
+			margin-top: 0;
+            line-height: 1;
 		 	
 			.right-section-label,
 			.right-section-value {
@@ -462,7 +622,7 @@
 			}
 			.right-section-value {
 				float: left;
-				margin-top: 31px;
+				margin-top: 20px;
 			}
 		}
 	}
@@ -471,30 +631,40 @@
 
 @media (min-width: 1200px) {
 	.comparables-listing {
-		
 		p,
 		.property-title-group{ 
 			margin-bottom: 16px;
+            
+            h4 {
+                line-height: 1;
+            }
 		}
+        
+         .comp-market-price {
+            h6 {
+                display: inline-block;
+                margin: 0;
+            }
+        }
 		
-		.right-section-group {
-			margin-top: 5px;
-		 	
-			.right-section-label,
-			.right-section-value {
-				width: 100%;
-				text-align: center;
-			}
-			.right-section-value {
-				float: left;
-				margin-top: 31px;
-			}
-		}
 	}
 
 	.more-button-wrap {
 		padding: 10px 0 0;
 	}
+}
+
+/*===================================================================
+  Pages > Property Details > Email a Friend Modal
+====================================================================*/
+.email-friend-img img,
+.email-friend-title h5 {
+    margin-bottom: 20px;
+}
+
+.email-friend-title h5 {
+    font-size: 20px;    
+    line-height: 1.4;
 }
 
 /*===================================================================

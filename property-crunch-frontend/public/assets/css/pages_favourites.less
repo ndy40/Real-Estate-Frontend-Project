@@ -1,3 +1,35 @@
 /*===================================================================
   Pages > Favourites
 ====================================================================*/
+#favourites_list {
+    .property-title-group .add-to-fav {
+        font-size: 15px;
+    }
+    
+    .icon-cross2 {
+        margin-right: 2px;
+        position: relative;
+        top: 3px;
+    }
+} 
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #favourites_list {
+        .right-section-label {
+            margin: 6px 0;
+        }
+        
+        .right-section-value {
+            line-height: 30px; 
+        }
+        
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #favourites_list {
+        .property-title-group, p {
+            margin-bottom: 30px;
+        }
+    }
+}

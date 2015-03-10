@@ -27,7 +27,7 @@ define(["../module"], function (app) {
              * Get Recommended Properties
              */
             RecPropertyService.prototype.getRecProperties = function () {
-                var url = APPURL.recProperties + "london" + "/1/8?offer_type=Sale";
+                var url = "http://app.propertycrunch.co/client/search/search-properties/oxford/1/8?offer_type=Sale";
                 return $http.get(url);
             };
 

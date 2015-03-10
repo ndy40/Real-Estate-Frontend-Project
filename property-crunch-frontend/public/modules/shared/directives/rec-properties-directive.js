@@ -36,6 +36,7 @@ define(["../module"], function (app) {
                             scope.recProperties.status = true;
                             scope.recProperties.list = data.data;
                             scope.recProperties.count = data.count;
+                            RecPropertyService.cacheResults(data);
                         } else {
                             scope.recProperties.status = false;
                         }
