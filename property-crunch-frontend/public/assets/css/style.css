@@ -1,6 +1,3 @@
-/* Compiled Less CSS File */
-/* Generated from "style.css" */
-
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
 /*===================================================================
  * Nello v1.1
@@ -83,13 +80,11 @@
 ::selection {
   background: #299ecb;
   /* WebKit/Blink Browsers */
-
   color: #ffffff;
 }
 ::-moz-selection {
   background: #299ecb;
   /* Gecko Browsers */
-
   color: #ffffff;
 }
 input[type="file"]:focus,
@@ -343,6 +338,25 @@ ul {
   overflow: hidden;
 }
 /*===================================================================
+  General Styling > Content-Wrap
+====================================================================*/
+#content-wrap {
+  padding-top: 66px;
+}
+#content-wrap.cookie-on {
+  padding-top: 144px;
+}
+@media (min-width: 480px) {
+  #content-wrap.cookie-on {
+    padding-top: 122px;
+  }
+}
+@media (min-width: 992px) {
+  #content-wrap.cookie-on {
+    padding-top: 100px;
+  }
+}
+/*===================================================================
   Components
 ====================================================================*/
 /*===================================================================
@@ -371,7 +385,6 @@ ul.list-arrows li:before,
   line-height: 1;
   cursor: default;
   /* Better Font Rendering =========== */
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -2329,8 +2342,14 @@ i.icon-help:hover {
 /*===================================================================
   Components > Header
 ====================================================================*/
+#sticky-header {
+  width: 100%;
+  position: fixed;
+  z-index: 2000;
+}
 .navbar-default {
   margin-bottom: 0;
+  min-height: 66px;
   z-index: 5;
 }
 .navbar-default .navbar-brand {
@@ -2508,99 +2527,6 @@ i.icon-help:hover {
   }
 }
 /*===================================================================
-  Components > Header > Home Header
-====================================================================*/
-.home-header {
-  background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
-}
-/*===================================================================
-  Components > Header > Lern More Header
-====================================================================*/
-.lern-more-header {
-  background: url(../images/learn_more_banner.jpg) fixed center 0;
-  height: 550px;
-}
-.lern-more-header .jumbotron {
-  padding: 130px 0;
-}
-/*===================================================================
-   Components > Header > Search Results Header
-====================================================================*/
-.navbar-abs {
-  position: absolute;
-  width: 100%;
-  z-index: 9;
-}
-.search-header {
-  background: url(../images/search_banner.jpg) fixed center 0;
-  padding: 50px 0 35px;
-}
-.search-content {
-  text-align: center;
-}
-.search-content .input-group {
-  margin-bottom: 10px;
-}
-.search-content .searchbar-bottom {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.search-content .searchbar-bottom:before,
-.search-content .searchbar-bottom:after {
-  content: " ";
-  display: table;
-}
-.search-content .searchbar-bottom:after {
-  clear: both;
-}
-.search-content .searchbar-bottom .advanced-search,
-.search-content .searchbar-bottom .result_count {
-  line-height: 1.1;
-  float: left;
-  text-shadow: 1px 1px 1px #000;
-}
-.search-content .searchbar-bottom .advanced-search {
-  font-weight: 700;
-  letter-spacing: 0.35px;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.search-content .searchbar-bottom .advanced-search:hover {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.search-content .searchbar-bottom .advanced-search:focus {
-  color: #f44647;
-}
-.search-content .searchbar-bottom .result_count {
-  margin-bottom: 0;
-}
-.search-content .searchbar-bottom i {
-  font-size: 28px;
-  line-height: 14px;
-  position: relative;
-  top: 6px;
-  left: 6px;
-  cursor: pointer;
-}
-.search-content .input-group .form-control.form-control-icon.searchbar {
-  border-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border-right: none;
-}
-@media (min-width: 480px) {
-  .search-content .searchbar-bottom .advanced-search {
-    float: left;
-  }
-  .search-content .searchbar-bottom .result_count {
-    float: right;
-  }
-}
-/*===================================================================
   Components > Footer
 ====================================================================*/
 footer {
@@ -2673,6 +2599,9 @@ footer.default-footer ul li:last-child {
 /*===================================================================
   Pages > Home
 ====================================================================*/
+.home-banner {
+  background: url(../images/header-bg-pattern.png) repeat fixed center 0, url(../images/header-bg.jpg) fixed center 0;
+}
 .responsive-devices {
   margin: 0 auto 65px;
 }
@@ -2787,6 +2716,16 @@ footer.default-footer ul li:last-child {
 /*===================================================================
   Pages > Learn More
 ====================================================================*/
+/*===================================================================
+  Pages > Learn More > Banner
+====================================================================*/
+.learn-more-banner {
+  background: url(../images/learn_more_banner.jpg) fixed center 0;
+  height: 485px;
+}
+.learn-more-banner .jumbotron {
+  padding: 130px 0;
+}
 /*===================================================================
   Pages > Learn More > Jumbotron
 ====================================================================*/
@@ -3078,10 +3017,86 @@ footer.default-footer ul li:last-child {
     padding: 54px 99px;
   }
 }
-/* File pages_password_reset.less does not exists! */
 /*===================================================================
   Pages > Search Results
 ====================================================================*/
+/*===================================================================
+   Pages > Search Results > Header
+====================================================================*/
+.navbar-abs {
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+.search-header {
+  background: url(../images/search_banner.jpg) fixed center 0;
+  padding: 50px 0 35px;
+}
+.search-content {
+  text-align: center;
+}
+.search-content .input-group {
+  margin-bottom: 10px;
+}
+.search-content .searchbar-bottom {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.search-content .searchbar-bottom:before,
+.search-content .searchbar-bottom:after {
+  content: " ";
+  display: table;
+}
+.search-content .searchbar-bottom:after {
+  clear: both;
+}
+.search-content .searchbar-bottom .advanced-search,
+.search-content .searchbar-bottom .result_count {
+  line-height: 1.1;
+  float: left;
+  text-shadow: 1px 1px 1px #000;
+}
+.search-content .searchbar-bottom .advanced-search {
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.search-content .searchbar-bottom .advanced-search:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.search-content .searchbar-bottom .advanced-search:focus {
+  color: #f44647;
+}
+.search-content .searchbar-bottom .result_count {
+  margin-bottom: 0;
+}
+.search-content .searchbar-bottom i {
+  font-size: 28px;
+  line-height: 14px;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  cursor: pointer;
+}
+.search-content .input-group .form-control.form-control-icon.searchbar {
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: none;
+}
+@media (min-width: 480px) {
+  .search-content .searchbar-bottom .advanced-search {
+    float: left;
+  }
+  .search-content .searchbar-bottom .result_count {
+    float: right;
+  }
+}
 /*===================================================================
   Pages > Search Results > Filters
 ====================================================================*/
@@ -4064,9 +4079,6 @@ footer.default-footer ul li:last-child {
     margin-bottom: 80px;
     padding-bottom: 40px;
   }
-}
-@media (min-width: 1200px) {
-  
 }
 /*===================================================================
   Pages > Browser Upgrage

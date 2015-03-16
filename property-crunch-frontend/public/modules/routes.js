@@ -1,4 +1,4 @@
-/*global define, document, $ */
+/*global define, $ */
 /**
  * Default route for for pcApp module.
  */
@@ -9,7 +9,16 @@
             function ($routeProvider, $locationProvider, $provide, $httpProvider) {
                 
                 $routeProvider.when("/", {
-                    redirectTo : "/pages/home"
+                    redirectTo : "/home"
+                });
+                
+                $routeProvider.when("/pages/home", {
+                    redirectTo : "/home"
+                });
+                
+                $routeProvider.when("/home", {
+                    templateUrl : "modules/static-pages/views/home.html",
+                    controller  : "StaticCtrl"
                 });
                 
                 $routeProvider.when("/search", {

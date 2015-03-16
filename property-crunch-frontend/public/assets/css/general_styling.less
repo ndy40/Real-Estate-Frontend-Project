@@ -265,3 +265,26 @@ p, ul {
 .body-loading {
     overflow: hidden;
 }
+
+/*===================================================================
+  General Styling > Content-Wrap
+====================================================================*/
+#content-wrap {
+    padding-top: 66px;
+
+    &.cookie-on {
+        padding-top: 144px;
+    }
+}
+
+@media (min-width: 480px) {
+    #content-wrap.cookie-on {
+        padding-top: 122px;
+    }
+}
+
+@media (min-width: 992px) {
+    #content-wrap.cookie-on {
+        padding-top: 100px;
+    }
+}

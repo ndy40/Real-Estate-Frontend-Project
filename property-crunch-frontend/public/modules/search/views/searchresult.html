@@ -1,31 +1,35 @@
-<!-- Navigation Partial -->
-<ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+<!-- header template -->
+<header id="sticky-header">
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+</header>
 
-<header class="search-header">
-    <div class="search-content dark">
-        <div class="container">
-            <pc-search-form keywords="searchObject.keywords" filter="searchObject.filterData" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
-            
-            <!-- Search Status Here -->
-            <div class="row">
-                <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                   <div class="searchbar-bottom">
-                        <a href="" class="visible-xs advanced-search" ng-click="advanceSearch()">Advanced Search</a>
-                        <h5 ng-show="searchObject.status" class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
+<!-- content template -->
+<div id="content-wrap"  pc-adj-height>
+    <header class="search-header">
+        <div class="search-content dark">
+            <div class="container">
+                <pc-search-form keywords="searchObject.keywords" filter="searchObject.filterData" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
+
+                <!-- Search Status Here -->
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                       <div class="searchbar-bottom">
+                            <a href="" class="visible-xs advanced-search" ng-click="advanceSearch()">Advanced Search</a>
+                            <h5 ng-show="searchObject.status" class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="main-content">
-    <div class="container">
+    <section class="main-content">
+        <div class="container">
         <div class="row">
             <aside class="col-md-3" ng-class="{'hidden-xs': !advancedSearchStatus}">
                 <div class="row">
                     <pc-refine-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
-                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>
+<!--                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>-->
                 </div>
                 <pc-result-options class="visible-xs" callback="updateFilters"></pc-result-options>
                 <button class="btn btn-sm btn-3d btn-fullwidth visible-xs" ng-click="closeAdvancedSearch()">Update Results</button>
@@ -69,7 +73,7 @@
                                         <p>{{property.address | address}}</p>
                                         <div class="property-details-group">
                                             <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
-                                            <ul class="property-tags repossessed modernising auction dtv reduced">
+<!--                                            <ul class="property-tags repossessed modernising auction dtv reduced">
                                                 <li class="irepossessed">
                                                     <i class="icon-library" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
                                                 </li>
@@ -85,7 +89,7 @@
                                                 <li class="ireduced">
                                                     <i class="icon-chart" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6">
@@ -117,6 +121,8 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
+</div>
+
 <!-- footer template -->
 <ng-include src="'modules/shared/views/footer.html'"></ng-include>

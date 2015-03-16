@@ -2,6 +2,92 @@
   Pages > Search Results
 ====================================================================*/
 /*===================================================================
+   Pages > Search Results > Header
+====================================================================*/
+.navbar-abs {
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+}
+
+.search-header {
+    background: url(../images/search_banner.jpg) fixed center 0;
+    padding: 50px 0 35px;
+}
+
+.search-content {
+	.text-center();
+	
+	.input-group {
+		.bottom-10();
+	}
+	
+	.searchbar-bottom {
+		text-align: center;
+		font-size: @font-size-h5;	
+		.bottom-10();
+        .clearfix();
+		
+        
+        .advanced-search,
+        .result_count {
+            line-height: 1.1;
+            float: left;
+            text-shadow: 1px 1px 1px #000;	
+        }
+        
+        .advanced-search {
+            font-weight: 700;
+            letter-spacing: 0.35px;
+            margin-right: 20px;
+		    .bottom-10();
+            .transition(all 0.3s);
+            
+            &:hover {
+                .transition(all 0.3s);
+            }
+            
+            &:focus {
+                color: @brand-red;
+            }
+             
+        }
+         
+        .result_count {
+            margin-bottom: 0;	
+        }
+		
+		i {
+			font-size: 28px;
+			line-height: 14px;
+			position: relative;
+			top: 6px;
+			left: 6px;
+			cursor: pointer;
+		}
+	}
+}
+.search-content .input-group .form-control.form-control-icon.searchbar {
+    border-radius: @border-radius-base;
+    .border-right-radius(0);
+    
+	border-right: none;
+}
+
+
+@media (min-width: 480px) {
+    .search-content {
+		.searchbar-bottom {
+			 .advanced-search {
+                float: left;
+             }
+            .result_count {
+                float: right;
+            }
+		}	
+	}
+}
+/*===================================================================
   Pages > Search Results > Filters
 ====================================================================*/
 .refine-filters {

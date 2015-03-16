@@ -6,10 +6,12 @@
 define([
     "./controllers/navigation-controller",
     "./directives/add-to-fav-directive",
+    "./directives/adj-height-directive",
     "./directives/color-code-directive",
     "./directives/date-ago-directive",
     "./directives/null-directive",
     "./directives/rec-properties-directive",
+    "./directives/sticky-header-directive",
     "./filters/address-filter",
     "./filters/currency-filter",
     "./filters/percent-filter",
