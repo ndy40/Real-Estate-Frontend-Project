@@ -16,7 +16,7 @@ define(["../module"], function (app) {
                 callback    : "=",
                 optionSelected: "="
             },
-            link : function (scope) {
+            link : function (scope, element) {
                 // Hiding Dropdown by default
                 scope.dropDownStatus = false;
 
@@ -33,6 +33,19 @@ define(["../module"], function (app) {
                     // Hiding Dropdown on Select
                     scope.dropDownStatus = false;
                 };
+                
+                // dropdown close fix
+                // http://stackoverflow.com/questions/14574365/angularjs-dropdown-directive-hide-when-clicking-outside
+                $(document).bind('click', function(event){
+                    var isClickedElementChildOfPopup = element.find(event.target).length > 0;
+
+                    if (isClickedElementChildOfPopup) {
+                        return;
+                    }
+
+                    scope.dropDownStatus = false;
+                    scope.$apply();
+                });
             }
         };
     });
