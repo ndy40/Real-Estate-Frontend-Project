@@ -3613,7 +3613,6 @@ footer.default-footer ul li:last-child {
 @media (min-width: 992px) {
   .property-heading .property-address {
     max-width: 330px;
-<<<<<<< HEAD
   }
   .property-heading .right-section {
     max-width: 200px;
@@ -3622,24 +3621,11 @@ footer.default-footer ul li:last-child {
 @media (min-width: 1200px) {
   .property-heading .property-address {
     max-width: 450px;
-=======
->>>>>>> cc33d3eaf397c3202ad41e8c2d75293731badef5
   }
   .property-heading .right-section {
     max-width: 200px;
   }
 }
-<<<<<<< HEAD
-=======
-@media (min-width: 1200px) {
-  .property-heading .property-address {
-    max-width: 450px;
-  }
-  .property-heading .right-section {
-    max-width: 200px;
-  }
-}
->>>>>>> cc33d3eaf397c3202ad41e8c2d75293731badef5
 /*===================================================================
   Pages > Property Details > Value Comparison Panel
 ====================================================================*/

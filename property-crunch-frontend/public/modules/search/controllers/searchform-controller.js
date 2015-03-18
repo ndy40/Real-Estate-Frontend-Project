@@ -143,11 +143,7 @@ define(["../module"], function (app) {
             * Add Property To Favourites
             */
             $scope.addToFavourites = function(propertyId) {
-<<<<<<< HEAD
                 if (UserModel.isLoggedIn) {
-=======
-                if (UserModel.userId !== null) {
->>>>>>> cc33d3eaf397c3202ad41e8c2d75293731badef5
                     UserModel.addToFav(propertyId)
                         .success(function() {
                             UserModel.addToFavFE(propertyId);
@@ -160,7 +156,7 @@ define(["../module"], function (app) {
             };
             
                 
-            $scope.$on("favUpdated", function (targetscope, currscope) {
+            $scope.$on("favUpdated", function () {
                 if ($scope.favUpdate) {
                     $scope.favUpdate = false;
                 } else {

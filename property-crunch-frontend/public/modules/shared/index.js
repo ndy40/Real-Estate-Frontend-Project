@@ -6,10 +6,7 @@
 define([
     "./controllers/navigation-controller",
     "./directives/add-to-fav-directive",
-<<<<<<< HEAD
     "./directives/adj-height-directive",
-=======
->>>>>>> cc33d3eaf397c3202ad41e8c2d75293731badef5
     "./directives/color-code-directive",
     "./directives/date-ago-directive",
     "./directives/null-directive",
