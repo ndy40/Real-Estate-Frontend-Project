@@ -28,15 +28,15 @@ class PropertyRepository implements  BaseRepositoryInterface {
         $user = User::find($userId);
         $temp = array();
 
-        if ($user->favourite !== null) {
-            $temp = explode(",", $user->favourite);
+        if ($user->favourites !== null) {
+            $temp = explode(",", $user->favourites);
         }
 
         if (!array_search($propertyId, $temp)) {
             $temp[] = $propertyId;
         }
 
-        $user->favourite = implode(",", $temp);
+        $user->favourites = implode(",", $temp);
 
         return $user->update();
     }
@@ -53,16 +53,16 @@ class PropertyRepository implements  BaseRepositoryInterface {
         $user = User::find($userid);
         $temp = array();
 
-        if ($user->favourite == null) {
+        if ($user->favourites == null) {
             return false;
         } else {
-            $temp = explode(",", $user->favourite);
+            $temp = explode(",", $user->favourites);
             $index = array_search($propertyId, $temp);
             unset($temp[$index]);
             if (empty($temp)) {
-                $user->favourite = null;
+                $user->favourites = null;
             } else {
-                $user->favourite = implode(",", $temp);
+                $user->favourites = implode(",", $temp);
             }
 
         }
