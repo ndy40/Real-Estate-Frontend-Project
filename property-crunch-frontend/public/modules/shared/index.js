@@ -11,7 +11,6 @@ define([
     "./directives/date-ago-directive",
     "./directives/null-directive",
     "./directives/rec-properties-directive",
-    "./directives/sticky-header-directive",
     "./filters/address-filter",
     "./filters/currency-filter",
     "./filters/percent-filter",

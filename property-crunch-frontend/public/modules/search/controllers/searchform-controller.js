@@ -83,7 +83,7 @@ define(["../module"], function (app) {
                                 $scope.searchObject.errorType.filters = true;
                             } else {
                                 $scope.searchObject.errorType.location = true;
-                            };
+                            }
                         });
                     }
                 }
@@ -101,7 +101,7 @@ define(["../module"], function (app) {
             $scope.updateFilters = function () {
                 SearchService.clearCache(); // Clear Current Cache
                 $scope.getProperties();
-            }
+            };
             
             
             $scope.advanceSearch = function() {
@@ -143,7 +143,7 @@ define(["../module"], function (app) {
             * Add Property To Favourites
             */
             $scope.addToFavourites = function(propertyId) {
-                if (UserModel.userId !== null) {
+                if (UserModel.isLoggedIn) {
                     UserModel.addToFav(propertyId)
                         .success(function() {
                             UserModel.addToFavFE(propertyId);
