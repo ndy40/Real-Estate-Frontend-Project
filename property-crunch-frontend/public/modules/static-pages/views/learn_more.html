@@ -7,17 +7,12 @@
     </div>
     <!-- Modal -->
     <div class="modal video-modal fade" id="video" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog yt-dialog">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="icon-cross icon18-cross"></i>
                     </button>
-                    <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-                        <img src="my_thumbnail.png" style="cursor:pointer" />
-                    </div>
-                    <div class="video-container" style="display:none">
-                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/i8v_7iD4_pQ?VQ=HD720&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    </div>
+                    <div pc-youtube></div>
                 </div> 
             </div>
         </div>

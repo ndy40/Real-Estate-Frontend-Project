@@ -7,7 +7,17 @@
     <section class="main-content">
         <div class="container">
             <h3>Favourites</h3>
-            <div id="favourites_list">
+            
+            <h5 ng-show="!favList.status && !favList.zeroList">
+                Loading your favourites.. Please wait
+            </h5>
+            
+            <div class="alert alert-success" role="alert" ng-show="favList.status && favList.zeroList">
+                <i class="icon-warning"></i>
+                You don't have any favourites. Please add some properties to the favourites to be listed here.
+            </div>
+            
+            <div id="favourites_list" ng-show="favList.status && !favList.zeroList">
                 <article ng-repeat="property in favList.properties" class="property-listing" pc-remove-fav property-id="property.id" fav-update="favUpdate">
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-sm-6">

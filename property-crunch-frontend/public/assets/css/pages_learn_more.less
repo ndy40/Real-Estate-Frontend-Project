@@ -30,6 +30,10 @@
         background: rgba(255,255,255, 0.7);
         .transition(all 0.3s);
     }
+
+    i {
+        cursor: pointer;
+    }
 }
 
 /*===================================================================
@@ -55,17 +59,18 @@
     }
     
     button.close {
-        background: none repeat scroll 0 0 #191e1d;
+        background: none repeat scroll 0 0 #333333;
         border: 0 none;
         border-radius: 50%;
         cursor: pointer;
         padding: 5px;
         position: absolute;
-        right: -20px;
+        right: -10px;
         top: -20px;
         width: 40px;
         height: 40px;
         opacity: 0;
+        z-index: 7;
         
         i.icon-cross {
             color: #fff;
@@ -73,11 +78,50 @@
             line-height: 1;
             position: relative;
             text-shadow: none;
+            cursor: pointer;
         }
         
         &:hover {
             opacity: 0.95;
         }
+    }
+}
+
+.yt-img {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .play-btn {
+        background: #C30000;
+        .transition(background 0.3s);
+    }
+}
+
+.video-modal .modal-dialog {
+    margin-top: 150px;
+}
+
+@media (min-width: 480px) {
+    .video-modal .modal-dialog {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 639px) {
+    .yt-img {
+        .play-btn {
+            left: 38%;
+            top: 37%;
+            border-radius: 8px;
+            height: 50px;
+            line-height: 48px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .video-modal button.close {
+        right: -20px;
     }
 }
 

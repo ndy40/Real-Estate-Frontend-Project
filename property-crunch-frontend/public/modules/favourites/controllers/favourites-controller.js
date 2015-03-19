@@ -20,7 +20,9 @@ define(["../module"], function (app) {
          * Object to Store Data
          */
         $scope.favList = {
-            properties: []         // To store Properties
+            properties  : [],         // To store Properties
+            status      : false,
+            zeroList    : false
         };
 
         /**
@@ -32,8 +34,13 @@ define(["../module"], function (app) {
         $scope.getFavourites = function () {
             if (UserModel.isLoggedIn) {
                 if (FavService.propertyData === null) {
-                    FavService.getFavourites(UserModel.favourites)
-                        .success($scope.loadFavTable);
+                    if (UserModel.favourites.length > 0) {
+                        FavService.getFavourites(UserModel.favourites)
+                            .success($scope.loadFavTable);
+                    } else {
+                        $scope.favList.status = true;
+                        $scope.favList.zeroList = true;
+                    }
                 } else {
                     // Load Cache
                     $scope.loadFavTable(FavService.getCache());
@@ -49,6 +56,8 @@ define(["../module"], function (app) {
          */
         $scope.loadFavTable = function (data) {
             $scope.favList.properties = data;
+            $scope.favList.status = true;
+            $scope.favList.zeroList = false;
             FavService.cache(data);
         };
                 
