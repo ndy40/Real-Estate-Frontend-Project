@@ -36,7 +36,7 @@
                     controller  : "StaticCtrl"
                 });
 
-                $routeProvider.when("/login", {
+                $routeProvider.when("/sign/:type", {
                     templateUrl : "modules/login/views/login.html",
                     controller  : "LoginCtrl"
                 });

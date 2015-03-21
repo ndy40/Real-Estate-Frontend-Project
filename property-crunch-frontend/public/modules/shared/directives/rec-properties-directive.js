@@ -20,12 +20,12 @@ define(["../module"], function (app) {
                     * Get Reccomended Property Data from Service
                     */
                     scope.getRecProperties = function () {
-                        if (RecPropertyService.getCache().hasOwnProperty("data")) {
-                            scope.loadRecProperties(RecPropertyService.getCache());
-                        } else {
+//                        if (RecPropertyService.getCache().hasOwnProperty("data")) {
+//                            scope.loadRecProperties(RecPropertyService.getCache());
+//                        } else {
                             RecPropertyService.getRecProperties()
                                 .success(scope.loadRecProperties);
-                        }
+//                        }
                     };
 
                     /**

@@ -151,7 +151,7 @@ define(["../module"], function (app) {
                         });
                 } else {
                     // Send to Login Page
-                    $location.path("/login");
+                    $location.path("/sign/in");
                 }
             };
             

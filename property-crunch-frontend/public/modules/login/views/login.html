@@ -6,10 +6,10 @@
 <div id="content-wrap"  pc-adj-height>
     <section class="main-content">
         <div class="container">
-        <div class="row">
+            <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <tabset class="login-tabs">
-                    <tab heading="Log In" class="login-tab">
+                    <tab heading="Log In" class="login-tab" active="pageType.login">
                         <p ng-show="!alert.failedLogin">Log In to save searches and track price changes.</p>
                         
                         <!--Failed registration-->
@@ -52,7 +52,7 @@
                             </div>
                         </form>
                     </tab>
-                    <tab heading="Create Account" class="create-account-tab">
+                    <tab heading="Create Account" class="create-account-tab" active="pageType.signup">
                         <p ng-show="!alert.isError">Create a free account to save searches and track price changes. (It only takes a minute)</p>
                         
                         <!--Failed registration-->
@@ -131,7 +131,7 @@
                 </tabset>
             </div>
         </div>
-    </div>
+        </div>
     </section>
 </div>
 

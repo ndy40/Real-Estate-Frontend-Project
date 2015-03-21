@@ -5,8 +5,29 @@
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("LoginCtrl", ["$scope", "$rootScope", "$location",
-        'AuthService', function ($scope, $rootScope, $location, AuthService) {
+    app.controller("LoginCtrl", ["$scope", "$rootScope", "$routeParams",
+        "$location", 'AuthService',
+            function ($scope, $rootScope, $routeParams, $location, AuthService) {
+        $scope.pageType = {
+            login   : false,
+            signup  : false
+        };
+        
+        /**
+        * Get Page Type from URL and Set Tab State
+        */
+        $scope.setPage = function () {
+            if ($routeParams.type === "in") {
+                $scope.pageType.login = true;
+                $scope.pageType.signup = false;
+            } else {
+                $scope.pageType.login = false;
+                $scope.pageType.signup = true;
+            }
+        };
+        
+        $scope.setPage();
+        
         //Model for holding login data
         $scope.loginData = {
             email      : "",

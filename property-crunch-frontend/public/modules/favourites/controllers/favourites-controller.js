@@ -13,7 +13,7 @@ define(["../module"], function (app) {
         * Send to Login Page if Not Logged in
         */
         if (!UserModel.isLoggedIn) {
-            $location.path("/login");
+            $location.path("/sign/in");
         }
         
         /**

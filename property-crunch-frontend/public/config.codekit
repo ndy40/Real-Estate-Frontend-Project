@@ -2718,13 +2718,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/images\/video-screen.png": {
-		"fileType": 32768,
+	"\/assets\/images\/video-thumb.jpg": {
+		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 324582,
-		"inputAbbreviatedPath": "\/assets\/images\/video-screen.png",
-		"outputAbbreviatedPath": "\/assets\/images\/video-screen.png",
+		"initialSize": 65027,
+		"inputAbbreviatedPath": "\/assets\/images\/video-thumb.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/video-thumb.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
