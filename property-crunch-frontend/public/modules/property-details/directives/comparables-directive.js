@@ -23,13 +23,17 @@ define(["../module"], function (app) {
                         counter : 2,
                         current : [],
                         noMore  : false,
+                        noCompares : false
                     };
                      
                         
                     scope.init = function() {
                         if (scope.propertySrc.length > 0) {
+                            scope.obj.noCompares = false;
                             scope.obj.src = scope.propertySrc;
                             scope.obj.current = scope.obj.src.slice(0, scope.obj.pointer);
+                        } else {
+                            scope.obj.noCompares = true;
                         }
                     };
                     

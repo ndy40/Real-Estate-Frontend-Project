@@ -1,12 +1,6 @@
 <!-- Property Listing -->
 <div class="property-listing comparables-listing" ng-repeat="comparable in obj.current">
     <div class="row">
-<!--        <div class="col-lg-2 col-md-3 col-sm-6">
-            <div class="property-img">
-                <img ng-show="comparable.images[0].image" class="img-responsive" ng-src="{{comparable.images[0].image}}" alt="Comparable Image">
-                <img ng-show="!comparable.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
-            </div>
-        </div>-->
         <div class="col-lg-6 col-md-5 col-sm-6">
             <div class="property-title-group noPrice">
                 <h4>{{compareTitle}}</h4>
@@ -15,7 +9,8 @@
             <p class="comp-address">{{comparable.address | address | lowercase}}</p>
             <p class="distance">
                 <i class="icon-location"></i>
-                {{comparable.distance | walking | number: 0}} mins walk from this location</p>
+                {{comparable.distance | walking | number: 0}} mins walk from this location
+            </p>
         </div>
         <div class="visible-sm col-sm-6 right-section-group">
             <div class="split-half">
@@ -48,8 +43,13 @@
             </div>
         </div>
     </div>
+</div>
+<div class="alert alert-danger" ng-show="obj.noCompares" role="alert">
+    <i class="icon-warning"></i>
+    <span>Sorry!</span> No comparables found in this area. Other properties can be found below.
 </div> 
-<div class="more-button-wrap" ng-show="!obj.noMore">
+
+<div class="more-button-wrap" ng-show="!obj.noMore && !obj.noCompares">
     <button ng-click="updateList()" id="more-properties-toggle" class="btn btn-lg btn-3d">More Comparables</button>
 </div>
 <div class="alert alert-danger"  ng-show="obj.noMore" role="alert">

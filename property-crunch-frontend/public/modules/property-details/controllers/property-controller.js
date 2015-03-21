@@ -38,7 +38,7 @@ define(["../module"], function (app) {
                 list: {},
                 title       : "",
                 status      : false,
-                statusMsg   : "Loading Comparables..",   // Used to display "Loading"
+                statusMsg   : "Loading Comparables. Please Wait..",   // Used to display "Loading"
                 errorStatus : false,
                 errorMsg    : ""    // Used to display error msgs
             }
