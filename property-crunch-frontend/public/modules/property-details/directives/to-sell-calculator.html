@@ -1,41 +1,65 @@
 <form ng-show="!toSellResults">
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-7">
+        <label class="control-label col-sm-6 col-xs-7">
             Purchase Price:
             <i class="icon-help" tooltip="This price is subject to contract." tooltip-placement="top" title="This price is subject to contract."></i>
         </label>
-        <div class="input-group col-sm-7 col-xs-5">
+        <div class="input-group col-sm-6 col-xs-5">
             <input class="form-control" ng-model="toSell.purchasePrice" placeholder="£125,000" pc-currency>
         </div>
     </div>
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-7">Mortgage LTV:</label>
-        <div class="input-group col-sm-7 col-xs-5">
+        <label class="control-label col-sm-6 col-xs-7">
+            Mortgage LTV:
+            <i class="icon-help" tooltip="The amount you're borrowing from the bank. Calculated as a % of purchase price." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
             <input class="form-control" ng-model="toSell.mortgageLtv" placeholder="e.g.75%" pc-percent>
         </div>
     </div>
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-7">Mortgage Rate:</label>
-        <div class="input-group col-sm-7 col-xs-5">
+        <label class="control-label col-sm-6 col-xs-7">
+            Mortgage Rate:
+            <i class="icon-help" tooltip="How much interest is the bank charging for the amount you are borrowing?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
             <input class="form-control" ng-model="toSell.mortgageRate" placeholder="e.g. 4.5%" pc-percent>
         </div>
     </div>
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-7">Est. Resale Price:</label>
-        <div class="input-group col-sm-7 col-xs-5">
-            <input class="form-control" ng-model="toSell.resalePrice" placeholder="e.g. £150,000" pc-currency>
+        <label class="control-label col-sm-6 col-xs-7">
+            Refurbishment:
+            <i class="icon-help" tooltip="How much are you going to spend to redevelop the property?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toSell.refurbishment" placeholder="e.g. £15,000" pc-currency>
         </div>
     </div>
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-8">Holding Period (months):</label>
-        <div class="input-group col-sm-7 col-xs-4">
+        <label class="control-label col-sm-6 col-xs-7">
+            Other Costs:
+            <i class="icon-help" tooltip="Use for legal costs, survey costs, etc." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toSell.otherCosts" placeholder="e.g. £15,000" pc-currency>
+        </div>
+    </div>  
+    <div class="form-group form-field-row">
+        <label class="control-label col-lg-6 col-md-8 col-sm-6 col-xs-10">
+            Holding Period (months):
+            <i class="icon-help" tooltip="How long before the refurbishment is complete and you can put the property back on the market?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-lg-6 col-md-4 col-sm-6 col-xs-2">
             <input class="form-control" ng-model="toSell.holdingPeriod" placeholder="e.g. 12">
         </div>
     </div>
     <div class="form-group form-field-row">
-        <label class="control-label col-sm-5 col-xs-7">Refurbishment:</label>
-        <div class="input-group col-sm-7 col-xs-5">
-            <input class="form-control" ng-model="toSell.refurbishment" placeholder="e.g. £15,000" pc-currency>
+        <label class="control-label col-sm-6 col-xs-7">
+            Est. Resale Price:
+            <i class="icon-help" tooltip="How much do you think you will sell the developed property for?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toSell.resalePrice" placeholder="e.g. £150,000" pc-currency>
         </div>
     </div>
     <button class="btn btn-lg btn-3d calculate" ng-click="calculateToSellResults()">Calculate</button>
@@ -44,24 +68,35 @@
 <div class="results" ng-show="toSellResults">
     <h4>Results:</h4>
     <div class="form-field-row">
-        <h6 class="col-xs-6">Monthly Mortgage:</h6>
-        <h5 class="col-xs-6"><span pc-color-code input-src="toSell.monthlyMortgage">{{toSell.monthlyMortgage | customCurrency: "£"}}</span></h5>
+        <h6 class="col-xs-8 col-md-8 col-lg-7">
+            Monthly Mortgage:
+            <i class="icon-help" tooltip="The amount you pay the bank on a monthly basis for the mortgage loan" tooltip-placement="top"></i>
+        </h6>
+        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.monthlyMortgage">{{toSell.monthlyMortgage | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-6">Deposit Needed:</h6>
-        <h5 class="col-xs-6"><span pc-color-code input-src="toSell.depositNeeded">{{toSell.depositNeeded | customCurrency: "£"}}</span></h5>
+        <h6 class="col-xs-8 col-md-8 col-lg-7">
+            Deposit Needed:
+        </h6>
+        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.depositNeeded">{{toSell.depositNeeded | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-6">Total Investment:</h6>
-        <h5 class="col-xs-6"><span pc-color-code input-src="toSell.totalInvestment">{{toSell.totalInvestment | customCurrency: "£"}}</span></h5>
+        <h6 class="col-xs-8 col-md-8 col-lg-7">
+            Total Investment:
+            <i class="icon-help" tooltip="Calculated by adding up the amount paid for the deposit, refurbishment, stamp duty" tooltip-placement="top"></i>
+        </h6>
+        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.totalInvestment">{{toSell.totalInvestment | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row" pc-color-code input-src="toSell.profitLoss">
+        <h6 class="col-xs-8 col-md-8 col-lg-7 plus">Profit:</h6>
+        <h6 class="col-xs-8 col-md-8 col-lg-7 minus">Loss:</h6>
+        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.profitLoss">{{toSell.profitLoss | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-6">Profit/ (Loss):</h6>
-        <h5 class="col-xs-6"><span pc-color-code input-src="toSell.profitLoss">{{toSell.profitLoss | customCurrency: "£"}}</span></h5>
-    </div>
-    <div class="form-field-row">
-        <h6 class="col-xs-6">ROI:</h6>
-        <h5 class="col-xs-6"><span pc-color-code input-src="toSell.rOI">{{toSell.rOI | percent}}</span></h5>
+        <h6 class="col-xs-8 col-md-8 col-lg-7">
+            Return On Investment:
+        </h6>
+        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.rOI">{{toSell.rOI | percent}}</span></h5>
     </div>
     <button class="btn btn-lg btn-3d calculate" ng-click="reCalculateToSellResults()">Re-calculate</button>
 </div>

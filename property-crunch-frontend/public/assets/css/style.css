@@ -357,6 +357,13 @@ ul {
   }
 }
 /*===================================================================
+  General Styling > Conditional Styling
+====================================================================*/
+.positive > .minus,
+.negative > .plus {
+  display: none;
+}
+/*===================================================================
   Components
 ====================================================================*/
 /*===================================================================
@@ -3830,6 +3837,9 @@ footer.default-footer ul li:last-child {
   font-size: 16px;
   padding: 0;
   margin: 0;
+}
+.profit-calculator .results .form-field-row h6.minus {
+  color: #191e1d;
 }
 .profit-calculator .results .form-field-row h5 {
   margin: 0;

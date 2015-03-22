@@ -16,8 +16,8 @@
   Pages > Property Details > Property Heading
 ====================================================================*/
 .property-heading {
-	margin-bottom: 20px;
-	.clearfix();
+    margin-bottom: 20px;
+    .clearfix();
     
     .property-title {
         margin-bottom: 10px;    
@@ -196,23 +196,22 @@
   Pages > Property Details > Property Links Panel
 ====================================================================*/
 .property-links {
-	margin-top: 20px; 
-		
-	.panel-heading {
+    margin-top: 20px; 
+
+    .panel-heading {
         border-color: @brand-red;
-	}
-	
-	ul {
-	
-		li {
-			width: 100%;
-			margin-right: 20px;
-			margin-bottom: 20px;
-			
-			&.last {
-				margin-bottom: 0;
+    }
+
+    ul {
+        li {
+            width: 100%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+
+            &.last {
+                margin-bottom: 0;
                 float: right;
-			}
+            }
 			    
             a, .added-to-fav {
                 font-size: 16px;
@@ -237,66 +236,60 @@
                 margin-right: 7px;
             }
         }
-	}
+    }
 }
 
 @media (min-width: 480px) {
-	.property-links {
-			
-		ul {
-		
-			li {
-				width: auto;
-				margin-bottom: 0;
-			}
-			
-			i {
-				margin-right: 5px;
+    .property-links {
+        ul {
+            li {
+                width: auto;
+                margin-bottom: 0;
             }
-		}
-	}
+
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
 }
 
 @media (min-width: 640px) {
-	.property-links {
-			
-		ul {
-		
-			li {
-				width: 33.33%;
-				margin-right: 0;
-				
-				a {
-					display: block;
-					text-align: center;
-				}
-			}
-			
-			i {
-				margin-right: 10px;
-			}
-		}
-	}
+    .property-links {
+        ul {
+            li {
+                width: 33.33%;
+                margin-right: 0;
+
+                a {
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 
 @media (min-width: 992px) {
-	.property-links {
-		margin-top: 0; 
-			
-		ul {
-		
-			li {
-				width: auto;
-				margin-right: 20px;
-				font-size: @font-size-h6;
-			}
-			
-			i {
-				margin-right: 7px; //5px
-			}
-		}
-	}
+    .property-links {
+        margin-top: 0; 	
+        ul {
+            li {
+                width: auto;
+                margin-right: 20px;
+                font-size: @font-size-h6;
+            }
+
+            i {
+                margin-right: 7px; //5px
+            }
+        }
+    }
 }
 
 /*===================================================================
@@ -336,7 +329,7 @@
     
     .results {
         .form-field-row {
-                margin-bottom: 23px;
+            margin-bottom: 23px;
 
             h5, h6 {
                 line-height: 24px;
@@ -346,6 +339,10 @@
                 font-size: 16px;
                 padding: 0;
                 margin: 0;
+                
+                &.minus {
+                    color: @gray-darker;
+                }
             }
             
             h5 {
