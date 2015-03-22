@@ -50,6 +50,21 @@
                                         </h6>
                                     </hgroup>
                                 </div>
+                                <div class="panel panel-outline panel-no-body property-links">
+                                    <div class="panel-heading">
+                                        <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
+                                            <ul class="no-bullets horizontal-list">
+                                                <li class="add-to-favourites">
+                                                    <a ng-click="addToFavourites(property.details.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                                    <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
+                                                </li>
+                                                <li  class="email-friend last">
+                                                    <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
+                                                </li>
+                                            </ul> 
+                                        </pc-add-to-fav>
+                                    </div>
+                                </div>
                                 <pc-carousel images-src="property.details.images"></pc-carousel>
                             </div>
                         </div>
@@ -74,21 +89,6 @@
                                             <h6 class="left"><b>{{property.details.yield}}</b> <span>%</span> Rental Yield</h6>
                                             <h6 class="right"><b>{{property.details.yield * property.details.price /1200 | customCurrency: "£"}}</b> Rental Income</h6>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-outline panel-no-body property-links">
-                                    <div class="panel-heading">
-                                        <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
-                                            <ul class="no-bullets horizontal-list">
-                                                <li class="add-to-favourites">
-                                                    <a ng-click="addToFavourites(property.details.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
-                                                    <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
-                                                </li>
-                                                <li  class="email-friend last">
-                                                    <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
-                                                </li>
-                                            </ul> 
-                                        </pc-add-to-fav>
                                     </div>
                                 </div>
                                 <tabset class="profit-calculator">

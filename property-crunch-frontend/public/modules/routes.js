@@ -41,6 +41,11 @@
                     controller  : "LoginCtrl"
                 });
                 
+                $routeProvider.when("/register-success", {
+                    templateUrl : "modules/login/views/register-success.html",
+                    controller  : "LoginCtrl"
+                });
+                
                 $routeProvider.when("/forgot-password", {
                     templateUrl : "modules/login/views/forgot-password.html",
                     controller  : "LoginCtrl"

@@ -70,8 +70,9 @@ define(["../module"], function (app) {
             AuthService.register(
                 $scope.registerData
             ).success(function () {
-                $scope.alert.success = true;
-                $scope.alert.isError = false;
+                $location.path("/register-success");
+//                $scope.alert.success = true;
+//                $scope.alert.isError = false;
             }).error(function (data) {
                 var messages = data.flash.split(",");
                 $scope.showErrorMessage(true, messages);
