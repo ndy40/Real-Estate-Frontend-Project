@@ -7,6 +7,7 @@ define([
     "angular",
     "ngRoute",
     "ngAnimate",
+    "angular-tour",
     "./favourites/index",
     "./login/index",
     "./property-details/index",
@@ -18,6 +19,7 @@ define([
     return angular.module("PCAPP", [
         "ngRoute",
         "ngAnimate",
+        "angular-tour",
         "ui.bootstrap",
         "pcFavourites",
         "pcLogin",
