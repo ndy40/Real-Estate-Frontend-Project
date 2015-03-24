@@ -16,7 +16,7 @@ require.config({
         'cookies'       : "../assets/angular-cookies/angular-cookies.min",
         "localStorage"  : "../assets/angular-localStorageService/src/storageprovider",
         "ngAnimate"     : "../assets/angular-animate/angular-animate.min",
-        "angular-tour"  : "../assets/angular-tour/angular-tour-tpls.min"
+        "angular-tour"  : "../assets/angular-tour/angular-tour-tpls"
     },
 
     shim : {

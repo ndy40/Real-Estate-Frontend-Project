@@ -3,7 +3,9 @@
     <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
 </header>
 
-<div id="content-wrap"  pc-adj-height>
+<!-- Main Template -->
+<!-- Tour Directive -->
+<div id="content-wrap" pc-adj-height tour step="currentStep">
     <header class="search-header">    
         <div class="search-content dark">
             <div class="container">
@@ -31,14 +33,6 @@
         <section class="main-content">
             <article class="property-details">
                 <div class="container">
-                    
-                    <tour step="currentStep">
-                        <div tourtip="tip 1"> 
-                            <h5>1. CHECK OUT OUR PROPERTY DATA CENTER</h5>
-                            <p>These figures are based on comparing this property to similar properties in the same location.  </p>
-                        </div>
-                        <span tourtip="tip 2"> Elements </span>
-                    </tour>
                     <div class="row">
                         <div class="col-lg-7 col-md-7">
                             <div class="left-details">
@@ -79,7 +73,17 @@
 
                         <div class="col-lg-5 col-md-5">
                             <div class="right-details">
-                                <div class="panel panel-outline-blue panel-no-body value-comparison">
+                                <div class="panel panel-outline-blue panel-no-body value-comparison" 
+                                    tourtip="These figures are based on comparing this property to similar properties in the same location." 
+                                    tt-heading="Check out our property data center"
+                                    tt-icon="icon-graph"
+                                    tourtip-step="0" 
+                                    tourtip-offset="0" 
+                                    tourtip-placement="top" 
+                                    tourtip-prev-label="0"
+                                    tourtip-next-label="Next"
+                                    tt-nav-label="one"
+                                    tt-nav-items="abc">
                                     <div class="panel-heading">
                                         <div class="split-half value-com">
                                             <div class="left">
@@ -99,15 +103,26 @@
                                         </div>
                                     </div>
                                 </div>
-                                <tabset class="profit-calculator">
-                                    <tab heading="Buy to Let">
-                                        <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
-                                    </tab>
+                                <div tourtip="Use the calculator to quickly find out if this property is a good investment." 
+                                    tt-heading="Find out if this is a profitable investment"
+                                    tt-icon="icon-statistics"
+                                    tourtip-step="1" 
+                                    tourtip-offset="0" 
+                                    tourtip-placement="left" 
+                                    tourtip-prev-label="Previous"
+                                    tourtip-next-label="Next"
+                                    tt-nav-label="two"
+                                    tt-nav-items="abc">
+                                    <tabset class="profit-calculator">
+                                        <tab heading="Buy to Let">
+                                            <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
+                                        </tab>
 
-                                    <tab heading="Buy to Sell">
-                                        <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
-                                    </tab>
-                                </tabset>
+                                        <tab heading="Buy to Sell">
+                                            <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
+                                        </tab>
+                                    </tabset>
+                                </div>
 
                             </div>
                         </div>                  
@@ -138,7 +153,18 @@
 
         <aside class="main-content">
              <div class="container">         
-                <div class="panel panel-primary panel-no-body">
+                <div class="panel panel-primary panel-no-body"
+                    tourtip="These are recently sold properties in close proximity to the advertised property. " 
+                    tt-heading="Recently Sold Properties"
+                    tt-icon="icon-history"
+                    tourtip-step="2" 
+                    tourtip-offset="0" 
+                    tourtip-placement="top" 
+                    tourtip-prev-label="Previous"
+                    tourtip-next-label="Done"
+                    tt-nav-label="three"
+                    tt-nav-items="abc"
+                    tt-last="true">
                     <div class="panel-heading">
                         <h5>Comparables (Recently Sold Nearby)</h5>
                     </div>
@@ -272,8 +298,8 @@
             </div>
         </div>
     </div>
-</div>
-
+</div>          
+                   
 <!-- footer template -->
 <ng-include src="'modules/shared/views/footer.html'"  ng-show="property.status"></ng-include>
 
