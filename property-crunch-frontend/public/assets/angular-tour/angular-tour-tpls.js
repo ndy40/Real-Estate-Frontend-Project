@@ -41,8 +41,11 @@
                 '               <a ng-show="ttPrevLabel" ng-click="setCurrentStep(getCurrentStep() - 1)" class="btn btn-xs tour-prev-tip">\n' +
                 '                   <i class="icon-arrow-left4"></i><span ng-bind="ttPrevLabel"></span>\n' +
                 '               </a>\n' +
-                '               <a ng-show="ttNextLabel" ng-click="setCurrentStep(getCurrentStep() + 1)" class="btn btn-xs tour-next-tip">\n' +
-                '                   <span ng-bind="ttNextLabel"></span><i ng-hide="ttLast" class="icon-arrow-right4"></i>\n' +
+                '               <a ng-show="ttNextLabel && !ttLast" ng-click="setCurrentStep(getCurrentStep() + 1)" class="btn btn-xs tour-next-tip">\n' +
+                '                   <span ng-bind="ttNextLabel"></span><i class="icon-arrow-right4"></i>\n' +
+                '               </a>\n' +
+                '               <a ng-show="ttLast" ng-click="closeTour()" class="btn btn-xs tour-next-tip">\n' +
+                '                   <span ng-bind="ttNextLabel"></span>\n' +
                 '               </a>\n' +
                 '           </div>\n' +
                 '       </div>\n' +
@@ -61,12 +64,16 @@
     }).controller('TourController', [
         '$scope',
         'orderedList',
-        function($scope, orderedList) {
+        'scrollTo',
+        '$cookieStore',
+        function($scope, orderedList, scrollTo, $cookieStore) {
             var self = this,
                 steps = self.steps = orderedList();
+        
             self.postTourCallback = angular.noop;
             self.postStepCallback = angular.noop;
-            self.currentStep = 0;
+            self.currentStep = false;
+            
             $scope.$watch(function() {
                 return self.currentStep;
             }, function(val) {
@@ -76,19 +83,26 @@
                 if (!angular.isNumber(nextIndex)) {
                     return;
                 }
+                
                 self.unselectAllSteps();
+                
                 var step = steps.get(nextIndex);
+                
                 if (step) {
                     step.ttOpen = true;
                 }
+                
                 if (self.currentStep !== nextIndex) {
                     self.currentStep = nextIndex;
                 }
+                
                 if (nextIndex >= steps.getCount()) {
                     self.postTourCallback();
                 }
+                
                 self.postStepCallback();
             };
+            
             self.addStep = function(step) {
                 if (angular.isNumber(step.index) && !isNaN(step.index)) {
                     steps.set(step.index, step);
@@ -111,7 +125,17 @@
             };
             $scope.closeTour = function() {
                 self.cancelTour();
+                scrollTo(0);
+                // Custom Store Cookie
+                $cookieStore.put("noTour", true);
+                
             };
+            
+            // custom start point
+            $scope.$on("runTour", function() {
+                self.currentStep = 0;
+                self.select(0);
+            });
         }
     ]).directive('tour', [
         '$parse',
@@ -144,9 +168,6 @@
                     };
                     scope.getCurrentStep = function() {
                         return ctrl.currentStep;
-                    };
-                    scope.makeArray = function(num) {
-                        return new Array(num);   
                     };
                 }
             };
@@ -196,10 +217,12 @@
                     attrs.$observe('ttLast', function(val) {
                         scope.ttLast = val;
                     });
+                    
                     scope.ttOpen = false;
                     scope.ttAnimation = tourConfig.animation;
                     scope.index = parseInt(attrs.tourtipStep, 10);
                     var tourtip = $compile(template)(scope);
+                    
                     tourCtrl.addStep(scope);
                     $timeout(function() {
                         scope.$watch('ttOpen', function(val) {

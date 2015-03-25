@@ -55,6 +55,6 @@ define(["../module"], function (app) {
              * Cookie Policy Directive Status to Apply Styling to Home Header
              */
             $scope.cookieAlertStatus = false;
-
+            
         }]);
 });

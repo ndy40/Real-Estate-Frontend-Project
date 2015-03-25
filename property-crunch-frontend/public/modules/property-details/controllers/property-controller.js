@@ -6,9 +6,9 @@ define(["../module"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
         "SearchService", "$routeParams", "$location", "emailService", 
-            "propertyService", function ($scope, $rootScope, UserModel, 
-                SearchService, $routeParams, $location, emailService,
-                    propertyService) {
+            "propertyService", "$cookieStore", function ($scope, $rootScope,
+                UserModel, SearchService, $routeParams, $location, emailService,
+                    propertyService, $cookieStore) {
 
         /**
         * Object to Store Property Data
@@ -45,6 +45,22 @@ define(["../module"], function (app) {
         };
         
         /**
+        * Object to Store Tour Data
+        */
+        $scope.pageTour = {
+            noTour  : $cookieStore.get("noTour")
+        };
+        
+        /**
+        * Start Page Tour
+        */
+        $scope.startTour = function() {
+            if (!$scope.pageTour.noTour) { 
+                $scope.$broadcast("runTour");
+            }
+        };
+        
+        /**
         * Get Page Id from URL and Set New Page Route
         */
         $scope.setPageRoute = function () {
@@ -75,6 +91,7 @@ define(["../module"], function (app) {
             $scope.populateEmailFriendData(data);
             $scope.property.errorStatus = false;
             $scope.property.status = true;
+            $scope.startTour();
         };
         
         // Get Average Price from Service
@@ -85,7 +102,7 @@ define(["../module"], function (app) {
                     $scope.property.avgPrice.errorStatus = false;
                     $scope.property.avgPrice.status = true;
                 })
-                .error(function (error) {
+                .error(function () {
                     $scope.property.avgPrice.errorStatus = true;
                     $scope.property.avgPrice.errorMsg = 'Unable to get market data';
                     $scope.property.avgPrice.status = false;
@@ -106,7 +123,7 @@ define(["../module"], function (app) {
                         $scope.property.priceHistory.status = false;
                     }
                 })
-                .error(function (error) {
+                .error(function () {
                     $scope.property.priceHistory.errorStatus = true;
                     $scope.property.priceHistory.errorMsg = 'Unable to get historical data';
                     $scope.property.priceHistory.status = false;
@@ -123,7 +140,7 @@ define(["../module"], function (app) {
                     $scope.property.comparables.errorStatus = false;
                     $scope.property.comparables.status = true;
                 })
-                .error(function (error) {
+                .error(function () {
                     $scope.property.comparables.errorStatus = true;
                     $scope.property.comparables.errorMsg = 'Unable to get comparables';
                     $scope.property.comparables.status = false;
@@ -196,8 +213,8 @@ define(["../module"], function (app) {
                 $location.path("/sign/in");
             }
         };
-
-        $scope.$on("favUpdated", function (targetscope, currscope) {
+         
+        $scope.$on("favUpdated", function () {
             if ($scope.favUpdate) {
                 $scope.favUpdate = false;
             } else {

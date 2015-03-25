@@ -22,13 +22,7 @@
         </script>
     </head>
     <body>
-        <!-- Loader -->
-        <div class="loading">
-            <div class="loader">
-                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">
-                <h6>Loading.. Please Wait</h6>
-            </div>
-        </div>   
+        <div pc-loader></div>
         <!-- contents go in here. -->
         <div ng-view></div>
 

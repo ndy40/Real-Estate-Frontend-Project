@@ -5,12 +5,15 @@
  */
 define(["../module"], function (app) {
     'use strict';
-    app.directive("pcRecProperties", ["RecPropertyService",
-        function (RecPropertyService) {
+    app.directive("pcRecProperties", ["RecPropertyService", "LoaderService",
+        function (RecPropertyService, LoaderService) {
 
             return {
                 restrict : "E",
                 templateUrl : "./modules/shared/directives/rec-properties.html",
+                scope : {
+                    callback: "="
+                },
                 link : function (scope) {
 
                     scope.recProperties = {};
@@ -92,6 +95,7 @@ define(["../module"], function (app) {
                     scope.$watch('recProperties.list', function () {
                         if (scope.recProperties.list !== undefined) {
                             scope.initCarousel();
+                            LoaderService.hideLoader();
                         }
                     });
                 }

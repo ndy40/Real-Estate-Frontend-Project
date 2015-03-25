@@ -1,3 +1,4 @@
+/*global define */
 /**
  * This directive will be responsible for displaying the search form across all
  * pages.
