@@ -54,7 +54,7 @@
         float: right;
     }
     
-	.left-section {
+    .left-section {
         float: left;
     }
     
@@ -88,9 +88,14 @@
             margin-bottom: 10px;
         }
         
+        .left-section {
+            max-width: 345px;
+        }
+
         .right-section {    
             float: right;
             margin: 0;
+            max-width: 190px;
         }
         
         .property-price {
@@ -117,26 +122,10 @@
 	}
 }
 
-@media (min-width: 992px) {
-     .property-heading {
-        .property-address {
-            max-width: 330px;
-        }
-        
-        .right-section {    
-            max-width: 200px;
-        }
-     }
-}
-
 @media (min-width: 1200px) {
      .property-heading {
-        .property-address {
+        .left-section {
             max-width: 450px;
-        }
-        
-        .right-section {    
-            max-width: 200px;
         }
      }
 }
@@ -306,7 +295,7 @@
     }
     
     .tab-content {
-        min-height: 431px;    
+        min-height: 536px;    
         padding-top: 27px;
     }
 
@@ -350,14 +339,14 @@
                 font-size: 16px;
                 
                 span {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
         }
     }
     
     .btn.calculate {
-        margin-top: 15px;
+        margin-top: 25px;
     }
     
     .negative {
@@ -386,7 +375,13 @@
         }
     }
 }
-
+@media (min-width: 1200px) {
+    .profit-calculator {
+        .tab-content {
+            min-height: 578px;    
+        }
+    }
+}
 /*===================================================================
   Pages > Property Details > Request Details
 ====================================================================*/
@@ -410,7 +405,7 @@
     }
     
     .modal-body {
-        padding: 10px 80px 60px;
+        padding: 10px 30px 60px;
         
         h4 {
             margin-bottom: 30px;
@@ -455,6 +450,13 @@
         i {
             color: @gray-darker;
             margin-right: 10px;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .request-details-modal {
+        .modal-body {
+            padding: 10px 80px 60px;
         }
     }
 }

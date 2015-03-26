@@ -77,15 +77,15 @@
 
 @media (min-width: 480px) {
     .search-content {
-		.searchbar-bottom {
-			 .advanced-search {
+        .searchbar-bottom {
+            .advanced-search {
                 float: left;
-             }
+            }
             .result_count {
                 float: right;
             }
-		}	
-	}
+        }	
+    }
 }
 /*===================================================================
   Pages > Search Results > Filters
@@ -196,38 +196,37 @@
   Pages > Search Results > Property Listing 
 ====================================================================*/
 .property-listing {
-	border: 1px solid @gray;
+    border: 1px solid @gray;
     background: #fff;
     border-radius: @border-radius-base;
-	padding: 20px;
-	margin-bottom: 20px;
-	position: relative;
-	height: 100%;
-
-	.clearfix();
-	.transition(all 0.3s);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 100%;
+    .clearfix();
+    .transition(all 0.3s);
     
     &:hover {
         background: @gray-lighter;
         .transition(all 0.3s);
     }
 
-	p {
-		margin-bottom: 20px;
-		
-		&.distance {
-			margin-bottom: 0;
-		}
-	}
+    p {
+        margin-bottom: 20px;
+
+        &.distance {
+            margin-bottom: 0;
+        }
+    }
 	
     .property-img {
         border-radius: @border-radius-base;
         overflow: hidden;
     }
     
-	img {
-		width: 694px;
-	}
+    img {
+        width: 694px;
+    }
     
     .property-title-group {
         margin: 20px 0;
@@ -247,7 +246,7 @@
         
         .add-to-fav, .added-to-fav {
             float: right;
-            font-size: @font-size-h6;
+            font-size: 12px;
             
             i {
                 font-size: 18px;
@@ -356,6 +355,12 @@
 }
 @media (min-width: 640px) {
     .property-listing {
+        .property-title-group {
+            .add-to-fav, .added-to-fav { 
+                font-size: 14px;
+            }
+        }
+
         .property-details-group {
             .beds {
                 float: left;
@@ -375,20 +380,23 @@
 }
 
 @media (min-width: 768px) {
-	.property-listing {
-        p,
-        .property-title-group {
+    .property-listing {
+        p, .property-title-group {
             margin: 0 0 18px;	
+
+            .add-to-fav, .added-to-fav { 
+                font-size: 14px;
+            }
         }
         
-      	.property-details-group {
+        .property-details-group {
             margin-bottom: 15px;
-            
+
             .beds {
                 width: 100%;
                 margin-bottom: 18px;
             }
-            
+
             .property-tags {
                 float: left;
             }

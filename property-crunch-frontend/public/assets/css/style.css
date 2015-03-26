@@ -317,7 +317,7 @@ ul {
   General Styling > Loader
 ====================================================================*/
 .loading {
-  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.96);
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -2328,6 +2328,7 @@ textarea.form-control {
   font-size: 12px;
   font-weight: 400;
   width: 200px;
+  z-index: 5;
 }
 .tooltip-inner {
   padding: 12px 15px;
@@ -3591,7 +3592,7 @@ footer.default-footer ul li:last-child {
 .property-listing .property-title-group .add-to-fav,
 .property-listing .property-title-group .added-to-fav {
   float: right;
-  font-size: 14px;
+  font-size: 12px;
 }
 .property-listing .property-title-group .add-to-fav i,
 .property-listing .property-title-group .added-to-fav i {
@@ -3708,6 +3709,10 @@ footer.default-footer ul li:last-child {
   display: block;
 }
 @media (min-width: 640px) {
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing .property-title-group .added-to-fav {
+    font-size: 14px;
+  }
   .property-listing .property-details-group .beds {
     float: left;
     margin-bottom: 10px;
@@ -3724,6 +3729,12 @@ footer.default-footer ul li:last-child {
   .property-listing p,
   .property-listing .property-title-group {
     margin: 0 0 18px;
+  }
+  .property-listing p .add-to-fav,
+  .property-listing .property-title-group .add-to-fav,
+  .property-listing p .added-to-fav,
+  .property-listing .property-title-group .added-to-fav {
+    font-size: 14px;
   }
   .property-listing .property-details-group {
     margin-bottom: 15px;
@@ -3901,9 +3912,13 @@ footer.default-footer ul li:last-child {
   .property-heading .property-price {
     margin-bottom: 10px;
   }
+  .property-heading .left-section {
+    max-width: 345px;
+  }
   .property-heading .right-section {
     float: right;
     margin: 0;
+    max-width: 190px;
   }
   .property-heading .property-price:before,
   .property-heading .property-price:after {
@@ -3929,20 +3944,9 @@ footer.default-footer ul li:last-child {
     width: 720px;
   }
 }
-@media (min-width: 992px) {
-  .property-heading .property-address {
-    max-width: 330px;
-  }
-  .property-heading .right-section {
-    max-width: 200px;
-  }
-}
 @media (min-width: 1200px) {
-  .property-heading .property-address {
+  .property-heading .left-section {
     max-width: 450px;
-  }
-  .property-heading .right-section {
-    max-width: 200px;
   }
 }
 /*===================================================================
@@ -4068,7 +4072,7 @@ footer.default-footer ul li:last-child {
   font-weight: 500;
 }
 .profit-calculator .tab-content {
-  min-height: 431px;
+  min-height: 536px;
   padding-top: 27px;
 }
 .profit-calculator .form-field-row {
@@ -4105,10 +4109,10 @@ footer.default-footer ul li:last-child {
   font-size: 16px;
 }
 .profit-calculator .results .form-field-row h5 span {
-  font-size: 18px;
+  font-size: 16px;
 }
 .profit-calculator .btn.calculate {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .profit-calculator .negative {
   color: #da1b1b;
@@ -4125,6 +4129,11 @@ footer.default-footer ul li:last-child {
   }
   .profit-calculator .results .form-field-row h5 span {
     font-size: 22px;
+  }
+}
+@media (min-width: 1200px) {
+  .profit-calculator .tab-content {
+    min-height: 578px;
   }
 }
 /*===================================================================
@@ -4145,7 +4154,7 @@ footer.default-footer ul li:last-child {
   max-width: 620px;
 }
 .request-details-modal .modal-body {
-  padding: 10px 80px 60px;
+  padding: 10px 30px 60px;
 }
 .request-details-modal .modal-body h4 {
   margin-bottom: 30px;
@@ -4181,6 +4190,11 @@ footer.default-footer ul li:last-child {
 .request-details-modal .agency-info i {
   color: #191e1d;
   margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .request-details-modal .modal-body {
+    padding: 10px 80px 60px;
+  }
 }
 @media (max-width: 991px) {
   .request-details h2 {
@@ -4348,12 +4362,18 @@ footer.default-footer ul li:last-child {
   Pages > Favourites
 ====================================================================*/
 #favourites_list .property-title-group .add-to-fav {
-  font-size: 15px;
+  font-size: 11px;
+  line-height: 30px;
 }
 #favourites_list .icon-cross2 {
   margin-right: 2px;
   position: relative;
   top: 3px;
+}
+@media (min-width: 480px) {
+  #favourites_list .property-title-group .add-to-fav {
+    font-size: 15px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #favourites_list .right-section-label {

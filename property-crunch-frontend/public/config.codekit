@@ -172,39 +172,6 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/angular-tour\/angular-tour-tpls.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour-tpls.min.js",
-		"outputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour-tpls.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/angular-tour\/angular-tour.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour.js",
-		"outputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/angular-tour\/angular-tour.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour.min.js",
-		"outputAbbreviatedPath": "\/assets\/angular-tour\/angular-tour.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
 	"\/assets\/angular\/angular-csp.css": {
 		"fileType": 16,
 		"ignore": 0,

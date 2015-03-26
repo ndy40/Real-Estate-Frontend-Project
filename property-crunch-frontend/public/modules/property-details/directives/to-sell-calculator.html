@@ -68,35 +68,35 @@
 <div class="results" ng-show="toSellResults">
     <h4>Results:</h4>
     <div class="form-field-row">
-        <h6 class="col-xs-8 col-md-8 col-lg-7">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">
             Monthly Mortgage:
-            <i class="icon-help" tooltip="The amount you pay the bank on a monthly basis for the mortgage loan" tooltip-placement="top"></i>
+            <i class="icon-help" tooltip="The amount you pay the bank on a monthly basis for the mortgage loan" tooltip-placement="right"></i>
         </h6>
-        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.monthlyMortgage">{{toSell.monthlyMortgage | customCurrency: "£"}}</span></h5>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.monthlyMortgage">{{toSell.monthlyMortgage | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-8 col-md-8 col-lg-7">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">
             Deposit Needed:
         </h6>
-        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.depositNeeded">{{toSell.depositNeeded | customCurrency: "£"}}</span></h5>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.depositNeeded">{{toSell.depositNeeded | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-8 col-md-8 col-lg-7">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">
             Total Investment:
             <i class="icon-help" tooltip="Calculated by adding up the amount paid for the deposit, refurbishment, stamp duty" tooltip-placement="top"></i>
         </h6>
-        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.totalInvestment">{{toSell.totalInvestment | customCurrency: "£"}}</span></h5>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.totalInvestment">{{toSell.totalInvestment | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row" pc-color-code input-src="toSell.profitLoss">
-        <h6 class="col-xs-8 col-md-8 col-lg-7 plus">Profit:</h6>
-        <h6 class="col-xs-8 col-md-8 col-lg-7 minus">Loss:</h6>
-        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.profitLoss">{{toSell.profitLoss | customCurrency: "£"}}</span></h5>
+        <h6 class="col-xs-7 col-md-8 col-lg-7 plus">Profit:</h6>
+        <h6 class="col-xs-7 col-md-8 col-lg-7 minus">Loss:</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.profitLoss">{{toSell.profitLoss | customCurrency: "£"}}</span></h5>
     </div>
     <div class="form-field-row">
-        <h6 class="col-xs-8 col-md-8 col-lg-7">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">
             Return On Investment:
         </h6>
-        <h5 class="col-xs-4 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.rOI">{{toSell.rOI | percent}}</span></h5>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toSell.rOI">{{toSell.rOI | percent}}</span></h5>
     </div>
     <button class="btn btn-lg btn-3d calculate" ng-click="reCalculateToSellResults()">Re-calculate</button>
 </div>

@@ -226,7 +226,8 @@
                     tourCtrl.addStep(scope);
                     $timeout(function() {
                         scope.$watch('ttOpen', function(val) {
-                            if (val) {
+                            // Only show on Desktop Large Screens
+                            if (val && $window.innerWidth > 1199) {
                                 show();
                             } else {
                                 hide();
@@ -294,7 +295,6 @@
                         });
                         updatePosition();
                     }
-
                     function hide() {
                         tourtip.detach();
                         angular.element($window).unbind('resize.' + scope.$id);
