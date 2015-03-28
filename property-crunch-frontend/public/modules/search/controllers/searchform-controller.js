@@ -100,6 +100,7 @@ define(["../module"], function (app) {
             */
             $scope.updateFilters = function () {
                 SearchService.clearCache(); // Clear Current Cache
+                SearchService.setCurrentPage(1);
                 $scope.getProperties();
             };
             

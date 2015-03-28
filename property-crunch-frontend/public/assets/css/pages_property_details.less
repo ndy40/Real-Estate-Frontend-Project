@@ -135,23 +135,23 @@
 ====================================================================*/
 .value-comparison {
     h6 {
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 500;
         margin: 0;
         
         b {
             font-weight: 700;    
-            font-size: 18px;
+            font-size: 17px;
             line-height: 20px;
         }
         
         span {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
         }
         
         i {
-            font-size: 18px;
+            font-size: 17px;
             position: relative;
             top: 2px;
         }
@@ -180,7 +180,14 @@
     }
 }
 
-
+@media (min-width: 992px) and (max-width: 1199px) {
+    .value-comparison h6 {
+        font-size: 14px;
+        b { font-size: 16px; }
+        span { font-size: 12px; }
+        i { font-size: 16px; }
+    }
+}
 /*===================================================================
   Pages > Property Details > Property Links Panel
 ====================================================================*/
@@ -344,9 +351,15 @@
             }
         }
     }
-    
+
     .btn.calculate {
         margin-top: 25px;
+        box-shadow: none;
+
+        &:active {
+            top: 0;
+            background: darken(@brand-red, 25%);
+        }
     }
     
     .negative {

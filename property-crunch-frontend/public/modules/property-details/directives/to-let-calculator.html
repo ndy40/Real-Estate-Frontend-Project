@@ -59,7 +59,7 @@
             <i class="icon-help" tooltip="How much are you going to spend to redevelop the property?" tooltip-placement="top"></i>
         </label>
         <div class="input-group col-sm-6 col-xs-5">
-            <input class="form-control" ng-model="toLet.refurbishment" placeholder="e.g. 5%" pc-percent>
+            <input class="form-control" ng-model="toLet.refurbishment" placeholder="e.g. £15,000" pc-currency>
         </div>
     </div>
     <div class="form-group form-field-row">
@@ -68,7 +68,7 @@
             <i class="icon-help" tooltip="Use for legal costs, survey costs, etc." tooltip-placement="top"></i>
         </label>
         <div class="input-group col-sm-6 col-xs-5">
-            <input class="form-control" ng-model="toLet.otherCosts" placeholder="e.g. 5%" pc-percent>
+            <input class="form-control" ng-model="toLet.otherCosts" placeholder="e.g. £15,000" pc-currency>
         </div>
     </div>
     <button class="btn btn-lg btn-3d calculate" ng-click="calculateToLetResults()">Calculate</button>

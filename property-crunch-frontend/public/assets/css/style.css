@@ -1357,7 +1357,7 @@ button {
   transition: all 0.3s ease 0s;
 }
 .btn-3d:active {
-  top: 3px;
+  top: 5px;
   box-shadow: 0 0 0 #c80c0d;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -2810,15 +2810,12 @@ i.icon-help:hover {
 /*===================================================================
   Components > Footer
 ====================================================================*/
-footer {
+footer.default-footer {
   background: #000;
   color: #fff;
-}
-footer.default-footer {
-  height: 75px;
   text-align: center;
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
 }
 footer.default-footer:before,
@@ -2829,8 +2826,31 @@ footer.default-footer:after {
 footer.default-footer:after {
   clear: both;
 }
-footer.default-footer h6 {
+footer.default-footer .top:before,
+footer.default-footer .btm:before,
+footer.default-footer .top:after,
+footer.default-footer .btm:after {
+  content: " ";
+  display: table;
+}
+footer.default-footer .top:after,
+footer.default-footer .btm:after {
+  clear: both;
+}
+footer.default-footer .top {
   padding: 15px 0;
+  border-bottom: 1px solid #333;
+}
+footer.default-footer .btm {
+  padding: 15px 0;
+  color: #ccc;
+}
+footer.default-footer .btm h6 {
+  font-size: 12px;
+}
+footer.default-footer .left,
+footer.default-footer .right {
+  margin: 15px 0;
 }
 footer.default-footer h6,
 footer.default-footer ul {
@@ -2861,17 +2881,28 @@ footer.default-footer ul li:last-child {
   footer.default-footer {
     font-size: 14px;
   }
+  footer.default-footer .left,
+  footer.default-footer .right {
+    margin: 0;
+  }
+  footer.default-footer .left {
+    float: left;
+  }
+  footer.default-footer .right {
+    float: right;
+  }
+  footer.default-footer .top {
+    padding: 30px 0;
+  }
   footer.default-footer h6,
   footer.default-footer ul {
     margin: 0;
   }
   footer.default-footer h6 {
-    padding: 27px 0;
-    float: left;
+    text-align: left;
   }
   footer.default-footer ul {
-    padding: 30px 0;
-    float: right;
+    padding: 3px 0;
   }
 }
 /*===================================================================
@@ -3953,21 +3984,21 @@ footer.default-footer ul li:last-child {
   Pages > Property Details > Value Comparison Panel
 ====================================================================*/
 .value-comparison h6 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   margin: 0;
 }
 .value-comparison h6 b {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 20px;
 }
 .value-comparison h6 span {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
 }
 .value-comparison h6 i {
-  font-size: 18px;
+  font-size: 17px;
   position: relative;
   top: 2px;
 }
@@ -3986,6 +4017,20 @@ footer.default-footer ul li:last-child {
   .value-comparison .split-half .right {
     width: 100%;
     margin: 5px 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .value-comparison h6 {
+    font-size: 14px;
+  }
+  .value-comparison h6 b {
+    font-size: 16px;
+  }
+  .value-comparison h6 span {
+    font-size: 12px;
+  }
+  .value-comparison h6 i {
+    font-size: 16px;
   }
 }
 /*===================================================================
@@ -4113,6 +4158,11 @@ footer.default-footer ul li:last-child {
 }
 .profit-calculator .btn.calculate {
   margin-top: 25px;
+  box-shadow: none;
+}
+.profit-calculator .btn.calculate:active {
+  top: 0;
+  background: #b00a0b;
 }
 .profit-calculator .negative {
   color: #da1b1b;
