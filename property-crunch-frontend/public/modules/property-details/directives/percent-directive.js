@@ -2,7 +2,7 @@
 /**
  * pcPercent Directive - Percent to Integer to Percent Convertor
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcPercent", function () {
         return {
@@ -39,7 +39,8 @@ define(["../module"], function (app) {
                 // Update View on Blur
                 element.bind('blur', function () {
                     if (ngModel.$modelValue !== undefined) {
-                        ngModel.$viewValue = scope.percentify(ngModel.$modelValue);
+                        ngModel.$viewValue =
+                            scope.percentify(ngModel.$modelValue);
                         ngModel.$render();
                     }
                 });

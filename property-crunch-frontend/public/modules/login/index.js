@@ -4,5 +4,5 @@
 */
 
 define([
-    "./controllers/login-controller"
+    "./controllers/login-controller.min"
 ], function () {});

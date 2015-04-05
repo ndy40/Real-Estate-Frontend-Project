@@ -1,12 +1,14 @@
 /*global define */
+/*jshint -W069 */
 /**
  * Default route for for pcApp module.
  */
 (function (define) {
     'use strict';
     define(["./app"], function (app) {
-        app.config(["$routeProvider", "$locationProvider", "$provide", "$httpProvider",
-            function ($routeProvider, $locationProvider, $provide, $httpProvider) {
+        app.config(["$routeProvider", "$locationProvider", "$provide",
+            "$httpProvider", function ($routeProvider, $locationProvider,
+                $provide, $httpProvider) {
                 
             $routeProvider.when("/", {
                 redirectTo : "/home"
@@ -87,10 +89,10 @@
             });
 
             $locationProvider.html5Mode(true).hashPrefix('!');
-
             $httpProvider.defaults.useXDomain = true;
             //default content type
-            $httpProvider.defaults.headers.post["Accept"] = "application/x-www-form-urlencoded";
+            $httpProvider.defaults.headers.post["Accept"] =
+                "application/x-www-form-urlencoded";
         }]);
 
         // Change Page Titles

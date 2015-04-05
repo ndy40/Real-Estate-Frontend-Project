@@ -3,17 +3,18 @@
  * pcPriceHistory Directive - Compares Property Previous Price with Property
  * Current Price & returns the percentage
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcPriceHistory", function () {
         return {
             restrict : "EA",
-            templateUrl : "./modules/property-details/directives/price-history.html",
+            templateUrl :
+                "./modules/property-details/directives/price-history.html",
             scope : {
                 priceHistory: "=",
                 propertyPrice: "="
             },
-            link : function (scope, element) {
+            link : function (scope) {
                 scope.historyDiff = "";
                 scope.status = {};
                 
@@ -25,7 +26,8 @@ define(["../module"], function (app) {
                     };
                     
                     if (scope.priceHistory.hasOwnProperty('data')) { 
-                        scope.historyDiff = scope.priceHistory - scope.propertyPrice;
+                        scope.historyDiff = scope.priceHistory -
+                            scope.propertyPrice;
                         if (scope.historyDiff > 0) {
                             scope.status.above = true;
                         } else if (scope.historyDiff < 0) {

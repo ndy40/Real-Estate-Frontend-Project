@@ -3,7 +3,7 @@
  * Custom Currency Filter. Angular Native currency filter shows decimal points
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.filter('customCurrency', [ '$filter', '$locale',
         function (filter, locale) {

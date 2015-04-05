@@ -2,7 +2,7 @@
 /**
  * pcCurrency Directive - Currency to Integer to Currency Convertor
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcCurrency", function () {
 
@@ -12,7 +12,8 @@ define(["../module"], function (app) {
             link : function (scope, element, attr, ngModel) {
                 // Add £ sign & Thousand Separator (,)
                 scope.currencify = function (num) {
-                    return "£" + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return "£" +
+                        num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 };
 
                 // Remove Thousand Separator (,)
@@ -39,7 +40,8 @@ define(["../module"], function (app) {
                 // Update View on Blur
                 element.bind('blur', function () {
                     if (ngModel.$modelValue !== undefined) {
-                        ngModel.$viewValue = scope.currencify(ngModel.$modelValue);
+                        ngModel.$viewValue =
+                            scope.currencify(ngModel.$modelValue);
                         ngModel.$render();
                     }
 

@@ -2,7 +2,7 @@
 /**
 * NavigationCtrl for handling navigation wide changes. 
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel",
         "AuthService", function ($scope, $rootScope, UserModel, AuthService) {
@@ -17,11 +17,11 @@ define(["../module"], function (app) {
             UserModel.logout();
         };
 
-        $scope.$on("loginsuccess", function (targetscope, currscope) {
+        $scope.$on("loginsuccess", function () {
             AuthService.getCurentUser($scope.modifynav);
         });
         
-        $scope.$on("favUpdated", function (targetscope, currscope) {
+        $scope.$on("favUpdated", function () {
             $rootScope.navData.favCount = UserModel.favCount;
         });
 

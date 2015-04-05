@@ -4,7 +4,7 @@
  * pages.
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
 
     app.directive("pcSearchForm", ["SearchService", "$location",

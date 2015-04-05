@@ -5,7 +5,7 @@
  * @author Ndifreke Ekott <ndy40.ekott@gmail.com>
  */
 
-define(["./module"], function (app) {
+define(["./module.min"], function (app) {
     'use strict';
     return app.factory("AuthService", ["$http", "$cookieStore", "AUTHURL",
         function ($http, $cookieStore, AUTHURL) {
@@ -16,8 +16,8 @@ define(["./module"], function (app) {
              */
             var AuthService = function () {
                 this.user = undefined;
-                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true")
-                    ? true : false;
+                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true") ?
+                    true : false;
             };
 
             /*

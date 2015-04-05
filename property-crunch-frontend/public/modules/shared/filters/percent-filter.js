@@ -1,9 +1,9 @@
-/*global define */
+/*global define, angular */
 /* 
  * Custom Percent Filter
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.filter('percent', [ '$window', function ($window) {
         return function (input, decimals, suffix) {

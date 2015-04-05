@@ -5,8 +5,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{asset('assets/css/bootstrap/bootstrap.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('assets/css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('assets/css/style.min.css')}}" rel="stylesheet">
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
         <title>nello - a smarter way to find properties</title>
         <base href="/">
@@ -23,9 +23,10 @@
     </head>
     <body>
         <div pc-loader></div>
+        
         <!-- contents go in here. -->
         <div ng-view></div>
 
-        <script src="{{asset('assets/requirejs/require.js')}}" data-main="{{asset('modules/main.js')}}"></script>
-	</body>
+        <script src="{{asset('assets/js/requirejs/require.min.js')}}" data-main="{{asset('modules/main.min.js')}}"></script>
+    </body>
 </html>

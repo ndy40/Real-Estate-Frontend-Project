@@ -2,7 +2,7 @@
 /**
  * pcToSellCalculator Directive - Buy To Sell Calculator
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcToSellCalculator", function () {
 
@@ -11,7 +11,8 @@ define(["../module"], function (app) {
             scope : {
                 purchasePrice: "="
             },
-            templateUrl : "./modules/property-details/directives/to-sell-calculator.html",
+            templateUrl :
+                "./modules/property-details/directives/to-sell-calculator.html",
             link : function (scope) {
                 // Default Values
                 scope.toSell = {
@@ -31,16 +32,26 @@ define(["../module"], function (app) {
                 };
 
                 scope.calcStampDuty = function() {
-                    if (scope.toSell.purchasePrice <= 125000){
+                    if (scope.toSell.purchasePrice <= 125000) {
                         scope.toSell.stampDuty = 0;
-                    } else if (scope.toSell.purchasePrice > 125000 && scope.toSell.purchasePrice <=250000) {
-                        scope.toSell.stampDuty = (scope.toSell.purchasePrice - 125000)*0.02;
-                    } else if (scope.toSell.purchasePrice > 250000 && scope.toSell.purchasePrice <=925000) {
-                        scope.toSell.stampDuty = ((scope.toSell.purchasePrice - 250000)*0.05)+2500;
-                    } else if (scope.toSell.purchasePrice > 925000 && scope.toSell.purchasePrice <=1500000) {
-                        scope.toSell.stampDuty = ((scope.toSell.purchasePrice - 925000)*0.1)+36250;
-                    } else if (scope.toSell.purchasePrice > 1500000){
-                        scope.toSell.stampDuty = ((scope.toSell.purchasePrice - 1500000)*0.12)+93750;
+                    } else if (scope.toSell.purchasePrice > 125000 &&
+                        scope.toSell.purchasePrice <= 250000) {
+                            scope.toSell.stampDuty =
+                                (scope.toSell.purchasePrice - 125000) * 0.02;
+                    } else if (scope.toSell.purchasePrice > 250000 &&
+                            scope.toSell.purchasePrice <= 925000) {
+                            scope.toSell.stampDuty =
+                                ((scope.toSell.purchasePrice - 250000) * 0.05) +
+                                    2500;
+                    } else if (scope.toSell.purchasePrice > 925000 &&
+                        scope.toSell.purchasePrice <= 1500000) {
+                            scope.toSell.stampDuty =
+                                ((scope.toSell.purchasePrice - 925000) * 0.1) +
+                                    36250;
+                    } else if (scope.toSell.purchasePrice > 1500000) {
+                        scope.toSell.stampDuty =
+                            ((scope.toSell.purchasePrice - 1500000) * 0.12) +
+                                93750;
                     }
                 };
 
@@ -78,8 +89,6 @@ define(["../module"], function (app) {
 
                     // Show Results & Hide Calculator
                     scope.toSellResults = true;
-                    
-                    console.log(scope.toSell);
                 };
 
                 // Hide Results & Show Calculator
@@ -87,7 +96,7 @@ define(["../module"], function (app) {
                     scope.toSellResults = false;
                 };
 
-                // Define Purchase Price After Service Returns Data in Controller
+                // Define Purchase Price After Service Returns Data in Ctrlr
                 scope.$watch('purchasePrice', function () {
                     if (scope.purchasePrice === undefined) {
                         scope.toSell.purchasePrice = 0;

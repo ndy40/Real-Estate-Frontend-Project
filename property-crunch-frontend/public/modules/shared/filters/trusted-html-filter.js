@@ -3,7 +3,7 @@
  * Trusted HTML Filter
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.filter('trusted_html', ['$sce', function($sce){
         return function(text) {

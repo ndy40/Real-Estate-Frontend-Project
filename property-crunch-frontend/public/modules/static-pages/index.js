@@ -4,8 +4,8 @@
 */
 
 define([
-    "./controllers/static-controller",
-    "./directives/testimonial-carousel",
-    "./directives/youtube",
-    "./directives/cookie-policy"
+    "./controllers/static-controller.min",
+    "./directives/testimonial-carousel.min",
+    "./directives/youtube.min",
+    "./directives/cookie-policy.min"
 ], function () {});

@@ -3,7 +3,7 @@
  * Custom Address Filter
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.filter('address', function () {
         return function (input) {

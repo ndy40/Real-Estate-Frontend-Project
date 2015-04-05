@@ -2,28 +2,30 @@
 /**
  * Application Main setup file for RequireJs
  */
-
 require.config({
     paths : {
-        "domReady"      : "../assets/requirejs-domready/domReady",
-        "modernizr"     : "../assets/js/modernizr.custom",
-        "jQuery"        : "../assets/js/jquery",
-        "twitBootstrap" : "../assets/twitter-bootstrap/bootstrap.min",
-        "owl-carousel"  : "../assets/js/owl.carousel",
-        "angular"       : "../assets/angular/angular.min",
-        "ngRoute"       : "../assets/angular-route/angular-route",
-        "ui-bootstrap"  : "../assets/ui-bootstrap/ui-bootstrap-custom-tpls-0.10.0.min",
-        'cookies'       : "../assets/angular-cookies/angular-cookies.min",
-        "localStorage"  : "../assets/angular-localStorageService/src/storageprovider",
-        "ngAnimate"     : "../assets/angular-animate/angular-animate.min",
-        "angular-tour"  : "../assets/angular-tour/angular-tour-tpls"
+        "domReady"      : "../assets/js/requirejs/lib/domReady/domReady.min",
+        "modernizr"     : "../assets/js/modernizr/modernizr.min",
+        "jQuery"        : "../assets/js/jQuery/jQuery-2.1.1.min",
+        "twitBootstrap" : "../assets/js/jQuery/libs/bootstrap.min",
+        "owl-carousel"  : "../assets/js/jQuery/libs/owlCarousel-1.3.3.min",
+        "angular"       : "../assets/js/angular/angular.min",
+        "ngRoute"       : "../assets/js/angular/lib/ng-route/angular-route.min",
+        "ui-bootstrap"  : "../assets/js/angular/lib/ng-uiBs/uiBs-tpls-0.10.min",
+        'cookies'       : "../assets/js/angular/lib/ng-cookies/ng-cookies.min",
+        "localStorage"  :"../assets/js/angular/lib/ng-localStorage/storage.min",
+        "ngAnimate"     : "../assets/js/angular/lib/ng-animate/ng-animate.min",
+        "angular-tour"  : "../assets/js/angular/lib/ng-tour/ng-tour-tpls.min"
     },
 
     shim : {
         "jQuery"        : { exports : 'jQuery'},
         "twitBootstrap" : ["jQuery"],
         "owl-carousel"  : ["jQuery"],
-        "angular" : { exports : "angular", deps : ["jQuery", "twitBootstrap", "owl-carousel"]},
+        "angular"       : { 
+                            exports : "angular",
+                            deps : ["jQuery", "twitBootstrap", "owl-carousel"]
+                        },
         "ngRoute"       : ["angular"],
         "ui-bootstrap"  : ["angular"],
         "cookies"       : ["angular"],
@@ -32,7 +34,14 @@ require.config({
         "angular-tour"  : ["angular"]
     },
 
-    deps : ["./bootstrap"],
-    priority : ["domReady", "modernizr", "jQuery", "twitBootstrap", "owl-carousel", "angular"]
+    deps : ["./bootstrap.min"],
 
+    priority : [
+        "domReady",
+        "modernizr",
+        "jQuery",
+        "twitBootstrap",
+        "owl-carousel",
+        "angular"
+    ]
 });

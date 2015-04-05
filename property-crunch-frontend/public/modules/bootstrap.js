@@ -1,4 +1,4 @@
-/*global define, document */
+/*global define */
 /**
 * Bootstrap File.
 */

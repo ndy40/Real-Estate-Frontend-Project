@@ -3,11 +3,11 @@
  * Investor Login Controller
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.controller("LoginCtrl", ["$scope", "$rootScope", "$routeParams",
-        "$location", 'AuthService',
-            function ($scope, $rootScope, $routeParams, $location, AuthService) {
+        "$location", 'AuthService', function ($scope, $rootScope, $routeParams,
+            $location, AuthService) {
         $scope.pageType = {
             login   : false,
             signup  : false

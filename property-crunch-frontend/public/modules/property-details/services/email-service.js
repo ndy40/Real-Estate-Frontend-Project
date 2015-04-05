@@ -4,10 +4,9 @@
  * Data in DB
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
-    return app.service('emailService', ['$http', 'APPSRCHURL', function ($http,
-            APPSRCHURL) {
+    return app.service('emailService', function () {
         var emailService = function () {
             this.toFriend = {
                 name            : "",
@@ -62,5 +61,5 @@ define(["../module"], function (app) {
         
         
         return new emailService();
-    }]);
+    });
 });

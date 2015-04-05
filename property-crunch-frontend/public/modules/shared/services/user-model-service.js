@@ -1,9 +1,10 @@
+/* global define */
 /* 
  * User Model Service - Shared service for storing user related data
  *  
 */
 
-define(["../module", "cookies"], function (app) {
+define(["../module.min", "cookies"], function (app) {
     'use strict';
     app.service("UserModel", ["AuthService", "$cookieStore", '$http', 'FAPI',
         function (AuthService, $cookieStore, $http, FAPI) {
@@ -29,7 +30,7 @@ define(["../module", "cookies"], function (app) {
         
         fn.prototype.saveSession = function (data) {
             $cookieStore.put("isLoggedIn", true); 
-            $cookieStore.put("fullname", data.first_name + " " + data.last_name);
+            $cookieStore.put("fullname", data.first_name + " "+ data.last_name);
             $cookieStore.put("userId", data.id);
             $cookieStore.put("favourites", data.favourites);  
             $cookieStore.put("favCount", this.favCount);           
@@ -52,7 +53,7 @@ define(["../module", "cookies"], function (app) {
 
         // Check to See if a Property is in Favourites
         fn.prototype.isFav = function (propertyId) {
-            if( this.favourites.match(new RegExp("(?:^|,)"+propertyId+"(?:,|$)"))) {
+            if(this.favourites.match(new RegExp("(?:^|,)"+propertyId+"(?:,|$)"))) {
                 return true;
             } else {
                 return false;

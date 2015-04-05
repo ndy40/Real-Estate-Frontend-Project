@@ -2,7 +2,7 @@
 /**
  * Property Controller
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
         "SearchService", "$routeParams", "$location", "emailService", 
@@ -22,7 +22,7 @@ define(["../module"], function (app) {
             avgPrice        : {    // Used for Value Comparison
                 data        : "",
                 status      : false,
-                statusMsg   : "Loading Market Difference..",   // Used to display "Loading"
+                statusMsg   : "Loading Market Difference..",
                 errorStatus : false,
                 errorMsg    : ""    // Used to display error msgs
             },
@@ -30,7 +30,7 @@ define(["../module"], function (app) {
                 data        : "",
                 diff        : "",
                 status      : false,
-                statusMsg   : "Loading Price Changes..",   // Used to display "Loading"
+                statusMsg   : "Loading Price Changes..",
                 errorStatus : false,
                 errorMsg    : ""    // Used to display error msgs
             },   
@@ -38,7 +38,7 @@ define(["../module"], function (app) {
                 list: {},
                 title       : "",
                 status      : false,
-                statusMsg   : "Loading Comparables. Please Wait..",   // Used to display "Loading"
+                statusMsg   : "Loading Comparables. Please Wait..",
                 errorStatus : false,
                 errorMsg    : ""    // Used to display error msgs
             }
@@ -85,7 +85,8 @@ define(["../module"], function (app) {
             $scope.property.details = data;
             $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
             $scope.getPriceHistroy(data.id);
-            $scope.property.comparables.title = data.rooms + " Bedroom " + data.type + " for Sale";
+            $scope.property.comparables.title = data.rooms + " Bedroom " +
+                data.type + " for Sale";
             $scope.getComparables(data.id);
             $scope.populateRqstDetailsData(data);
             $scope.populateEmailFriendData(data);
@@ -104,7 +105,8 @@ define(["../module"], function (app) {
                 })
                 .error(function () {
                     $scope.property.avgPrice.errorStatus = true;
-                    $scope.property.avgPrice.errorMsg = 'Unable to get market data';
+                    $scope.property.avgPrice.errorMsg =
+                        'Unable to get market data';
                     $scope.property.avgPrice.status = false;
                 });
         };
@@ -119,13 +121,15 @@ define(["../module"], function (app) {
                         $scope.property.priceHistory.status = true;
                     } else {
                         $scope.property.priceHistory.errorStatus = true;
-                        $scope.property.priceHistory.errorMsg = 'No price history';
+                        $scope.property.priceHistory.errorMsg =
+                            'No price history';
                         $scope.property.priceHistory.status = false;
                     }
                 })
                 .error(function () {
                     $scope.property.priceHistory.errorStatus = true;
-                    $scope.property.priceHistory.errorMsg = 'Unable to get historical data';
+                    $scope.property.priceHistory.errorMsg =
+                        'Unable to get historical data';
                     $scope.property.priceHistory.status = false;
                 });
         };
@@ -142,7 +146,8 @@ define(["../module"], function (app) {
                 })
                 .error(function () {
                     $scope.property.comparables.errorStatus = true;
-                    $scope.property.comparables.errorMsg = 'Unable to get comparables';
+                    $scope.property.comparables.errorMsg =
+                        'Unable to get comparables';
                     $scope.property.comparables.status = false;
                 });
         };
@@ -155,7 +160,8 @@ define(["../module"], function (app) {
                 name            : "",
                 email           : "",
                 friendsEmail    : "",
-                msg             : "I thought you might want to take a look at this property for sale on nello",
+                msg             : "I thought you might want to take a look at" +
+                    " this property for sale on thenello.com",
                 propertyTitle   : "",
                 propertyImg     : "",
                 propertyPrice   : ""
@@ -178,7 +184,9 @@ define(["../module"], function (app) {
             $scope.email.requestDetails.agencyName = data.marketer;
             $scope.email.requestDetails.agencyPhone = data.phone;
             $scope.email.requestDetails.propertyId = data.id;
-            $scope.email.requestDetails.msg = "Hi, I found your listing on nello. Please send me more information about " + data.address + ". Thank you.";
+            $scope.email.requestDetails.msg = "Hi, I found your listing on " +
+                "thenello.com. Please send me more information about " +
+                    data.address + ". Thank you.";
         };
         $scope.populateEmailFriendData = function(data) {
             $scope.email.toFriend.propertyTitle = data.rooms +

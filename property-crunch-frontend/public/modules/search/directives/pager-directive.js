@@ -3,7 +3,7 @@
  * pcPager Directive - Pagination for the Search Page
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
 
     app.directive("pcPager", ["SearchService", "$anchorScroll",

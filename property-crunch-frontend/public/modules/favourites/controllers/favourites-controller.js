@@ -3,7 +3,7 @@
  * Favorites Controller for the pcFavorites Module
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.controller("FavouritesCtrl", ["$scope", "$rootScope", "FavService",
         "UserModel", "$location",
@@ -80,8 +80,7 @@ define(["../module"], function (app) {
                 });
         };
 
-
-        $scope.$on("favUpdated", function (targetscope, currscope) {
+        $scope.$on("favUpdated", function () {
             if ($scope.favUpdate) {
                 $scope.favUpdate = false;
             } else {

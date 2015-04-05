@@ -3,7 +3,7 @@
  * Custom Positive Filter - Removes minus (-) sign from output
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.filter('positive', function () {
         return function (input) {

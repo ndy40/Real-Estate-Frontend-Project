@@ -4,6 +4,6 @@
 */
 
 define([
-    "./controllers/favourites-controller",
-    "./services/favourites-service"
+    "./controllers/favourites-controller.min",
+    "./services/favourites-service.min"
 ], function () {});

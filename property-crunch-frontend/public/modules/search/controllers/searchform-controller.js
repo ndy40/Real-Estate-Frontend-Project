@@ -3,7 +3,7 @@
  * Search Form Controller for the pcSearch Module
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.controller("SearchFormCtrl", ["$scope", "$rootScope", "UserModel",
          "SearchService", "$location", 
@@ -78,7 +78,8 @@ define(["../module"], function (app) {
                     if ($scope.searchObject.keywords !== undefined) {
                         // Test if No Results due to the Location Entered
                         SearchService.testLocation().success(function (data) {
-                            if (data.hasOwnProperty("data") &&  data.data.length > 0) {
+                            if (data.hasOwnProperty("data") &&
+                                data.data.length > 0) {
                                 $scope.searchObject.errorType.location = false;
                                 $scope.searchObject.errorType.filters = true;
                             } else {
@@ -155,8 +156,7 @@ define(["../module"], function (app) {
                     $location.path("/sign/in");
                 }
             };
-            
-                
+
             $scope.$on("favUpdated", function () {
                 if ($scope.favUpdate) {
                     $scope.favUpdate = false;

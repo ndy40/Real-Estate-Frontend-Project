@@ -2,7 +2,7 @@
 /**
  * pcYoutube Directive - To show custom high quality thumb
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcYoutube", ["$sce", function ($sce) {
         return {
@@ -24,16 +24,6 @@ define(["../module"], function (app) {
                     youtubeIframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                 });
                 
-//                $(".modal").click(function(e) {
-//                    if($(e.target).is('img.img-responsive')){
-//                        e.preventDefault();
-//                        return;
-//                    } else {
-//                        var outerDiv = document.getElementById("video");
-//                        var youtubeIframe = outerDiv.getElementsByTagName("iframe")[0].contentWindow;
-//                        youtubeIframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-//                    }
-//                }); 
             }
         };
     }]);

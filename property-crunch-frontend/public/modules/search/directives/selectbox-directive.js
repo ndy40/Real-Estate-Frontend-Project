@@ -3,7 +3,7 @@
  * pcSelectbox Directive - Custom Selectbox Directive - Used on "Refine your 
  * Search" Filters
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcSelectbox", function () {
 
@@ -37,7 +37,8 @@ define(["../module"], function (app) {
                 // dropdown close fix
                 // http://stackoverflow.com/questions/14574365/angularjs-dropdown-directive-hide-when-clicking-outside
                 $(document).bind('click', function(event){
-                    var isClickedElementChildOfPopup = element.find(event.target).length > 0;
+                    var isClickedElementChildOfPopup =
+                        element.find(event.target).length > 0;
 
                     if (isClickedElementChildOfPopup) {
                         return;

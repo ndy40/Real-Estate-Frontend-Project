@@ -4,16 +4,16 @@
 */
 
 define([
-    "./controllers/property-controller",
-    "./services/property-service",
-    "./services/email-service",
-    "./directives/carousel-directive",
-    "./directives/comp-date-ago-directive",
-    "./directives/comparables-directive",
-    "./directives/currency-directive",
-    "./directives/price-compare-directive",
-    "./directives/price-history-directive",
-    "./directives/percent-directive",
-    "./directives/to-let-calculator-directive",
-    "./directives/to-sell-calculator-directive",
+    "./controllers/property-controller.min",
+    "./services/property-service.min",
+    "./services/email-service.min",
+    "./directives/carousel-directive.min",
+    "./directives/comp-date-ago-directive.min",
+    "./directives/comparables-directive.min",
+    "./directives/currency-directive.min",
+    "./directives/price-compare-directive.min",
+    "./directives/price-history-directive.min",
+    "./directives/percent-directive.min",
+    "./directives/to-let-calculator-directive.min",
+    "./directives/to-sell-calculator-directive.min",
 ], function () {});

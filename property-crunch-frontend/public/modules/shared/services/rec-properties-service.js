@@ -3,7 +3,7 @@
  * A Recommended Propertiese Service used for getting Reccomended Properties
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.service('RecPropertyService', ['$http', 'APPURL',
         function ($http, APPURL) {

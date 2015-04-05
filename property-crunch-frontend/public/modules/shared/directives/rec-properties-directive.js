@@ -3,7 +3,7 @@
 /**
  * pcRecProperties - Recommeded Properties Carousel Directive
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcRecProperties", ["RecPropertyService", "LoaderService",
         function (RecPropertyService, LoaderService) {

@@ -1,7 +1,7 @@
 /**
  * pcActiveLink - Set Nav Active States Directive
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     app.directive("pcActiveLink", ["$location", function (location) {
         'use strict';
 		

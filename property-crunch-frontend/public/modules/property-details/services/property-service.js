@@ -3,7 +3,7 @@
  * A service used for getting Average Price & Comparables for a Property
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     return app.service('propertyService', ['$http', 'APPURL', function ($http,
             APPURL) {

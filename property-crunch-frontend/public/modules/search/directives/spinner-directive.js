@@ -2,7 +2,7 @@
 /**
  * pcSpinner Directive - Number Spinner Directive
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcSpinner", function () {
 

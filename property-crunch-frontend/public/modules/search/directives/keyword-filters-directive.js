@@ -3,7 +3,7 @@
  * pcKeywordFilters Directive - Refine Your Search Filters
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
 
     app.directive("pcKeywordFilters", ["SearchService", 

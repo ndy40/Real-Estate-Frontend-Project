@@ -2,13 +2,14 @@
 /**
  * pcToLetCalculator Directive - Buy To Let Calculator  
  */
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
     app.directive("pcToLetCalculator", function () {
 
         return {
             restrict : "E",
-            templateUrl : "./modules/property-details/directives/to-let-calculator.html",
+            templateUrl :
+                "./modules/property-details/directives/to-let-calculator.html",
             scope : {
                 purchasePrice: "=",
                 rentalIncome: "="
@@ -35,14 +36,24 @@ define(["../module"], function (app) {
                 scope.calcStampDuty = function() {
                     if (scope.toLet.purchasePrice <= 125000) {
                         scope.toLet.stampDuty = 0;
-                    } else if (scope.toLet.purchasePrice > 125000 && scope.toLet.purchasePrice <=250000) {
-                        scope.toLet.stampDuty = (scope.toLet.purchasePrice - 125000)*0.02;
-                    } else if (scope.toLet.purchasePrice > 250000 && scope.toLet.purchasePrice <=925000) {
-                        scope.toLet.stampDuty = ((scope.toLet.purchasePrice - 250000)*0.05)+2500;
-                    } else if (scope.toLet.purchasePrice > 925000 && scope.toLet.purchasePrice <=1500000) {
-                        scope.toLet.stampDuty = ((scope.toLet.purchasePrice - 925000)*0.1)+36250;
-                    } else if (scope.toLet.purchasePrice > 1500000){
-                        scope.toLet.stampDuty = ((scope.toLet.purchasePrice - 1500000)*0.12)+93750;
+                    } else if (scope.toLet.purchasePrice > 125000 &&
+                        scope.toLet.purchasePrice <= 250000) {
+                            scope.toLet.stampDuty =
+                                (scope.toLet.purchasePrice - 125000) * 0.02;
+                    } else if (scope.toLet.purchasePrice > 250000 &&
+                        scope.toLet.purchasePrice <= 925000) {
+                            scope.toLet.stampDuty =
+                                ((scope.toLet.purchasePrice - 250000) * 0.05) +
+                                    2500;
+                    } else if (scope.toLet.purchasePrice > 925000 &&
+                        scope.toLet.purchasePrice <= 1500000) {
+                            scope.toLet.stampDuty =
+                                ((scope.toLet.purchasePrice - 925000) * 0.1) +
+                                    36250;
+                    } else if (scope.toLet.purchasePrice > 1500000) {
+                        scope.toLet.stampDuty =
+                            ((scope.toLet.purchasePrice - 1500000) * 0.12) +
+                                93750;
                     }
                 };
 
@@ -74,8 +85,8 @@ define(["../module"], function (app) {
 
 
                     // Calculate True Rate of Return
-                    scope.toLet.yearlyROI = scope.toLet.monthlyProfitOrLoss * 12 /
-                        scope.toLet.totalPurchaseCost;
+                    scope.toLet.yearlyROI = scope.toLet.monthlyProfitOrLoss *
+                        12 / scope.toLet.totalPurchaseCost;
 
                     // Show Results
                     scope.toLetResults = true;

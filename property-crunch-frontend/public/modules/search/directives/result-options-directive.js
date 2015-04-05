@@ -3,7 +3,7 @@
  * pcResultOptions Directive - Sort By & Results Per Page Selectboxes
  */
 
-define(["../module"], function (app) {
+define(["../module.min"], function (app) {
     'use strict';
 
     app.directive("pcResultOptions", ["SearchService",
