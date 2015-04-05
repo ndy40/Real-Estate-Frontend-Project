@@ -7,7 +7,8 @@
 define(["../module.min", "cookies"], function (app) {
     'use strict';
     app.service("UserModel", ["AuthService", "$cookieStore", '$http', 'FAPI',
-        function (AuthService, $cookieStore, $http, FAPI) {
+        "FavService", function (AuthService, $cookieStore, $http, FAPI,
+            FavService) {
         
         var fn = function () {
             this.isLoggedIn = $cookieStore.get("isLoggedIn");
@@ -79,6 +80,7 @@ define(["../module.min", "cookies"], function (app) {
                 this.favourites += "," + propertyId;
                 this.incFavCount(); 
                 this.updateFavCookies();
+                FavService.clearCache();
             }
         };
         
@@ -99,6 +101,7 @@ define(["../module.min", "cookies"], function (app) {
             this.favourites = splitFav.toString();
             this.decFavCount();
             this.updateFavCookies();
+            FavService.clearCache();
         };
         
         // Get Favourites Count
