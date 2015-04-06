@@ -3,7 +3,7 @@
  * AJAX Loader Service used for showing/hiding loading gif
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.factory('LoaderService', ['$rootScope', function($rootScope) {
         var LoaderService = function () {

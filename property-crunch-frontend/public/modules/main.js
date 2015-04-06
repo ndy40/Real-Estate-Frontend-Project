@@ -34,7 +34,7 @@ require.config({
         "angular-tour"  : ["angular"]
     },
 
-    deps : ["./bootstrap.min"],
+    deps : ["./bootstrap"],
 
     priority : [
         "domReady",

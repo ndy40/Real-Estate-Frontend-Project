@@ -2,7 +2,7 @@
 /**
  * pcCookiePolicy Directive - Cookie Policy Directive
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcCookiePolicy", ["$cookieStore", function ($cookieStore) {
         return {

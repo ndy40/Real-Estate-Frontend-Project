@@ -3,7 +3,7 @@
  * pcCompDateAgo Directive - Custom Date Ago Directive for Comparable dates.
  * Converts date into days/weeks/months/years ago
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcCompDateAgo", function () {
         return {

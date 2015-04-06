@@ -5,7 +5,7 @@
 
 define([
     "angular",
-    "../shared/index.min"
+    "../shared/index"
 ], function (ng) {
     'use strict';
     return ng.module("pcLogin",  [

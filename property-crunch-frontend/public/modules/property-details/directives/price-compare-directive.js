@@ -3,7 +3,7 @@
  * pcPriceCompare Directive - Compares Avg Price with Property Price & returns
  * the percentage
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcPriceCompare", function () {
         return {

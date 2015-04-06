@@ -3,7 +3,7 @@
 /**
  * pcCarousel Directive - Property Images With Preview used on Property Details
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
 
     app.directive("pcCarousel", function () {

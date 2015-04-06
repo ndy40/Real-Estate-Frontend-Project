@@ -2,7 +2,7 @@
 /**
  * pcPercent Directive - Percent to Integer to Percent Convertor
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcPercent", function () {
         return {

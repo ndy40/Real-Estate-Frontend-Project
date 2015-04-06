@@ -2,7 +2,7 @@
 /**
 * NavigationCtrl for handling navigation wide changes. 
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel",
         "AuthService", function ($scope, $rootScope, UserModel, AuthService) {

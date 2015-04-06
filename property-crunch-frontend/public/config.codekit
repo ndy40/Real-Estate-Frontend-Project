@@ -2861,39 +2861,16 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/requirejs\/lib\/domready\/domReady.js": {
+	"\/assets\/js\/requirejs\/lib\/domReady\/domReady.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/domReady.js",
-		"outputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/domReady.min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domReady\/domReady.js",
+		"outputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domReady\/domReady.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/requirejs\/lib\/domready\/domReady.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/domReady.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/domReady.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/requirejs\/lib\/domready\/README.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/README.md",
-		"outputAbbreviatedPath": "\/assets\/js\/requirejs\/lib\/domready\/README.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/assets\/js\/requirejs\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2971,34 +2948,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/app.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/app.min.js",
-		"outputAbbreviatedPath": "\/modules\/app.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/bootstrap.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/bootstrap.js",
 		"outputAbbreviatedPath": "\/modules\/bootstrap.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/bootstrap.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/bootstrap.min.js",
-		"outputAbbreviatedPath": "\/modules\/bootstrap.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3015,34 +2970,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/favourites\/controllers\/favourites-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/favourites\/controllers\/favourites-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/favourites\/controllers\/favourites-controller.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/favourites\/index.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/favourites\/index.js",
 		"outputAbbreviatedPath": "\/modules\/favourites\/index.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/favourites\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/favourites\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/favourites\/index.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3059,34 +2992,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/favourites\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/favourites\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/favourites\/module.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/favourites\/services\/favourites-service.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/favourites\/services\/favourites-service.js",
 		"outputAbbreviatedPath": "\/modules\/favourites\/services\/favourites-service.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/favourites\/services\/favourites-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/favourites\/services\/favourites-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/favourites\/services\/favourites-service.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3112,17 +3023,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/login\/controllers\/login-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/login\/controllers\/login-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/login\/controllers\/login-controller.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/login\/index.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -3134,34 +3034,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/login\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/login\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/login\/index.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/login\/module.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/login\/module.js",
 		"outputAbbreviatedPath": "\/modules\/login\/module.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/login\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/login\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/login\/module.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3214,17 +3092,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/main.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/main.min.js",
-		"outputAbbreviatedPath": "\/modules\/main.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/controllers\/property-controller.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -3236,34 +3103,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/controllers\/property-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/controllers\/property-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/controllers\/property-controller.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/carousel-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/carousel-directive.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/carousel-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/directives\/carousel-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/carousel-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/carousel-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3289,34 +3134,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/directives\/comp-date-ago-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/comp-date-ago-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/comp-date-ago-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/comparables-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/comparables-directive.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/comparables-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/directives\/comparables-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/comparables-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/comparables-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3342,17 +3165,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/directives\/currency-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/currency-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/currency-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/percent-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -3364,34 +3176,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/directives\/percent-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/percent-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/percent-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/price-compare-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/price-compare-directive.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/price-compare-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/directives\/price-compare-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/price-compare-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/price-compare-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3417,17 +3207,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/directives\/price-history-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/price-history-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/price-history-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/price-history.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3443,17 +3222,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/to-let-calculator-directive.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/to-let-calculator-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/directives\/to-let-calculator-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/to-let-calculator-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/to-let-calculator-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3479,17 +3247,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/directives\/to-sell-calculator-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/directives\/to-sell-calculator-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/directives\/to-sell-calculator-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/directives\/to-sell-calculator.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3510,34 +3267,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/index.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/module.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/module.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/module.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/module.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3554,34 +3289,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/property-details\/services\/email-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/services\/email-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/services\/email-service.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/property-details\/services\/property-service.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/property-details\/services\/property-service.js",
 		"outputAbbreviatedPath": "\/modules\/property-details\/services\/property-service.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/property-details\/services\/property-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/property-details\/services\/property-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/property-details\/services\/property-service.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3616,34 +3329,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/routes.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/routes.min.js",
-		"outputAbbreviatedPath": "\/modules\/routes.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/controllers\/searchform-controller.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/controllers\/searchform-controller.js",
 		"outputAbbreviatedPath": "\/modules\/search\/controllers\/searchform-controller.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/controllers\/searchform-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/controllers\/searchform-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/controllers\/searchform-controller.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3660,34 +3351,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/directives\/infinite-scroll-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/infinite-scroll-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/infinite-scroll-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/directives\/keyword-filters-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/directives\/keyword-filters-directive.js",
 		"outputAbbreviatedPath": "\/modules\/search\/directives\/keyword-filters-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/directives\/keyword-filters-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/keyword-filters-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/keyword-filters-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3713,17 +3382,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/directives\/pager-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/pager-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/pager-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/directives\/pager.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3739,17 +3397,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/directives\/refine-filters-directive.js",
 		"outputAbbreviatedPath": "\/modules\/search\/directives\/refine-filters-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/directives\/refine-filters-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/refine-filters-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/refine-filters-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3775,17 +3422,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/directives\/result-options-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/result-options-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/result-options-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/directives\/result-options.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3801,17 +3437,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/directives\/searchbox-directive.js",
 		"outputAbbreviatedPath": "\/modules\/search\/directives\/searchbox-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/directives\/searchbox-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/searchbox-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/searchbox-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3837,17 +3462,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/directives\/selectbox-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/selectbox-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/selectbox-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/directives\/selectbox.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3863,17 +3477,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/directives\/spinner-directive.js",
 		"outputAbbreviatedPath": "\/modules\/search\/directives\/spinner-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/directives\/spinner-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/directives\/spinner-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/directives\/spinner-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3899,17 +3502,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/index.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/module.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -3921,34 +3513,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/search\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/module.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/search\/services\/search-service.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/search\/services\/search-service.js",
 		"outputAbbreviatedPath": "\/modules\/search\/services\/search-service.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/search\/services\/search-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/search\/services\/search-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/search\/services\/search-service.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3974,34 +3544,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/authentication\/auth-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/authentication\/auth-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/authentication\/auth-service.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/authentication\/index.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/authentication\/index.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/authentication\/index.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/authentication\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/authentication\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/authentication\/index.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4018,34 +3566,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/authentication\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/authentication\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/authentication\/module.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/controllers\/navigation-controller.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/controllers\/navigation-controller.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/controllers\/navigation-controller.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/controllers\/navigation-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/controllers\/navigation-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/controllers\/navigation-controller.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4062,34 +3588,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/directives\/add-to-fav-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/add-to-fav-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/add-to-fav-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/directives\/adj-height-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/directives\/adj-height-directive.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/directives\/adj-height-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/directives\/adj-height-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/adj-height-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/adj-height-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4106,17 +3610,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/directives\/color-code-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/color-code-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/color-code-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/directives\/date-ago-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -4128,34 +3621,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/directives\/date-ago-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/date-ago-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/date-ago-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/directives\/loader-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/directives\/loader-directive.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/directives\/loader-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/directives\/loader-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/loader-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/loader-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4181,34 +3652,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/directives\/null-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/null-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/null-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/directives\/rec-properties-directive.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/directives\/rec-properties-directive.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/directives\/rec-properties-directive.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/directives\/rec-properties-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/rec-properties-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/rec-properties-directive.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4234,34 +3683,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/directives\/shared-directive.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/directives\/shared-directive.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/directives\/shared-directive.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/filters\/address-filter.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/filters\/address-filter.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/filters\/address-filter.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/filters\/address-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/address-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/address-filter.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4278,34 +3705,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/filters\/currency-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/currency-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/currency-filter.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/filters\/percent-filter.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/filters\/percent-filter.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/filters\/percent-filter.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/filters\/percent-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/percent-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/percent-filter.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4322,34 +3727,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/filters\/positive-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/positive-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/positive-filter.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/filters\/trusted-html-filter.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/filters\/trusted-html-filter.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/filters\/trusted-html-filter.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/filters\/trusted-html-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/trusted-html-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/trusted-html-filter.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4366,34 +3749,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/filters\/walking-filter.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/filters\/walking-filter.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/filters\/walking-filter.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/index.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/index.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/index.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/index.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4410,34 +3771,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/module.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/services\/loader-service.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/services\/loader-service.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/services\/loader-service.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/services\/loader-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/services\/loader-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/services\/loader-service.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4454,34 +3793,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/shared\/services\/rec-properties-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/services\/rec-properties-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/services\/rec-properties-service.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/shared\/services\/user-model-service.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/shared\/services\/user-model-service.js",
 		"outputAbbreviatedPath": "\/modules\/shared\/services\/user-model-service.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/shared\/services\/user-model-service.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/shared\/services\/user-model-service.min.js",
-		"outputAbbreviatedPath": "\/modules\/shared\/services\/user-model-service.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4516,17 +3833,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/static-pages\/controllers\/static-controller.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/controllers\/static-controller.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/controllers\/static-controller.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/static-pages\/directives\/cookie-policy.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4542,17 +3848,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/static-pages\/directives\/cookie-policy.js",
 		"outputAbbreviatedPath": "\/modules\/static-pages\/directives\/cookie-policy.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/static-pages\/directives\/cookie-policy.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/directives\/cookie-policy.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/directives\/cookie-policy.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4578,17 +3873,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/static-pages\/directives\/testimonial-carousel.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/directives\/testimonial-carousel.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/directives\/testimonial-carousel.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/static-pages\/directives\/youtube.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4609,17 +3893,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/static-pages\/directives\/youtube.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/directives\/youtube.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/directives\/youtube.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/static-pages\/index.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -4631,34 +3904,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/modules\/static-pages\/index.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/index.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/index.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/modules\/static-pages\/module.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/modules\/static-pages\/module.js",
 		"outputAbbreviatedPath": "\/modules\/static-pages\/module.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/modules\/static-pages\/module.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/modules\/static-pages\/module.min.js",
-		"outputAbbreviatedPath": "\/modules\/static-pages\/module.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

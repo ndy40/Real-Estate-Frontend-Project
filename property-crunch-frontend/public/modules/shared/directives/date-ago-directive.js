@@ -2,7 +2,7 @@
 /**
  * pcDateAgo Directive - Converts date into days/weeks/months/years ago
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcDateAgo", function () {
         return {

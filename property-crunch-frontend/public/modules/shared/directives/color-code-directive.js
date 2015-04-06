@@ -2,7 +2,7 @@
 /**
  * pcColorCode Directive - Color Codes Positive/ Negative Values
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcColorCode", function () {
         return {

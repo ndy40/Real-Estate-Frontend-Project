@@ -4,7 +4,7 @@
  * Data in DB
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.service('emailService', function () {
         var emailService = function () {

@@ -2,7 +2,7 @@
 /**
  * testimonialCarousel Directive - Used on Home Page
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("testimonialCarousel", function () {
 

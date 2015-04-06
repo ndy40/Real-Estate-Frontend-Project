@@ -3,7 +3,7 @@
  * Custom Walking Filter - Returns Walking distance
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.filter('walking', function () {
         return function (input) {

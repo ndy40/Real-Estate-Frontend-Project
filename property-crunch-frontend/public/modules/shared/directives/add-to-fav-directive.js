@@ -3,7 +3,7 @@
  * pcAddToFav Directive - To Add Classes to Favourite Properties 
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
 
     app.directive("pcAddToFav", ["UserModel", function (UserModel) {

@@ -2,7 +2,7 @@
 /**
  * pcToSellCalculator Directive - Buy To Sell Calculator
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcToSellCalculator", function () {
 

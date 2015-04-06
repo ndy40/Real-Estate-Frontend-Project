@@ -3,7 +3,7 @@
  * infiniteScroll Directive 
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
 
     app.directive("infiniteScroll", ['$rootScope', '$window', '$timeout',

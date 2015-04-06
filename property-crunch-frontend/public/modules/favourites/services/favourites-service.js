@@ -3,7 +3,7 @@
  * A Favourites Service used to Load Favourite Property Data and Cache it
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.service('FavService', ['$http', 'API', function ($http, API) {
         

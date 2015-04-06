@@ -3,7 +3,7 @@
  * pcSelectbox Directive - Custom Selectbox Directive - Used on "Refine your 
  * Search" Filters
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcSelectbox", function () {
 

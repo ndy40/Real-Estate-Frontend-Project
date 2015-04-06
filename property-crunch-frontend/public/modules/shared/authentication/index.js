@@ -3,4 +3,4 @@
 *   Authentication Module Definition for RequireJS
 */
 
-define(["./auth-service.min"], function () {});
+define(["./auth-service"], function () {});

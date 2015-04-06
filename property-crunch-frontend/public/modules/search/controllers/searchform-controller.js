@@ -3,7 +3,7 @@
  * Search Form Controller for the pcSearch Module
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("SearchFormCtrl", ["$scope", "$rootScope", "UserModel",
          "SearchService", "$location", 

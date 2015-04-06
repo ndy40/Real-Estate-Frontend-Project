@@ -2,7 +2,7 @@
 /**
  * pcYoutube Directive - To show custom high quality thumb
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcYoutube", ["$sce", function ($sce) {
         return {

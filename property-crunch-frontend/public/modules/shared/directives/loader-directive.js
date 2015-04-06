@@ -3,7 +3,7 @@
 /**
  * pcLoader - AJAX Loader Directive
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcLoader", ['$http', '$rootScope',
             function ($http, $rootScope) {

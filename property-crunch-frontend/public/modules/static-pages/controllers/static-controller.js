@@ -2,7 +2,7 @@
 /**
  * Static Controller
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("StaticCtrl", ["$scope", "$routeParams",
         function ($scope, $routeParams) {

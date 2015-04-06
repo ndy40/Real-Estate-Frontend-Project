@@ -3,7 +3,7 @@
  * Investor Login Controller
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("LoginCtrl", ["$scope", "$rootScope", "$routeParams",
         "$location", 'AuthService', function ($scope, $rootScope, $routeParams,

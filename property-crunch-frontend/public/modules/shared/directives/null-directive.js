@@ -2,7 +2,7 @@
 /**
  * pcNull Directive - Hides if "Null" string found
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcNull", function () {
         return {

@@ -4,7 +4,7 @@
  * search results to the database.
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.service('SearchService', ['$http', 'APPSRCHURL', function ($http,
             APPSRCHURL) {

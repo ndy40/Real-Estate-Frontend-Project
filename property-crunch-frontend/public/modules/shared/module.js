@@ -7,7 +7,7 @@ define([
     "angular",
     "localStorage",
     "cookies",
-    "./authentication/index.min"
+    "./authentication/index"
 ], function (ng) {
     'use strict';
     return ng.module("pcShared",  [

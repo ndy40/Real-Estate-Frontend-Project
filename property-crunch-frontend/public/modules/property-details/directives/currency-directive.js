@@ -2,7 +2,7 @@
 /**
  * pcCurrency Directive - Currency to Integer to Currency Convertor
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcCurrency", function () {
 

@@ -3,7 +3,7 @@
  * Favorites Controller for the pcFavorites Module
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("FavouritesCtrl", ["$scope", "$rootScope", "FavService",
         "UserModel", "$location",

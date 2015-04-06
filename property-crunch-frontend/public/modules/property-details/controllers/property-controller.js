@@ -2,7 +2,7 @@
 /**
  * Property Controller
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
         "SearchService", "$routeParams", "$location", "emailService", 

@@ -3,7 +3,7 @@
  * Custom Percent Filter
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     return app.filter('percent', [ '$window', function ($window) {
         return function (input, decimals, suffix) {

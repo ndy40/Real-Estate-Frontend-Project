@@ -3,7 +3,7 @@
  * pcAdjHeight Directive - Add a minimum height on the element based on window
  */
 
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
 
     app.directive("pcAdjHeight", function () {

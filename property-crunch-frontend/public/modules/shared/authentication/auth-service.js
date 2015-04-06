@@ -5,7 +5,7 @@
  * @author Ndifreke Ekott <ndy40.ekott@gmail.com>
  */
 
-define(["./module.min"], function (app) {
+define(["./module"], function (app) {
     'use strict';
     return app.factory("AuthService", ["$http", "$cookieStore", "AUTHURL",
         function ($http, $cookieStore, AUTHURL) {

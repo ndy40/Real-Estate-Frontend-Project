@@ -2,7 +2,7 @@
 /**
  * pcComparables Directive
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcComparables", function () {
 

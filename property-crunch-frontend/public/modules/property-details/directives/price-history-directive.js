@@ -3,7 +3,7 @@
  * pcPriceHistory Directive - Compares Property Previous Price with Property
  * Current Price & returns the percentage
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcPriceHistory", function () {
         return {

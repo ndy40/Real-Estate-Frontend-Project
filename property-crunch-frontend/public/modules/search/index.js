@@ -4,14 +4,14 @@
 */
 
 define([
-    "./controllers/searchform-controller.min",
-    "./services/search-service.min",
-    "./directives/searchbox-directive.min",
-    "./directives/selectbox-directive.min",
-    "./directives/spinner-directive.min",
-    "./directives/refine-filters-directive.min",
-    "./directives/keyword-filters-directive.min",
-    "./directives/result-options-directive.min",
-    "./directives/pager-directive.min",
-    "./directives/infinite-scroll-directive.min"
+    "./controllers/searchform-controller",
+    "./services/search-service",
+    "./directives/searchbox-directive",
+    "./directives/selectbox-directive",
+    "./directives/spinner-directive",
+    "./directives/refine-filters-directive",
+    "./directives/keyword-filters-directive",
+    "./directives/result-options-directive",
+    "./directives/pager-directive",
+    "./directives/infinite-scroll-directive"
 ], function () {});

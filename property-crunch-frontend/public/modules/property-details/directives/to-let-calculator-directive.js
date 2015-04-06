@@ -2,7 +2,7 @@
 /**
  * pcToLetCalculator Directive - Buy To Let Calculator  
  */
-define(["../module.min"], function (app) {
+define(["../module"], function (app) {
     'use strict';
     app.directive("pcToLetCalculator", function () {
 

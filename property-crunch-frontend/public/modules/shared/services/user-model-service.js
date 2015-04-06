@@ -4,7 +4,7 @@
  *  
 */
 
-define(["../module.min", "cookies"], function (app) {
+define(["../module", "cookies"], function (app) {
     'use strict';
     app.service("UserModel", ["AuthService", "$cookieStore", '$http', 'FAPI',
         "FavService", function (AuthService, $cookieStore, $http, FAPI,
