@@ -1,6 +1,8 @@
 /*global define */
 /**
-*   Property Details Module Definition for RequireJS
+* Property Details Module Definition for RequireJS
+*   
+* @author Arslan Akram <arslanhawn@gmail.com>
 */
 
 define([

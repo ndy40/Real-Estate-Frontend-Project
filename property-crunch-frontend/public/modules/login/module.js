@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Investor Login Module definition
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([

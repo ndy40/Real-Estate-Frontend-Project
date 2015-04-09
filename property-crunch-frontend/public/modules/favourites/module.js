@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Favourites Module definition
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([

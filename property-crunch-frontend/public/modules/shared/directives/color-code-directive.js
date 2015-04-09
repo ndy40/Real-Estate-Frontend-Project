@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcColorCode Directive - Color Codes Positive/ Negative Values
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

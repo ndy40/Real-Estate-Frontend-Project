@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcYoutube Directive - To show custom high quality thumb
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

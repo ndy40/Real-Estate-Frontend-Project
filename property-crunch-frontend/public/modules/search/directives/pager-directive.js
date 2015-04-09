@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcPager Directive - Pagination for the Search Page
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

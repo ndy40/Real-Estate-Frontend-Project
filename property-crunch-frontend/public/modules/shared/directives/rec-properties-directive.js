@@ -2,6 +2,8 @@
 /*global $*/
 /**
  * pcRecProperties - Recommeded Properties Carousel Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

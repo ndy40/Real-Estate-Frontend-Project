@@ -2,6 +2,8 @@
 /**
  * pcSelectbox Directive - Custom Selectbox Directive - Used on "Refine your 
  * Search" Filters
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

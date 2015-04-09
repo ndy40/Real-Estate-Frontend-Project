@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcShared - Shared Module definition file
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([

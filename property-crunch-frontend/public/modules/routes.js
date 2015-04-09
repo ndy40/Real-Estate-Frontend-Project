@@ -2,10 +2,14 @@
 /*jshint -W069 */
 /**
  * Default route for for pcApp module.
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 (function (define) {
     'use strict';
-    define(["./app"], function (app) {
+    define([
+        "app"
+    ], function (app) {
         app.config(["$routeProvider", "$locationProvider", "$provide",
             "$httpProvider", function ($routeProvider, $locationProvider,
                 $provide, $httpProvider) {
@@ -48,6 +52,12 @@
                 controller  : "LoginCtrl"
             });
 
+            $routeProvider.when("/confirm-account", {
+                title : 'Please confirm Email Address - nello',
+                templateUrl : "modules/login/views/confirm-account.html",
+                controller  : "LoginCtrl"
+            });
+            
             $routeProvider.when("/register-success", {
                 title : 'Registration Successful - nello',
                 templateUrl : "modules/login/views/register-success.html",
@@ -82,12 +92,13 @@
                 title : 'Oops! Page not found - nello',
                 redirectTo : "/pages/404"
             });
-
-            $provide.decorator('$sniffer', function ($delegate) {
-                $delegate.history = false;
-                return $delegate;
-            });
-
+            
+//          // Creating troubles in minifying
+//            $provide.decorator('$sniffer', function ($delegate) {
+//                $delegate.history = false;
+//                return $delegate;
+//            });
+//
             $locationProvider.html5Mode(true).hashPrefix('!');
             $httpProvider.defaults.useXDomain = true;
             //default content type

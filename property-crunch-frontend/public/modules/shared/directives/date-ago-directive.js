@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcDateAgo Directive - Converts date into days/weeks/months/years ago
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

@@ -1,6 +1,8 @@
 /*global require */
 /**
  * Application Main setup file for RequireJs
+ *  
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 require.config({
     paths : {
@@ -13,7 +15,7 @@ require.config({
         "ngRoute"       : "../assets/js/angular/lib/ng-route/angular-route.min",
         "ui-bootstrap"  : "../assets/js/angular/lib/ng-uiBs/uiBs-tpls-0.10.min",
         'cookies'       : "../assets/js/angular/lib/ng-cookies/ng-cookies.min",
-        "localStorage"  :"../assets/js/angular/lib/ng-localStorage/storage.min",
+        "localStorage"  : "../assets/js/angular/lib/ng-localStorage/storage.min",
         "ngAnimate"     : "../assets/js/angular/lib/ng-animate/ng-animate.min",
         "angular-tour"  : "../assets/js/angular/lib/ng-tour/ng-tour-tpls.min"
     },
@@ -33,9 +35,9 @@ require.config({
         "ngAnimate"     : ["angular"],
         "angular-tour"  : ["angular"]
     },
-
-    deps : ["./bootstrap"],
-
+    
+    deps: ["infrastructure"],
+    
     priority : [
         "domReady",
         "modernizr",

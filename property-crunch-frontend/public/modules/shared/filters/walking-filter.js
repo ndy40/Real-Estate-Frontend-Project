@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * Custom Walking Filter - Returns Walking distance
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

@@ -1,0 +1,128 @@
+<!-- header template -->
+<header id="sticky-header">
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+</header>
+
+<!-- content template -->
+<div id="content-wrap"  pc-adj-height>
+    <header class="search-header">
+        <div class="search-content dark">
+            <div class="container">
+                <pc-search-form keywords="searchObject.keywords" filter="searchObject.filterData" bind-result="searchObject.properties" callback="loadPropertyTable"></pc-search-form>
+
+                <!-- Search Status Here -->
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                       <div class="searchbar-bottom">
+                            <a href="" class="visible-xs advanced-search" ng-click="advanceSearch()">Advanced Search</a>
+                            <h5 ng-show="searchObject.status" class="result_count">Showing Properties with {{searchObject.count}} result(s)</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <aside class="col-md-3" ng-class="{'hidden-xs': !advancedSearchStatus}">
+                    <div class="row">
+                        <pc-refine-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
+    <!--                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>-->
+                    </div>
+                    <pc-result-options class="visible-xs" callback="updateFilters"></pc-result-options>
+                    <button class="btn btn-sm btn-3d btn-fullwidth visible-xs" ng-click="closeAdvancedSearch()">Update Results</button>
+                </aside>
+
+                <div class="col-md-9" ng-class="{'hidden-xs': searchObject.advSearchStatus}">
+                    <pc-result-options class="hidden-xs" callback="updateFilters"></pc-result-options>
+
+                    <div class="alert alert-danger" role="alert" ng-show="!searchObject.keywords && !searchObject.status">
+                        <i class="icon-warning"></i>
+                        Please enter a location to start your search
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" ng-show="searchObject.errorType.location">
+                        <i class="icon-warning"></i>
+                        Search a New <span>area</span>. Sorry, no properties found.
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" ng-show="searchObject.errorType.filters">
+                        <i class="icon-warning"></i>
+                        Please <span>Refine Your Search</span>. Sorry, no properties found matching your criteria.
+                    </div>
+
+                    <div id="properties_list" ng-show="searchObject.status">
+                         <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy' infinite-scroll-distance='1'>
+                            <article ng-repeat="property in searchObject.properties" class="property-listing">
+                                <div class="row">
+                                    <pc-add-to-fav property-id="property.id" fav-update="favUpdate">
+                                        <div class="col-md-3 col-sm-6">
+                                            <a ng-href="/property/{{property.id}}" class="property-img">
+                                                <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+                                                <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.address | address}}">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="property-title-group">
+                                                <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
+                                                <a ng-click="addToFavourites(property.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                                <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
+                                            </div>
+                                            <p>{{property.address | address}}</p>
+                                            <div class="property-details-group">
+                                                <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
+    <!--                                            <ul class="property-tags repossessed modernising auction dtv reduced">
+                                                    <li class="irepossessed">
+                                                        <i class="icon-library" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
+                                                    </li>
+                                                    <li class="imodernising">
+                                                        <i class="icon-tools" tooltip="Need Modernising" tooltip-placement="top" title="Need Modernising"></i>
+                                                    </li>
+                                                    <li class="iauction">
+                                                        <i class="icon-auction" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
+                                                    </li>
+                                                    <li class="idtv">
+                                                        <i class="icon-users" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
+                                                    </li>
+                                                    <li class="ireduced">
+                                                        <i class="icon-chart" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
+                                                    </li>
+                                                </ul>-->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <h5 class="right-section-label">
+                                                Est. Rental Yield 
+                                                <i class="icon-help" tooltip="This shows the potential yearly income based on the rental price of similar properties in the area." tooltip-placement="top"></i>
+                                            </h5>
+                                            <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
+                                        </div>
+                                    </pc-add-to-fav>
+                                </div>
+                            </article>
+                         </div>
+                         <div class="infinite-notifications">
+                            <div ng-show='searchObject.busy && !searchObject.last'>
+                                <div class="loader">
+    <!--                                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">-->
+                                    <h6>Loading Properties..</h6>
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" ng-show='searchObject.last' role="alert">
+                                <i class="icon-warning"></i>
+                                <span>Sorry!</span> no more properties to be loaded.
+                            </div> 
+                        </div> 
+                    </div>
+
+                    <pc-pager ng-show="searchObject.status" properties="searchObject.properties" total-results="searchObject.count" callback="updateFilters" class="hidden-xs"></pc-pager>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- footer template -->
+<ng-include src="'modules/shared/views/footer.html'"></ng-include>

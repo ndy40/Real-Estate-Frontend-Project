@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcResultOptions Directive - Sort By & Results Per Page Selectboxes
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

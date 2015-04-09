@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcToLetCalculator Directive - Buy To Let Calculator  
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

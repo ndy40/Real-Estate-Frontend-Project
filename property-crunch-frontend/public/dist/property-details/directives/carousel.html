@@ -1,0 +1,22 @@
+<div class="property-img-carousel" ng-show="imagesSrc">
+    <div class="img-preview">
+        <img class="img-responsive" ng-src="{{currentImg}}" alt="">
+        <div class="carousel-nav">
+            <button class="prev"> 
+                <i class="icon-arrow-left7"></i>
+            </button>
+            <button class="next">
+                <i class="icon-uniE6F0"></i>
+            </button>
+        </div>
+    </div>
+    <div class="carousel-wrapper">
+        <div class="owl-carousel">
+            <div class="item" data-ng-repeat="images in imagesSrc" ng-class="{'active first':$first, 'last':$last}">
+                <img class="img-responsive" ng-src="{{images.image}}" alt="" ng-click="setCurrentImg(images.image)">
+                <!--Use the following to use thumbs version-->
+                <!--<img class="img-responsive" ng-src="{{images.thumb}}" large-src="{{images.image}}" alt="" ng-click="setCurrentImg(images.image)">-->
+            </div>
+        </div>
+    </div>
+</div>         

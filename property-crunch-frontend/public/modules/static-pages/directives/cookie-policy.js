@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcCookiePolicy Directive - Cookie Policy Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

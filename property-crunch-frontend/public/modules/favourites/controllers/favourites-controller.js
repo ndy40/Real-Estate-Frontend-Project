@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Favorites Controller for the pcFavorites Module
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

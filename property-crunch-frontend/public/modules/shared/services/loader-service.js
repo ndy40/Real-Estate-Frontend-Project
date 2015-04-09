@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * AJAX Loader Service used for showing/hiding loading gif
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

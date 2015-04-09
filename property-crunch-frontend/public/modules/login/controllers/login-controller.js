@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Investor Login Controller
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

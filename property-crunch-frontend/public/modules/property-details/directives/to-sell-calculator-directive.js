@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcToSellCalculator Directive - Buy To Sell Calculator
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

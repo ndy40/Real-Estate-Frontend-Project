@@ -2,6 +2,8 @@
 /*
  * A Search service used for passing in Search keywords and sending Location 
  * search results to the database.
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

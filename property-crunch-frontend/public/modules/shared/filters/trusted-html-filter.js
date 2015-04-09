@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * Trusted HTML Filter
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

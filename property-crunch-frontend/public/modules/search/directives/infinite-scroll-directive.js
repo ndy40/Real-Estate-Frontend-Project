@@ -1,6 +1,8 @@
 /*global define */
 /**
  * infiniteScroll Directive 
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

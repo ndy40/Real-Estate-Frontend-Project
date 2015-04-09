@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Search Form Controller for the pcSearch Module
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

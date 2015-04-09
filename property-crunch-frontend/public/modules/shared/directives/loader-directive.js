@@ -2,6 +2,8 @@
 /*global $*/
 /**
  * pcLoader - AJAX Loader Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

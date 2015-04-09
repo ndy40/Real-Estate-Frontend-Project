@@ -1,6 +1,8 @@
 /*global define */
 /**
  * testimonialCarousel Directive - Used on Home Page
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

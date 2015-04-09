@@ -2,6 +2,8 @@
 /**
  * pcPriceHistory Directive - Compares Property Previous Price with Property
  * Current Price & returns the percentage
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Property Details Module definition
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([

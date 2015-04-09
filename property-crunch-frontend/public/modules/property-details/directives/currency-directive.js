@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcCurrency Directive - Currency to Integer to Currency Convertor
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

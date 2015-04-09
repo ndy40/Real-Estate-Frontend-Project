@@ -1,7 +1,11 @@
 /*global define */
 /**
 * NavigationCtrl for handling navigation wide changes. 
- */
+* 
+* @author Ndifreke Ekott <ndy40.ekott@gmail.com>
+* @author Arslan Akram <arslanhawn@gmail.com>
+*/
+
 define(["../module"], function (app) {
     'use strict';
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel",

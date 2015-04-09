@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Module definition file.
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([

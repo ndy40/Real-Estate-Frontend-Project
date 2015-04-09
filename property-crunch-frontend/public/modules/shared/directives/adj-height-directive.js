@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcAdjHeight Directive - Add a minimum height on the element based on window
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

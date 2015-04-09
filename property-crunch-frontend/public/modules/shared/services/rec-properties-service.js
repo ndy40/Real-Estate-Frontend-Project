@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * A Recommended Propertiese Service used for getting Reccomended Properties
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

@@ -1,6 +1,8 @@
 /*global define */
 /*
  * A Favourites Service used to Load Favourite Property Data and Cache it
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

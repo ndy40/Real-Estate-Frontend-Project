@@ -1,0 +1,11 @@
+<ul class="pagination pagination-custom" ng-show="properties">
+    <li ng-show="first">
+        <a href="" ng-click="changePage(1)">First</a>
+    </li>
+    <li ng-repeat="page in pagesArray">
+        <a href="" ng-class="{'active':page.isActive, 'last':$last}" ng-click="changePage(page.num)">{{page.num}}</a>
+    </li>
+    <li ng-show="last" class="next">
+        <a href="" ng-click="changePage(totalPages)">Last</a>
+    </li>
+</ul>

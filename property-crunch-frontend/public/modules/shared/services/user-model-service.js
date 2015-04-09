@@ -1,6 +1,8 @@
 /* global define */
 /* 
  * User Model Service - Shared service for storing user related data
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  *  
 */
 

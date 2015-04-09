@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcPercent Directive - Percent to Integer to Percent Convertor
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

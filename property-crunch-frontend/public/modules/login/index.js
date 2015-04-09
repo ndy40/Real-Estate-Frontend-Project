@@ -1,6 +1,8 @@
 /*global define */
 /**
-*   Login index file. (RequireJS Module Definitions)
+* Login index file. (RequireJS Module Definitions)
+*   
+* @author Arslan Akram <arslanhawn@gmail.com>
 */
 
 define([

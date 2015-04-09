@@ -1,6 +1,8 @@
 /*global define */
 /**
- * Static Controller
+ * Static Pages Controller
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

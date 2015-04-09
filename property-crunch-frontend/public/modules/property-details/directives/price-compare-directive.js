@@ -2,6 +2,8 @@
 /**
  * pcPriceCompare Directive - Compares Avg Price with Property Price & returns
  * the percentage
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

@@ -2,6 +2,8 @@
 /*
  * A service used for sending Request Details & Email Friend Emails & Saving
  * Data in DB
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

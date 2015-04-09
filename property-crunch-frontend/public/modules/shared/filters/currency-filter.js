@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * Custom Currency Filter. Angular Native currency filter shows decimal points
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

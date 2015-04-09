@@ -1,0 +1,111 @@
+<!-- header template -->
+<header id="sticky-header" ng-class="{'cookie-alert-on': cookieAlertStatus}">
+    <pc-cookie-policy alert-status="cookieAlertStatus"></pc-cookie-policy>
+    <ng-include src="'../modules/shared/views/navigation-partial.html'"></ng-include>
+</header>
+
+<!-- static template --> 
+<div id="content-wrap" ng-class="{'cookie-on': cookieAlertStatus}">
+    <div class="home-banner">
+        <div class="jumbotron dark">
+            <div class="container">
+                <h1>Invest in Property like a <span>Pro</span></h1>
+                <p>Find investment properties in your area</p>
+                <!-- Search form here --> 
+                  <pc-search-form keywords="keywords" redirect="/search"></pc-search-form>
+                <!-- /input-group --><!-- end of search form -->
+            </div>
+        </div>
+    </div>
+    <section class="large-section">
+        <div class="container">
+            <hgroup class="text-center">
+                <h2>Why Use <span>nello</span>? </h2>
+                <h4>nello is a smarter way to find property deals that are great for investment.</h4>
+            </hgroup>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-5 text-center">
+                        <img class="img-responsive responsive-devices" alt="Responsive Devices" src="assets/images/responsive_devices.jpg">
+                        <h4>It works across all devices</h4>
+                    </div>
+                    <div class="col-md-7 featured-info">
+                        <article class="media">
+                            <div class="pull-left">
+                                <div class="featured-icons icon-clock"></div>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Save Time</h3>
+                                <p>Spend less time researching and more time investing. With nello, you can quickly find below market value deals.</p>
+                            </div>
+                        </article>
+
+                        <article class="media">
+                            <div class="pull-left">
+                                <div class="featured-icons icon-map"></div>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Find an area to Buy In</h3>
+                                <p>nello helps you discover what areas are investment gold mine. You are presented with a snapshot of the rental yield each property can potentially generate.</p>
+                            </div>
+                        </article>
+
+                        <article class="media">
+                            <div class="pull-left">
+                                <div class="featured-icons icon-thumbsup"></div>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Make the Right Offer</h3>
+                                <p>You can use our calculator to find out how much profit you will make from a purchase. It will also tell you the best offer price to present to the Estate agent.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="large-section testimonials">
+        <div class="container">
+            <h2 class="text-center">97% of Property Buyers surveyed recommend <span>nello</span></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote>An excellent tool for people new to property investment, it takes away some of the frustration of finding a viable investment</blockquote>
+                    <div class="client-info-wrap">
+                        <div class="client-img-overlay">
+                            <img class="img-circle" src="assets/images/kate_poole.jpg" alt="Kate Poole">
+                        </div>
+                        <div class="client-details">
+                            <h3>Kate Poole</h3>
+                            <h5>Property Investor</h5>
+                            <h5>Cheshire</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <blockquote>The site provides a great opportunity to ​connect with​ serious investors who are financially ready and can move quickly when the opportunity arises.</blockquote>
+                    <div class="client-info-wrap">
+                        <div class="client-img-overlay">
+                            <img class="img-circle" src="assets/images/manal-shaker.jpg" alt="Manal Shaker">
+                        </div>
+                        <div class="client-details">
+                            <h3>Manal Shaker</h3>
+                            <h5>Estate Agent</h5>
+                            <h5>Manolia Homes</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="large-section">
+        <div class="container">
+            <h2 class="text-center">Recommended <span>Properties</span></h2>
+            <pc-rec-properties properties-src="recProperties.list" callback="removeLoader"></pc-rec-properties>
+        </div>
+    </section>
+</div>
+
+<!-- footer template -->
+<ng-include src="'modules/shared/views/footer.html'"></ng-include>

@@ -1,6 +1,8 @@
 /*global define */
 /**
-*   Shared Module Definition for RequireJS
+* Shared Module Definition for RequireJS
+* 
+* @author Arslan Akram <arslanhawn@gmail.com>
 */
 
 define([

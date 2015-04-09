@@ -1,6 +1,8 @@
 /*global define */
 /*
  * A service used for getting Average Price & Comparables for a Property
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

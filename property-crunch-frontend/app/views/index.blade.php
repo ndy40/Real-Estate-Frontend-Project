@@ -27,6 +27,6 @@
         <!-- contents go in here. -->
         <div ng-view></div>
 
-        <script src="{{asset('assets/js/requirejs/require.min.js')}}" data-main="{{asset('modules/main.js')}}"></script>
+        <script src="{{asset('assets/js/requirejs/require.js')}}" data-main="{{asset('dist/main.js')}}"></script>
     </body>
 </html>

@@ -1,0 +1,29 @@
+<div class="panel panel-2">
+    <div class="panel-heading">
+        <h5>Refine your Search</h5>
+    </div>
+    <div class="panel-body refine-filters">
+        <div class="selectbox selectbox-sm filter-row">
+            <h5 class="selectbox-label">Min Price:</h5>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentMinPrice" callback="setCurrentMinPrice" options="filters.minPriceList"></pc-selectbox>
+        </div>
+        <div class="selectbox selectbox-sm filter-row">
+            <h5 class="selectbox-label">Max Price:</h5>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentMaxPrice" callback="setCurrentMaxPrice" options="filters.maxPriceList"></pc-selectbox>
+        </div>
+        <div class="selectbox selectbox-sm filter-row">
+            <h5 class="selectbox-label">Type:</h5>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentType" callback="setCurrentType" options="filters.types"></pc-selectbox>
+
+        </div>
+        <div class="selectbox selectbox-sm filter-row">
+            <h5 class="selectbox-label">Min Yield:</h5>
+            <pc-selectbox defaults="{option: 'All', value : -1}" option-selected="currentYield" callback="setCurrentYield" options="filters.yieldList"></pc-selectbox>
+        </div>
+        <div class="filter-row spinner-row">
+            <h5 class="spinner-label">Min Beds:</h5>
+            <pc-spinner option-selected="currentRooms" callback="setCurrentRooms"></pc-spinner>
+        </div>
+        <button class="btn btn-sm btn-3d btn-fullwidth hidden-xs" ng-click="callback()">Update Results</button>
+    </div>
+</div>

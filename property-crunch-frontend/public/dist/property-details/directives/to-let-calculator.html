@@ -1,0 +1,108 @@
+<form ng-show="!toLetResults">
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-7">
+            Purchase Price:
+            <i class="icon-help" tooltip="How much are you willing to pay?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toLet.purchasePrice" placeholder="£125,000" pc-currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-7">
+            Mortgage LTV:
+            <i class="icon-help" tooltip="The amount you're borrowing from the bank. Calculated as a % of purchase price." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toLet.mortgageLtv" placeholder="e.g.75%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-7">
+            Mortgage Rate:
+            <i class="icon-help" tooltip="How much interest is the bank charging for the amount you are borrowing?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toLet.mortgageRate" placeholder="e.g. 4.5%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-8">
+            Est. Rental Income:
+            <i class="icon-help" tooltip="The rental income from the similar properties in the area." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-4">
+            <input class="form-control" ng-model="toLet.estRentalIncome" placeholder="e.g. £850" pc-currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-8">
+            Management Cost:
+            <i class="icon-help" tooltip="A % of rental income paid to letting agent for managing the property." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-4">
+            <input class="form-control" ng-model="toLet.managementCost" placeholder="e.g. 5%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-8">
+            Maintenance Cost:
+            <i class="icon-help" tooltip="It is advisable to set aside 5% of monthly rental income for property maintenance." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-4">
+            <input class="form-control" ng-model="toLet.maintenanceCost" placeholder="e.g. 5%" pc-percent>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-7">
+            Refurbishment:
+            <i class="icon-help" tooltip="How much are you going to spend to redevelop the property?" tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toLet.refurbishment" placeholder="e.g. £15,000" pc-currency>
+        </div>
+    </div>
+    <div class="form-group form-field-row">
+        <label class="control-label col-sm-6 col-xs-7">
+            Other Costs:
+            <i class="icon-help" tooltip="Use for legal costs, survey costs, etc." tooltip-placement="top"></i>
+        </label>
+        <div class="input-group col-sm-6 col-xs-5">
+            <input class="form-control" ng-model="toLet.otherCosts" placeholder="e.g. £15,000" pc-currency>
+        </div>
+    </div>
+    <button class="btn btn-lg btn-3d calculate" ng-click="calculateToLetResults()">Calculate</button>
+</form>
+
+<div class="results" ng-show="toLetResults">
+    <h4>Results:</h4>
+    <div class="form-field-row">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">
+            Monthly Mortgage:
+            <i class="icon-help" tooltip="The amount you pay the bank on a monthly basis for the mortgage loan" tooltip-placement="right"></i>
+        </h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toLet.monthlyMortgage">{{toLet.monthlyMortgage | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">Deposit Needed:</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toLet.depositNeeded">{{toLet.depositNeeded | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">Stamp Duty</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span>{{toLet.stampDuty | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row" pc-color-code input-src="toLet.monthlyProfitOrLoss">
+        <h6 class="col-xs-7 col-md-8 col-lg-7 plus">Monthly Profit:</h6>
+        <h6 class="col-xs-7 col-md-8 col-lg-7 minus">Monthly Loss:</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toLet.monthlyProfitOrLoss">{{toLet.monthlyProfitOrLoss | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">Total Purchase Cost:</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span>{{toLet.totalPurchaseCost | customCurrency: "£"}}</span></h5>
+    </div>
+    <div class="form-field-row">
+        <h6 class="col-xs-7 col-md-8 col-lg-7">Yearly Return on Investment:</h6>
+        <h5 class="col-xs-5 col-md-4 col-lg-5"><span pc-color-code input-src="toLet.yearlyROI">{{toLet.yearlyROI | percent}}</span></h5>
+    </div>
+    <button class="btn btn-lg btn-3d calculate" ng-click="reCalculateToLetResults()">Re-calculate</button>
+</div>

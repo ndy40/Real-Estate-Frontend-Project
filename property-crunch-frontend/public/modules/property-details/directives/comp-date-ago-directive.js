@@ -2,6 +2,8 @@
 /**
  * pcCompDateAgo Directive - Custom Date Ago Directive for Comparable dates.
  * Converts date into days/weeks/months/years ago
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

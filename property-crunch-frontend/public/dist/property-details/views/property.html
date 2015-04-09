@@ -1,0 +1,306 @@
+<!-- header template -->
+<header id="sticky-header">
+    <ng-include src="'modules/shared/views/navigation-partial.html'"></ng-include>
+</header>
+
+<!-- Main Template -->
+<!-- Tour Directive -->
+<div id="content-wrap" pc-adj-height tour step="currentStep">
+    <header class="search-header">    
+        <div class="search-content dark">
+            <div class="container">
+                <pc-search-form keywords="keywords" redirect="/search" back="true"></pc-search-form>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content" ng-show="!property.status && property.errorStatus">
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                <i class="icon-warning"></i>
+                {{property.errorMsg}}
+            </div>
+        </div>
+    </div>  
+
+    <div class="main-content" ng-show="!property.status && !property.errorStatus">
+        <div class="container">
+            <h5 class="text-center">{{property.statusMsg}}</h5>
+        </div>
+    </div>  
+
+    <div class="property-details-main" ng-show="property.status">
+        <section class="main-content">
+            <article class="property-details">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7">
+                            <div class="left-details">
+                                <div class="property-heading">
+                                    <hgroup class="left-section">
+                                        <h3 class="property-title">{{property.details.rooms}} Bedroom {{property.details.type}} for Sale</h3>
+                                        <h5 class="property-address">{{property.details.address | address}}</h5>
+                                    </hgroup>
+                                    <hgroup class="right-section">
+                                        <h3 class="property-price">
+                                            <span>{{property.details.price | customCurrency: "£"}}</span>
+                                            <i class="icon-tag"></i>
+                                        </h3>
+                                        <h6 class="label label-primary property-date">
+                                            First Listed:
+                                            <span pc-date-ago date-src="property.details.created_at"></span>
+                                        </h6>
+                                    </hgroup>
+                                </div>
+                                <div class="panel panel-outline panel-no-body property-links">
+                                    <div class="panel-heading">
+                                        <pc-add-to-fav property-id="property.details.id" fav-update="favUpdate">
+                                            <ul class="no-bullets horizontal-list">
+                                                <li class="add-to-favourites">
+                                                    <a ng-click="addToFavourites(property.details.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                                    <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
+                                                </li>
+                                                <li  class="email-friend last">
+                                                    <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
+                                                </li>
+                                            </ul> 
+                                        </pc-add-to-fav>
+                                    </div>
+                                </div>
+                                <pc-carousel images-src="property.details.images"></pc-carousel>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-5">
+                            <div class="right-details">
+                                <div class="panel panel-outline-blue panel-no-body value-comparison" 
+                                    tourtip="These figures are based on comparing this property to similar properties in the same location." 
+                                    tt-heading="Check out our property data center"
+                                    tt-icon="icon-graph"
+                                    tourtip-step="0" 
+                                    tourtip-offset="0" 
+                                    tourtip-placement="top" 
+                                    tourtip-prev-label="0"
+                                    tourtip-next-label="Next"
+                                    tt-nav-label="one"
+                                    tt-nav-items="abc"
+                                    tt-active="false">
+                                    <div class="panel-heading">
+                                        <div class="split-half value-com">
+                                            <div class="left">
+                                                <div ng-show="property.avgPrice.status" pc-price-compare avg-price="property.avgPrice.data" property-price="property.details.price"></div>
+                                                <h6 ng-show="!property.avgPrice.status && property.avgPrice.errorStatus">{{property.avgPrice.errorMsg}}</h6>
+                                                <h6 ng-show="!property.avgPrice.status && !property.avgPrice.errorStatus">{{property.avgPrice.statusMsg}}</h6>
+                                            </div>
+                                            <div class="right">
+                                                <div ng-show="property.priceHistory.status" pc-price-history price-history="property.priceHistory.data" property-price="property.details.price"></div>
+                                                <h6 ng-show="!property.priceHistory.status && property.priceHistory.errorStatus">{{property.priceHistory.errorMsg}}</h6>
+                                                <h6 ng-show="!property.priceHistory.status && !property.priceHistory.errorStatus">{{property.priceHistory.statusMsg}}</h6>
+                                            </div>
+                                        </div>    
+                                        <div class="split-half">
+                                            <h6 class="left"><b>{{property.details.yield}}</b> <span>%</span> Gross Rental Yield</h6>
+                                            <h6 class="right"><b>{{property.details.yield * property.details.price /1200 | customCurrency: "£"}}</b> Rental Income</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div tourtip="Use the calculator to quickly find out if this property is a good investment." 
+                                    tt-heading="Find out if this is a profitable investment"
+                                    tt-icon="icon-statistics"
+                                    tourtip-step="1" 
+                                    tourtip-offset="0" 
+                                    tourtip-placement="left" 
+                                    tourtip-prev-label="Previous"
+                                    tourtip-next-label="Next"
+                                    tt-nav-label="two"
+                                    tt-nav-items="abc">
+                                    <tabset class="profit-calculator">
+                                        <tab heading="Buy to Let">
+                                            <pc-to-let-calculator purchase-price="property.details.price" rental-income="property.details.yield"></pc-to-let-calculator>
+                                        </tab>
+
+                                        <tab heading="Buy to Sell">
+                                            <pc-to-sell-calculator purchase-price="property.details.price"></pc-to-sell-calculator>
+                                        </tab>
+                                    </tabset>
+                                </div>
+
+                            </div>
+                        </div>                  
+                    </div>
+
+                    <div ng-show="property.details.description" class="panel panel-primary" pc-null input-src="property.details.description">
+                        <div class="panel-heading">
+                            <h5>Additional Information:</h5>
+                        </div>
+                        <div class="panel-body" ng-bind-html="property.details.description | trusted_html"></div>
+                    </div>
+                </div>
+            </article>    
+        </section>
+
+        <aside class="cta-section request-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Want to Invest in this <span>Property?</span></h2>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-lg btn-3d btn-fullwidth" data-toggle="modal" data-target="#requestdetails">Request Details</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="main-content">
+             <div class="container">         
+                <div class="panel panel-primary panel-no-body"
+                    tourtip="These are recently sold properties in close proximity to the advertised property. " 
+                    tt-heading="Recently Sold Properties"
+                    tt-icon="icon-history"
+                    tourtip-step="2" 
+                    tourtip-offset="0" 
+                    tourtip-placement="top" 
+                    tourtip-prev-label="Previous"
+                    tourtip-next-label="Done"
+                    tt-nav-label="three"
+                    tt-nav-items="abc"
+                    tt-last="true">
+                    <div class="panel-heading">
+                        <h5>Comparables (Recently Sold Nearby)</h5>
+                    </div>
+                </div>
+                <h5 class="text-center" ng-show="!property.comparables.status && property.comparables.errorStatus">{{property.comparables.errorMsg}}</h5>
+                <h5 class="text-center" ng-show="!property.comparables.status && !property.comparables.errorStatus">{{property.comparables.statusMsg}}</h5>
+                <pc-comparables ng-show="property.comparables.status" property-src="property.comparables.list" compare-title="property.comparables.title" avg-price="property.avgPrice.data"></pc-comparables>
+             </div>   
+            <br />
+            <br />
+
+            <div class="other-properties">
+                <div class="container">
+                    <div class="panel panel-primary panel-no-body">
+                        <div class="panel-heading">
+                            <h5>Other Properties You Might Like:</h5>
+                        </div>
+                    </div>
+                    <pc-rec-properties properties-src="recProperties.list"></pc-rec-properties>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<!-- Email Friend Modal -->
+<div class="modal fade request-details-modal" id="emailFriend" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="icon-cross icon18-cross"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 email-friend-img">
+                        <img ng-show="!property.details.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+                        <img ng-show="property.details.images[0].image" class="img-responsive" ng-src="{{property.details.images[0].image}}" alt="{{property.details.address | address}}">
+                    </div>
+                    <div class="col-md-8 email-friend-title">
+                        <h5>Email a friend about the {{property.details.rooms}} bed property for Sale at {{property.details.address | address}}</h5>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-user"></i></div>
+                            <input ng-model="email.toFriend.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input ng-model="email.toFriend.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input ng-model="email.toFriend.friendsEmail" type="text" class="form-control form-control-icon" placeholder="Your Friend's Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="input-group">
+                            <label class="control-label">Multiple receipients?
+                                <i title="Please seperate email addresses by a (,) comma, e.g. friend1@email.com, friend2@email.com" tooltip-placement="top" tooltip="Please seperate email addresses by a (,) comma, e.g. friend1@email.com, friend2@email.com ." class="icon-help ng-scope"></i>
+                            </label>
+                        </div> 
+                    </div>        
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea ng-model="email.toFriend.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                        </div>    
+                    </div>
+                    <div class="terms">
+                        <h6>Note: Your friends will not receive any other emails unless they register on nello.</h6>
+                    </div>
+                    <button ng-click="emailFriend()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Send Email</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Request Details Modal -->
+<div class="modal fade request-details-modal" id="requestdetails" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="icon-cross icon18-cross"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Learn more about this property</h4>
+                <div class="agency-info">
+                    <a href="#"><i class="icon-office"></i>{{property.details.marketer}}</a>
+                    <h6><i class="icon-phone"></i>{{property.details.phone}}</h6>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-user"></i></div>
+                            <input ng-model="email.requestDetails.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mail"></i></div>
+                            <input ng-model="email.requestDetails.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="icon-container"><i class="icon-mobile"></i></div>
+                            <input ng-model="email.requestDetails.phone" type="text" class="form-control form-control-icon" placeholder="Your Phone: " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea ng-model="email.requestDetails.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                        </div>    
+                    </div>
+                    <div class="terms">
+                        <h6>By sending you accept our <a ng-href="/pages/terms_of_use">Terms of Service</a> and <a ng-href="/pages/privacy_policy">Privacy Policy</a>.</h6>
+                    </div>
+                    <button ng-click="emailRequestDetails()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Request Information</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>          
+                   
+<!-- footer template -->
+<ng-include src="'modules/shared/views/footer.html'"  ng-show="property.status"></ng-include>
+
