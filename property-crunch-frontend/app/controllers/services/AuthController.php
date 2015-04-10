@@ -83,19 +83,27 @@ class AuthController extends BaseController {
             unset($data["activate"]);
 
             $data["activated"] = FALSE;
-            $activation_code = $this->accountLogic->randomValue();
-            $data["activation_code"] = $activation_code;
-
             $credentials = $data;
-            $output = $this->accountLogic->registerUser($credentials, $group, $activate);
-            try {
-                // Add logic for Sending registration Email.
-                Mail::send('emails.account.welcome', $data, function($message) use ($data) {
-                            $message->to($data["email"], $data["first_name"] . " " . $data["last_name"])
-                                    ->subject('Welcome to nello');
-                        });
-            } catch (\Exception $ex) {
-                Log::error($ex->getMessage());
+            $userObj = $this->accountLogic->registerUser($credentials, $group, $activate);
+            
+            $output = array();
+            if (count($userObj) > 0) {
+                $activation_code = $this->accountLogic->randomValue();
+                $data["activation_code"] = $activation_code;
+                $userObj->activation_code = $activation_code;
+                $userObj->save();
+                unset($data["password"]);
+                unset($data["password_confirmation"]);
+                $output = array_merge($data, array('id' => $userObj->id));
+                try {
+                    // Add logic for Sending registration Email.
+                    Mail::send('emails.account.welcome', $data, function($message) use ($data) {
+                                $message->to($data["email"], $data["first_name"] . " " . $data["last_name"])
+                                        ->subject('Welcome to nello');
+                            });
+                } catch (\Exception $ex) {
+                    Log::error($ex->getMessage());
+                }
             }
 
             return Response::json($output, 200);

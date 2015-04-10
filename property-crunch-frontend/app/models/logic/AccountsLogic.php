@@ -55,11 +55,6 @@ class AccountsLogic extends BusinessLogicAbstract {
         unset($credentials["password_confirmation"]);
 
         $success = $this->userRepository->create($credentials, $group, $activate);
-        die($success);
-        if ($success) {
-            return true;
-        }
-
         return $success;
     }
 

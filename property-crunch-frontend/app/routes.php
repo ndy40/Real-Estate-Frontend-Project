@@ -22,6 +22,4 @@ App::missing(function($exception) {
 Route::group(array('prefix' => '/api'), function() {
             Route::controller("auth", "controllers\\services\\AuthController");
             Route::controller("property", "controllers\\services\\PropertyController");
-
-            Route::any('confirmaccount/{activation_code}', "controllers\services\AuthController@postConfirmAccount")->where('activation_code', '[a-zA-Z0-9=]+');
         });
