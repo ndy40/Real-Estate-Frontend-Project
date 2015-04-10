@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: ndy40
@@ -8,14 +9,13 @@
 
 namespace models\logic;
 
-
 use models\abstracts\BusinessLogicAbstract;
 use models\exceptions\ValidationException;
 use models\interfaces\BaseRepositoryInterface;
 use models\utility\ValidationRules;
 
-class AccountsLogic extends BusinessLogicAbstract
-{
+class AccountsLogic extends BusinessLogicAbstract {
+
     /**
      * @var BaseRepositoryInterface
      */
@@ -24,8 +24,7 @@ class AccountsLogic extends BusinessLogicAbstract
     /**
      * @param BaseRepositoryInterface $repo
      */
-    public function __construct(BaseRepositoryInterface $repo)
-    {
+    public function __construct(BaseRepositoryInterface $repo) {
         if (!($repo instanceof BaseRepositoryInterface)) {
             throw new \Exception("Invalid instance of BaseRepositoryInterface passed as parameter.");
         }
@@ -42,10 +41,9 @@ class AccountsLogic extends BusinessLogicAbstract
      * @return mixed - Returns false if something goes wrong or an instance of User class.
      * @throws \models\exceptions\ValidationException
      */
-    public function registerUser($credentials, $group = 'basic', $activate = true)
-    {
+    public function registerUser($credentials, $group = 'basic', $activate = true) {
         $valid = ValidationRules::validate($credentials, ValidationRules::$VALIDATE_USER);
-        
+
         if ($valid !== ValidationRules::$VALIDATION_PASS) {
             $messages = array();
             foreach ($valid->all() as $message) {
@@ -53,7 +51,7 @@ class AccountsLogic extends BusinessLogicAbstract
             }
             throw new ValidationException(implode(",", $messages));
         }
-        
+
         unset($credentials["password_confirmation"]);
 
         $success = $this->userRepository->create($credentials, $group, $activate);
@@ -64,19 +62,16 @@ class AccountsLogic extends BusinessLogicAbstract
 
         return $success;
     }
-    
-    public function login($email, $password, $remember)
-    {
+
+    public function login($email, $password, $remember) {
         return $this->userRepository->login($email, $password, $remember);
     }
-    
-    public function currentUser()
-    {
+
+    public function currentUser() {
         return $this->userRepository->currentUser();
     }
-    
-    public function logout()
-    {
+
+    public function logout() {
         $this->userRepository->logout();
         $currentUser = $this->currentUser();
         if ($currentUser === null) {
@@ -85,4 +80,21 @@ class AccountsLogic extends BusinessLogicAbstract
             throw new Exception("Failed to logout");
         }
     }
-} 
+
+    /**
+     * randomValue method
+     * This action is used for create a radom token which is used in email verification for signup
+     * 
+     * @return reset the profile details
+     * 
+     */
+    protected function randomValue() {
+        return $randstring = substr(md5(uniqid() . rand()), 0, 30);
+    }
+
+    public function checkUserViaCode($activation_code) {
+        return $this->userRepository->checkUserViaCode($activation_code);
+    }
+
+}
+
