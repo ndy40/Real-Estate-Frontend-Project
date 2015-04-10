@@ -46,7 +46,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="center" style="font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;line-height:22px;color:#666666">
-                                                            Hi {{first_name}} {{last_name}},
+                                                            Hi {{$first_name}} {{$last_name}},
                                                         </td>
                                                     </tr>
                                                     <tr>

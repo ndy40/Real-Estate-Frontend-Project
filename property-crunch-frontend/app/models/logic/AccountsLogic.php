@@ -88,7 +88,7 @@ class AccountsLogic extends BusinessLogicAbstract {
      * @return reset the profile details
      * 
      */
-    protected function randomValue() {
+    public function randomValue() {
         return $randstring = substr(md5(uniqid() . rand()), 0, 30);
     }
 
