@@ -18,6 +18,7 @@
                 "app/models",
                 "app/models/abstracts",
                 "app/models/entities",
+                "app/models/events",
                 "app/models/logic",
                 "app/models/utility",
                 "app/models/repositories",
