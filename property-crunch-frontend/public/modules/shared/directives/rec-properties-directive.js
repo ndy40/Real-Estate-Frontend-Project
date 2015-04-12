@@ -7,61 +7,15 @@
  */
 define(["../module"], function (app) {
     'use strict';
-    app.directive("pcRecProperties", ["RecPropertyService", "LoaderService",
-        function (RecPropertyService, LoaderService) {
+    app.directive("pcRecProperties", ["RecPropertyService", "$timeout",
+        function (RecPropertyService, $timeout) {
 
             return {
                 restrict : "E",
                 templateUrl : "./modules/shared/directives/rec-properties.html",
-                scope : {
-                    callback: "="
-                },
                 link : function (scope) {
-
                     scope.recProperties = {};
                     scope.swipeAlert = true;
-
-                    /**
-                    * Get Reccomended Property Data from Service
-                    */
-                    scope.getRecProperties = function () {
-//                        if (RecPropertyService.getCache().hasOwnProperty("data")) {
-//                            scope.loadRecProperties(RecPropertyService.getCache());
-//                        } else {
-                            RecPropertyService.getRecProperties()
-                                .success(scope.loadRecProperties);
-//                        }
-                    };
-
-                    /**
-                    * Loads data onto the loadRecProperties
-                    */
-                    scope.loadRecProperties = function (data) {
-                        if (data.data.length > 0) {
-                            scope.recProperties.status = true;
-                            scope.recProperties.list = data.data;
-                            scope.recProperties.count = data.count;
-                            RecPropertyService.cacheResults(data);
-                        } else {
-                            scope.recProperties.status = false;
-                        }
-                    };
-                    
-                    /**
-                    * Turns of Swipe Alert
-                    */
-                    scope.swipeAlertOff = function() {
-                        var car = $(".recommended-carousel");
-                        car.on('click', function () {
-                            scope.swipeAlert = false;
-                        });
-                    };
-                    
-                    /**
-                    *  Init Get Reccomended Properties
-                    */
-                    scope.getRecProperties();
-                    scope.swipeAlertOff();
                     
                     /**
                     *  Set up Carousel
@@ -92,12 +46,66 @@ define(["../module"], function (app) {
                     };
 
                     /**
+                    * Turns off Swipe Alert
+                    */
+                    scope.swipeAlertOff = function () {
+                        var car = $(".recommended-carousel");
+                        car.on('click', function () {
+                            scope.swipeAlert = false;
+                        });
+                    };
+                    
+                    /**
+                    * Loads data from the Server
+                    */
+                    scope.loadRecProperties = function (data) {
+                        if (data.data.length > 0) {
+                            scope.recProperties.status = true;
+                            scope.recProperties.list = data.data;
+                            RecPropertyService.cacheResults(data);
+                        } else {
+                            scope.recProperties.status = false;
+                        }
+                    };
+                    
+                    /**
+                    * Loads data from Cache
+                    */
+                    scope.loadCache = function () {
+                        scope.recProperties.status = true;
+                        // Letting the Current $digest finish before making
+                        // changes and applying to the $scope
+                        $timeout(function() {
+                            scope.recProperties.list = RecPropertyService.results.data;
+                            scope.$apply();
+                        }, 0);
+                    };
+
+                    /**
+                    * Get Reccomended Property Data from Service
+                    */
+                    scope.getRecProperties = function () {
+                        if (RecPropertyService.getCache().hasOwnProperty("data")) {
+                            scope.loadCache();
+                        } else {
+                            RecPropertyService.getRecProperties()
+                                .success(scope.loadRecProperties);
+                        }
+                    };
+
+                    /**
+                    *  Init Get Reccomended Properties
+                    */
+                    scope.getRecProperties();
+                    scope.swipeAlertOff();
+                    
+                    
+                    /**
                     *  Init Carousel once Data has been loaded from the Service
                     */
                     scope.$watch('recProperties.list', function () {
                         if (scope.recProperties.list !== undefined) {
                             scope.initCarousel();
-                            LoaderService.hideLoader();
                         }
                     });
                 }

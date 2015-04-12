@@ -42,15 +42,18 @@ define(["../module"], function (app) {
              * $scope.searchObject.status
              */
             $scope.getProperties = function () {
-                // Load Cache
-                if (SearchService.results.hasOwnProperty("data")) {
-                    $scope.searchObject.keywords = SearchService.getKeywords();
-                    $scope.loadPropertyTable(SearchService.getCache());
-                } else { // No Cache
-                    // Setting Location Keyword in Service & Loading Data
-                    SearchService.setKeyword($scope.searchObject.keywords);
-                    SearchService.getResults()
-                        .success($scope.loadPropertyTable);
+                // Only run if keyword is defined in search form
+                if ($scope.searchObject.keywords !== undefined) {
+                    // Load Cache
+                    if (SearchService.results.hasOwnProperty("data")) {
+                        $scope.searchObject.keywords = SearchService.getKeywords();
+                        $scope.loadPropertyTable(SearchService.getCache());
+                    } else { // No Cache
+                        // Setting Location Keyword in Service & Loading Data
+                        SearchService.setKeyword($scope.searchObject.keywords);
+                        SearchService.getResults()
+                            .success($scope.loadPropertyTable);
+                    }
                 }
             };
 
@@ -76,19 +79,16 @@ define(["../module"], function (app) {
                     // Clear Previous Cache & Status set to false
                     SearchService.clearCache();
                     $scope.searchObject.status = false;
-                    // Only test true if Location Keyword Entered
-                    if ($scope.searchObject.keywords !== undefined) {
-                        // Test if No Results due to the Location Entered
-                        SearchService.testLocation().success(function (data) {
-                            if (data.hasOwnProperty("data") &&
-                                data.data.length > 0) {
-                                $scope.searchObject.errorType.location = false;
-                                $scope.searchObject.errorType.filters = true;
-                            } else {
-                                $scope.searchObject.errorType.location = true;
-                            }
-                        });
-                    }
+                    // Test if No Results due to the Location Entered
+                    SearchService.testLocation().success(function (data) {
+                        if (data.hasOwnProperty("data") &&
+                            data.data.length > 0) {
+                            $scope.searchObject.errorType.location = false;
+                            $scope.searchObject.errorType.filters = true;
+                        } else {
+                            $scope.searchObject.errorType.location = true;
+                        }
+                    });
                 }
             };
             
@@ -106,7 +106,14 @@ define(["../module"], function (app) {
                 SearchService.setCurrentPage(1);
                 $scope.getProperties();
             };
-            
+
+            /**
+            * Update Page Number - Clears Cache and Returns Next Page Data
+            */
+            $scope.updatePageNum = function () {
+                SearchService.clearCache(); // Clear Current Cache
+                $scope.getProperties();
+            };
             
             $scope.advanceSearch = function() {
                 $scope.searchObject.busy = true;

@@ -6,6 +6,7 @@
  */
 
 define([
+    "cssAsync",
     "domReady",
     "modernizr",
     "jQuery",
@@ -18,6 +19,7 @@ define([
     "ngAnimate",
     "angular-tour",
     "app", 
+    "ng-config",
     "routes"
 ], function() { 
     require([

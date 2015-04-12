@@ -26,9 +26,9 @@
     <section class="main-content">
         <div class="container">
             <div class="row">
-                <aside class="col-md-3" ng-class="{'hidden-xs': !advancedSearchStatus}">
+                <aside class="col-md-3" ng-class="{'hidden-xs': !searchObject.advSearchStatus}">
                     <div class="row">
-                        <pc-refine-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
+                        <pc-refine-filters class="col-xs-12 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
     <!--                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>-->
                     </div>
                     <pc-result-options class="visible-xs" callback="updateFilters"></pc-result-options>
@@ -117,7 +117,7 @@
                         </div> 
                     </div>
 
-                    <pc-pager ng-show="searchObject.status" properties="searchObject.properties" total-results="searchObject.count" callback="updateFilters" class="hidden-xs"></pc-pager>
+                    <pc-pager ng-show="searchObject.status" properties="searchObject.properties" total-results="searchObject.count" callback="updatePageNum" class="hidden-xs"></pc-pager>
                 </div>
             </div>
         </div>

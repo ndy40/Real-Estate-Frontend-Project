@@ -7,9 +7,7 @@
  */
 (function (define) {
     'use strict';
-    define([
-        "app"
-    ], function (app) {
+    define(["app"], function (app) {
         app.config(["$routeProvider", "$locationProvider", "$provide",
             "$httpProvider", function ($routeProvider, $locationProvider,
                 $provide, $httpProvider) {
@@ -93,36 +91,17 @@
                 redirectTo : "/pages/404"
             });
             
-//          // Creating troubles in minifying
+          // Creating troubles in minifying
 //            $provide.decorator('$sniffer', function ($delegate) {
 //                $delegate.history = false;
 //                return $delegate;
 //            });
-//
+
             $locationProvider.html5Mode(true).hashPrefix('!');
             $httpProvider.defaults.useXDomain = true;
             //default content type
             $httpProvider.defaults.headers.post["Accept"] =
                 "application/x-www-form-urlencoded";
-        }]);
-
-        // Change Page Titles
-        app.run(['$rootScope', '$route', function($rootScope, $route) {
-            $rootScope.$on('$routeChangeSuccess', function(newVal, oldVal) {
-                if (oldVal !== newVal) {
-                    document.title = $route.current.title;
-                }
-            });
-        }]);
-    
-        // ScrollToTop Fix for Anchor Tags
-        // Src: http://codepen.io/jonashartmann/pen/kBqmj
-        app.run(["$rootScope", "$location", "$anchorScroll", "$routeParams", 
-            function($rootScope, $location, $anchorScroll, $routeParams) {
-                $rootScope.$on('$routeChangeSuccess', function() {
-                    $location.hash($routeParams.scrollTo);
-                    $anchorScroll();
-                });
         }]);
 
         return app;

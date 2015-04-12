@@ -7,11 +7,12 @@
 require.config({
     paths : {
         "domReady"      : "../assets/js/requirejs/lib/domReady/domReady.min",
+        "cssAsync"      : "../assets/js/requirejs/lib/cssAsync/cssAsync.min",
         "modernizr"     : "../assets/js/modernizr/modernizr.min",
         "jQuery"        : "../assets/js/jQuery/jQuery-2.1.1.min",
         "twitBootstrap" : "../assets/js/jQuery/libs/bootstrap.min",
         "owl-carousel"  : "../assets/js/jQuery/libs/owlCarousel-1.3.3.min",
-        "angular"       : "../assets/js/angular/angular.min",
+        "angular"       : "../assets/js/angular/angular",
         "ngRoute"       : "../assets/js/angular/lib/ng-route/angular-route.min",
         "ui-bootstrap"  : "../assets/js/angular/lib/ng-uiBs/uiBs-tpls-0.10.min",
         'cookies'       : "../assets/js/angular/lib/ng-cookies/ng-cookies.min",
@@ -39,6 +40,7 @@ require.config({
     deps: ["infrastructure"],
     
     priority : [
+        "cssAsync",
         "domReady",
         "modernizr",
         "jQuery",

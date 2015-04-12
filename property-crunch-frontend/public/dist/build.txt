@@ -1,6 +1,7 @@
 
 main.js
 ----------------
+cssAsync.js
 domReady.js
 modernizr.js
 jQuery.js
@@ -75,6 +76,7 @@ static-pages/directives/youtube.js
 static-pages/directives/cookie-policy.js
 static-pages/index.js
 app.js
+ng-config.js
 routes.js
 domReady!
 infrastructure.js
