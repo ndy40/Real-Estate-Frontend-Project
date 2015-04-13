@@ -74,7 +74,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td align="center" width="180" height="44" style="border-radius:4px;background-color:#F44647;">
-                                                                            <a target="_blank" style="height:46px;display:block;text-decoration:none;color:#ffffff;font-size:18px;" href="{{ Config::get('app.url') }}/#!/confirm-account/{{ $activation_code }}"><img width="280" height="50" style="border:none;outline:none;display:block;text-decoration:none;" alt="Confirm your email address" src="http://pixelative.co/demo/email-assets/confirm-email.png">
+                                                                            <a target="_blank" style="height:46px;display:block;text-decoration:none;color:#ffffff;font-size:18px;" href="{{ Config::get('app.url') }}#!/confirm-account/{{ $activation_code }}"><img width="280" height="50" style="border:none;outline:none;display:block;text-decoration:none;" alt="Confirm your email address" src="http://pixelative.co/demo/email-assets/confirm-email.png">
                                                                             </a>
                                                                         </td>
                                                                     </tr>
