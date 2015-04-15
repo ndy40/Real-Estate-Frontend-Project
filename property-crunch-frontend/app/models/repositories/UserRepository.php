@@ -78,4 +78,14 @@ class UserRepository implements UserRepositoryInterface {
         return $user = User::where('activation_code', '=', $activation_code)->first();
     }
 
+    public function getActiveUserList($startIndex = 1, $size = 2) {
+        $startIndex = ($startIndex - 1);
+        $index = $size * $startIndex;
+        return User::where('activated', '=', 1)->skip($index)->take($size)->get();
+    }
+
+    public function getActiveUserCount() {
+        return User::where('activated', '=', 1)->count();
+    }
+
 }

@@ -8,7 +8,7 @@
                 <tbody>
                     <tr>
                         <td width="620" align="center">
-                            <table width="620" height="40" cellspacing="0" cellpadding="0" border="0" align="center" style="background-color:rgb(25,30,29)">
+                            <table width="620" height="40" cellspacing="0" cellpadding="0" border="0" align="center" style="table-layout: fixed; margin: 0 auto;background-color:rgb(25,30,29)">
                                 <tbody>
                                     <tr>
                                         <td width="620" align="center">
@@ -37,7 +37,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <table width="620" cellspacing="0" cellpadding="0" border="0" align="center" style="padding: 0 10px 0 10px">
+                            <table width="620" cellspacing="0" cellpadding="0" border="0" align="center" style="table-layout: fixed; margin: 0 auto;padding: 0 10px 0 10px">
                                 <tbody>
                                     <tr>
                                         <td align="center">
@@ -70,11 +70,11 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>
-                                                            <table align="center" width="180" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse">
+                                                            <table align="center" width="180" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
                                                                         <td align="center" width="180" height="44" style="border-radius:4px;background-color:#F44647;">
-                                                                            <a target="_blank" style="height:46px;display:block;text-decoration:none;color:#ffffff;font-size:18px;" href="{{ Config::get('app.url') }}/#!/confirm-account/{{ $activation_code }}"><img width="280" height="50" style="border:none;outline:none;display:block;text-decoration:none;" alt="Confirm your email address" src="http://pixelative.co/demo/email-assets/confirm-email.png">
+                                                                            <a target="_blank" style="height:46px;display:block;text-decoration:none;color:#ffffff;font-size:18px;" href="{{ Config::get('app.url') }}#!/confirm-account/{{ $activation_code }}"><img width="280" height="50" style="border:none;outline:none;display:block;text-decoration:none;" alt="Confirm your email address" src="http://pixelative.co/demo/email-assets/confirm-email.png">
                                                                             </a>
                                                                         </td>
                                                                     </tr>

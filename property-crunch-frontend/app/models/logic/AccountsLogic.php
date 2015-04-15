@@ -91,5 +91,13 @@ class AccountsLogic extends BusinessLogicAbstract {
         return $this->userRepository->checkUserViaCode($activation_code);
     }
 
+    public function getActiveUserList($i, $recordCount) {
+        return $this->userRepository->getActiveUserList($i, $recordCount);
+    }
+
+    public function getActiveUserCount() {
+        return $this->userRepository->getActiveUserCount();
+    }
+
 }
 
