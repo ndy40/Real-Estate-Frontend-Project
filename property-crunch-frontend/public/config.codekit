@@ -8,8 +8,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/alerts.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/alerts.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -28,8 +28,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/badges.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/badges.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -86,8 +86,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/breadcrumbs.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/breadcrumbs.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -106,8 +106,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/button-groups.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/button-groups.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -126,8 +126,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/buttons.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/buttons.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -146,8 +146,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/carousel.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/carousel.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -166,8 +166,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/close.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/close.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -186,8 +186,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/code.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/code.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -206,8 +206,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/component-animations.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/component-animations.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -226,8 +226,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/dropdowns.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/dropdowns.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -246,8 +246,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/forms.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/forms.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -266,8 +266,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/glyphicons.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/glyphicons.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -286,8 +286,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/grid.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/grid.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -306,8 +306,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/input-groups.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/input-groups.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -326,8 +326,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/jumbotron.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/jumbotron.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -346,8 +346,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/labels.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/labels.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -366,8 +366,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/list-group.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/list-group.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -386,8 +386,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/media.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/media.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -407,7 +407,7 @@
 		"fileType": 1,
 		"ieCompatibility": 1,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/mixins.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/mixins.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -426,8 +426,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/modals.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/modals.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -446,8 +446,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/navbar.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/navbar.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -466,8 +466,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/navs.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/navs.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -486,8 +486,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/normalize.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/normalize.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -506,8 +506,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/pager.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/pager.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -526,8 +526,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/pagination.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/pagination.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -546,8 +546,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/panels.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/panels.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -566,8 +566,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/popovers.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/popovers.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -586,8 +586,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/print.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/print.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -606,8 +606,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/progress-bars.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/progress-bars.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -626,8 +626,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/responsive-utilities.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/responsive-utilities.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -646,8 +646,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/scaffolding.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/scaffolding.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -666,8 +666,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/tables.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/tables.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -686,8 +686,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/theme.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/theme.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -706,8 +706,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/thumbnails.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/thumbnails.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -726,8 +726,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/tooltip.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/tooltip.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -746,8 +746,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/type.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/type.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -766,8 +766,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/utilities.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/utilities.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -787,7 +787,7 @@
 		"fileType": 1,
 		"ieCompatibility": 1,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/variables.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/variables.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -806,8 +806,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/bootstrap\/wells.less",
 		"outputAbbreviatedPath": "\/assets\/css\/bootstrap\/wells.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -826,8 +826,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/browser_fixes.less",
 		"outputAbbreviatedPath": "\/assets\/css\/browser_fixes.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -846,8 +846,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_accordions.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_accordions.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -866,8 +866,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_alerts.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_alerts.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -886,8 +886,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_angular-tour.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_angular-tour.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -906,8 +906,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_blockquotes.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_blockquotes.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -926,8 +926,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_buttons.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_buttons.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -946,8 +946,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_carousels.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_carousels.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -966,8 +966,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_checkboxes.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_checkboxes.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -986,8 +986,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_cookiepolicy.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_cookiepolicy.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1006,8 +1006,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_cta.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_cta.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1026,8 +1026,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_featured_box_icon.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_featured_box_icon.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1046,8 +1046,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_featured_box_num.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_featured_box_num.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1066,8 +1066,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_featured_info.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_featured_info.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1086,8 +1086,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_footer.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_footer.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1106,8 +1106,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_forms.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_forms.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1126,8 +1126,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_header.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_header.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1146,8 +1146,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_icons.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_icons.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1166,8 +1166,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_jumbotron.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_jumbotron.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1186,8 +1186,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_lists.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_lists.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1206,8 +1206,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_modals.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_modals.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1226,8 +1226,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_nganimate.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_nganimate.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1246,8 +1246,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_pagination.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_pagination.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1266,8 +1266,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_panels.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_panels.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1286,8 +1286,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_selectboxes.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_selectboxes.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1306,8 +1306,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_spinner.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_spinner.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1326,8 +1326,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_tabs.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_tabs.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1346,8 +1346,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_testimonials_carousel.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_testimonials_carousel.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1366,8 +1366,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/components_tooltip.less",
 		"outputAbbreviatedPath": "\/assets\/css\/components_tooltip.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1386,8 +1386,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/general_styling.less",
 		"outputAbbreviatedPath": "\/assets\/css\/general_styling.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1406,8 +1406,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_404.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_404.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1426,8 +1426,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_browser_upgrade.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_browser_upgrade.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1446,8 +1446,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_favourites.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_favourites.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1466,8 +1466,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_forgot_password.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_forgot_password.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1486,8 +1486,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_home.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_home.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1506,8 +1506,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_learn_more.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_learn_more.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1526,8 +1526,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_list_a_property.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_list_a_property.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1546,8 +1546,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_login.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_login.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1566,8 +1566,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_proof_of_funds.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_proof_of_funds.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1586,8 +1586,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_property_details.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_property_details.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1606,8 +1606,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/pages_search_results.less",
 		"outputAbbreviatedPath": "\/assets\/css\/pages_search_results.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -1626,8 +1626,8 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/css\/plugins_owl.carousel.less",
 		"outputAbbreviatedPath": "\/assets\/css\/plugins_owl.carousel.min.css",
 		"outputPathIsOutsideProject": 0,
@@ -2556,7 +2556,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/angular.min.js": {
 		"fileType": 64,
@@ -2567,7 +2567,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-animate\/ng-animate.js": {
 		"fileType": 64,
@@ -2578,7 +2578,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-animate\/ng-animate.min.js": {
 		"fileType": 64,
@@ -2589,7 +2589,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-cookies\/ng-cookies.js": {
 		"fileType": 64,
@@ -2600,7 +2600,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-cookies\/ng-cookies.min.js": {
 		"fileType": 64,
@@ -2611,7 +2611,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-cookies\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2646,7 +2646,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-localStorage\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2669,7 +2669,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-localStorage\/storage.min.js": {
 		"fileType": 64,
@@ -2680,7 +2680,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-localStorage\/test\/storageprovider.spec.js": {
 		"fileType": 64,
@@ -2691,7 +2691,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-localStorage\/TODO.md": {
 		"enableFootnoteSupport": 0,
@@ -2714,7 +2714,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-route\/angular-route.min.js": {
 		"fileType": 64,
@@ -2725,7 +2725,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-route\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2748,7 +2748,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-tour\/ng-tour-tpls.min.js": {
 		"fileType": 64,
@@ -2759,7 +2759,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-uiBs\/uiBs-tpls-0.10.js": {
 		"fileType": 64,
@@ -2770,7 +2770,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/lib\/ng-uiBs\/uiBs-tpls-0.10.min.js": {
 		"fileType": 64,
@@ -2781,7 +2781,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/angular\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2804,7 +2804,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/jQuery\/jQuery-2.1.1.min.js": {
 		"fileType": 64,
@@ -2815,7 +2815,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/jQuery\/libs\/bootstrap.js": {
 		"fileType": 64,
@@ -2826,7 +2826,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/jQuery\/libs\/bootstrap.min.js": {
 		"fileType": 64,
@@ -2837,7 +2837,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/jQuery\/libs\/owlCarousel-1.3.3.js": {
 		"fileType": 64,
@@ -2848,7 +2848,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/jQuery\/libs\/owlCarousel-1.3.3.min.js": {
 		"fileType": 64,
@@ -2859,7 +2859,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/modernizr\/modernizr.min.js": {
 		"fileType": 64,
@@ -2870,7 +2870,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/lib\/cssAsync\/cssAsync.js": {
 		"fileType": 64,
@@ -2881,7 +2881,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/lib\/cssAsync\/cssAsync.min.js": {
 		"fileType": 64,
@@ -2892,7 +2892,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/lib\/domReady\/domReady.js": {
 		"fileType": 64,
@@ -2903,7 +2903,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/lib\/domReady\/domReady.min.js": {
 		"fileType": 64,
@@ -2914,7 +2914,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/README.md": {
 		"enableFootnoteSupport": 0,
@@ -2937,7 +2937,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/requirejs\/require.min.js": {
 		"fileType": 64,
@@ -2948,7 +2948,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/shivs\/html5shiv.js": {
 		"fileType": 64,
@@ -2959,7 +2959,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/js\/shivs\/respond.min.js": {
 		"fileType": 64,
@@ -2970,7 +2970,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/build.js": {
 		"fileType": 64,
@@ -2981,7 +2981,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/dist\/favourites\/views\/favourites.html": {
 		"fileType": 8192,
@@ -3037,7 +3037,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/dist\/property-details\/directives\/carousel.html": {
 		"fileType": 8192,
@@ -3210,7 +3210,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/dist\/shared\/views\/footer.html": {
 		"fileType": 8192,
@@ -3356,7 +3356,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/favourites\/controllers\/favourites-controller.js": {
 		"fileType": 64,
@@ -3367,7 +3367,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/favourites\/index.js": {
 		"fileType": 64,
@@ -3378,7 +3378,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/favourites\/module.js": {
 		"fileType": 64,
@@ -3389,7 +3389,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/favourites\/services\/favourites-service.js": {
 		"fileType": 64,
@@ -3400,7 +3400,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/favourites\/views\/favourites.html": {
 		"fileType": 8192,
@@ -3420,7 +3420,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/login\/controllers\/login-controller.js": {
 		"fileType": 64,
@@ -3431,7 +3431,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/login\/index.js": {
 		"fileType": 64,
@@ -3442,7 +3442,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/login\/module.js": {
 		"fileType": 64,
@@ -3453,7 +3453,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/login\/views\/forgot-password-2.html": {
 		"fileType": 8192,
@@ -3500,7 +3500,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/ng-config.js": {
 		"fileType": 64,
@@ -3511,7 +3511,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/controllers\/property-controller.js": {
 		"fileType": 64,
@@ -3522,7 +3522,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/carousel-directive.js": {
 		"fileType": 64,
@@ -3533,7 +3533,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/carousel.html": {
 		"fileType": 8192,
@@ -3553,7 +3553,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/comparables-directive.js": {
 		"fileType": 64,
@@ -3564,7 +3564,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/comparables.html": {
 		"fileType": 8192,
@@ -3584,7 +3584,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/percent-directive.js": {
 		"fileType": 64,
@@ -3595,7 +3595,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/price-compare-directive.js": {
 		"fileType": 64,
@@ -3606,7 +3606,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/price-compare.html": {
 		"fileType": 8192,
@@ -3626,7 +3626,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/price-history.html": {
 		"fileType": 8192,
@@ -3646,7 +3646,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/to-let-calculator.html": {
 		"fileType": 8192,
@@ -3666,7 +3666,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/directives\/to-sell-calculator.html": {
 		"fileType": 8192,
@@ -3686,7 +3686,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/module.js": {
 		"fileType": 64,
@@ -3697,7 +3697,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/services\/email-service.js": {
 		"fileType": 64,
@@ -3708,7 +3708,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/services\/property-service.js": {
 		"fileType": 64,
@@ -3719,7 +3719,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/property-details\/views\/calculator.html": {
 		"fileType": 8192,
@@ -3748,7 +3748,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/controllers\/searchform-controller.js": {
 		"fileType": 64,
@@ -3759,7 +3759,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/infinite-scroll-directive.js": {
 		"fileType": 64,
@@ -3770,7 +3770,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/keyword-filters-directive.js": {
 		"fileType": 64,
@@ -3781,7 +3781,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/keyword-filters.html": {
 		"fileType": 8192,
@@ -3801,7 +3801,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/pager.html": {
 		"fileType": 8192,
@@ -3821,7 +3821,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/refine-filters.html": {
 		"fileType": 8192,
@@ -3841,7 +3841,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/result-options.html": {
 		"fileType": 8192,
@@ -3861,7 +3861,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/searchbox.html": {
 		"fileType": 8192,
@@ -3881,7 +3881,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/selectbox.html": {
 		"fileType": 8192,
@@ -3901,7 +3901,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/directives\/spinner.html": {
 		"fileType": 8192,
@@ -3921,7 +3921,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/module.js": {
 		"fileType": 64,
@@ -3932,7 +3932,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/services\/search-service.js": {
 		"fileType": 64,
@@ -3943,7 +3943,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/search\/views\/searchresult.html": {
 		"fileType": 8192,
@@ -3963,7 +3963,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/authentication\/index.js": {
 		"fileType": 64,
@@ -3974,7 +3974,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/authentication\/module.js": {
 		"fileType": 64,
@@ -3985,7 +3985,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/controllers\/navigation-controller.js": {
 		"fileType": 64,
@@ -3996,7 +3996,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/add-to-fav-directive.js": {
 		"fileType": 64,
@@ -4007,7 +4007,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/adj-height-directive.js": {
 		"fileType": 64,
@@ -4018,7 +4018,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/color-code-directive.js": {
 		"fileType": 64,
@@ -4029,7 +4029,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/date-ago-directive.js": {
 		"fileType": 64,
@@ -4040,7 +4040,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/loader-directive.js": {
 		"fileType": 64,
@@ -4051,7 +4051,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/loader.html": {
 		"fileType": 8192,
@@ -4071,7 +4071,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/rec-properties-directive.js": {
 		"fileType": 64,
@@ -4082,7 +4082,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/directives\/rec-properties.html": {
 		"fileType": 8192,
@@ -4102,7 +4102,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/address-filter.js": {
 		"fileType": 64,
@@ -4113,7 +4113,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/currency-filter.js": {
 		"fileType": 64,
@@ -4124,7 +4124,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/percent-filter.js": {
 		"fileType": 64,
@@ -4135,7 +4135,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/positive-filter.js": {
 		"fileType": 64,
@@ -4146,7 +4146,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/trusted-html-filter.js": {
 		"fileType": 64,
@@ -4157,7 +4157,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/filters\/walking-filter.js": {
 		"fileType": 64,
@@ -4168,7 +4168,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/index.js": {
 		"fileType": 64,
@@ -4179,7 +4179,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/module.js": {
 		"fileType": 64,
@@ -4190,7 +4190,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/services\/loader-service.js": {
 		"fileType": 64,
@@ -4201,7 +4201,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/services\/rec-properties-service.js": {
 		"fileType": 64,
@@ -4212,7 +4212,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/services\/user-model-service.js": {
 		"fileType": 64,
@@ -4223,7 +4223,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/shared\/views\/footer.html": {
 		"fileType": 8192,
@@ -4252,7 +4252,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/directives\/cookie-policy.html": {
 		"fileType": 8192,
@@ -4272,7 +4272,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/directives\/testimonial-carousel.html": {
 		"fileType": 8192,
@@ -4292,7 +4292,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/directives\/youtube.html": {
 		"fileType": 8192,
@@ -4312,7 +4312,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/index.js": {
 		"fileType": 64,
@@ -4323,7 +4323,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/module.js": {
 		"fileType": 64,
@@ -4334,7 +4334,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		},
 	"\/modules\/static-pages\/views\/404.html": {
 		"fileType": 8192,
@@ -4426,7 +4426,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 1
 		}
 	},
 "hooks": [
@@ -4607,7 +4607,7 @@
 	"javascriptAutoOutputPathStyle": 0,
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 0,
-	"javascriptSyntaxCheckerStyle": 2,
+	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
 		"asi": {

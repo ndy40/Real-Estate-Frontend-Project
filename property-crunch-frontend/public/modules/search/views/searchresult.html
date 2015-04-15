@@ -31,7 +31,7 @@
                         <pc-refine-filters class="col-xs-12 col-md-12 filters-wrap" callback="updateFilters"></pc-refine-filters>
     <!--                    <pc-keyword-filters class="col-xs-12 col-sm-6 col-md-12 filters-wrap" callback="updateFilters"></pc-keyword-filters>-->
                     </div>
-                    <pc-result-options class="visible-xs" callback="updateFilters"></pc-result-options>
+                    <pc-result-options class="visible-xs"></pc-result-options>
                     <button class="btn btn-sm btn-3d btn-fullwidth visible-xs" ng-click="closeAdvancedSearch()">Update Results</button>
                 </aside>
 
@@ -52,57 +52,56 @@
                         <i class="icon-warning"></i>
                         Please <span>Refine Your Search</span>. Sorry, no properties found matching your criteria.
                     </div>
-
                     <div id="properties_list" ng-show="searchObject.status">
-                         <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy' infinite-scroll-distance='1'>
-                            <article ng-repeat="property in searchObject.properties" class="property-listing">
-                                <div class="row">
-                                    <pc-add-to-fav property-id="property.id" fav-update="favUpdate">
-                                        <div class="col-md-3 col-sm-6">
-                                            <a ng-href="/property/{{property.id}}" class="property-img">
-                                                <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
-                                                <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.address | address}}">
-                                            </a>
+                        <article ng-repeat="property in searchObject.properties" class="property-listing">
+                            <div class="row">
+                                <pc-add-to-fav property-id="property.id" fav-update="favUpdate">
+                                    <div class="col-md-3 col-sm-6">
+                                        <a ng-href="/property/{{property.id}}" class="property-img">
+                                            <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+                                            <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.address | address}}">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="property-title-group">
+                                            <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
+                                            <a ng-click="addToFavourites(property.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
+                                            <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
                                         </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="property-title-group">
-                                                <a ng-href="/property/{{property.id}}">{{property.price | customCurrency: "£"}}</a>
-                                                <a ng-click="addToFavourites(property.id)" class="add-to-fav" href=""><i class="icon-star"></i>Add to Favourites</a>
-                                                <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
-                                            </div>
-                                            <p>{{property.address | address}}</p>
-                                            <div class="property-details-group">
-                                                <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
-    <!--                                            <ul class="property-tags repossessed modernising auction dtv reduced">
-                                                    <li class="irepossessed">
-                                                        <i class="icon-library" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
-                                                    </li>
-                                                    <li class="imodernising">
-                                                        <i class="icon-tools" tooltip="Need Modernising" tooltip-placement="top" title="Need Modernising"></i>
-                                                    </li>
-                                                    <li class="iauction">
-                                                        <i class="icon-auction" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
-                                                    </li>
-                                                    <li class="idtv">
-                                                        <i class="icon-users" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
-                                                    </li>
-                                                    <li class="ireduced">
-                                                        <i class="icon-chart" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
-                                                    </li>
-                                                </ul>-->
-                                            </div>
+                                        <p>{{property.address | address}}</p>
+                                        <div class="property-details-group">
+                                            <p class="beds">{{property.rooms}} Bed {{property.type.name}} for Sale</p>
+<!--                                            <ul class="property-tags repossessed modernising auction dtv reduced">
+                                                <li class="irepossessed">
+                                                    <i class="icon-library" tooltip="Reposessed" tooltip-placement="top" title="Reposessed"></i>
+                                                </li>
+                                                <li class="imodernising">
+                                                    <i class="icon-tools" tooltip="Need Modernising" tooltip-placement="top" title="Need Modernising"></i>
+                                                </li>
+                                                <li class="iauction">
+                                                    <i class="icon-auction" tooltip="Auction" tooltip-placement="top" title="Auction"></i>
+                                                </li>
+                                                <li class="idtv">
+                                                    <i class="icon-users" tooltip="Direct to Vendor" tooltip-placement="top" title="Direct to Vendor"></i>
+                                                </li>
+                                                <li class="ireduced">
+                                                    <i class="icon-chart" tooltip="Reduced in Price" tooltip-placement="top" title="Reduced in Price"></i>
+                                                </li>
+                                            </ul>-->
                                         </div>
-                                        <div class="col-md-3 col-sm-6">
-                                            <h5 class="right-section-label">
-                                                Est. Rental Yield 
-                                                <i class="icon-help" tooltip="This shows the potential yearly income based on the rental price of similar properties in the area." tooltip-placement="top"></i>
-                                            </h5>
-                                            <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
-                                        </div>
-                                    </pc-add-to-fav>
-                                </div>
-                            </article>
-                         </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <h5 class="right-section-label">
+                                            Est. Rental Yield 
+                                            <i class="icon-help" tooltip="This shows the potential yearly income based on the rental price of similar properties in the area." tooltip-placement="top"></i>
+                                        </h5>
+                                        <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
+                                    </div>
+                                </pc-add-to-fav>
+                            </div>
+                        </article>
+                        
+                         <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy'></div>
                          <div class="infinite-notifications">
                             <div ng-show='searchObject.busy && !searchObject.last'>
                                 <div class="loader">

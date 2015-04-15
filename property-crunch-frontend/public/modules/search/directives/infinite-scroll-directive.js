@@ -1,4 +1,4 @@
-/*global define */
+/*global define, angular */
 /**
  * infiniteScroll Directive 
  * 
@@ -17,42 +17,56 @@ define(["../module"], function (app) {
                     var runOnMobileOnly,
                         handler,
                         checkWhenEnabled = false,
-                        scrollDistance = 0,
                         scrollEnabled = true;
                     
                     runOnMobileOnly = function() {
                         var winWidth = $window.width();
                         if (winWidth < 768) {
-                            if (attrs.infiniteScrollDistance != null) {
-                                scope.$watch(attrs.infiniteScrollDistance, function(value) {
-                                    return scrollDistance = parseInt(value, 10);
-                                });
-                            }
 
-                            if (attrs.infiniteScrollDisabled != null) {
-                                scope.$watch(attrs.infiniteScrollDisabled, function(value) {
-                                    scrollEnabled = !value;
-                                    if (scrollEnabled && checkWhenEnabled) {
-                                        checkWhenEnabled = false;
-                                        return handler();
-                                    }
+                            if (attrs.infiniteScrollDisabled !== null) {
+                                scope.$watch(attrs.infiniteScrollDisabled,
+                                    function(value) {
+                                        scrollEnabled = !value;
+                                        if (scrollEnabled && checkWhenEnabled) {
+                                            checkWhenEnabled = false;
+                                            return handler();
+                                        }
                                 });
                             }
 
                             handler = function() {
-                                var elementBottom, remaining, shouldScroll, windowBottom;
-                                windowBottom = $window.height() + $window.scrollTop();
-                                elementBottom = elem.offset().top + elem.height();
+                                var elementBottom,
+                                    remaining,
+                                    shouldScroll,
+                                    windowBottom;
+
+                                windowBottom = $window.height() +
+                                    $window.scrollTop();
+                                
+                                elementBottom = elem.offset().top +
+                                    elem.height();
+                                
                                 remaining = elementBottom - windowBottom;
-                                shouldScroll = remaining <= $window.height() * scrollDistance;
+                                
+                                // Original Code
+                                //shouldScroll = remaining < $window.height();
+                                
+                                // Revised
+                                if($(window).scrollTop() ===
+                                    $(document).height() - $(window).height()) {
+                                    shouldScroll = true;
+                                }
+                                
                                 if (shouldScroll && scrollEnabled) {
                                     if ($rootScope.$$phase) {
-                                        return scope.$eval(attrs.infiniteScroll);
+                                        return scope.
+                                            $eval(attrs.infiniteScroll);
                                     } else {
-                                        return scope.$apply(attrs.infiniteScroll);
+                                        return scope.
+                                            $apply(attrs.infiniteScroll);
                                     }
                                 } else if (shouldScroll) {
-                                    return checkWhenEnabled = true;
+                                    checkWhenEnabled = true;
                                 }
                             };
 
@@ -64,7 +78,8 @@ define(["../module"], function (app) {
 
                             return $timeout((function() {
                                 if (attrs.infiniteScrollImmediateCheck) {
-                                    if (scope.$eval(attrs.infiniteScrollImmediateCheck)) {
+                                    if (scope.$eval(
+                                        attrs.infiniteScrollImmediateCheck)) {
                                         return handler();
                                     }
                                 } else {
@@ -77,6 +92,7 @@ define(["../module"], function (app) {
                     };
                     runOnMobileOnly();
                     $window.on('resize', runOnMobileOnly);
+                    scope.$on('infinity', runOnMobileOnly);
                 }
             };
         }]);

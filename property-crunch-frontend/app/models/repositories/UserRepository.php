@@ -1,4 +1,5 @@
 <?php
+
 namespace models\repositories;
 
 use models\interfaces\UserRepositoryInterface;
@@ -7,28 +8,23 @@ use Cartalyst\Sentry\Facades\Native\Sentry;
 use Cartalyst\Sentry\Groups\GroupNotFoundException;
 use Illuminate\Support\Facades\Log;
 
-
-
 /**
  * Description of UserRepository
  *
  * @author ndy40
  */
+class UserRepository implements UserRepositoryInterface {
 
-class UserRepository implements UserRepositoryInterface
-{
-    public function authenticate($email, $password, $remember = false) 
-    {
-        $credentials = array (
+    public function authenticate($email, $password, $remember = false) {
+        $credentials = array(
             'email' => $email,
             'password' => $password
         );
         $user = Sentry::authenticate($credentials, $remember);
-        
+
         return $user;
     }
-    
-    
+
     /**
      * Create a new user. 
      * 
@@ -36,20 +32,19 @@ class UserRepository implements UserRepositoryInterface
      * @param type $groupName - The group the user should be assigned to.
      * @return boolean
      */
-    public function create(array $user, $groupName = "basic", $activated = true)
-    {
+    public function create(array $user, $groupName = "basic", $activated = true) {
         if (!array_key_exists("activated", $user)) {
             $user["activated"] = true;
         }
-        
-        $newUser = Sentry::createUser($user); 
+
+        $newUser = Sentry::createUser($user);
         $group = Sentry::findGroupByName(strtolower($groupName));
         $newUser->addGroup($group);
 
         if ($newUser) {
             return $newUser;
         }
-        
+
         return false;
     }
 
@@ -64,21 +59,23 @@ class UserRepository implements UserRepositoryInterface
     public function update($user) {
         
     }
-    
-    public function logout() 
-    {
+
+    public function logout() {
         Sentry::logout();
     }
 
-    public function login($email, $password, $remember = false) 
-    {
+    public function login($email, $password, $remember = false) {
         $user = $this->authenticate($email, $password, $remember);
         if ($user) {
             Sentry::login($user, $remember);
             return true;
         }
-        
+
         return false;
+    }
+
+    public function checkUserViaCode($activation_code) {
+        return $user = User::where('activation_code', '=', $activation_code)->first();
     }
 
 }

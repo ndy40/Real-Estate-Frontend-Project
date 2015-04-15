@@ -32,7 +32,7 @@ define(["../module"], function (app) {
                 link : function (scope, element, attr) {
                     scope.searchProperty = function (keywords) {
                         // Clear Cache & Filters
-                        SearchService.clearFilters();
+                        //SearchService.clearFilters();
                         SearchService.clearCache();
                         SearchService.setCurrentPage(1);
                         // Set Keywords
