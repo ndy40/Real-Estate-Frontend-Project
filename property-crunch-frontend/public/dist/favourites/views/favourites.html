@@ -22,8 +22,8 @@
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-sm-6">
                             <a ng-href="/property/{{property.id}}" class="property-img">
-                                <img ng-show="!property.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
-                                <img ng-show="property.images[0].image" class="img-responsive" ng-src="{{property.images[0].image}}" alt="{{property.alt}}">
+                                <img ng-show="!property.image[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
+                                <img ng-show="property.image[0].image" class="img-responsive" ng-src="{{property.image[0].image}}" alt="{{property.alt}}">
                             </a>
                         </div>
                         <div class="col-lg-8 col-md-7 col-sm-6">
@@ -56,7 +56,7 @@
                         <div class="col-lg-2 col-md-2 col-sm-6">
                             <h5 class="right-section-label">
                                 Est. Rental Yield 
-                                <i class="icon-help" tooltip="This shows the potential yearly income based on the rental price of similar properties in the area." tooltip-placement="top" title="Estimated Rental Yield = Avg Annual Rental Income/ Asking Price of the Property."></i>
+                                <i class="icon-help" tooltip="This shows the potential yearly income based on the rental price of similar properties in the area." tooltip-placement="top"></i>
                             </h5>
                             <h3 class="right-section-value">{{property.yield | number : 1}}<span>%</span></h3>
                         </div>

@@ -101,8 +101,12 @@
                             </div>
                         </article>
                         
-                         <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy'></div>
-                         <div class="infinite-notifications">
+                        <div class="alert loadmore visible-xs">
+                            <i class="icon-arrow-up-upload"></i>
+                            Pull Up to Load More Properties.
+                        </div>
+                        <div infinite-scroll='infiniteLoader()' infinite-scroll-disabled='searchObject.busy'></div>
+                        <div class="infinite-notifications">
                             <div ng-show='searchObject.busy && !searchObject.last'>
                                 <div class="loader">
     <!--                                <img src="assets/images/loader.gif" alt="Loading.. Please Wait">-->
