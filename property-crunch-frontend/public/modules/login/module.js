@@ -13,5 +13,8 @@ define([
     return ng.module("pcLogin",  [
         "pcShared",
         "pcAuthentication"
-    ]);
+    ])
+    .constant("CAPI", {
+        "confirm" : "api/auth/confirm-account/"
+    });
 });

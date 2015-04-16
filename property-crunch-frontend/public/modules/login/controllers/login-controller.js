@@ -22,9 +22,11 @@ define(["../module"], function (app) {
             if ($routeParams.type === "in") {
                 $scope.pageType.login = true;
                 $scope.pageType.signup = false;
-            } else {
+            } else if ($routeParams.type === "up") {
                 $scope.pageType.login = false;
                 $scope.pageType.signup = true;
+            } else {
+                 $location.path("/pages/404");
             }
         };
         

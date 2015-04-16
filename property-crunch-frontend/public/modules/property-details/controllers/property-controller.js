@@ -7,9 +7,9 @@
 define(["../module"], function (app) {
     'use strict';
     app.controller("PropertyCtrl", ["$scope", "$rootScope", "UserModel",
-        "SearchService", "$routeParams", "$location", "emailService", 
+        "SearchService", "$routeParams", "$location", "EmailService", 
             "propertyService", "$cookieStore", function ($scope, $rootScope,
-                UserModel, SearchService, $routeParams, $location, emailService,
+                UserModel, SearchService, $routeParams, $location, EmailService,
                     propertyService, $cookieStore) {
 
         /**
@@ -164,9 +164,7 @@ define(["../module"], function (app) {
                 friendsEmail    : "",
                 msg             : "I thought you might want to take a look at" +
                     " this property for sale on thenello.com",
-                propertyTitle   : "",
-                propertyImg     : "",
-                propertyPrice   : ""
+                propertyId      : ""
             },
             requestDetails : {
                 name        : "",
@@ -174,9 +172,14 @@ define(["../module"], function (app) {
                 phone       : "",
                 msg         : "",
                 agencyName  : "",
-                agencyPhone : "",
+                agencyMail  : "",
                 propertyId  : ""
-            }
+            },
+            // Used to show/ hide form errors
+            formErrorFriend: false,
+            formErrorDetails: false,
+            friendEmailSent: false,
+            detailsEmailSent: false
         };
         
         /**
@@ -184,7 +187,7 @@ define(["../module"], function (app) {
         */
         $scope.populateRqstDetailsData = function(data) {
             $scope.email.requestDetails.agencyName = data.marketer;
-            $scope.email.requestDetails.agencyPhone = data.phone;
+            $scope.email.requestDetails.agencyMail = data.email;
             $scope.email.requestDetails.propertyId = data.id;
             $scope.email.requestDetails.msg = "Hi, I found your listing on " +
                 "thenello.com. Please send me more information about " +
@@ -193,26 +196,69 @@ define(["../module"], function (app) {
         $scope.populateEmailFriendData = function(data) {
             $scope.email.toFriend.propertyTitle = data.rooms +
                 ' bed property for Sale at ' + data.address;
-            $scope.email.toFriend.propertyImg = data.images[0].image;
-            $scope.email.toFriend.propertyPrice = data.price;
+            $scope.email.toFriend.propertyId = data.id;
         };
         
         /**
-        * Send Emails - Request Details & Email a Friend
+        * Send Emails - Email a Friend & Request Details
         */
-        $scope.emailRequestDetails = function() {
-            emailService.updateRequestDetails($scope.email.requestDetails);
+        $scope.emailFriend = function() {
+            if ($scope.emailFriendForm.$valid) {
+                $scope.email.formErrorFriend = false;
+                EmailService.emailToFriend($scope.email.toFriend)
+                    .success(function (data) {
+                        // Change View to Success
+                        console.log(data);
+                        $scope.email.friendEmailSent = true;
+                    });
+            } else {
+                $scope.email.formErrorFriend = true;
+            }
         };
         
-        $scope.emailFriend = function() {
-            emailService.updateToFriend($scope.email.toFriend);
+        $scope.emailRequestDetails = function() {
+            if ($scope.emailRequestForm.$valid) {
+                $scope.email.formErrorDetails = false;
+                EmailService.emailRequestDetails($scope.email.requestDetails)
+                    .success(function (data) {
+                        // Change View to Success
+                        console.log(data);
+                        $scope.email.detailsEmailSent = true;
+                    });
+            } else {
+                $scope.email.formErrorDetails = true;
+            }
+        };
+        
+        /**
+        * Reset Email Forms - Email a Friend & Request Details
+        */
+        $scope.resetFriendForm = function() {
+            $scope.email.friendEmailSent = false;
+            $scope.email.toFriend = {
+                name            : "",
+                email           : "",
+                friendsEmail    : "",
+                msg             : "I thought you might want to take a look at" +
+                    " this property for sale on thenello.com"
+            };
+        };
+        
+        $scope.resetRequestForm = function() {
+            $scope.email.detailsEmailSent = false;
+            $scope.email.requestDetails = {
+                name        : "",
+                email       : "",
+                phone       : "",
+                msg         : ""
+            };
         };
         
         /**
         * Add Property To Favourites
         */
         $scope.addToFavourites = function(propertyId) {
-            if (UserModel.userId !== null) {
+            if (UserModel.userId !== undefined) {
                 UserModel.addToFav(propertyId)
                     .success(function() {
                         UserModel.addToFavFE(propertyId);

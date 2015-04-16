@@ -61,7 +61,7 @@
                                                     <h6 class="added-to-fav"><i class="icon-star"></i>Added to Favourites</h6>
                                                 </li>
                                                 <li  class="email-friend last">
-                                                    <a href="#" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
+                                                    <a href="" data-toggle="modal" data-target="#emailFriend"><i class="icon-mail"></i>Email a Friend</a>
                                                 </li>
                                             </ul> 
                                         </pc-add-to-fav>
@@ -152,7 +152,7 @@
             </div>
         </aside>
 
-        <aside class="main-content">
+<!--        <aside class="main-content">
              <div class="container">         
                 <div class="panel panel-primary panel-no-body"
                     tourtip="These are recently sold properties in close proximity to the advertised property. " 
@@ -187,10 +187,9 @@
                     <pc-rec-properties></pc-rec-properties>
                 </div>
             </div>
-        </aside>
+        </aside>-->
     </div>
 </div>
-
 
 <!-- Email Friend Modal -->
 <div class="modal fade request-details-modal" id="emailFriend" tabindex="-1" role="dialog" aria-hidden="true">
@@ -211,23 +210,34 @@
                         <h5>Email a friend about the {{property.details.rooms}} bed property for Sale at {{property.details.address | address}}</h5>
                     </div>
                 </div>
-                <form>
+                <form name="emailFriendForm" novalidate>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-user"></i></div>
-                            <input ng-model="email.toFriend.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                            <input name="uName" ng-model="email.toFriend.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                        <div class="error" ng-show="email.formErrorFriend">
+                            <div ng-show="emailFriendForm.uName.$error.required">Please enter your name.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mail"></i></div>
-                            <input ng-model="email.toFriend.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                            <input name="uEmail" ng-model="email.toFriend.email" type="email" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                        <div class="error" ng-show="email.formErrorFriend">
+                            <div ng-show="emailFriendForm.uEmail.$error.required">Please enter your email.</div>
+                            <div ng-show="emailFriendForm.uEmail.$error.email">Please enter a valid email.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mail"></i></div>
-                            <input ng-model="email.toFriend.friendsEmail" type="text" class="form-control form-control-icon" placeholder="Your Friend's Email: " required>
+                            <input name="friendsEmail" ng-model="email.toFriend.friendsEmail" type="text" class="form-control form-control-icon" placeholder="Your Friend's Email: " required ng-pattern="/^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},?)+$/">
+                        </div>
+                        <div class="error" ng-show="email.formErrorFriend">
+                            <div ng-show="emailFriendForm.friendsEmail.$error.required">Please enter your friends' email addresses.</div>
+                            <div ng-show="emailFriendForm.friendsEmail.$error.pattern">Please enter valid email addresses (separated by ,)</div>
                         </div>
                     </div>
                     <div class="form-group text-right">
@@ -239,13 +249,16 @@
                     </div>        
                     <div class="form-group">
                         <div class="input-group">
-                            <textarea ng-model="email.toFriend.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                            <textarea name="msg" ng-model="email.toFriend.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
                         </div>    
+                        <div class="error" ng-show="email.formErrorFriend">
+                            <div ng-show="emailFriendForm.msg.$error.required">Please enter your message.</div>
+                        </div>
                     </div>
                     <div class="terms">
                         <h6>Note: Your friends will not receive any other emails unless they register on nello.</h6>
                     </div>
-                    <button ng-click="emailFriend()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Send Email</button>
+                    <button type="submit" ng-click="emailFriend()" class="btn btn-lg btn-3d calculate">Send Email</button>
                </form>
             </div>
         </div>
@@ -267,40 +280,54 @@
                     <a href="#"><i class="icon-office"></i>{{property.details.marketer}}</a>
                     <h6><i class="icon-phone"></i>{{property.details.phone}}</h6>
                 </div>
-                <form>
+                <form name="emailRequestForm" novalidate>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-user"></i></div>
-                            <input ng-model="email.requestDetails.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                            <input name="uName" ng-model="email.requestDetails.name" type="text" class="form-control form-control-icon" placeholder="Your Name: " required>
+                        </div>
+                        <div class="error" ng-show="email.formErrorDetails">
+                            <div ng-show="emailRequestForm.uName.$error.required">Please enter your name.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mail"></i></div>
-                            <input ng-model="email.requestDetails.email" type="text" class="form-control form-control-icon" placeholder="Your Email: " required>
+                            <input name="uEmail" ng-model="email.requestDetails.email" type="email" class="form-control form-control-icon" placeholder="Your Email: " required>
+                        </div>
+                        <div class="error" ng-show="email.formErrorDetails">
+                            <div ng-show="emailRequestForm.uEmail.$error.required">Please enter your email.</div>
+                            <div ng-show="emailRequestForm.uEmail.$error.email">Please enter a valid email.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="icon-container"><i class="icon-mobile"></i></div>
-                            <input ng-model="email.requestDetails.phone" type="text" class="form-control form-control-icon" placeholder="Your Phone: " required>
+                            <input name="uPhone" ng-model="email.requestDetails.phone" type="number" class="form-control form-control-icon" placeholder="Your Phone: " required>
+                        </div>
+                        <div class="error" ng-show="email.formErrorDetails">
+                            <div ng-show="emailRequestForm.uPhone.$error.required">Please enter your phone.</div>
+                            <div ng-show="emailRequestForm.uPhone.$error.number">Please enter a valid phone number without any symbols.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <textarea ng-model="email.requestDetails.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
-                        </div>    
+                            <textarea name="msg" ng-model="email.requestDetails.msg" class="form-control" placeholder="Please type in your message" rows="4" required></textarea>
+                        </div>
+                        <div class="error" ng-show="email.formErrorDetails">
+                            <div ng-show="emailRequestForm.msg.$error.required">Please enter your message.</div>
+                        </div>
                     </div>
                     <div class="terms">
                         <h6>By sending you accept our <a ng-href="/pages/terms_of_use">Terms of Service</a> and <a ng-href="/pages/privacy_policy">Privacy Policy</a>.</h6>
                     </div>
-                    <button ng-click="emailRequestDetails()" class="btn btn-lg btn-3d calculate" data-dismiss="modal">Request Information</button>
+                    <button type="submit" ng-click="emailRequestDetails()" class="btn btn-lg btn-3d calculate">Request Information</button>
                </form>
             </div>
         </div>
     </div>
 </div>          
-                   
+   
 <!-- footer template -->
 <ng-include src="'modules/shared/views/footer.html'"  ng-show="property.status"></ng-include>
 

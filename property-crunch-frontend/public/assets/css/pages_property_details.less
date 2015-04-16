@@ -671,6 +671,21 @@
     line-height: 1.4;
 }
 
+.request-details-modal {
+    input, textarea {
+        &.ng-invalid { border: 1px solid @brand-red; }
+        &.ng-invalid.ng-pristine { border: 1px solid #f2f2f2; }
+        
+        &.ng-invalid,
+        &.ng-invalid.ng-pristine { 
+            &:focus { border-color: @brand-primary; }
+        }
+    }
+    .error {
+        color: @brand-red;
+    }
+}
+
 /*===================================================================
   Pages > Property Details > Other Properties
 ====================================================================*/

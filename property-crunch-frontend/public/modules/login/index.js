@@ -6,5 +6,7 @@
 */
 
 define([
-    "./controllers/login-controller"
+    "./controllers/login-controller",
+    "./controllers/confirmation-controller",
+    "./services/confirmation-service"
 ], function () {});

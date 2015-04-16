@@ -50,10 +50,10 @@
                 controller  : "LoginCtrl"
             });
 
-            $routeProvider.when("/confirm-account", {
+            $routeProvider.when("/confirm-account/:code", {
                 title : 'Please confirm Email Address - nello',
                 templateUrl : "modules/login/views/confirm-account.html",
-                controller  : "LoginCtrl"
+                controller  : "ConfirmationCtrl"
             });
             
             $routeProvider.when("/register-success", {
@@ -91,11 +91,11 @@
                 redirectTo : "/pages/404"
             });
             
-          // Creating troubles in minifying
-//            $provide.decorator('$sniffer', function ($delegate) {
-//                $delegate.history = false;
-//                return $delegate;
-//            });
+            // Force hashbang in urls
+            $provide.decorator('$sniffer', ['$delegate', function ($delegate) {
+                $delegate.history = false;
+                return $delegate;
+            }]);
 
             $locationProvider.html5Mode(true).hashPrefix('!');
             $httpProvider.defaults.useXDomain = true;

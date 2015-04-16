@@ -8,60 +8,41 @@
 
 define(["../module"], function (app) {
     'use strict';
-    return app.service('emailService', function () {
-        var emailService = function () {
-            this.toFriend = {
-                name            : "",
-                email           : "",
-                friendsEmail    : "",
-                msg             : "",
-                propertyTitle   : "",
-                propertyImg     : "",
-                propertyPrice   : ""
-            };
-            
-            this.requestDetails = {
-                name        : "",
-                email       : "",
-                phone       : "",
-                msg         : "",
-                agencyName  : "",
-                agencyPhone : "",
-                propertyId  : ""
-            };
-        };
+    return app.service('EmailService', ["$http", "APPURL",
+            function ($http, APPURL) {
+        var EmailService = function () {};
         
         /**
          * Update Email To Friend
          */
-        emailService.prototype.updateToFriend = function (data) {
-            this.toFriend = {
-                name            : data.name,
-                email           : data.email,
-                friendsEmail    : data.friendsEmail,
-                msg             : data.msg,
-                propertyTitle   : data.propertyTitle,
-                propertyImg     : data.propertyImg,
-                propertyPrice   : data.propertyPrice
-            };
+        EmailService.prototype.emailToFriend = function (data) {
+            var toFriendAPI =  APPURL.emailFriend + data.propertyId,
+                paramsFriend = {
+                    "name"          : data.name,
+                    "email"         : data.email, 
+                    "friendemail"   : data.friendsEmail,
+                    "message"       : data.msg
+                };
+            return $http.post(toFriendAPI, paramsFriend);
         };
 
         /**
          * Update Request Details Data
          */
-        emailService.prototype.updateRequestDetails = function (data) {
-            this.requestDetails = {
-                name        : data.name,
-                email       : data.email,
-                phone       : data.phone,
-                msg         : data.msg,
-                agencyName  : data.agencyName,
-                agencyPhone : data.agencyPhone,
-                propertyId  : data.propertyId
-            };
+        EmailService.prototype.emailRequestDetails = function (data) {
+            var requestDetailsAPI =  APPURL.requestDetails + data.propertyId,
+                paramsRequest = {
+                    "name"          : data.name,
+                    "email"         : data.email, 
+                    "agentemail"    : data.agencyMail,
+                    "agentname"     : data.agencyName,
+                    "phone"         : data.phone,
+                    "message"       : data.msg
+                };
+            console.log(paramsRequest);
+            return $http.post(requestDetailsAPI, paramsRequest);
         };
         
-        
-        return new emailService();
-    });
+        return new EmailService();
+    }]);
 });

@@ -1691,6 +1691,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/email-assets\/confirm-email.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2528,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/confirm-email.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/confirm-email.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/find-deals.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2164,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/find-deals.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/find-deals.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/nello-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 926,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/nello-logo.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/nello-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/nello-logo2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1062,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/nello-logo2.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/nello-logo2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/reset-password.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2433,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/reset-password.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/reset-password.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/tick-blue.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 597,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/tick-blue.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/tick-blue.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/tick-red.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 533,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/tick-red.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/tick-red.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/email-assets\/view-account.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2319,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/view-account.png",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/view-account.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/featured-bg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -2992,6 +3080,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dist\/login\/views\/confirm-account.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dist\/login\/views\/confirm-account.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dist\/login\/views\/forgot-password-2.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3189,17 +3286,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
-		},
-	"\/dist\/shared\/directives\/shared-directive.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/dist\/shared\/directives\/shared-directive.js",
-		"outputAbbreviatedPath": "\/dist\/shared\/directives\/shared-directive-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
 		},
 	"\/dist\/shared\/views\/footer.html": {
 		"fileType": 8192,
@@ -3443,6 +3529,15 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
+		},
+	"\/modules\/login\/views\/confirm-account.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/modules\/login\/views\/confirm-account.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/modules\/login\/views\/forgot-password-2.html": {
 		"fileType": 8192,

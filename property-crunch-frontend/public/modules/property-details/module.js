@@ -14,12 +14,16 @@ define([
         "ngRoute"
     ])
     .constant("APPURL", {
-        "property": "http://app.propertycrunch.co/client/search/property/",
-        "avgPrice":
+        "property" : "http://app.propertycrunch.co/client/search/property/",
+        "avgPrice" :
             "http://app.propertycrunch.co/client/search/average-rental-yield/",
-        "priceHistory":
+        "priceHistory" :
             "http://app.propertycrunch.co/client/search/property-history/",
-        "comparables":
-            "http://app.propertycrunch.co/client/search/comparable-properties/"
+        "comparables" :
+            "http://app.propertycrunch.co/client/search/comparable-properties/",
+        "emailFriend": 
+            "http://app.propertycrunch.co/client/sendemailtofriend/",
+        "requestDetails": 
+            "http://app.propertycrunch.co/client/sendrequestdetail/"
     });
 });

@@ -162,6 +162,7 @@
                     $anchorScroll();
                 });
         }]);
+    
         return app;
     });
 }(define));

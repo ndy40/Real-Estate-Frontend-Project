@@ -200,7 +200,7 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.setFiltersQuery = function () {
             this.filtersQuery = ""; // Clearing previous query
-            console.log(this.filters);
+            
             if (this.filters.rooms !== undefined) {
                 this.filtersQuery += "&" + "rooms_min=" + this.filters.rooms;
             }
