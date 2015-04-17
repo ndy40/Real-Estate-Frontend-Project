@@ -65,13 +65,13 @@
             $routeProvider.when("/forgot-password", {
                 title : 'Forgot Password - nello',
                 templateUrl : "modules/login/views/forgot-password.html",
-                controller  : "LoginCtrl"
+                controller  : "ResetCtrl"
             });
 
-            $routeProvider.when("/forgot-password-2", {
-                title : 'Forgot Password Success - nello',
-                templateUrl : "modules/login/views/forgot-password-2.html",
-                controller  : "LoginCtrl"
+            $routeProvider.when("/reset-password/:code", {
+                title : 'Set a New Password - nello',
+                templateUrl : "modules/login/views/reset-password.html",
+                controller  : "ResetCtrl"
             });
 
             $routeProvider.when("/favourites", {

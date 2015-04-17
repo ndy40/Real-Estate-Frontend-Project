@@ -11,23 +11,23 @@ define(["../module"], function (app) {
             'ConfirmationService', function ($scope, $routeParams, $location,
                 ConfirmationService) {
         
-        $scope.confirmation = {
-           code     : $routeParams.code,
-           status   : false,
-           error    : false
-        };
+        $scope.confirmation = {};
         
         /**
         * Get Page Type from URL and Set Tab State
         */
         $scope.confirmAccount = function () {
-            ConfirmationService.confirmAccount()
-                .success(function (data) {
-                    $scope.confirmation.status = true;
-                })
-                .error(function (error) {
-                    $scope.confirmation.error = true;
-                });
+            if ($routeParams.code !== undefined) {
+                ConfirmationService.confirmAccount($routeParams.code)
+                    .success(function (data) {
+                        $scope.confirmation.status = true;
+                    })
+                    .error(function (error) {
+                        $scope.confirmation.error = true;
+                    });
+            } else {
+                $scope.confirmation.status = false;
+            }
         };
         
         $scope.confirmAccount();

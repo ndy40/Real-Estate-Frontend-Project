@@ -45,6 +45,34 @@ define(["../module"], function (app) {
                 errorMsg    : ""    // Used to display error msgs
             }
         };
+
+        /**
+        * Object to Store Email Data
+        */
+        $scope.email  = {
+            toFriend : {
+                name            : "",
+                email           : "",
+                friendsEmail    : "",
+                msg             : "I thought you might want to take a look at" +
+                    " this property for sale on thenello.com",
+                propertyId      : ""
+            },
+            requestDetails : {
+                name        : "",
+                email       : "",
+                phone       : "",
+                msg         : "",
+                agencyName  : "",
+                agencyMail  : "",
+                propertyId  : ""
+            },
+            // Used to show/ hide form errors
+            formErrorFriend: false,
+            formErrorDetails: false,
+            friendEmailSent: false,
+            detailsEmailSent: false
+        };
         
         /**
         * Object to Store Tour Data
@@ -152,34 +180,6 @@ define(["../module"], function (app) {
                         'Unable to get comparables';
                     $scope.property.comparables.status = false;
                 });
-        };
-
-        /**
-        * Object to Store Email Data
-        */
-        $scope.email  = {
-            toFriend : {
-                name            : "",
-                email           : "",
-                friendsEmail    : "",
-                msg             : "I thought you might want to take a look at" +
-                    " this property for sale on thenello.com",
-                propertyId      : ""
-            },
-            requestDetails : {
-                name        : "",
-                email       : "",
-                phone       : "",
-                msg         : "",
-                agencyName  : "",
-                agencyMail  : "",
-                propertyId  : ""
-            },
-            // Used to show/ hide form errors
-            formErrorFriend: false,
-            formErrorDetails: false,
-            friendEmailSent: false,
-            detailsEmailSent: false
         };
         
         /**

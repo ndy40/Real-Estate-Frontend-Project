@@ -42,6 +42,10 @@ shared/services/user-model-service.js
 shared/index.js
 login/module.js
 login/controllers/login-controller.js
+login/controllers/confirmation-controller.js
+login/services/confirmation-service.js
+login/controllers/reset-controller.js
+login/services/reset-service.js
 login/index.js
 property-details/module.js
 property-details/controllers/property-controller.js

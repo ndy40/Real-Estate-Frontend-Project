@@ -7,15 +7,15 @@
 
 define(["../module"], function (app) {
     'use strict';
-    return app.service('ConfirmationService', ["$http", "CAPI",
-            function ($http, CAPI) {
+    return app.service('ConfirmationService', ["$http", "LAPI",
+            function ($http, LAPI) {
         var ConfirmationService = function () {};
         
         /**
          * Update Email To Friend
          */
         ConfirmationService.prototype.confirmAccount = function (code) {
-            var url =  CAPI.confirm + code;
+            var url =  LAPI.confirm + code;
             return $http.get(url);
         };
         

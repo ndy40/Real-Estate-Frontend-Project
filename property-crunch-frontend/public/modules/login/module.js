@@ -14,7 +14,9 @@ define([
         "pcShared",
         "pcAuthentication"
     ])
-    .constant("CAPI", {
-        "confirm" : "api/auth/confirm-account/"
+    .constant("LAPI", {
+        "confirm"       : "api/auth/confirm-account/",
+        "requestReset"  : "api/auth/requeset-reset/",
+        "resetPass"     : "api/auth/reset-pass/"
     });
 });

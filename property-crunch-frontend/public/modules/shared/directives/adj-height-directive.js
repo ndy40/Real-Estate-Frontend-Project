@@ -14,7 +14,7 @@ define(["../module"], function (app) {
             link : function (scope, elem) {
                 scope.adjHeight = function () {
                     var winHeight = $(window).height(),
-                        elHeight = winHeight - 75; // 66 header 75 footer
+                        elHeight = winHeight - 128; // 66 header 75 footer
                 
                     elem.css('min-height', elHeight + 'px');
                 };

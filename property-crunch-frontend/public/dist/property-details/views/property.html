@@ -152,7 +152,7 @@
             </div>
         </aside>
 
-<!--        <aside class="main-content">
+        <aside class="main-content">
              <div class="container">         
                 <div class="panel panel-primary panel-no-body"
                     tourtip="These are recently sold properties in close proximity to the advertised property. " 
@@ -187,7 +187,7 @@
                     <pc-rec-properties></pc-rec-properties>
                 </div>
             </div>
-        </aside>-->
+        </aside>
     </div>
 </div>
 
@@ -200,7 +200,12 @@
                     <i class="icon-cross icon18-cross"></i>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" ng-show="email.friendEmailSent">
+                <h4>Email Sent!</h4>
+                <p>We have emailed the Property to your friend(s). Click below if you want to send it to more friends.</p>
+                <button class="btn btn-lg btn-3d" ng-click="resetFriendForm()">Email More Friends</button>
+            </div>
+            <div class="modal-body" ng-show="!email.friendEmailSent">
                 <div class="row">
                     <div class="col-md-4 email-friend-img">
                         <img ng-show="!property.details.images[0].image" class="img-responsive" src="assets/images/no-image.jpg" alt="Image Not Available">
@@ -274,7 +279,12 @@
                     <i class="icon-cross icon18-cross"></i>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" ng-show="email.detailsEmailSent">
+                <h4>Email Sent!</h4>
+                <p>Your email has been sent to the Estate Agent requesting details for this property.</p>
+                <button class="btn btn-lg btn-3d" ng-click="resetRequestForm()">Email Them Again?</button>
+            </div>
+            <div class="modal-body" ng-show="!email.detailsEmailSent">
                 <h4>Learn more about this property</h4>
                 <div class="agency-info">
                     <a href="#"><i class="icon-office"></i>{{property.details.marketer}}</a>

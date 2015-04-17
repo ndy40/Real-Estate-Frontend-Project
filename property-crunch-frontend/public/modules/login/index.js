@@ -8,5 +8,7 @@
 define([
     "./controllers/login-controller",
     "./controllers/confirmation-controller",
-    "./services/confirmation-service"
+    "./services/confirmation-service",
+    "./controllers/reset-controller",
+    "./services/reset-service"
 ], function () {});
