@@ -88,4 +88,12 @@ class UserRepository implements UserRepositoryInterface {
         return User::where('activated', '=', 1)->count();
     }
 
+    public function checkUserByEmail($email) {
+        return Sentry::findUserByLogin($email);
+    }
+
+    public function findUserByResetPasswordCode($reset_password_code) {
+        return \Sentry::findUserByResetPasswordCode($reset_password_code);
+    }
+
 }

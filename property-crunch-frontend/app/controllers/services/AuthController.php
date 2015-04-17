@@ -147,4 +147,69 @@ class AuthController extends BaseController {
         }
     }
 
+    /**
+     * postForgotPassword method
+     * send email for reset password link to registered email.
+     * 
+     * @return json
+     */
+    public function postForgotPassword() {
+        if (Input::get("email") != '') {
+            $email = Input::get("email");
+            try {
+                // checking user by email
+                $user = $this->accountLogic->checkUserByEmail($email);
+                // Get the password reset code
+                $reset_password_code = $user->getResetPasswordCode();
+                // Get user by reset pwd code
+                $user = $this->accountLogic->findUserByResetPasswordCode($reset_password_code);
+                // converting in array
+                $data = $user->toArray();
+                Mail::send('emails.account.forgotpassword', $data, function($message) use ($data) {
+                            $message->to($data["email"], $data["first_name"] . " " . $data["last_name"])
+                                    ->subject('Property Crunch | Forgot Password');
+                        });
+                return Response::json(array("data" => 'success', 'user' => 'Email sent'), 200);
+            } catch (\Cartalyst\Sentry\Users\UserNotFoundException $e) {
+                return Response::json(array("data" => 'Email is not registered'), 401);
+            }
+        } else {
+            return Response::json(array("data" => 'Email can not be empty'), 401);
+        }
+    }
+
+    /**
+     * postResetPassword method
+     * reset user password using reset password code..
+     * 
+     * @param string $activation_code
+     * @return json
+     */
+    public function postResetPassword($reset_password_code) {
+        if ($reset_password_code != '') {
+            if (Input::get('password') != '') {
+                try {
+                    $user = $this->accountLogic->findUserByResetPasswordCode($reset_password_code);
+                    if (count($user) > 0) {
+                        if ($user->attemptResetPassword($reset_password_code, Input::get('password'))) {
+                            // Password reset passed
+                            return Response::json(array("data" => 'success', 'user' => $user), 200);
+                        } else {
+                            // Password reset failed
+                            return Response::json(array("data" => 'Password did not update'), 401);
+                        }
+                    } else {
+                        return Response::json(array("data" => 'User not found'), 401);
+                    }
+                } catch (\Cartalyst\Sentry\Users\UserNotFoundException $e) {
+                    return Response::json(array("data" => 'User not found'), 401);
+                }
+            } else {
+                return Response::json(array("data" => 'Password can not be empty'), 401);
+            }
+        } else {
+            return Response::json(array("data" => 'Invalid url'), 401);
+        }
+    }
+
 }
