@@ -1,6 +1,8 @@
 /*global define */
 /* 
  * Custom Address Filter
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

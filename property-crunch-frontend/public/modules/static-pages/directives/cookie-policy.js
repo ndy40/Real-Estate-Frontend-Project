@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcCookiePolicy Directive - Cookie Policy Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -10,7 +12,7 @@ define(["../module"], function (app) {
             scope: {
                 alertStatus: "="
             },
-            templateUrl : "./modules/static-pages/directives/cookie-policy.html",
+            templateUrl: "./modules/static-pages/directives/cookie-policy.html",
             link : function (scope) {
                 if ($cookieStore.get('showCookieNote') !== 1) {
                     scope.alertStatus = true;
@@ -20,7 +22,7 @@ define(["../module"], function (app) {
                         // Saving Cookie to Disable Alert on Refresh
                         $cookieStore.put('showCookieNote', 1);
                     };
-                };
+                }
             }
         };
     }]);

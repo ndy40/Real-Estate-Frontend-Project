@@ -1,13 +1,15 @@
 /*global define */
 /**
  * Search Form Controller for the pcSearch Module
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("SearchFormCtrl", ["$scope", "$rootScope", "UserModel",
-         "SearchService", "$location", 
-            function ($scope, $rootScope, UserModel, SearchService, $location) {
+    app.controller("SearchFormCtrl", ["$scope", "$rootScope", "UserModel", 
+        "SearchService", "$location", '$http', function ($scope, $rootScope,
+            UserModel, SearchService, $location, $http) {
 
             /**
              * Object to Store Search Data
@@ -61,10 +63,10 @@ define(["../module"], function (app) {
             $scope.loadPropertyTable = function (data) {
                 // Search Returned Results 
                 if (data.hasOwnProperty("data") &&  data.data.length > 0) {
-                    $scope.searchObject.status = true;
                     $scope.searchObject.properties = data.data;
                     $scope.searchObject.count = data.count;
                     // Remove Busy Status & Errors
+                    $scope.searchObject.status = true;
                     $scope.searchObject.busy = false;
                     $scope.searchObject.errorType.location = false;
                     $scope.searchObject.errorType.filters = false;
@@ -78,7 +80,8 @@ define(["../module"], function (app) {
                     if ($scope.searchObject.keywords !== undefined) {
                         // Test if No Results due to the Location Entered
                         SearchService.testLocation().success(function (data) {
-                            if (data.hasOwnProperty("data") &&  data.data.length > 0) {
+                            if (data.hasOwnProperty("data") &&
+                                data.data.length > 0) {
                                 $scope.searchObject.errorType.location = false;
                                 $scope.searchObject.errorType.filters = true;
                             } else {
@@ -100,9 +103,17 @@ define(["../module"], function (app) {
             */
             $scope.updateFilters = function () {
                 SearchService.clearCache(); // Clear Current Cache
+                SearchService.setCurrentPage(1);
                 $scope.getProperties();
             };
-            
+
+            /**
+            * Update Page Number - Clears Cache and Returns Next Page Data
+            */
+            $scope.updatePageNum = function () {
+                SearchService.clearCache(); // Clear Current Cache
+                $scope.getProperties();
+            };
             
             $scope.advanceSearch = function() {
                 $scope.searchObject.busy = true;
@@ -110,32 +121,42 @@ define(["../module"], function (app) {
             };
             
             $scope.closeAdvancedSearch = function() {
-                $scope.getProperties();
                 $scope.searchObject.busy = false;
                 $scope.searchObject.advSearchStatus = false;
+                $scope.updateFilters();
             };
             
             /**
             * Infinite Properties on Mobile
             */
             $scope.infiniteLoader = function () {
-                if (!$scope.searchObject.busy) {
+                if ($http.pendingRequests.length === 0 &&
+                    !$scope.searchObject.busy &&
+                        !$scope.searchObject.advSearchStatus &&
+                            !$scope.searchObject.last) {
+                    // Set Status to Busy
                     $scope.searchObject.busy = true;
-                    if (!$scope.searchObject.last) {
-                        // Increment Page Num
-                        SearchService.setCurrentPage(SearchService.getCurrentPage()+1);
-                        // Get Results for The Next Page
-                        SearchService.getResults().success(function(data) {
+                    // Increment Page Num & get Results
+                    SearchService
+                        .setCurrentPage(SearchService.getCurrentPage() + 1);
+                    SearchService
+                        .getResults().success(function(data) {
                             if (data.data.length > 0) {
                                 $scope.searchObject.properties =
-                                    $scope.searchObject.properties.concat(data.data);
+                                    $scope.searchObject.properties.
+                                        concat(data.data);
                                 $scope.searchObject.busy = false;
+                                var SearchCache = {
+                                    count : data.count,
+                                    data : $scope.searchObject.properties
+                                };
+                                SearchService.clearCache();
+                                SearchService.cacheResults(SearchCache);
                             } else {
                                 $scope.searchObject.busy = false;
                                 $scope.searchObject.last = true;
                             }
-                        }.bind(this));
-                    }
+                    }.bind(this));
                 }
             };
 
@@ -151,11 +172,10 @@ define(["../module"], function (app) {
                         });
                 } else {
                     // Send to Login Page
-                    $location.path("/login");
+                    $location.path("/sign/in");
                 }
             };
-            
-                
+
             $scope.$on("favUpdated", function () {
                 if ($scope.favUpdate) {
                     $scope.favUpdate = false;

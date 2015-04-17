@@ -1,12 +1,38 @@
 /*global define */
 /**
  * Investor Login Controller
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
     'use strict';
-    app.controller("LoginCtrl", ["$scope", "$rootScope", "$location",
-        'AuthService', function ($scope, $rootScope, $location, AuthService) {
+    app.controller("LoginCtrl", ["$scope", "$rootScope", "$routeParams",
+        "$location", 'AuthService', function ($scope, $rootScope, $routeParams,
+            $location, AuthService) {
+        $scope.pageType = {
+            login   : false,
+            signup  : false
+        };
+        
+        /**
+        * Get Page Type from URL and Set Tab State
+        */
+        $scope.setPage = function () {
+            if ($routeParams.type === "in") {
+                $scope.pageType.login = true;
+                $scope.pageType.signup = false;
+            } else if ($routeParams.type === "up") {
+                $scope.pageType.login = false;
+                $scope.pageType.signup = true;
+            }
+//            } else {
+//                 $location.path("/pages/404");
+//            }
+        };
+        
+        $scope.setPage();
+        
         //Model for holding login data
         $scope.loginData = {
             email      : "",
@@ -49,8 +75,9 @@ define(["../module"], function (app) {
             AuthService.register(
                 $scope.registerData
             ).success(function () {
-                $scope.alert.success = true;
-                $scope.alert.isError = false;
+                $location.path("/register-success");
+//                $scope.alert.success = true;
+//                $scope.alert.isError = false;
             }).error(function (data) {
                 var messages = data.flash.split(",");
                 $scope.showErrorMessage(true, messages);

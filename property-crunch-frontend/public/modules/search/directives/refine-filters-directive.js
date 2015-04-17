@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcRefineFilters Directive - Refine Your Search Filters
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

@@ -1,0 +1,1 @@
+define(["../module"],function(e){e.directive("pcActiveLink",["$location",function(e){"use strict";}])});

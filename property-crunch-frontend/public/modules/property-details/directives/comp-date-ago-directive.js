@@ -2,6 +2,8 @@
 /**
  * pcCompDateAgo Directive - Custom Date Ago Directive for Comparable dates.
  * Converts date into days/weeks/months/years ago
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -12,7 +14,7 @@ define(["../module"], function (app) {
             scope : {
                 dateSrc: "="
             },
-            link : function (scope, element) {
+            link : function (scope) {
                 scope.compDateAgo = "";
                 
                 // Watch Model Value & Update View
@@ -42,8 +44,8 @@ define(["../module"], function (app) {
                             scope.compDateAgo = Math.floor(hoursAgo / 24) +
                                 " day(s) ago";
                         } else if (hoursAgo < 720) {
-                            scope.compDateAgo =  Math.floor(hoursAgo / 168)
-                                + " week(s) ago";
+                            scope.compDateAgo =  Math.floor(hoursAgo / 168) +
+                                " week(s) ago";
                         } else if (hoursAgo < 8760) {
                             scope.compDateAgo =  Math.ceil(hoursAgo / 720) +
                                 " month(s) ago";

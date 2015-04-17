@@ -1,6 +1,8 @@
-/*global define */
+/*global define, angular */
 /* 
  * Custom Percent Filter
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

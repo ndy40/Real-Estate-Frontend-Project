@@ -1,12 +1,14 @@
 /*global define */
 /* 
  * A Recommended Propertiese Service used for getting Reccomended Properties
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
     'use strict';
-    return app.service('RecPropertyService', ['$http', 'APPURL',
-        function ($http, APPURL) {
+    return app.service('RecPropertyService', ['$http', 'FAPI',
+        function ($http, FAPI) {
 
             var RecPropertyService = function () {
                 this.results = {};
@@ -27,8 +29,7 @@ define(["../module"], function (app) {
              * Get Recommended Properties
              */
             RecPropertyService.prototype.getRecProperties = function () {
-                var url = "http://app.propertycrunch.co/client/search/search-properties/oxford/1/8?offer_type=Sale";
-                return $http.get(url);
+                return $http.get(FAPI.recProps);
             };
 
             return new RecPropertyService();

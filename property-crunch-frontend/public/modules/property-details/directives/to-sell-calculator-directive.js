@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcToSellCalculator Directive - Buy To Sell Calculator
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -11,7 +13,8 @@ define(["../module"], function (app) {
             scope : {
                 purchasePrice: "="
             },
-            templateUrl : "./modules/property-details/directives/to-sell-calculator.html",
+            templateUrl :
+                "./modules/property-details/directives/to-sell-calculator.html",
             link : function (scope) {
                 // Default Values
                 scope.toSell = {
@@ -20,7 +23,8 @@ define(["../module"], function (app) {
                     resalePrice:    0,
                     holdingPeriod:  0,
                     refurbishment:  0,
-
+                    otherCosts:     0,
+                    stampDuty:      0,
                     // Outputs
                     monthlyMortgage:  "",
                     depositNeeded:   "",
@@ -29,8 +33,31 @@ define(["../module"], function (app) {
                     rOI: ""
                 };
 
-                scope.calculateToSellResults = function () {
+                scope.calcStampDuty = function() {
+                    if (scope.toSell.purchasePrice <= 125000) {
+                        scope.toSell.stampDuty = 0;
+                    } else if (scope.toSell.purchasePrice > 125000 &&
+                        scope.toSell.purchasePrice <= 250000) {
+                            scope.toSell.stampDuty =
+                                (scope.toSell.purchasePrice - 125000) * 0.02;
+                    } else if (scope.toSell.purchasePrice > 250000 &&
+                            scope.toSell.purchasePrice <= 925000) {
+                            scope.toSell.stampDuty =
+                                ((scope.toSell.purchasePrice - 250000) * 0.05) +
+                                    2500;
+                    } else if (scope.toSell.purchasePrice > 925000 &&
+                        scope.toSell.purchasePrice <= 1500000) {
+                            scope.toSell.stampDuty =
+                                ((scope.toSell.purchasePrice - 925000) * 0.1) +
+                                    36250;
+                    } else if (scope.toSell.purchasePrice > 1500000) {
+                        scope.toSell.stampDuty =
+                            ((scope.toSell.purchasePrice - 1500000) * 0.12) +
+                                93750;
+                    }
+                };
 
+                scope.calculateToSellResults = function () {
                     // Monthly Mortgage
                     scope.toSell.monthlyMortgage = scope.toSell.purchasePrice *
                         scope.toSell.mortgageLtv * scope.toSell.mortgageRate /
@@ -39,29 +66,28 @@ define(["../module"], function (app) {
                     // Deoposit Needed
                     scope.toSell.depositNeeded = scope.toSell.purchasePrice -
                         (scope.toSell.purchasePrice * scope.toSell.mortgageLtv);
+                    
+                    // Stamp Duty
+                    scope.calcStampDuty();
 
                     // Total Investment
                     scope.toSell.totalInvestment = scope.toSell.depositNeeded +
-                        scope.toSell.refurbishment + (scope.toSell.purchasePrice
-                        * scope.toSell.mortgageLtv * scope.toSell.mortgageRate
-                                / 12 * scope.toSell.holdingPeriod);
+                        scope.toSell.refurbishment + scope.toSell.otherCosts +
+                            (scope.toSell.purchasePrice *
+                                scope.toSell.mortgageLtv *
+                                    scope.toSell.mortgageRate / 12 *
+                                        scope.toSell.holdingPeriod) +
+                                            scope.toSell.stampDuty;
 
                     // Profit or Loss
                     scope.toSell.profitLoss = scope.toSell.resalePrice -
-                        (scope.toSell.depositNeeded + scope.toSell.refurbishment
-                            + (scope.toSell.purchasePrice * scope.toSell.mortgageLtv
-                                * scope.toSell.mortgageRate / 12 *
-                                    scope.toSell.holdingPeriod) +
-                                        (scope.toSell.purchasePrice *
-                                            scope.toSell.mortgageLtv));
+                        (scope.toSell.totalInvestment +
+                            (scope.toSell.purchasePrice *
+                                scope.toSell.mortgageLtv));
 
                     // ROI 
                     scope.toSell.rOI = scope.toSell.profitLoss /
-                        (scope.toSell.depositNeeded + scope.toSell.refurbishment
-                            + (scope.toSell.purchasePrice *
-                                scope.toSell.mortgageLtv *
-                                    scope.toSell.mortgageRate / 12 *
-                                        scope.toSell.holdingPeriod));
+                        scope.toSell.totalInvestment;
 
                     // Show Results & Hide Calculator
                     scope.toSellResults = true;
@@ -72,7 +98,7 @@ define(["../module"], function (app) {
                     scope.toSellResults = false;
                 };
 
-                // Define Purchase Price After Service Returns Data in Controller
+                // Define Purchase Price After Service Returns Data in Ctrlr
                 scope.$watch('purchasePrice', function () {
                     if (scope.purchasePrice === undefined) {
                         scope.toSell.purchasePrice = 0;

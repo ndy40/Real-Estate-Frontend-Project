@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Favorites Controller for the pcFavorites Module
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
@@ -13,7 +15,7 @@ define(["../module"], function (app) {
         * Send to Login Page if Not Logged in
         */
         if (!UserModel.isLoggedIn) {
-            $location.path("/login");
+            $location.path("/sign/in");
         }
         
         /**
@@ -80,8 +82,7 @@ define(["../module"], function (app) {
                 });
         };
 
-
-        $scope.$on("favUpdated", function (targetscope, currscope) {
+        $scope.$on("favUpdated", function () {
             if ($scope.favUpdate) {
                 $scope.favUpdate = false;
             } else {

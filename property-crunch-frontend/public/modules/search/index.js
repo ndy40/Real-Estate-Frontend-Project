@@ -1,6 +1,8 @@
 /*global define */
 /**
-*   Search Module Definition for RequireJS
+* Search Module Definition for RequireJS
+* 
+* @author Arslan Akram <arslanhawn@gmail.com>
 */
 
 define([

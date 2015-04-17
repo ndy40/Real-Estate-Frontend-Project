@@ -2,18 +2,21 @@
 /**
  * pcPriceCompare Directive - Compares Avg Price with Property Price & returns
  * the percentage
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
     app.directive("pcPriceCompare", function () {
         return {
             restrict : "EA",
-            templateUrl : "./modules/property-details/directives/price-compare.html",
+            templateUrl :
+                "./modules/property-details/directives/price-compare.html",
             scope : {
                 avgPrice: "=",
                 propertyPrice: "="
             },
-            link : function (scope, element) {
+            link : function (scope) {
                 scope.marketDiff = "";
                 scope.status = {
                     above: false,

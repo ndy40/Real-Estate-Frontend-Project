@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcDateAgo Directive - Converts date into days/weeks/months/years ago
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -11,7 +13,7 @@ define(["../module"], function (app) {
             scope : {
                 dateSrc: "="
             },
-            link : function (scope, element) {
+            link : function (scope) {
                 scope.dateAgo = "";
                 
                 // Watch Model Value & Update View
@@ -22,7 +24,8 @@ define(["../module"], function (app) {
                             createdYear = dateParts[0],
                             createdMonth = dateParts[1] - 1,
                             createdDay = dateParts[2],
-                            createdDate = new Date(createdYear, createdMonth, createdDay),
+                            createdDate =
+                                new Date(createdYear, createdMonth, createdDay),
                             currentDate = new Date(),
                             hoursAgo = (currentDate.valueOf() -
                                 createdDate.valueOf()) / 3600000;
@@ -35,8 +38,8 @@ define(["../module"], function (app) {
                             scope.dateAgo = Math.floor(hoursAgo / 24) +
                                 " day(s) ago";
                         } else if (hoursAgo < 720) {
-                            scope.dateAgo =  Math.floor(hoursAgo / 168)
-                                + " week(s) ago";
+                            scope.dateAgo =  Math.floor(hoursAgo / 168) +
+                                " week(s) ago";
                         } else if (hoursAgo < 8760) {
                             scope.dateAgo =  Math.ceil(hoursAgo / 720) +
                                 " month(s) ago";

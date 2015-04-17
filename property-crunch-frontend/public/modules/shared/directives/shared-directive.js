@@ -1,5 +1,7 @@
 /**
  * pcActiveLink - Set Nav Active States Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     app.directive("pcActiveLink", ["$location", function (location) {

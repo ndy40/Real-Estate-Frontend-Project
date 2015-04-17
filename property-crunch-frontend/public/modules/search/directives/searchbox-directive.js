@@ -1,6 +1,9 @@
+/*global define */
 /**
  * This directive will be responsible for displaying the search form across all
  * pages.
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
@@ -29,7 +32,7 @@ define(["../module"], function (app) {
                 link : function (scope, element, attr) {
                     scope.searchProperty = function (keywords) {
                         // Clear Cache & Filters
-                        SearchService.clearFilters();
+                        //SearchService.clearFilters();
                         SearchService.clearCache();
                         SearchService.setCurrentPage(1);
                         // Set Keywords

@@ -1,0 +1,10 @@
+<div class="selectbox-list">
+    <button ng-click="dropdown()">
+    	<span class="option-selected">{{optionSelected.option}}</span>
+        <span class="icon-arrow-down2 select-arrow"></span>
+    </button>
+    <ul ng-class="{'open':dropDownStatus}" class="dropdown-menu">
+        <li><a ng-click="onSelectEvent(defaults)">{{defaults.option}}</a></li> 
+        <li ng-repeat="type in options"><a ng-click="onSelectEvent(type)">{{type.option}}</a></li>
+    </ul>
+</div>

@@ -2,6 +2,8 @@
 /*global $*/
 /**
  * pcCarousel Directive - Property Images With Preview used on Property Details
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -18,7 +20,8 @@ define(["../module"], function (app) {
                 scope.currentImg = "";
 
                 scope.initCarousel = function () {
-                    var propertyCarousel = $(".property-img-carousel .owl-carousel"),
+                    var propertyCarousel =
+                            $(".property-img-carousel .owl-carousel"),
                         carouselItems = $(".property-img-carousel .item"),
                         nextNav = $(".property-img-carousel .next"),
                         prevNav = $(".property-img-carousel .prev");
@@ -39,7 +42,8 @@ define(["../module"], function (app) {
                     // Get src for item that hasClass .active & update scope 
                     scope.updatePreview = function () {
                         //Use the commented code to use thumbs
-                        //scope.currentImg = $('.item.active img').attr('large-src');
+                        //scope.currentImg =
+                            // $('.item.active img').attr('large-src');
                         scope.currentImg = $(".item.active img").attr("src");
                         scope.$apply();
                     };
@@ -61,11 +65,13 @@ define(["../module"], function (app) {
                         // jQuery if last item, make first Active
                         if (nextItem.length === 0) {
                             carouselItems.removeClass('active');
-                            $('.property-img-carousel .first').addClass('active');
+                            $('.property-img-carousel .first')
+                                .addClass('active');
                         } else {
                             nextItem.addClass('next');
                             carouselItems.removeClass('active');
-                            $('.item.next').addClass('active').removeClass('next');
+                            $('.item.next')
+                                .addClass('active').removeClass('next');
                         }
 
                         scope.updatePreview();
@@ -81,11 +87,14 @@ define(["../module"], function (app) {
                         // jQuery if first item, make last Active
                         if (prevItem.length === 0) {
                             carouselItems.removeClass('active');
-                            $('.property-img-carousel .last').addClass('active');
+                            $('.property-img-carousel .last')
+                                .addClass('active');
                         } else {
                             prevItem.addClass('prev');
                             carouselItems.removeClass('active');
-                            $('.item.prev').addClass('active').removeClass('prev');
+                            $('.item.prev')
+                                .addClass('active')
+                                .removeClass('prev');
                         }
 
                         scope.updatePreview();

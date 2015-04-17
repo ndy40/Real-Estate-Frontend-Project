@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcNull Directive - Hides if "Null" string found
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

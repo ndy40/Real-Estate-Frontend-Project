@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcShared - Shared Module definition file
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([
@@ -17,6 +19,8 @@ define([
     ])
     .constant("FAPI", {
         "addToFav"  : "api/property/add-favourite/",
-        "removeFav" : "api/property/remove-favourite/"
-    });
+        "removeFav" : "api/property/remove-favourite/",
+        "recProps":
+            "http://app.propertycrunch.co/client/search/search-properties/oxford/1/8?offer_type=Sale"
+    })
 });

@@ -1,7 +1,11 @@
 /*global define */
 /**
 * NavigationCtrl for handling navigation wide changes. 
- */
+* 
+* @author Ndifreke Ekott <ndy40.ekott@gmail.com>
+* @author Arslan Akram <arslanhawn@gmail.com>
+*/
+
 define(["../module"], function (app) {
     'use strict';
     app.controller("NavigationCtrl", ["$scope", "$rootScope", "UserModel",
@@ -17,11 +21,11 @@ define(["../module"], function (app) {
             UserModel.logout();
         };
 
-        $scope.$on("loginsuccess", function (targetscope, currscope) {
+        $scope.$on("loginsuccess", function () {
             AuthService.getCurentUser($scope.modifynav);
         });
         
-        $scope.$on("favUpdated", function (targetscope, currscope) {
+        $scope.$on("favUpdated", function () {
             $rootScope.navData.favCount = UserModel.favCount;
         });
 

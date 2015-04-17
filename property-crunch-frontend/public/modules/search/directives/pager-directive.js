@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcPager Directive - Pagination for the Search Page
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
@@ -94,7 +96,6 @@ define(["../module"], function (app) {
                         if (scope.pagesArray.length > 0) {
                             // Default Active
                             if (currentPage === 1) {
-                                // Using pagesArray[0] because it's faster
                                 scope.pagesArray[0].isActive = true;
                             } else {
                                 for (i = 0; i < scope.pagesArray.length;

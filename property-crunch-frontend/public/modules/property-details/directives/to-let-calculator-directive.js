@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcToLetCalculator Directive - Buy To Let Calculator  
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -8,7 +10,8 @@ define(["../module"], function (app) {
 
         return {
             restrict : "E",
-            templateUrl : "./modules/property-details/directives/to-let-calculator.html",
+            templateUrl :
+                "./modules/property-details/directives/to-let-calculator.html",
             scope : {
                 purchasePrice: "=",
                 rentalIncome: "="
@@ -21,12 +24,39 @@ define(["../module"], function (app) {
                     mortgageRate:       0.06, //  (Default: 6%)
                     managementCost:     0,
                     maintenanceCost:    0,
+                    refurbishment:      0,
+                    otherCosts:         0,
                     // Results
                     monthlyMortgage:        "",
                     depositNeeded:          "",
+                    stampDuty:              "",
+                    totalPurchaseCost:      "",
                     monthlyProfitOrLoss:    "",
-                    netRentalYield:         "",
-                    trueRoR:                ""
+                    yearlyROI:              ""
+                };
+
+                scope.calcStampDuty = function() {
+                    if (scope.toLet.purchasePrice <= 125000) {
+                        scope.toLet.stampDuty = 0;
+                    } else if (scope.toLet.purchasePrice > 125000 &&
+                        scope.toLet.purchasePrice <= 250000) {
+                            scope.toLet.stampDuty =
+                                (scope.toLet.purchasePrice - 125000) * 0.02;
+                    } else if (scope.toLet.purchasePrice > 250000 &&
+                        scope.toLet.purchasePrice <= 925000) {
+                            scope.toLet.stampDuty =
+                                ((scope.toLet.purchasePrice - 250000) * 0.05) +
+                                    2500;
+                    } else if (scope.toLet.purchasePrice > 925000 &&
+                        scope.toLet.purchasePrice <= 1500000) {
+                            scope.toLet.stampDuty =
+                                ((scope.toLet.purchasePrice - 925000) * 0.1) +
+                                    36250;
+                    } else if (scope.toLet.purchasePrice > 1500000) {
+                        scope.toLet.stampDuty =
+                            ((scope.toLet.purchasePrice - 1500000) * 0.12) +
+                                93750;
+                    }
                 };
 
                 scope.calculateToLetResults = function () {
@@ -38,6 +68,14 @@ define(["../module"], function (app) {
                     scope.toLet.depositNeeded  = scope.toLet.purchasePrice -
                         (scope.toLet.purchasePrice * scope.toLet.mortgageLtv);
 
+                    // Calculate Stamp Duty
+                     scope.calcStampDuty();
+
+                    // Calculate Total Purchase Cost
+                    scope.toLet.totalPurchaseCost = scope.toLet.depositNeeded +
+                        scope.toLet.stampDuty + scope.toLet.refurbishment +
+                            scope.toLet.otherCosts;
+
                     // Calculate Monthly Profit Or Loss
                     scope.toLet.monthlyProfitOrLoss  =
                         scope.toLet.estRentalIncome -
@@ -47,18 +85,15 @@ define(["../module"], function (app) {
                                         (scope.toLet.maintenanceCost *
                                             scope.toLet.estRentalIncome);
 
-                    // Calculate Net Rental Yield
-                    scope.toLet.netRentalYield = scope.toLet.monthlyProfitOrLoss
-                        * 12 / scope.toLet.purchasePrice;
 
                     // Calculate True Rate of Return
-                    scope.toLet.trueRoR = scope.toLet.monthlyProfitOrLoss * 12 /
-                        scope.toLet.depositNeeded;
+                    scope.toLet.yearlyROI = scope.toLet.monthlyProfitOrLoss *
+                        12 / scope.toLet.totalPurchaseCost;
 
                     // Show Results
                     scope.toLetResults = true;
                 };
-
+                
                 // Hide Results
                 scope.reCalculateToLetResults = function () {
                     scope.toLetResults = false;

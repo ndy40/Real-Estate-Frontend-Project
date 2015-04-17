@@ -1,6 +1,8 @@
 /*global define */
 /**
-*   Static Pages Module Definition for RequireJS
+* Static Pages Module Definition for RequireJS
+* 
+* @author Arslan Akram <arslanhawn@gmail.com>
 */
 
 define([

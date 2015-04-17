@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcPercent Directive - Percent to Integer to Percent Convertor
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -39,7 +41,8 @@ define(["../module"], function (app) {
                 // Update View on Blur
                 element.bind('blur', function () {
                     if (ngModel.$modelValue !== undefined) {
-                        ngModel.$viewValue = scope.percentify(ngModel.$modelValue);
+                        ngModel.$viewValue =
+                            scope.percentify(ngModel.$modelValue);
                         ngModel.$render();
                     }
                 });

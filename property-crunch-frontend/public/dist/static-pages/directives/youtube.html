@@ -1,0 +1,6 @@
+<div class="yt-img" ng-show="!status" ng-click="loadVideo()">
+    <img class="img-responsive" src="assets/images/video-thumb.jpg" />
+</div>
+<div class="video-container" ng-show="status">
+    <iframe id="yt-video" width="1280" height="720" ng-src="{{videoSrc}}" frameborder="0" allowfullscreen></iframe>
+</div>

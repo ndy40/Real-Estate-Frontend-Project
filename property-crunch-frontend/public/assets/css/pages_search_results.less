@@ -5,9 +5,9 @@
    Pages > Search Results > Header
 ====================================================================*/
 .navbar-abs {
-	position: absolute;
-	width: 100%;
-	z-index: 9;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
 }
 
 .search-header {
@@ -16,76 +16,75 @@
 }
 
 .search-content {
-	.text-center();
-	
-	.input-group {
-		.bottom-10();
-	}
-	
-	.searchbar-bottom {
-		text-align: center;
-		font-size: @font-size-h5;	
-		.bottom-10();
+    .text-center();
+
+    .input-group {
+        .bottom-10();
+    }
+
+    .searchbar-bottom {
+        text-align: center;
+        font-size: @font-size-h5;	
+        .bottom-10();
         .clearfix();
-		
-        
+
+
         .advanced-search,
         .result_count {
             line-height: 1.1;
             float: left;
             text-shadow: 1px 1px 1px #000;	
         }
-        
+
         .advanced-search {
             font-weight: 700;
             letter-spacing: 0.35px;
             margin-right: 20px;
-		    .bottom-10();
+            .bottom-10();
             .transition(all 0.3s);
-            
+
             &:hover {
                 .transition(all 0.3s);
             }
-            
+
             &:focus {
                 color: @brand-red;
             }
-             
+
         }
          
         .result_count {
             margin-bottom: 0;	
         }
-		
-		i {
-			font-size: 28px;
-			line-height: 14px;
-			position: relative;
-			top: 6px;
-			left: 6px;
-			cursor: pointer;
-		}
-	}
+
+        i {
+            font-size: 28px;
+            line-height: 14px;
+            position: relative;
+            top: 6px;
+            left: 6px;
+            cursor: pointer;
+        }
+    }
 }
 .search-content .input-group .form-control.form-control-icon.searchbar {
     border-radius: @border-radius-base;
     .border-right-radius(0);
-    
-	border-right: none;
+    border-right: none;
 }
 
 
 @media (min-width: 480px) {
     .search-content {
-		.searchbar-bottom {
-			 .advanced-search {
+        .searchbar-bottom {
+            .advanced-search {
                 float: left;
-             }
+            }
             .result_count {
                 float: right;
             }
-		}	
-	}
+        }	
+    }
 }
 /*===================================================================
   Pages > Search Results > Filters
@@ -108,41 +107,37 @@
 }
 
 .keyword-filters {
-	li {
-		margin-bottom: 15px;
-        
+    li {
+        margin-bottom: 15px;
+
         label {
             font-size: @font-size-base;
-            
+
             i {
                 cursor: pointer;
             }
         }
-        
+
         span, i {
             float: left;
         }
-        
+
         i {
             position: relative;
             color: @gray-dark;
             line-height: 1;
             margin: 0 10px 0 7px;
-            
+
             &.icon-help {
                 float: none;
                 top: 1px;
                 left: -5px;
             }
         }
-	}        
+    }        
 }
 
 @media (min-width: 640px) and (max-width: 991px) {
-    .filters-wrap  {
-        width: 50%;
-    }
-    
     .keyword-filters {
         min-height: 310px;
     }
@@ -196,38 +191,37 @@
   Pages > Search Results > Property Listing 
 ====================================================================*/
 .property-listing {
-	border: 1px solid @gray;
+    border: 1px solid @gray;
     background: #fff;
     border-radius: @border-radius-base;
-	padding: 20px;
-	margin-bottom: 20px;
-	position: relative;
-	height: 100%;
-
-	.clearfix();
-	.transition(all 0.3s);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 100%;
+    .clearfix();
+    .transition(all 0.3s);
     
     &:hover {
         background: @gray-lighter;
         .transition(all 0.3s);
     }
 
-	p {
-		margin-bottom: 20px;
-		
-		&.distance {
-			margin-bottom: 0;
-		}
-	}
+    p {
+        margin-bottom: 20px;
+
+        &.distance {
+            margin-bottom: 0;
+        }
+    }
 	
     .property-img {
         border-radius: @border-radius-base;
         overflow: hidden;
     }
     
-	img {
-		width: 694px;
-	}
+    img {
+        width: 694px;
+    }
     
     .property-title-group {
         margin: 20px 0;
@@ -247,7 +241,7 @@
         
         .add-to-fav, .added-to-fav {
             float: right;
-            font-size: @font-size-h6;
+            font-size: 12px;
             
             i {
                 font-size: 18px;
@@ -356,6 +350,12 @@
 }
 @media (min-width: 640px) {
     .property-listing {
+        .property-title-group {
+            .add-to-fav, .added-to-fav { 
+                font-size: 14px;
+            }
+        }
+
         .property-details-group {
             .beds {
                 float: left;
@@ -375,20 +375,23 @@
 }
 
 @media (min-width: 768px) {
-	.property-listing {
-        p,
-        .property-title-group {
+    .property-listing {
+        p, .property-title-group {
             margin: 0 0 18px;	
+
+            .add-to-fav, .added-to-fav { 
+                font-size: 14px;
+            }
         }
         
-      	.property-details-group {
+        .property-details-group {
             margin-bottom: 15px;
-            
+
             .beds {
                 width: 100%;
                 margin-bottom: 18px;
             }
-            
+
             .property-tags {
                 float: left;
             }

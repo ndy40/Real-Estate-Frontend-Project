@@ -1,6 +1,8 @@
 /*global define */
 /**
- * Static Controller
+ * Static Pages Controller
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -55,6 +57,6 @@ define(["../module"], function (app) {
              * Cookie Policy Directive Status to Apply Styling to Home Header
              */
             $scope.cookieAlertStatus = false;
-
+            
         }]);
 });

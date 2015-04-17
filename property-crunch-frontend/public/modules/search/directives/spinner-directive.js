@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcSpinner Directive - Number Spinner Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';

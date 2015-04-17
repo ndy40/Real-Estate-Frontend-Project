@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcYoutube Directive - To show custom high quality thumb
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -24,16 +26,6 @@ define(["../module"], function (app) {
                     youtubeIframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                 });
                 
-//                $(".modal").click(function(e) {
-//                    if($(e.target).is('img.img-responsive')){
-//                        e.preventDefault();
-//                        return;
-//                    } else {
-//                        var outerDiv = document.getElementById("video");
-//                        var youtubeIframe = outerDiv.getElementsByTagName("iframe")[0].contentWindow;
-//                        youtubeIframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-//                    }
-//                }); 
             }
         };
     }]);

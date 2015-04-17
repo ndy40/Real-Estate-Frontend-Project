@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcComparables Directive
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 define(["../module"], function (app) {
     'use strict';
@@ -13,8 +15,9 @@ define(["../module"], function (app) {
                 compareTitle: "=",
                 avgPrice: "="
             },
-            templateUrl : "./modules/property-details/directives/comparables.html",
-            link : function (scope, element, attr, ngModel) {
+            templateUrl :
+                "./modules/property-details/directives/comparables.html",
+            link : function (scope) {
                 scope.$watch('propertySrc', function () {
                     scope.obj = {
                         src     : [],
@@ -23,13 +26,18 @@ define(["../module"], function (app) {
                         counter : 2,
                         current : [],
                         noMore  : false,
+                        noCompares : false
                     };
                      
                         
                     scope.init = function() {
                         if (scope.propertySrc.length > 0) {
+                            scope.obj.noCompares = false;
                             scope.obj.src = scope.propertySrc;
-                            scope.obj.current = scope.obj.src.slice(0, scope.obj.pointer);
+                            scope.obj.current =
+                                scope.obj.src.slice(0, scope.obj.pointer);
+                        } else {
+                            scope.obj.noCompares = true;
                         }
                     };
                     
@@ -38,7 +46,8 @@ define(["../module"], function (app) {
                             scope.obj.noMore  = true;
                         } else {
                             scope.obj.pointer += 2;
-                            scope.obj.current = scope.obj.src.slice(0, scope.obj.pointer);
+                            scope.obj.current =
+                                scope.obj.src.slice(0, scope.obj.pointer);
                         }
                     };
                     

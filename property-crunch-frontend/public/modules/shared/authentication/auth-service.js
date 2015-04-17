@@ -16,8 +16,8 @@ define(["./module"], function (app) {
              */
             var AuthService = function () {
                 this.user = undefined;
-                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true")
-                    ? true : false;
+                this.isLoggedIn = ($cookieStore.get("isLoggedIn") === "true") ?
+                    true : false;
             };
 
             /*

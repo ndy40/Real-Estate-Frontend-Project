@@ -2,6 +2,8 @@
 /*
  * A Search service used for passing in Search keywords and sending Location 
  * search results to the database.
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
@@ -217,7 +219,8 @@ define(["../module"], function (app) {
                 this.filtersQuery += "&" + "sort=" + this.filters.sort.value;
             }
             if (this.filters.minYield !== undefined) {
-                this.filtersQuery += "&" + "yield_min=" + this.filters.minYield.value;
+                this.filtersQuery += "&" + "yield_min=" +
+                    this.filters.minYield.value;
             }
         };
         
@@ -233,8 +236,8 @@ define(["../module"], function (app) {
          */
         SearchService.prototype.setUrl = function () {
             this.url = APPSRCHURL.search + this.keywords + "/" +
-                        this.pager.pageNumber + "/" + this.pager.resultsPerPage
-                            + "?" + "offer_type=Sale";
+                this.pager.pageNumber + "/" + this.pager.resultsPerPage + "?" +
+                    "offer_type=Sale";
         };
 
         /**

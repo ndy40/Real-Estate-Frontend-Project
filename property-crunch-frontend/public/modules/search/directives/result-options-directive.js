@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcResultOptions Directive - Sort By & Results Per Page Selectboxes
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {
@@ -15,7 +17,7 @@ define(["../module"], function (app) {
                 scope : {
                     callback: "="
                 },
-                link : function (scope) {
+                link : function (scope, elem, attrs) {
                     scope.filters = {}; //Object to Store Filters Lists
 
                     /**
@@ -47,11 +49,16 @@ define(["../module"], function (app) {
                     */
                     scope.setCurrentSortOrder = function (sortOrder) {
                         SearchService.setCurrentSortOrder(sortOrder);
-                        scope.callback();
+                        if (attrs.callback !== undefined) {
+                            scope.callback();
+                        }
+                        
                     };
                     scope.setCurrentResultsPerPage = function (resultsPerPage) {
                         SearchService.setCurrentResultsPerPage(resultsPerPage);
-                        scope.callback();
+                        if (attrs.callback !== undefined) {
+                            scope.callback();
+                        }
                     };
 
                     /**

@@ -1,6 +1,8 @@
 /*global define */
 /**
  * pcAddToFav Directive - To Add Classes to Favourite Properties 
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define(["../module"], function (app) {

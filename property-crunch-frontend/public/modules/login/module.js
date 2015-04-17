@@ -1,6 +1,8 @@
 /*global define */
 /**
  * Investor Login Module definition
+ * 
+ * @author Arslan Akram <arslanhawn@gmail.com>
  */
 
 define([
@@ -11,5 +13,10 @@ define([
     return ng.module("pcLogin",  [
         "pcShared",
         "pcAuthentication"
-    ]);
+    ])
+    .constant("LAPI", {
+        "confirm"       : "api/auth/confirm-account/",
+        "requestReset"  : "api/auth/requeset-reset/",
+        "resetPass"     : "api/auth/reset-pass/"
+    });
 });
