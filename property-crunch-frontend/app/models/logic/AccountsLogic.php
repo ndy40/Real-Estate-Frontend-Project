@@ -99,5 +99,13 @@ class AccountsLogic extends BusinessLogicAbstract {
         return $this->userRepository->getActiveUserCount();
     }
 
+    public function checkUserByEmail($email) {
+        return $this->userRepository->checkUserByEmail($email);
+    }
+
+    public function findUserByResetPasswordCode($reset_password_code) {
+        return $this->userRepository->findUserByResetPasswordCode($reset_password_code);
+    }
+
 }
 
