@@ -1746,6 +1746,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/email-assets\/testimonial-bg-low.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 83219,
+		"inputAbbreviatedPath": "\/assets\/images\/email-assets\/testimonial-bg-low.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/email-assets\/testimonial-bg-low.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/email-assets\/tick-blue.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1808,6 +1819,17 @@
 		"initialSize": 121954,
 		"inputAbbreviatedPath": "\/assets\/images\/header-bg-ie.jpg",
 		"outputAbbreviatedPath": "\/assets\/images\/header-bg-ie.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/header-bg-low.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52756,
+		"inputAbbreviatedPath": "\/assets\/images\/header-bg-low.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/header-bg-low.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3124,6 +3146,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/dist\/main.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dist\/main.js",
+		"outputAbbreviatedPath": "\/dist\/main-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
 		},
 	"\/dist\/property-details\/directives\/carousel.html": {
 		"fileType": 8192,

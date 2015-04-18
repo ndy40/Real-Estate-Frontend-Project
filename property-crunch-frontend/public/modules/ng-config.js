@@ -75,7 +75,7 @@
             $http.get('modules/login/views/forgot-password.html', {
                 cache: $templateCache 
             });
-            $http.get('modules/login/views/forgot-password-2.html', {
+            $http.get('modules/login/views/reset-password.html', {
                 cache: $templateCache 
             });
             $http.get('modules/login/views/confirm-account.html', {

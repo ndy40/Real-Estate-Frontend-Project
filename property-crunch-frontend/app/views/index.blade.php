@@ -38,6 +38,6 @@
         <!-- contents go in here. -->
         <div ng-view></div>
 
-        <script async src="{{asset('assets/js/requirejs/require.min.js')}}" data-main="{{asset('modules/main.js')}}"></script>
+        <script async src="{{asset('assets/js/requirejs/require.min.js')}}" data-main="{{asset('dist/main.js')}}"></script>
     </body>
 </html>
