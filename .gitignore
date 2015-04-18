@@ -5,3 +5,5 @@ property-crunch-frontend/.gitignore
 property-crunch-frontend/nbproject/private/private.xml
 property-crunch-frontend/nbproject/project.properties
 property-crunch-frontend/nbproject/project.xml
+nbproject/project.properties
+nbproject/project.xml

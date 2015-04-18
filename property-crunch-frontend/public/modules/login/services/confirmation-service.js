@@ -16,7 +16,7 @@ define(["../module"], function (app) {
          */
         ConfirmationService.prototype.confirmAccount = function (code) {
             var url =  LAPI.confirm + code;
-            return $http.post(url);
+            return $http.get(url);
         };
         
         return new ConfirmationService();
