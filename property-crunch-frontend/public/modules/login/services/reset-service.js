@@ -15,8 +15,11 @@ define(["../module"], function (app) {
          * Send Request Reset Password Email
          */
         ResetService.prototype.requestReset = function (email) {
-            var requestResetUrl =  LAPI.requestReset + email;
-            return $http.get(requestResetUrl);
+            var requestResetUrl =  LAPI.requestReset,
+                params = {
+                    "email"     : email
+                };
+            return $http.post(requestResetUrl);
         };
         
         /**
