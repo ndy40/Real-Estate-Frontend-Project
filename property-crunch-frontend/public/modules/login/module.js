@@ -17,6 +17,6 @@ define([
     .constant("LAPI", {
         "confirm"       : "api/auth/confirm-account/",
         "requestReset"  : "api/auth/forgot-password/",
-        "resetPass"     : "api/auth/reset-pass/"
+        "resetPass"     : "api/auth/reset-password/"
     });
 });

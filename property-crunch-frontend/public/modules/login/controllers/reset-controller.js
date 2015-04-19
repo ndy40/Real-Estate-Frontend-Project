@@ -82,7 +82,7 @@ define(["../module"], function (app) {
                 $('#reset_success').modal();
                 // Check if PassCode is there
                 if ($scope.resetPass.code !== null) {
-                    ResetService.resetPass($scope.resetPass.code)
+                    ResetService.resetPass($scope.resetPass)
                         .success(function (data) {
                             $scope.resetPass.status = true;
                         })
