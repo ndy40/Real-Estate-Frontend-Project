@@ -16,7 +16,7 @@ define([
     ])
     .constant("LAPI", {
         "confirm"       : "api/auth/confirm-account/",
-        "requestReset"  : "api/auth/forgot-password/",
-        "resetPass"     : "api/auth/reset-password/"
+        "requestReset"  : "api/auth/forgot-password",
+        "resetPass"     : "api/auth/reset-password"
     });
 });
