@@ -21,12 +21,13 @@ define(["../module"], function (app) {
                 ConfirmationService.confirmAccount($routeParams.code)
                     .success(function (data) {
                         $scope.confirmation.status = true;
+                        $scope.confirmation.error = false;
                     })
-                    .error(function (error) {
+                    .error(function (data) {
+                        $scope.confirmation.errorMsg = data.flash;
+                        $scope.confirmation.status = false;
                         $scope.confirmation.error = true;
                     });
-            } else {
-                $scope.confirmation.status = false;
             }
         };
         

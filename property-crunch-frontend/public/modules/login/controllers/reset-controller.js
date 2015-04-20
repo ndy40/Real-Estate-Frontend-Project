@@ -42,9 +42,11 @@ define(["../module"], function (app) {
                         $scope.requestReset.error = false;
                         $('#email_sent').modal();
                     })
-                    .error(function (error) {
+                    .error(function (data) {
+                        $scope.requestReset.errorMsg = data.flash;
                         $scope.requestReset.error = true;
                         $scope.requestReset.status = false;
+                        $('#email_sent').modal();
                     });
             } else {
                 // Validation Failed
@@ -87,14 +89,12 @@ define(["../module"], function (app) {
                             $scope.resetPass.error = false;
                             $('#reset_success').modal();
                         })
-                        .error(function (error) {
+                        .error(function (data) {
+                            $scope.resetPass.errorMsg = data.flash;
                             $scope.resetPass.status = false;
                             $scope.resetPass.error = true;
+                            $('#reset_success').modal();
                         });
-                } else {
-                    // No Pass Code in RouteParms - Throw Error
-                    $scope.resetPass.status = false;
-                    $scope.resetPass.error = true;
                 }
             } else {
                 // Validation Failed

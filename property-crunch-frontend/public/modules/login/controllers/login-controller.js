@@ -76,8 +76,6 @@ define(["../module"], function (app) {
                 $scope.registerData
             ).success(function () {
                 $location.path("/register-success");
-//                $scope.alert.success = true;
-//                $scope.alert.isError = false;
             }).error(function (data) {
                 var messages = data.flash.split(",");
                 $scope.showErrorMessage(true, messages);

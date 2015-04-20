@@ -4,15 +4,31 @@
 </header>
 
 <div id="content-wrap"  pc-adj-height>
-    <section class="main-content" ng-show="confirmation.status">
+    <section class="main-content">
         <div class="container">
-            <div class="panel panel-primary">
+            <div class="panel panel-primary" ng-show="confirmation.status">
                 <div class="panel-heading">
                     <h4>Registration Confirmed</h4>
                 </div>
                 <div class="panel-body">
                     <p>You account has been confirmed. Please use the credentials to</p>
                     <a href="/sign/in" class="btn btn-lg btn-3d">Log In</a>
+                    <br /><br />
+                </div>
+            </div>
+            
+            <!--Failed confirmation -->
+            <div class="panel panel-primary" ng-show="confirmation.error">
+                <div class="panel-heading">
+                    <h4>Account Confirmation Failed!</h4>
+                </div>
+                <div class="panel-body">
+                    <div role="alert" class="alert alert-danger">
+                        <i class="icon-warning"></i>
+                        <span>Sorry!</span> {{confirmation.errorMsg}}
+                    </div>
+                    <br /><br />
+                    <a href="/home" class="btn btn-lg btn-3d">Return to Home</a>
                     <br /><br />
                 </div>
             </div>
