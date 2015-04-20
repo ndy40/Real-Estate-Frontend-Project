@@ -26,9 +26,8 @@ define(["../module"], function (app) {
          * Send Request Reset Password Email
          */
         ResetService.prototype.resetPass = function (data) {
-            var resetPassUrl =  LAPI.resetPass,
+            var resetPassUrl =  LAPI.resetPass + data.code,
                 params = {
-                    "code"                  : data.code,
                     "password"              : data.newPass,
                     "password_confirmation" : data.confirmPass,
                 };

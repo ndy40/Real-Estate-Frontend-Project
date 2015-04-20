@@ -35,12 +35,12 @@ define(["../module"], function (app) {
             // Check any validation errors
             if ($scope.requestResetForm.$valid) {
                 $scope.requestReset.formError = false;
-                $('#email_sent').modal();
                 // Send Request New Password Email & Update View
                 ResetService.requestReset($scope.requestReset.email)
                     .success(function (data) {
                         $scope.requestReset.status = true;
                         $scope.requestReset.error = false;
+                        $('#email_sent').modal();
                     })
                     .error(function (error) {
                         $scope.requestReset.error = true;
@@ -79,14 +79,16 @@ define(["../module"], function (app) {
             // Check any validation errors
             if ($scope.resetPassForm.$valid && !$scope.resetPass.dontMatch) {
                 $scope.requestReset.formError = false;
-                $('#reset_success').modal();
                 // Check if PassCode is there
                 if ($scope.resetPass.code !== null) {
                     ResetService.resetPass($scope.resetPass)
                         .success(function (data) {
                             $scope.resetPass.status = true;
+                            $scope.resetPass.error = false;
+                            $('#reset_success').modal();
                         })
                         .error(function (error) {
+                            $scope.resetPass.status = false;
                             $scope.resetPass.error = true;
                         });
                 } else {
