@@ -114,10 +114,10 @@ define(["../module"], function (app) {
         $scope.loadPropertyDetails = function (data) {
             $scope.property.details = data;
             $scope.getAvgPrice(data.post_code_id, data.rooms, data.type_id);
-            $scope.getPriceHistroy(data.id);
-            $scope.property.comparables.title = data.rooms + " Bedroom " +
-                data.type + " for Sale";
-            $scope.getComparables(data.id);
+            //$scope.getPriceHistroy(data.id);
+            //$scope.property.comparables.title = data.rooms + " Bedroom " +
+            //    data.type + " for Sale";
+            //$scope.getComparables(data.id);
             $scope.populateRqstDetailsData(data);
             $scope.populateEmailFriendData(data);
             $scope.property.errorStatus = false;

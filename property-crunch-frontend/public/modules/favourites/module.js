@@ -12,6 +12,6 @@ define([
     return ng.module("pcFavourites",  [])
         .constant("API", {
             "getFavById" : 
-                "http://app.propertycrunch.co/client/search/properties-by-ids"
+                "http://search.thenello.com/client/search/properties-by-ids"
         });
 });
